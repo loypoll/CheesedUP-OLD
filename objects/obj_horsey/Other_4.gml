@@ -1,0 +1,19 @@
+var flag = false;
+if (ds_list_find_index(global.baddieroom, id) != -1)
+{
+	state = 6;
+	flag = true;
+}
+else if (ds_list_find_index(global.saveroom, id) != -1)
+{
+	state = 89;
+	flag = true;
+}
+if (flag)
+{
+	with (obj_raceend)
+	{
+		other.x = x + (sprite_width / 2);
+		other.y = (y + sprite_height) - 32;
+	}
+}

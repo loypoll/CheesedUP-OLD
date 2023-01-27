@@ -1,0 +1,39 @@
+if (state != 55 && other.state != 52 && x == xstart && y == ystart)
+{
+	with (other)
+	{
+		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+		fmod_event_instance_play(other.snd);
+		if (state != 61 && state != 84)
+		{
+			tauntstoredmovespeed = movespeed;
+			tauntstoredvsp = vsp;
+			tauntstoredsprite = sprite_index;
+			tauntstoredstate = state;
+		}
+		with (instance_create(x, y - 5, obj_parryeffect))
+		{
+			image_yscale = -1;
+			sprite_index = spr_grabhangeffect;
+			image_speed = 0.35;
+		}
+		state = 106;
+		if (boxxed == 0)
+			sprite_index = spr_player_catched;
+		else
+			sprite_index = spr_boxxedpep_air;
+		other.playerid = id;
+		other.state = 55;
+		if (tauntstoredstate != 104 && tauntstoredstate != 121)
+		{
+			tauntstoredstate = 92;
+			tauntstoredsprite = spr_jump;
+			tauntstoredmovespeed = 0;
+			tauntstoredvsp = 0;
+		}
+		else if (tauntstoredstate == 104)
+			sprite_index = spr_mach;
+		else if (tauntstoredstate == 121)
+			sprite_index = spr_mach4;
+	}
+}

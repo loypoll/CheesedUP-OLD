@@ -1,0 +1,25 @@
+with (other)
+{
+	if (other.state == 0 && state != 292 && key_up && grounded && ((state == 191 && brick) || state == 0 || state == 103 || state == 121 || state == 58 || state == 121 || state == 99))
+	{
+		instance_create(x, y, obj_genericpoofeffect);
+		other.state = 137;
+		other.hitLag = 80;
+		other.hitX = other.x;
+		other.hitY = other.y;
+		instance_destroy(other.arrowID);
+		fmod_event_instance_play(global.snd_spaceship);
+		with (obj_player)
+		{
+			if (check_player_coop())
+			{
+				hsp = 0;
+				movespeed = 0;
+				vsp = 0;
+				state = 292;
+				visible = false;
+				sprite_index = spr_idle;
+			}
+		}
+	}
+}

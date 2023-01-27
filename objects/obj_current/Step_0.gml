@@ -1,0 +1,51 @@
+instance_destroy(instance_place(x, y - 1, obj_baddie));
+if (place_meeting(x, y - 1, obj_player))
+{
+	with (obj_player)
+	{
+		if (state != 148 && state != 91 && state != 186 && state != 214 && state != 213 && state != 212)
+		{
+			if (place_meeting(x, y + 1, other))
+			{
+				if (state != 210 && state != 211)
+				{
+					if (state != 113 && state != 114 && state != 116 && state != 115)
+					{
+						if (state != 94 || sprite_index != spr_currentplayer)
+							fmod_event_one_shot_3d("event:/sfx/misc/waterslidesplash", x, y);
+						state = 94;
+						sprite_index = spr_currentplayer;
+					}
+					else
+					{
+						state = 116;
+						if (sprite_index != spr_player_barrelslipnslide)
+							sprite_index = spr_player_barrelroll;
+					}
+					xscale = sign(other.image_xscale);
+					movespeed = 20;
+				}
+				else
+				{
+					fmod_event_one_shot_3d("event:/sfx/misc/waterslidesplash", x, y);
+					with (instance_create(x, y, obj_slidecloud))
+					{
+						image_xscale = other.xscale;
+						sprite_index = spr_watereffect;
+					}
+					vsp = -6;
+					image_index = 0;
+					if (state == 210)
+					{
+						state = 211;
+						movespeed = abs(movespeed);
+						dir = xscale;
+						movespeed += 3;
+						instance_create(x, y, obj_jumpdust);
+						sprite_index = spr_player_trashslide;
+					}
+				}
+			}
+		}
+	}
+}

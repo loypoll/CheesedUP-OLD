@@ -1,0 +1,11 @@
+draw_set_alpha(0.1);
+shader_set(1);
+var _time = shader_get_uniform(1, "u_time");
+var _speed = shader_get_uniform(1, "u_speed");
+shader_set(1);
+shader_set_uniform_f(_time, time);
+shader_set_uniform_f(_speed, 0.1);
+draw_set_color(c_white);
+draw_rectangle(-100, -100, obj_screensizer.actual_width + 100, obj_screensizer.actual_height + 100, false);
+shader_reset();
+draw_set_alpha(1);
