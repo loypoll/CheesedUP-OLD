@@ -4,7 +4,7 @@ if (global.panic && !donepanic)
 	text = lang_get_value("getout");
 	event_perform(7, 4);
 }
-text_xscale = (obj_screensizer.actual_width - 64) / sprite_get_width(spr_tutorialbubble);
+text_xscale = (SCREEN_WIDTH - 64) / sprite_get_width(spr_tutorialbubble);
 wave_timer += 20;
 if (text_xscale != text_oldxscale)
 	event_perform(7, 4);

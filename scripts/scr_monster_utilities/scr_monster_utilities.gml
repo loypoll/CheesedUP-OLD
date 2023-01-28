@@ -1,7 +1,5 @@
-function scr_monster_deactivate()
+function scr_monster_deactivate(stopmusic = true)
 {
-	if (argument0 == undefined)
-		argument0 = true;
 	with (obj_monster)
 	{
 		x = xstart;
@@ -37,7 +35,7 @@ function scr_monster_deactivate()
 		patrolfound = false;
 	}
 	fmod_event_instance_stop(global.snd_alarm, true);
-	if (argument0)
+	if (stopmusic)
 		scr_monster_stop_music();
 }
 function scr_monster_stop_music()

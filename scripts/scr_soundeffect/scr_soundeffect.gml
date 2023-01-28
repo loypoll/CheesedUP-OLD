@@ -9,10 +9,8 @@ function sfx_gain()
 {
 	audio_sound_gain(argument0, audio_sound_get_gain(argument0) * global.option_sfx_volume, 0);
 }
-function set_audio_config()
+function set_audio_config(argument0 = true)
 {
-	if (argument0 == undefined)
-		argument0 = true;
 	if (argument0)
 	{
 		ini_open_from_string(obj_savesystem.ini_str_options);

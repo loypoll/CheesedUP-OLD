@@ -13,7 +13,7 @@ with (obj_player1)
 	x = backtohubstartx;
 	y = backtohubstarty;
 	x = backtohubstartx;
-	y = backtohubstarty - (obj_screensizer.actual_height * 2);
+	y = backtohubstarty - (SCREEN_HEIGHT * 2);
 	state = 290;
 	sprite_index = spr_player_slipbanan1;
 	image_index = 10;

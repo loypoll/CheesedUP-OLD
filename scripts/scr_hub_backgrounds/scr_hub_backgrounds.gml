@@ -1,7 +1,5 @@
-function scr_hub_bg_init()
+function scr_hub_bg_init(parallax_multiplier = 1)
 {
-	if (argument0 == undefined)
-		argument0 = 1;
 	bgsprite = spr_gate_entranceBG;
 	bgsprite_number = sprite_get_number(bgsprite);
 	bgsprite_width = sprite_get_width(bgsprite);
@@ -10,12 +8,12 @@ function scr_hub_bg_init()
 	bgspriteposstart = 0;
 	bgalpha = 1;
 	bg_useparallax = false;
-	bgparallax = [0.65 * argument0, 0.75 * argument0, 0.85 * argument0];
-	bgparallax2 = [0.1 * argument0, 0.15 * argument0, 0.2 * argument0];
+	bgparallax = [0.65 * parallax_multiplier, 0.75 * parallax_multiplier, 0.85 * parallax_multiplier];
+	bgparallax2 = [0.1 * parallax_multiplier, 0.15 * parallax_multiplier, 0.2 * parallax_multiplier];
 	bgmask_surface = -4;
 	bgclip_surface = -4;
 }
-function scr_hub_bg_reinit()
+function scr_hub_bg_reinit(xoffset, yoffset)
 {
 	bgsprite_number = sprite_get_number(bgsprite);
 	bgsprite_width = sprite_get_width(bgsprite);
@@ -26,7 +24,7 @@ function scr_hub_bg_reinit()
 		if (bg_useparallax)
 		{
 			var p = bgparallax2[i];
-			bgspriteposstart[i] = [argument0 - (argument0 * p) - ((obj_screensizer.actual_width / 4) * p), argument1 - (argument1 * p) - ((obj_screensizer.actual_height / 4) * p)];
+			bgspriteposstart[i] = [xoffset - (xoffset * p) - ((SCREEN_WIDTH / 4) * p), yoffset - (yoffset * p) - ((SCREEN_HEIGHT / 4) * p)];
 			bgspritepos[i] = [bgspriteposstart[i][0], bgspriteposstart[i][1]];
 		}
 	}
@@ -44,15 +42,13 @@ function scr_hub_bg_step()
 		else
 		{
 			var p = bgparallax2[i];
-			bgspritepos[i][0] = bgspriteposstart[i][0] + ((camera_get_view_x(view_camera[0]) + (obj_screensizer.actual_width / 2)) * p) + ((obj_screensizer.actual_width / 5) * p);
-			bgspritepos[i][1] = bgspriteposstart[i][1] + ((camera_get_view_y(view_camera[0]) + (obj_screensizer.actual_height / 2)) * p);
+			bgspritepos[i][0] = bgspriteposstart[i][0] + ((camera_get_view_x(view_camera[0]) + (SCREEN_WIDTH / 2)) * p) + ((SCREEN_WIDTH / 5) * p);
+			bgspritepos[i][1] = bgspriteposstart[i][1] + ((camera_get_view_y(view_camera[0]) + (SCREEN_HEIGHT / 2)) * p);
 		}
 	}
 }
-function scr_hub_bg_draw()
+function scr_hub_bg_draw(argument0, argument1, argument2, argument3, argument4 = false)
 {
-	if (argument4 == undefined)
-		argument4 = false;
 	if (bgalpha < 1)
 	{
 		var w = sprite_get_width(argument2);

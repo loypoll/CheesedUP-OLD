@@ -13,7 +13,7 @@ if (brown)
 {
 	draw_set_alpha(brownfade);
 	shader_set(4);
-	draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, c_white, c_white, c_white, c_white, false);
+	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
 	draw_self();
 	shader_reset();
 	draw_set_alpha(1);

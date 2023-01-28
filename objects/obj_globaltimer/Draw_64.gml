@@ -46,4 +46,4 @@ draw_set_font(global.smallfont);
 draw_set_alpha(1);
 draw_set_color(c_white);
 var finalstr = concat(hours, ":", m_str, ":", s_str, ".", mm);
-draw_text(obj_screensizer.actual_width - ((string_length(finalstr) - 1) * string_width("A")), obj_screensizer.actual_height - 8, finalstr);
+draw_text(SCREEN_WIDTH - ((string_length(finalstr) - 1) * string_width("A")), SCREEN_HEIGHT - 8, finalstr);

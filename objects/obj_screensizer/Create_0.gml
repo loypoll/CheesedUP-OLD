@@ -28,5 +28,5 @@ last_scale_mode = global.option_scale_mode;
 last_fullscreen = false;
 alarm[1] = 1;
 application_surface_draw_enable(false);
-display_set_gui_size(obj_screensizer.ideal_width, obj_screensizer.ideal_height);
+display_set_gui_size(CAMERA_WIDTH, CAMERA_HEIGHT);
 screen_apply_size();

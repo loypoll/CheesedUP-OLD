@@ -5,12 +5,8 @@ function scr_is_p_rank()
 	else
 		return !global.combodropped;
 }
-function scr_do_rank()
+function scr_do_rank(argument0 = true, argument1 = false)
 {
-	if (argument0 == undefined)
-		argument0 = true;
-	if (argument1 == undefined)
-		argument1 = false;
 	fmod_event_instance_stop(global.snd_escaperumble, true);
 	var ex = x;
 	var ey = y;

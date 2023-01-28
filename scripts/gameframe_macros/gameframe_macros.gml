@@ -33,3 +33,4 @@ function __display_gui_restore() {
 		case  4: __display_set_gui_maximise_base(_args[1], _args[2], _args[3], _args[4]); break;
 	}
 }
+

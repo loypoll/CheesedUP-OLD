@@ -51,7 +51,7 @@ if (room != strongcold_endscreen)
 		draw_sprite(spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 }
 if (bubblespr != -4)
-	draw_sprite_ext(bubblespr, bubbleindex, obj_screensizer.actual_width - 448, 53, 1, 1, 1, c_white, alpha);
+	draw_sprite_ext(bubblespr, bubbleindex, SCREEN_WIDTH - 448, 53, 1, 1, 1, c_white, alpha);
 if (!surface_exists(promptsurface))
 	promptsurface = surface_create(290, 102);
 surface_set_target(promptsurface);
@@ -71,7 +71,7 @@ if (bubblespr == spr_tv_bubble)
 }
 draw_set_halign(0);
 surface_reset_target();
-draw_surface(promptsurface, obj_screensizer.actual_width - 610, 0);
+draw_surface(promptsurface, SCREEN_WIDTH - 610, 0);
 draw_set_font(global.smallnumber_fnt);
 draw_set_halign(1);
 if (global.panic)

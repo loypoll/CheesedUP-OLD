@@ -7,12 +7,8 @@ function snap_tile()
 {
 	return floor(argument0 / argument1) * argument1;
 }
-function add_object()
+function add_object(argument0, argument1, argument2, argument3, argument4 = 0, argument5 = 0)
 {
-	if (argument4 == undefined)
-		argument4 = 0;
-	if (argument5 == undefined)
-		argument5 = 0;
 	var s = 1;
 	if (sprite_get_width(argument2) >= 64 || sprite_get_height(argument2) >= 64)
 		s = min(64 / sprite_get_width(argument2), 64 / sprite_get_height(argument2));

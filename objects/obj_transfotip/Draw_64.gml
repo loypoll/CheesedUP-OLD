@@ -3,8 +3,8 @@ draw_set_halign(0);
 draw_set_valign(0);
 draw_set_alpha(fade);
 draw_set_color(c_white);
-var xx = obj_screensizer.actual_width / 2;
-var yy = obj_screensizer.actual_height - 50;
+var xx = SCREEN_WIDTH / 2;
+var yy = SCREEN_HEIGHT - 50;
 if (global.panic && !instance_exists(obj_ghostcollectibles))
 	yy -= 60;
 var s = text_size;

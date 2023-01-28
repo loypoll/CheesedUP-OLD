@@ -1,5 +1,5 @@
 monsterid = 0;
-yy = obj_screensizer.actual_height;
+yy = SCREEN_HEIGHT;
 state = 0;
 event_perform(2, 0);
 depth = -600;

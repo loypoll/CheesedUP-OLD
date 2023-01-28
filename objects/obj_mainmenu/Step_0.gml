@@ -62,6 +62,155 @@ switch (state)
 				backbuffer = 2;
 			break;
 		}
+		else if instance_exists(obj_option)
+            break
+        else
+        {
+            move = (key_left2 + key_right2)
+            if ((sprite_index != spr_titlepep_punch && sprite_index != spr_titlepep_angry) || move != 0)
+            {
+                if (move != 0)
+                    angrybuffer = 0
+                currentselect += move
+                currentselect = clamp(currentselect, 0, 2)
+                if (currentselect != visualselect && (sprite_index == spr_titlepep_left || sprite_index == spr_titlepep_middle || sprite_index == spr_titlepep_right))
+                {
+                    visualselect = Approach(visualselect, currentselect, 1)
+                    image_index = 0
+                    if (visualselect == 0 && sprite_index == spr_titlepep_middle)
+                        sprite_index = spr_titlepep_middletoleft
+                    if (visualselect == 1 && sprite_index == spr_titlepep_left)
+                        sprite_index = spr_titlepep_lefttomiddle
+                    if (visualselect == 2 && sprite_index == spr_titlepep_middle)
+                        sprite_index = spr_titlepep_middletoright
+                    if (visualselect == 1 && sprite_index == spr_titlepep_right)
+                        sprite_index = spr_titlepep_righttomiddle
+                }
+                if (floor(image_index) == (image_number - 1))
+                {
+                    switch sprite_index
+                    {
+                        case spr_titlepep_forwardtoleft:
+                        case 1629:
+                            sprite_index = spr_titlepep_left
+                            break
+                        case 2938:
+                        case 2987:
+                            sprite_index = spr_titlepep_middle
+                            break
+                        case 3516:
+                            sprite_index = spr_titlepep_right
+                            break
+                    }
+
+                }
+            }
+            else if (sprite_index == spr_titlepep_angry)
+            {
+                y = ystart
+                if (angrybuffer > 0)
+                    angrybuffer--
+                else
+                {
+                    sprite_index = savedsprite
+                    switch sprite_index
+                    {
+                        case spr_titlepep_forwardtoleft:
+                        case 1629:
+                            sprite_index = spr_titlepep_left
+                            break
+                        case 2938:
+                        case 2987:
+                            sprite_index = spr_titlepep_middle
+                            break
+                        case 3516:
+                            sprite_index = spr_titlepep_right
+                            break
+                    }
+
+                    image_index = savedindex
+                    image_speed = 0.35
+                }
+            }
+            else
+            {
+                if (vsp < 20)
+                    vsp += 0.5
+                y += vsp
+                if (y >= ystart && vsp > 0)
+                {
+                    y = ystart
+                    vsp = 0
+                }
+            }
+            if key_jump
+            {
+                state = (98 << 0)
+                with (obj_menutv)
+                {
+                    if (trigger == other.currentselect)
+                    {
+                        fmod_event_instance_stop(obj_music.music.event, 1)
+                        fmod_event_one_shot("event:/sfx/ui/fileselect")
+                        state = (98 << 0)
+                        sprite_index = confirmspr
+                    }
+                }
+                alarm[0] = 250
+                fmod_event_one_shot("event:/sfx/misc/collectpizza")
+                switch currentselect
+                {
+                    case 0:
+                        sprite_index = spr_titlepep_left
+                        break
+                    case 1:
+                        sprite_index = spr_titlepep_middle
+                        break
+                    case 2:
+                        sprite_index = spr_titlepep_right
+                        break
+                }
+
+            }
+            else if key_slap2
+            {
+                state = (289 << 0)
+                exitselect = 1
+                switch currentselect
+                {
+                    case 0:
+                        sprite_index = spr_titlepep_left
+                        break
+                    case 1:
+                        sprite_index = spr_titlepep_middle
+                        break
+                    case 2:
+                        sprite_index = spr_titlepep_right
+                        break
+                }
+
+            }
+            else if (key_taunt2 && global.game_started[currentselect])
+            {
+                state = (183 << 0)
+                deleteselect = 1
+                fmod_event_one_shot_3d("event:/sfx/voice/pig", 480, 270)
+                switch currentselect
+                {
+                    case 0:
+                        sprite_index = spr_titlepep_left
+                        break
+                    case 1:
+                        sprite_index = spr_titlepep_middle
+                        break
+                    case 2:
+                        sprite_index = spr_titlepep_right
+                        break
+                }
+
+            }
+            break
+        }
 	case 183:
 		deleteselect += (key_left2 + key_right2);
 		deleteselect = clamp(deleteselect, 0, 1);

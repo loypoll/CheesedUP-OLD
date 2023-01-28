@@ -4,13 +4,13 @@ if (instance_exists(obj_pizzaball))
 	hit = global.golfhit;
 if (state == 0)
 {
-	y = Approach(y, obj_screensizer.actual_height, 5);
+	y = Approach(y, SCREEN_HEIGHT, 5);
 	if (!instance_exists(obj_pizzaball))
 		state = 89;
 }
 else
 {
-	var ty = obj_screensizer.actual_height + sprite_height;
+	var ty = SCREEN_HEIGHT + sprite_height;
 	y = Approach(y, ty, 7);
 	if (instance_exists(obj_pizzaball))
 		state = 0;

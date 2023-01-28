@@ -6,7 +6,7 @@ if (boss_func != -4)
 	boss_func();
 boss_prevhp = boss_hp;
 playerx = -sprite_get_width(playerspr);
-bossx = obj_screensizer.actual_width + sprite_get_width(bossspr);
+bossx = SCREEN_WIDTH + sprite_get_width(bossspr);
 instance_destroy(obj_pigtotal);
 if (!global.bossintro)
 	global.bossintro = true;

@@ -19,14 +19,14 @@ for (var i = 0; i < array_length(text); i++)
 		draw_text_color(48, 48 + (32 * i), b[1], c_white, c_white, c_white, c_white, 1);
 }
 draw_set_alpha(fade);
-draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, 0, 0, 0, 0, false);
+draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 draw_set_alpha(1);
 if (state == 2)
 {
 	draw_set_font(global.combofont);
 	draw_set_halign(1);
 	draw_set_valign(1);
-	var _x = (obj_screensizer.actual_width / 2) - 17;
-	draw_sprite(spr_towerstatusmenu, 0, _x, obj_screensizer.actual_height / 2);
-	draw_text_color(_x + 8, (obj_screensizer.actual_height / 2) + 10, floor(percvisual), c_white, c_white, c_white, c_white, 1);
+	var _x = (SCREEN_WIDTH / 2) - 17;
+	draw_sprite(spr_towerstatusmenu, 0, _x, SCREEN_HEIGHT / 2);
+	draw_text_color(_x + 8, (SCREEN_HEIGHT / 2) + 10, floor(percvisual), c_white, c_white, c_white, c_white, 1);
 }

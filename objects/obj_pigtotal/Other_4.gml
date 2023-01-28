@@ -14,6 +14,7 @@ else
 	var levels = ["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "space", "minigolf", "street", "sewer", "industrial", "freezer", "chateau", "kidsparty", "war"];
 	for (var i = 0; i < array_length(levels); i++)
 	{
+		var b = levels[i];
 		for (var j = 0; j < 5; j++)
 		{
 			if (ini_read_real("Toppin", concat(b, j + 1), false))

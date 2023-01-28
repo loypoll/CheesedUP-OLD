@@ -3,12 +3,12 @@ draw_set_valign(1);
 draw_set_color(c_white);
 draw_set_font(lang_get_font("bigfont"));
 var _levelinfo = level_array[selected_world][selected_level];
-draw_text(obj_screensizer.actual_width / 2, obj_screensizer.actual_height / 2, concat(world_array[selected_world], "\n", selected_level + 1, ". ", _levelinfo[0]));
+draw_text(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, concat(world_array[selected_world], "\n", selected_level + 1, ". ", _levelinfo[0]));
 var xx = 355;
 var yy = 380;
 var c = c_white;
 ini_open_from_string(obj_savesystem.ini_str);
-draw_text(obj_screensizer.actual_width / 2, yy - 38, ini_read_real("Highscore", _levelinfo[2], 0));
+draw_text(SCREEN_WIDTH / 2, yy - 38, ini_read_real("Highscore", _levelinfo[2], 0));
 for (var i = 0; i < array_length(toppin_info); i++)
 {
 	var b = toppin_info[i];
@@ -33,7 +33,7 @@ if (_levelinfo[1] != 526)
 draw_set_font(lang_get_font("smallfont"));
 var sf = ini_read_real("Secret", _levelinfo[2], false);
 if (_levelinfo[1] != 526)
-	draw_text_color(obj_screensizer.actual_width / 2, yy + 88, concat(sf, " OUT OF 3 SECRETS"), c_white, c_white, c_white, c_white, 1);
+	draw_text_color(SCREEN_WIDTH / 2, yy + 88, concat(sf, " OUT OF 3 SECRETS"), c_white, c_white, c_white, c_white, 1);
 ini_close();
 draw_set_halign(0);
 draw_set_valign(0);

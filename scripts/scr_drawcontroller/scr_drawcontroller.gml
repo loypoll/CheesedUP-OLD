@@ -1,11 +1,5 @@
-function get_dark()
+function get_dark(argument0, argument1, argument2 = false, argument3 = 0, argument4 = 0)
 {
-	if (argument2 == undefined)
-		argument2 = false;
-	if (argument3 == undefined)
-		argument3 = 0;
-	if (argument4 == undefined)
-		argument4 = 0;
 	if (argument1)
 	{
 		if (room == boss_vigilante)
@@ -51,25 +45,21 @@ function get_dark()
 	else
 		return image_blend;
 }
-function enemy_is_superslam()
+function enemy_is_superslam(baddieid)
 {
-	with (argument0)
+	with (baddieid)
 	{
 		if (state == 4)
 		{
 			var g = (grabbedby == 1) ? obj_player1.id : obj_player2.id;
 			if (g.state == 76 || (g.state == 61 && g.tauntstoredstate == 76))
-			{
 				return true;
-			}
 		}
 	}
 	return false;
 }
-function draw_enemy()
+function draw_enemy(healthbar, palette, color = c_white)
 {
-	if (argument2 == undefined)
-		argument2 = c_white;
 	var _stun = 0;
 	if ((state == 138 && thrown == 0 && object_index != obj_peppinoclone) || state == 294 || (state == 262 && sprite_index == stunfallspr))
 		_stun = 25;
@@ -82,15 +72,15 @@ function draw_enemy()
 			c = 65535;
 		if (elitegrab)
 			c = 32768;
-		if (argument2 != c_white)
-			c = argument2;
+		if (color != c_white)
+			c = color;
 		var b = get_dark(c, obj_drawcontroller.use_dark);
 		if (object_index == obj_peppinoclone)
 		{
 			shader_set(global.Pal_Shader);
 			pal_swap_set(706, 1, false);
 		}
-		else if (usepalette && argument1)
+		else if (usepalette && palette)
 		{
 			shader_set(global.Pal_Shader);
 			pal_swap_set(706, 0);
@@ -108,7 +98,7 @@ function draw_enemy()
 			}
 		}
 		draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
-		if (argument0)
+		if (healthbar)
 		{
 			if (hp > maxhp)
 				maxhp = hp;
@@ -122,7 +112,7 @@ function draw_enemy()
 				draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
 			}
 		}
-		if (object_index == obj_peppinoclone || (usepalette && argument1))
+		if (object_index == obj_peppinoclone || (usepalette && palette))
 			shader_reset();
 		if (object_index == obj_hamkuff)
 		{
@@ -168,13 +158,13 @@ function draw_player()
 	draw_sprite_ext(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
 	if (global.noisejetpack)
 	{
-		pal_swap_set(706, 2, false);
+		pal_swap_set(spr_peppalette, 2, false);
 		draw_sprite_ext(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
 	}
 	draw_superslam_enemy();
 	if (global.pistol)
 	{
-		pal_swap_set(706, 0, false);
+		pal_swap_set(spr_peppalette, 0, false);
 		if (pistolcharge >= 4)
 			draw_sprite(spr_revolvercharge, pistolcharge, x, y - 70);
 	}

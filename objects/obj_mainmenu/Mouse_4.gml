@@ -15,7 +15,7 @@ if (state == 0 && !instance_exists(obj_option))
 		depth = other.depth - 1;
 	repeat (2)
 	{
-		with (create_debris(mouse_x, mouse_y, 1525))
+		with (create_debris(mouse_x, mouse_y, spr_slapstar))
 			vsp = -irandom_range(8, 11);
 	}
 }

@@ -14,7 +14,7 @@ for (var i = 0; i < array_length(credits_arr); i++)
 	else
 	{
 		draw_set_halign(2);
-		xx = obj_screensizer.actual_width - 16;
+		xx = SCREEN_WIDTH - 16;
 	}
 	for (var j = init_pos; j < array_length(q); j++)
 	{
@@ -28,7 +28,7 @@ for (var i = 0; i < array_length(credits_arr); i++)
 			var old_x = xx;
 			var old_halign = draw_get_halign();
 			draw_set_halign(1);
-			xx = obj_screensizer.actual_width / 2;
+			xx = SCREEN_WIDTH / 2;
 		}
 		if (!title || i == 0)
 			draw_text_color(xx, yy, b, c_white, c_white, c_white, c_white, image_alpha);
@@ -39,7 +39,7 @@ for (var i = 0; i < array_length(credits_arr); i++)
 		}
 		var h = string_height(b);
 		yy += h;
-		if (yy > (obj_screensizer.actual_height + 100))
+		if (yy > (SCREEN_HEIGHT + 100))
 			break;
 	}
 }

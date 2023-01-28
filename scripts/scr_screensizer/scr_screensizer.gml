@@ -1,3 +1,8 @@
+#macro SCREEN_WIDTH obj_screensizer.actual_width
+#macro SCREEN_HEIGHT obj_screensizer.actual_height
+#macro CAMERA_WIDTH obj_screensizer.ideal_width
+#macro CAMERA_HEIGHT obj_screensizer.ideal_height
+
 function screen_apply_size()
 {
 	with (obj_screensizer)
@@ -6,6 +11,7 @@ function screen_apply_size()
 			global.option_resolution = 1;
 		if (gameframe_get_fullscreen() == 0)
 			gameframe_restore();
+		
 		window_set_size(get_resolution_width(global.option_resolution, aspect_ratio), get_resolution_height(global.option_resolution, aspect_ratio));
 		alarm[0] = 2;
 	}
@@ -22,16 +28,16 @@ function screen_apply_fullscreen(fullscreen)
 	else if (fullscreen == 2)
 		gameframe_set_fullscreen(2);
 }
-function surface_safe_set_target()
+function surface_safe_set_target(surface)
 {
 	surface_reset_target();
-	surface_set_target(argument0);
+	surface_set_target(surface);
 }
-function set_gui_target()
+function set_gui_target(surface)
 {
 	while (surface_get_target() != -1 && surface_get_target() != application_surface)
 		surface_reset_target();
-	surface_set_target(argument0);
+	surface_set_target(surface);
 }
 function surface_safe_reset_target()
 {
@@ -51,31 +57,31 @@ function reset_gui_target()
 }
 function reset_blendmode()
 {
-	gpu_set_blendmode_ext(2, 6);
+	gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha);
 }
 function reset_shader_fix()
 {
 	if (shader_current() != -1)
 		shader_reset();
-	shader_set(6);
+	shader_set(shd_alphafix);
 }
-function window_to_gui_x()
+function window_to_gui_x(x)
 {
-	var _win_pos = argument0 / window_get_width();
+	var _win_pos = x / window_get_width();
 	return display_get_gui_width() * _win_pos;
 }
-function window_to_gui_y()
+function window_to_gui_y(y)
 {
-	var _win_pos = argument0 / window_get_height();
+	var _win_pos = y / window_get_height();
 	return display_get_gui_height() * _win_pos;
 }
-function window_to_gui_xscale()
+function window_to_gui_xscale(xscale)
 {
-	return (argument0 * display_get_gui_width()) / window_get_width();
+	return (xscale * display_get_gui_width()) / window_get_width();
 }
-function window_to_gui_yscale()
+function window_to_gui_yscale(yscale)
 {
-	return (argument0 * display_get_gui_height()) / window_get_height();
+	return (yscale * display_get_gui_height()) / window_get_height();
 }
 function get_resolution_width(resolution, aspect_ratio = 0)
 {
@@ -97,7 +103,7 @@ function get_resolution(resolution, aspect_ratio = 0)
 }
 function screen_clear(color = c_black)
 {
-	draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, color, color, color, color, false);
+	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, color, color, color, color, false);
 }
 function get_options()
 {

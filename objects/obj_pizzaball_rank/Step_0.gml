@@ -1,6 +1,6 @@
 if (state == 8)
 {
-	var ty = obj_screensizer.actual_height / 2;
+	var ty = SCREEN_HEIGHT / 2;
 	y -= movespeed;
 	if (abs(y - ty) < 200)
 		movespeed = Approach(movespeed, 1, 0.05);
@@ -14,7 +14,7 @@ else if (state == 135)
 {
 	y += movespeed;
 	movespeed = Approach(movespeed, 8, 2);
-	if (y > (obj_screensizer.actual_height + sprite_height))
+	if (y > (SCREEN_HEIGHT + sprite_height))
 		instance_destroy();
 }
 else if (collect > 0)

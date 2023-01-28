@@ -1,11 +1,11 @@
 var cx = camera_get_view_x(view_camera[0]);
 var cy = camera_get_view_y(view_camera[0]);
-draw_sprite_ext(sprite1122, 0, cx, cy, obj_screensizer.actual_width / 64, obj_screensizer.actual_height / 64, 0, c_white, 1);
+draw_sprite_ext(sprite1122, 0, cx, cy, SCREEN_WIDTH / 64, SCREEN_HEIGHT / 64, 0, c_white, 1);
 draw_sprite(spr_mainmenu_bg, 0, obj_screensizer.normal_size_fix_x, 0);
 with (obj_menutv2)
 	draw_self();
 shader_set(global.Pal_Shader);
-var _x = obj_screensizer.actual_width * 0.50625;
+var _x = SCREEN_WIDTH * 0.50625;
 var _y = y;
 var pal = obj_player1.paletteselect;
 var tex = -4;
@@ -32,7 +32,7 @@ draw_set_font(lang_get_font("bigfont"));
 draw_set_halign(1);
 draw_set_valign(1);
 draw_set_color(c_white);
-draw_sprite(spr_controlseggplant, 0, obj_screensizer.actual_width * 0.853125, 84);
+draw_sprite(spr_controlseggplant, 0, SCREEN_WIDTH * 0.853125, 84);
 var status_x = 183;
 var status_y = 312;
 var percentstate_x = 199;

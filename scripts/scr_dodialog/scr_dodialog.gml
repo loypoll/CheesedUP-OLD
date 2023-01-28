@@ -39,12 +39,8 @@ function vigilante_add_battle()
 		quick_ini_write_real(get_savefile_ini(), "cutscene", "vigilante1", true);
 	}
 }
-function do_dialog_cutscene()
+function do_dialog_cutscene(argument0, argument1 = 0, argument2 = 0)
 {
-	if (argument1 == undefined)
-		argument1 = 0;
-	if (argument2 == undefined)
-		argument2 = 0;
 	with (instance_create(argument1, argument2, obj_cutscene_handler))
 	{
 		scene_info = argument0;

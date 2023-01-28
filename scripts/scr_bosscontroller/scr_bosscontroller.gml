@@ -1,7 +1,5 @@
-function scr_bosscontroller_particle_hp()
+function scr_bosscontroller_particle_hp(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7 = noone)
 {
-	if (argument7 == undefined)
-		argument7 = -4;
 	with (obj_bosscontroller)
 	{
 		var q = 
@@ -21,12 +19,8 @@ function scr_bosscontroller_particle_hp()
 		return q;
 	}
 }
-function scr_bosscontroller_particle_anim()
+function scr_bosscontroller_particle_anim(argument0, argument1, argument2, argument3, argument4, argument5 = 706, argument6 = 0)
 {
-	if (argument5 == undefined)
-		argument5 = 706;
-	if (argument6 == undefined)
-		argument6 = 0;
 	with (obj_bosscontroller)
 	{
 		var q = 
@@ -82,7 +76,7 @@ function scr_bosscontroller_intro()
 					arenastate++;
 				break;
 			case 1:
-				var btx = obj_screensizer.actual_width;
+				var btx = SCREEN_WIDTH;
 				bossx = lerp(bossx, btx, a);
 				if (abs(bossx - btx) <= 10)
 				{
@@ -249,14 +243,8 @@ function scr_bosscontroller_pizzaface_p3_health()
 	var eh = e + ((e - 1) * pizzahead_maxsubhp) + pizzahead_subhp;
 	return eh;
 }
-function scr_bosscontroller_draw_health()
+function scr_bosscontroller_draw_health(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10, argument11 = noone, argument12 = noone, argument13 = noone)
 {
-	if (argument11 == undefined)
-		argument11 = -4;
-	if (argument12 == undefined)
-		argument12 = -4;
-	if (argument13 == undefined)
-		argument13 = -4;
 	var hpp = 0;
 	for (var _index = 0; hpp < argument4; _index++)
 	{
@@ -305,10 +293,8 @@ function scr_bosscontroller_draw_health()
 		}
 	}
 }
-function scr_bosscontroller_get_health_pos()
+function scr_bosscontroller_get_health_pos(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8 = false)
 {
-	if (argument8 == undefined)
-		argument8 = false;
 	var hpp = 0;
 	for (var _index = 0; hpp < argument3; _index++)
 	{

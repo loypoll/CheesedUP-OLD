@@ -36,11 +36,9 @@ function scr_pizzaball_grabbed()
 	state = 148;
 	create_transformation_tip(lang_get_value("golftip"), "golf");
 }
-function scr_pizzaball_go_to_thrown()
+function scr_pizzaball_go_to_thrown(argument0, argument1, argument2 = true)
 {
-	if (argument2 == undefined)
-		argument2 = true;
-	instance_create_unique(156, obj_screensizer.actual_height + 400, 97);
+	instance_create_unique(156, SCREEN_HEIGHT + 400, 97);
 	hitbuffer = 8;
 	hitspeed = abs(argument0);
 	if (sign(argument0) != 0)

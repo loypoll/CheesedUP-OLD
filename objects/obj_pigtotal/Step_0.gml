@@ -9,8 +9,8 @@ switch (state)
 		}
 		break;
 	case 8:
-		y = Approach(y, obj_screensizer.actual_height - 100, 6);
-		if (y == (obj_screensizer.actual_height - 100))
+		y = Approach(y, SCREEN_HEIGHT - 100, 6);
+		if (y == (SCREEN_HEIGHT - 100))
 		{
 			state = 293;
 			buffer = 1;

@@ -6,40 +6,32 @@ function scr_add_grannypizzaboss()
 		array_pop(levelarray);
 	ini_close();
 }
-function scr_add_grannypizzalevel()
+function scr_add_grannypizzalevel(level, _icon, _secrets = true, _toppins = true, _treasure = true, _rank = true)
 {
-	if (argument2 == undefined)
-		argument2 = true;
-	if (argument3 == undefined)
-		argument3 = true;
-	if (argument4 == undefined)
-		argument4 = true;
-	if (argument5 == undefined)
-		argument5 = true;
 	var q = 
 	{
-		icon: argument1,
-		secrets: argument2,
+		icon: _icon,
+		secrets: _secrets,
 		secretcount: 0,
-		toppins: argument3,
+		toppins: _toppins,
 		toppinarr: [false, false, false, false, false],
-		treasure: argument4,
+		treasure: _treasure,
 		gottreasure: false,
-		rank: argument5,
+		rank: _rank,
 		gotrank: -4
 	};
 	ini_open_from_string(obj_savesystem.ini_str);
 	if (q.secrets)
-		q.secretcount = ini_read_real("Secret", argument0, 0);
+		q.secretcount = ini_read_real("Secret", level, 0);
 	if (q.toppins)
 	{
 		for (var i = 0; i < array_length(q.toppinarr); i++)
-			q.toppinarr[i] = ini_read_real("Toppin", concat(argument0, i + 1), false);
+			q.toppinarr[i] = ini_read_real("Toppin", concat(level, i + 1), false);
 	}
 	if (q.treasure)
-		q.gottreasure = ini_read_real("Treasure", argument0, false);
+		q.gottreasure = ini_read_real("Treasure", level, false);
 	if (q.rank)
-		q.gotrank = ini_read_string("Ranks", argument0, "none");
+		q.gotrank = ini_read_string("Ranks", level, "none");
 	ini_close();
 	array_push(levelarray, q);
 	return q;

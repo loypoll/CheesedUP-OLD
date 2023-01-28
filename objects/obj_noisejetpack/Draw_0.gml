@@ -15,7 +15,7 @@ else if (state == 8)
 }
 else if (state == 146)
 {
-	draw_rectangle_color(camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]), camera_get_view_x(view_camera[0]) + obj_screensizer.actual_width, camera_get_view_y(view_camera[0]) + obj_screensizer.actual_height, c_white, c_white, c_white, c_white, false);
+	draw_rectangle_color(camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]), camera_get_view_x(view_camera[0]) + SCREEN_WIDTH, camera_get_view_y(view_camera[0]) + SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
 	with (playerid)
 	{
 		shader_set(global.Pal_Shader);

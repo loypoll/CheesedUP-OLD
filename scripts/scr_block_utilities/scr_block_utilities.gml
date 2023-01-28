@@ -1,7 +1,5 @@
-function scr_destroy_tiles()
+function scr_destroy_tiles(argument0, argument1, argument2 = 0)
 {
-	if (argument2 == undefined)
-		argument2 = 0;
 	var lay_id = layer_get_id(argument1);
 	if (lay_id != -1)
 	{
@@ -19,10 +17,8 @@ function scr_destroy_tiles()
 		}
 	}
 }
-function scr_destroy_tile_arr()
+function scr_destroy_tile_arr(argument0, argument1, argument2 = 0)
 {
-	if (argument2 == undefined)
-		argument2 = 0;
 	for (var i = 0; i < array_length(argument1); i++)
 		scr_destroy_tiles(argument0, argument1[i], argument2);
 }

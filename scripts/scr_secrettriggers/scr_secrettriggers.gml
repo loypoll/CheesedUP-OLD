@@ -68,10 +68,8 @@ function secret_open_portal()
 			active = true;
 	}
 }
-function secret_close_portal()
+function secret_close_portal(argument0, argument1 = false)
 {
-	if (argument1 == undefined)
-		argument1 = false;
 	with (obj_secretportal)
 	{
 		if (trigger == argument0 && sprite_index != spr_secretportal_close)

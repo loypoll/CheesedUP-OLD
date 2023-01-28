@@ -6,6 +6,6 @@ shader_set(1);
 shader_set_uniform_f(_time, time);
 shader_set_uniform_f(_speed, 0.1);
 draw_set_color(c_white);
-draw_rectangle(-100, -100, obj_screensizer.actual_width + 100, obj_screensizer.actual_height + 100, false);
+draw_rectangle(-100, -100, SCREEN_WIDTH + 100, SCREEN_HEIGHT + 100, false);
 shader_reset();
 draw_set_alpha(1);

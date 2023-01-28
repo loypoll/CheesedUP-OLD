@@ -1,4 +1,4 @@
-draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, 0, 0, 0, 0, false);
+draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 for (var i = 0; i < array_length(bg_alpha); i++)
 	draw_sprite_tiled_ext(spr_optionsBG, i, bg_x, bg_y, 1, 1, c_white, bg_alpha[i]);
 if (room != Mainmenu)
@@ -17,8 +17,8 @@ var m = menus[menu];
 var options = m.options;
 var len = array_length(options);
 var size = (string_height("A") * len) + (len * m.ypad);
-var xx = obj_screensizer.actual_width / 2;
-var yy = (obj_screensizer.actual_height / 2) - (size / 4);
+var xx = SCREEN_WIDTH / 2;
+var yy = (SCREEN_HEIGHT / 2) - (size / 4);
 switch (m.anchor)
 {
 	case 0:
@@ -56,13 +56,13 @@ switch (m.anchor)
 			switch (o.type)
 			{
 				case 0:
-					draw_text_color(obj_screensizer.actual_width - m.xpad, yy + (m.ypad * i), o.value ? lang_get_value("option_on") : lang_get_value("option_off"), c, c, c, c, a);
+					draw_text_color(SCREEN_WIDTH - m.xpad, yy + (m.ypad * i), o.value ? lang_get_value("option_on") : lang_get_value("option_off"), c, c, c, c, a);
 					break;
 				case 3:
 					var w = 200;
 					var h = 5;
 					var aw = w * (o.value / 100);
-					var x1 = obj_screensizer.actual_width - m.xpad - w;
+					var x1 = SCREEN_WIDTH - m.xpad - w;
 					var y1 = yy + (m.ypad * i);
 					var x2 = x1 + aw;
 					var y2 = y1 + h;
@@ -77,7 +77,7 @@ switch (m.anchor)
 					var n = select.name;
 					if (select.localization)
 						n = lang_get_value(select.name);
-					draw_text_color(obj_screensizer.actual_width - m.xpad, yy + (m.ypad * i), n, c, c, c, c, a);
+					draw_text_color(SCREEN_WIDTH - m.xpad, yy + (m.ypad * i), n, c, c, c, c, a);
 					break;
 			}
 		}

@@ -36,10 +36,8 @@ function pizzahead_bg_init()
 {
 	
 }
-function warbg_generic()
+function warbg_generic(argument0, argument1, argument2 = noone)
 {
-	if (argument2 == undefined)
-		argument2 = -4;
 	var arr = ["Foreground_1", "Foreground_2", "Foreground_3", "Foreground_Ground1"];
 	var lays = layer_get_all();
 	for (var i = 0; i < array_length(lays); i++)

@@ -48,4 +48,4 @@ if (sprite_index == transspr && !instance_exists(obj_option))
 }
 else
 	fmod_event_instance_stop(staticsnd, true);
-x = (obj_screensizer.actual_width / 2) - (480 - xstart);
+x = (SCREEN_WIDTH / 2) - (480 - xstart);

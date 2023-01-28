@@ -1,7 +1,5 @@
-function scr_ghostcollectible()
+function scr_ghostcollectible(argument0 = false)
 {
-	if (argument0 == undefined)
-		argument0 = false;
 	var q = -4;
 	var b = id;
 	with (obj_ghostcollectibles)

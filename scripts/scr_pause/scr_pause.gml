@@ -8,11 +8,11 @@ function scr_create_pause_image()
 	draw_set_alpha(1);
 	screensprite = sprite_create_from_surface(application_surface, 0, 0, surface_get_width(application_surface), surface_get_height(application_surface), false, false, 0, 0);
 	guisprite = sprite_create_from_surface(obj_screensizer.gui_surf, 0, 0, surface_get_width(obj_screensizer.gui_surf), surface_get_height(obj_screensizer.gui_surf), false, false, 0, 0);
-	screenscale = min(obj_screensizer.actual_width / surface_get_width(application_surface), obj_screensizer.actual_height / surface_get_height(application_surface));
+	screenscale = min(SCREEN_WIDTH / surface_get_width(application_surface), SCREEN_HEIGHT / surface_get_height(application_surface));
 }
 function scr_draw_pause_image()
 {
-	draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, 0, 0, 0, 0, false);
+	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 	draw_sprite_ext(screensprite, 0, 0, 0, screenscale, screenscale, 0, c_white, 1);
 	draw_sprite_ext(guisprite, 0, 0, 0, 1, 1, 0, c_white, 1);
 }
@@ -105,7 +105,7 @@ function pause_spawn_priests()
 	var p = 
 	{
 		x: 0,
-		y: obj_screensizer.actual_height + 200,
+		y: SCREEN_HEIGHT + 200,
 		speed: random_range(0.8, 1.4),
 		image_index: 0,
 		image_speed: 0.35,
@@ -115,9 +115,9 @@ function pause_spawn_priests()
 	};
 	var q = irandom(100);
 	if (q >= 50)
-		p.x = irandom_range(obj_screensizer.actual_width * 0.78, obj_screensizer.actual_width * 0.65);
+		p.x = irandom_range(SCREEN_WIDTH * 0.78, SCREEN_WIDTH * 0.65);
 	else
-		p.x = irandom_range(obj_screensizer.actual_width * 0.2, 0.42);
+		p.x = irandom_range(SCREEN_WIDTH * 0.2, 0.42);
 	ds_list_add(priest_list, p);
 }
 function pause_unpause_music()
@@ -146,13 +146,13 @@ function pause_update_priests()
 			y -= speed;
 			image_index += image_speed;
 			if (!other.pause)
-				x += (x > (obj_screensizer.actual_width / 2)) ? 10 : -10;
+				x += (x > (SCREEN_WIDTH / 2)) ? 10 : -10;
 			if (y < -200)
 				destroy = true;
 			var a = 0.02;
 			if (y > 250)
 			{
-				if (y < (obj_screensizer.actual_height - 100))
+				if (y < (SCREEN_HEIGHT - 100))
 					image_alpha += a;
 			}
 			else

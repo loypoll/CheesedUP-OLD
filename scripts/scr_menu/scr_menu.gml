@@ -36,10 +36,8 @@ function add_option_press()
 	array_push(argument0.options, b);
 	return b;
 }
-function add_option_toggle()
+function add_option_toggle(argument0, argument1, argument2, argument3 = noone)
 {
-	if (argument3 == undefined)
-		argument3 = -4;
 	var b = 
 	{
 		option_id: argument1,
@@ -51,10 +49,8 @@ function add_option_toggle()
 	array_push(argument0.options, b);
 	return b;
 }
-function add_option_multiple()
+function add_option_multiple(argument0, argument1, argument2, argument3, argument4 = noone)
 {
-	if (argument4 == undefined)
-		argument4 = -4;
 	var b = 
 	{
 		option_id: argument1,
@@ -67,25 +63,17 @@ function add_option_multiple()
 	array_push(argument0.options, b);
 	return b;
 }
-function create_option_value()
+function create_option_value(_name, _value, _localization = true)
 {
-	if (argument2 == undefined)
-		argument2 = true;
 	return 
 	{
-		name: argument0,
-		value: argument1,
-		localization: argument2
+		name: _name,
+		value: _value,
+		localization: _localization
 	};
 }
-function add_option_slide()
+function add_option_slide(argument0, argument1, argument2, argument3 = noone, argument4 = noone, argument5 = noone)
 {
-	if (argument3 == undefined)
-		argument3 = -4;
-	if (argument4 == undefined)
-		argument4 = -4;
-	if (argument5 == undefined)
-		argument5 = -4;
 	var b = 
 	{
 		option_id: argument1,

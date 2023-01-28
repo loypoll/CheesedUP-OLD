@@ -4,4 +4,4 @@ draw_set_valign(2);
 var a = 0;
 with (obj_mainmenu)
 	a = extrauialpha;
-draw_text_color(obj_screensizer.actual_width - 8, obj_screensizer.actual_height - 8, lang_get_value("game_version"), c_white, c_white, c_white, c_white, a);
+draw_text_color(SCREEN_WIDTH - 8, SCREEN_HEIGHT - 8, lang_get_value("game_version"), c_white, c_white, c_white, c_white, a);

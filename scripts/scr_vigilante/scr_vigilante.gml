@@ -2,10 +2,8 @@ function vigilante_start_attack()
 {
 	attack_list[argument0][argument1] = array_create(0);
 }
-function vigilante_add_attack()
+function vigilante_add_attack(argument0, argument1, argument2, argument3 = 0)
 {
-	if (argument3 == undefined)
-		argument3 = 0;
 	array_push(attack_list[argument0][argument1], [argument2, argument3]);
 }
 function vigilante_end_attack()
@@ -226,9 +224,9 @@ function scr_vigilante_phase1hurt()
 	{
 		obj_camera.lock = true;
 		camzoom = lerp(camzoom, 0.5, 0.2);
-		camera_set_view_size(view_camera[0], obj_screensizer.actual_width * camzoom, obj_screensizer.actual_height * camzoom);
-		var _x = clamp(x - ((obj_screensizer.actual_width * camzoom) / 2), 0, room_width - (obj_screensizer.actual_width * camzoom));
-		var _y = clamp(y - ((obj_screensizer.actual_height * camzoom) / 2), 0, room_height - (obj_screensizer.actual_height * camzoom));
+		camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
+		var _x = clamp(x - ((SCREEN_WIDTH * camzoom) / 2), 0, room_width - (SCREEN_WIDTH * camzoom));
+		var _y = clamp(y - ((SCREEN_HEIGHT * camzoom) / 2), 0, room_height - (SCREEN_HEIGHT * camzoom));
 		camera_set_view_pos(view_camera[0], _x, _y);
 		buildup--;
 	}
@@ -241,7 +239,7 @@ function scr_vigilante_phase1hurt()
 		instance_create(0, 0, obj_pizzahead_whitefade);
 		obj_camera.lock = false;
 		camzoom = 1;
-		camera_set_view_size(view_camera[0], obj_screensizer.actual_width, obj_screensizer.actual_height);
+		camera_set_view_size(view_camera[0], SCREEN_WIDTH, SCREEN_HEIGHT);
 		state = 137;
 		linethrown = true;
 		mach2 = false;
@@ -430,14 +428,10 @@ function scr_vigilante_walk()
 		}
 	}
 }
-function scr_vigilante_do_cow()
+function scr_vigilante_do_cow(_shot = 1, _throwbuffermax = 0)
 {
-	if (argument0 == undefined)
-		argument0 = 1;
-	if (argument1 == undefined)
-		argument1 = 0;
-	shot = argument0;
-	throwbuffermax = argument1;
+	shot = _shot;
+	throwbuffermax = _throwbuffermax;
 	scr_vigilante_throw_cow();
 }
 function scr_vigilante_throw_cow()
@@ -463,10 +457,8 @@ function scr_vigilante_throw_cow()
 	else
 		return false;
 }
-function scr_vigilante_do_revolver()
+function scr_vigilante_do_revolver(argument0, argument1, argument2 = false)
 {
-	if (argument2 == undefined)
-		argument2 = false;
 	shot = argument0;
 	jump = argument2;
 	state = 1;
@@ -623,12 +615,10 @@ function scr_vigilante_revolver()
 		}
 	}
 }
-function scr_vigilante_do_reload()
+function scr_vigilante_do_reload(buffer = 360)
 {
-	if (argument0 == undefined)
-		argument0 = 360;
 	state = 269;
-	reloadbuffer = argument0;
+	reloadbuffer = buffer;
 	sprite_index = spr_vigilante_vulnerable;
 	image_index = 0;
 }

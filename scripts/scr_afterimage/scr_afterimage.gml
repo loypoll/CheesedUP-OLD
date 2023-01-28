@@ -18,10 +18,8 @@ function create_afterimage()
 	ds_list_add(global.afterimage_list, q);
 	return q;
 }
-function create_mach3effect()
+function create_mach3effect(argument0, argument1, argument2, argument3, argument4 = false)
 {
-	if (argument4 == undefined)
-		argument4 = false;
 	var q = 
 	{
 		x: argument0,

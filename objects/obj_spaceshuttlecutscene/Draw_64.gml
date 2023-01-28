@@ -12,11 +12,11 @@ if (start)
 	reset_shader_fix();
 }
 draw_set_alpha(fade);
-draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, 0, 0, 0, 0, false);
+draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 draw_set_alpha(1);
 if (instance_exists(obj_fadeout))
 {
 	draw_set_alpha(obj_fadeout.fadealpha);
-	draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, 0, 0, 0, 0, false);
+	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 	draw_set_alpha(1);
 }

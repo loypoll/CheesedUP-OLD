@@ -12,7 +12,7 @@ if (obj_player.state == 119)
 {
 	if (!global.pizzadelivery)
 	{
-		with (instance_create(obj_stopsign.x - (obj_screensizer.actual_width / 2), obj_stopsign.y, obj_taxidud))
+		with (instance_create(obj_stopsign.x - (SCREEN_WIDTH / 2), obj_stopsign.y, obj_taxidud))
 		{
 			playerid = 530;
 			if (obj_player1.policetaxi)
@@ -24,7 +24,7 @@ if (obj_player.state == 119)
 	}
 	else
 	{
-		with (instance_create(obj_checkpoint.x - (obj_screensizer.actual_width / 2), obj_checkpoint.y - 50, obj_taxidud))
+		with (instance_create(obj_checkpoint.x - (SCREEN_WIDTH / 2), obj_checkpoint.y - 50, obj_taxidud))
 			playerid = 530;
 		with (obj_player)
 		{

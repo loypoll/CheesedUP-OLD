@@ -1,9 +1,7 @@
-function create_transformation_tip()
+function create_transformation_tip(str, save_entry = noone)
 {
-	if (argument1 == undefined)
-		argument1 = -4;
 	ini_open_from_string(obj_savesystem.ini_str);
-	if (argument1 != -4 && ini_read_real("Tip", argument1, false))
+	if (save_entry != -4 && ini_read_real("Tip", save_entry, false))
 	{
 		ini_close();
 		exit;
@@ -12,20 +10,16 @@ function create_transformation_tip()
 	var b = -4;
 	with (instance_create(0, 0, obj_transfotip))
 	{
-		text = argument0;
+		text = str;
 		b = id;
 	}
-	if (argument1 != -4)
-		ini_write_real("Tip", argument1, true);
+	if (save_entry != -4)
+		ini_write_real("Tip", save_entry, true);
 	obj_savesystem.ini_str = ini_close();
 	return b;
 }
-function scr_compile_icon_text()
+function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 {
-	if (argument1 == undefined)
-		argument1 = 1;
-	if (argument2 == undefined)
-		argument2 = false;
 	var arr = [];
 	var len = string_length(argument0);
 	var newline = string_height("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
@@ -130,7 +124,7 @@ function scr_compile_icon_text()
 		return [arr, saved_pos, char_x, char_y];
 	return arr;
 }
-function scr_text_arr_size()
+function scr_text_arr_size(argument0)
 {
 	var w = 0;
 	var newline = string_height("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
@@ -170,12 +164,8 @@ function scr_text_arr_size()
 	}
 	return [w, h];
 }
-function scr_draw_granny_texture()
+function scr_draw_granny_texture(argument0, argument1, argument2, argument3, argument4, argument5, argument6 = spr_pizzagrannytexture, argument7 = spr_tutorialbubble)
 {
-	if (argument6 == undefined)
-		argument6 = 2610;
-	if (argument7 == undefined)
-		argument7 = 2225;
 	var w = sprite_get_width(argument7) * argument2;
 	var h = sprite_get_height(argument7) * argument3;
 	if (!surface_exists(surfclip))
@@ -197,18 +187,11 @@ function scr_draw_granny_texture()
 	surface_reset_target();
 	draw_surface(surffinal, argument0, argument1);
 }
-function scr_draw_text_arr()
+function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white, argument4 = 1, argument5 = 0, argument6 = noone)
 {
-	if (argument3 == undefined)
-		argument3 = c_white;
-	if (argument4 == undefined)
-		argument4 = 1;
-	if (argument5 == undefined)
-		argument5 = 0;
-	if (argument6 == undefined)
-		argument6 = -4;
 	if (argument2 == -4)
 		exit;
+	
 	for (var i = 0; i < array_length(argument2); i++)
 	{
 		var b = argument2[i];

@@ -2,7 +2,7 @@ switch (state)
 {
 	case 126:
 		cliff_index = 1;
-		var tx = obj_screensizer.actual_width - 73;
+		var tx = SCREEN_WIDTH - 73;
 		gerome_x = Approach(gerome_x, tx, 2);
 		if (gerome_x == tx)
 		{
@@ -16,7 +16,7 @@ switch (state)
 		cliff_index = 0;
 		peppino_y = Approach(peppino_y, 0, 1);
 		peppino_x = peppino_xstart + irandom_range(-1, 1);
-		if (peppino_y < ((obj_screensizer.actual_height / 2) - 120))
+		if (peppino_y < ((SCREEN_HEIGHT / 2) - 120))
 		{
 			if (!instance_exists(obj_fadeout))
 			{

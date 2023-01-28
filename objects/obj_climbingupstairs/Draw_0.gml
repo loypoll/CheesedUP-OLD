@@ -1,4 +1,4 @@
-draw_rectangle_color(0, 0, obj_screensizer.actual_width, obj_screensizer.actual_height, 0, 0, 0, 0, false);
+draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
 draw_sprite(gerome_spr, gerome_index, gerome_x, gerome_y);
 draw_sprite(spr_elevatorcliff, cliff_index, cliff_x, cliff_y);
 shader_set(global.Pal_Shader);

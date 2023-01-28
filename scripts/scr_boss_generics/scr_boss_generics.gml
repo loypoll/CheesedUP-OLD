@@ -213,14 +213,12 @@ function scr_boss_genericintro()
 		}
 	}
 }
-function scr_boss_do_hurt_phase2()
+function scr_boss_do_hurt_phase2(object, inv_time = 100)
 {
-	if (argument1 == undefined)
-		argument1 = 100;
-	with (argument0)
+	with (object)
 	{
 		state = 273;
-		invtime = argument1 + 40;
+		invtime = inv_time + 40;
 		hurted = false;
 		image_alpha = 1;
 		alarm[5] = -1;
@@ -234,14 +232,14 @@ function scr_boss_do_hurt_phase2()
 	}
 	pulse = 0;
 	state = 273;
-	buildup = argument1;
-	buildup_playerID = argument0;
+	buildup = inv_time;
+	buildup_playerID = object;
 	camzoom = 1;
-	flashbuffer = argument1 - 40;
+	flashbuffer = inv_time - 40;
 	fmod_event_one_shot("event:/sfx/misc/blackoutpunch");
 	instance_create_unique(0, 0, 121);
 	instance_create_unique(0, 0, 342);
-	image_xscale = -argument0.xscale;
+	image_xscale = -object.xscale;
 	instance_create(0, 0, obj_bossdark);
 }
 function scr_boss_phase1hurt(func = noone)
@@ -271,7 +269,7 @@ function scr_boss_phase1hurt(func = noone)
 	if (buildup > 0)
 	{
 		camzoom = lerp(camzoom, 0.5, 0.1);
-		camera_set_view_size(view_camera[0], obj_screensizer.actual_width * camzoom, obj_screensizer.actual_height * camzoom);
+		camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
 		x = px;
 		y = py;
 		buildup--;
@@ -290,7 +288,7 @@ function scr_boss_phase1hurt(func = noone)
 		instance_destroy(obj_superattackeffect);
 		instance_destroy(obj_blackoutline);
 		camzoom = lerp(camzoom, 1, 0.5);
-		camera_set_view_size(view_camera[0], obj_screensizer.actual_width * camzoom, obj_screensizer.actual_height * camzoom);
+		camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
 		with (player)
 		{
 			if (state != 6)
@@ -337,7 +335,7 @@ function scr_boss_phase1hurt(func = noone)
 					image_speed = 0.4;
 				}
 			}
-			camera_set_view_size(view_camera[0], obj_screensizer.actual_width, obj_screensizer.actual_height);
+			camera_set_view_size(view_camera[0], SCREEN_WIDTH, SCREEN_HEIGHT);
 			create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
 			with (obj_camera)
 			{

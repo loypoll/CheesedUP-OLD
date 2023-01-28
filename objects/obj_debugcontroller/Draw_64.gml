@@ -6,7 +6,7 @@ if (DEBUG)
 	draw_set_halign(0);
 	draw_set_valign(0);
 	draw_set_alpha(0.7);
-	draw_rectangle_color(0, 0, obj_screensizer.actual_width, 152, 0, 0, 0, 0, false);
+	draw_rectangle_color(0, 0, SCREEN_WIDTH, 152, 0, 0, 0, 0, false);
 	var search_y = 152;
 	if (input_text != "" && !ds_list_empty(search_commands))
 	{

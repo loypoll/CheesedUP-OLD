@@ -56,12 +56,8 @@ function notification_push()
 	with (obj_achievementtracker)
 		ds_queue_enqueue(notify_queue, [argument0, argument1]);
 }
-function achievement_add_variable()
+function achievement_add_variable(argument0, argument1, argument2 = false, argument3 = false)
 {
-	if (argument2 == undefined)
-		argument2 = false;
-	if (argument3 == undefined)
-		argument3 = false;
 	var q = 
 	{
 		init_value: argument1,
@@ -76,10 +72,8 @@ function achievement_get_variable()
 {
 	return ds_map_find_value(variables, argument0);
 }
-function achievement_unlock()
+function achievement_unlock(argument0, argument1, argument2, argument3 = 0)
 {
-	if (argument3 == undefined)
-		argument3 = 0;
 	var b = achievement_get_struct(argument0);
 	with (b)
 	{
@@ -112,10 +106,8 @@ function achievement_unlock()
 	with (obj_achievementviewer)
 		event_perform(7, 4);
 }
-function palette_unlock()
+function palette_unlock(argument0, argument1, argument2, argument3 = noone)
 {
-	if (argument3 == undefined)
-		argument3 = -4;
 	ini_open_from_string(obj_savesystem.ini_str_options);
 	ini_write_real("Palettes", argument1, true);
 	obj_savesystem.ini_str_options = ini_close();
@@ -142,6 +134,7 @@ function achievement_reset_variables()
 		with (b)
 		{
 			var size = ds_map_size(variables);
+			var key = ds_map_find_first(variables)
 			for (var j = 0; j < size; j++)
 			{
 				var q = ds_map_find_value(variables, key);
@@ -161,6 +154,7 @@ function achievement_save_variables()
 		with (b)
 		{
 			var size = ds_map_size(variables);
+			var key = ds_map_find_first(variables);
 			for (var j = 0; j < size; j++)
 			{
 				var q = ds_map_find_value(variables, key);
@@ -181,6 +175,7 @@ function achievements_load()
 		{
 			unlocked = ini_read_real("achievements", name, false);
 			var size = ds_map_size(variables);
+			var key = ds_map_find_first(variables);
 			for (var j = 0; j < size; j++)
 			{
 				var q = ds_map_find_value(variables, key);

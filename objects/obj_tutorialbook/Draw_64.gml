@@ -4,7 +4,7 @@ reset_blendmode();
 if (showgranny)
 {
 	draw_sprite(spr_tutorialbubble_rope, 0, 64 + text_wave_x, text_y + text_wave_y);
-	draw_sprite(spr_tutorialbubble_rope, 0, (obj_screensizer.actual_width - 64) + text_wave_x, text_y + text_wave_y);
+	draw_sprite(spr_tutorialbubble_rope, 0, (SCREEN_WIDTH - 64) + text_wave_x, text_y + text_wave_y);
 }
 var xx = text_borderpad + text_wave_x;
 var yy = text_y + text_wave_y;

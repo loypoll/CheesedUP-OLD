@@ -53,14 +53,8 @@ function fakepep_add_machclone()
 		bodyslam: argument4
 	});
 }
-function fakepep_add_superjumpclones()
+function fakepep_add_superjumpclones(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7 = 100, argument8 = 850, argument9 = 402)
 {
-	if (argument7 == undefined)
-		argument7 = 100;
-	if (argument8 == undefined)
-		argument8 = 850;
-	if (argument9 == undefined)
-		argument9 = 402;
 	if (argument2 == -1)
 		argument5 = argument4 - argument5;
 	fakepep_add_projectile(argument0, argument1, 
@@ -76,14 +70,8 @@ function fakepep_add_superjumpclones()
 		y: argument9
 	});
 }
-function fakepep_add_flailingclone()
+function fakepep_add_flailingclone(argument0, argument1, argument2, argument3, argument4 = 100, argument5 = 850, argument6 = 402)
 {
-	if (argument4 == undefined)
-		argument4 = 100;
-	if (argument5 == undefined)
-		argument5 = 850;
-	if (argument6 == undefined)
-		argument6 = 402;
 	fakepep_add_projectile(argument0, argument1, 
 	{
 		attack: 4,
@@ -94,14 +82,8 @@ function fakepep_add_flailingclone()
 		y: argument6
 	});
 }
-function fakepep_add_tauntclones()
+function fakepep_add_tauntclones(argument0, argument1, argument2, argument3, argument4, argument5 = 125, argument6 = 825, argument7 = 402)
 {
-	if (argument5 == undefined)
-		argument5 = 125;
-	if (argument6 == undefined)
-		argument6 = 825;
-	if (argument7 == undefined)
-		argument7 = 402;
 	fakepep_add_projectile(argument0, argument1, 
 	{
 		attack: 5,

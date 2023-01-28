@@ -110,12 +110,13 @@ if (DEBUG)
 			DoCommand("player_room rm_testing4 A");
 		}
 	});
-	SETCOMBO = new DebugCommand("set_combo", "Set the combo", "<combo> <combotime:optional>", function()
+	SETCOMBO = new DebugCommand("set_combo", "Set the combo", "<combo> <combotime:optional>", function(argument0, argument1)
 	{
 		if (argument0 == undefined)
 			exit;
 		if (argument1 == undefined)
 			argument1 = 60;
+		
 		global.combo = real(argument0);
 		global.combotime = real(argument1);
 		with (obj_player)
@@ -143,19 +144,20 @@ if (DEBUG)
 		global.pineapplefollow = true;
 		global.shroomfollow = true;
 	});
-	PANIC = new DebugCommand("panic", "Toggles pizza time", "<fill>", function()
+	PANIC = new DebugCommand("panic", "Toggles pizza time", "<fill>", function(argument0)
 	{
 		if (argument0 != undefined && argument0 != "")
 			argument0 = get_number_string(argument0);
 		else
 			argument0 = 4000;
+		
 		global.panic = !global.panic;
 		global.fill = argument0;
 		if (global.panic)
 			obj_camera.alarm[1] = 60;
 		obj_tv.chunkmax = global.fill;
 	});
-	SHOW_COLLISIONS = new DebugCommand("showcollisions", "Shows the collisions", "<bool>", function()
+	SHOW_COLLISIONS = new DebugCommand("showcollisions", "Shows the collisions", "<bool>", function(argument0)
 	{
 		if (argument0 == undefined)
 			exit;
@@ -166,7 +168,7 @@ if (DEBUG)
 			event_perform(7, 4);
 		}
 	});
-	SHOW_HUD = new DebugCommand("showhud", "Shows the HUD", "<bool>", function()
+	SHOW_HUD = new DebugCommand("showhud", "Shows the HUD", "<bool>", function(argument0)
 	{
 		if (argument0 == undefined)
 			exit;
@@ -197,7 +199,7 @@ if (DEBUG)
 			}
 		}
 	});
-	PLAYER_ROOM = new DebugCommand("player_room", "Go to given room", "<targetRoom> <targetDoor>", function()
+	PLAYER_ROOM = new DebugCommand("player_room", "Go to given room", "<targetRoom> <targetDoor>", function(argument0, argument1)
 	{
 		if (argument0 == undefined)
 			exit;
@@ -213,12 +215,13 @@ if (DEBUG)
 		}
 		instance_create(x, y, obj_fadeout);
 	});
-	CAMERA_ZOOM = new DebugCommand("camera_zoom", "Zoom", "<targetzoom> <spd>", function()
+	CAMERA_ZOOM = new DebugCommand("camera_zoom", "Zoom", "<targetzoom> <spd>", function(argument0, argument1)
 	{
 		if (argument0 == undefined)
 			exit;
 		if (argument1 != undefined)
 			argument1 = get_number_string(argument1);
+		
 		with (obj_camera)
 		{
 			targetzoom = argument0;
@@ -232,7 +235,7 @@ if (DEBUG)
 		instance_destroy(obj_iceblock);
 		instance_destroy(obj_iceblockslope);
 	});
-	HARDMODE = new DebugCommand("hardmode", "Toggles hardmode", "<bool>", function()
+	HARDMODE = new DebugCommand("hardmode", "Toggles hardmode", "<bool>", function(argument0)
 	{
 		if (argument0 == undefined)
 			exit;
@@ -245,7 +248,7 @@ if (DEBUG)
 				event_perform(7, 4);
 		}
 	});
-	PLAYER_SET_STATE = new DebugCommand("player_set_state", "Changes the player state", "<states.state>", function()
+	PLAYER_SET_STATE = new DebugCommand("player_set_state", "Changes the player state", "<states.state>", function(argument0)
 	{
 		if (argument0 == undefined)
 			exit;

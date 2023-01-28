@@ -36,5 +36,5 @@ if (!ds_queue_empty(unlock_queue) && !instance_exists(obj_cheftask))
 		achievement_index = b[1];
 	}
 	repeat (10)
-		instance_create(obj_screensizer.actual_width - 100, obj_screensizer.actual_height - 50, obj_confettieffect);
+		instance_create(SCREEN_WIDTH - 100, SCREEN_HEIGHT - 50, obj_confettieffect);
 }

@@ -1,4 +1,4 @@
-scroll_y = obj_screensizer.actual_height + 100;
+scroll_y = SCREEN_HEIGHT + 100;
 init_pos = 0;
 depth = -100;
 finish = false;

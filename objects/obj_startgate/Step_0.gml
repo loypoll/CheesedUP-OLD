@@ -6,7 +6,7 @@ if (!pizza && (highscore > 0 || (boss && hats > 0)) && bbox_in_camera(view_camer
 	pizza = true;
 	if (!boss)
 	{
-		with (instance_create(x, y - obj_screensizer.actual_height, obj_startgate_pizza))
+		with (instance_create(x, y - SCREEN_HEIGHT, obj_startgate_pizza))
 		{
 			y_to = other.y - 125;
 			highscore = [];

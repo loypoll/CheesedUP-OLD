@@ -1,7 +1,5 @@
-function tile_meeting()
+function tile_meeting(argument0, argument1, argument2, argument3 = 2)
 {
-	if (argument3 == undefined)
-		argument3 = 2;
 	var _tm = layer_tilemap_get_id(argument2);
 	var move_x = argument0 - x;
 	var move_y = argument1 - y;

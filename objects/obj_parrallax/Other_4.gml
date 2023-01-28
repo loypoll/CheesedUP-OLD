@@ -23,6 +23,7 @@ for (var i = 0; i < array_length(asset_layers); i++)
 	if (layer_exists(b))
 	{
 		b = layer_get_id(b);
+		var q = layer_get_all_elements(b)
 		for (var j = 0; j < array_length(q); j++)
 		{
 			var _asset = q[j];
@@ -30,9 +31,9 @@ for (var i = 0; i < array_length(asset_layers); i++)
 			var _y = layer_sprite_get_y(_asset);
 			var spr = layer_sprite_get_sprite(_asset);
 			if (p[0] != 0)
-				layer_sprite_x(_asset, (_x - (_x * p[0])) + ((obj_screensizer.actual_width / 4) * p[0]));
+				layer_sprite_x(_asset, (_x - (_x * p[0])) + ((SCREEN_WIDTH / 4) * p[0]));
 			if (p[1] != 0 && spr != 3045 && spr != 560)
-				layer_sprite_y(_asset, (_y - (_y * p[1])) + ((obj_screensizer.actual_height / 4) * p[1]));
+				layer_sprite_y(_asset, (_y - (_y * p[1])) + ((SCREEN_HEIGHT / 4) * p[1]));
 		}
 	}
 }

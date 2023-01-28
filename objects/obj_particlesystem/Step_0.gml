@@ -37,9 +37,6 @@ if (!ds_list_empty(global.debris_list))
 					i--;
 					q = undefined;
 				}
-				else
-				{
-				}
 			}
 		}
 	}
@@ -70,9 +67,6 @@ if (!ds_list_empty(global.collect_list))
 					ds_list_delete(global.collect_list, i);
 					i--;
 					b = undefined;
-				}
-				else
-				{
 				}
 			}
 		}
