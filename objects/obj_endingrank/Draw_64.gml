@@ -2,7 +2,7 @@ draw_sprite_tiled(spr_finalrankBG, bg_index, bg_x, bg_y);
 draw_self();
 if (brown)
 {
-	shader_set(4);
+	shader_set(shd_rank);
 	draw_set_alpha(brownfade);
 	draw_sprite_tiled(spr_finalrankBG, bg_index, bg_x, bg_y);
 	draw_self();

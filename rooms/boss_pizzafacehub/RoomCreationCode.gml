@@ -1,4 +1,4 @@
-pal_swap_init_system(8);
+pal_swap_init_system(shd_pal_swapper);
 notification_push(49, [787]);
 global.gameframe_caption_text = "Defeated an idiot at the top of the Pizza Tower";
 ini_open_from_string(obj_savesystem.ini_str);

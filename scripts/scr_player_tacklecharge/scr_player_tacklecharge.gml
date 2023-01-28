@@ -32,7 +32,7 @@ function scr_player_tacklecharge()
 	}
 	if (scr_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope) && !place_meeting(x + hsp, y, obj_destructibles))
 	{
-		if (baddiegrabbedID != 741)
+		if (baddiegrabbedID != obj_null)
 		{
 			if (baddiegrabbedID.object_index == obj_player1 || baddiegrabbedID.object_index == obj_player2)
 			{
@@ -49,7 +49,7 @@ function scr_player_tacklecharge()
 					vsp = -10;
 					alarm[8] = 60;
 					alarm[7] = 120;
-					other.baddiegrabbedID = 741;
+					other.baddiegrabbedID = obj_null;
 				}
 			}
 		}

@@ -1,4 +1,4 @@
-baddieid = 741;
+baddieid = obj_null;
 content = obj_bossdoor;
 mask_index = spr_baddiespawner;
 refresh = 100;

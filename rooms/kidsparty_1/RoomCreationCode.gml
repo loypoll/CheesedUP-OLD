@@ -1,4 +1,4 @@
-pal_swap_init_system(8);
+pal_swap_init_system(shd_pal_swapper);
 global.roommessage = "PIZZA TOWER WITH THE DEAD";
 global.pepanimatronic = true;
 global.gameframe_caption_text = "Shhh... Pizza Tower...";

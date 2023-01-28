@@ -16,7 +16,7 @@ else
 draw_sprite(spr_vstitle, 0, shake, vsy + shake);
 if (flash)
 {
-	shader_set(0);
+	shader_set(shd_hit);
 	draw_sprite(spr_vspeppino, 0, pepx, room_height - 357);
 	draw_sprite(spr_vsnoise, 0, noisex, room_height - 357);
 	draw_sprite(spr_vstitle, 0, shake, vsy + shake);

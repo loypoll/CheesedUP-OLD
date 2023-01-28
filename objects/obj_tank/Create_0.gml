@@ -40,4 +40,4 @@ grabbedby = 0;
 stuntouchbuffer = 0;
 content = obj_cheeseslime;
 spr_content_dead = spr_slimedead;
-spawnenemyID = 741;
+spawnenemyID = obj_null;

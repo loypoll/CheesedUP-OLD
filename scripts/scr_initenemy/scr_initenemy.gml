@@ -140,7 +140,7 @@ function scr_initenemy()
 	elitehurt = true;
 	ventilator_vsp = -5;
 	linethrown = false;
-	dashcloudid = 741;
+	dashcloudid = obj_null;
 	player_instakillmove = false;
 	stompbuffer = 0;
 	killbyenemybuffer = 0;

@@ -669,7 +669,7 @@ if (pistolcooldown > 0)
 if (prevstate != state)
 {
 	if (prevstate == 211 && state != 61 && prevsprite != 2304 && prevsprite != 2184)
-		create_debris(x, y, 3364);
+		create_debris(x, y, spr_player_trashlid);
 	if (prevstate == 16 && state != 61)
 		instance_create(x, y, obj_ghostdrapes);
 }
@@ -948,7 +948,7 @@ if (state == 89 && y > (room_height * 2) && !instance_exists(obj_backtohub_fadeo
 	global.leveltorestart = -4;
 	global.leveltosave = -4;
 }
-if (baddiegrabbedID == 741 && (state == 79 || state == 76 || state == 20))
+if (baddiegrabbedID == obj_null && (state == 79 || state == 76 || state == 20))
 	state = 0;
 if (cutscene == 1 && state != 186)
 	global.heattime = 60;
@@ -1176,7 +1176,7 @@ if ((y > (room_height + 300) || y < -800) && !place_meeting(x, y, obj_verticalha
 		{
 			playerid = other.id;
 			if (!other.isgustavo)
-				sprite = choose(348, 1187, 3998);
+				sprite = choose(spr_technicaldifficulty1, spr_technicaldifficulty2, spr_technicaldifficulty3);
 			else
 				sprite = spr_technicaldifficulty4;
 		}

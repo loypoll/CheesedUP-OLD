@@ -1,7 +1,7 @@
 if (app_scale <= 0)
 	exit;
 draw_set_alpha(1);
-gpu_set_blendmode(0);
+gpu_set_blendmode(bm_normal);
 draw_set_color(c_white);
 if (frac(app_scale) > 0)
 	gpu_set_texfilter(true);

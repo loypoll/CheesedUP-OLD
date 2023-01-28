@@ -7,7 +7,7 @@ if (start)
 	if (sprite_index != spr_taxitransition_gus)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 	else
-		pal_swap_set(3113, obj_player1.paletteselect, false);
+		pal_swap_set(spr_ratmountpalette, obj_player1.paletteselect, false);
 	draw_sprite(sprite_index, image_index, 0, cy);
 	reset_shader_fix();
 }

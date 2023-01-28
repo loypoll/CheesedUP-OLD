@@ -53,15 +53,15 @@ switch (state)
 				by = SCREEN_HEIGHT;
 			shader_set(global.Pal_Shader);
 			scr_palette_texture(playerspr, 0, px, py, 1, 1, 0, c_player, 1, true);
-			pal_swap_set(706, obj_player1.paletteselect, false);
+			pal_swap_set(spr_peppalette, obj_player1.paletteselect, false);
 			draw_sprite_ext(playerspr, -1, px, py, 1, 1, 0, c_player, 1);
 			if (bossspr == spr_vsfakepep || bossspr == spr_vsfakepep2)
 			{
 				scr_palette_texture(bossspr, 0, bx, by, _xs, _ys, 0, c_player, 1, true);
-				pal_swap_set(706, obj_player1.paletteselect, false);
+				pal_swap_set(spr_peppalette, obj_player1.paletteselect, false);
 			}
 			else
-				pal_swap_set(706, 0, false);
+				pal_swap_set(spr_peppalette, 0, false);
 			draw_sprite_ext(bossspr, 0, bx, by, _xs, _ys, 0, c_player, 1);
 			reset_shader_fix();
 			if (_index == 1)
@@ -74,13 +74,13 @@ switch (state)
 	case 0:
 	case 98:
 		shader_set(global.Pal_Shader);
-		scr_bosscontroller_draw_health(3631, player_rowmax, player_columnmax, player_hp, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad, player_index, image_alpha, 706, obj_player1.paletteselect, global.palettetexture);
+		scr_bosscontroller_draw_health(3631, player_rowmax, player_columnmax, player_hp, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad, player_index, image_alpha, spr_peppalette, obj_player1.paletteselect, global.palettetexture);
 		var bpal = boss_palette;
 		var bpalsel = -4;
 		var btex = -4;
 		if (boss_hpsprite == spr_bossfight_fakepephp)
 		{
-			bpal = 706;
+			bpal = spr_peppalette;
 			bpalsel = obj_player1.paletteselect;
 			btex = global.palettetexture;
 		}

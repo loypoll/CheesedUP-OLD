@@ -19,7 +19,7 @@ function scr_bosscontroller_particle_hp(argument0, argument1, argument2, argumen
 		return q;
 	}
 }
-function scr_bosscontroller_particle_anim(argument0, argument1, argument2, argument3, argument4, argument5 = 706, argument6 = 0)
+function scr_bosscontroller_particle_anim(argument0, argument1, argument2, argument3, argument4, argument5 = spr_peppalette, argument6 = 0)
 {
 	with (obj_bosscontroller)
 	{
@@ -133,7 +133,7 @@ function scr_bosscontroller_normal()
 				var btex = -4;
 				if (boss_hpsprite == spr_bossfight_fakepephp)
 				{
-					bpal = 706;
+					bpal = spr_peppalette;
 					bpalsel = obj_player1.paletteselect;
 					btex = global.palettetexture;
 				}

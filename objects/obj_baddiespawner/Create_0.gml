@@ -1,5 +1,5 @@
 image_speed = 0;
-baddieid = 741;
+baddieid = obj_null;
 content = obj_bossdoor;
 refresh = 20;
 depth = 1;

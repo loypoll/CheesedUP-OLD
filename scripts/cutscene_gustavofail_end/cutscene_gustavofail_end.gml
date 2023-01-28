@@ -45,7 +45,7 @@ function cutscene_gustavofail_end()
 			visible = true;
 			sprite_index = spr_gustavo_idle;
 		}
-		scr_hurtplayer(530);
+		scr_hurtplayer(obj_player1);
 		obj_player1.hsp = 0;
 		obj_player1.movespeed = 0;
 		obj_player1.xscale = 1;

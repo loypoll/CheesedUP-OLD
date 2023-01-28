@@ -78,12 +78,12 @@ function draw_enemy(healthbar, palette, color = c_white)
 		if (object_index == obj_peppinoclone)
 		{
 			shader_set(global.Pal_Shader);
-			pal_swap_set(706, 1, false);
+			pal_swap_set(spr_peppalette, 1, false);
 		}
 		else if (usepalette && palette)
 		{
 			shader_set(global.Pal_Shader);
-			pal_swap_set(706, 0);
+			pal_swap_set(spr_peppalette, 0);
 			if (object_index == obj_fakepepboss || object_index == obj_gustavograbbable)
 				scr_palette_texture(sprite_index, image_index, x, y + _stun, image_xscale * xscale, image_yscale * yscale, angle, b, image_alpha);
 			pal_swap_set(spr_palette, paletteselect, false);
@@ -108,7 +108,7 @@ function draw_enemy(healthbar, palette, color = c_white)
 		{
 			if (miniflash)
 			{
-				pal_swap_set(706, 14, false);
+				pal_swap_set(spr_peppalette, 14, false);
 				draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale * _ys, angle, b, image_alpha);
 			}
 		}

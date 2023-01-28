@@ -1,3 +1,4 @@
+/// @description also handles steam
 fmod_init(32);
 fmod_set_num_listeners(1);
 var banks = ["sound/Desktop/Master.strings.bank", "sound/Desktop/Master.bank", "sound/Desktop/music.bank", "sound/Desktop/sfx.bank"];

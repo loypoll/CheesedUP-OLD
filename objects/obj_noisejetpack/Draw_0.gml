@@ -5,7 +5,7 @@ else if (state == 8)
 	draw_set_alpha(orangealpha);
 	with (playerid)
 	{
-		shader_set(12);
+		shader_set(shd_firemouth_afterimage);
 		draw_sprite_ext(sprite_index, image_index, x, y, xscale, image_yscale, image_angle, image_blend, image_alpha);
 		shader_reset();
 	}

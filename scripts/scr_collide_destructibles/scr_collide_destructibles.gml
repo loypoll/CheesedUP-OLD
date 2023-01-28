@@ -60,7 +60,7 @@ function scr_collide_destructibles()
 				vy = vsp;
 			if (place_meeting(x, y + vy, obj_destructibles))
 			{
-				num = instance_place_list(x, y + vy, 538, global.instancelist, false);
+				num = instance_place_list(x, y + vy, obj_destructibles, global.instancelist, false);
 				for (i = 0; i < num; i++)
 				{
 					with (ds_list_find_value(global.instancelist, i))
@@ -152,7 +152,7 @@ function scr_collide_destructibles()
 		{
 			if (place_meeting(x, y + vsp + 2, obj_destructibles))
 			{
-				num = instance_place_list(x, y + vsp + 2, 538, global.instancelist, false);
+				num = instance_place_list(x, y + vsp + 2, obj_destructibles, global.instancelist, false);
 				for (j = 0; j < num; j++)
 					instance_destroy(ds_list_find_value(global.instancelist, j));
 				ds_list_clear(global.instancelist);

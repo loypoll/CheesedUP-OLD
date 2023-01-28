@@ -12,7 +12,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			{
 				a = alpha;
 				shd = true;
-				shader_set(2);
+				shader_set(shd_color_afterimage);
 				shader_set_uniform_f(other.shd_color_red, 0.97);
 				shader_set_uniform_f(other.shd_color_green, 0.43);
 				shader_set_uniform_f(other.shd_color_blue, 0.09);
@@ -21,7 +21,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			{
 				a = alpha;
 				shd = true;
-				shader_set(2);
+				shader_set(shd_color_afterimage);
 				shader_set_uniform_f(other.shd_color_red, 0.17);
 				shader_set_uniform_f(other.shd_color_green, 0.49);
 				shader_set_uniform_f(other.shd_color_blue, 0.9);
@@ -30,7 +30,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			{
 				a = alpha;
 				shd = true;
-				shader_set(2);
+				shader_set(shd_color_afterimage);
 				shader_set_uniform_f(other.shd_color_red, 0.8745098039215686);
 				shader_set_uniform_f(other.shd_color_green, 0.1843137254901961);
 				shader_set_uniform_f(other.shd_color_blue, 0);
@@ -39,7 +39,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			{
 				a = alpha;
 				shd = true;
-				shader_set(2);
+				shader_set(shd_color_afterimage);
 				shader_set_uniform_f(other.shd_color_red, 1);
 				shader_set_uniform_f(other.shd_color_green, 0);
 				shader_set_uniform_f(other.shd_color_blue, 0);

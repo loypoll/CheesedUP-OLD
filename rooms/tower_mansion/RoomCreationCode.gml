@@ -1,4 +1,4 @@
-pal_swap_init_system(8);
+pal_swap_init_system(shd_pal_swapper);
 global.roommessage = lang_get_value("room_towermansion");
 if (global.panic)
 {

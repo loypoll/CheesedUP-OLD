@@ -1,7 +1,7 @@
 pausedmusic = 0;
 fadeoff = 0;
 global.music = 0;
-roomname = 741;
+roomname = obj_null;
 arena = false;
 global.mu = -4;
 music = -4;

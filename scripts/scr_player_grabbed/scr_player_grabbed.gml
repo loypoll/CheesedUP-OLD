@@ -45,7 +45,7 @@ function scr_player_grabbed()
 		}
 		if (!(state == 79 || (state == 121 && fightball == 1) || (state == 191 || state == 193 || state == 192 || state == 194) || state == 6 || state == 55 || state == 74 || state == 75 || state == 20 || state == 80 || state == 76 || state == 81 || state == 82 || state == 83))
 		{
-			baddiegrabbedID = 741;
+			baddiegrabbedID = obj_null;
 			other.x = _obj_player.x;
 			other.y = _obj_player.y;
 			other.state = 107;

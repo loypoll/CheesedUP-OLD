@@ -12,7 +12,7 @@ if (brownfade < 1)
 if (brown)
 {
 	draw_set_alpha(brownfade);
-	shader_set(4);
+	shader_set(shd_rank);
 	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
 	draw_self();
 	shader_reset();

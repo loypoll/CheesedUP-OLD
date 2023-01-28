@@ -11,7 +11,7 @@ else
 	if (sprite != 4022)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 	else
-		pal_swap_set(3113, obj_player1.paletteselect, false);
+		pal_swap_set(spr_ratmountpalette, obj_player1.paletteselect, false);
 	draw_sprite(sprite, 0, cx + 300, cy + 352);
 	reset_shader_fix();
 }

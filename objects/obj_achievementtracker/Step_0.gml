@@ -8,7 +8,7 @@ for (var i = 0; i < array_length(achievements_update); i++)
 			if (frames >= update_rate)
 			{
 				frames = 0;
-				update_func();
+				self.update_func();
 			}
 			frames++;
 		}
@@ -16,20 +16,20 @@ for (var i = 0; i < array_length(achievements_update); i++)
 }
 while (!ds_queue_empty(notify_queue))
 {
-	b = ds_queue_dequeue(notify_queue);
+	var b = ds_queue_dequeue(notify_queue);
 	for (i = 0; i < array_length(achievements_notify); i++)
 	{
 		var q = achievements_notify[i];
 		with (q)
 		{
 			if (!unlocked)
-				func(b);
+				self.func(b);
 		}
 	}
 }
 if (!ds_queue_empty(unlock_queue) && !instance_exists(obj_cheftask))
 {
-	b = ds_queue_dequeue(unlock_queue);
+	var b = ds_queue_dequeue(unlock_queue);
 	with (instance_create(0, 0, obj_cheftask))
 	{
 		achievement_spr = b[0];

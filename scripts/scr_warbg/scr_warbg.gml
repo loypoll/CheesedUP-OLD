@@ -2,10 +2,10 @@ function warbg_start()
 {
 	if (event_type == 8 && event_number == 0)
 	{
-		var time = shader_get_uniform(13, "time");
-		var size = shader_get_uniform(13, "size");
-		var strength = shader_get_uniform(13, "strength");
-		shader_set(13);
+		var time = shader_get_uniform(shd_war, "time");
+		var size = shader_get_uniform(shd_war, "size");
+		var strength = shader_get_uniform(shd_war, "strength");
+		shader_set(shd_war);
 		shader_set_uniform_f(time, current_time / 1000);
 		shader_set_uniform_f(size, 512, 512, Wave(0, 0.8, 8, 0));
 		shader_set_uniform_f(strength, Wave(0, 0.2, 5, 0));
@@ -20,9 +20,9 @@ function pizzahead_bg_start()
 {
 	if (event_type == 8 && event_number == 0)
 	{
-		var time = shader_get_uniform(1, "u_time");
-		var _speed = shader_get_uniform(1, "u_speed");
-		shader_set(1);
+		var time = shader_get_uniform(shd_rainbow, "u_time");
+		var _speed = shader_get_uniform(shd_rainbow, "u_speed");
+		shader_set(shd_rainbow);
 		shader_set_uniform_f(time, current_time / 1000);
 		shader_set_uniform_f(_speed, 1);
 	}
