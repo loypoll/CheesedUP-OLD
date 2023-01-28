@@ -104,36 +104,36 @@ function tv_do_expression()
 		{
 			state = 250;
 			expressionsprite = argument0;
-			switch (expressionsprite)
-			{
-				case 1762:
-				case 1999:
-					expressionbuffer = 60;
-					break;
-				case 2054:
-				case 449:
-				case 2909:
-				case 258:
-				case 68:
-				case 566:
-				case 1628:
-				case 1362:
-				case 3621:
-				case 688:
-					expressionbuffer = 100;
-					break;
-				case 969:
-					expressionbuffer = 150;
-					if (obj_player.isgustavo)
-					{
-						expressionsprite = spr_tv_happyG;
-						if (irandom(100) <= 50)
-							fmod_event_one_shot_3d("event:/sfx/voice/brickok", obj_player1.x, obj_player1.y);
-					}
-					if (irandom(100) <= 50)
-						scr_fmod_soundeffect(obj_player1.snd_voiceok, obj_player1.x, obj_player1.y);
-					break;
-			}
+			switch expressionsprite
+            {
+                case spr_tv_exprhurt:
+                case spr_tv_hurtG:
+                    expressionbuffer = 60
+                    break
+                case spr_tv_exprhurt1:
+                case spr_tv_exprhurt2:
+                case spr_tv_exprhurt3:
+                case spr_tv_exprhurt4:
+                case spr_tv_exprhurt5:
+                case spr_tv_exprhurt6:
+                case spr_tv_exprhurt7:
+                case spr_tv_exprhurt8:
+                case spr_tv_exprhurt9:
+                case spr_tv_exprhurt10:
+                    expressionbuffer = 100
+                    break
+                case spr_tv_exprcollect:
+                    expressionbuffer = 150
+                    if obj_player.isgustavo
+                    {
+                        expressionsprite = spr_tv_happyG
+                        if (irandom(100) <= 50)
+                            fmod_event_one_shot_3d("event:/sfx/voice/brickok", obj_player1.x, obj_player1.y)
+                    }
+                    if (irandom(100) <= 50)
+                        scr_fmod_soundeffect(obj_player1.snd_voiceok, obj_player1.x, obj_player1.y)
+                    break;
+            }
 		}
 	}
 }
@@ -142,7 +142,7 @@ function scr_tv_get_transfo_sprite()
 	var _state = obj_player1.state;
 	if (_state == 84 || _state == 61)
 		_state = obj_player1.tauntstoredstate;
-	var _spr = -4;
+	var _spr = noone;
 	switch (_state)
 	{
 		case 47:

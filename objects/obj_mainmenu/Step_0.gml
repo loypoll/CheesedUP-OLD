@@ -91,14 +91,14 @@ switch (state)
                     switch sprite_index
                     {
                         case spr_titlepep_forwardtoleft:
-                        case 1629:
+                        case spr_titlepep_middletoleft:
                             sprite_index = spr_titlepep_left
                             break
-                        case 2938:
-                        case 2987:
+                        case spr_titlepep_lefttomiddle:
+                        case spr_titlepep_righttomiddle:
                             sprite_index = spr_titlepep_middle
                             break
-                        case 3516:
+                        case spr_titlepep_middletoright:
                             sprite_index = spr_titlepep_right
                             break
                     }
@@ -116,14 +116,14 @@ switch (state)
                     switch sprite_index
                     {
                         case spr_titlepep_forwardtoleft:
-                        case 1629:
+                        case spr_titlepep_middletoleft:
                             sprite_index = spr_titlepep_left
                             break
-                        case 2938:
-                        case 2987:
+                        case spr_titlepep_lefttomiddle:
+                        case spr_titlepep_righttomiddle:
                             sprite_index = spr_titlepep_middle
                             break
-                        case 3516:
+                        case spr_titlepep_middletoright:
                             sprite_index = spr_titlepep_right
                             break
                     }

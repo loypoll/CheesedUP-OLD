@@ -33,7 +33,7 @@ function create_mach3effect(argument0, argument1, argument2, argument3, argument
 		image_yscale: 1,
 		visible: true,
 		identifier: 1,
-		playerid: 530,
+		playerid: obj_player1,
 		alpha: 1
 	};
 	if (argument4)
