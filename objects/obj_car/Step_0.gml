@@ -3,7 +3,7 @@ switch (state)
 	case 0:
 		if (place_meeting(x, y, obj_player))
 		{
-			var num = instance_place_list(x, y, 528, global.instancelist, false);
+			var num = instance_place_list(x, y, obj_player, global.instancelist, false);
 			for (var i = 0; i < num; i++)
 			{
 				var b = ds_list_find_value(global.instancelist, i);

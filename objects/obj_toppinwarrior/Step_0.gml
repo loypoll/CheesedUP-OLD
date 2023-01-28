@@ -1,7 +1,7 @@
 if (obj_player1.spotlight == 1)
-	playerid = 530;
+	playerid = obj_player1;
 else
-	playerid = 529;
+	playerid = obj_player2;
 visible = playerid.visible;
 if (set == 0)
 {

@@ -1,4 +1,4 @@
-if (global.panic == 1 || instance_exists(obj_wartimer))
+if (global.panic == true || instance_exists(obj_wartimer))
 {
 	image_index = 1;
 	if (!uparrow)

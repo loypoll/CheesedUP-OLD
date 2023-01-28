@@ -1,4 +1,4 @@
-if (image_index == 1 && global.panic == 0 && room != war_13)
+if (image_index == 1 && global.panic == false && room != war_13)
 {
 	with (obj_player)
 	{
@@ -41,7 +41,7 @@ if (drop && dropstate != 126)
 	exit;
 with (obj_player)
 {
-	if (grounded && (x > (other.x - 160) && x < (other.x + 160)) && key_up && (state == 0 || state == 99 || state == 103 || state == 104 || state == 121) && (global.panic == 1 || global.snickchallenge == 1 || room == war_13))
+	if (grounded && (x > (other.x - 160) && x < (other.x + 160)) && key_up && (state == 0 || state == 99 || state == 103 || state == 104 || state == 121) && (global.panic == true || global.snickchallenge == 1 || room == war_13))
 	{
 		global.noisejetpack = false;
 		global.startgate = false;

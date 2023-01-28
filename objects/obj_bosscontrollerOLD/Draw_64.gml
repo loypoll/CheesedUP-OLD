@@ -61,7 +61,7 @@ draw_sprite(bell_sprite, bell_index, bosstimer_x + 440, bosstimer_y + 21);
 var sp = (super / supermax) * 100;
 if (super > supermax)
 	sp = 100;
-draw_healthbar(64, 240, 200, 252, sp, 4210752, 16776960, 16776960, 0, true, true);
+draw_healthbar(64, 240, 200, 252, sp, c_dkgray, 16776960, 16776960, 0, true, true);
 shader_set(global.Pal_Shader);
 pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 draw_sprite(portrait1_sprite, portrait1_index, 113, 104);

@@ -5,7 +5,7 @@ function scr_solid_player()
 	x = argument0;
 	y = argument1;
 	ds_list_clear(global.instancelist);
-	var num = instance_place_list(x, y, 517, global.instancelist, false);
+	var num = instance_place_list(x, y, obj_solid, global.instancelist, false);
 	var _collided = false;
 	for (var i = 0; i < num; i++)
 	{
@@ -60,13 +60,13 @@ function scr_solid_player()
 		y = old_y;
 		return true;
 	}
-	if (check_slope_player(516))
+	if (check_slope_player(obj_slope))
 	{
 		x = old_x;
 		y = old_y;
 		return true;
 	}
-	if (state == 78 && check_slope_player(3))
+	if (state == 78 && check_slope_player(obj_grindrailslope))
 	{
 		x = old_x;
 		y = old_y;

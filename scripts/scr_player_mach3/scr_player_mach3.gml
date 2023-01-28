@@ -387,7 +387,7 @@ function scr_player_mach3()
 				state = 65;
 				vsp = 10;
 			}
-			if ((!grounded && place_meeting(x + hsp, y, obj_solid) && (!place_meeting(x + sign(hsp), y, 516 || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + hsp, y, obj_mach3solid))) || (grounded && (place_meeting(x + hsp, y - 32, obj_solid) || scr_solid_slope(x + sign(hsp), y - 32)) && place_meeting(x, y + 1, obj_slope) && !place_meeting(x + hsp, y, obj_mach3solid)))
+			if ((!grounded && place_meeting(x + hsp, y, obj_solid) && (!place_meeting(x + sign(hsp), y, obj_slope || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + hsp, y, obj_mach3solid))) || (grounded && (place_meeting(x + hsp, y - 32, obj_solid) || scr_solid_slope(x + sign(hsp), y - 32)) && place_meeting(x, y + 1, obj_slope) && !place_meeting(x + hsp, y, obj_mach3solid)))
 			{
 				wallspeed = 10;
 				state = 37;

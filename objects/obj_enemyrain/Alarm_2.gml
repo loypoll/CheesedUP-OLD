@@ -1,7 +1,7 @@
 if (obj_player1.spotlight == 1)
-	playerid = 530;
+	playerid = obj_player1;
 else
-	playerid = 529;
+	playerid = obj_player2;
 spawn = true;
 if (instance_number(obj_baddie) < 20)
 {
@@ -9,9 +9,9 @@ if (instance_number(obj_baddie) < 20)
 	var spawny = playerid.y - 200;
 	var randompositionx = random_range(-500, 500);
 	var spawnxrandom = spawnx + randompositionx;
-	objects[0] = 517;
-	objects[1] = 516;
-	objects[2] = 538;
+	objects[0] = obj_solid;
+	objects[1] = obj_slope;
+	objects[2] = obj_destructibles;
 	for (i = 0; i < 3; i += 1)
 	{
 		while (position_meeting(spawnxrandom + 50, spawny - 50, objects[i]) || position_meeting(spawnxrandom - 50, spawny - 50, objects[i]))

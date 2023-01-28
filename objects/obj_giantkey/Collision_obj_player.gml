@@ -4,9 +4,9 @@ if (picked == 0 && pickable == 1)
 	vsp = 0;
 	grav = 0;
 	if (other.object_index == obj_player1)
-		playerid = 530;
+		playerid = obj_player1;
 	else
-		playerid = 529;
+		playerid = obj_player2;
 	alarm[0] = 150;
 	y = playerid.y - 50;
 	x = playerid.x;

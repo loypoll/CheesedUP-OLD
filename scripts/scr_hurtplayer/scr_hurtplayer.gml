@@ -166,7 +166,7 @@ function scr_hurtplayer()
 			if (state == 113 || state == 115 || state == 114 || state == 116)
 			{
 				repeat (4)
-					create_debris(x, y, 528);
+					create_debris(x, y, spr_barreldebris);
 			}
 			var _old_xscale = xscale;
 			if (x != other.x)

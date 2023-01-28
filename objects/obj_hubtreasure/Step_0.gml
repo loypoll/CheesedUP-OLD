@@ -12,9 +12,8 @@ if (playerid != -4)
 }
 if (!got)
 {
-	var num = instance_place_list(x, y, 528, global.instancelist, false);
-	var i = 0;
-	while (i < num)
+	var num = instance_place_list(x, y, obj_player, global.instancelist, false);
+	for(var i = 0; i < num; i++)
 	{
 		var _player = ds_list_find_value(global.instancelist, i);
 		with (_player)
@@ -40,7 +39,6 @@ if (!got)
 				break;
 			}
 		}
-		continue;
 	}
 	ds_list_clear(global.instancelist);
 }

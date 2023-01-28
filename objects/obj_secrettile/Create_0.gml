@@ -17,215 +17,217 @@ for (var i = 0; i < 3; i++)
 		var t = -4;
 		switch (ts)
 		{
-			case 131:
-				t = 3546;
-				break;
-			case 80:
-				t = 2463;
-				break;
-			case 81:
-				t = 2466;
-				break;
-			case 40:
-				t = 2659;
-				break;
-			case 36:
-				t = 2804;
-				break;
-			case 96:
-				t = 2589;
-				break;
-			case 97:
-				t = 2590;
-				break;
-			case 100:
-				t = 2599;
-				break;
-			case 85:
-				t = 2506;
-				break;
-			case 54:
-				t = 2325;
-				break;
-			case 56:
-				t = 2317;
-				break;
-			case 55:
-				t = 2324;
-				break;
-			case 82:
-				t = 2489;
-				break;
-			case 83:
-				t = 2490;
-				break;
-			case 84:
-				t = 2491;
-				break;
-			case 70:
-				t = 2525;
-				break;
-			case 69:
-				t = 2389;
-				break;
-			case 92:
-				t = 2571;
-				break;
-			case 101:
-				t = 2611;
-				break;
-			case 126:
-				t = 3388;
-				break;
-			case 102:
-				t = 2612;
-				break;
-			case 103:
-				t = 2618;
-				break;
-			case 130:
-				t = 2441;
-				break;
-			case 27:
-				t = 3355;
-				break;
-			case 89:
-				t = 2555;
-				break;
-			case 91:
-				t = 2565;
-				break;
-			case 90:
-				t = 2564;
-				break;
-			case 52:
-				t = 2293;
-				break;
-			case 29:
-				t = 2693;
-				break;
-			case 133:
-				t = 3678;
-				break;
-			case 105:
-				t = 2655;
-				break;
-			case 106:
-				t = 2663;
-				break;
-			case 107:
-				t = 2661;
-				break;
-			case 14:
-				t = 1309;
-				break;
-			case 60:
-				t = 2348;
-				break;
-			case 77:
-				t = 2450;
-				break;
-			case 78:
-				t = 2451;
-				break;
-			case 79:
-				t = 2453;
-				break;
-			case 108:
-				t = 2670;
-				break;
-			case 109:
-				t = 2671;
-				break;
-			case 110:
-				t = 2672;
-				break;
-			case 76:
-				t = 2486;
-				break;
-			case 15:
-				t = 227;
-				break;
-			case 122:
-				t = 1865;
-				break;
-			case 116:
-				t = 1144;
-				break;
-			case 115:
-				t = 1173;
-				break;
-			case 93:
-				t = 2585;
-				break;
-			case 94:
-				t = 2586;
-				break;
-			case 95:
-				t = 2587;
-				break;
-			case 31:
-				t = 3964;
-				break;
-			case 35:
-				t = 3887;
-				break;
-			case 20:
-				t = 2399;
-				break;
-			case 138:
-				t = 3184;
-				break;
-			case 8:
-				t = 1462;
-				break;
-			case 13:
-				t = 1016;
-				break;
-			case 33:
-				t = 2420;
-				break;
-			case 9:
-				t = 1604;
-				break;
-			case 141:
-				t = 2613;
-				break;
-			case 19:
-				t = 159;
-				break;
-			case 129:
-				t = 4127;
-				break;
-			case 143:
-				t = 1812;
-				break;
-			case 5:
-				t = 3755;
-				break;
-			case 11:
-				t = 2279;
-				break;
-			case 4:
-				t = 3792;
-				break;
-			case 18:
-				t = 3286;
-				break;
-			case 28:
-				t = 3690;
-				break;
-			case 119:
-				t = 3774;
-				break;
-			case 117:
-				t = 3365;
-				break;
-			case 137:
-				t = 974;
-				break;
+			case tile_towerentrancehall:
+                t = spr_towerentrancehall
+                break
+            case tileset_ruin:
+                t = tile_ruin
+                break
+            case tileset_ruin2:
+                t = tile_ruin2
+                break
+            case tile_ruinend:
+                t = spr_ruinend
+                break
+            case tile_ruinend_secret:
+                t = spr_ruinend_secret
+                break
+            case tileset_tile_beachtest:
+                t = sprite_tile_beachtest
+                break
+            case tileset_tile_beachtest2:
+                t = sprite_tile_beachtest2
+                break
+            case tileset_tile_beachtest2dark:
+                t = sprite_tile_beachtest2dark
+                break
+            case tileset_chateau1:
+                t = tile_chateau1
+                break
+            case tile_desert_tileset:
+                t = tile_desert
+                break
+            case tile_ufo_tileset:
+                t = tile_ufo
+                break
+            case tile_cavern_tileset:
+                t = tile_cavern
+                break
+            case tileset_dungeon:
+                t = tile_dungeon
+                break
+            case tileset_dungeon2:
+                t = tile_dungeon2
+                break
+            case tileset_dungeon3:
+                t = tile_dungeon3
+                break
+            case tileset_entrance:
+                t = tile_entrance1
+                break
+            case tile_tower_tileset:
+                t = tile_tower
+                break
+            case tileset_farm:
+                t = tile_farm
+                break
+            case tileset_tile_forest:
+                t = sprite_tile_forest
+                break
+            case tile_forestplain:
+                t = spr_forestplaintile
+                break
+            case tileset_tile_forest1_shade:
+                t = sprite_tile_forest1_shade
+                break
+            case tileset_tile_forest2:
+                t = sprite_tile_forest2
+                break
+            case tileset_freezer:
+                t = bg_tilefreezer
+                break
+            case tileset_freezer2:
+                t = tile_freezer2
+                break
+            case tileset_graveyard:
+                t = tile_graveyard1
+                break
+            case tileset_graveyardinterior:
+                t = tile_graveyard3
+                break
+            case tileset_graveyardunderground:
+                t = tile_graveyard2
+                break
+            case tile_factory_tileset:
+                t = tile_factory
+                break
+            case tile_factory2:
+                t = tile_factory2424
+                break
+            case tile_kidsparty:
+                t = spr_kidspartytile
+                break
+            case tileset_tile_kungfu:
+                t = sprite_tile_kungfu
+                break
+            case tileset_tile_kungfucity:
+                t = tile_kunfucity
+                break
+            case tileset_tile_kungfustructure:
+                t = sprite_tile_kungfustructure
+                break
+            case tile_mansion2:
+                t = spr_mansiontile2
+                break
+            case tile_castle_tileset:
+                t = tile_castle
+                break
+            case tileset_medieval:
+                t = tile_medieval
+                break
+            case tileset_medieval2:
+                t = tile_medieval2
+                break
+            case tileset_medieval3:
+                t = tile_medieval3
+                break
+            case tileset_tile_minigolf:
+                t = sprite_tile_minigolf
+                break
+            case tileset_tile_minigolf2:
+                t = sprite_tile_minigolf2
+                break
+            case tileset_tile_minigolf2_shad:
+                t = sprite_tile_minigolf2_shad
+                break
+            case tileset_secret:
+                t = tile_secret
+                break
+            case tileset_tile_space1:
+                t = sprite_tile_space1
+                break
+            case tileset_tile_spaceback1:
+                t = sprite_tile_spaceback1
+                break
+            case tileset_tile_space2:
+                t = sprite_tile_space2
+                break
+            case tile_space3props:
+                t = spr_space3props
+                break
+            case tileset_pinball1:
+                t = tile_pinball1
+                break
+            case tileset_pinball2:
+                t = tile_pinball2
+                break
+            case tileset_pinball3:
+                t = tile_pinball3
+                break
+            case tile_saloonwooden:
+                t = spr_pinballwooden
+                break
+            case tileset_tile_war1:
+                t = sprite_tile_war1
+                break
+            case tileset_tile_war2:
+                t = sprite_tile_war2
+                break
+            case tileset_tile_war3:
+                t = sprite_tile_war3
+                break
+            case tileset_tile_war4:
+                t = sprite_tile_war4
+                break
+            case tile_warlab:
+                t = spr_warlab
+                break
+            case tileset_tile_war1shadow:
+                t = sprite_tile_war1shadow
+                break
+            case tileset_tile_space2shadow:
+                t = sprite_tile_space2shadow
+                break
+            case tileset_tile_citycarnival:
+                t = sprite_tile_citycarnival
+                break
+            case tileset_tile_citydark:
+                t = sprite_tile_citydark
+                break
+            case tile_medievalinterior:
+                t = spr_medievalinterior
+                break
+            case tile_medievallibrary:
+                t = spr_medievallibrary
+                break
+            case tile_interior:
+                t = spr_interiortile2
+                break
+            case tile_desertdeco:
+                t = spr_desertsecret
+                break
+            case tile_beachdeco:
+                t = spr_beachdeco
+                break
+            case tile_forest1:
+                t = spr_foresttile1
+                break
+            case tile_storage:
+                t = spr_storagetile
+                break
+            case tile_city1props:
+                t = spr_city1props
+                break
+            case tile_graveyardmine:
+                t = spr_graveyardmine
+                break
+            case tile_exit:
+                t = spr_exittile
+                break
 		}
+		
 		tilemap_sprite[i] = t;
+		var _w32 = sprite_get_width(t) / 32;
 		for (var yy = 0; yy < image_yscale; yy++)
 		{
 			for (var xx = 0; xx < image_xscale; xx++)

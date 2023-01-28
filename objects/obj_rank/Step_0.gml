@@ -74,6 +74,28 @@ if (brown)
 		case 92:
 			if (brownfade < 1)
 				break;
+			else
+            {
+                var spd = 20;
+                var yy = (obj_screensizer.actual_height - 62);
+                toppin_y[toppin_index] -= spd;
+                toppin_yscale[toppin_index] = 1.2;
+                if (toppin_y[toppin_index] <= yy)
+                {
+                    if (toppin[toppin_index] == 1)
+                    {
+                        createmoney[toppin_index] = 1;
+                        if toppinvisible
+                            fmod_event_one_shot_3d("event:/sfx/misc/kashing", (room_width / 2), (room_height / 2));
+                    }
+                    if toppinvisible
+                        fmod_event_one_shot_3d("event:/sfx/misc/toppingot", (room_width / 2), (room_height / 2));
+                    toppin_y[toppin_index] = yy;
+                    toppin_state = (8 << 0);
+                    brown = 1;
+                }
+                break;
+            }
 		case 8:
 			toppin_yscale[toppin_index] = Approach(toppin_yscale[toppin_index], 1, 0.1);
 			if (toppin_yscale[toppin_index] == 1)

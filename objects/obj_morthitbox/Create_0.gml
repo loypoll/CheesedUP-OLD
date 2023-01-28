@@ -1,1 +1,1 @@
-playerid = 530;
+playerid = obj_player1;

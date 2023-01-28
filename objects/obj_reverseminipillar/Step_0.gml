@@ -1,4 +1,4 @@
-if (global.panic == 0)
+if (global.panic == false)
 {
 	x = xstart;
 	y = ystart;

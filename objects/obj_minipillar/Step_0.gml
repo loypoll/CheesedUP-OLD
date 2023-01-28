@@ -3,7 +3,7 @@ if (room == rm_editor)
 	mask_index = spr_minipillarwoke;
 	exit;
 }
-if (global.panic == 0)
+if (global.panic == false)
 {
 	x = -100;
 	y = -100;

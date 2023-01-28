@@ -23,7 +23,7 @@ if (elite && object_index != obj_robot)
 }
 if (object_index == obj_cheeseslime && snotty)
 {
-	if (global.panic == 1)
+	if (global.panic == true)
 	{
 		ds_list_add(global.baddieroom, id);
 		instance_destroy();

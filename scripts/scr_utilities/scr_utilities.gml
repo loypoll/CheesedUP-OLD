@@ -33,12 +33,12 @@ function camera_set_zoom()
 	with (obj_camera)
 		zoom = argument0;
 }
-function try_solid(xoffset, yoffset, iterations)
+function try_solid(xoffset, yoffset, object, iterations)
 {
 	var old_x = x;
 	var old_y = y;
 	var n = -1;
-	for (var i = 0; i < argument3; i++)
+	for (var i = 0; i < iterations; i++)
 	{
 		x += xoffset;
 		y += yoffset;

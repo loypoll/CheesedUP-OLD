@@ -45,6 +45,7 @@ function warbg_generic(argument0, argument1, argument2 = noone)
 		var _id = lays[i];
 		if (layer_background_get_id(_id) >= 0)
 		{
+			var _found = 0;
 			for (var j = 0; j < array_length(arr); j++)
 			{
 				if (layer_get_name(_id) == arr[j])

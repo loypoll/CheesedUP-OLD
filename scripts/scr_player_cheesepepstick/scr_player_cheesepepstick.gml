@@ -88,12 +88,12 @@ function scr_player_cheesepepstickside()
 	}
 	if (scr_solid(x, y))
 	{
-		var tx = try_solid(xscale, 0, 517, 64);
+		var tx = try_solid(xscale, 0, obj_solid, 64);
 		if (tx != -1)
 			x += (tx * xscale);
 		else
 		{
-			tx = try_solid(-xscale, 0, 517, 64);
+			tx = try_solid(-xscale, 0, obj_solid, 64);
 			if (tx != -1)
 				x -= (tx * xscale);
 		}
@@ -110,7 +110,7 @@ function scr_player_cheesepepstickside()
 		{
 			var old_x = x;
 			x -= xscale;
-			var ty = try_solid(0, sign(rvsp), 517, 64);
+			var ty = try_solid(0, sign(rvsp), obj_solid, 64);
 			if (ty != -1)
 				y += (ty * sign(rvsp));
 			x = old_x;
@@ -214,7 +214,7 @@ function scr_player_cheesepepstickup()
 		{
 			var old_y = y;
 			y += stickdir;
-			var tx = try_solid(xscale, 0, 517, 64);
+			var tx = try_solid(xscale, 0, obj_solid, 64);
 			if (tx != -1)
 				x += (tx * xscale);
 			y = old_y;

@@ -5,14 +5,14 @@ obj_player1.sprite_index = obj_player1.spr_idle;
 obj_player1.hsp = 0;
 obj_player1.vsp = 0;
 obj_player1.state = 119;
-playerid = 530;
+playerid = obj_player1;
 sprite_index = spr_taximove;
 hsp = 10;
 obj_player1.cutscene = true;
 if (global.coop == 1)
 {
 	obj_player2.sprite_index = obj_player2.spr_idle;
-	playerid = 529;
+	playerid = obj_player2;
 	sprite_index = spr_taximove;
 	hsp = 10;
 	obj_player2.visible = false;

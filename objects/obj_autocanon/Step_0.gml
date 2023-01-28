@@ -1,4 +1,4 @@
-if (cooldown <= 0 && (escape == 0 || global.panic == 1))
+if (cooldown <= 0 && (escape == 0 || global.panic == true))
 {
 	fmod_event_one_shot_3d("event:/sfx/enemies/cannongoblin", x, y);
 	with (instance_create(x + (image_xscale * 15), y, obj_canongoblinbomb))

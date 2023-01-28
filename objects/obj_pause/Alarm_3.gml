@@ -38,5 +38,5 @@ else
 	global.leveltorestart = -4;
 	global.leveltosave = -4;
 }
-if (rm == 659 || rm == 515 || rm == 513 || rm == 783 || rm == 514)
+if (rm == boss_pizzaface || rm == boss_noise || rm == boss_pepperman || rm == boss_fakepep || rm == boss_vigilante)
 	global.bossintro = true;

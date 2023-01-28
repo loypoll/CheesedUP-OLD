@@ -13,7 +13,7 @@ else if (finish)
 	if (yy >= 755)
 		instance_destroy();
 }
-if (global.panic == 1)
+if (global.panic == true)
 	finish = true;
 var hide = false;
 with (obj_player)

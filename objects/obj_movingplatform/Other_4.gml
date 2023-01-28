@@ -12,7 +12,7 @@ if (hmovespeed == 0)
 	h_velocity = 0;
 else
 	h_velocity = abs(hmovespeed);
-if (escape == 1 && global.panic == 0)
+if (escape == 1 && global.panic == false)
 {
 	vmovespeed = 0;
 	hmovespeed = 0;

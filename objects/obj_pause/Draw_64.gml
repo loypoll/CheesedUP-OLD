@@ -41,7 +41,7 @@ if (fade > 0)
 			c = c_white;
 		}
 		if (b == "pause_restart" && global.leveltorestart == -4)
-			c = 4210752;
+			c = c_dkgray;
 		draw_text_color(SCREEN_WIDTH / 2, yy, t, c, c, c, c, fade);
 		scr_pauseicon_draw(i, (SCREEN_WIDTH / 2) + (string_width(t) / 2) + 50, yy);
 		yy += (h + pad);

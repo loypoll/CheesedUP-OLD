@@ -246,17 +246,86 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 				scr_pause_activate_objects();
 				pause_unpause_music();
 				break;
+			
 			case 2:
 				if (room == Endingroom || room == tower_soundtest || room == Creditsroom || room == Johnresurrectionroom)
 					break;
+				else
+                {
+                    if !global.snickchallenge
+                    {
+                        var rm = global.leveltorestart;
+                        if rm != noone && rm != -1
+                        {
+                            alarm[5] = 1;
+                            pause_unpause_music();
+                            stop_music();
+                            scr_pause_activate_objects();
+                            scr_pause_stop_sounds();
+                            pause = false;
+                        }
+                        else
+                            fmod_event_one_shot("event:/sfx/ui/select");
+                    }
+                    break;
+                }
+			
 			case 1:
 				fmod_event_one_shot("event:/sfx/ui/select");
 				with (instance_create(x, y, obj_option))
 					depth = other.depth - 1;
 				break;
+			
 			case 3:
 				if (room == Endingroom || room == Creditsroom || room == Johnresurrectionroom)
 					break;
+				else
+                {
+                    pause_unpause_music();
+                    stop_music();
+                    scr_pause_stop_sounds();
+                    fmod_event_instance_stop(global.snd_bossbeaten, 1);
+                    fmod_event_instance_stop(pausemusicID, 1);
+                    obj_music.music = noone;
+                    var sl = ds_list_create();
+                    var il = ds_list_create();
+                    var arr = noone;
+                    ds_list_copy(sl, sound_list);
+                    ds_list_copy(il, instance_list);
+                    if (room == hub_room1 || room == Finalintro || room == characterselect || room == cowboytask || room == Titlescreen || room == Mainmenu || room == Scootertransition || room == rm_levelselect || (string_copy(room_get_name(room), 1, 5) == "tower" && (!global.panic)))
+                    {
+                        if global.startgate
+                        {
+                            hub = 1;
+                            arr = ["hubgroup"];
+                            global.startgate = false;
+                        }
+                        else
+                        {
+                            hub = 0;
+                            arr = ["menugroup"];
+                        }
+                    }
+                    else
+                    {
+                        global.startgate = false;
+                        hub = 1;
+                        arr = ["hubgroup"];
+                    }
+                    alarm[3] = 1;
+                    ds_list_add(il, id);
+                    with textures_offload(arr)
+                    {
+                        ds_list_clear(sound_list);
+                        ds_list_clear(instance_list);
+                        ds_list_copy(sound_list, sl);
+                        ds_list_copy(instance_list, il);
+                    }
+                    instance_deactivate_object(id);
+                    ds_list_destroy(sl);
+                    ds_list_destroy(il);
+                    break;
+                }
 		}
 	}
 }

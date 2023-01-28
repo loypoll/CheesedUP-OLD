@@ -1,2 +1,2 @@
-if (global.panic == 1)
+if (global.panic == true)
 	image_speed = 0.2;

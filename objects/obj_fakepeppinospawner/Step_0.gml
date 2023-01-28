@@ -17,5 +17,5 @@ else if (!instance_exists(inst))
 }
 if (global.key_inv == 1 && obj_player.state != 90)
 	global.chase = true;
-if (global.panic == 1)
+if (global.panic == true)
 	global.chase = true;

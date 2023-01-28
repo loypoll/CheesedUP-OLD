@@ -1,4 +1,4 @@
-if (global.panic == 0)
+if (global.panic == false)
 {
 	destroy_sounds([snd]);
 	instance_destroy();

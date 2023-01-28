@@ -329,7 +329,7 @@ function scr_player_bombpep()
 			if (scr_solid(x, y))
 			{
 				var _dir = -sign(other.xscale);
-				var tx = try_solid(_dir, 0, 517, 78);
+				var tx = try_solid(_dir, 0, obj_solid, 78);
 				if (tx != -1)
 					x += (tx * _dir);
 			}

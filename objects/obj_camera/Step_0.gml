@@ -114,12 +114,12 @@ if (global.timedgatetimer)
 }
 if (!instance_exists(obj_ghostcollectibles))
 {
-	if ((global.panic == 1 && global.minutes < 1) || player.sprite_index == spr_player_timesup)
+	if ((global.panic == true && global.minutes < 1) || player.sprite_index == spr_player_timesup)
 	{
 		shake_mag = 2;
 		shake_mag_acc = 3 / room_speed;
 	}
-	else if (global.panic == 1 && basement == 0)
+	else if (global.panic == true && basement == 0)
 	{
 		shake_mag = 2;
 		shake_mag_acc = 3 / room_speed;

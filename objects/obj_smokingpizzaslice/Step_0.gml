@@ -7,6 +7,73 @@ switch (state)
 	case 134:
 		if (state == 129)
 			break;
+		else
+        {
+            if (substate_buffer > 0)
+                substate_buffer--;
+            else
+            {
+                substate_buffer = substate_max;
+                var old_substate = substate;
+                while (substate == old_substate)
+                    substate = choose((134 << 0), (126 << 0), (130 << 0));
+                if (substate == (130 << 0) && state == (129 << 0))
+                    substate = (134 << 0);
+                if (substate == (134 << 0))
+                    image_xscale = choose(-1, 1);
+                else if (substate == (130 << 0))
+                {
+                    sprite_index = spr_pizzaslug_turn;
+                    image_index = 0;
+                    hsp = 0;
+                }
+            }
+            switch substate
+            {
+                case (134 << 0):
+                    image_speed = 0.35;
+                    if (sprite_index != spr_pizzaslug_walk)
+                    {
+                        image_index = 0;
+                        sprite_index = spr_pizzaslug_walk;
+                    }
+                    if place_meeting(x, y, obj_solid)
+                        y--;
+                    scr_enemy_walk();
+                    break;
+				
+                case (126 << 0):
+                    image_speed = 0.35;
+                    hsp = 0;
+                    sprite_index = spr_pizzaslug_idle;
+                    break;
+				
+                case (130 << 0):
+                    image_speed = 0.35;
+                    substate_buffer = 5;
+                    if (sprite_index != spr_pizzaslug_turn)
+                    {
+                        image_index = 0;
+                        sprite_index = spr_pizzaslug_turn;
+                    }
+                    if (sprite_index == spr_pizzaslug_turn && floor(image_index) == (image_number - 1))
+                    {
+                        image_xscale *= -1;
+                        substate_buffer = substate_max;
+                        substate = (126 << 0);
+                        sprite_index = spr_pizzaslug_idle;
+                    }
+                    break;
+				
+                case (129 << 0):
+                    state = (129 << 0);
+                    substate_buffer = 0;
+                    image_index = 0;
+                    sprite_index = spr_pizzaslug_cough;
+                    break;
+            }
+            break
+        }
 	case 126:
 		scr_enemy_idle();
 		break;

@@ -28,7 +28,7 @@ function scr_player_machroll()
 				mask_index = spr_player_mask;
 				if (scr_solid(x, y))
 				{
-					var ty = try_solid(0, 1, 517, 32);
+					var ty = try_solid(0, 1, obj_solid, 32);
 					if (ty != -1)
 						y += ty;
 				}

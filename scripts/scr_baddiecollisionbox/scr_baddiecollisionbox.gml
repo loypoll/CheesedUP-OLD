@@ -1,8 +1,8 @@
-function baddiecollisionbox_update()
+function baddiecollisionbox_update(player)
 {
-	if (argument0.cutscene == 0 && argument0.state != 10)
+	if (player.cutscene == 0 && player.state != 10)
 	{
-		with (argument0)
+		with (player)
 		{
 			var _destroy = false;
 			var _stagger = false;

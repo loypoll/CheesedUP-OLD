@@ -3,9 +3,9 @@ if (room == rank_room || room == timesuproom)
 if (obj_player.state == 87)
 	visible = false;
 if (obj_player1.spotlight == 1)
-	playerid = 530;
+	playerid = obj_player1;
 else
-	playerid = 529;
+	playerid = obj_player2;
 if (global.miniboss == 0)
 	instance_destroy();
 if (sprite_index == spr_noisebomb_intro && floor(image_index) == (image_number - 1))

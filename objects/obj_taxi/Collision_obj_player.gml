@@ -13,7 +13,7 @@ with (other)
 			obj_player1.vsp = 0;
 			obj_player1.state = 119;
 			fmod_event_one_shot("event:/sfx/misc/taximove");
-			playerid = 530;
+			playerid = obj_player1;
 			move = true;
 			sprite_index = spr_taximove;
 			hsp = 10;
@@ -32,7 +32,7 @@ with (other)
 			{
 				obj_player2.sprite_index = obj_player2.spr_idle;
 				fmod_event_one_shot("event:/sfx/misc/taximove");
-				playerid = 529;
+				playerid = obj_player2;
 				sprite_index = spr_taximove;
 				hsp = 10;
 				obj_player2.visible = false;

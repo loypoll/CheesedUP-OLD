@@ -118,7 +118,7 @@ global.mrstickcutscene2 = -4;
 global.mrstickcutscene3 = -4;
 global.chateauswap = -4;
 global.warcutscene = -4;
-pal_swap_init_system(shd_pal_swapper);
+pal_swap_init_system(8);
 with (obj_player1)
 	state = 0;
 global.loadeditor = false;

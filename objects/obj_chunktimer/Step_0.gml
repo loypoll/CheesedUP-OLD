@@ -1,6 +1,6 @@
-if (global.panic == 1 && global.fill > 0 && !instance_exists(obj_ghostcollectibles) && !global.tutorial_room)
+if (global.panic == true && global.fill > 0 && !instance_exists(obj_ghostcollectibles) && !global.tutorial_room)
 	global.fill -= 0.2;
-if (global.fill <= 0 && global.panic == 1 && !global.tutorial_room && !instance_exists(obj_pizzaface))
+if (global.fill <= 0 && global.panic == true && !global.tutorial_room && !instance_exists(obj_pizzaface))
 {
 	var s = string_letters(room_get_name(room));
 	if (string_copy(s, 1, 5) != "tower")

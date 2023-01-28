@@ -1,4 +1,4 @@
-if (obj_player.state != 39 && global.panic == 1)
+if (obj_player.state != 39 && global.panic == true)
 {
 	obj_player.hsp = 0;
 	sprite_index = spr_pizzaportalend;
