@@ -80,13 +80,13 @@ function window_to_gui_yscale()
 function get_resolution_width(resolution, aspect_ratio = 0)
 {
 	if (resolution < 0 || resolution >= array_length(global.resolutions[aspect_ratio]))
-		return get_resolution_width(1, aspect_ratio); // possibility of recursion...?
+		return get_resolution_width(1, aspect_ratio);
 	return global.resolutions[aspect_ratio][resolution][0];
 }
 function get_resolution_height(resolution, aspect_ratio = 0)
 {
 	if (resolution < 0 || resolution >= array_length(global.resolutions[aspect_ratio]))
-		return get_resolution_height(1, aspect_ratio); // possibility of recursion...?
+		return get_resolution_height(1, aspect_ratio);
 	return global.resolutions[aspect_ratio][resolution][1];
 }
 function get_resolution(resolution, aspect_ratio = 0)

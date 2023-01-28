@@ -22,9 +22,9 @@ function add_secrets_achievement()
 	});
 	b.levelarray = argument1;
 }
-function add_rank_achievements()
+function add_rank_achievements(argument0, argument1, argument2, argument3, argument4)
 {
-	var b = add_achievement_notify(concat(argument1, "ranks", argument0), -4, function()
+	var b = add_achievement_notify(concat(argument1, "ranks", argument0), -4, function(argument0)
 	{
 		var type = argument0[0];
 		if (type == 5)
@@ -57,9 +57,9 @@ function add_rank_achievements()
 	b.sprite = argument2;
 	b.index = argument3;
 }
-function add_boss_achievements()
+function add_boss_achievements(argument0, argument1, argument2, argument3)
 {
-	var b = add_achievement_notify(argument0, -4, function()
+	var b = add_achievement_notify(argument0, -4, function(argument0)
 	{
 		var type = argument0[0];
 		var arr = argument0[1];

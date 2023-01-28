@@ -19,14 +19,8 @@ function add_achievement_update()
 	array_push(obj_achievementtracker.achievements_update, q);
 	return q;
 }
-function add_achievement_notify()
+function add_achievement_notify(argument0, argument1, argument2, argument = true, argument4 = noone, argument5 = noone)
 {
-	if (argument3 == undefined)
-		argument3 = true;
-	if (argument4 == undefined)
-		argument4 = -4;
-	if (argument5 == undefined)
-		argument5 = -4;
 	var q = 
 	{
 		name: argument0,

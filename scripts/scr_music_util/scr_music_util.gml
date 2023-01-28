@@ -1,7 +1,5 @@
-function add_music()
+function add_music(argument0, argument1, argument2, argument3, argument4 = noone)
 {
-	if (argument4 == undefined)
-		argument4 = -4;
 	var b = 
 	{
 		continuous: argument3,
@@ -50,7 +48,7 @@ function stop_music()
 		fmod_event_instance_stop(panicmusicID, true);
 	}
 }
-function hub_state()
+function hub_state(argument0, argument1, argument2)
 {
 	var s = 0;
 	switch (argument0)
@@ -90,7 +88,7 @@ function hub_state()
 	}
 	fmod_event_instance_set_parameter(argument1, "hub", s, false);
 }
-function music_get_pos_wrap()
+function music_get_pos_wrap(argument0, argument1)
 {
 	while (argument0 > argument1)
 		argument0 -= argument1;

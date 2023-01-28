@@ -1,18 +1,18 @@
-function Approach()
+function Approach(a, b, amount)
 {
-	if (argument0 < argument1)
+	if (a < b)
 	{
-		argument0 += argument2;
-		if (argument0 > argument1)
-			return argument1;
+		a += amount;
+		if (a > b)
+			return b;
 	}
 	else
 	{
-		argument0 -= argument2;
-		if (argument0 < argument1)
-			return argument1;
+		a -= amount;
+		if (a < b)
+			return b;
 	}
-	return argument0;
+	return a;
 }
 function get_milliseconds()
 {

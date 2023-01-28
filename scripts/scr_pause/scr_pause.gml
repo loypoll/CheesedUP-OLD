@@ -1,7 +1,7 @@
-function scr_pauseicon_draw()
+function scr_pauseicon_draw(index, x, y)
 {
-	var icon = pause_icons[argument0];
-	draw_sprite_ext(icon.sprite_index, icon.image_index, argument1 + icon.sprite_xoffset + icon.shake_x, argument2 + icon.sprite_yoffset + icon.shake_y, 1, 1, 0, c_white, icon.image_alpha);
+	var icon = pause_icons[index];
+	draw_sprite_ext(icon.sprite_index, icon.image_index, x + icon.sprite_xoffset + icon.shake_x, y + icon.sprite_yoffset + icon.shake_y, 1, 1, 0, c_white, icon.image_alpha);
 }
 function scr_create_pause_image()
 {
@@ -31,24 +31,20 @@ function scr_delete_pause_image()
 	if (sprite_exists(guisprite))
 		sprite_delete(guisprite);
 }
-function scr_pauseicon_add()
+function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0)
 {
-	if (argument2 == undefined)
-		argument2 = 0;
-	if (argument3 == undefined)
-		argument3 = 0;
 	array_push(pause_icons, 
 	{
-		sprite_index: argument0,
-		image_index: argument1,
+		sprite_index: sprite,
+		image_index: index,
 		image_alpha: 0,
-		sprite_xoffset: argument2,
-		sprite_yoffset: argument3,
+		sprite_xoffset: xoffset,
+		sprite_yoffset: yoffset,
 		shake_x: 0,
 		shake_y: 0
 	});
 }
-function scr_pauseicons_update()
+function scr_pauseicons_update(argument0)
 {
 	for (var i = 0; i < array_length(pause_icons); i++)
 	{

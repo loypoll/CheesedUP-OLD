@@ -18,6 +18,7 @@ for (var i = 0; i < array_length(data_arr); i++)
 	global.game_snotty[i] = ini_read_real("Game", "finalsnotty", false);
 	global.game_palette[i] = ini_read_real("Game", "palette", 1);
 	var _texture = ini_read_string("Game", "palettetexture", "none");
+	global.game_palettetexture[i] = scr_get_texture_palette(_texture)
 	for (var j = 0; j < array_length(achievement_arr); j++)
 	{
 		if (ini_read_real("achievements", achievement_arr[j], false))
@@ -117,7 +118,7 @@ global.mrstickcutscene2 = -4;
 global.mrstickcutscene3 = -4;
 global.chateauswap = -4;
 global.warcutscene = -4;
-pal_swap_init_system(8);
+pal_swap_init_system(shd_pal_swapper);
 with (obj_player1)
 	state = 0;
 global.loadeditor = false;

@@ -17,13 +17,13 @@ panicstart = false;
 add_music(799, "event:/music/ending", -4, false);
 add_music(820, "event:/music/credits", -4, false);
 add_music(821, "event:/music/ending", -4, false);
-add_music(822, "event:/music/intro", -4, false, function()
+add_music(822, "event:/music/intro", -4, false, function(room, parameter)
 {
-	fmod_event_instance_set_parameter(argument1, "state", 0, true);
+	fmod_event_instance_set_parameter(parameter, "state", 0, true);
 });
-add_music(776, "event:/music/title", -4, false, function()
+add_music(776, "event:/music/title", -4, false, function(room, parameter)
 {
-	fmod_event_instance_set_parameter(argument1, "state", 0, true);
+	fmod_event_instance_set_parameter(parameter, "state", 0, true);
 });
 add_music(788, "event:/music/tutorial", "event:/music/pillarmusic", false);
 add_music(757, "event:/music/hub", "event:/music/pillarmusic", false, hub_state);
@@ -47,22 +47,22 @@ add_music(784, "event:/music/boss/fakepepambient", -4, false);
 add_music(785, "event:/music/pillarmusic", -4, false);
 add_music(515, "event:/music/boss/noise", -4, false);
 add_music(513, "event:/music/boss/pepperman", -4, false);
-add_music(659, "event:/music/boss/pizzaface", -4, false, function()
+add_music(659, "event:/music/boss/pizzaface", -4, false, function(room, parameter)
 {
-	if (argument0 == 659)
-		fmod_event_instance_set_parameter(argument1, "state", 0, true);
-	else if (argument0 == 787)
-		fmod_event_instance_set_parameter(argument1, "state", 5, false);
+	if (room == 659)
+		fmod_event_instance_set_parameter(parameter, "state", 0, true);
+	else if (room == 787)
+		fmod_event_instance_set_parameter(parameter, "state", 5, false);
 });
-add_music(24, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", false, function()
+add_music(24, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", false, function(room, parameter)
 {
 	var s = 0;
-	fmod_event_instance_set_parameter(argument1, "state", s, true);
+	fmod_event_instance_set_parameter(parameter, "state", s, true);
 });
-add_music(39, "event:/music/w1/medieval", "event:/music/w1/medievalsecret", false, function()
+add_music(39, "event:/music/w1/medieval", "event:/music/w1/medievalsecret", false, function(room, parameter)
 {
 	var s = -1;
-	switch (argument0)
+	switch (room)
 	{
 		case 39:
 		case 40:
@@ -77,12 +77,12 @@ add_music(39, "event:/music/w1/medieval", "event:/music/w1/medievalsecret", fals
 			break;
 	}
 	if (s != -1)
-		fmod_event_instance_set_parameter(argument1, "state", s, true);
+		fmod_event_instance_set_parameter(parameter, "state", s, true);
 });
-add_music(54, "event:/music/w1/ruin", "event:/music/w1/ruinsecret", false, function()
+add_music(54, "event:/music/w1/ruin", "event:/music/w1/ruinsecret", false, function(room, parameter)
 {
 	var s = -1;
-	switch (argument0)
+	switch (room)
 	{
 		case 54:
 		case 59:
@@ -93,13 +93,13 @@ add_music(54, "event:/music/w1/ruin", "event:/music/w1/ruinsecret", false, funct
 			break;
 	}
 	if (s != -1)
-		fmod_event_instance_set_parameter(argument1, "state", s, true);
+		fmod_event_instance_set_parameter(parameter, "state", s, true);
 });
 add_music(71, "event:/music/w1/dungeon", "event:/music/w1/dungeonsecret", false);
-add_music(719, "event:/music/w2/desert", "event:/music/w2/desertsecret", false, function()
+add_music(719, "event:/music/w2/desert", "event:/music/w2/desertsecret", false, function(room, parameter)
 {
 	var s = -1;
-	switch (argument0)
+	switch (room)
 	{
 		case 719:
 		case 800:
@@ -112,12 +112,12 @@ add_music(719, "event:/music/w2/desert", "event:/music/w2/desertsecret", false, 
 			break;
 	}
 	if (s != -1)
-		fmod_event_instance_set_parameter(argument1, "state", s, true);
+		fmod_event_instance_set_parameter(parameter, "state", s, true);
 });
-add_music(138, "event:/music/w2/farm", "event:/music/w2/farmsecret", false, function()
+add_music(138, "event:/music/w2/farm", "event:/music/w2/farmsecret", false, function(room, parameter)
 {
 	var s = -1;
-	switch (argument0)
+	switch (room)
 	{
 		case 138:
 		case 145:
@@ -128,15 +128,15 @@ add_music(138, "event:/music/w2/farm", "event:/music/w2/farmsecret", false, func
 			break;
 	}
 	if (s != -1)
-		fmod_event_instance_set_parameter(argument1, "state", s, true);
+		fmod_event_instance_set_parameter(parameter, "state", s, true);
 });
 add_music(123, "event:/music/w2/graveyard", "event:/music/w2/graveyardsecret", false);
 add_music(687, "event:/music/w2/saloon", "event:/music/w2/saloonsecret", false);
 add_music(706, "event:/music/w3/beach", "event:/music/w3/beachsecret", false);
-add_music(194, "event:/music/w3/forest", "event:/music/w3/forestsecret", false, function()
+add_music(194, "event:/music/w3/forest", "event:/music/w3/forestsecret", false, function(room, parameter)
 {
 	var s = -1;
-	switch (argument0)
+	switch (room)
 	{
 		case 194:
 		case 196:
@@ -151,14 +151,14 @@ add_music(194, "event:/music/w3/forest", "event:/music/w3/forestsecret", false, 
 			break;
 	}
 	if (s != -1)
-		fmod_event_instance_set_parameter(argument1, "state", s, true);
-});
+		fmod_event_instance_set_parameter(parameter, "state", s, true);
+}); 
 add_music(229, "event:/music/w3/golf", "event:/music/w3/golfsecret", false);
 add_music(241, "event:/music/w3/space", "event:/music/w3/spacesecret", false);
-add_music(441, "event:/music/w4/freezer", "event:/music/w4/freezersecret", false, function()
+add_music(441, "event:/music/w4/freezer", "event:/music/w4/freezersecret", false, function(room, parameter)
 {
 	var s = -1;
-	switch (argument0)
+	switch (room)
 	{
 		case 441:
 		case 454:
@@ -169,12 +169,12 @@ add_music(441, "event:/music/w4/freezer", "event:/music/w4/freezersecret", false
 			break;
 	}
 	if (s != -1)
-		fmod_event_instance_set_parameter(argument1, "state", s, true);
+		fmod_event_instance_set_parameter(parameter, "state", s, true);
 });
-add_music(672, "event:/music/w4/industrial", "event:/music/w4/industrialsecret", false, function()
+add_music(672, "event:/music/w4/industrial", "event:/music/w4/industrialsecret", false, function(room, parameter)
 {
 	var s = -1;
-	switch (argument0)
+	switch (room)
 	{
 		case 672:
 		case 673:
@@ -185,16 +185,16 @@ add_music(672, "event:/music/w4/industrial", "event:/music/w4/industrialsecret",
 			break;
 	}
 	if (s != -1)
-		fmod_event_instance_set_parameter(argument1, "state", s, true);
+		fmod_event_instance_set_parameter(parameter, "state", s, true);
 });
 add_music(830, "event:/music/w4/sewer", "event:/music/w4/sewersecret", false);
-add_music(560, "event:/music/w4/street", "event:/music/w4/streetsecret", false, function()
+add_music(560, "event:/music/w4/street", "event:/music/w4/streetsecret", false, function(room, parameter)
 {
-	if (argument0 == 560 || argument0 == 565)
-		fmod_event_instance_set_parameter(argument1, "state", 0, true);
-	else if (argument0 == 773)
-		fmod_event_instance_set_parameter(argument1, "state", 2, true);
-	if (argument0 == 566)
+	if (room == 560 || room == 565)
+		fmod_event_instance_set_parameter(parameter, "state", 0, true);
+	else if (room == 773)
+		fmod_event_instance_set_parameter(parameter, "state", 2, true);
+	if (room == 566)
 		fmod_set_parameter("musicmuffle", 1, false);
 	else
 		fmod_set_parameter("musicmuffle", 0, false);
