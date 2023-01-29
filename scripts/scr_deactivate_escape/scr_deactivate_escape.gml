@@ -4,7 +4,7 @@ function scr_deactivate_escape()
 	{
 		hitboxcreate = false;
 		boundbox = false;
-		event_perform(7, 4);
+		event_perform(ev_other, ev_room_start);
 	}
 	with (obj_hiddenobject)
 	{

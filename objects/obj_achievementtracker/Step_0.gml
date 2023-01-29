@@ -8,7 +8,7 @@ for (var i = 0; i < array_length(achievements_update); i++)
 			if (frames >= update_rate)
 			{
 				frames = 0;
-				self.update_func();
+				update_func();
 			}
 			frames++;
 		}
@@ -20,10 +20,10 @@ while (!ds_queue_empty(notify_queue))
 	for (i = 0; i < array_length(achievements_notify); i++)
 	{
 		var q = achievements_notify[i];
-		with (q)
+		with q
 		{
-			if (!unlocked)
-				self.func(b);
+			if !unlocked
+				func(b);
 		}
 	}
 }

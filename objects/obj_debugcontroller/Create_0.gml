@@ -165,7 +165,7 @@ if (DEBUG)
 		if (argument0 != undefined)
 		{
 			showcollisions = argument0;
-			event_perform(7, 4);
+			event_perform(ev_other, ev_room_start);
 		}
 	});
 	SHOW_HUD = new DebugCommand("showhud", "Shows the HUD", "<bool>", function(argument0)
@@ -245,7 +245,7 @@ if (DEBUG)
 		{
 			global.hardmode = argument0;
 			with (obj_hardmode)
-				event_perform(7, 4);
+				event_perform(ev_other, ev_room_start);
 		}
 	});
 	PLAYER_SET_STATE = new DebugCommand("player_set_state", "Changes the player state", "<states.state>", function(argument0)

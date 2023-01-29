@@ -10,7 +10,7 @@ switch (state)
 			{
 				vsp = -5;
 				state = 92;
-				event_perform(7, 4);
+				event_perform(ev_other, ev_room_start);
 			}
 			state = 92;
 		}

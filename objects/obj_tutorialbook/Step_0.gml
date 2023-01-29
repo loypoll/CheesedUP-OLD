@@ -2,12 +2,12 @@ if (global.panic && !donepanic)
 {
 	donepanic = true;
 	text = lang_get_value("getout");
-	event_perform(7, 4);
+	event_perform(ev_other, ev_room_start);
 }
 text_xscale = (SCREEN_WIDTH - 64) / sprite_get_width(spr_tutorialbubble);
 wave_timer += 20;
 if (text_xscale != text_oldxscale)
-	event_perform(7, 4);
+	event_perform(ev_other, ev_room_start);
 if (showgranny)
 {
 	if (voicecooldown > 1)

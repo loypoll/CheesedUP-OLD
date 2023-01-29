@@ -9,7 +9,7 @@ function scr_monster_deactivate(stopmusic = true)
 		if (grav < 0)
 			grav *= -1;
 		state = 217;
-		event_perform(7, 4);
+		event_perform(ev_other, ev_room_start);
 	}
 	with (obj_objecticontracker)
 	{

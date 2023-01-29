@@ -10,7 +10,7 @@ if (y == y_to)
 			bgsprite = other.bgsprite;
 			targetRoom = other.targetRoom;
 			group_arr = other.group_arr;
-			event_perform(7, 4);
+			event_perform(ev_other, ev_room_start);
 		}
 	}
 	else

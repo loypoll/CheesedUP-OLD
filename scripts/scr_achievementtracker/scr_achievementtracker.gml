@@ -1,19 +1,20 @@
-function add_achievement_update()
+function add_achievement_update(_name, _update_rate, _creation_code, _update_func)
 {
 	var q = 
 	{
-		name: argument0,
-		update_rate: argument1,
+		name: _name,
+		update_rate: _update_rate,
 		frames: 0,
 		update_func: -4,
 		creation_code: -4,
 		variables: ds_map_create(),
 		unlocked: false
 	};
-	q.update_func = method(q, argument3);
-	if (argument2 != -4)
+	q.update_func = method(q, _update_func);
+	
+	if (_creation_code != -4)
 	{
-		q.creation_code = method(q, argument2);
+		q.creation_code = method(q, _creation_code);
 		q.creation_code();
 	}
 	array_push(obj_achievementtracker.achievements_update, q);
@@ -50,11 +51,11 @@ function add_achievement_notify(argument0, argument1, argument2, argument = true
 	array_push(obj_achievementtracker.achievements_notify, q);
 	return q;
 }
-function notification_push()
+function notification_push(notif, array)
 {
-	trace("Pushing notification: ", argument0, " ", argument1);
+	trace("Pushing notification: ", notif, " ", array);
 	with (obj_achievementtracker)
-		ds_queue_enqueue(notify_queue, [argument0, argument1]);
+		ds_queue_enqueue(notify_queue, [notif, array]);
 }
 function achievement_add_variable(argument0, argument1, argument2 = false, argument3 = false)
 {
@@ -89,6 +90,7 @@ function achievement_unlock(argument0, argument1, argument2, argument3 = 0)
 			ds_queue_enqueue(obj_achievementtracker.unlock_queue, [argument2, argument3]);
 		}
 	}
+	
 	if (global.steam_api)
 	{
 		var steamach = ds_map_find_value(global.steam_achievements, argument0);
@@ -103,8 +105,9 @@ function achievement_unlock(argument0, argument1, argument2, argument3 = 0)
 	}
 	else
 		trace("Steam API not initialized!");
+	
 	with (obj_achievementviewer)
-		event_perform(7, 4);
+		event_perform(ev_other, ev_room_start);
 }
 function palette_unlock(argument0, argument1, argument2, argument3 = noone)
 {
@@ -186,14 +189,14 @@ function achievements_load()
 		}
 	}
 }
-function achievement_get_struct()
+function achievement_get_struct(_name)
 {
 	var l = obj_achievementtracker.achievements_update;
 	var b = -4;
 	for (var i = 0; i < array_length(l); i++)
 	{
 		var q = l[i];
-		if (q.name == argument0)
+		if (q.name == _name)
 		{
 			b = q;
 			break;
@@ -205,7 +208,7 @@ function achievement_get_struct()
 		for (i = 0; i < array_length(l); i++)
 		{
 			q = l[i];
-			if (q.name == argument0)
+			if (q.name == _name)
 			{
 				b = q;
 				break;

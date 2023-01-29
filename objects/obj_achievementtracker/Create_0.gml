@@ -3,6 +3,7 @@ if (instance_number(object_index) > 1)
 	instance_destroy();
 	exit;
 }
+
 global.steam_achievements = ds_map_create();
 ds_map_set(global.steam_achievements, "entrance1", "ACH_ENTRANCE_1");
 ds_map_set(global.steam_achievements, "entrance2", "ACH_ENTRANCE_2");
@@ -76,25 +77,30 @@ ds_map_set(global.steam_achievements, "pranks2", "ACH_PRANK_2");
 ds_map_set(global.steam_achievements, "pranks3", "ACH_PRANK_3");
 ds_map_set(global.steam_achievements, "pranks4", "ACH_PRANK_4");
 ds_map_set(global.steam_achievements, "pranks5", "ACH_PRANK_5");
+
 achievements_update = [];
 achievements_notify = [];
 notify_queue = ds_queue_create();
 unlock_queue = ds_queue_create();
-add_rank_achievements(1, "s", 3112, 0, ["entrance", "medieval", "ruin", "dungeon"]);
-add_rank_achievements(2, "s", 3112, 1, ["badland", "graveyard", "saloon", "farm"]);
-add_rank_achievements(3, "s", 3112, 2, ["plage", "forest", "space", "minigolf"]);
-add_rank_achievements(4, "s", 3112, 3, ["street", "sewer", "industrial", "freezer"]);
-add_rank_achievements(5, "s", 3112, 4, ["chateau", "kidsparty", "war"]);
-add_rank_achievements(1, "p", 3977, 0, ["entrance", "medieval", "ruin", "dungeon"]);
-add_rank_achievements(2, "p", 3977, 1, ["badland", "graveyard", "saloon", "farm"]);
-add_rank_achievements(3, "p", 3977, 2, ["plage", "forest", "space", "minigolf"]);
-add_rank_achievements(4, "p", 3977, 3, ["street", "sewer", "industrial", "freezer"]);
-add_rank_achievements(5, "p", 3977, 4, ["chateau", "kidsparty", "war"]);
-add_boss_achievements("pepperman", 513, 1123, 0);
-add_boss_achievements("vigilante", 514, 1123, 1);
-add_boss_achievements("noise", 515, 1123, 2);
-add_boss_achievements("fakepep", 783, 1123, 3);
-add_boss_achievements("pizzaface", 787, 1123, 4);
+
+// TODO
+add_rank_achievements(1, "s", spr_achievement_srank, 0, ["entrance", "medieval", "ruin", "dungeon"]);
+add_rank_achievements(2, "s", spr_achievement_srank, 1, ["badland", "graveyard", "saloon", "farm"]);
+add_rank_achievements(3, "s", spr_achievement_srank, 2, ["plage", "forest", "space", "minigolf"]);
+add_rank_achievements(4, "s", spr_achievement_srank, 3, ["street", "sewer", "industrial", "freezer"]);
+add_rank_achievements(5, "s", spr_achievement_srank, 4, ["chateau", "kidsparty", "war"]);
+add_rank_achievements(1, "p", spr_achievement_prank, 0, ["entrance", "medieval", "ruin", "dungeon"]);
+add_rank_achievements(2, "p", spr_achievement_prank, 1, ["badland", "graveyard", "saloon", "farm"]);
+add_rank_achievements(3, "p", spr_achievement_prank, 2, ["plage", "forest", "space", "minigolf"]);
+add_rank_achievements(4, "p", spr_achievement_prank, 3, ["street", "sewer", "industrial", "freezer"]);
+add_rank_achievements(5, "p", spr_achievement_prank, 4, ["chateau", "kidsparty", "war"]);
+
+add_boss_achievements("pepperman", boss_pepperman, spr_achievement_bosses, 0);
+add_boss_achievements("vigilante", boss_vigilante, spr_achievement_bosses, 1);
+add_boss_achievements("noise", boss_noise, spr_achievement_bosses, 2);
+add_boss_achievements("fakepep", boss_fakepep, spr_achievement_bosses, 3);
+add_boss_achievements("pizzaface", boss_pizzafacehub, spr_achievement_bosses, 4);
+
 add_achievement_notify("pal_unfunny", -4, function(argument0)
 {
 	var type = argument0[0];
@@ -102,12 +108,14 @@ add_achievement_notify("pal_unfunny", -4, function(argument0)
 	if (type == 50 && arr[0] >= 75)
 		palette_unlock(name, "unfunny", 3);
 }, false, "Palettes", "unfunny");
+
 add_achievement_notify("pal_mooney", -4, function(argument0)
 {
 	var type = argument0[0];
 	if (type == 57)
 		palette_unlock(name, "mooney", 15);
 }, false, "Palettes", "mooney");
+
 add_achievement_notify("pal_sage", -4, function(argument0)
 {
 	var type = argument0[0];
@@ -129,6 +137,7 @@ add_achievement_notify("pal_sage", -4, function(argument0)
 			palette_unlock(name, "sage", 5);
 	}
 }, false, "Palettes", "sage");
+
 add_achievement_notify("pal_money", -4, function(argument0)
 {
 	var type = argument0[0];
@@ -152,6 +161,7 @@ add_achievement_notify("pal_money", -4, function(argument0)
 			palette_unlock(name, "money", 4);
 	}
 }, false, "Palettes", "money");
+
 add_achievement_notify("pal_blood", -4, function(argument0)
 {
 	var type = argument0[0];
@@ -164,6 +174,7 @@ add_achievement_notify("pal_blood", -4, function(argument0)
 			palette_unlock(name, "blood", 6);
 	}
 }, false, "Palettes", "blood");
+
 add_achievement_notify("pal_tv", -4, function(argument0)
 {
 	var type = argument0[0];
@@ -191,6 +202,7 @@ add_achievement_notify("pal_tv", -4, function(argument0)
 			palette_unlock(name, "tv", 7);
 	}
 }, false, "Palettes", "tv");
+
 add_achievement_notify("pal_dark", -4, function(argument0)
 {
 	var type = argument0[0];
@@ -210,12 +222,14 @@ add_achievement_notify("pal_dark", -4, function(argument0)
 			palette_unlock(name, "dark", 8);
 	}
 }, false, "Palettes", "dark");
+
 add_achievement_notify("pal_shitty", -4, function(argument0)
 {
 	var type = argument0[0];
 	if (type == 52)
 		palette_unlock(name, "shitty", 9);
 }, false, "Palettes", "shitty");
+
 add_achievement_notify("pal_golden", -4, function(argument0)
 {
 	var type = argument0[0];
@@ -243,7 +257,8 @@ add_achievement_notify("pal_golden", -4, function(argument0)
 			palette_unlock(name, "golden", 10);
 	}
 }, false, "Palettes", "golden");
-add_achievement_notify("pal_garish", function(argument0)
+
+add_achievement_notify("pal_garish", function()
 {
 	achievement_add_variable("garish_count", 0, true, false);
 }, function(argument0)
@@ -256,27 +271,33 @@ add_achievement_notify("pal_garish", function(argument0)
 			palette_unlock(name, "garish", 11);
 	}
 }, false, "Palettes", "garish");
+
 add_achievement_notify("pal_funny", -4, function(argument0)
 {
 	var type = argument0[0];
 	var arr = argument0[1];
 	if (type == 50 && arr[0] >= 70 && arr[0] < 75)
-		palette_unlock(name, "funny", 12, 4008);
+		palette_unlock(name, "funny", 12, spr_peppattern1);
 }, false, "Palettes", "funny");
+
 add_achievement_notify("pal_itchy", -4, function(argument0)
 {
 	var type = argument0[0];
 	var arr = argument0[1];
-	if (global.leveltosave == "street" && type == 7 && arr[2] == 690)
-		palette_unlock(name, "itchy", 12, 473);
+	
+	// TODO check if this obj_grandpa (690) IS supposed to be an object
+	if (global.leveltosave == "street" && type == 7 && arr[2] == obj_grandpa)
+		palette_unlock(name, "itchy", 12, spr_peppattern2);
 }, false, "Palettes", "itchy");
+
 add_achievement_notify("pal_pizza", -4, function(argument0)
 {
 	var type = argument0[0];
 	if (type == 53)
-		palette_unlock(name, "pizza", 12, 2889);
+		palette_unlock(name, "pizza", 12, spr_peppattern3);
 }, false, "Palettes", "pizza");
-add_achievement_notify("pal_stripes", function(argument0)
+
+add_achievement_notify("pal_stripes", function()
 {
 	achievement_add_variable("stripes_count", 0, true, false);
 }, function(argument0)
@@ -286,9 +307,10 @@ add_achievement_notify("pal_stripes", function(argument0)
 	{
 		achievement_get_variable("stripes_count").value += 1;
 		if (achievement_get_variable("stripes_count").value >= 30)
-			palette_unlock(name, "stripes", 12, 1672);
+			palette_unlock(name, "stripes", 12, spr_peppattern4);
 	}
 }, false, "Palettes", "stripes");
+
 add_achievement_notify("pal_goldemanne", -4, function(argument0)
 {
 	var type = argument0[0];
@@ -298,6 +320,7 @@ add_achievement_notify("pal_goldemanne", -4, function(argument0)
 		var ach = ["pepperman", "vigilante", "noise", "fakepep", "pizzaface", "sranks1", "sranks2", "sranks3", "sranks4", "sranks5"];
 		for (var i = 0; i < array_length(lvl); i++)
 		{
+			var b = lvl[i]
 			for (var j = 0; j < 3; j++)
 				array_push(ach, concat(b, j + 1));
 		}
@@ -313,10 +336,11 @@ add_achievement_notify("pal_goldemanne", -4, function(argument0)
 		}
 		ini_close();
 		if (!_found)
-			palette_unlock(name, "goldemanne", 12, 3712);
+			palette_unlock(name, "goldemanne", 12, spr_peppattern5);
 	}
 }, false, "Palettes", "goldemanne");
-add_achievement_notify("pal_badbones", function(argument0)
+
+add_achievement_notify("pal_badbones", function()
 {
 	achievement_add_variable("badbones_count", 0, true, false);
 }, function(argument0)
@@ -326,9 +350,10 @@ add_achievement_notify("pal_badbones", function(argument0)
 	{
 		achievement_get_variable("badbones_count").value += 1;
 		if (achievement_get_variable("badbones_count").value >= 50)
-			palette_unlock(name, "bones", 12, 3940);
+			palette_unlock(name, "bones", 12, spr_peppattern6);
 	}
 }, false, "Palettes", "bones");
+
 add_achievement_notify("pal_pp", -4, function(argument0)
 {
 	var type = argument0[0];
@@ -343,6 +368,7 @@ add_achievement_notify("pal_pp", -4, function(argument0)
 			palette_unlock(name, "pp", 12, 3915);
 	}
 }, false, "Palettes", "pp");
+
 add_achievement_notify("pal_war", -4, function(argument0)
 {
 	var type = argument0[0];
@@ -356,6 +382,7 @@ add_achievement_notify("pal_war", -4, function(argument0)
 			palette_unlock(name, "war", 12, 844);
 	}
 }, false, "Palettes", "war");
+
 add_achievement_notify("pal_john", -4, function(argument0)
 {
 	var type = argument0[0];
@@ -363,10 +390,11 @@ add_achievement_notify("pal_john", -4, function(argument0)
 	if (type == 55 && global.file_minutes < 135)
 		palette_unlock(name, "john", 12, 3934);
 }, false, "Palettes", "john");
-add_achievement_notify("entrance1", function(argument0)
-{
+
+add_achievement_notify("entrance1", function() {
 	achievement_add_variable("entr1count", 0, false, true);
-}, function(argument0)
+},
+function(argument0)
 {
 	var type = argument0[0];
 	var arr = argument0[1];
@@ -377,32 +405,33 @@ add_achievement_notify("entrance1", function(argument0)
 			achievement_unlock(name, "John Gutted", 3592, 0);
 	}
 });
-add_achievement_notify("entrance2", function(argument0)
-{
-	
-}, function(argument0)
+
+add_achievement_notify("entrance2", function() {}, function(argument0)
 {
 	var type = argument0[0];
 	var arr = argument0[1];
 	if (type == 5 && arr[0] == "entrance" && (arr[2] < 2 || (arr[2] == 2 && arr[3] <= 0)))
 		achievement_unlock(name, "Let's Make This Quick", 3592, 1);
 });
-add_achievement_notify("entrance3", function(argument0)
-{
-	achievement_add_variable("entr3count", 0, false, true);
-}, function(argument0)
+
+add_achievement_notify("entrance3", function() {
+	achievement_add_variable("entr3count", 0, false, true)
+},
+function(argument0)
 {
 	var type = argument0[0];
 	var arr = argument0[1];
 	if ((type == 50 && arr[0] >= 99 && global.leveltosave == "entrance") || (type == 2 && global.combo >= 99 && global.leveltosave == "entrance"))
 		achievement_unlock(name, "Primate Rage", 3592, 2);
 });
+
 add_achievement_notify("medieval1", function(argument0)
 {
 	achievement_add_variable("med1count", 0, false, true);
 	achievement_add_variable("med1hurt", false, false, true);
 	achievement_add_variable("med1start", false, false, true);
-}, function(argument0)
+},
+function(argument0)
 {
 	var type = argument0[0];
 	var arr = argument0[1];
@@ -422,10 +451,11 @@ add_achievement_notify("medieval1", function(argument0)
 		}
 	}
 });
-add_achievement_notify("medieval2", function(argument0)
-{
+
+add_achievement_notify("medieval2", function(argument0) {
 	achievement_add_variable("med2count", 0, false, true);
-}, function(argument0)
+},
+function(argument0)
 {
 	var type = argument0[0];
 	var arr = argument0[1];
@@ -436,10 +466,9 @@ add_achievement_notify("medieval2", function(argument0)
 			achievement_unlock(name, "Spoonknight", 3473, 1);
 	}
 });
-add_achievement_notify("medieval3", function(argument0)
-{
-	
-}, function(argument0)
+
+add_achievement_notify("medieval3", function(argument0) {},
+function(argument0)
 {
 	var type = argument0[0];
 	if (type == 2 && global.leveltosave == "medieval" && (obj_player1.state == 5 || (obj_player1.tauntstoredstate == 5 && obj_player1.state == 61)) && (obj_player1.sprite_index == obj_player1.spr_tumblestart || obj_player1.sprite_index == obj_player1.spr_tumbleend || obj_player1.sprite_index == obj_player1.spr_tumble))
@@ -734,15 +763,13 @@ add_achievement_notify("forest2", function(argument0)
 			achievement_unlock(name, "Lumberjack", 3980, 1);
 	}
 });
-add_achievement_notify("forest3", function(argument0)
-{
-	
-}, function(argument0)
+add_achievement_notify("forest3", function() {},
+function(argument0)
 {
 	var type = argument0[0];
 	var arr = argument0[1];
-	if (type == 12 && global.leveltosave == "forest" && arr[1] == 660 && arr[3] == 639)
-		achievement_unlock(name, "Bullseye", 3980, 2);
+	if (type == 12 && global.leveltosave == "forest" && arr[1] == obj_noisegoblin && arr[3] == obj_noisegoblin_arrow)
+		achievement_unlock(name, "Bullseye", spr_achievement_forest, 2);
 });
 add_achievement_update("space1", 1, function(argument0)
 {

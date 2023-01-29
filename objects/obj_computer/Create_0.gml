@@ -55,7 +55,7 @@ update_text = function()
 	{
 		change_y = false;
 		text = str;
-		event_perform(7, 4);
+		event_perform(ev_other, ev_room_start);
 	}
 };
 scr_create_uparrowhitbox();
