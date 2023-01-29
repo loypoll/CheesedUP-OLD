@@ -7,5 +7,5 @@ with (obj_player)
 	state = 0;
 	targetRoom = tower_finalhallway;
 	targetDoor = "A";
-	instance_create_unique(0, 0, 979);
+	instance_create_unique(0, 0, obj_fadeout);
 }

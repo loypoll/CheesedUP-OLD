@@ -158,7 +158,7 @@ function scr_pepperman_arenaintro()
 		}
 	}
 	else
-		scr_boss_genericintro(3563);
+		scr_boss_genericintro(spr_pepperman_idle);
 }
 function scr_pepperman_walk()
 {

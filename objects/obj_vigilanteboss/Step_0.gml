@@ -86,7 +86,7 @@ switch (state)
 			destroyable = true;
 		break;
 }
-boss_update_pizzaheadKO(25, 1708);
+boss_update_pizzaheadKO(spr_bossfight_vigiHP, spr_bossfight_vigipalette);
 if (state != 279 && flameID != -4)
 {
 	instance_destroy(obj_flamethrowerhurtbox);
@@ -144,7 +144,7 @@ if (prevhp != elitehit)
 		if (pizzahead && elitehit <= 2 && !pizzaheadshot)
 			pizzaheadshot = true;
 		if (!pizzahead && elitehit < 5)
-			instance_create_unique(0, 0, 175);
+			instance_create_unique(0, 0, obj_johnecheese_spawner);
 		if (global.playerhit >= 3)
 		{
 			global.playerhit = 0;
@@ -174,8 +174,8 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
 		var bg2 = layer_background_get_id(lay2);
 		alarm[7] = 5;
 		layer_set_visible(lay3, true);
-		layer_background_change(bg2, 3814);
-		layer_background_change(bg1, 23);
+		layer_background_change(bg2, bg_vigiboss_dark)
+		layer_background_change(bg1, bg_vigilantearena_dark)
 		with (obj_drawcontroller)
 		{
 			use_dark = true;

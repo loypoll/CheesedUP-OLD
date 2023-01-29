@@ -1,8 +1,8 @@
 bossspr = spr_vsnoise;
 boss_hp = 16;
-vstitle = 1873;
+vstitle = spr_vstitle_noise
 boss_hpsprite = spr_bossfight_noiseHP;
-boss_palette = 1422;
+boss_palette = spr_bossfight_noisepalette
 boss_func = function()
 {
 	var eh = 0;

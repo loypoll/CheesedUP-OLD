@@ -121,7 +121,7 @@ function scr_pizzaface_p2_fall()
 				alarm[7] = 5;
 				layer_set_visible("Backgrounds_1", true);
 				layer_set_visible("Backgrounds_zigzag1", true);
-				layer_background_change(bg, 2500);
+				layer_background_change(bg, bg_pizzaface_p2_sky);
 				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
 				substate = 8;
 				sprite_index = spr_pizzahead_intro4;
@@ -131,7 +131,7 @@ function scr_pizzaface_p2_fall()
 					global.playerhit = 0;
 					player_hp = player_maxhp;
 					boss_hpsprite = spr_bossfight_pizzaheadHP;
-					boss_palette = 393;
+					boss_palette = spr_bossfight_pizzaheadpalette;
 				}
 				with (obj_player1)
 				{
@@ -147,7 +147,7 @@ function scr_pizzaface_p2_fall()
 			}
 			break;
 		case 8:
-			instance_create_unique(x, y, 152);
+			instance_create_unique(x, y, obj_pizzaheadTVspawner);
 			if (x != targetplayer.x && floor(image_index) >= 31)
 				image_xscale = sign(targetplayer.x - x);
 			if (!laugh_snd && floor(image_index) >= 52)
@@ -670,7 +670,7 @@ function boss_pizzahead_p2_phase1hurt()
 		pistolanim = -4;
 		sprite_index = spr_player_pistolshotend;
 	}
-	instance_create_unique(0, 0, 118);
+	instance_create_unique(0, 0, obj_bossdark);
 	if (buildup > 0)
 	{
 		obj_camera.lock = true;

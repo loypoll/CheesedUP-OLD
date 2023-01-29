@@ -26,7 +26,7 @@ if (floor(image_index) == (image_number - 1))
 			active = false;
 			break;
 		case spr_pizzaportal_disappear:
-			instance_create_unique(0, 0, 841);
+			instance_create_unique(0, 0, obj_lap2visual);
 			instance_destroy();
 			break;
 	}

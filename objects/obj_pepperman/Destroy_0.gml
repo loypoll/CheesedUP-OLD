@@ -1,12 +1,12 @@
 if (elitehit <= 0 && pizzahead && destroyable)
 {
-	instance_create_unique(0, 0, 235);
-	with (instance_create_unique(room_width / 4, room_height + 100, 474))
+	instance_create_unique(0, 0, obj_viginoiseyspawner);
+	with (instance_create_unique(room_width / 4, room_height + 100, obj_vigilanteboss))
 	{
 		with (obj_bosscontroller)
 		{
 			boss_hpsprite = spr_bossfight_vigiHP;
-			boss_palette = 1708;
+			boss_palette = spr_bossfight_vigipalette;
 		}
 		instance_destroy(spotlightID);
 		pizzahead = true;

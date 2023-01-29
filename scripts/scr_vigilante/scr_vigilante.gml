@@ -219,7 +219,7 @@ function scr_vigilante_phase1hurt()
 		sprite_index = spr_player_pistolshotend;
 		invtime = 30;
 	}
-	instance_create_unique(0, 0, 118);
+	instance_create_unique(0, 0, obj_bossdark)
 	if (buildup > 0)
 	{
 		obj_camera.lock = true;
@@ -859,8 +859,8 @@ function scr_vigilante_duel()
 					var bg1 = layer_background_get_id(lay1);
 					var bg2 = layer_background_get_id(lay2);
 					layer_set_visible(lay3, true);
-					layer_background_change(bg2, 3337);
-					layer_background_change(bg1, 1846);
+					layer_background_change(bg2, bg_vigiboss)
+					layer_background_change(bg1, bg_vigilantearena)
 					obj_bosscontroller.alarm[1] = 5;
 					with (obj_drawcontroller)
 						use_dark = false;

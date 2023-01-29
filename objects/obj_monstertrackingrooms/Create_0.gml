@@ -14,22 +14,22 @@ sound_pos = new Vector2(-1, -1);
 sound_buffer = 0;
 room_grid = ds_grid_create(map_width, map_height);
 ds_grid_clear(room_grid, -4);
-ds_grid_add(room_grid, 0, 0, room_get_name(597));
-ds_grid_add(room_grid, 1, 0, room_get_name(598));
-ds_grid_add(room_grid, 2, 0, room_get_name(599));
-ds_grid_add(room_grid, 3, 0, room_get_name(kidsparty_floor1_4));
-ds_grid_add(room_grid, 0, 1, room_get_name(600));
-ds_grid_add(room_grid, 1, 1, room_get_name(601));
-ds_grid_add(room_grid, 2, 1, room_get_name(602));
-ds_grid_add(room_grid, 3, 1, room_get_name(kidsparty_floor2_4));
-ds_grid_add(room_grid, 0, 2, room_get_name(603));
-ds_grid_add(room_grid, 1, 2, room_get_name(604));
-ds_grid_add(room_grid, 2, 2, room_get_name(605));
-ds_grid_add(room_grid, 3, 2, room_get_name(kidsparty_floor3_4));
-ds_grid_add(room_grid, 0, 3, room_get_name(606));
-ds_grid_add(room_grid, 1, 3, room_get_name(607));
-ds_grid_add(room_grid, 2, 3, room_get_name(608));
-ds_grid_add(room_grid, 3, 3, room_get_name(kidsparty_floor4_4));
+ds_grid_add(room_grid, 0, 0, room_get_name(kidsparty_floor1_1))
+ds_grid_add(room_grid, 1, 0, room_get_name(kidsparty_floor1_2))
+ds_grid_add(room_grid, 2, 0, room_get_name(kidsparty_floor1_3))
+ds_grid_add(room_grid, 3, 0, room_get_name(kidsparty_floor1_4))
+ds_grid_add(room_grid, 0, 1, room_get_name(kidsparty_floor2_1))
+ds_grid_add(room_grid, 1, 1, room_get_name(kidsparty_floor2_2))
+ds_grid_add(room_grid, 2, 1, room_get_name(kidsparty_floor2_3))
+ds_grid_add(room_grid, 3, 1, room_get_name(kidsparty_floor2_4))
+ds_grid_add(room_grid, 0, 2, room_get_name(kidsparty_floor3_1))
+ds_grid_add(room_grid, 1, 2, room_get_name(kidsparty_floor3_2))
+ds_grid_add(room_grid, 2, 2, room_get_name(kidsparty_floor3_3))
+ds_grid_add(room_grid, 3, 2, room_get_name(kidsparty_floor3_4))
+ds_grid_add(room_grid, 0, 3, room_get_name(kidsparty_floor4_1))
+ds_grid_add(room_grid, 1, 3, room_get_name(kidsparty_floor4_2))
+ds_grid_add(room_grid, 2, 3, room_get_name(kidsparty_floor4_3))
+ds_grid_add(room_grid, 3, 3, room_get_name(kidsparty_floor4_4))
 monster_alarm[0] = 300;
 monster_pos[0] = new Vector2(3, 0);
 monster_dir[0] = new Vector2(1, 0);
@@ -174,7 +174,7 @@ function blob_create()
 }
 function puppet_create()
 {
-	instance_create_unique(0, 0, 991);
+	instance_create_unique(0, 0, obj_puppetmonster);
 }
 function hillbilly_create()
 {

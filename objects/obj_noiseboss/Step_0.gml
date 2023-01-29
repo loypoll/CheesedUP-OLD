@@ -112,7 +112,7 @@ if (sprite_index == spr_playerN_fightball)
 			vsp = -irandom_range(5, 10);
 	}
 }
-boss_update_pizzaheadKO(2598, 1422);
+boss_update_pizzaheadKO(spr_bossfight_noiseHP, spr_bossfight_noisepalette);
 with (obj_noisey)
 {
 	var t = id;

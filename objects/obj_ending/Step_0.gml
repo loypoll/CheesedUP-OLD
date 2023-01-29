@@ -71,7 +71,7 @@ switch (state)
 						{
 							depth = -50;
 							alarm[0] = 1200;
-							instance_create_unique(0, 0, 68);
+							instance_create_unique(0, 0, obj_credits);
 						}
 					}
 				}

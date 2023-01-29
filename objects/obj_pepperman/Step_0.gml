@@ -103,7 +103,7 @@ if (!pizzahead && wastedhits >= 10 && phase == 1 && state == 134 && flickertime 
 	var bg2 = layer_background_get_id(lay2);
 	alarm[7] = 5;
 	layer_set_visible(lay3, true);
-	layer_background_change(bg2, 4115);
+	layer_background_change(bg2, bg_peppermanboss2)
 	layer_hspeed(lay1, 5);
 	elitehit = 10;
 	wastedhits = 0;

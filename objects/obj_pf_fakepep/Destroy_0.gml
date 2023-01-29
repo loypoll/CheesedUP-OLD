@@ -9,7 +9,7 @@ if (elitehit <= 0)
 		with (obj_bosscontroller)
 		{
 			boss_hpsprite = spr_bossfight_pizzaheadHP;
-			boss_palette = 393;
+			boss_palette = spr_bossfight_pizzaheadpalette
 		}
 	}
 }

@@ -31,7 +31,7 @@ add_option_press(categories, 2, "option_game", function()
 add_option_press(categories, 3, "option_controls", function()
 {
 	obj_option.key_jump = false;
-	instance_create_unique(0, 0, 185);
+	instance_create_unique(0, 0, obj_keyconfig);
 });
 array_push(menus, categories);
 var audio_menu = create_menu_fixed(1, 1, 150, 40);

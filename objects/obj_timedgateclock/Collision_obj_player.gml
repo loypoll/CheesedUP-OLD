@@ -15,5 +15,5 @@ with (obj_timedgateclock)
 global.timedgatetimer = true;
 global.timedgatetime = time;
 global.timedgatetimemax = time;
-with (instance_create_unique(obj_player1.x, obj_player1.y, 1030))
+with (instance_create_unique(obj_player1.x, obj_player1.y, obj_clock))
 	objectID = obj_player1.id;

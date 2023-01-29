@@ -170,7 +170,7 @@ function scr_noise_arenaintro()
 		}
 	}
 	else
-		scr_boss_genericintro(1338);
+		scr_boss_genericintro(spr_playerN_idle);
 }
 function scr_noise_do_hurt()
 {
@@ -364,7 +364,7 @@ function scr_noise_mach2()
 		sprite_index = spr_playerN_golfidle;
 		image_index = 0;
 		image_xscale = 1;
-		with (instance_create_unique(736, 416, 694))
+		with (instance_create_unique(736, 416, obj_baddiespawner))
 		{
 			image_xscale = -1;
 			content = obj_noisebigbomb;

@@ -205,7 +205,7 @@ function scr_pizzaface_arenaintro()
 		x = room_width * 0.75;
 		y = (room_height / 2) - 100;
 		vsp = 0;
-		scr_boss_genericintro(2930);
+		scr_boss_genericintro(spr_pizzaface);
 		with (obj_player)
 		{
 			sprite_index = spr_3hpidle;

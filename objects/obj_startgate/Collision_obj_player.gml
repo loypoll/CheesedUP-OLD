@@ -77,7 +77,7 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 			}
 			else
 			{
-				with (instance_create_unique(0, 0, 979))
+				with (instance_create_unique(0, 0, obj_fadeout))
 				{
 					restarttimer = true;
 					group_arr = gate.group_arr;
@@ -86,7 +86,7 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 		}
 		else
 		{
-			with (instance_create_unique(0, 0, 979))
+			with (instance_create_unique(0, 0, obj_fadeout))
 				restarttimer = true;
 		}
 	}

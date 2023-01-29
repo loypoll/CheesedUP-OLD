@@ -342,7 +342,7 @@ function scr_fakepepboss_arenaintro()
 		}
 	}
 	else
-		scr_boss_genericintro(2674);
+		scr_boss_genericintro(spr_fakepeppino_idle);
 }
 function scr_fakepepboss_walk()
 {

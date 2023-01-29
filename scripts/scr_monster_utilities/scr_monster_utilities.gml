@@ -80,7 +80,7 @@ function scr_monster_activate()
 			image_speed = 0.35;
 		}
 	}
-	instance_create_unique(0, 0, 176);
+	instance_create_unique(0, 0, obj_kidspartybg);
 	with (obj_music)
 	{
 		if (!global.panic && !instance_exists(obj_ghostcollectibles) && !fmod_event_instance_is_playing(kidspartychaseID))

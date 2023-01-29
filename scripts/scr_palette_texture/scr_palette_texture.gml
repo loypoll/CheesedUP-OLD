@@ -43,7 +43,7 @@ function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col 
 	if texture == noone
 		exit;
 	
-	if event_type == 8 && event_number == 64
+	if event_type == 8 && event_number == ev_gui
 		gui = true;
 	else
 		gui = false;
