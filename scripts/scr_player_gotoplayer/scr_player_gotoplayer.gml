@@ -15,7 +15,7 @@ function scr_player_gotoplayer()
 		if (distance_to_object(playerid) < 16)
 		{
 			create_particle(x, y, 9, 0);
-			instance_create_unique(playerid.x, playerid.y, 348);
+			instance_create_unique(playerid.x, playerid.y, obj_coopplayerfollow);
 		}
 	}
 	else

@@ -7,16 +7,16 @@ obj_savesystem.ini_str = ini_close();
 if (_first)
 {
 	bossspr = spr_vsfakepep2;
-	vstitle = 230;
+	vstitle = spr_vstitle_fakepep2
 }
 else
 {
 	bossspr = spr_vsfakepep;
-	vstitle = 1399;
+	vstitle = spr_vstitle_fakepep;
 }
 boss_hp = 10;
 boss_hpsprite = spr_bossfight_fakepephp;
-boss_palette = 4045;
+boss_palette = spr_bossfight_fakepeppalette
 boss_columnmax = 3;
 boss_hp_x += 50;
 boss_func = function()

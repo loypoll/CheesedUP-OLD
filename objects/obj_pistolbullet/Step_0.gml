@@ -59,8 +59,8 @@ for (var i = 0; i < array_length(collision_list); i++)
 						if (elitehit <= 1 && phase == 1)
 						{
 							fmod_event_one_shot("event:/sfx/misc/blackoutpunch");
-							instance_create_unique(0, 0, 121);
-							instance_create_unique(0, 0, 342);
+							instance_create_unique(0, 0, obj_blackoutline);
+							instance_create_unique(0, 0, obj_superattackeffect);
 							state = 273;
 							sprite_index = spr_playerV_hurt;
 							hsp = 0;
@@ -108,8 +108,8 @@ for (var i = 0; i < array_length(collision_list); i++)
 						if (elitehit <= 1)
 						{
 							fmod_event_one_shot("event:/sfx/misc/blackoutpunch");
-							instance_create_unique(0, 0, 342);
-							instance_create_unique(0, 0, 121);
+							instance_create_unique(0, 0, obj_superattackeffect);
+							instance_create_unique(0, 0, obj_blackoutline);
 							state = 273;
 							sprite_index = spr_pizzahead_hurt;
 							hsp = 0;

@@ -12,7 +12,7 @@ with (other)
 		create_transformation_tip(lang_get_value("shotguntip"), "shotgun");
 		if (room == war_1)
 		{
-			with (instance_create_unique(0, 0, 422))
+			with (instance_create_unique(0, 0, obj_wartimer))
 			{
 				minutes = 0;
 				seconds = 40;

@@ -71,7 +71,7 @@ switch (state)
 		scr_enemy_pummel();
 		break;
 }
-boss_update_pizzaheadKO(2078, 4045);
+boss_update_pizzaheadKO(spr_bossfight_fakepephp, spr_bossfight_fakepeppalette);
 if (phase == 2 && state != 138 && state != 275)
 {
 	if (deformed_cooldown > 0)
@@ -166,7 +166,7 @@ if (wastedhits >= 6 && !pizzahead)
 			var bg2 = layer_background_get_id(lay2);
 			alarm[7] = 5;
 			layer_set_visible(lay3, true);
-			layer_background_change(bg2, 3890);
+			layer_background_change(bg2, bg_fakepeppino_phase2)
 			scr_sleep(25);
 		}
 	}
@@ -181,7 +181,7 @@ if (wastedhits >= 6 && !pizzahead)
 		instance_destroy(obj_hppickup);
 		lay2 = layer_get_id("Backgrounds_Ring");
 		bg2 = layer_background_get_id(lay2);
-		layer_background_change(bg2, 2133);
+		layer_background_change(bg2, spr_fakepeppino_arena2)
 	}
 }
 if (state == 138)

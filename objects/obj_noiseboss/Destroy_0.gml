@@ -40,7 +40,7 @@ if (pizzahead && elitehit <= 0 && destroyable)
 	with (obj_bosscontroller)
 	{
 		boss_hpsprite = spr_bossfight_fakepephp;
-		boss_palette = 4045;
+		boss_palette = spr_bossfight_fakepeppalette
 	}
 }
 if (elitehit <= 0 && destroyable)

@@ -224,7 +224,7 @@ function scr_boss_do_hurt_phase2(object, inv_time = 100)
 		alarm[5] = -1;
 		alarm[6] = -1;
 		alarm[8] = -1;
-		event_perform(2, 7);
+		event_perform(ev_alarm, 7);
 		sprite_index = spr_finishingblow1;
 		image_index = 0;
 		hitX = x;
@@ -237,8 +237,8 @@ function scr_boss_do_hurt_phase2(object, inv_time = 100)
 	camzoom = 1;
 	flashbuffer = inv_time - 40;
 	fmod_event_one_shot("event:/sfx/misc/blackoutpunch");
-	instance_create_unique(0, 0, 121);
-	instance_create_unique(0, 0, 342);
+	instance_create_unique(0, 0, obj_blackoutline)
+    instance_create_unique(0, 0, obj_superattackeffect)
 	image_xscale = -object.xscale;
 	instance_create(0, 0, obj_bossdark);
 }

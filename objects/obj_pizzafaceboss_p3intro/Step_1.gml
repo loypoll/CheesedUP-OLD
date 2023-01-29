@@ -372,11 +372,11 @@ switch (introstate)
 					boss_hp = 8;
 					boss_prevhp = boss_hp;
 					boss_hpsprite = spr_bossfight_pepperhp;
-					boss_palette = 3371;
+					boss_palette = spr_bossfight_pepperpalette;
 				}
 				instance_destroy(obj_pizzaheadTV_bg);
 				instance_destroy(obj_pizzaheadTVspawner);
-				instance_create_unique(0, 0, 358);
+				instance_create_unique(0, 0, obj_pizzaface_thunderdark);
 				var lay = layer_get_id("Backgrounds_2");
 				var lay1 = layer_get_id("Backgrounds_scroll");
 				var lay2 = layer_get_id("Backgrounds_scroll2");
@@ -386,9 +386,9 @@ switch (introstate)
 				alarm[7] = 5;
 				layer_set_visible("Backgrounds_zigzag1", false);
 				layer_set_visible("Backgrounds_rain", true);
-				layer_background_change(bg, 163);
-				layer_background_change(bg2, 3781);
-				layer_background_change(bg1, 1729);
+				layer_background_change(bg, bg_pizzaface_p3_sky)
+				layer_background_change(bg2, bg_pizzaface_p3_sky1)
+				layer_background_change(bg1, bg_pizzaface_p3_sky2)
 				layer_hspeed(lay2, 2);
 				layer_hspeed(lay1, 1.5);
 			}

@@ -83,7 +83,7 @@ switch (state)
 				state = 98;
 				sprite_index = spr_victory;
 			}
-			with (instance_create_unique(0, 0, 979))
+			with (instance_create_unique(0, 0, obj_fadeout))
 				restarttimer = true;
 		}
 		break;

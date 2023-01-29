@@ -1,6 +1,6 @@
 bossspr = spr_vspepperman;
 boss_hp = 20;
-vstitle = 2472;
+vstitle = spr_vstitle_pepperman
 boss_columnmax = 5;
 boss_hp_x -= 50;
 boss_func = function()

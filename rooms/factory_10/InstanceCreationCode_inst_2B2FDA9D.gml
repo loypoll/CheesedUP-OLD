@@ -1,2 +1,2 @@
-objectlist = [1117, 816];
+objectlist = [obj_fakesuperspring, obj_dashpad];
 delaymax = 80;

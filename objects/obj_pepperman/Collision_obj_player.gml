@@ -39,8 +39,8 @@ else if (state == 268 && ministate != 8 && (other.instakillmove || other.state =
 	layer_set_visible(lay3, true);
 	var bg1 = layer_background_get_id(lay1);
 	var bg2 = layer_background_get_id(lay2);
-	layer_background_change(bg1, 206);
-	layer_background_change(bg2, 4001);
+	layer_background_change(bg1, bg_peppermanbosscloud1)
+	layer_background_change(bg2, bg_peppermanboss1)
 	layer_hspeed(lay1, 1);
 	obj_bosscontroller.alarm[1] = 5;
 	scr_sleep(25);

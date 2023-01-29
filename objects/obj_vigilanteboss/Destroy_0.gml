@@ -21,7 +21,7 @@ if (elitehit <= 0 && pizzahead && destroyable)
 		with (obj_bosscontroller)
 		{
 			boss_hpsprite = spr_bossfight_noiseHP;
-			boss_palette = 1422;
+			boss_palette = spr_bossfight_noisepalette
 		}
 		instance_destroy(spotlightID);
 		pizzahead = true;

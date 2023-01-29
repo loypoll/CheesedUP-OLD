@@ -25,7 +25,7 @@ if (DEBUG)
 	});
 	ROOMCHECK = new DebugCommand("roomcheck", "", "", function()
 	{
-		instance_create_unique(0, 0, 334);
+		instance_create_unique(0, 0, obj_roomcheck);
 	});
 	UNLOCK_TOPPINS = new DebugCommand("unlock_toppins", "Unlocks the toppins of the given level", "<level_name_ini>", function()
 	{

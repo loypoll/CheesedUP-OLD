@@ -82,7 +82,7 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 			global.fill = 4056;
 			break;
 	}
-	instance_create_unique(0, 0, 346);
+	instance_create_unique(0, 0, obj_hungrypillarflash);
 	with (obj_tv)
 		chunkmax = global.fill;
 	with (obj_escapecollect)

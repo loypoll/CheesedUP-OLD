@@ -1,6 +1,6 @@
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
-	instance_create_unique(0, 0, 422);
+	instance_create_unique(0, 0, obj_wartimer);
 	fmod_event_one_shot("event:/sfx/ui/wartimerup");
 	with (obj_wartimer)
 	{

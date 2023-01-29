@@ -88,7 +88,7 @@ if (prevhp != elitehit)
 			instance_create(obj_player1.x, -15, obj_hppickup);
 		}
 		if (wastedhits >= 3 && elitehit > 0)
-			instance_create_unique(room_width / 2, -200, 490);
+			instance_create_unique(room_width / 2, -200, obj_pizzahead_haywire);
 	}
 	prevhp = elitehit;
 }
