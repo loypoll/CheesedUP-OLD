@@ -17,7 +17,7 @@ function scr_pizzaball_normal()
 			if (place_meeting(x, y - other.vsp, other.id))
 				instance_destroy();
 		}
-		var num = instance_place_list(x + hsp, y, 745, global.instancelist, false);
+		var num = instance_place_list(x + hsp, y, obj_enemyblock, global.instancelist, false);
 		for (var i = 0; i < num; i++)
 		{
 			var b = ds_list_find_value(global.instancelist, i);

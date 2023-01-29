@@ -12,7 +12,7 @@ function scr_solid(_x, _y)
 	}
 	if (y > old_y && place_meeting(x, y, obj_platform))
 	{
-		var num = instance_place_list(x, y, 722, global.instancelist, false);
+		var num = instance_place_list(x, y, obj_platform, global.instancelist, false);
 		var _collided = false;
 		for (var i = 0; i < num; i++)
 		{

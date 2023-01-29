@@ -38,7 +38,7 @@ function scr_solid_player()
 	}
 	if (y > old_y && state != 93 && place_meeting(x, y, obj_platform))
 	{
-		num = instance_place_list(x, y, 722, global.instancelist, false);
+		num = instance_place_list(x, y, obj_platform, global.instancelist, false);
 		_collided = false;
 		for (i = 0; i < num; i++)
 		{

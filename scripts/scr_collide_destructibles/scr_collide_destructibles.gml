@@ -114,7 +114,7 @@ function scr_collide_destructibles()
 				jumpstop = false;
 			}
 		}
-		num = instance_place_list(x, y + 1, 811, global.instancelist, false);
+		num = instance_place_list(x, y + 1, obj_destructibleplatform, global.instancelist, false);
 		for (var k = 0; k < num; k++)
 		{
 			with (ds_list_find_value(global.instancelist, k))
