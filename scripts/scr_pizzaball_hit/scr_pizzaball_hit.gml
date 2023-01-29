@@ -11,7 +11,7 @@ function scr_pizzaball_hit()
 		var s = -1;
 		with (instance_nearest(x, y, obj_player))
 			s = tauntstoredstate;
-		notification_push(16, [530]);
+		notification_push(16, [obj_player1]);
 		var p = obj_player1.id;
 		if (s == 104 || (p.sprite_index == p.spr_machslidestart || p.sprite_index == p.spr_machslide || p.sprite_index == p.spr_machslideend))
 			scr_pizzaball_go_to_thrown(hithsp * 0.5, hitvsp * 0.5);
@@ -22,7 +22,7 @@ function scr_pizzaball_hit()
 }
 function scr_pizzaball_grabbed()
 {
-	var pl = (grabbedby == 1) ? 530 : 529;
+	var pl = (grabbedby == 1) ? obj_player1 : obj_player2;
 	with (pl)
 	{
 		sprite_index = spr_golfidle;

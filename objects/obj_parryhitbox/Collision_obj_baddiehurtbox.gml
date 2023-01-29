@@ -1,4 +1,4 @@
-var p = 530;
+var p = obj_player1;
 with (other)
 {
 	if (team != 1)

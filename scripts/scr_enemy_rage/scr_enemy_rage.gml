@@ -121,9 +121,9 @@ function scr_enemy_rage()
 				sprite_index = spr_minijohn_rage2;
 			if (grounded && vsp > 0)
 			{
-				var targetplayer = 530;
+				var targetplayer = obj_player1;
 				if (obj_player1.spotlight == 0)
-					targetplayer = 529;
+					targetplayer = obj_player2;
 				movespeed = 4;
 				image_xscale = -sign(x - targetplayer.x);
 				state = 141;

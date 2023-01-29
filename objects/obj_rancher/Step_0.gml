@@ -47,7 +47,7 @@ if (state != 138)
 	thrown = false;
 if (bombreset > 0)
 	bombreset--;
-var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : 530;
+var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (sprite_index != scaredspr && x != targetplayer.x && state != 129 && bombreset <= 0 && grounded && targetplayer.state != 16 && targetplayer.state != 17)
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 100) && y >= (targetplayer.y - 100)))

@@ -2,7 +2,7 @@ switch (state)
 {
 	case 0:
 		image_speed = 0.35;
-		targetplayer = global.coop ? instance_nearest(x, y, obj_player) : 530;
+		targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 		var _g = distance_to_point(targetplayer.x, targetplayer.y);
 		if (_g < 150)
 			movespeed = 3;
@@ -17,7 +17,7 @@ switch (state)
 		if (place_meeting(x, y, obj_player1) || x > obj_player1.x)
 		{
 			var s = obj_player1.state;
-			scr_hurtplayer(530);
+			scr_hurtplayer(obj_player1);
 			if (s != obj_player1.state)
 			{
 				state = 135;

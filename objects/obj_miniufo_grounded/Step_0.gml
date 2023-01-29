@@ -67,7 +67,7 @@ if (state != 138)
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 scr_scareenemy();
-var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : 530;
+var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (bombreset > 0)
 	bombreset--;
 if (x != targetplayer.x && state != 129 && bombreset == 0 && grounded)

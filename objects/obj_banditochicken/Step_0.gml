@@ -43,7 +43,7 @@ if (state != 138)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : 530;
+var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (state == 134 || state == 126)
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 160) && y >= (targetplayer.y - 160)))

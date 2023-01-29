@@ -159,9 +159,9 @@ if (state != 141)
 	momentum = 0;
 if (state == 134 || state == 126)
 {
-	var targetplayer = 530;
+	var targetplayer = obj_player1;
 	if (obj_player1.spotlight == 0)
-		targetplayer = 529;
+		targetplayer = obj_player2;
 	movespeed = 4;
 	if (targetplayer.x != x)
 		image_xscale = -sign(x - targetplayer.x);

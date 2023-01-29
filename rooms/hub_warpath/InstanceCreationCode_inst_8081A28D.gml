@@ -9,7 +9,7 @@ if (global.levelcomplete && !global.warcutscene)
 	};
 	bombactor = -4;
 	planeactor = -4;
-	scene_info = [[cutscene_entrance_start], [cutscene_waitfor_sprite, 530], [cutscene_player_idleanim], [cutscene_change_room, 663], [cutscene_set_player_visible, false], [cutscene_player_float, true], [cutscene_set_player_pos, 100, 100], [cutscene_wait, 20], [function()
+	scene_info = [[cutscene_entrance_start], [cutscene_waitfor_sprite, obj_player1], [cutscene_player_idleanim], [cutscene_change_room, 663], [cutscene_set_player_visible, false], [cutscene_player_float, true], [cutscene_set_player_pos, 100, 100], [cutscene_wait, 20], [function()
 	{
 		planeactor = instance_create(1056, 128, obj_actor);
 		planeactor.image_speed = 0.35;

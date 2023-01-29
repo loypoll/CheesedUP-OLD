@@ -1,3 +1,3 @@
 targetRoom = city_9;
 targetDoor = "B";
-targetplayer = 530;
+targetplayer = obj_player1;

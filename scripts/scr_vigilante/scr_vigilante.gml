@@ -834,7 +834,7 @@ function scr_vigilante_duel()
 				if (!duelplayer)
 				{
 					fmod_event_one_shot("event:/sfx/vigilante/finalshot");
-					scr_hurtplayer(530);
+					scr_hurtplayer(obj_player1);
 					duelphase++;
 					destroyable = false;
 					sprite_index = spr_playerV_revolvershoot;

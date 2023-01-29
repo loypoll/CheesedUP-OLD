@@ -2,9 +2,9 @@ function scr_enemy_chase()
 {
 	if (object_index == obj_minijohn || object_index == obj_banditochicken || object_index == obj_golfdemon)
 	{
-		var targetplayer = 530;
+		var targetplayer = obj_player1;
 		if (obj_player1.spotlight == 0)
-			targetplayer = 529;
+			targetplayer = obj_player2;
 		if (x != targetplayer.x && !(image_xscale == -sign(x - targetplayer.x)))
 		{
 			movespeed = 4;

@@ -3,7 +3,7 @@ if (!global.pizzadelivery && global.pizzasdelivered < 5 && global.panic == 0)
 	if (!global.failcutscene)
 	{
 		if (global.pizzasdelivered <= 0)
-			scene_info = [[cutscene_set_sprite, 1036, 2971, 0.35, -1], [cutscene_gustavo_start], [cutscene_wait, 30], [cutscene_set_sprite, 1036, 2962, 0.35, -1], [cutscene_wait, 10], [cutscene_move_player, 530, obj_gustavo.x - 48, 6, 16], [cutscene_set_sprite, 530, 2951, 0.35, 1], [cutscene_set_sprite, 1036, 2963, 0.35, -1], [cutscene_gustavo_end]];
+			scene_info = [[cutscene_set_sprite, 1036, 2971, 0.35, -1], [cutscene_gustavo_start], [cutscene_wait, 30], [cutscene_set_sprite, 1036, 2962, 0.35, -1], [cutscene_wait, 10], [cutscene_move_player, obj_player1, obj_gustavo.x - 48, 6, 16], [cutscene_set_sprite, obj_player1, 2951, 0.35, 1], [cutscene_set_sprite, 1036, 2963, 0.35, -1], [cutscene_gustavo_end]];
 		else
 			scene_info = [[cutscene_set_sprite, 1036, 2962, 0.35, -1]];
 	}

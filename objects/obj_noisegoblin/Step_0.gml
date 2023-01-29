@@ -47,7 +47,7 @@ if (state != 138)
 	thrown = false;
 if (bombreset > 0)
 	bombreset--;
-targetplayer = global.coop ? instance_nearest(x, y, obj_player) : 530;
+targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (sprite_index == spr_archergoblin_shoot && x != targetplayer.x)
 	image_xscale = -sign(x - targetplayer.x);
 if (x != targetplayer.x && targetplayer.state != 51 && state != 129 && bombreset == 0 && grounded)

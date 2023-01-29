@@ -8,7 +8,7 @@ if (global.levelcomplete && !global.freezercutscene)
 	}
 	currentroom = room;
 	dragonactor = 151554;
-	scene_info = [[cutscene_medieval_start], [cutscene_waitfor_sprite, 530], [function()
+	scene_info = [[cutscene_medieval_start], [cutscene_waitfor_sprite, obj_player1], [function()
 	{
 		with (obj_actor)
 		{

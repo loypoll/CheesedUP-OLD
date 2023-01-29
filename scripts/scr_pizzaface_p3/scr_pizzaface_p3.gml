@@ -130,7 +130,7 @@ function scr_pizzaface_p3_arenaintro()
 					if (abs(x - other.x) <= 50)
 					{
 						with (other)
-							scr_pizzaface_p3_do_player_attack(530);
+							scr_pizzaface_p3_do_player_attack(obj_player1);
 					}
 				}
 			}

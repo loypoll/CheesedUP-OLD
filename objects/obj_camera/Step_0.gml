@@ -1,6 +1,6 @@
 if (room == editor_room)
 	exit;
-player = (obj_player1.spotlight == 1) ? 530 : 529;
+player = (obj_player1.spotlight == 1) ? obj_player1 : obj_player2;
 if (!instance_exists(obj_pizzaball))
 	targetgolf = -4;
 if (collect_shake > 0)
@@ -33,7 +33,7 @@ else if (obj_player1.character == "P")
 if (global.coop == 1)
 {
 	var p1 = player;
-	var p2 = (obj_player1.spotlight == 1) ? 529 : 530;
+	var p2 = (obj_player1.spotlight == 1) ? obj_player2: obj_player1;
 	p2pdistance = point_distance(p1.x, 0, p2.x, 0);
 	p2pdistancex = (p1.x >= p2.x) ? (-p2pdistance / 5) : (p2pdistance / 5);
 }

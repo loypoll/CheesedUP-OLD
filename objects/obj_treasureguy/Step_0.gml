@@ -68,7 +68,7 @@ if (state != 138)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-targetplayer = global.coop ? instance_nearest(x, y, obj_player) : 530;
+targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (state == 134)
 {
 	sprite_index = walkspr;

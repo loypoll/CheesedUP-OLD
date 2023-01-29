@@ -11,7 +11,7 @@ if (!noise_grabbed)
 			instance_destroy();
 			if (obj_player1.flash)
 				obj_player1.flash = false;
-			scr_hurtplayer(530);
+			scr_hurtplayer(obj_player1);
 		}
 	}
 	event_inherited();
@@ -35,7 +35,7 @@ if (!noise_grabbed)
 		instance_destroy();
 		if (obj_player1.flash)
 			obj_player1.flash = false;
-		scr_hurtplayer(530);
+		scr_hurtplayer(obj_player1);
 	}
 }
 else

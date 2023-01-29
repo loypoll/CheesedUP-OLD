@@ -53,7 +53,7 @@ if (state != 138)
 scr_scareenemy();
 if (bombreset > 0)
 	bombreset--;
-var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : 530;
+var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (x != targetplayer.x && state != 129 && bombreset <= 0 && grounded)
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 20) && y >= (targetplayer.y - 20)))

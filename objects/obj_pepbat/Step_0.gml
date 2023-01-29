@@ -118,7 +118,7 @@ else if (sfxcooldown > 0)
 scr_scareenemy();
 if (bombreset > 0)
 	bombreset--;
-targetplayer = global.coop ? instance_nearest(x, y, obj_player) : 530;
+targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (x != targetplayer.x && state == 134 && state != 129 && obj_player.state != 5 && bombreset <= 0 && grounded)
 {
 	if ((targetplayer.x > (x - 80) && targetplayer.x < (x + 80)) && (y <= (targetplayer.y + 30) && y >= (targetplayer.y - 30)))
