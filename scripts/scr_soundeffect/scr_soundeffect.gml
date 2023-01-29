@@ -1,4 +1,4 @@
-function scr_soundeffect()
+function scr_soundeffect() // unused
 {
 	var snd = argument[irandom(argument_count - 1)];
 	var snd_id = audio_play_sound(snd, 1, false);
