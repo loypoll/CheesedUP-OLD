@@ -59,7 +59,7 @@ function cycle(value, min, max)
     // wrap negative results around the limit:
     if (result < 0) result += delta;
     // return adjusted input:
-    return result + in;
+    return result + min;
 }
 function angle_rotate(angle, target, speed)
 {

@@ -14,6 +14,7 @@ pillarmusicID = fmod_event_create_instance("event:/music/pillarmusic");
 panicmusicID = fmod_event_create_instance("event:/music/pizzatime");
 kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
 panicstart = false;
+
 add_music(799, "event:/music/ending", -4, false);
 add_music(820, "event:/music/credits", -4, false);
 add_music(821, "event:/music/ending", -4, false);
