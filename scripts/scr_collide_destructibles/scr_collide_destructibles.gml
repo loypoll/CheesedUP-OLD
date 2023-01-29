@@ -10,6 +10,7 @@ function scr_collide_destructibles()
 				var b = arr[i];
 				if (place_meeting(x + b[0], y + b[1], obj_destructibles))
 				{
+					var num = instance_place_list(x + b[0], y + b[1], obj_destructibles, global.instancelist, false);
 					for (var j = 0; j < num; j++)
 					{
 						var inst = ds_list_find_value(global.instancelist, j);
@@ -60,7 +61,7 @@ function scr_collide_destructibles()
 				vy = vsp;
 			if (place_meeting(x, y + vy, obj_destructibles))
 			{
-				num = instance_place_list(x, y + vy, obj_destructibles, global.instancelist, false);
+				var num = instance_place_list(x, y + vy, obj_destructibles, global.instancelist, false);
 				for (i = 0; i < num; i++)
 				{
 					with (ds_list_find_value(global.instancelist, i))
@@ -114,7 +115,8 @@ function scr_collide_destructibles()
 				jumpstop = false;
 			}
 		}
-		num = instance_place_list(x, y + 1, obj_destructibleplatform, global.instancelist, false);
+		
+		var num = instance_place_list(x, y + 1, obj_destructibleplatform, global.instancelist, false);
 		for (var k = 0; k < num; k++)
 		{
 			with (ds_list_find_value(global.instancelist, k))
@@ -127,6 +129,7 @@ function scr_collide_destructibles()
 			}
 		}
 		ds_list_clear(global.instancelist);
+		
 		if (vsp <= 0.5 && (state == 92 || state == 192 || state == 121 || state == 104 || state == 265 || state == 58 || (state == 54 && bombup_dir == -1) || state == 80 || state == 37 || state == 9 || state == 97 || state == 22 || state == 121 || (state == 80 && (sprite_index == spr_player_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend))))
 		{
 			vy = -1;
@@ -152,7 +155,7 @@ function scr_collide_destructibles()
 		{
 			if (place_meeting(x, y + vsp + 2, obj_destructibles))
 			{
-				num = instance_place_list(x, y + vsp + 2, obj_destructibles, global.instancelist, false);
+				var num = instance_place_list(x, y + vsp + 2, obj_destructibles, global.instancelist, false);
 				for (j = 0; j < num; j++)
 					instance_destroy(ds_list_find_value(global.instancelist, j));
 				ds_list_clear(global.instancelist);
