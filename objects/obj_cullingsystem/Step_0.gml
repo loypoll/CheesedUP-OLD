@@ -41,7 +41,7 @@ if (frames <= 0)
 				var _deactivate = true;
 				switch (b)
 				{
-					case 602:
+					case obj_baddiecollisionbox:
 						if (instance_exists(baddieID) && (baddieID.important || baddieID.thrown || !baddieID.grounded))
 							_deactivate = false;
 						if (_deactivate)

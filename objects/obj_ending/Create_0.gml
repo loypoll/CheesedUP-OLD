@@ -22,7 +22,7 @@ whitefade = 0;
 image_speed = 0.35;
 puffbuffer = 0;
 introbuffer = 0;
-spawn_arr = [217, 199, 299, 314, 162, 3968, 466, 548, 329, 171, 293, 225, 387, 2651, 125, 353, 1570, 1128, 907, 1933, 415, 3765, 394, 477, 522, 2339, 1168, 511, 2943, 428, 378, 293, 137, 1159, 2385, 4147, 445, 569, 538];
+spawn_arr = [spr_forknight_walk, spr_slimemove, spr_pepgoblin, spr_ancho, spr_pizzagoblin_walk, spr_badrat_walk, spr_banditochicken_chase, spr_tank_walk, spr_bigcheese_walk, spr_canongoblin_walk, spr_robot_walk, spr_coolpinea, spr_fencer_charge, spr_farmer1_walk, spr_farmer2_walk, spr_peasanto_walk, spr_ghostknight_move, spr_ghoul_attack, spr_golfburger_walk, spr_golfdemon_walk, spr_indiancheese_walk, spr_kentukybomber_move, spr_kentukykenny_walk, spr_ufolive, spr_archergoblin_walk, spr_patroller_walk, spr_pepbat_move, spr_pickle_walk, spr_pizzaball_roll, spr_pizzard_walk, spr_pizzice_walk, spr_robot_walk, spr_sausageman_walk, spr_pizzaslug_walk, spr_newpizzice_walk, spr_soldier_walk, spr_swedishmonkey_walk, spr_shrimp_walk, spr_treasureguy_escape];
 with (instance_create(0, 0, obj_introprop))
 {
 	sprite_index = spr_towerending_bg;

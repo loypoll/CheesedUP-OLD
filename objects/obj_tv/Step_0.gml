@@ -82,9 +82,9 @@ switch (state)
 			with (obj_player1)
 			{
 				if (mach4mode == 1)
-					tv_do_expression(4146);
+					tv_do_expression(spr_tv_exprmach4);
 				else if (state == 121 || sprite_index == spr_mach3boost)
-					tv_do_expression(1134);
+					tv_do_expression(spr_tv_exprmach3);
 			}
 		}
 		switch (sprite_index)
@@ -224,17 +224,17 @@ switch (state)
 		_transfospr = scr_tv_get_transfo_sprite();
 		switch (expressionsprite)
 		{
-			case 1762:
-			case 2054:
-			case 449:
-			case 2909:
-			case 258:
-			case 68:
-			case 566:
-			case 1628:
-			case 1362:
-			case 3621:
-			case 688:
+			case spr_tv_exprhurt:
+            case spr_tv_exprhurt1:
+            case spr_tv_exprhurt2:
+            case spr_tv_exprhurt3:
+            case spr_tv_exprhurt4:
+            case spr_tv_exprhurt5:
+            case spr_tv_exprhurt6:
+            case spr_tv_exprhurt7:
+            case spr_tv_exprhurt8:
+            case spr_tv_exprhurt9:
+            case spr_tv_exprhurt10:
 				if (obj_player1.state != 107)
 				{
 					if (expressionbuffer > 0)
@@ -246,7 +246,7 @@ switch (state)
 					}
 				}
 				break;
-			case 1999:
+			case spr_tv_hurtG:
 				if (obj_player1.state != 196)
 				{
 					if (expressionbuffer > 0)
@@ -258,7 +258,7 @@ switch (state)
 					}
 				}
 				break;
-			case 3251:
+			case spr_tv_exprcombo:
 				if (global.combo < 3 || _transfospr != -4 || obj_player1.isgustavo || obj_player1.mach4mode || obj_player1.state == 107 || obj_player1.state == 121 || obj_player1.sprite_index == obj_player1.spr_mach3boost || global.stylethreshold >= 3)
 				{
 					state = 250;
@@ -267,8 +267,8 @@ switch (state)
 						tv_do_expression(1762);
 				}
 				break;
-			case 969:
-			case 347:
+			case spr_tv_exprcollect:
+            case spr_tv_happyG:
 				if (expressionbuffer > 0)
 					expressionbuffer--;
 				else
@@ -277,7 +277,7 @@ switch (state)
 					expressionsprite = -4;
 				}
 				break;
-			case 1134:
+			case spr_tv_exprmach3:
 				with (obj_player1)
 				{
 					if (state != 121 && state != 37 && (state != 61 || (tauntstoredstate != 121 && tauntstoredstate != 37)) && sprite_index != spr_mach3boost && mach4mode == 0)
@@ -289,7 +289,7 @@ switch (state)
 						tv_do_expression(4146);
 				}
 				break;
-			case 4146:
+			case spr_tv_exprmach4:
 				with (obj_player1)
 				{
 					if (mach4mode == 0 && (state != 61 || (tauntstoredstate != 121 && tauntstoredstate != 37)))
@@ -299,7 +299,7 @@ switch (state)
 					}
 				}
 				break;
-			case 408:
+			case spr_tv_exprheat:
 				_transfo = false;
 				with (obj_player1)
 				{
@@ -311,10 +311,10 @@ switch (state)
 				if (global.stylethreshold < 3 || _transfo || obj_player1.mach4mode || obj_player1.state == 107 || obj_player1.state == 121 || obj_player1.sprite_index == obj_player1.spr_mach3boost)
 				{
 					state = 250;
-					expressionsprite = -4;
+					expressionsprite = noone;
 				}
 				break;
-			case 4073:
+			case spr_tv_exprpanic:
 				_transfo = false;
 				with (obj_player1)
 				{
@@ -326,7 +326,7 @@ switch (state)
 				if (!global.panic || _transfo || obj_player1.mach4mode || obj_player1.state == 107 || obj_player1.state == 121 || obj_player1.sprite_index == obj_player1.spr_mach3boost)
 				{
 					state = 250;
-					expressionsprite = -4;
+					expressionsprite = noone;
 				}
 				break;
 		}
