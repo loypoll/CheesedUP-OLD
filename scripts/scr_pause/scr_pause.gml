@@ -111,7 +111,7 @@ function pause_spawn_priests()
 		image_speed: 0.35,
 		image_xscale: choose(-1, 1),
 		image_alpha: 0,
-		sprite_index: choose(3416, 1501, 2897)
+		sprite_index: choose(spr_angelpriest, spr_angelpriest2, spr_angelpriest3)
 	};
 	var q = irandom(100);
 	if (q >= 50)

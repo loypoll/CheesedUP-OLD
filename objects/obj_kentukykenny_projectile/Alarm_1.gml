@@ -1,2 +1,2 @@
-create_debris(x, y, 1021, false);
+create_debris(x, y, spr_kentukykenny_debris, false);
 alarm[1] = 10;

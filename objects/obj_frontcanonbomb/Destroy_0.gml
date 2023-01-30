@@ -7,7 +7,7 @@ if (room != plage_shiptop)
 		{
 			repeat (10)
 			{
-				with (create_debris(x, y, 2165))
+				with (create_debris(x, y, spr_beachsandparticle))
 					vsp = random_range(-7, -11);
 			}
 		}
@@ -15,7 +15,7 @@ if (room != plage_shiptop)
 		{
 			repeat (4)
 			{
-				with (create_debris(x, y, 3627, true))
+				with (create_debris(x, y, spr_towerblockdebris, true))
 					vsp = random_range(-7, -11);
 			}
 		}

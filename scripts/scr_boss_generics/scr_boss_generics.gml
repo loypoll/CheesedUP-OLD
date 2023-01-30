@@ -328,7 +328,7 @@ function scr_boss_phase1hurt(func = noone)
 			instance_destroy(obj_bossdark);
 			repeat (4)
 			{
-				with (create_debris(x + random_range(-64, 64), y + random_range(-64, 64), 4019, true))
+				with (create_debris(x + random_range(-64, 64), y + random_range(-64, 64), spr_flashdots, true))
 				{
 					hsp = random_range(-5, 5);
 					vsp = random_range(-10, 10);

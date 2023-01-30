@@ -29,7 +29,7 @@ if (buffer <= 0 && other.state != 16)
 		state = 211;
 		repeat (5)
 		{
-			with (create_debris(x, y, 3791, false))
+			with (create_debris(x, y, spr_graveyarddebris2, false))
 				vsp = random_range(-8, -11);
 		}
 		create_transformation_tip(lang_get_value("gravesurftip"), "gravesurf");

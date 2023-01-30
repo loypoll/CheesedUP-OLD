@@ -7,5 +7,5 @@ if (place_meeting(x, y, obj_player))
 {
 	instance_destroy();
 	repeat (3)
-		create_debris(x, y, 1591);
+		create_debris(x, y, spr_waterdrop);
 }

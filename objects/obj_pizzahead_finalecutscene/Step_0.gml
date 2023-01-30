@@ -36,12 +36,12 @@ switch (state)
 			}
 			repeat (2)
 			{
-				with (create_debris(x, y, 1525))
+				with (create_debris(x, y, spr_slapstar))
 					vsp = -irandom_range(8, 11);
 			}
 			repeat (1)
 			{
-				with (create_debris(x, y, 1519))
+				with (create_debris(x, y, spr_baddiegibs))
 					vsp = -irandom_range(8, 11);
 			}
 			instance_create(x + irandom_range(-40, 40), y + irandom_range(-40, 40), obj_parryeffect);

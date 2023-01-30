@@ -59,7 +59,7 @@ if (_baddieID.state != 4 && !_baddieID.invincible && _baddieID.hittable && _badd
 				var debriscount = floor(lunge_hits / 5);
 				repeat (2 + debriscount)
 				{
-					with (create_debris(x, y, 1525))
+					with (create_debris(x, y, spr_slapstar))
 						vsp = irandom_range(-6, -11);
 				}
 				instance_create(other.x, other.y, obj_parryeffect);

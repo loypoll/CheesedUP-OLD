@@ -12,7 +12,7 @@ function scr_dotaunt()
 			global.collect += 25;
 			with (instance_create(x + 16, y, obj_smallnumber))
 				number = string(25);
-			create_collect(x, y, 1606, 25);
+			create_collect(x, y, spr_taunteffect, 25);
 			scr_sound_multiple("event:/sfx/misc/collect", x, y);
 		}
 		if (!finisher)

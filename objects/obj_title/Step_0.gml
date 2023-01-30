@@ -12,7 +12,7 @@ if (collide)
 		{
 			vsp = -6;
 			repeat (8)
-				create_debris(irandom_range(bbox_left, bbox_right), bbox_bottom, 1494);
+				create_debris(irandom_range(bbox_left, bbox_right), bbox_bottom, spr_debris);
 			with (obj_camera)
 			{
 				shake_mag = 3;

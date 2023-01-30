@@ -35,14 +35,14 @@ for (var i = 0; i < array_length(collision_list); i++)
 						}
 					}
 					repeat (3)
-						create_debris(other.x, other.y, 1517);
+						create_debris(other.x, other.y, spr_slimedebris);
 					instance_create(other.x, other.y, obj_bangeffect);
 					if (bullethit < 8)
 						bullethit += dmg;
 					if (bullethit >= 8)
 					{
 						repeat (8)
-							create_debris(other.x, other.y, 1517);
+							create_debris(other.x, other.y, spr_slimedebris);
 						instance_create(other.x, other.y, obj_parryeffect);
 						scr_sleep(30);
 						state = 137;
@@ -94,14 +94,14 @@ for (var i = 0; i < array_length(collision_list); i++)
 						}
 					}
 					repeat (3)
-						create_debris(other.x, other.y, 1517);
+						create_debris(other.x, other.y, spr_slimedebris);
 					instance_create(other.x, other.y, obj_bangeffect);
 					if (bullethit < 22)
 						bullethit += dmg;
 					if (bullethit >= 22)
 					{
 						repeat (8)
-							create_debris(other.x, other.y, 1517);
+							create_debris(other.x, other.y, spr_slimedebris);
 						instance_create(other.x, other.y, obj_parryeffect);
 						scr_sleep(30);
 						fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
@@ -160,7 +160,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 				break;
 			case obj_johnecheese:
 				repeat (3)
-					create_debris(other.x, other.y, 1517);
+					create_debris(other.x, other.y, spr_slimedebris);
 				instance_create(other.x, other.y, obj_bangeffect);
 				instance_create(other.x, other.y, obj_parryeffect);
 				instance_destroy();

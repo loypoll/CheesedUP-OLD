@@ -7,7 +7,7 @@ if (fall && hp > 0 && other.state == 42)
 		if (frac(other.hp) == 0)
 		{
 			repeat (4)
-				create_debris(other.x + random_range(0, 64), other.y + random_range(0, 64), 1488);
+				create_debris(other.x + random_range(0, 64), other.y + random_range(0, 64), spr_marbledebris);
 		}
 		repeat (3)
 		{

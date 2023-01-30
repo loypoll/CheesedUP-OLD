@@ -5,7 +5,7 @@ if (sprite_index != spr_mortspawn)
 		if (state != 11 && state != 12 && state != 13 && state != 14 && state != 190)
 		{
 			repeat (6)
-				create_debris(x, y, 1535);
+				create_debris(x, y, spr_feather);
 			mort = true;
 			instance_create_unique(x, y, obj_mortfollow);
 			movespeed = hsp;

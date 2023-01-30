@@ -5,7 +5,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	var i = 0;
 	repeat (2)
 	{
-		with (create_debris(x + 16, y + 16, 1851))
+		with (create_debris(x + 16, y + 16, spr_plugdebris))
 			image_index = i;
 		i++;
 	}

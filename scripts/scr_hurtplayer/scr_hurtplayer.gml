@@ -43,7 +43,7 @@ function scr_hurtplayer()
 				instance_create(x, y, obj_parryeffect);
 				repeat (5)
 				{
-					with (create_debris(x, y, 1525))
+					with (create_debris(x, y, spr_slapstar))
 						vsp = irandom_range(-6, -11);
 				}
 				hitLag = 3;
@@ -156,11 +156,11 @@ function scr_hurtplayer()
 		{
 			if (state == 225)
 			{
-				with (create_debris(x, y, 3484))
+				with (create_debris(x, y, spr_animatronicdebris))
 					image_index = 0;
-				with (create_debris(x, y, 3484))
+				with (create_debris(x, y, spr_animatronicdebris))
 					image_index = 1;
-				with (create_debris(x, y, 3484))
+				with (create_debris(x, y, spr_animatronicdebris))
 					image_index = 2;
 			}
 			if (state == 113 || state == 115 || state == 114 || state == 116)
@@ -174,7 +174,7 @@ function scr_hurtplayer()
 			if (state == 11 || state == 14 || state == 12 || state == 13)
 			{
 				fmod_event_one_shot_3d("event:/sfx/mort/mortdead", x, y);
-				create_debris(x, y - 40, 2236);
+				create_debris(x, y - 40, spr_mortdead);
 			}
 			if (instance_exists(obj_hardmode))
 				global.heatmeter_count = (global.heatmeter_threshold - 1) * global.heatmeter_threshold_count;
@@ -211,7 +211,7 @@ function scr_hurtplayer()
 					y = obj_player1.y;
 			}
 			if (state == 211 || state == 210)
-				create_debris(x, y, 3364);
+				create_debris(x, y, spr_player_trashlid);
 			scr_sleep(100);
 			fmod_event_one_shot_3d("event:/sfx/pep/hurt", x, y);
 			if (irandom(100) <= 50)
@@ -273,8 +273,8 @@ function scr_hurtplayer()
 				tv_do_expression(3621);
 			else if (damage_n == 100)
 				tv_do_expression(688);
-			if (obj_tv.expressionsprite != 1762 && obj_tv.expressionsprite != 1999)
-			{
+			if (obj_tv.expressionsprite != spr_tv_exprhurt && obj_tv.expressionsprite != spr_tv_hurtG)
+            {
 				instance_destroy(obj_transfotip);
 				var txt = lang_get_value("peppinohurt");
 				if (isgustavo)

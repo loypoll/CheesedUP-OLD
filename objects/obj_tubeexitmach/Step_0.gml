@@ -31,7 +31,7 @@ if (state == 150)
 		if (!place_meeting(x, y, other.id))
 		{
 			repeat (6)
-				create_debris(x, y, 1591, false);
+				create_debris(x, y, spr_waterdrop, false);
 			with (other)
 			{
 				playerid = -1;

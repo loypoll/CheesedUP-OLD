@@ -17,7 +17,7 @@ if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == 42 || other.insta
 		flash = true;
 		subhp--;
 		repeat (4)
-			create_debris(x, y, 1525);
+			create_debris(x, y, spr_slapstar);
 	}
 	else
 	{
@@ -36,7 +36,7 @@ if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == 42 || other.insta
 		stunned = 200;
 		flash = true;
 		repeat (4)
-			create_debris(x, y, 1525);
+			create_debris(x, y, spr_slapstar);
 	}
 	with (other)
 	{

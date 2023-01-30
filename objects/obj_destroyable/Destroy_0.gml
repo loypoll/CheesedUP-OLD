@@ -4,7 +4,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 {
 	repeat (2)
 	{
-		with (create_debris(x + random_range(0, sprite_width), y + random_range(0, sprite_height), 3627, true))
+		with (create_debris(x + random_range(0, sprite_width), y + random_range(0, sprite_height), spr_towerblockdebris, true))
 		{
 			hsp = random_range(-5, 5);
 			vsp = random_range(-10, 10);

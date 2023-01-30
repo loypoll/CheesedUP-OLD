@@ -16,7 +16,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	global.combotime = 60;
 	repeat (3)
 	{
-		with (create_debris(x1, y1, 1525))
+		with (create_debris(x1, y1, spr_slapstar))
 		{
 			hsp = random_range(-5, 5);
 			vsp = random_range(-10, 10);

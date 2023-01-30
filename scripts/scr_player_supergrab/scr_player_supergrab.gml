@@ -72,7 +72,7 @@ function scr_player_supergrab()
 						}
 						repeat (1)
 						{
-							with (create_debris(x, y, 1525))
+							with (create_debris(x, y, spr_slapstar))
 							{
 								vsp = -irandom_range(8, 11);
 								hsp = -irandom_range(-11, 11);
@@ -80,7 +80,7 @@ function scr_player_supergrab()
 						}
 						repeat (1)
 						{
-							with (create_debris(x, y, 1519))
+							with (create_debris(x, y, spr_baddiegibs))
 							{
 								vsp = -irandom_range(8, 11);
 								hsp = -irandom_range(-11, 11);
@@ -208,7 +208,7 @@ function scr_player_supergrab()
 					}
 					repeat (2)
 					{
-						with (create_debris(x, y, 1525))
+						with (create_debris(x, y, spr_slapstar))
 						{
 							vsp = -irandom_range(8, 11);
 							hsp = -irandom_range(-11, 11);
@@ -216,7 +216,7 @@ function scr_player_supergrab()
 					}
 					repeat (2)
 					{
-						with (create_debris(x, y, 1519))
+						with (create_debris(x, y, spr_baddiegibs))
 						{
 							vsp = -irandom_range(8, 11);
 							hsp = -irandom_range(-11, 11);

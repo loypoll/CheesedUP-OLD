@@ -10,7 +10,7 @@ else
 		comboscore -= round(combominus);
 		if (comboscore < 0)
 			comboscore = 0;
-		create_collect(camera_get_view_x(view_camera[0]) + x, camera_get_view_y(view_camera[0]) + y, choose(2082, 2084, 2085, 2087, 2083), round(combominus));
+		create_collect(camera_get_view_x(view_camera[0]) + x, camera_get_view_y(view_camera[0]) + y, choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect), round(combominus));
 	}
 	else if (alarm[1] == -1)
 		alarm[1] = 50;

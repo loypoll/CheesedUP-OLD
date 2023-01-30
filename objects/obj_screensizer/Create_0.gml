@@ -2,7 +2,7 @@ global.resolutions[0] = [[480, 270], [960, 540], [1024, 576], [1280, 720], [1600
 global.resolutions[1] = [[640, 480], [800, 600], [1024, 768], [1152, 864], [1440, 1080]];
 gameframe_init();
 global.gameframe_caption_font = 0;
-global.gameframe_caption_icon = 1994;
+global.gameframe_caption_icon = spr_ico;
 global.gameframe_caption_icon_margin = 6;
 global.gameframe_border_width = 2;
 captionalpha = 1;

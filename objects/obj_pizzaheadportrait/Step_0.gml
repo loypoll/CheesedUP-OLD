@@ -25,11 +25,11 @@ if (move)
 			else
 			{
 				instance_destroy(id, false);
-				with (create_debris(x, y, 784))
+				with (create_debris(x, y, spr_pizzahead_tvdebris))
 					image_index = 0;
-				with (create_debris(x, y, 784))
+				with (create_debris(x, y, spr_pizzahead_tvdebris))
 					image_index = 1;
-				with (create_debris(x, y, 784))
+				with (create_debris(x, y, spr_pizzahead_tvdebris))
 					image_index = 2;
 				move = false;
 				hsp = 0;

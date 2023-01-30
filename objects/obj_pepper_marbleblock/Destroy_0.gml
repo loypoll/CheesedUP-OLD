@@ -1,6 +1,6 @@
 repeat (8)
 {
-	with (create_debris(x + random_range(0, 64), y + random_range(0, 64), 1488, false))
+	with (create_debris(x + random_range(0, 64), y + random_range(0, 64), spr_marbledebris, false))
 	{
 		hsp = random_range(-5, 5);
 		vsp = random_range(-10, 10);

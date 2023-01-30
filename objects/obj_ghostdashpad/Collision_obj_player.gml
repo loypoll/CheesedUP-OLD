@@ -12,6 +12,6 @@ with (other)
 		other.cooldown = 50;
 		other.visible = false;
 		repeat (2)
-			create_debris(other.x, other.y, 4019, true);
+			create_debris(other.x, other.y, spr_flashdots, true);
 	}
 }

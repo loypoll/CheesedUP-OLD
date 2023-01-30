@@ -47,19 +47,19 @@ if (y > (obj_spaceshuttlestop.y - 18))
 					}
 				}
 				repeat (5)
-					create_debris(x + random_range(-20, 20), y + 40, 3327);
+					create_debris(x + random_range(-20, 20), y + 40, spr_spacedebris);
 			}
 			if (room == space_5)
 			{
 				repeat (5)
-					create_debris(x + random_range(-20, 20), y + 40, 3569);
+					create_debris(x + random_range(-20, 20), y + 40, spr_planetdebris);
 			}
 			if (room == space_9)
 			{
 				repeat (5)
 					instance_create(x + random_range(-50, 50), y + random_range(-50, 50), obj_olivebubbledeco);
 				repeat (5)
-					create_debris(x + random_range(-20, 20), y + 40, 3811);
+					create_debris(x + random_range(-20, 20), y + 40, spr_space3debris);
 			}
 			with (instance_create(x, y, obj_shuttleparts))
 			{

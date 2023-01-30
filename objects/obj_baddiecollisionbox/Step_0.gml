@@ -248,7 +248,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 				hitY = y;
 				repeat (2)
 				{
-					with (create_debris(x, y, 1525))
+					with (create_debris(x, y, spr_slapstar))
 						vsp = irandom_range(-6, -11);
 				}
 			}

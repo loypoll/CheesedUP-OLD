@@ -20,7 +20,7 @@ if (other.state != 186)
 	{
 		for (var xx = 0; xx < 4; xx++)
 		{
-			create_collect(_x, _y, obj_player1.ispeppino ? choose(2087, 2082, 3844, 2084) : choose(2743, 2745, 2749, 2750, 2751));
+			create_collect(_x, _y, obj_player1.ispeppino ? choose(spr_sausagecollect, spr_shroomcollect, spr_shrimpcollect, spr_tomatocollect) : choose(spr_halloweencollectibles1, spr_halloweencollectibles2, spr_halloweencollectibles3, spr_halloweencollectibles4, spr_halloweencollectibles5));
 			_x += 16;
 		}
 		_x = _xstart;

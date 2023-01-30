@@ -14,7 +14,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 		var xx = x + (irandom(abs(sprite_width)) * image_xscale);
 		var yy = y + (irandom(abs(sprite_height)) * image_yscale);
 		if (point_in_camera(xx, yy, view_camera[0]))
-			create_debris(xx, yy, 3385);
+			create_debris(xx, yy, spr_icedebris);
 	}
 	repeat (a)
 	{

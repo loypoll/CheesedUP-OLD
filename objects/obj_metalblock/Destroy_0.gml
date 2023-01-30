@@ -2,7 +2,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 {
 	repeat (8)
 	{
-		with (create_debris(x + random_range(0, 64), y + random_range(0, 64), 1973, false))
+		with (create_debris(x + random_range(0, 64), y + random_range(0, 64), spr_metalblockdebris, false))
 		{
 			hsp = random_range(-5, 5);
 			vsp = random_range(-10, 10);

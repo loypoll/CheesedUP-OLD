@@ -6,13 +6,13 @@ with (other)
 		if (boxxed == 0 && isgustavo == 0 && other.buffer == 0 && other.sprite_index == spr_dashpad)
 		{
 			if (state == 210 || state == 209)
-				create_debris(x, y, 3364);
+				create_debris(x, y, spr_player_trashlid);
 			if (state == 225)
 			{
 				var i = 0;
 				repeat (3)
 				{
-					with (create_debris(x, y, 3484))
+					with (create_debris(x, y, spr_animatronicdebris))
 						image_index = i;
 					i++;
 				}

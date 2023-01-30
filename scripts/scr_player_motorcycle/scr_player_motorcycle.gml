@@ -32,7 +32,7 @@ function scr_player_motorcycle()
 		var i = 0;
 		repeat (sprite_get_number(spr_pizzacar_debris) - 1)
 		{
-			with (create_debris(x, y, 4047))
+			with (create_debris(x, y, spr_pizzacar_debris))
 			{
 				image_index = i;
 				vsp = irandom_range(-7, -12);

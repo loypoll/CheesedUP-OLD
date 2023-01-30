@@ -1,6 +1,6 @@
 scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
-create_debris(x, y, 1508);
-create_debris(x, y, 1506);
+create_debris(x, y, obj_skateboardebris1);
+create_debris(x, y, obj_skateboardebris2);
 if (playerid != -4)
 {
 	with (playerid)

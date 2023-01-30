@@ -14,6 +14,6 @@ else
 		hsp = -6 * xscale;
 		vsp = -4;
 		repeat (3)
-			create_debris(x, y, 1505);
+			create_debris(x, y, spr_wooddebris);
 	}
 }

@@ -101,7 +101,7 @@ switch (state)
 				sprite_index = spr_minijohn_stun;
 				vsp = -4;
 				repeat (3)
-					create_debris(x, y, 3791);
+					create_debris(x, y, spr_graveyarddebris2);
 			}
 		}
 		else if (grounded)

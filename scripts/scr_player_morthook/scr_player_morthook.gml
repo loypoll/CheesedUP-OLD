@@ -21,7 +21,7 @@ function scr_player_morthook()
 		image_index = 0;
 		vsp = -14;
 		repeat (4)
-			create_debris(x, y, 1535);
+			create_debris(x, y, spr_feather);
 		with (instance_create(x, y, obj_speedlinesup))
 			playerid = other.id;
 		movespeed = xscale * 12;

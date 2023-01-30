@@ -32,7 +32,7 @@ function scr_player_cheesepep()
 	image_speed = 0.35;
 	if ((grounded && (floor(image_index) % 4) == 0) && hsp != 0)
 	{
-		create_debris(x, y + 43, 1517);
+		create_debris(x, y + 43, spr_slimedebris);
 		fmod_event_one_shot_3d("event:/sfx/cheese/ground", x, y);
 	}
 	if (!grounded)

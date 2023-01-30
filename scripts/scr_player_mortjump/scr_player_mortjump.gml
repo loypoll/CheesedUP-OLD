@@ -65,7 +65,7 @@ function scr_player_mortjump()
 		image_index = 0;
 		vsp = -11;
 		repeat (4)
-			create_debris(x, y, 1535);
+			create_debris(x, y, spr_feather);
 	}
 	mort_attack();
 }

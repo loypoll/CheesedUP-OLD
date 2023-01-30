@@ -16,7 +16,7 @@ function scr_player_timesup()
 		else
 		{
 			sprite_index = spr_player_ratmountgameover;
-			with (create_debris(x, y, 3938))
+			with (create_debris(x, y, spr_ratblock_dead))
 			{
 				hsp = 4;
 				vsp = -8;

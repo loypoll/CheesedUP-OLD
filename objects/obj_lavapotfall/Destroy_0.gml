@@ -6,4 +6,4 @@ with (obj_camera)
 	shake_mag_acc = 30 / room_speed;
 }
 repeat (5)
-	create_debris(x, y, 1973);
+	create_debris(x, y, spr_metalblockdebris);

@@ -11,7 +11,7 @@ for (var yy = 0; yy < 4; yy++)
 {
 	for (var xx = 0; xx < 4; xx++)
 	{
-		create_collect(_x, _y, choose(2087, 2082, 3844, 2084));
+		create_collect(_x, _y, choose(spr_sausagecollect, spr_shroomcollect, spr_shrimpcollect, spr_tomatocollect));
 		_x += 16;
 	}
 	_x = _xstart;

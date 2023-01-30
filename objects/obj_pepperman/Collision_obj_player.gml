@@ -19,7 +19,7 @@ if (state == 153 && hsp != 0)
 			shake_mag_acc = 5 / room_speed;
 		}
 		repeat (4)
-			create_debris(x, y, 1525);
+			create_debris(x, y, spr_slapstar);
 	}
 }
 else if (wastedhits == 9 && phase == 1 && !pizzahead && (other.instakillmove || other.state == 42) && state == 267)

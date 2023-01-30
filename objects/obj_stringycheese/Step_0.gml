@@ -33,7 +33,7 @@ switch (state)
 				if (state == 21)
 				{
 					repeat (3)
-						create_debris(x + (xscale * 30), y + random_range(-8, 8), 4075);
+						create_debris(x + (xscale * 30), y + random_range(-8, 8), spr_cheesechunk);
 				}
 			}
 			if (playerid.state != 15)
@@ -45,7 +45,7 @@ switch (state)
 				with (playerid)
 				{
 					if (state == 210 || state == 209)
-						create_debris(x, y, 3364);
+						create_debris(x, y, spr_player_trashlid);
 					tauntstoredstate = state;
 					tauntstoredmovespeed = movespeed;
 					tauntstoredsprite = sprite_index;

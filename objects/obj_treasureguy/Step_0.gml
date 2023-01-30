@@ -46,7 +46,7 @@ switch (state)
 				sprite_index = spr_treasureguy_stun;
 				vsp = -4;
 				repeat (3)
-					create_debris(x, y, 1494);
+					create_debris(x, y, spr_debris);
 			}
 		}
 		else if (grounded && vsp > 0)

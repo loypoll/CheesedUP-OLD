@@ -32,14 +32,14 @@ if (bubblespr != -4 && bubblespr != 1767)
 		bubbleindex = 0;
 		switch (bubblespr)
 		{
-			case 607:
-				bubblespr = spr_tv_bubble;
-				break;
-			case 578:
-				bubblespr = spr_tv_bubbleclosed;
-				if (prompt == -4 || prompt == "")
-					bubblespr = -4;
-				break;
+			case spr_tv_bubbleopen:
+                bubblespr = spr_tv_bubble
+                break
+            case spr_tv_bubbleclose:
+                bubblespr = spr_tv_bubbleclosed
+                if (prompt == -4 || prompt == "")
+                    bubblespr = -4
+                break
 		}
 	}
 }
@@ -128,7 +128,7 @@ switch (state)
 					sprite_index = idlespr;
 					idleanim = 240 + (60 * irandom_range(-1, 2));
 				}
-				if (idlespr != 3822 && idlespr != 1061)
+				if (idlespr != spr_tv_idle && idlespr != spr_tv_idleN)
 					sprite_index = idlespr;
 				break;
 			default:

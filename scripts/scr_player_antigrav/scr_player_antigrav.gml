@@ -24,7 +24,7 @@ function scr_player_antigrav()
 			sprite_index = spr_antigrav_bubblesquish;
 			image_index = 0;
 		}
-		with (create_debris(x, y, 1525))
+		with (create_debris(x, y, spr_slapstar))
 		{
 			hsp = random_range(-5, 5);
 			vsp = random_range(-10, 10);
@@ -37,7 +37,7 @@ function scr_player_antigrav()
 		hsp = -hsp * 0.8;
 		repeat (3)
 		{
-			with (create_debris(x, y, 1525))
+			with (create_debris(x, y, spr_slapstar))
 			{
 				hsp = random_range(-5, 5);
 				vsp = random_range(-10, 10);

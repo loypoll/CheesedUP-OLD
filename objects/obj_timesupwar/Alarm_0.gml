@@ -12,7 +12,7 @@ repeat (round(explosionsnum))
 		if (image_speed < 0.35)
 			image_speed = 0.35;
 		repeat (3)
-			create_debris(x, y, 1494);
+			create_debris(x, y, spr_debris);
 	}
 }
 fmod_event_one_shot_3d("event:/sfx/misc/explosion", irandom_range(50, room_width - 50), irandom_range(50, room_height - 50));

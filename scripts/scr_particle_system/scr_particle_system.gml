@@ -40,7 +40,7 @@ function create_debris(_x, _y, sprite, _animated = false)
 }
 function create_heatpuff()
 {
-	var q = create_debris(argument0, argument1, 3884, true);
+	var q = create_debris(argument0, argument1, spr_heatpuff, true);
 	q.grav = 0;
 	q.hsp = 0;
 	q.vsp = irandom_range(-4, -1);

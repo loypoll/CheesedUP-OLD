@@ -5,9 +5,9 @@ function scr_fakepepclone_transitioncutscene()
 	if ((floor(image_index) div 5) == 0)
 	{
 		if (sprite_index != spr_fakepeppino_deformdown)
-			create_debris(x + irandom_range(-20, 20), y + 43, 3217);
+			create_debris(x + irandom_range(-20, 20), y + 43, spr_fakepepdebris);
 		else
-			create_debris(x + irandom_range(-20, 20), y, 3217);
+			create_debris(x + irandom_range(-20, 20), y, spr_fakepepdebris);
 	}
 	if (floor(image_index) == (image_number - 1))
 	{

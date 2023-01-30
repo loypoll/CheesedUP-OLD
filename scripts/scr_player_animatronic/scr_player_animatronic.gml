@@ -20,11 +20,11 @@ function scr_player_animatronic()
 	else
 	{
 		fmod_event_one_shot_3d("event:/sfx/misc/detransfo", x, y);
-		with (create_debris(x, y, 3484))
+		with (create_debris(x, y, spr_animatronicdebris))
 			image_index = 0;
-		with (create_debris(x, y, 3484))
+		with (create_debris(x, y, spr_animatronicdebris))
 			image_index = 1;
-		with (create_debris(x, y, 3484))
+		with (create_debris(x, y, spr_animatronicdebris))
 			image_index = 2;
 		state = 0;
 	}
@@ -41,7 +41,7 @@ function scr_player_animatronic()
 			with (instance_create(121, 60, obj_negativenumber))
 				number = "-10";
 			repeat (10)
-				create_debris(x, y, choose(2082, 2085, 2084, 2083, 2087), true);
+				create_debris(x, y, choose(spr_shroomcollect, spr_cheesecollect, spr_tomatocollect, spr_pineapplecollect, spr_sausagecollect), true);
 		}
 		if (global.collect < 0)
 			global.collect = 0;

@@ -36,7 +36,7 @@ function scr_player_cheeseball()
 			vsp = -5;
 		cheeseballbounce -= 1;
 		repeat (2)
-			create_debris(x + random_range(-8, 8), y + 43, 4075);
+			create_debris(x + random_range(-8, 8), y + 43, spr_cheesechunk);
 	}
 	if (grounded)
 		movespeed = Approach(movespeed, 12, 0.25);
@@ -56,9 +56,9 @@ function scr_player_cheeseball()
 		hsp = 0;
 		vsp = 0;
 		repeat (3)
-			create_debris(x + (xscale * 30), y + random_range(-8, 8), 4075);
+			create_debris(x + (xscale * 30), y + random_range(-8, 8), spr_cheesechunk);
 		movespeed = 0;
 	}
 	if (grounded && (floor(image_index) % 4) == 0)
-		create_debris(x, y + 43, 1517);
+		create_debris(x, y + 43, spr_slimedebris);
 }

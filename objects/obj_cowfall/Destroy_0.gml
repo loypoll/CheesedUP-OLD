@@ -2,7 +2,7 @@ if (destroy)
 {
 	repeat (6)
 	{
-		with (create_debris(x + random_range(-55, 55), y + random_range(70, -70), 3338, true))
+		with (create_debris(x + random_range(-55, 55), y + random_range(70, -70), spr_cowmeat, true))
 			image_speed = 0.35;
 	}
 	with (obj_camera)

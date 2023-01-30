@@ -1,1 +1,1 @@
-create_debris(x, y, 1517, false);
+create_debris(x, y, spr_slimedebris, false);

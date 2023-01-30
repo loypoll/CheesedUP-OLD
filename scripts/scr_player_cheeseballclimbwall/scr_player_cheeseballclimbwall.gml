@@ -11,7 +11,7 @@ function scr_player_cheeseballclimbwall()
 		state = 26;
 		sprite_index = spr_cheesepepfall;
 		repeat (8)
-			create_debris(x + random_range(-8, 8), y + random_range(-8, 8), 4075);
+			create_debris(x + random_range(-8, 8), y + random_range(-8, 8), spr_cheesechunk);
 	}
 	wallspeed = Approach(wallspeed, 12, 1);
 	if (!scr_solid(x + xscale, y))
@@ -30,9 +30,9 @@ function scr_player_cheeseballclimbwall()
 		movespeed = 6;
 		state = 21;
 		repeat (4)
-			create_debris(x + (xscale * 30), y + random_range(-8, 8), 1517);
+			create_debris(x + (xscale * 30), y + random_range(-8, 8), spr_slimedebris);
 		xscale *= -1;
 	}
 	if (grounded && (floor(image_index) % 4) == 0)
-		create_debris(x + (xscale * 30), y, 1517);
+		create_debris(x + (xscale * 30), y, spr_slimedebris);
 }

@@ -39,7 +39,7 @@ function scr_player_rideweenie()
 			movespeed = -movespeed * 0.5;
 			repeat (3)
 			{
-				with (create_debris(x, y, 1525))
+				with (create_debris(x, y, spr_slapstar))
 				{
 					hsp = random_range(-5, 5);
 					vsp = random_range(-10, 10);

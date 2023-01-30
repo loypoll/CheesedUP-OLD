@@ -17,7 +17,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1)
 	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
 	repeat (3)
 	{
-		with (create_debris(x, y, 1525))
+		with (create_debris(x, y, spr_slapstar))
 		{
 			hsp = random_range(-5, 5);
 			vsp = random_range(-10, 10);

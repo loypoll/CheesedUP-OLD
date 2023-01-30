@@ -36,7 +36,7 @@ function scr_player_mach2()
 	{
 		state = 92;
 		repeat (6)
-			create_debris(x, y, 1535);
+			create_debris(x, y, spr_feather);
 		sprite_index = spr_mortdoublejump;
 		image_index = 0;
 		grav = 0.25;

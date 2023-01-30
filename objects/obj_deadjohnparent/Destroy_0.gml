@@ -3,7 +3,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	instance_create(x + (sprite_width / 2), y + (sprite_height / 2), obj_bangeffect);
 	repeat (8)
 	{
-		with (create_debris(x + random_range(0, sprite_width), y + random_range(0, sprite_height), 1670))
+		with (create_debris(x + random_range(0, sprite_width), y + random_range(0, sprite_height), spr_deadjohndebris))
 		{
 			hsp = random_range(-5, 5);
 			vsp = random_range(-10, 10);

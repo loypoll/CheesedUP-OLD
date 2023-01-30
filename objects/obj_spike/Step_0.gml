@@ -24,7 +24,7 @@ with (obj_player)
 					vsp = -4;
 					fmod_event_one_shot_3d("event:/sfx/knight/lose", x, y);
 					repeat (3)
-						create_debris(x, y, 1505);
+						create_debris(x, y, spr_wooddebris);
 				}
 			}
 		}

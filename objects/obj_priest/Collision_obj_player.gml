@@ -34,7 +34,7 @@ if (_transfo)
 	with (other)
 	{
 		if (state == 11 || state == 14 || state == 12 || state == 13)
-			create_debris(x, y - 40, 2236);
+			create_debris(x, y - 40, spr_mortdead);
 	}
 	if (sprite_index != spr_angelpriest)
 		sprite_index = spr_priest_pray;
@@ -52,6 +52,6 @@ if (_transfo)
 			ds_list_add(global.escaperoom, id);
 		var d = round(val / 16);
 		for (var i = 0; i < val; i += d)
-			create_collect(other.x + irandom_range(-60, 60), other.y + irandom_range(-60, 60), choose(2082, 2084, 2085, 2087, 2083), d);
+			create_collect(other.x + irandom_range(-60, 60), other.y + irandom_range(-60, 60), choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect), d);
 	}
 }

@@ -191,12 +191,12 @@ if (!fadein)
 					{
 						repeat (3)
 						{
-							with (create_debris(x, y, 1525))
+							with (create_debris(x, y, spr_slapstar))
 								vsp = -irandom_range(5, 11);
 						}
 						repeat (5)
 						{
-							with (create_debris(x, y, 1519))
+							with (create_debris(x, y, spr_baddiegibs))
 								vsp = -irandom_range(5, 11);
 						}
 						with (instance_create(x, y, obj_explosioneffect))

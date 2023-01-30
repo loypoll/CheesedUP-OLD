@@ -875,7 +875,7 @@ function scr_vigilante_duel()
 					var l = 5 + irandom(2);
 					repeat (l)
 					{
-						with (create_debris((x - len) + xx, y, 1618, true))
+						with (create_debris((x - len) + xx, y, spr_genericpoofeffect, true))
 						{
 							destroyonanimation = true;
 							hsp = 0;

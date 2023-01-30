@@ -11,7 +11,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	}
 	for (var i = 0; i < sprite_get_number(spr_warterminal_debris); i++)
 	{
-		with (create_debris(x, y, 2952))
+		with (create_debris(x, y, spr_warterminal_debris))
 			image_index = i;
 	}
 	tile_layer_delete_at(1, x, y);

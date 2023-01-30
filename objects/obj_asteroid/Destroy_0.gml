@@ -21,7 +21,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	var sep = 100;
 	repeat (10)
 	{
-		with (create_debris(irandom_range((x + (sprite_width / 2)) - sep, x + (sprite_width / 2) + sep), irandom_range((y + (sprite_height / 2)) - sep, y + (sprite_height / 2) + sep), 2467))
+		with (create_debris(irandom_range((x + (sprite_width / 2)) - sep, x + (sprite_width / 2) + sep), irandom_range((y + (sprite_height / 2)) - sep, y + (sprite_height / 2) + sep), spr_meteordebris))
 			vsp = irandom_range(-6, -14);
 	}
 }

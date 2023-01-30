@@ -23,6 +23,6 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 			alarm[1] = 8;
 	}
 	repeat (6)
-		create_debris(x + 32, y + 32, 1532);
+		create_debris(x + 32, y + 32, spr_tntblockdebris);
 	ds_list_add(global.saveroom, id);
 }

@@ -106,9 +106,9 @@ if (sprite_index == spr_playerN_fightball)
 	else
 	{
 		fightball_buffer2 = 8 + irandom(5);
-		with (create_debris(x, y, 1525))
+		with (create_debris(x, y, spr_slapstar))
 			vsp = -irandom_range(5, 10);
-		with (create_debris(x, y, 1519))
+		with (create_debris(x, y, spr_baddiegibs))
 			vsp = -irandom_range(5, 10);
 	}
 }

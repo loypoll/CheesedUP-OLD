@@ -1,6 +1,6 @@
 instance_create(x, y, obj_canonexplosion);
 repeat (5)
-	create_debris(x, y, 1505);
+	create_debris(x, y, spr_wooddebris);
 if (cow)
 {
 	with (instance_create(x, y - 21, obj_vigilantecow))

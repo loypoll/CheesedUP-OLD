@@ -3,7 +3,7 @@ if (room == custom_lvl_room)
 if (ds_list_find_index(global.saveroom, id) == -1)
 {
 	repeat (4)
-		create_debris(x + 16, y, 1494);
+		create_debris(x + 16, y, spr_debris);
 	var lay_id = layer_get_id("Tiles_1");
 	var map_id = layer_tilemap_get_id(lay_id);
 	var data = tilemap_get_at_pixel(map_id, x, y);

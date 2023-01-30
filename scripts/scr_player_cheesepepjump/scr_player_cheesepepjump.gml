@@ -28,7 +28,7 @@ function scr_player_cheesepepjump()
 		vsp = 0;
 		xscale = sign(movespeed);
 		repeat (3)
-			create_debris(x + (xscale * 30), y + random_range(-8, 8), 4075);
+			create_debris(x + (xscale * 30), y + random_range(-8, 8), spr_cheesechunk);
 		movespeed = 0;
 	}
 	if (input_buffer_jump > 0 && can_jump && !grounded)
@@ -44,7 +44,7 @@ function scr_player_cheesepepjump()
 	{
 		fmod_event_one_shot_3d("event:/sfx/cheese/step", x, y);
 		repeat (3)
-			create_debris(x + random_range(-8, 8), y + 43, 4075);
+			create_debris(x + random_range(-8, 8), y + 43, spr_cheesechunk);
 		state = 24;
 		sprite_index = spr_cheesepepland;
 		image_index = 0;

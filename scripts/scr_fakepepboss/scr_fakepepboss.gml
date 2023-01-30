@@ -472,7 +472,7 @@ function scr_fakepepboss_deformed()
 	if (sprite_index == spr_fakepeppino_deform && floor(image_index) == (image_number - 1))
 		image_index = image_number - 1;
 	if (floor(image_index) < (image_number - 1) && (floor(image_index) div 5) == 0)
-		create_debris(x + irandom_range(-20, 20), y + 43, 3217);
+		create_debris(x + irandom_range(-20, 20), y + 43, spr_fakepepdebris);
 	if (deformed_timer > 0)
 		deformed_timer--;
 	if (deformed_cooldown > 0)
@@ -807,7 +807,7 @@ function scr_fakepepboss_Sjump()
 			{
 				sprite_index = spr_fakepeppino_superjumpstart;
 				repeat (10)
-					create_debris(x + irandom_range(-25, 25), y + 43, 3217);
+					create_debris(x + irandom_range(-25, 25), y + 43, spr_fakepepdebris);
 				with (instance_create(x, y + 30, obj_explosioneffect))
 				{
 					sprite_index = spr_fakepepsplasheffect;
@@ -819,7 +819,7 @@ function scr_fakepepboss_Sjump()
 			{
 				sprite_index = spr_fakepeppino_superjumpdownstart;
 				repeat (10)
-					create_debris(x + irandom_range(-25, 25), y, 3217);
+					create_debris(x + irandom_range(-25, 25), y, spr_fakepepdebris);
 				with (instance_create(x, y + 20, obj_explosioneffect))
 				{
 					sprite_index = spr_fakepepsplasheffect;

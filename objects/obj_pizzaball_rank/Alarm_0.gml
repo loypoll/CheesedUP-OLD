@@ -16,5 +16,5 @@ if (collect > 0)
 		healthshaketime = 30;
 	with (instance_create(obj_player1.x, obj_player1.y, obj_smallnumber))
 		number = string(diff);
-	create_collect(obj_player1.x, obj_player1.y, choose(2082, 2084, 2085, 2087, 2083), diff);
+	create_collect(obj_player1.x, obj_player1.y, choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect), diff);
 }

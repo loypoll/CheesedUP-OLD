@@ -6,7 +6,7 @@ if (room == timesuproom || is_bossroom() || room == tower_tutorial1)
 with (obj_comboend)
 {
 	for (var i = 0; i < comboscore; i += comboscore)
-		create_collect(obj_player1.x + irandom_range(-60, 60), (obj_player1.y - 100) + irandom_range(-60, 60), choose(2082, 2084, 2085, 2087, 2083));
+		create_collect(obj_player1.x + irandom_range(-60, 60), (obj_player1.y - 100) + irandom_range(-60, 60), choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect));
 	comboscore = 0;
 	instance_destroy();
 }

@@ -17,12 +17,12 @@ if (other.instakillmove || other.state == 42)
 	}
 	repeat (2)
 	{
-		with (create_debris(x, y, 1525))
+		with (create_debris(x, y, spr_slapstar))
 			vsp = -irandom_range(5, 11);
 	}
 	repeat (2)
 	{
-		with (create_debris(x, y, 1519))
+		with (create_debris(x, y, spr_baddiegibs))
 			vsp = -irandom_range(5, 11);
 	}
 	fmod_event_one_shot("event:/sfx/misc/secretfound");

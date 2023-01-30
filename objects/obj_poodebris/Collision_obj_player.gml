@@ -7,7 +7,7 @@ with (other)
 	if (hsp != 0 && grounded && vsp > 0)
 	{
 		if ((floor(image_index) % f) == 0)
-			create_debris(x, y + 43, 4065);
+			create_debris(x, y + 43, spr_sewerdebris2);
 		if (_sound)
 		{
 			if (steppybuffer > 0)

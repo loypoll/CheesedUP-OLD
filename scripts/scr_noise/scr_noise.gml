@@ -866,7 +866,7 @@ function scr_noise_noiseballooncrash()
 			state = 0;
 		repeat (2)
 		{
-			with (create_debris(x + random_range(-64, 64), y + random_range(-64, 64), 4019, true))
+			with (create_debris(x + random_range(-64, 64), y + random_range(-64, 64), spr_flashdots, true))
 			{
 				hsp = random_range(-5, 5);
 				vsp = random_range(-10, 10);
@@ -1008,7 +1008,7 @@ function scr_noise_finale()
 			if (instance_exists(obj_noisebosscrate) && obj_noisebosscrate.y >= (y - 10))
 			{
 				repeat (3)
-					create_debris(obj_noisebosscrate.x, obj_noisebosscrate.y, 1505);
+					create_debris(obj_noisebosscrate.x, obj_noisebosscrate.y, spr_wooddebris);
 				sprite_index = spr_playerN_minigunstart;
 				fmod_event_one_shot_3d("event:/sfx/pep/shotgunload", x, y);
 				fmod_event_one_shot_3d("event:/sfx/misc/breakblock", x, y);
@@ -1045,7 +1045,7 @@ function scr_noise_finale()
 			}
 			if (obj_noisettefinale.x <= x)
 			{
-				create_debris(x, y, 2063);
+				create_debris(x, y, spr_minigunfall);
 				substate = 289;
 				sprite_index = spr_playerN_bump;
 				with (obj_player1)
@@ -1099,7 +1099,7 @@ function scr_noise_phase1hurt()
 		{
 			repeat (2)
 			{
-				with (create_debris(x + random_range(-64, 64), y + random_range(-64, 64), 4019, true))
+				with (create_debris(x + random_range(-64, 64), y + random_range(-64, 64), spr_flashdots, true))
 				{
 					hsp = random_range(-5, 5);
 					vsp = random_range(-10, 10);

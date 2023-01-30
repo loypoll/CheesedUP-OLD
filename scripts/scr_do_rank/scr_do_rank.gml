@@ -78,7 +78,7 @@ function scr_do_rank(argument0 = true, argument1 = false)
 		global.combo = 0;
 		obj_camera.alarm[4] = -1;
 		for (var i = 0; i < global.comboscore; i += 10)
-			create_collect(obj_player1.x + irandom_range(-60, 60), (obj_player1.y - 100) + irandom_range(-60, 60), choose(2082, 2084, 2085, 2087, 2083), 10);
+			create_collect(obj_player1.x + irandom_range(-60, 60), (obj_player1.y - 100) + irandom_range(-60, 60), choose(spr_shroomcollect, spr_tomatocollect, spr_cheesecollect, spr_sausagecollect, spr_pineapplecollect), 10);
 		global.comboscore = 0;
 	}
 	if (!instance_exists(obj_endlevelfade))

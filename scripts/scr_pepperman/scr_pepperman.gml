@@ -486,7 +486,7 @@ function scr_pepperman_shoulderbash()
 				shake_mag_acc = 5 / room_speed;
 			}
 			repeat (4)
-				create_debris(x, y, 1525);
+				create_debris(x, y, spr_slapstar);
 			instance_create(x + 10, y + 10, obj_bumpeffect);
 		}
 	}
