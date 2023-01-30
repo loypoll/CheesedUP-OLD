@@ -17,5 +17,5 @@ if (other.state != 186)
 		create_collect(x, y, sprite_index, val);
 	with (instance_create(x + 16, y, obj_smallnumber))
 		number = string(val);
-	tv_do_expression(969);
+	tv_do_expression(spr_tv_exprcollect);
 }

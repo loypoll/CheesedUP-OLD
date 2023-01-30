@@ -250,29 +250,29 @@ function scr_hurtplayer()
 			if (isgustavo)
 				damage_n = global.gustavo_damage;
 			if (!isgustavo)
-				tv_do_expression(1762);
+				tv_do_expression(spr_tv_exprhurt);
 			else
-				tv_do_expression(1999);
+				tv_do_expression(spr_tv_hurtG);
 			if (damage_n == 10)
-				tv_do_expression(2054);
+				tv_do_expression(spr_tv_exprhurt1);
 			else if (damage_n == 20)
-				tv_do_expression(449);
+				tv_do_expression(spr_tv_exprhurt2);
 			else if (damage_n == 30)
-				tv_do_expression(2909);
+				tv_do_expression(spr_tv_exprhurt3);
 			else if (damage_n == 40)
-				tv_do_expression(258);
+				tv_do_expression(spr_tv_exprhurt4);
 			else if (damage_n == 50)
-				tv_do_expression(68);
+				tv_do_expression(spr_tv_exprhurt5);
 			else if (damage_n == 60)
-				tv_do_expression(566);
+				tv_do_expression(spr_tv_exprhurt6);
 			else if (damage_n == 70)
-				tv_do_expression(1628);
+				tv_do_expression(spr_tv_exprhurt7);
 			else if (damage_n == 80)
-				tv_do_expression(1362);
+				tv_do_expression(spr_tv_exprhurt8);
 			else if (damage_n == 90)
-				tv_do_expression(3621);
+				tv_do_expression(spr_tv_exprhurt9);
 			else if (damage_n == 100)
-				tv_do_expression(688);
+				tv_do_expression(spr_tv_exprhurt10);
 			if (obj_tv.expressionsprite != spr_tv_exprhurt && obj_tv.expressionsprite != spr_tv_hurtG)
             {
 				instance_destroy(obj_transfotip);
@@ -324,7 +324,7 @@ function scr_hurtplayer()
 						repeat (n)
 						{
 							var pos = scr_bosscontroller_get_health_pos(player_hp, player_rowmax, player_columnmax, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad);
-							scr_bosscontroller_particle_hp(3631, irandom(sprite_get_number(spr_bossfight_playerhp) - 1), pos[0], pos[1], 1, spr_peppalette, obj_player1.paletteselect, global.palettetexture);
+							scr_bosscontroller_particle_hp(spr_bossfight_playerhp, irandom(sprite_get_number(spr_bossfight_playerhp) - 1), pos[0], pos[1], 1, spr_peppalette, obj_player1.paletteselect, global.palettetexture);
 							global.bossplayerhurt = true;
 							player_hp--;
 						}
@@ -333,7 +333,7 @@ function scr_hurtplayer()
 				else
 				{
 					var d = instance_find(obj_hpeffect, instance_number(obj_hpeffect) - 1);
-					scr_bosscontroller_particle_hp(3631, irandom(sprite_get_number(spr_bossfight_playerhp) - 1), d.x, d.y, (d.x > (room_width / 2)) ? -1 : 1, spr_peppalette, obj_player1.paletteselect, global.palettetexture);
+					scr_bosscontroller_particle_hp(spr_bossfight_playerhp, irandom(sprite_get_number(spr_bossfight_playerhp) - 1), d.x, d.y, (d.x > (room_width / 2)) ? -1 : 1, spr_peppalette, obj_player1.paletteselect, global.palettetexture);
 					instance_destroy(d);
 				}
 			}

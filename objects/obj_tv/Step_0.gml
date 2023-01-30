@@ -264,7 +264,7 @@ switch (state)
 					state = 250;
 					expressionsprite = -4;
 					if (obj_player1.state == 107)
-						tv_do_expression(1762);
+						tv_do_expression(spr_tv_exprhurt);
 				}
 				break;
 			case spr_tv_exprcollect:
@@ -286,7 +286,7 @@ switch (state)
 						other.expressionsprite = -4;
 					}
 					if (mach4mode)
-						tv_do_expression(4146);
+						tv_do_expression(spr_tv_exprmach4);
 				}
 				break;
 			case spr_tv_exprmach4:
