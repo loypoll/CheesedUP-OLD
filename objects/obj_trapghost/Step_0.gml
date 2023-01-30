@@ -49,6 +49,45 @@ switch (state)
 			}
 			break;
 		}
+		else
+        {
+            with (trapid)
+            {
+                switch object_index
+                {
+                    case obj_anchortrap:
+                        sprite_index = spr_kingghost_anchor2
+                        if (state != (135 << 0) && state != (92 << 0) && obj_player1.x > (x - 100) && obj_player1.x < (x + 100) && obj_player1.y > y && obj_player1.y < (y + 500))
+                        {
+                            fmod_event_one_shot_3d("event:/sfx/enemies/presentfall", x, y)
+                            state = (135 << 0)
+                            vsp = 10
+                        }
+                        break
+                    case 302:
+                        if (cooldown == 0 && state != (80 << 0) && obj_player1.x > (x - 200) && obj_player1.x < (x + 200) && obj_player1.y > (y - 100) && obj_player1.y < (y + 100))
+                        {
+                            state = (80 << 0)
+                            sprite_index = spr_kingghost_spike3
+                            fmod_event_one_shot_3d("event:/sfx/enemies/pizzardelectricity", x, y)
+                            image_index = 0
+                            attackbuffer = 30
+                            cooldown = 50
+                        }
+                        if (state == (0 << 0))
+                            sprite_index = spr_kingghost_spike2
+                        break
+                    case 167:
+                        sprite_index = spr_kingghost_tv2
+                        break
+                    case 398:
+                        if (sprite_index != spr_kingghost_pinball3)
+                            sprite_index = spr_kingghost_pinball2
+                        break
+                }
+            }
+            break
+		}
 }
 visible = state != 141;
 if (distance_to_object(obj_player1) <= 200)
