@@ -4,7 +4,7 @@ if (spawn)
 	with (instance_create(0, 0, obj_peppermanbowlingballspawner))
 	{
 		balls = 3;
-		object = 315;
+		object = obj_cowfall;
 		with (obj_vigilanteboss)
 		{
 			if (phase == 2)

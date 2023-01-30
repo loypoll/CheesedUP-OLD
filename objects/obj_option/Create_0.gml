@@ -11,10 +11,10 @@ menu = 0;
 optionselected = 0;
 backbuffer = 0;
 pause_icons = array_create(0);
-scr_pauseicon_add(1472, 4);
-scr_pauseicon_add(1472, 5);
-scr_pauseicon_add(1472, 6);
-scr_pauseicon_add(1472, 7, 8, 8);
+scr_pauseicon_add(spr_pauseicons, 4);
+scr_pauseicon_add(spr_pauseicons, 5);
+scr_pauseicon_add(spr_pauseicons, 6);
+scr_pauseicon_add(spr_pauseicons, 7, 8, 8);
 var categories = create_menu_fixed(0, 0, 0, 48);
 add_option_press(categories, 0, "option_audio", function()
 {

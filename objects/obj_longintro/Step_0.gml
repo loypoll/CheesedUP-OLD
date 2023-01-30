@@ -518,7 +518,7 @@ switch (scene)
 			scene++;
 			scenebuffer = 40;
 			bossdir = 1;
-			bossarr = [1605, 3394, 547];
+			bossarr = [spr_intro_unkown, spr_intro_noise, spr_intro_vigi];
 			boss = instance_create(0, -540, obj_introprop);
 			boss.sprite_index = spr_intro_pepperman;
 		}

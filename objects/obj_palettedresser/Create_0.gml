@@ -1,5 +1,5 @@
 depth = 100;
-palettes = [["classic", true, 1], ["unfunny", false, 3], ["money", false, 4], ["sage", false, 5], ["blood", false, 6], ["tv", false, 7], ["dark", false, 8], ["shitty", false, 9], ["golden", false, 10], ["garish", false, 11], ["mooney", false, 15], ["funny", false, 12, 4008], ["itchy", false, 12, 473], ["pizza", false, 12, 2889], ["stripes", false, 12, 1672], ["goldemanne", false, 12, 3712], ["bones", false, 12, 3940], ["pp", false, 12, 3915], ["war", false, 12, 844], ["john", false, 12, 3934]];
+palettes = [["classic", 1, 1], ["unfunny", 0, 3], ["money", 0, 4], ["sage", 0, 5], ["blood", 0, 6], ["tv", 0, 7], ["dark", 0, 8], ["shitty", 0, 9], ["golden", 0, 10], ["garish", 0, 11], ["mooney", 0, 15], ["funny", 0, 12, spr_peppattern1], ["itchy", 0, 12, spr_peppattern2], ["pizza", 0, 12, spr_peppattern3], ["stripes", 0, 12, spr_peppattern4], ["goldemanne", 0, 12, spr_peppattern5], ["bones", 0, 12, spr_peppattern6], ["pp", 0, 12, spr_peppattern7], ["war", 0, 12, spr_peppattern8], ["john", 0, 12, spr_peppattern9]]
 ini_open_from_string(obj_savesystem.ini_str_options);
 for (var i = 1; i < array_length(palettes); i++)
 {
