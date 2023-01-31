@@ -33,7 +33,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Hitbox",
+    "path": "folders/Objects/Baddie/Hitbox.yy",
   },
 }

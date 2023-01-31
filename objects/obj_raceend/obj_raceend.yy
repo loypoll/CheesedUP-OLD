@@ -33,7 +33,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "World 2",
+    "path": "folders/Objects/Level specific/World 2.yy",
   },
 }

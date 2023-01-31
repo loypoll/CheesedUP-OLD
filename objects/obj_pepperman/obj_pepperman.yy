@@ -48,7 +48,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Pepperman",
+    "path": "folders/Objects/Baddie/Boss/Pepperman.yy",
   },
 }

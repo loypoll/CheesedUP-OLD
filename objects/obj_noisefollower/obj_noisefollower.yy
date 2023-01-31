@@ -33,7 +33,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Followers",
+    "path": "folders/Objects/Room structure/Followers.yy",
   },
 }

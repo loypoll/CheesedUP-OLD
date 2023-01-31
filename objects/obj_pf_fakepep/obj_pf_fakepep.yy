@@ -43,7 +43,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Pizzaface",
+    "path": "folders/Objects/Baddie/Boss/Pizzaface.yy",
   },
 }

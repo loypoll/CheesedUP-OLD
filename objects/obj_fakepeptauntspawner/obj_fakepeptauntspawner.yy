@@ -29,7 +29,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Fake Peppino",
+    "path": "folders/Objects/Baddie/Boss/Fake Peppino.yy",
   },
 }
