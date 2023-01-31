@@ -89,7 +89,7 @@ switch (introstate)
 				mask_index = b[2];
 				savedvsp = -11;
 				savedhsp = b[3];
-				if (b[0] == 3894)
+				if (b[0] == spr_fakepeppino_stun)
 					usepalette = true;
 				other.propID = id;
 			}
@@ -240,7 +240,7 @@ switch (introstate)
 			}
 			with (obj_pizzafacep3_prop)
 			{
-				if (angryspr != 4056)
+				if (angryspr != spr_pepperman_sour)
 				{
 					hsp = irandom_range(8, 10);
 					vsp = -11;

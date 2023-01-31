@@ -64,7 +64,7 @@ switch (state)
                             vsp = 10
                         }
                         break
-                    case 302:
+                    case obj_knighttrap:
                         if (cooldown == 0 && state != (80 << 0) && obj_player1.x > (x - 200) && obj_player1.x < (x + 200) && obj_player1.y > (y - 100) && obj_player1.y < (y + 100))
                         {
                             state = (80 << 0)
@@ -77,10 +77,10 @@ switch (state)
                         if (state == (0 << 0))
                             sprite_index = spr_kingghost_spike2
                         break
-                    case 167:
+                    case obj_tvtrap:
                         sprite_index = spr_kingghost_tv2
                         break
-                    case 398:
+                    case obj_pinballtrap:
                         if (sprite_index != spr_kingghost_pinball3)
                             sprite_index = spr_kingghost_pinball2
                         break

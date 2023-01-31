@@ -90,7 +90,7 @@ function scr_player_supergrab()
 					}
 					image_index = 1;
 					image_speed = 0;
-					randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, 736, 735, 732]);
+					randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7]);
 					repeat (4 + irandom(6))
 					{
 						var _spd = 5 + irandom(6);
