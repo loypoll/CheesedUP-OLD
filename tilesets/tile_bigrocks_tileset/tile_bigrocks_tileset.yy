@@ -1,26 +1,30 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tile_bigrocks_tileset",
+  "autoTileSets": [],
+  "macroPageTiles": {
+    "SerialiseHeight": 0,
+    "SerialiseWidth": 0,
+    "TileSerialiseData": [],
+  },
+  "out_columns": 12,
+  "out_tilehborder": 2,
+  "out_tilevborder": 2,
+  "parent": {
+    "name": "Tile Sets",
+    "path": "folders/Tile Sets.yy",
+  },
   "spriteId": {
     "name": "tilespr_tile_bigrocks_tileset",
-    "path": "sprites/tilespr_tile_bigrocks_tileset/tilespr_tile_bigrocks_tileset.yy"
+    "path": "sprites/tilespr_tile_bigrocks_tileset/tilespr_tile_bigrocks_tileset.yy",
   },
-  "tileWidth": 32,
-  "tileHeight": 32,
-  "tilexoff": 2,
-  "tileyoff": 2,
-  "tilehsep": 4,
-  "tilevsep": 4,
   "spriteNoExport": false,
   "textureGroupId": {
     "name": "desertgroup",
-    "path": "texturegroups/desertgroup"
+    "path": "texturegroups/desertgroup",
   },
-  "out_tilehborder": 2,
-  "out_tilevborder": 2,
-  "out_columns": 12,
   "tile_count": 144,
-  "autoTileSets": [],
-  "tileAnimationFrames": [],
-  "tileAnimationSpeed": 15.0,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -166,22 +170,16 @@
       140,
       141,
       142,
-      143
+      143,
     ],
-    "SerialiseFrameCount": 1
+    "SerialiseFrameCount": 1,
   },
-  "macroPageTiles": {
-    "TileDataFormat": 0,
-    "SerialiseWidth": 0,
-    "SerialiseHeight": 0,
-    "TileSerialiseData": []
-  },
-  "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy"
-  },
-  "resourceVersion": "1.0",
-  "name": "tile_bigrocks_tileset",
-  "tags": [],
-  "resourceType": "GMTileSet"
+  "tileAnimationFrames": [],
+  "tileAnimationSpeed": 15.0,
+  "tileHeight": 32,
+  "tilehsep": 4,
+  "tilevsep": 4,
+  "tileWidth": 32,
+  "tilexoff": 2,
+  "tileyoff": 2,
 }

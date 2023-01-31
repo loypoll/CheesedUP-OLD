@@ -1,26 +1,30 @@
 {
+  "resourceType": "GMTileSet",
+  "resourceVersion": "1.0",
+  "name": "tileset_graveyard",
+  "autoTileSets": [],
+  "macroPageTiles": {
+    "SerialiseHeight": 0,
+    "SerialiseWidth": 0,
+    "TileSerialiseData": [],
+  },
+  "out_columns": 13,
+  "out_tilehborder": 2,
+  "out_tilevborder": 2,
+  "parent": {
+    "name": "Tile Sets",
+    "path": "folders/Tile Sets.yy",
+  },
   "spriteId": {
     "name": "tilespr_tileset_graveyard",
-    "path": "sprites/tilespr_tileset_graveyard/tilespr_tileset_graveyard.yy"
+    "path": "sprites/tilespr_tileset_graveyard/tilespr_tileset_graveyard.yy",
   },
-  "tileWidth": 32,
-  "tileHeight": 32,
-  "tilexoff": 2,
-  "tileyoff": 2,
-  "tilehsep": 4,
-  "tilevsep": 4,
   "spriteNoExport": false,
   "textureGroupId": {
     "name": "graveyardgroup",
-    "path": "texturegroups/graveyardgroup"
+    "path": "texturegroups/graveyardgroup",
   },
-  "out_tilehborder": 2,
-  "out_tilevborder": 2,
-  "out_columns": 13,
   "tile_count": 180,
-  "autoTileSets": [],
-  "tileAnimationFrames": [],
-  "tileAnimationSpeed": 15.0,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -202,22 +206,16 @@
       176,
       177,
       178,
-      179
+      179,
     ],
-    "SerialiseFrameCount": 1
+    "SerialiseFrameCount": 1,
   },
-  "macroPageTiles": {
-    "TileDataFormat": 0,
-    "SerialiseWidth": 0,
-    "SerialiseHeight": 0,
-    "TileSerialiseData": []
-  },
-  "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy"
-  },
-  "resourceVersion": "1.0",
-  "name": "tileset_graveyard",
-  "tags": [],
-  "resourceType": "GMTileSet"
+  "tileAnimationFrames": [],
+  "tileAnimationSpeed": 15.0,
+  "tileHeight": 32,
+  "tilehsep": 4,
+  "tilevsep": 4,
+  "tileWidth": 32,
+  "tilexoff": 2,
+  "tileyoff": 2,
 }
