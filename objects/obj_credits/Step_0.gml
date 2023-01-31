@@ -15,7 +15,7 @@ if (!finish && (keyboard_check_pressed(global.key_slap) || gamepad_button_check_
 		}
 		with (obj_endingcard)
 		{
-			event_perform(2, 0);
+			event_perform(ev_alarm, 0);
 			alarm[0] = -1;
 		}
 	}

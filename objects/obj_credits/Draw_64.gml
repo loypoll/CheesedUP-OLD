@@ -1,6 +1,6 @@
 draw_set_font(global.creditsfont);
-draw_set_halign(1);
-draw_set_valign(0);
+draw_set_halign(fa_center);
+draw_set_valign(fa_top);
 for (var i = 0; i < array_length(credits_arr); i++)
 {
 	var q = credits_arr[i];
@@ -8,12 +8,12 @@ for (var i = 0; i < array_length(credits_arr); i++)
 	var xx = 0;
 	if (i == 0)
 	{
-		draw_set_halign(0);
+		draw_set_halign(fa_left);
 		xx = 16;
 	}
 	else
 	{
-		draw_set_halign(2);
+		draw_set_halign(fa_right);
 		xx = SCREEN_WIDTH - 16;
 	}
 	for (var j = init_pos; j < array_length(q); j++)
@@ -27,7 +27,7 @@ for (var i = 0; i < array_length(credits_arr); i++)
 			trace("Found title");
 			var old_x = xx;
 			var old_halign = draw_get_halign();
-			draw_set_halign(1);
+			draw_set_halign(fa_center);
 			xx = SCREEN_WIDTH / 2;
 		}
 		if (!title || i == 0)
