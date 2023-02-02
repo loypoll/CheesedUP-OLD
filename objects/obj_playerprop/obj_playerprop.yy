@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Intro",
+    "path": "folders/Objects/Cutscenes/Intro.yy",
   },
   "parentObjectId": {
     "name": "obj_introprop",

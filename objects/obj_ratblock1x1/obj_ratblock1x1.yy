@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Destroyables",
+    "path": "folders/Objects/Room structure/Destroyables.yy",
   },
   "parentObjectId": {
     "name": "obj_ratblock",

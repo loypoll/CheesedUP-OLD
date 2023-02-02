@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Vigilante",
+    "path": "folders/Objects/Baddie/Boss/Vigilante.yy",
   },
   "parentObjectId": null,
   "persistent": false,

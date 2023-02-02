@@ -62,6 +62,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tilesets","folderPath":"folders/Sprites/Tilesets.yy","order":4188,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy","order":7,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Door Markers","folderPath":"folders/Objects/Room structure/Door Markers.yy","order":0,},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Master.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},

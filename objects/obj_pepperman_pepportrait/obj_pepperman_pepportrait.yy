@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Pepperman",
+    "path": "folders/Objects/Baddie/Boss/Pepperman.yy",
   },
   "parentObjectId": null,
   "persistent": false,

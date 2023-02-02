@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Ghost Traps",
+    "path": "folders/Objects/Level specific/World 5/Ghost Traps.yy",
   },
   "parentObjectId": {
     "name": "obj_trap",
