@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"1c199394-b3fa-4505-93c5-cebfea86bc17",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2ef14ed7-6ac5-431e-81e0-8dfbd8ea1d80",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 972,
+  "height": 2336,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"18eae9b0-6c12-4022-adc2-f1c7c8873acd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cc31bb8b-faf0-496e-a801-14173094ac53","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"1c199394-b3fa-4505-93c5-cebfea86bc17","path":"sprites/tilespr_tile_ufo_tileset/tilespr_tile_ufo_tileset.yy",},},},"Disabled":false,"id":"3dabef85-5f51-4996-904c-776a402d9064","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2ef14ed7-6ac5-431e-81e0-8dfbd8ea1d80","path":"sprites/tilespr_tile_ufo_tileset/tilespr_tile_ufo_tileset.yy",},},},"Disabled":false,"id":"1dcfe4cb-5a38-45ad-b9c5-b2df0d3e2b42","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 972,
+  "width": 320,
 }

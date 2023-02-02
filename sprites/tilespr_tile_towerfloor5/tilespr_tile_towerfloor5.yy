@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"3c3d3bb2-c185-4b9a-8a1a-a587cf141d0c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e0f8f4f7-967b-4cf7-a10c-cf38a0ec3475",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1116,
+  "height": 1504,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9aa0e839-79f6-4a59-b547-2f91d33dfa58","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e003ad34-394f-49d8-ad33-1fcf0ab6be3f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"3c3d3bb2-c185-4b9a-8a1a-a587cf141d0c","path":"sprites/tilespr_tile_towerfloor5/tilespr_tile_towerfloor5.yy",},},},"Disabled":false,"id":"dfdaa8be-c580-4247-9014-59ad05b472cb","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e0f8f4f7-967b-4cf7-a10c-cf38a0ec3475","path":"sprites/tilespr_tile_towerfloor5/tilespr_tile_towerfloor5.yy",},},},"Disabled":false,"id":"792f9cc5-1bc7-4d8d-9292-99725e08f4c8","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1080,
+  "width": 640,
 }

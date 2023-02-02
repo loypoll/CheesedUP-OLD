@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"306f75c0-2cfb-4cd0-a8fe-426df321e97c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0872bdd9-40e0-401d-892a-7f4becac5300",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 864,
+  "height": 1184,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d2b4316e-ab2c-43bc-8afa-b0aff9f44da7","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"f57d9cac-10a3-4251-aba5-7004007db11a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"306f75c0-2cfb-4cd0-a8fe-426df321e97c","path":"sprites/tilespr_tile_sewergraffiti/tilespr_tile_sewergraffiti.yy",},},},"Disabled":false,"id":"a6d4d204-fe7c-4fc5-9ec1-aa51382e83e9","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0872bdd9-40e0-401d-892a-7f4becac5300","path":"sprites/tilespr_tile_sewergraffiti/tilespr_tile_sewergraffiti.yy",},},},"Disabled":false,"id":"49a7c6fa-6dbc-433e-85c0-6a8fc65154f3","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 864,
+  "width": 512,
 }

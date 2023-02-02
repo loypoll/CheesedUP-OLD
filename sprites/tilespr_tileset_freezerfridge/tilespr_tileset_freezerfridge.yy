@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"da5f5c5c-737b-4b6a-ae92-3292e3415cdb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"45b2e81b-9b33-4abf-9e7d-2caaebc1ba9c",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1044,
+  "height": 1376,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9f18e14c-4792-46a7-867b-c72e371f4077","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d37106f0-2dc1-4270-8790-20dd4238ecd8","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"da5f5c5c-737b-4b6a-ae92-3292e3415cdb","path":"sprites/tilespr_tileset_freezerfridge/tilespr_tileset_freezerfridge.yy",},},},"Disabled":false,"id":"baad5ae0-811d-40c2-8f4b-50bce55212e6","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"45b2e81b-9b33-4abf-9e7d-2caaebc1ba9c","path":"sprites/tilespr_tileset_freezerfridge/tilespr_tileset_freezerfridge.yy",},},},"Disabled":false,"id":"cb78e589-5c84-4bf4-b726-699afe34e1d4","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1044,
+  "width": 640,
 }

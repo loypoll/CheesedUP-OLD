@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0494b4cf-b94e-4712-b162-2fc284c78858",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"465af73b-14e1-4631-baee-8d2d417661a6",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1116,
+  "height": 1504,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"325e0c18-19f3-43cc-b951-d44653b3a7dd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"578c7671-2306-4d63-bb7c-13f0c587a18a","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"0494b4cf-b94e-4712-b162-2fc284c78858","path":"sprites/tilespr_tile_street/tilespr_tile_street.yy",},},},"Disabled":false,"id":"7488017e-b889-42c8-837a-c20e8a1f8474","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"465af73b-14e1-4631-baee-8d2d417661a6","path":"sprites/tilespr_tile_street/tilespr_tile_street.yy",},},},"Disabled":false,"id":"f988a457-14a6-4229-956d-496524b30370","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1080,
+  "width": 640,
 }

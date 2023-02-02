@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"fb88c89a-0854-4152-b873-71191ebcc421",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b2dff88d-edfc-4365-b4cc-b668fb90e51c",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1044,
+  "height": 1056,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a2246bde-170e-4894-a19a-2845f81dca38","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"243f17e4-7bf7-49d1-aee4-57447acd34b8","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fb88c89a-0854-4152-b873-71191ebcc421","path":"sprites/tilespr_tile_saloonwooden/tilespr_tile_saloonwooden.yy",},},},"Disabled":false,"id":"1ad3a927-7239-4629-b615-93e939885274","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b2dff88d-edfc-4365-b4cc-b668fb90e51c","path":"sprites/tilespr_tile_saloonwooden/tilespr_tile_saloonwooden.yy",},},},"Disabled":false,"id":"29030dc2-27e4-48f7-b552-7359ab79d3d2","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1008,
+  "width": 800,
 }
