@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "tilespr_spr_spaceprops1",
-    "path": "sprites/tilespr_spr_spaceprops1/tilespr_spr_spaceprops1.yy",
+    "name": "spr_spaceprops",
+    "path": "sprites/spr_spaceprops/spr_spaceprops.yy",
   },
   "spriteNoExport": false,
   "textureGroupId": {
@@ -663,9 +663,9 @@
   "tileAnimationFrames": [],
   "tileAnimationSpeed": 15.0,
   "tileHeight": 32,
-  "tilehsep": 4,
-  "tilevsep": 4,
+  "tilehsep": 0,
+  "tilevsep": 0,
   "tileWidth": 32,
-  "tilexoff": 2,
-  "tileyoff": 2,
+  "tilexoff": 0,
+  "tileyoff": 0,
 }

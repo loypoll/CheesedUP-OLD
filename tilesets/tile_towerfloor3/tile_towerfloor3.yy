@@ -19,7 +19,7 @@
     "name": "tilespr_tile_towerfloor3",
     "path": "sprites/tilespr_tile_towerfloor3/tilespr_tile_towerfloor3.yy",
   },
-  "spriteNoExport": false,
+  "spriteNoExport": true,
   "textureGroupId": {
     "name": "entrancegroup",
     "path": "texturegroups/entrancegroup",

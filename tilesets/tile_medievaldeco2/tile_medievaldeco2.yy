@@ -19,7 +19,7 @@
     "name": "tilespr_tile_medievaldeco2",
     "path": "sprites/tilespr_tile_medievaldeco2/tilespr_tile_medievaldeco2.yy",
   },
-  "spriteNoExport": false,
+  "spriteNoExport": true,
   "textureGroupId": {
     "name": "medievalgroup",
     "path": "texturegroups/medievalgroup",

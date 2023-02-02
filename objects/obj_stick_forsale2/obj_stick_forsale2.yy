@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Hub",
+    "path": "folders/Objects/Level specific/Hub.yy",
   },
   "parentObjectId": {
     "name": "obj_stick_forsale",

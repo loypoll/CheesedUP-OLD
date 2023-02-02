@@ -16,8 +16,8 @@
     "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
-    "name": "tilespr_tile_tower_tileset",
-    "path": "sprites/tilespr_tile_tower_tileset/tilespr_tile_tower_tileset.yy",
+    "name": "tile_tower",
+    "path": "sprites/tile_tower/tile_tower.yy",
   },
   "spriteNoExport": false,
   "textureGroupId": {
@@ -433,9 +433,9 @@
   "tileAnimationFrames": [],
   "tileAnimationSpeed": 15.0,
   "tileHeight": 32,
-  "tilehsep": 4,
-  "tilevsep": 4,
+  "tilehsep": 0,
+  "tilevsep": 0,
   "tileWidth": 32,
-  "tilexoff": 2,
-  "tileyoff": 2,
+  "tilexoff": 0,
+  "tileyoff": 0,
 }
