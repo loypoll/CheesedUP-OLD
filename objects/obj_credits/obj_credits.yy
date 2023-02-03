@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Cutscenes",
-    "path": "folders/Objects/Cutscenes.yy",
+    "name": "Ending",
+    "path": "folders/Objects/Cutscenes/Ending.yy",
   },
   "parentObjectId": null,
   "persistent": false,

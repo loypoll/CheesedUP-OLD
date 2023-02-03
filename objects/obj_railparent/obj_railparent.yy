@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Unsorted",
-    "path": "folders/Objects/Unsorted.yy",
+    "name": "World 5",
+    "path": "folders/Objects/Level specific/World 5.yy",
   },
   "parentObjectId": {
     "name": "obj_solid",

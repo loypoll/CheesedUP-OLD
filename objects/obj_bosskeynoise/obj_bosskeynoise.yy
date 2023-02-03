@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Unsorted",
-    "path": "folders/Objects/Unsorted.yy",
+    "name": "Noise",
+    "path": "folders/Objects/Baddie/Boss/Noise.yy",
   },
   "parentObjectId": null,
   "persistent": false,

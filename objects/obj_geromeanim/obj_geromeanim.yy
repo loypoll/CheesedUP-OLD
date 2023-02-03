@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Followers",
-    "path": "folders/Objects/Room structure/Followers.yy",
+    "name": "Non pickups",
+    "path": "folders/Objects/Room structure/Followers/Non pickups.yy",
   },
   "parentObjectId": null,
   "persistent": false,

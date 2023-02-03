@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Misc",
-    "path": "folders/Objects/Room structure/Misc.yy",
+    "name": "Blocks",
+    "path": "folders/Objects/Room structure/Blocks.yy",
   },
   "parentObjectId": {
     "name": "obj_solid",

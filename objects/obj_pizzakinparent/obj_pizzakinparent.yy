@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Unsorted",
-    "path": "folders/Objects/Unsorted.yy",
+    "name": "Non pickups",
+    "path": "folders/Objects/Room structure/Followers/Non pickups.yy",
   },
   "parentObjectId": {
     "name": "obj_followcharacter",
