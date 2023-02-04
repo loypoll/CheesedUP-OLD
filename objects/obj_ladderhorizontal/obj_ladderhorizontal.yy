@@ -13,8 +13,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Unused",
-    "path": "folders/Objects/Unused.yy",
+    "name": "Unsorted",
+    "path": "folders/Objects/Unsorted.yy",
   },
   "parentObjectId": {
     "name": "obj_ladder",

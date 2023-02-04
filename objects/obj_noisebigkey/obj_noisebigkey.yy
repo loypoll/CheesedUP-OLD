@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Noise",
-    "path": "folders/Objects/Baddie/Boss/Noise.yy",
+    "name": "Unsorted",
+    "path": "folders/Objects/Unsorted.yy",
   },
   "parentObjectId": null,
   "persistent": false,

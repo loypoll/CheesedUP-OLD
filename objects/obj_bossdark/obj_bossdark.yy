@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Visuals",
-    "path": "folders/Objects/Visuals.yy",
+    "name": "Boss",
+    "path": "folders/Objects/Baddie/Boss.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Visuals",
-    "path": "folders/Objects/Visuals.yy",
+    "name": "Unsorted",
+    "path": "folders/Objects/Unsorted.yy",
   },
   "parentObjectId": null,
   "persistent": false,

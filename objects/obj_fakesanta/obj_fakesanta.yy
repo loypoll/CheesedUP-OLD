@@ -17,8 +17,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "World 4",
-    "path": "folders/Objects/Level specific/World 4.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "parentObjectId": {
     "name": "obj_baddie",

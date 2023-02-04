@@ -6,8 +6,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Doors",
-    "path": "folders/Objects/Room structure/Doors.yy",
+    "name": "Door Markers",
+    "path": "folders/Objects/Room structure/Door Markers.yy",
   },
   "parentObjectId": null,
   "persistent": false,

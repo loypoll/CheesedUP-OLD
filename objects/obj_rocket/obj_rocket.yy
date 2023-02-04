@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "World 3",
-    "path": "folders/Objects/Level specific/World 3.yy",
+    "name": "Misc",
+    "path": "folders/Objects/Room structure/Misc.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Hub",
-    "path": "folders/Objects/Level specific/Hub.yy",
+    "name": "Unsorted",
+    "path": "folders/Objects/Unsorted.yy",
   },
   "parentObjectId": null,
   "persistent": false,

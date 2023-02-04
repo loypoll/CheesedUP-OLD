@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Unused",
-    "path": "folders/Objects/Unused.yy",
+    "name": "Followers",
+    "path": "folders/Objects/Room structure/Followers.yy",
   },
   "parentObjectId": {
     "name": "obj_followcharacter",

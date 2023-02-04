@@ -12,8 +12,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Gustavo",
-    "path": "folders/Objects/Room structure/Misc/Gustavo.yy",
+    "name": "Misc",
+    "path": "folders/Objects/Room structure/Misc.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Visuals",
-    "path": "folders/Objects/Visuals.yy",
+    "name": "Misc",
+    "path": "folders/Objects/Room structure/Misc.yy",
   },
   "parentObjectId": null,
   "persistent": false,
