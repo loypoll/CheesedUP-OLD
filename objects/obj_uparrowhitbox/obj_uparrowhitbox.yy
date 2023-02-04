@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Player",
-    "path": "folders/Objects/Game Settings/Player.yy",
+    "name": "Visuals",
+    "path": "folders/Objects/Visuals.yy",
   },
   "parentObjectId": null,
   "persistent": false,

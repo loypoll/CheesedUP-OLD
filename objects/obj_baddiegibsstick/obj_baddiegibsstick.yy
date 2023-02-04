@@ -13,8 +13,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Visuals",
-    "path": "folders/Objects/Visuals.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
   "parentObjectId": null,
   "persistent": false,

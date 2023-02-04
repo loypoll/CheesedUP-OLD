@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Visuals",
-    "path": "folders/Objects/Visuals.yy",
+    "name": "Particle",
+    "path": "folders/Objects/Visuals/Particle.yy",
   },
   "parentObjectId": null,
   "persistent": false,

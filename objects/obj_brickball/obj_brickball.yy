@@ -15,8 +15,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Brick",
-    "path": "folders/Objects/Game Settings/Player/Brick.yy",
+    "name": "Player",
+    "path": "folders/Objects/Game Settings/Player.yy",
   },
   "parentObjectId": null,
   "persistent": false,

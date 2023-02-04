@@ -66,7 +66,7 @@ function vigilante_cancel_attack()
 				image_index = 0;
 				with (instance_create(x, y, obj_dynamite))
 				{
-					obj_explosion = 141;
+					obj_explosion = obj_dynamiteexplosion_boss;
 					image_xscale = other.image_xscale;
 					movespeed = 6;
 					vsp = -6;
@@ -252,7 +252,7 @@ function vigilante_decide_attack_phase3()
 			image_index = 0;
 			with (instance_create(x, y, obj_dynamite))
 			{
-				obj_explosion = 141;
+				obj_explosion = obj_dynamiteexplosion_boss;
 				image_xscale = other.image_xscale;
 				movespeed = 6;
 				vsp = -6;
@@ -599,7 +599,7 @@ function boss_vigilante_jump()
 		{
 			with (instance_create(x, y, obj_dynamite))
 			{
-				obj_explosion = 141;
+				obj_explosion = obj_dynamiteexplosion_boss;
 				image_xscale = other.image_xscale;
 				movespeed = 6;
 				vsp = -(6 + ((other.dynamite_count - 1) * 2));
