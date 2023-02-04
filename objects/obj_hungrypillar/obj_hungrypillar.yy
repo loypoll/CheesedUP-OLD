@@ -13,8 +13,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Level End",
+    "path": "folders/Objects/Room structure/Level End.yy",
   },
   "parentObjectId": {
     "name": "obj_destroyable3",
