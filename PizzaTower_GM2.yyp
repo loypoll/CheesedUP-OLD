@@ -64,10 +64,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Particle","folderPath":"folders/Objects/Visuals/Particle.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ending","folderPath":"folders/Objects/Cutscenes/Ending.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Non pickups","folderPath":"folders/Objects/Room structure/Followers/Non pickups.yy","order":0,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unsorted","folderPath":"folders/Objects/Unsorted.yy","order":0,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Startup","folderPath":"folders/Objects/Game Settings/Startup.yy","order":0,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Level End","folderPath":"folders/Objects/Room structure/Level End.yy","order":0,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rails","folderPath":"folders/Objects/Room structure/Misc/Rails.yy","order":0,},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Master.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},

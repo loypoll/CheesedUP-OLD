@@ -20,8 +20,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Noise",
-    "path": "folders/Objects/Baddie/Boss/Noise.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "parentObjectId": {
     "name": "obj_baddie",

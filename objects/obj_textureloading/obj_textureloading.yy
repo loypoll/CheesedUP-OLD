@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Startup",
-    "path": "folders/Objects/Game Settings/Startup.yy",
+    "name": "Game Settings",
+    "path": "folders/Objects/Game Settings.yy",
   },
   "parentObjectId": null,
   "persistent": false,
