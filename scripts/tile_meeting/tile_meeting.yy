@@ -2,10 +2,10 @@
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
   "name": "tile_meeting",
-  "isCompatibility": false,
   "isDnD": false,
+  "isCompatibility": false,
   "parent": {
-    "name": "Tile",
-    "path": "folders/Scripts/Compatibility/Tile.yy",
+    "name": "General",
+    "path": "folders/Scripts/General.yy",
   },
 }

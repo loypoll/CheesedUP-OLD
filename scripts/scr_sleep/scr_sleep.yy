@@ -2,10 +2,10 @@
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
   "name": "scr_sleep",
-  "isCompatibility": false,
   "isDnD": false,
+  "isCompatibility": false,
   "parent": {
-    "name": "General or Unsorted",
-    "path": "folders/Scripts/General or Unsorted.yy",
+    "name": "General",
+    "path": "folders/Scripts/General.yy",
   },
 }
