@@ -12,7 +12,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Collision",
-    "path": "folders/Objects/Room structure/Collision.yy",
+    "path": "folders/Objects/Collision.yy",
   },
   "parentObjectId": null,
   "persistent": false,

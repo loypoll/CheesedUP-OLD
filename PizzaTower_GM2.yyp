@@ -25,7 +25,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Vigilante","folderPath":"folders/Objects/Baddie/Boss/Vigilante.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Enemies","folderPath":"folders/Objects/Baddie/Enemies.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Hitbox","folderPath":"folders/Objects/Baddie/Hitbox.yy","order":1,},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Collision","folderPath":"folders/Objects/Room structure/Collision.yy","order":0,},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Collision","folderPath":"folders/Objects/Collision.yy","order":1,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Cutscenes","folderPath":"folders/Objects/Cutscenes.yy","order":6,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Intro","folderPath":"folders/Objects/Cutscenes/Intro.yy","order":0,},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Game Settings","folderPath":"folders/Objects/Game Settings.yy","order":0,},
