@@ -264,8 +264,8 @@
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
   ],
   "parent": {
-    "name": "Rooms",
-    "path": "folders/Rooms.yy",
+    "name": "Mansion",
+    "path": "folders/Rooms/Unused/Mansion.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Forest",
+    "path": "folders/Tile Sets/Forest.yy",
   },
   "spriteId": {
     "name": "tilespr_tileset_tile_forest2",
@@ -24,7 +24,7 @@
     "name": "forestgroup",
     "path": "texturegroups/forestgroup",
   },
-  "tile_count": 48,
+  "tile_count": 49,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -75,6 +75,7 @@
       45,
       46,
       47,
+      48,
     ],
     "SerialiseFrameCount": 1,
   },

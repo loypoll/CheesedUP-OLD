@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Forest",
+    "path": "folders/Tile Sets/Forest.yy",
   },
   "spriteId": {
     "name": "tilespr_tileset_tile_forest1_shade",

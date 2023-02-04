@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Ruin",
+    "path": "folders/Tile Sets/Ruin.yy",
   },
   "spriteId": {
     "name": "spr_ruindeco",

@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Kid's Party",
+    "path": "folders/Tile Sets/Kid's Party.yy",
   },
   "spriteId": {
     "name": "tilespr_tile_industrialcomplex",

@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Space",
+    "path": "folders/Tile Sets/Space.yy",
   },
   "spriteId": {
     "name": "tilespr_tileset_spaceglass",
@@ -24,12 +24,13 @@
     "name": "spacegroup",
     "path": "texturegroups/spacegroup",
   },
-  "tile_count": 3,
+  "tile_count": 4,
   "tileAnimation": {
     "FrameData": [
       0,
       1,
       2,
+      3,
     ],
     "SerialiseFrameCount": 1,
   },
