@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Graveyard",
+    "path": "folders/Tile Sets/Graveyard.yy",
   },
   "spriteId": {
     "name": "tilespr_tileset_graveyard",
@@ -24,7 +24,7 @@
     "name": "graveyardgroup",
     "path": "texturegroups/graveyardgroup",
   },
-  "tile_count": 180,
+  "tile_count": 182,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -207,6 +207,8 @@
       177,
       178,
       179,
+      180,
+      181,
     ],
     "SerialiseFrameCount": 1,
   },

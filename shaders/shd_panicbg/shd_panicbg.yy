@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "shd_panicbg",
   "parent": {
-    "name": "Shaders",
-    "path": "folders/Shaders.yy",
+    "name": "Unused",
+    "path": "folders/Shaders/Unused.yy",
   },
   "type": 1,
 }

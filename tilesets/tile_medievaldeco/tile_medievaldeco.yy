@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Medieval",
+    "path": "folders/Tile Sets/Medieval.yy",
   },
   "spriteId": {
     "name": "spr_medievaldeco",

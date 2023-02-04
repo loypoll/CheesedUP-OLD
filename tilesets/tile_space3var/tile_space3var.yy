@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Space",
+    "path": "folders/Tile Sets/Space.yy",
   },
   "spriteId": {
     "name": "tilespr_tile_space3var",
@@ -24,7 +24,7 @@
     "name": "spacegroup",
     "path": "texturegroups/spacegroup",
   },
-  "tile_count": 10,
+  "tile_count": 12,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -37,6 +37,8 @@
       7,
       8,
       9,
+      10,
+      11,
     ],
     "SerialiseFrameCount": 1,
   },

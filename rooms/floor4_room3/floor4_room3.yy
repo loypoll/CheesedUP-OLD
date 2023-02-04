@@ -2550,8 +2550,8 @@
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
   ],
   "parent": {
-    "name": "Rooms",
-    "path": "folders/Rooms.yy",
+    "name": "Sewer (floor4)",
+    "path": "folders/Rooms/Unused/Sewer (floor4).yy",
   },
   "parentRoom": null,
   "physicsSettings": {

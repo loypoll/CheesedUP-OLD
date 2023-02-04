@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Unused",
+    "path": "folders/Tile Sets/Unused.yy",
   },
   "spriteId": {
     "name": "tilespr_tile_table_tileset",
@@ -24,7 +24,7 @@
     "name": "Default",
     "path": "texturegroups/Default",
   },
-  "tile_count": 96,
+  "tile_count": 100,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -123,6 +123,10 @@
       93,
       94,
       95,
+      96,
+      97,
+      98,
+      99,
     ],
     "SerialiseFrameCount": 1,
   },
