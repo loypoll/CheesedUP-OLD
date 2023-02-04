@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Farm",
-    "path": "folders/Tile Sets/Farm.yy",
+    "name": "Tile Sets",
+    "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
     "name": "tilespr_tileset_farm",
@@ -24,7 +24,7 @@
     "name": "farmgroup",
     "path": "texturegroups/farmgroup",
   },
-  "tile_count": 240,
+  "tile_count": 238,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -265,8 +265,6 @@
       235,
       236,
       237,
-      238,
-      239,
     ],
     "SerialiseFrameCount": 1,
   },

@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Beach",
-    "path": "folders/Tile Sets/Beach.yy",
+    "name": "Tile Sets",
+    "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
     "name": "tilespr_tileset_tile_beachtest2",

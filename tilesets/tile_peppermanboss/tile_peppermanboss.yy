@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Tower and Hub",
-    "path": "folders/Tile Sets/Tower and Hub.yy",
+    "name": "Tile Sets",
+    "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
     "name": "tilespr_tile_peppermanboss",
@@ -24,7 +24,7 @@
     "name": "entrancegroup",
     "path": "texturegroups/entrancegroup",
   },
-  "tile_count": 225,
+  "tile_count": 220,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -247,11 +247,6 @@
       217,
       218,
       219,
-      220,
-      221,
-      222,
-      223,
-      224,
     ],
     "SerialiseFrameCount": 1,
   },

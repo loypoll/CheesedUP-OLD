@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "GMLive",
-    "path": "folders/Scripts/General or Unsorted/GMLive.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

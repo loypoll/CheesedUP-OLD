@@ -83,8 +83,8 @@
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
   ],
   "parent": {
-    "name": "Freezer (floor5)",
-    "path": "folders/Rooms/Unused/Freezer (floor5).yy",
+    "name": "Rooms",
+    "path": "folders/Rooms.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

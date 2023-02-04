@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Mansion",
-    "path": "folders/Tile Sets/Mansion.yy",
+    "name": "Tile Sets",
+    "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
     "name": "tilespr_tile_lamp_tileset",

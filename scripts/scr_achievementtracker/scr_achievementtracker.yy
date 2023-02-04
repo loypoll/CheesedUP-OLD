@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Achievement",
-    "path": "folders/Scripts/Systems/Achievement.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

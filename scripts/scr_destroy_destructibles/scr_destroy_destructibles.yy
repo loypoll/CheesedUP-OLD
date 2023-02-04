@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Shortcuts",
-    "path": "folders/Scripts/General or Unsorted/Shortcuts.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

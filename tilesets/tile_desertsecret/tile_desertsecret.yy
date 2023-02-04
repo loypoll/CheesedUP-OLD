@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "Desert",
-    "path": "folders/Tile Sets/Desert.yy",
+    "name": "Tile Sets",
+    "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
     "name": "tilespr_tile_desertsecret",
@@ -24,7 +24,7 @@
     "name": "desertgroup",
     "path": "texturegroups/desertgroup",
   },
-  "tile_count": 900,
+  "tile_count": 888,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -915,18 +915,6 @@
       885,
       886,
       887,
-      888,
-      889,
-      890,
-      891,
-      892,
-      893,
-      894,
-      895,
-      896,
-      897,
-      898,
-      899,
     ],
     "SerialiseFrameCount": 1,
   },

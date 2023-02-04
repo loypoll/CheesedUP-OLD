@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "View",
-    "path": "folders/Scripts/Compatibility/View.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

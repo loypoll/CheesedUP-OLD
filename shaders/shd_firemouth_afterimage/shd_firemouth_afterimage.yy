@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "shd_firemouth_afterimage",
   "parent": {
-    "name": "Afterimage",
-    "path": "folders/Shaders/Afterimage.yy",
+    "name": "Shaders",
+    "path": "folders/Shaders.yy",
   },
   "type": 1,
 }

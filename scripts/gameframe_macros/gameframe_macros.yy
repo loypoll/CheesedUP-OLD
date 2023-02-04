@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Gameframe",
-    "path": "folders/Scripts/Systems/Gameframe.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

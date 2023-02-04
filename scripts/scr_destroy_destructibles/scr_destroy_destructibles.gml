@@ -1,9 +1,8 @@
-function scr_destroy_destructibles(xoffset, yoffset)
+function scr_destroy_destructibles()
 {
-	if (!place_meeting(x + xoffset, y + yoffset, obj_destructibles))
+	if (!place_meeting(x + argument0, y + argument1, obj_destructibles))
 		exit;
-	
-	var _num = instance_place_list(x + xoffset, y + yoffset, obj_destructibles, global.instancelist, false);
+	var _num = instance_place_list(x + argument0, y + argument1, obj_destructibles, global.instancelist, false);
 	if (_num > 0)
 	{
 		for (var i = 0; i < ds_list_size(global.instancelist); i++)

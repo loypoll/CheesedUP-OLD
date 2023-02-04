@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Audio (old)",
-    "path": "folders/Scripts/Systems/Audio (old).yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

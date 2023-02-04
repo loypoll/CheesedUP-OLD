@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Saving",
-    "path": "folders/Scripts/Saving.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

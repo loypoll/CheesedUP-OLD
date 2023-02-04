@@ -600,8 +600,8 @@
       ],"layers":[],"properties":[],"userdefinedDepth":true,"visible":true,},
   ],
   "parent": {
-    "name": "Factory (floor3)",
-    "path": "folders/Rooms/Unused/Factory (floor3).yy",
+    "name": "Rooms",
+    "path": "folders/Rooms.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

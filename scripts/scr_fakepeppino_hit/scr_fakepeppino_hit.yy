@@ -5,7 +5,7 @@
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Fakepep",
-    "path": "folders/Scripts/Baddies/Fakepep.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

@@ -12,8 +12,8 @@
   "out_tilehborder": 2,
   "out_tilevborder": 2,
   "parent": {
-    "name": "War",
-    "path": "folders/Tile Sets/War.yy",
+    "name": "Tile Sets",
+    "path": "folders/Tile Sets.yy",
   },
   "spriteId": {
     "name": "tilespr_tileset_tile_war1shadow",
@@ -24,7 +24,7 @@
     "name": "wargroup",
     "path": "texturegroups/wargroup",
   },
-  "tile_count": 49,
+  "tile_count": 48,
   "tileAnimation": {
     "FrameData": [
       0,
@@ -75,7 +75,6 @@
       45,
       46,
       47,
-      48,
     ],
     "SerialiseFrameCount": 1,
   },
