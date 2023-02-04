@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Rails",
+    "path": "folders/Objects/Room structure/Misc/Rails.yy",
   },
   "parentObjectId": {
     "name": "obj_solid",

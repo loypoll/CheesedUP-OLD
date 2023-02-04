@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Title Screen",
+    "path": "folders/Objects/Game Settings/Title Screen.yy",
   },
   "parentObjectId": null,
   "persistent": false,

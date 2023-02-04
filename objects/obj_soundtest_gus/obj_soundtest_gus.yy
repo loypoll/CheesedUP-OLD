@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Sound Test",
+    "path": "folders/Objects/Level specific/Hub/Sound Test.yy",
   },
   "parentObjectId": null,
   "persistent": false,
