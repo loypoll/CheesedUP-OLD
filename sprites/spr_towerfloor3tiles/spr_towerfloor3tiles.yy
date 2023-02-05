@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Tilesets",
-    "path": "folders/Sprites/Tilesets.yy",
+    "name": "Decompiler generated",
+    "path": "folders/Sprites/Decompiler generated.yy",
   },
 }

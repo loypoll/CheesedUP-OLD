@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Decompiler generated",
+    "path": "folders/Sprites/Decompiler generated.yy",
   },
 }
