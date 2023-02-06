@@ -74,7 +74,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Boxxed",
+    "path": "folders/Sprites/Player/Noise/Boxxed.yy",
   },
 }

@@ -102,7 +102,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Tumble",
+    "path": "folders/Sprites/Player/Noise/Tumble.yy",
   },
 }

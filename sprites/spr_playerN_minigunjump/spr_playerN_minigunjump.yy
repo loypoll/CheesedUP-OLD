@@ -84,7 +84,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Minigun",
+    "path": "folders/Sprites/Player/Noise/Minigun.yy",
   },
 }

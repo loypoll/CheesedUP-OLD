@@ -94,7 +94,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Vigilante",
+    "path": "folders/Sprites/Player/Vigilante.yy",
   },
 }
