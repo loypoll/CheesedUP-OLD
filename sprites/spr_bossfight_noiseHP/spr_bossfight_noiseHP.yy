@@ -102,7 +102,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Health icons",
+    "path": "folders/Sprites/HUD/Boss/Health icons.yy",
   },
 }
