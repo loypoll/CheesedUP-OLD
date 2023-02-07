@@ -110,7 +110,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Pizza portal",
+    "path": "folders/Sprites/Level structure/Pizza portal.yy",
   },
 }

@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Pizza Car",
+    "path": "folders/Sprites/Level structure/Pizza Car.yy",
   },
 }

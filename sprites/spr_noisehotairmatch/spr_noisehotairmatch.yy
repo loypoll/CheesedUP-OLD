@@ -82,7 +82,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Hot air balloon",
+    "path": "folders/Sprites/Noise traps/Hot air balloon.yy",
   },
 }

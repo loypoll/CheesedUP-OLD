@@ -110,7 +110,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Cheese Dragon",
+    "path": "folders/Sprites/Level structure/Cheese Dragon.yy",
   },
 }

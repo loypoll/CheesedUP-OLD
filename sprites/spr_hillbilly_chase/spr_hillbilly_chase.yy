@@ -90,7 +90,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Hillbilly",
+    "path": "folders/Sprites/Monsters/Hillbilly.yy",
   },
 }

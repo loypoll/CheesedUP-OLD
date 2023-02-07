@@ -70,7 +70,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Sound test",
+    "path": "folders/Sprites/Tower/Sound test.yy",
   },
 }

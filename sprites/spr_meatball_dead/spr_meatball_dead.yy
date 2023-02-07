@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Meatball",
+    "path": "folders/Sprites/Level structure/Meatball.yy",
   },
 }

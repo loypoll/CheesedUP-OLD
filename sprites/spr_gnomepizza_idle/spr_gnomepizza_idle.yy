@@ -102,7 +102,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Gnomes",
+    "path": "folders/Sprites/Level structure/Gnomes.yy",
   },
 }

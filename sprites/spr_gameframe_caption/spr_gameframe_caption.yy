@@ -94,7 +94,7 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Gameframe",
+    "path": "folders/Sprites/Misc/Gameframe.yy",
   },
 }
