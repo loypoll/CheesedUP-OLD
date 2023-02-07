@@ -84,7 +84,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Misc",
-    "path": "folders/Sprites/Misc.yy",
+    "name": "Miscellaneous (SORT THIS BETTER)",
+    "path": "folders/Sprites/Miscellaneous (SORT THIS BETTER).yy",
   },
 }

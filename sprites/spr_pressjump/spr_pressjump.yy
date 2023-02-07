@@ -71,6 +71,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Control tutorial",
-    "path": "folders/Sprites/Misc/Control tutorial.yy",
+    "path": "folders/Sprites/Miscellaneous (SORT THIS BETTER)/Control tutorial.yy",
   },
 }

@@ -1,9 +1,0 @@
-{
-  "extensionId": {
-    "name": "FMOD",
-    "path": "extensions/FMOD/FMOD.yy"
-  },
-  "resourceVersion": "1.0",
-  "resourceType": "GMExtensionConfigSet",
-  "configurables": null
-}

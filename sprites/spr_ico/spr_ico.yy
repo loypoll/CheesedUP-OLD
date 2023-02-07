@@ -69,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Gameframe",
-    "path": "folders/Sprites/Misc/Gameframe.yy",
+    "path": "folders/Sprites/Miscellaneous (SORT THIS BETTER)/Gameframe.yy",
   },
 }

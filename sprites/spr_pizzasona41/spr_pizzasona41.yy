@@ -102,7 +102,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Pizzasona",
+    "path": "folders/Sprites/Level structure/Collectible/Pizzasona.yy",
   },
 }

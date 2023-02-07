@@ -80,7 +80,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Unused or Unsorted",
-    "path": "folders/Sprites/Unused or Unsorted.yy",
+    "name": "Effects and Particles",
+    "path": "folders/Sprites/Effects and Particles.yy",
   },
 }
