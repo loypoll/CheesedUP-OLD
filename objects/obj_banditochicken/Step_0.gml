@@ -55,7 +55,8 @@ if ((state == 134 || state == 126) && activated == 1 && sprite_index != spr_band
 {
 	fmod_event_one_shot_3d("event:/sfx/enemies/banditochicken", x, y);
 	movespeed = 0;
-	image_xscale = -sign(x - targetplayer.x);
+	if (x != targetplayer.x)
+		image_xscale = -sign(x - targetplayer.x);
 	image_index = 0;
 	sprite_index = spr_banditochicken_wake;
 }

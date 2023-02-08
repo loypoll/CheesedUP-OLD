@@ -90,14 +90,17 @@ function achievement_unlock(argument0, argument1, argument2, argument3 = 0)
 			ds_queue_enqueue(obj_achievementtracker.unlock_queue, [argument2, argument3]);
 		}
 	}
+	scr_steam_unlock_achievement(argument0);
 	
-	if (global.steam_api)
+	// moved to separate function
+	/*
+	if global.steam_api
 	{
 		var steamach = ds_map_find_value(global.steam_achievements, argument0);
-		if (!is_undefined(steamach))
+		if !is_undefined(steamach)
 		{
 			trace("Steam achievement unlocked! ", steamach);
-			if (!steam_get_achievement(steamach))
+			if !steam_get_achievement(steamach)
 				steam_set_achievement(steamach);
 		}
 		else
@@ -105,9 +108,27 @@ function achievement_unlock(argument0, argument1, argument2, argument3 = 0)
 	}
 	else
 		trace("Steam API not initialized!");
+	*/
 	
-	with (obj_achievementviewer)
+	with obj_achievementviewer
 		event_perform(ev_other, ev_room_start);
+}
+function scr_steam_unlock_achievement(achievement)
+{
+    if global.steam_api
+    {
+        var steamach = ds_map_find_value(global.steam_achievements, achievement);
+        if !is_undefined(steamach)
+        {
+            trace("Steam achievement unlocked! ", steamach);
+            if !steam_get_achievement(steamach)
+                steam_set_achievement(steamach);
+        }
+        else
+            trace("Could not find steam achievement! ", achievement);
+    }
+    else
+        trace("Steam API not initialized!");
 }
 function palette_unlock(argument0, argument1, argument2, argument3 = noone)
 {
@@ -168,6 +189,20 @@ function achievement_save_variables()
 		}
 		obj_savesystem.ini_str = ini_close();
 	}
+}
+function achievement_get_steam_achievements(argument0)
+{
+    for (i = 0; i < array_length(argument0); i++)
+    {
+        b = argument0[i]
+        ini_open_from_string(obj_savesystem.ini_str)
+        with (b)
+        {
+            if ini_read_real("achievements", name, 0)
+                scr_steam_unlock_achievement(name)
+        }
+        obj_savesystem.ini_str = ini_close()
+    }
 }
 function achievements_load()
 {

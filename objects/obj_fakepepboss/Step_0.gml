@@ -211,6 +211,14 @@ if (!visible)
 	invincible = true;
 if (state == 298)
 	invincible = true;
+if pizzahead
+{
+    with (obj_gustavograbbable)
+    {
+        if (enemy_is_superslam(id) || enemy_is_swingding(id))
+            other.invincible = 1
+    }
+}
 if (!invincible && !flash && alarm[5] < 0)
 	alarm[5] = 0.15 * room_speed;
 else if (invincible && state != 155 && flashbuffer <= 0)

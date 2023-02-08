@@ -4,14 +4,8 @@ switch (state)
 		image_speed = 0.35;
 		targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 		var _g = distance_to_point(targetplayer.x, targetplayer.y);
-		if (_g < 150)
-			movespeed = 3;
-		else if (_g < 300)
-			movespeed = 4;
-		else if (_g < 450)
-			movespeed = 8;
-		else
-			movespeed = 11;
+		if (movespeed < 8.25)
+            movespeed += 0.05
 		x += movespeed;
 		fmod_event_instance_set_3d_attributes(snd, x, y);
 		if (place_meeting(x, y, obj_player1) || x > obj_player1.x)

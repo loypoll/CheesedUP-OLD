@@ -116,7 +116,7 @@ function boss_hurt_gustavo()
 	{
 		with (obj_gustavograbbable)
 		{
-			var _slam = enemy_is_superslam(id);
+			var _slam = enemy_is_superslam(id) || enemy_is_swingding(id);
 			if ((thrown || _slam) && other.state != 298 && (place_meeting(x + hsp, y, other) || place_meeting(x - image_xscale, y, other) || place_meeting(x - (32 * image_xscale), y, other) || place_meeting(x + (32 * image_xscale), y, other)))
 			{
 				with (other)
@@ -269,6 +269,7 @@ function scr_boss_phase1hurt(func = noone)
 	if (buildup > 0)
 	{
 		camzoom = lerp(camzoom, 0.5, 0.1);
+		obj_screensizer.camzoom = camzoom;
 		camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
 		x = px;
 		y = py;
@@ -288,6 +289,7 @@ function scr_boss_phase1hurt(func = noone)
 		instance_destroy(obj_superattackeffect);
 		instance_destroy(obj_blackoutline);
 		camzoom = lerp(camzoom, 1, 0.5);
+		obj_screensizer.camzoom = camzoom;
 		camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
 		with (player)
 		{
@@ -302,7 +304,7 @@ function scr_boss_phase1hurt(func = noone)
 		}
 		x = px;
 		y = py;
-		if (floor(player.image_index >= 4))
+		if floor(player.image_index >= 4)
 		{
 			var lag = 15;
 			hitLag = lag;
@@ -336,6 +338,7 @@ function scr_boss_phase1hurt(func = noone)
 				}
 			}
 			camera_set_view_size(view_camera[0], SCREEN_WIDTH, SCREEN_HEIGHT);
+			obj_screensizer.camzoom = 1;
 			create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
 			with (obj_camera)
 			{

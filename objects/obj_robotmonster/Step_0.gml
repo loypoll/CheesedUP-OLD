@@ -1,4 +1,4 @@
-targetplayer = instance_nearest(x, y, obj_player);
+targetplayer = obj_player1.id;
 switch (state)
 {
 	case 217:

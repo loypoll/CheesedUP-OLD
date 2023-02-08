@@ -24,6 +24,7 @@ if (!global.panic)
 					fmod_event_instance_stop(prevmusic.event_secret, true);
 			}
 			music = mu;
+			savedmusicpos = 0;
 			if (room == war_1 || room == tower_finalhallway)
 				fmod_event_instance_stop(music.event, true);
 		}
@@ -45,6 +46,7 @@ if (secret)
 		fmod_event_instance_play(music.event_secret);
 		fmod_event_instance_set_paused(music.event_secret, false);
 		pos = fmod_event_instance_get_timeline_pos(music.event);
+		savedmusicpos = pos;
 		pos = music_get_pos_wrap(pos, fmod_event_get_length(music.event_secret_name));
 		fmod_event_instance_set_timeline_pos(music.event_secret, pos);
 		fmod_event_instance_set_paused(music.event, true);
@@ -63,6 +65,7 @@ else if (secretend)
 	{
 		fmod_event_instance_stop(music.event_secret, true);
 		fmod_event_instance_set_paused(music.event, false);
+		fmod_event_instance_set_timeline_pos(music.event, savedmusicpos);
 	}
 	if (global.panic)
 	{

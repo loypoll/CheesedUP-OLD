@@ -25,6 +25,7 @@ secretcount = 0;
 secretalpha = 0;
 transfotext = -4;
 transfotext_size = 0;
+roomtorestart = -4;
 pausemusicID = fmod_event_create_instance("event:/music/pause");
 savedsecretpause = false;
 savedmusicpause = false;

@@ -81,3 +81,7 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
+if (state == 294 && obj_player1.state != 42 && place_meeting(x, y, obj_solid))
+    invincible = true;
+else
+    invincible = false;

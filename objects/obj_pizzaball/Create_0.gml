@@ -10,6 +10,7 @@ golfhit = [4, 6, 8];
 arrowindex = 0;
 shootup = false;
 hitbuffer = 0;
+parryable = false;
 grav = 0.5;
 hsp = 0;
 vsp = 0;

@@ -695,7 +695,7 @@ add_achievement_notify("saloon3", function(argument0)
 	if (type == 11 && global.leveltosave == "saloon")
 	{
 		achievement_get_variable("s3_count").value += 1;
-		if (achievement_get_variable("s3_count").value >= 12)
+		if (achievement_get_variable("s3_count").value >= 8)
 			achievement_unlock(name, "Royal Flush", spr_achievement_saloon, 2);
 	}
 });
@@ -1138,7 +1138,7 @@ add_achievement_notify("war1", function(argument0)
 	var arr = argument0[1];
 	if (type == 7 && global.leveltosave == "war")
 		achievement_get_variable("war1hurt").value += 1;
-	else if (type == 5 && arr[0] == "war" && achievement_get_variable("war1hurt").value < 3)
+	else if (type == 5 && arr[0] == "war" && achievement_get_variable("war1hurt").value <= 3)
 		achievement_unlock(name, "Decorated Veteran", spr_achievement_war, 0);
 });
 add_achievement_notify("war2", function(argument0)

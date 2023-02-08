@@ -213,7 +213,7 @@ if (pizzahead)
 {
 	with (obj_gustavograbbable)
 	{
-		if (enemy_is_superslam(id))
+		if (enemy_is_superslam(id) || enemy_is_swingding(id))
 			other.invincible = true;
 	}
 }

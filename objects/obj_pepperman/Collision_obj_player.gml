@@ -45,6 +45,9 @@ else if (state == 268 && ministate != 8 && (other.instakillmove || other.state =
 	obj_bosscontroller.alarm[1] = 5;
 	scr_sleep(25);
 	instance_destroy(obj_peppermanartdude);
+	instance_destroy(obj_peppermanbowlingball);
+    instance_destroy(obj_peppermanbowlingballspawner);
+    instance_destroy(obj_peppermanGIANTbowlingball);
 	destroyable = true;
 	spr_dead = spr_pepperman_minifall;
 	instance_destroy();

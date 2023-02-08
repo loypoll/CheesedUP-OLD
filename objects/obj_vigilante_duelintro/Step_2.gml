@@ -10,6 +10,7 @@ else
 if (state > 0 && state > 0 && state < 5)
 {
 	camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
+	obj_screensizer.camzoom = camzoom;
 	var cx = camx;
 	var cy = obj_player1.y;
 	cx -= (camera_get_view_width(view_camera[0]) / 2);

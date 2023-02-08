@@ -14,7 +14,16 @@ if (disappearbuffer > 0)
 else
 	captionalpha = Approach(captionalpha, 0, 0.1);
 global.gameframe_alpha = captionalpha;
-if (window_width_current != ww || window_height_current != wh || global.option_scale_mode != last_scale_mode || global.option_fullscreen != gameframe_get_fullscreen())
+if window_has_focus()
+{
+    savedwidth = window_get_width();
+    savedheight = window_get_height();
+    saved_guiwidth = display_get_gui_width();
+    saved_guiheight = display_get_gui_height();
+}
+else if global.option_fullscreen
+    alarm[2] = 5;
+if window_has_focus() && (window_width_current != ww || window_height_current != wh || global.option_scale_mode != last_scale_mode || global.option_fullscreen != gameframe_get_fullscreen())
 {
 	if (global.option_scale_mode == 0)
 	{
@@ -49,14 +58,17 @@ if (window_width_current != ww || window_height_current != wh || global.option_s
 	{
 		app_scale = 1;
 		camera_set_view_size(view_camera[0], ww, wh);
+		
 		SCREEN_WIDTH = ww;
 		SCREEN_HEIGHT = wh;
+		
 		if (ww > 0 && wh > 0)
 		{
 			surface_resize(application_surface, SCREEN_WIDTH, SCREEN_HEIGHT);
 			display_set_gui_size(SCREEN_WIDTH, SCREEN_HEIGHT);
 		}
 	}
+	
 	last_scale_mode = global.option_scale_mode;
 	last_fullscreen = gameframe_get_fullscreen();
 	window_width_current = window_get_width();

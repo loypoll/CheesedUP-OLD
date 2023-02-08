@@ -8,7 +8,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	}
 	with (obj_player)
 	{
-		if (state == 98 && place_meeting(x, y, obj_startgate))
+		if ((state == 98 && place_meeting(x, y, obj_startgate)) || (state == 112 && place_meeting(x, y, obj_exitgate)))
 			_cutscenehandler = true;
 	}
 	with (obj_charswitch_intro)
@@ -258,6 +258,7 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
                         if rm != noone && rm != -1
                         {
                             alarm[5] = 1;
+							roomtorestart = rm;
                             pause_unpause_music();
                             stop_music();
                             scr_pause_activate_objects();

@@ -579,13 +579,15 @@ if (invtime > 0)
 	invtime--;
 if (sprite_index == spr_noise_phasetrans1P && image_index > 24)
 {
-	if (noisebossscream == 0)
+	if (!noisebossscream)
 	{
 		fmod_event_one_shot_3d("event:/sfx/pep/screamboss", x, y);
 		fmod_event_one_shot_3d("event:/sfx/voice/noisescream", obj_noiseboss.x, obj_noiseboss.y);
 		noisebossscream = true;
 	}
 }
+else if (sprite_index != spr_noise_phasetrans1P)
+    noisebossscream = false;
 if (global.pistol && state != 293 && state != 146 && state != 107 && state != 106)
 {
 	if (key_slap || pistolchargeshooting)
@@ -623,14 +625,9 @@ if (global.pistol && state != 293 && state != 146 && state != 107 && state != 10
 	{
 		if (state != 84 && state != 61)
 		{
-			if (pistolchargedelay > 0)
-				pistolchargedelay--;
-			else
-			{
-				scr_pistolshoot(0);
-				pistolchargedelay = 5;
-				pistolchargeshot--;
-			}
+			scr_pistolshoot(0);
+			pistolchargedelay = 5;
+			pistolchargeshot--;
 		}
 	}
 	else if (pistolchargeshot <= 0 && pistolchargeshooting)
@@ -643,7 +640,7 @@ if (global.pistol && state != 293 && state != 146 && state != 107 && state != 10
 			pistolcharge = 4;
 	}
 }
-else if (state == 107 || state == 106)
+else if (state == 107 || state == 106 || instance_exists(obj_vigilante_duelintro))
 {
 	pistolcharge = 0;
 	pistolcharged = false;
@@ -947,6 +944,7 @@ if (state == 89 && y > (room_height * 2) && !instance_exists(obj_backtohub_fadeo
 	instance_create(0, 0, obj_backtohub_fadeout);
 	global.leveltorestart = -4;
 	global.leveltosave = -4;
+	global.startgate = 0;
 }
 if (baddiegrabbedID == obj_null && (state == 79 || state == 76 || state == 20))
 	state = 0;
@@ -1081,7 +1079,7 @@ if ((state == 198 && vsp >= 0) || sprite_index == spr_player_Sjumpcancel || spri
 	instakillmove = true;
 else
 	instakillmove = false;
-if (global.noisejetpack && (state == 146 || state == 61 || state == 84 || state == 186 || state == 293 || state == 144 || state == 297))
+if ((global.noisejetpack || holycross > 0) && (state == 146 || state == 61 || state == 84 || state == 186 || state == 293 || state == 144 || state == 297 || state == 123))
 	instakillmove = false;
 if (state == 198 && vsp < 0)
 	stunmove = true;

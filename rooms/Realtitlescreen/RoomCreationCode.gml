@@ -2,6 +2,12 @@ global.coop = false;
 global.currentsavefile = 1;
 var achievement_arr = ["sranks1", "sranks2", "sranks3", "sranks4", "sranks5"];
 var data_arr = ["saves/saveData1.ini", "saves/saveData2.ini", "saves/saveData3.ini"];
+global.stickreq[0] = 100;
+global.stickreq[1] = 150;
+global.stickreq[2] = 200;
+global.stickreq[3] = 200;
+global.stickreq[4] = 210;
+global.levelattempts = 0;
 global.palette_arr = [false, false, false, false, false];
 for (var i = 0; i < array_length(data_arr); i++)
 {
@@ -18,7 +24,7 @@ for (var i = 0; i < array_length(data_arr); i++)
 	global.game_snotty[i] = ini_read_real("Game", "finalsnotty", false);
 	global.game_palette[i] = ini_read_real("Game", "palette", 1);
 	var _texture = ini_read_string("Game", "palettetexture", "none");
-	global.game_palettetexture[i] = scr_get_texture_palette(_texture)
+	global.game_palettetexture[i] = scr_get_texture_palette(_texture);
 	for (var j = 0; j < array_length(achievement_arr); j++)
 	{
 		if (ini_read_real("achievements", achievement_arr[j], false))

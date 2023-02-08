@@ -6,7 +6,7 @@ if (!surface_exists(gui_surf))
 	gpu_set_blendmode(bm_normal);
 	exit;
 }
-if (frac(app_scale) > 0)
+if (frac(app_scale) > 0 && global.option_texfilter)
 	gpu_set_texfilter(true);
 else
 	gpu_set_texfilter(false);
@@ -20,4 +20,5 @@ else
 }
 gpu_set_blendmode(bm_normal);
 gpu_set_texfilter(false);
-gameframe_draw();
+if window_has_focus()
+	gameframe_draw();

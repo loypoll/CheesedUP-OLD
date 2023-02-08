@@ -47,16 +47,29 @@ function get_dark(argument0, argument1, argument2 = false, argument3 = 0, argume
 }
 function enemy_is_superslam(baddieid)
 {
-	with (baddieid)
+	with baddieid
 	{
-		if (state == 4)
+		if state == 4
 		{
-			var g = (grabbedby == 1) ? obj_player1.id : obj_player2.id;
-			if (g.state == 76 || (g.state == 61 && g.tauntstoredstate == 76))
+			var g = grabbedby == 1 ? obj_player1.id : obj_player2.id;
+			if g.state == 76 || (g.state == 61 && g.tauntstoredstate == 76)
 				return true;
 		}
 	}
 	return false;
+}
+function enemy_is_swingding(baddieid)
+{
+    with baddieid
+    {
+        if state == 4
+        {
+            g = grabbedby == 1 ? obj_player1.id : obj_player2.id;
+            if (g.state == 79 || (g.state == 61 && g.tauntstoredstate == 79)) && g.sprite_index == g.spr_swingding
+                return true;
+        }
+    }
+    return false;
 }
 function draw_enemy(healthbar, palette, color = c_white)
 {

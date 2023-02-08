@@ -6,7 +6,8 @@ function scr_playersounds()
 		{
 			if (!fmod_event_instance_is_playing(global.snd_pizzafacemoving))
 				fmod_event_instance_play(global.snd_pizzafacemoving);
-			fmod_event_instance_set_3d_attributes(global.snd_pizzafacemoving, obj_pizzaface.x, obj_pizzaface.y);
+			with (obj_pizzaface)
+				fmod_event_instance_set_3d_attributes(global.snd_pizzafacemoving, x, y);
 		}
 		else
 			fmod_event_instance_stop(global.snd_pizzafacemoving, true);

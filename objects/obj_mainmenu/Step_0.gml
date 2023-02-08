@@ -145,14 +145,14 @@ switch (state)
             }
             if key_jump
             {
-                state = (98 << 0)
+                state = 98
                 with (obj_menutv)
                 {
                     if (trigger == other.currentselect)
                     {
                         fmod_event_instance_stop(obj_music.music.event, 1)
                         fmod_event_one_shot("event:/sfx/ui/fileselect")
-                        state = (98 << 0)
+                        state = 98
                         sprite_index = confirmspr
                     }
                 }
@@ -174,7 +174,7 @@ switch (state)
             }
             else if key_slap2
             {
-                state = (289 << 0)
+                state = 289
                 exitselect = 1
                 switch currentselect
                 {
@@ -192,7 +192,7 @@ switch (state)
             }
             else if (key_taunt2 && global.game_started[currentselect])
             {
-                state = (183 << 0)
+                state = 183
                 deleteselect = 1
                 fmod_event_one_shot_3d("event:/sfx/voice/pig", 480, 270)
                 switch currentselect

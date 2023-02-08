@@ -255,4 +255,5 @@ function scr_player_supergrab()
 			break;
 	}
 	camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
+	obj_screensizer.camzoom = camzoom;
 }

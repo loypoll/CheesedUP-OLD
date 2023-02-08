@@ -8,11 +8,7 @@ with (other)
 			obj_player1.xscale = 1;
 	}
 	if (sprite_index == spr_piraneapple_projectile)
-	{
-		instance_destroy(id, false);
-		with (instance_create(x, y, obj_sausageman_dead))
-			sprite_index = spr_piraneapple_dead;
-	}
+		instance_destroy();
 	else
 	{
 		direction -= 180;

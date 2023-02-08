@@ -8,6 +8,7 @@ with (other)
 		global.startgate = true;
 		global.leveltosave = other.level;
 		global.leveltorestart = other.targetRoom;
+		global.levelattempts = 0;
 		global.hub_bgsprite = other.bgsprite;
 		backtohubstartx = x;
 		backtohubstarty = y;

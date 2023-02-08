@@ -246,6 +246,7 @@ function scr_vigilante_phase1hurt()
 		with (obj_player)
 			state = 0;
 	}
+	obj_screensizer.camzoom = camzoom;
 }
 function scr_vigilante_walk()
 {

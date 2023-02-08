@@ -16,6 +16,7 @@ function textures_offload()
 function scr_playerreset()
 {
 	trace("playerreset");
+	
 	global.lap = false;
 	if (room != boss_pizzaface && room != boss_noise && room != boss_pepperman && room != boss_fakepep && room != boss_vigilante)
 		global.bossintro = false;
@@ -36,13 +37,18 @@ function scr_playerreset()
 	global.level_minutes = 0;
 	global.level_seconds = 0;
 	global.pistol = false;
+	
+	with (obj_screensizer)
+        camzoom = 1;
 	with (obj_camera)
 		lock = false;
+	
 	with (obj_achievementtracker)
 	{
 		achievement_reset_variables(achievements_notify);
 		achievement_reset_variables(achievements_update);
 	}
+	
 	with (obj_music)
 	{
 		secretend = true;
@@ -51,9 +57,12 @@ function scr_playerreset()
 	}
 	fmod_set_parameter("musicmuffle", 0, true);
 	fmod_set_parameter("pillarfade", 0, true);
+	
 	camera_set_view_size(view_camera[0], SCREEN_WIDTH, SCREEN_HEIGHT);
+	
 	instance_destroy(obj_frontcanongoblin);
 	instance_destroy(obj_transfotip);
+	instance_destroy(obj_flushcount);
 	instance_destroy(obj_fadeout);
 	instance_destroy(obj_comboend);
 	instance_destroy(obj_combotitle);
@@ -67,12 +76,14 @@ function scr_playerreset()
 	instance_destroy(obj_keyfollow);
 	instance_destroy(obj_crosspriest_cross);
 	instance_destroy(obj_gravecorpse, false);
+	
 	with (obj_camera)
 	{
 		alarm[4] = -1;
 		comboend = false;
 		previousrank = 0;
 	}
+	
 	if (!global.levelreset)
 	{
 		instance_destroy(obj_deliverytimer);
@@ -154,6 +165,7 @@ function scr_playerreset()
 		global.monsterspeed = 0;
 		global.timedgate = false;
 		global.timedgatetimer = false;
+		global.timedgateid = noone;
 		global.timedgatetime = 0;
 		global.taseconds = 0;
 		global.taminutes = 0;
@@ -183,29 +195,40 @@ function scr_playerreset()
 			sprite = spr_mild;
 		with (obj_music)
 			arena = false;
+		
 		if (instance_exists(obj_endlevelfade))
 			instance_destroy(obj_endlevelfade);
+		
 		if (instance_exists(obj_monstertrackingrooms))
 			instance_destroy(obj_monstertrackingrooms);
+		
 		instance_destroy(obj_trapghost);
 		instance_destroy(obj_comboend);
 		instance_destroy(obj_farmer1follow);
 		instance_destroy(obj_farmer2follow);
 		instance_destroy(obj_farmer3follow);
+		
 		if (instance_exists(obj_snickexe))
 			instance_destroy(obj_snickexe);
-		if (instance_exists(obj_pizzaface))
-			instance_destroy(obj_pizzaface);
+		
+		with (obj_pizzaface)
+            destroy_sounds([snd])
+        instance_destroy(obj_pizzaface, false)
+		
 		if (instance_exists(obj_pizzashield))
 			instance_destroy(obj_pizzashield);
 		instance_destroy(obj_pepanimatronicfollow);
+		
 		if (instance_exists(obj_coopflag))
 			instance_destroy(obj_coopflag);
+		
 		if (instance_exists(obj_cooppointer))
 			instance_destroy(obj_cooppointer);
 		instance_destroy(obj_coopplayerfollow);
+		
 		if (instance_exists(obj_toppinwarrior))
 			instance_destroy(obj_toppinwarrior);
+		
 		if (instance_exists(obj_timesup))
 			instance_destroy(obj_timesup);
 	}

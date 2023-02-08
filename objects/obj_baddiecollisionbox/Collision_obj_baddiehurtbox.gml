@@ -1,4 +1,4 @@
-if (other.team == 1 && instance_exists(baddieID) && baddieID.state != 4 && baddieID.state != 137 && !baddieID.invincible && baddieID.instantkillable)
+if (other.team == 1 && instance_exists(baddieID) && baddieID.parryable && baddieID.state != 4 && baddieID.state != 137 && !baddieID.invincible && baddieID.instantkillable)
 {
 	fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
 	if (!baddieID.important)

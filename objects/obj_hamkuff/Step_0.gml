@@ -19,32 +19,32 @@ switch state
         else
         {
             if (x != playerid.x)
-                image_xscale = (-(sign((x - playerid.x))))
+                image_xscale = -sign(x - playerid.x)
             var _is_brick = playerid.object_index == obj_brickcomeback
             if (!_is_brick)
             {
                 with (playerid)
                 {
-                    if (state == (152))
+                    if (state == 152)
                         other.state = 134
                     else if (!launched)
                     {
                         hamkuffID = other.id
                         var _xs = 0
                         if (x != other.x)
-                            _xs = (-(sign((x - other.x))))
+                            _xs = -sign(x - other.x)
                         var dis = 180
-                        var m = (abs((x - other.x)) > dis ? abs(hsp) : (abs(hsp) - max(0, (abs(hsp) - 2))))
+                        var m = (abs(x - other.x) > dis ? abs(hsp) : abs(hsp) - max(0, abs(hsp) - 2))
                         if (hsp == 0)
                             m = _xs
-                        if (!((state == (105 << 0) && sprite_index == spr_mach3boost)))
-                            hsp_carry = (_xs * abs(m))
+                        if !(state == 105 && sprite_index == spr_mach3boost)
+                            hsp_carry = _xs * abs(m)
                         else
-                            hsp_carry = (-hsp)
-                        if (state != (106) && state != (121) && state != (104) && state != (105) && abs((x - other.x)) > ((dis + abs(movespeed)) + 1))
+                            hsp_carry = -hsp
+                        if (state != 106 && state != 121 && state != 104 && state != 105 && abs(x - other.x) > dis + abs(movespeed) + 1)
                         {
                             state = 106
-                            fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
+                            fmod_event_one_shot_3d("event:/sfx/pep/	", x, y)
                             sprite_index = spr_bump
                             if (x != other.x)
                             {
@@ -58,18 +58,25 @@ switch state
                                 }
                             }
                         }
-                        if (state == (121) || (state == (105) && sprite_index == spr_mach3boost))
+						if (!other.attract_player && y > other.y + 100 && collision_line(other.x, other.y, x, y, obj_solid, false, true) != noone)
+                        {
+                            other.attract_player = true;
+                            launched = false;
+                            flash = true;
+                            fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+                        }
+                        if (state == 121 || (state == 105 && sprite_index == spr_mach3boost))
                             launch = 1
-                        if (state == (105) && sprite_index == spr_mach3boost && launch)
+                        if (state == 105 && sprite_index == spr_mach3boost && launch)
                             movespeed -= 0.6
-                        if (state == (121) && movespeed > 15)
+                        if (state == 121 && movespeed > 15)
                             movespeed = 15
                         freefallsmash = 0
-                        if (state == (78) || state == (37) || state == (99) || state == (97) || state == (123) || y < (other.y - 400))
+                        if (state == 78 || state == 37 || state == 99 || state == 97 || state == 123 || y < other.y - 400)
                         {
                             fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
                             vsp = -4
-                            hsp = (-3 * xscale)
+                            hsp = -3 * xscale
                             state = 106
                             sprite_index = spr_bump
                             image_index = 0
@@ -94,7 +101,7 @@ switch state
                             var _dir = point_direction(x, y, tx, ty)
                             x += lengthdir_x(7, _dir)
                             y += lengthdir_y(7, _dir)
-                            if (abs((x - tx)) < 20 && abs((y - ty)) < 32)
+                            if (abs(x - tx) < 20 && abs(y - ty) < 32)
                             {
                                 x = tx
                                 y = ty
@@ -124,7 +131,7 @@ switch state
             {
                 with (playerid)
                 {
-                    tx = (other.x + (other.image_xscale * 32))
+                    tx = other.x + (other.image_xscale * 32)
                     ty = other.y
                     if (distance_between_points(x, y, tx, ty) > 10)
                     {
@@ -136,45 +143,45 @@ switch state
             }
             break
         }
-    case (136):
+    case 136:
         scr_enemy_land()
         break
-    case (137):
+    case 137:
         scr_enemy_hit()
         break
-    case (138):
+    case 138:
         scr_enemy_stun()
         break
-    case (129):
+    case 129:
         scr_pizzagoblin_throw()
         break
-    case (4):
+    case 4:
         scr_enemy_grabbed()
         break
-    case (154):
+    case 154:
         scr_enemy_pummel()
         break
-    case (155):
+    case 155:
         scr_enemy_staggered()
         break
-    case (125):
+    case 125:
         scr_enemy_rage()
         break
-    case (17):
+    case 17:
         scr_enemy_ghostpossess()
         break
 }
 
-if (state == (138) && stunned > 100 && birdcreated == 0)
+if (state == 138 && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1
     with (instance_create(x, y, obj_enemybird))
         ID = other.id
 }
-if (state != (134) && state != (206))
+if (state != 134 && state != 206)
     attract_player = 0
 var _dis = 300
-if (state == (134) && obj_player1.isgustavo && (!obj_player1.cutscene) && obj_player1.state != (292) && obj_player1.state != (119) && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && (!obj_brickcomeback.trapped)) || distance_to_object(obj_brickball) < _dis))
+if (state == 134 && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != 292 && obj_player1.state != 119 && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
 {
     state = 206
     sprite_index = spr_hamkuff_chain1
@@ -216,11 +223,11 @@ if (state == (134) && obj_player1.isgustavo && (!obj_player1.cutscene) && obj_pl
         state = 191
     }
 }
-if (state != (138))
+if (state != 138)
     birdcreated = 0
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = (0.15 * room_speed)
-if (state != (4))
+if (state != 4)
     depth = 0
-if (state != (138))
+if (state != 138)
     thrown = 0

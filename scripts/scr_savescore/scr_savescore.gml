@@ -19,6 +19,7 @@ function scr_savescore()
 	scr_play_rank_music();
 	ini_open_from_string(obj_savesystem.ini_str);
 	ini_write_real("Attempts", argument0, ini_read_real("Attempts", argument0, 0) + global.levelattempts + 1);
+	global.levelattempts = 0;
 	if (ini_read_real("Highscore", argument0, 0) < global.collect)
 		ini_write_real("Highscore", argument0, global.collect);
 	if (ini_read_real("Treasure", argument0, 0) == 0)

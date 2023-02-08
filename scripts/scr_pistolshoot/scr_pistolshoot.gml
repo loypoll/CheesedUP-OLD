@@ -1,6 +1,6 @@
-function scr_pistolshoot()
+function scr_pistolshoot(required_state)
 {
-	if ((pistolcooldown <= 0 && state == argument0 && state != 106 && instance_number(obj_pistolbullet) < 3) || pistolchargeshooting == 1)
+	if ((pistolcooldown <= 0 && state == required_state && state != 106 && instance_number(obj_pistolbullet) < 3) || pistolchargeshooting == 1)
 	{
 		input_buffer_shoot = 0;
 		pistolanim = spr_pistolshot;
@@ -12,7 +12,7 @@ function scr_pistolshoot()
 		crouchslideAnim = false;
 		crouchAnim = false;
 		stompAnim = false;
-		if (argument0 == 121 || argument0 == 104)
+		if (required_state == 121 || required_state == 104)
 			state = 0;
 		windingAnim = 0;
 		with (instance_create(x + (xscale * 35), y, obj_parryeffect))

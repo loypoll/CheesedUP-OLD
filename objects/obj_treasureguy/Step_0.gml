@@ -56,6 +56,16 @@ switch (state)
 		}
 		break;
 }
+if (state == 189)
+{
+    parryable = false;
+    supertauntable = false;
+}
+else
+{
+    parryable = true;
+    supertauntable = true;
+}
 if (state == 138 && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;

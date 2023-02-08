@@ -1,6 +1,6 @@
 if (!deactivated)
 {
-	for (var i = 0; i < 8; i++)
+	for (var i = 0; i < gamepad_get_device_count(); i++)
 	{
 		var _index = scr_anybutton_pressed(i);
 		if (_index > -2)

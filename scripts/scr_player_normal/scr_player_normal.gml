@@ -34,7 +34,7 @@ function state_player_normal()
 		idle = 0;
 	}
 	var breakdance_max = 10;
-	if (key_taunt && !shotgunAnim)
+	if (key_taunt && !shotgunAnim && !global.pistol)
 		breakdance_pressed++;
 	else
 		breakdance_pressed = 0;

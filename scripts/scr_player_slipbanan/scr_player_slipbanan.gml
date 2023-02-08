@@ -50,4 +50,6 @@ function scr_player_slipbanan()
 		xscale *= -1;
 		scr_sleep(1);
 	}
+	if (sprite_index != spr_slipbanan2 && scr_solid_player(x, y))
+        state = 100;
 }

@@ -57,7 +57,7 @@ switch (state)
 		}
 		break;
 	case 220:
-		playerid = instance_nearest(x, y, obj_player);
+		playerid = obj_player1.id;
 		sprite_index = spr_monstertomato_chase;
 		var dir = point_direction(x, y, playerid.x, playerid.y);
 		if (!(x > (playerid.x - 8) && x < (playerid.x + 8) && y > (playerid.y - 8) && y < (playerid.y + 8)))

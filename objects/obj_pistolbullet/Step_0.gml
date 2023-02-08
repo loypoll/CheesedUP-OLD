@@ -7,6 +7,11 @@ with (instance_place(x + spd, y, obj_destructibles))
 var _x = x;
 x += (image_xscale * spd);
 y += -spdh;
+if instance_exists(obj_bossplayerdeath)
+{
+    instance_destroy();
+    exit;
+}
 if (sprite_index == spr_peppinobulletGIANT)
 	var dmg = 6;
 else

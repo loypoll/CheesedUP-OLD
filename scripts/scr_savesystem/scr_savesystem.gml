@@ -75,7 +75,9 @@ function get_percentage()
 			extracount++;
 	}
 	var per = floor((count / _basemax) * 100);
-	var extraper = floor((extracount / _extramax) * 1);
+	if (per > 100)
+        per = 100;
+    var extraper = extracount >= _extramax;
 	trace("Percentage: ", per, " and ", extraper);
 	return per + extraper;
 }

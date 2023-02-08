@@ -314,6 +314,7 @@ switch (introstate)
 				image_index = image_number - 6;
 		}
 		camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
+		obj_screensizer.camzoom = camzoom;
 		camzoom = lerp(camzoom, 0.5, 0.07);
 		obj_player1.hsp = 1;
 		obj_player1.image_speed = Approach(obj_player1.image_speed, 0.1, 0.1);
@@ -362,6 +363,7 @@ switch (introstate)
 				pizzahead = true;
 				grabbedby = 1;
 				camzoom = 0.5;
+				obj_screensizer.camzoom = camzoom;
 				with (obj_player1)
 				{
 					state = 0;

@@ -9,6 +9,7 @@ savedpanicpause = false;
 savedmusicpause = false;
 savedsecretpause = false;
 savedpanicpos = 0;
+savedmusicpos = 0;
 exitmusic = false;
 pillarmusicID = fmod_event_create_instance("event:/music/pillarmusic");
 panicmusicID = fmod_event_create_instance("event:/music/pizzatime");

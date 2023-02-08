@@ -1,5 +1,5 @@
 event_inherited();
-if (pizzahead && elitehit <= 0)
+if (pizzahead && elitehit <= 0 && destroyable)
 {
 	scr_fakepep_destroy_sounds();
 	instance_destroy(obj_fakepephead);

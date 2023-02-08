@@ -1,4 +1,4 @@
-if (state != 291)
+if (state != 291 && other.state != 112 && other.state != 146 && other.state != 95)
 {
 	notification_push(40, [room]);
 	with (other)

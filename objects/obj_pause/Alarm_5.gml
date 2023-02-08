@@ -1,4 +1,4 @@
-var rm = global.leveltorestart;
+var rm = roomtorestart;
 scr_pause_stop_sounds();
 global.levelattempts++;
 ds_list_clear(global.saveroom);

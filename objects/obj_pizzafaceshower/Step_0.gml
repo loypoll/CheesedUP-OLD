@@ -1,7 +1,7 @@
 switch (state)
 {
 	case 126:
-		if (distance_to_object(obj_player) <= 150)
+		if (start && distance_to_object(obj_player) <= 150)
 		{
 			state = 146;
 			substate = 126;

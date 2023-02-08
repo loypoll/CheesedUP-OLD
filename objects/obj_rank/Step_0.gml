@@ -91,7 +91,7 @@ if (brown)
                     if toppinvisible
                         fmod_event_one_shot_3d("event:/sfx/misc/toppingot", (room_width / 2), (room_height / 2));
                     toppin_y[toppin_index] = yy;
-                    toppin_state = (8 << 0);
+                    toppin_state = 8;
                     brown = 1;
                 }
                 break;

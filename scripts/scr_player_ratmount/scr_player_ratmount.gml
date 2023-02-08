@@ -247,7 +247,7 @@ function scr_player_ratmount()
 			other.dashcloudid = id;
 		}
 	}
-	if ((key_down && grounded && vsp > 0) || scr_solid(x, y))
+	if ((key_down && grounded && vsp > 0 && gusdashpadbuffer <= 0) || scr_solid(x, y))
 	{
 		state = 260;
 		if (brick == 1)

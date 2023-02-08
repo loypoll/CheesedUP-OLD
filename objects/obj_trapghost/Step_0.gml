@@ -57,24 +57,24 @@ switch (state)
                 {
                     case obj_anchortrap:
                         sprite_index = spr_kingghost_anchor2
-                        if (state != (135 << 0) && state != (92 << 0) && obj_player1.x > (x - 100) && obj_player1.x < (x + 100) && obj_player1.y > y && obj_player1.y < (y + 500))
+                        if (state != 135 && state != 92 && obj_player1.x > x - 100 && obj_player1.x < x + 100 && obj_player1.y > y && obj_player1.y < y + 500)
                         {
                             fmod_event_one_shot_3d("event:/sfx/enemies/presentfall", x, y)
-                            state = (135 << 0)
+                            state = 135
                             vsp = 10
                         }
                         break
                     case obj_knighttrap:
-                        if (cooldown == 0 && state != (80 << 0) && obj_player1.x > (x - 200) && obj_player1.x < (x + 200) && obj_player1.y > (y - 100) && obj_player1.y < (y + 100))
+                        if (cooldown == 0 && state != 80 && obj_player1.x > x - 200 && obj_player1.x < x + 200 && obj_player1.y > y - 100 && obj_player1.y < y + 100)
                         {
-                            state = (80 << 0)
+                            state = 80
                             sprite_index = spr_kingghost_spike3
                             fmod_event_one_shot_3d("event:/sfx/enemies/pizzardelectricity", x, y)
                             image_index = 0
                             attackbuffer = 30
                             cooldown = 50
                         }
-                        if (state == (0 << 0))
+                        if (state == 0)
                             sprite_index = spr_kingghost_spike2
                         break
                     case obj_tvtrap:

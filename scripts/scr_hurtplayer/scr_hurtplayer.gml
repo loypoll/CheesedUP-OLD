@@ -324,7 +324,8 @@ function scr_hurtplayer()
 						repeat (n)
 						{
 							var pos = scr_bosscontroller_get_health_pos(player_hp, player_rowmax, player_columnmax, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad);
-							scr_bosscontroller_particle_hp(spr_bossfight_playerhp, irandom(sprite_get_number(spr_bossfight_playerhp) - 1), pos[0], pos[1], 1, spr_peppalette, obj_player1.paletteselect, global.palettetexture);
+							if (pos != undefined)
+								scr_bosscontroller_particle_hp(spr_bossfight_playerhp, irandom(sprite_get_number(spr_bossfight_playerhp) - 1), pos[0], pos[1], 1, spr_peppalette, obj_player1.paletteselect, global.palettetexture);
 							global.bossplayerhurt = true;
 							player_hp--;
 						}

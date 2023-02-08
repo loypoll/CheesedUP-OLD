@@ -18,6 +18,7 @@ DoujinShinji
 Dylan "Cactus" Alger
 EK
 Fiddlehead
+Fesh
 Gabriel Regli
 Gill Wonder
 H. L. Longirl
@@ -37,6 +38,7 @@ Mass Produced Eva
 Matt Mastaonion Paradise
 Matthew Barber
 MGM25
+Nash "Pr3tz31" Chorney
 Opal Planet
 pilebunker
 Redead-ITA
@@ -116,7 +118,6 @@ Alex The Shy Guy
 alexander balido
 Alexis Olvera
 Allen
-AlphaWolf
 Altefier
 Alter_Luna
 Amywires
@@ -217,6 +218,8 @@ Blakenator9872
 blamoskoo
 BlastfaceEnder
 Blocky tomato
+BloodWolfPlayer
+Bloopander
 blubiart
 Bluddax
 Blue
@@ -242,6 +245,7 @@ Breadsauce
 Brian Heckaman
 Brice Renaudin
 BrieMuffins
+brightnovamarie
 britshado
 BroGoat
 BrownyBubs235
@@ -414,8 +418,10 @@ Das Techniker
 Dastanovich
 DataTripTV
 DaUsername
-Dave(The Coolest Guy Around)
-David -ThatRedEyedGolem- Lau
+Dave
+David
+(The Coolest Guy Around)
+-ThatRedEyedGolem- Lau
 David A. Casanova
 David Amavizca
 David Chang
@@ -467,7 +473,6 @@ DomanDragon
 Dominic Morley
 dongo22
 Donnie_Tsunami23
-DontGotNoName
 doomSdayFPS
 door
 DoovOnTheMoov
@@ -561,7 +566,6 @@ fatttymanhaha
 faux mom
 Felipe Alejandro Vidal Pardo
 Fernan_3679
-Fesh
 Filiph Samuelsson
 FinnaOof
 Finpa
@@ -971,6 +975,7 @@ MadRabbitArt
 MalaBG
 malcigamer
 Malcolm F.
+Mandel
 Maldoon
 Manea64
 mania exist ok
@@ -978,11 +983,11 @@ Mania4lyfe
 Marbles_The_Mind_Taker
 Marc Duggan
 Marc Gordon
-Margen
 Mariofan64
 MarioFreak2001
 marioket
 Marko Rodriguez
+marky
 Marshal Weathers
 marshymela
 Marsie
@@ -1059,6 +1064,7 @@ Mr. Failbot
 Mr. Qazert
 Mr. Tartar
 Mr._
+Mя. Kiиg
 mr.skullpines 101
 Mr.Zombie
 MrAndroid42
@@ -1323,7 +1329,6 @@ Scotch
 Scott Schodde
 Scottboy88
 SCOUT-THE-SNOW
-Scrack
 scroobie
 Scrook
 ScruffTuna
@@ -1654,7 +1659,6 @@ Zombie killer 14
 Zyjem
 Zyreth
 Божидар Гроздев
-Мя. Kiиg
 전태양
 WEENIE CUSTOMERS
 [NG]TheCrossfire
@@ -1964,6 +1968,7 @@ James Jasinski
 James Stuart
 jamesithink
 Jamie Pirie
+jao god(hashi gamer)
 Jarek
 Jason Paul
 Jasongamer9000
@@ -1979,7 +1984,6 @@ JIMATION
 Jimmy Chrimbel
 Jimmy Chungus
 JimmyJohn James
-joao pedro
 joenuts
 JoeTheBean
 John Fultz
@@ -2393,6 +2397,7 @@ Zhakich
 ZOMCREEP12
 zujop123
 АГЕНТ 102
+Барабанов Илья
 CHEESY CUSTOMERS
 Admiral Pizza
 Alex Celeski
@@ -2472,7 +2477,6 @@ Michael Fegreus
 michaelsoftexcel
 Miguel Arzola
 Mochaesspres
-Mushroom Corp.
 Natch
 Neko Artist
 Nicholas
@@ -2505,6 +2509,7 @@ spoocecow
 squish
 Stian Elvsås
 Sydney
+Sylver Mushroom
 The Fabian Strategy
 Thijs
 twinkie_winkies#8069

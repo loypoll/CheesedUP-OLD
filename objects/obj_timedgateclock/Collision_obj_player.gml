@@ -1,9 +1,20 @@
+var notif = false;
 if (sprite_index != spr_button_pressed && sprite_index != spr_button_goingpressed)
 {
 	timedgate_trigger();
 	if (sprite_index != spr_button_goingidle)
-		notification_push(10, [room, id, time]);
+	{
+        global.timedgateid = id;
+        _notif = true;
+    }
 }
+else if (global.timedgateid != id)
+{
+    _notif = true;
+    global.timedgateid = id;
+}
+if (_notif && !instance_exists(obj_ghostcollectibles))
+    notification_push(10, [room, id, time]);
 with (obj_timedgateclock)
 {
 	if (sprite_index != spr_button_pressed && sprite_index != spr_button_goingpressed)
