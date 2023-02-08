@@ -132,7 +132,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Teeth",
-    "path": "folders/Sprites/Baddie/Teeth.yy",
+    "name": "Teeth Patroller",
+    "path": "folders/Sprites/Baddie/Teeth Patroller.yy",
   },
 }

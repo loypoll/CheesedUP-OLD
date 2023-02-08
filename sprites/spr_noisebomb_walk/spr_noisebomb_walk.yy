@@ -79,6 +79,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Bomb",
-    "path": "folders/Sprites/Noise traps/Bomb.yy",
+    "path": "folders/Sprites/Unused/Noise Traps/Bomb.yy",
   },
 }

@@ -248,7 +248,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Miscellaneous (SORT THIS BETTER)",
-    "path": "folders/Sprites/Miscellaneous (SORT THIS BETTER).yy",
+    "name": "OLD",
+    "path": "folders/Sprites/HUD/Main Menu/OLD.yy",
   },
 }

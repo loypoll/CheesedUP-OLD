@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Cutscene",
-    "path": "folders/Sprites/Cutscene.yy",
+    "name": "Pizzaface Shower",
+    "path": "folders/Sprites/Cutscene/Pizzaface Shower.yy",
   },
 }

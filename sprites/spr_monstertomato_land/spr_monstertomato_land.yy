@@ -81,6 +81,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Tomato",
-    "path": "folders/Sprites/Monsters/Tomato.yy",
+    "path": "folders/Sprites/Level Structure/Monsters/Tomato.yy",
   },
 }

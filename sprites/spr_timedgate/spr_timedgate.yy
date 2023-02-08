@@ -83,6 +83,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Timed Gate",
-    "path": "folders/Sprites/Level structure/Timed Gate.yy",
+    "path": "folders/Sprites/Level Structure/Timed Gate.yy",
   },
 }

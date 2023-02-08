@@ -73,6 +73,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Factory",
-    "path": "folders/Sprites/Level structure/Factory.yy",
+    "path": "folders/Sprites/Level Structure/Factory.yy",
   },
 }

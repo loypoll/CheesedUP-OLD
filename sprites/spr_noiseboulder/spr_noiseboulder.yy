@@ -76,7 +76,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Noise traps",
-    "path": "folders/Sprites/Noise traps.yy",
+    "name": "Noise Traps",
+    "path": "folders/Sprites/Unused/Noise Traps.yy",
   },
 }

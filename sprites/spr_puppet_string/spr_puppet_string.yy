@@ -69,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Puppet",
-    "path": "folders/Sprites/Monsters/Puppet.yy",
+    "path": "folders/Sprites/Level Structure/Monsters/Puppet.yy",
   },
 }

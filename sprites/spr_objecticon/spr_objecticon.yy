@@ -73,6 +73,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Editor",
-    "path": "folders/Sprites/Editor.yy",
+    "path": "folders/Sprites/Unused/Editor.yy",
   },
 }

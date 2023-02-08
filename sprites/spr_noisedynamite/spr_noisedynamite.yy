@@ -87,6 +87,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Dynamite",
-    "path": "folders/Sprites/Noise traps/Dynamite.yy",
+    "path": "folders/Sprites/Unused/Noise Traps/Dynamite.yy",
   },
 }

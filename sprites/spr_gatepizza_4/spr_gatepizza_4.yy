@@ -91,6 +91,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Tower",
-    "path": "folders/Sprites/Tower.yy",
+    "path": "folders/Sprites/Level Structure/Tower.yy",
   },
 }

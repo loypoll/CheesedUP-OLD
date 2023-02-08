@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sir Nose",
-    "path": "folders/Sprites/Level structure/Sir Nose.yy",
+    "name": "Level Structure",
+    "path": "folders/Sprites/Level Structure.yy",
   },
 }

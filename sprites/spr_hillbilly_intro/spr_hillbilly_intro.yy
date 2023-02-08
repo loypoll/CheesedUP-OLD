@@ -87,6 +87,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Hillbilly",
-    "path": "folders/Sprites/Monsters/Hillbilly.yy",
+    "path": "folders/Sprites/Level Structure/Monsters/Hillbilly.yy",
   },
 }

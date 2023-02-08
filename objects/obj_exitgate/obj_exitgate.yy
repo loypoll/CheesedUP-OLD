@@ -37,6 +37,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Exits",
-    "path": "folders/Objects/Room structure/Doors/Exits.yy",
+    "path": "folders/Objects/Room Structure/Doors/Exits.yy",
   },
 }

@@ -69,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "NPCs",
-    "path": "folders/Sprites/Tower/NPCs.yy",
+    "path": "folders/Sprites/Level Structure/Tower/NPCs.yy",
   },
 }

@@ -69,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Totem",
-    "path": "folders/Sprites/Level structure/Totem.yy",
+    "path": "folders/Sprites/Level Structure/Totem.yy",
   },
 }

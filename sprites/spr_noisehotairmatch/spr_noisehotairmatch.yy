@@ -83,6 +83,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Hot air balloon",
-    "path": "folders/Sprites/Noise traps/Hot air balloon.yy",
+    "path": "folders/Sprites/Unused/Noise Traps/Hot air balloon.yy",
   },
 }

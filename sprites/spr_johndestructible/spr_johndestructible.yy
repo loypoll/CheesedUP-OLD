@@ -77,6 +77,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Destroyable",
-    "path": "folders/Sprites/Level structure/Destroyable.yy",
+    "path": "folders/Sprites/Level Structure/Destroyable.yy",
   },
 }

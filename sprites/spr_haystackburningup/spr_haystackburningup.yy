@@ -79,6 +79,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Haystacks",
-    "path": "folders/Sprites/Level structure/Haystacks.yy",
+    "path": "folders/Sprites/Level Structure/Haystacks.yy",
   },
 }

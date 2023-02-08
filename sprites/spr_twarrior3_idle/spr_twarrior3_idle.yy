@@ -69,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Warriors",
-    "path": "folders/Sprites/Level structure/Collectible/Toppin/Warriors.yy",
+    "path": "folders/Sprites/Level Structure/Collectible/Toppin/Warriors.yy",
   },
 }

@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Cutscene",
-    "path": "folders/Sprites/Cutscene.yy",
+    "name": "Taxi Transition",
+    "path": "folders/Sprites/Cutscene/Taxi Transition.yy",
   },
 }

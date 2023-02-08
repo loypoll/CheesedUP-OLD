@@ -91,6 +91,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Christmas",
-    "path": "folders/Sprites/Level structure/Collectible/Toppin/Christmas.yy",
+    "path": "folders/Sprites/Level Structure/Collectible/Toppin/Christmas.yy",
   },
 }

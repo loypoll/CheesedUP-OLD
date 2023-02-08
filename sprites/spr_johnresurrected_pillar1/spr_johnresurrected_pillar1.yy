@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Cutscene",
-    "path": "folders/Sprites/Cutscene.yy",
+    "name": "John Resurrected",
+    "path": "folders/Sprites/Cutscene/John Resurrected.yy",
   },
 }

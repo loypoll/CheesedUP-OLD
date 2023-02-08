@@ -69,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Rock",
-    "path": "folders/Sprites/Noise traps/Rock.yy",
+    "path": "folders/Sprites/Unused/Noise Traps/Rock.yy",
   },
 }

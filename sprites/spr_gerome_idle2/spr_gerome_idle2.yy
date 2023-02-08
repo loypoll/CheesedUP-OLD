@@ -143,6 +143,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Gerome",
-    "path": "folders/Sprites/Level structure/Gerome.yy",
+    "path": "folders/Sprites/Level Structure/Gerome.yy",
   },
 }

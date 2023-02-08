@@ -78,7 +78,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Miscellaneous (SORT THIS BETTER)",
-    "path": "folders/Sprites/Miscellaneous (SORT THIS BETTER).yy",
+    "name": "Level Structure",
+    "path": "folders/Sprites/Level Structure.yy",
   },
 }

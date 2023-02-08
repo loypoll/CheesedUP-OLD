@@ -81,6 +81,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Toppin",
-    "path": "folders/Sprites/Level structure/Collectible/Toppin.yy",
+    "path": "folders/Sprites/Level Structure/Collectible/Toppin.yy",
   },
 }

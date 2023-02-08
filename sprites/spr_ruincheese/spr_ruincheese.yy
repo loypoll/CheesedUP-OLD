@@ -92,7 +92,7 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Tilesets",
-    "path": "folders/Sprites/Tilesets.yy",
+    "name": "Ruin",
+    "path": "folders/Sprites/Tilesets/Ruin.yy",
   },
 }

@@ -117,6 +117,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Computer",
-    "path": "folders/Sprites/Tower/Computer.yy",
+    "path": "folders/Sprites/Level Structure/Tower/Computer.yy",
   },
 }

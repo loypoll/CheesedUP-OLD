@@ -72,7 +72,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Space blocks",
-    "path": "folders/Sprites/Level structure/Space blocks.yy",
+    "name": "Space Blocks",
+    "path": "folders/Sprites/Level Structure/Space Blocks.yy",
   },
 }

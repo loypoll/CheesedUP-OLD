@@ -87,6 +87,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Antigrav",
-    "path": "folders/Sprites/Level structure/Antigrav.yy",
+    "path": "folders/Sprites/Level Structure/Antigrav.yy",
   },
 }

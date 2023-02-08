@@ -102,7 +102,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Collectible",
-    "path": "folders/Sprites/Level structure/Collectible.yy",
+    "name": "Demo Events",
+    "path": "folders/Sprites/Unused/Demo Events.yy",
   },
 }

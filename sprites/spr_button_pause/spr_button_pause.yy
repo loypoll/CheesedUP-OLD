@@ -71,6 +71,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Sound test",
-    "path": "folders/Sprites/Tower/Sound test.yy",
+    "path": "folders/Sprites/Level Structure/Tower/Sound test.yy",
   },
 }

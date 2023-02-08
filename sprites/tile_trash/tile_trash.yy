@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Tilesets",
-    "path": "folders/Sprites/Tilesets.yy",
+    "name": "Sewer",
+    "path": "folders/Sprites/Tilesets/Sewer.yy",
   },
 }

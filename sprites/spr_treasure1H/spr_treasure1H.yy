@@ -95,6 +95,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Treasure",
-    "path": "folders/Sprites/Level structure/Collectible/Treasure.yy",
+    "path": "folders/Sprites/Level Structure/Collectible/Treasure.yy",
   },
 }

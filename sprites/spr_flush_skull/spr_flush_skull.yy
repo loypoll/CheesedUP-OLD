@@ -79,6 +79,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Flush",
-    "path": "folders/Sprites/Level structure/Flush.yy",
+    "path": "folders/Sprites/Level Structure/Flush.yy",
   },
 }

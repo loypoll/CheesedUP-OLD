@@ -105,6 +105,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Collectible",
-    "path": "folders/Sprites/Level structure/Collectible.yy",
+    "path": "folders/Sprites/Level Structure/Collectible.yy",
   },
 }

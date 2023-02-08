@@ -69,6 +69,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Doors",
-    "path": "folders/Sprites/Level structure/Warps/Doors.yy",
+    "path": "folders/Sprites/Level Structure/Warps/Doors.yy",
   },
 }

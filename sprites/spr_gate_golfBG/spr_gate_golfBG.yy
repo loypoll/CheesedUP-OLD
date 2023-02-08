@@ -73,6 +73,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Level Gates",
-    "path": "folders/Sprites/Tower/Level Gates.yy",
+    "path": "folders/Sprites/Level Structure/Tower/Level Gates.yy",
   },
 }

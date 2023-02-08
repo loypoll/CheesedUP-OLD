@@ -93,6 +93,6 @@
   },
   "parent": {
     "name": "King Ghost",
-    "path": "folders/Sprites/Level structure/King Ghost.yy",
+    "path": "folders/Sprites/Level Structure/King Ghost.yy",
   },
 }

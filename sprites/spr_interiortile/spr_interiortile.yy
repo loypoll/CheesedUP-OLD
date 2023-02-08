@@ -94,7 +94,7 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Tilesets",
-    "path": "folders/Sprites/Tilesets.yy",
+    "name": "Street",
+    "path": "folders/Sprites/Tilesets/Street.yy",
   },
 }

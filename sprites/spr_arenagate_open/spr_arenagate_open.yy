@@ -80,7 +80,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Arenas",
-    "path": "folders/Sprites/Level structure/Arenas.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

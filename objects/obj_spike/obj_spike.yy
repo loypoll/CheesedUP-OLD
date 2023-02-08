@@ -38,6 +38,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Miscellaneous",
-    "path": "folders/Objects/Room structure/Miscellaneous.yy",
+    "path": "folders/Objects/Room Structure/Miscellaneous.yy",
   },
 }

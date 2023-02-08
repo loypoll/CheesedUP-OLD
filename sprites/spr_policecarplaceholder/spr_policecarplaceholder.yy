@@ -90,7 +90,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Police car",
-    "path": "folders/Sprites/Level structure/Police car.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
 }

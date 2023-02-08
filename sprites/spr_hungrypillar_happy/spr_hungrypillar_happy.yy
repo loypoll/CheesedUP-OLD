@@ -73,6 +73,6 @@
   "nineSlice": null,
   "parent": {
     "name": "John",
-    "path": "folders/Sprites/Level structure/John.yy",
+    "path": "folders/Sprites/Level Structure/John.yy",
   },
 }

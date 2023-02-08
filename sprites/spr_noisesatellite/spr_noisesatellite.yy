@@ -137,6 +137,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Satellite",
-    "path": "folders/Sprites/Noise traps/Satellite.yy",
+    "path": "folders/Sprites/Unused/Noise Traps/Satellite.yy",
   },
 }

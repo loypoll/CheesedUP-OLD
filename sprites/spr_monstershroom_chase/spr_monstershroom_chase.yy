@@ -83,6 +83,6 @@
   "nineSlice": null,
   "parent": {
     "name": "Shroom",
-    "path": "folders/Sprites/Monsters/Shroom.yy",
+    "path": "folders/Sprites/Level Structure/Monsters/Shroom.yy",
   },
 }
