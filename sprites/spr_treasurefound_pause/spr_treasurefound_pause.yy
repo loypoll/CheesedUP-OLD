@@ -70,7 +70,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Pause Menu",
+    "path": "folders/Sprites/HUD/Pause Menu.yy",
   },
 }

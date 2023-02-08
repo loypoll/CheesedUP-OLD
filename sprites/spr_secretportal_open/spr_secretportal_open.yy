@@ -88,7 +88,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Secret Portal",
+    "path": "folders/Sprites/Level structure/Warps/Secret Portal.yy",
   },
 }
