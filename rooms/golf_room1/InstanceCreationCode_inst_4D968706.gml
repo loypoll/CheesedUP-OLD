@@ -1,1 +1,1 @@
-bg = 2311;
+bg = bg_desert;

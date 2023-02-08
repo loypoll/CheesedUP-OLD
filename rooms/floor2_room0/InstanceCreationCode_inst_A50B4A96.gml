@@ -1,1 +1,1 @@
-bg = 2355;
+bg = bg_castle3;

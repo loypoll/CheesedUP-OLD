@@ -1,2 +1,2 @@
-bg = 2346;
-bg2 = 2344;
+bg = bg_castlev1;
+bg2 = bg_castlev2;

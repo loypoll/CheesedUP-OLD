@@ -1,1 +1,1 @@
-bg = 2307;
+bg = bg_cavern;

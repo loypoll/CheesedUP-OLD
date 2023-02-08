@@ -1,3 +1,3 @@
-bg = 2427;
-bg2 = 2425;
-bg3 = 2417;
+bg = bg_sewer1;
+bg2 = bg_sewer2;
+bg3 = bg_sewer3;
