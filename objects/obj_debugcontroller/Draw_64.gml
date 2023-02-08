@@ -29,7 +29,7 @@ if (DEBUG)
 				break;
 			case 2:
 				str = concat("[DEBUG] ", txt);
-				c = 8421504;
+				c = c_gray;
 				break;
 			case 1:
 				str = concat("[COMMAND] ", txt);

@@ -29,7 +29,7 @@ switch (m.anchor)
 		for (i = 0; i < len; i++)
 		{
 			var o = options[i];
-			c = 8421504;
+			c = c_gray;
 			if (i == _os)
 				c = c_white;
 			var t = lang_get_value(o.name);
@@ -48,7 +48,7 @@ switch (m.anchor)
 		{
 			draw_set_halign(0);
 			o = options[i];
-			c = 8421504;
+			c = c_gray;
 			if (i == _os)
 				c = c_white;
 			draw_text_color(xx, yy + (m.ypad * i), lang_get_value(o.name), c, c, c, c, a);

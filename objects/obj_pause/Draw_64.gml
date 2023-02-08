@@ -24,7 +24,7 @@ if (fade > 0)
 	for (var i = 0; i < len; i++)
 	{
 		var b = pause_menu[i];
-		var c = 8421504;
+		var c = c_gray;
 		var t = lang_get_value(b);
 		if (selected == i)
 		{

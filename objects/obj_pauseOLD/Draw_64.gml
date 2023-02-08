@@ -11,7 +11,7 @@ if (pause)
 	var yy = 48;
 	for (var i = 0; i < array_length(pause_menu); i++)
 	{
-		var c = 8421504;
+		var c = c_gray;
 		yy = 96 + (pad * i);
 		if (selected == i)
 		{

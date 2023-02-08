@@ -20,7 +20,7 @@ if (state == 18)
 	draw_set_halign(1);
 	for (i = 0; i < array_length(hub_array); i++)
 	{
-		var c = (selected == i) ? c_white : 8421504;
+		var c = (selected == i) ? c_white : c_gray;
 		txt = hub_array[i][1];
 		draw_text_color(480, yy, txt, c, c, c, c, 1);
 		yy -= string_height(txt);

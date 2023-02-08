@@ -55,7 +55,7 @@ add_option_slide(audio_menu, 1, "option_master", function(val)
 {
 	global.option_master_volume = val / 100;
 	set_audio_config(false);
-}, function()
+}, function(val)
 {
 	global.option_master_volume = val / 100;
 	set_audio_config();
@@ -65,7 +65,7 @@ add_option_slide(audio_menu, 2, "option_music", function(val)
 {
 	global.option_music_volume = val / 100;
 	set_audio_config(false);
-}, function()
+}, function(val)
 {
 	global.option_music_volume = val / 100;
 	set_audio_config();
@@ -75,7 +75,7 @@ add_option_slide(audio_menu, 3, "option_sfx", function(val)
 {
 	global.option_sfx_volume = val / 100;
 	set_audio_config(false);
-}, function()
+}, function(val)
 {
 	global.option_sfx_volume = val / 100;
 	set_audio_config();
