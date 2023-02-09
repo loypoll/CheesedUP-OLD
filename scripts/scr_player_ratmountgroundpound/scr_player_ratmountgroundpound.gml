@@ -97,7 +97,7 @@ function scr_player_ratmountgroundpound()
 					combo = 0;
 					bounce = false;
 				}
-				create_particle(x, y + 3, 14, 0);
+				create_particle(x, y + 3, particle.groundpoundeffect, 0);
 			}
 		}
 	}

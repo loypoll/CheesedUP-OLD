@@ -36,7 +36,7 @@ if (active && sprite_index != spr_secretportal_open && !instance_exists(obj_jump
 	other.brick = true;
 	with (obj_brickcomeback)
 	{
-		create_particle(x, y, 9);
+		create_particle(x, y, particle.genericpoofeffect);
 		instance_destroy();
 	}
 	if (!touched)

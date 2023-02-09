@@ -119,7 +119,7 @@ function scr_player_boxxedpep()
 			steppybuffer--;
 		else
 		{
-			create_particle(x, y + 43, 1, 0);
+			create_particle(x, y + 43, particle.cloudeffect, 0);
 			steppybuffer = 14;
 			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 		}

@@ -1059,7 +1059,7 @@ if (input_buffer_walljump > 0)
 if (input_buffer_slap > 0)
 	input_buffer_slap--;
 if (key_particles == 1)
-	create_particle(x + random_range(-25, 25), y + random_range(-35, 25), 10, 0);
+	create_particle(x + random_range(-25, 25), y + random_range(-35, 25), particle.keyparticles, 0);
 if (state != 191 && state != 192 && state != 61)
 {
 	gustavodash = 0;

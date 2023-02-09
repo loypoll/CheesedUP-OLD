@@ -118,7 +118,7 @@ if (sprite_index == spr_pizzaboy)
 		if (state == 134 || state == 126)
 		{
 			if (sprite_index == spr_pizzaboy)
-				create_particle(x, y, 6, 0);
+				create_particle(x, y, particle.balloonpop, 0);
 			fmod_event_one_shot_3d("event:/sfx/pep/uppercut", x, y);
 			image_xscale = -sign(x - targetplayer.x);
 			sprite_index = spr_ninja_uppercut;

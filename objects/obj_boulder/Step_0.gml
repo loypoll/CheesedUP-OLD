@@ -92,7 +92,7 @@ switch (state)
 		if (hithsp != 0 && place_meeting(x - image_xscale, y, obj_solid) && !place_meeting(x - image_xscale, y, obj_destructibles))
 		{
 			particle_set_scale(8, -image_xscale, 1);
-			create_particle(x, y, 8, 0);
+			create_particle(x, y, particle.impact, 0);
 			if (thrown == 1 && destroyable)
 				instance_destroy();
 			thrown = false;

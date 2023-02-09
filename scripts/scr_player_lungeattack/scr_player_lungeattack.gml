@@ -113,7 +113,7 @@ function DoFinisher()
 		vsp = -16;
 		hsp = xscale * movespeed;
 		particle_set_scale(4, xscale, 1);
-		create_particle(x, y, 4, 0);
+		create_particle(x, y, particle.highjumpcloud2, 0);
 	}
 	else if ((key_left + key_right) == xscale)
 	{
@@ -124,7 +124,7 @@ function DoFinisher()
 		with (instance_create(x, y, obj_superdashcloud))
 			image_xscale = other.xscale;
 		particle_set_scale(2, xscale, 1);
-		create_particle(x, y, 2, 0);
+		create_particle(x, y, particle.crazyrunothereffect, 0);
 	}
 	else if (key_down)
 	{
@@ -145,6 +145,6 @@ function DoFinisher()
 		with (instance_create(x, y, obj_superdashcloud))
 			image_xscale = other.xscale;
 		particle_set_scale(2, xscale, 1);
-		create_particle(x, y, 2, 0);
+		create_particle(x, y, particle.crazyrunothereffect, 0);
 	}
 }

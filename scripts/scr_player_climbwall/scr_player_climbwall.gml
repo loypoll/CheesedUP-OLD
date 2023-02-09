@@ -106,7 +106,7 @@ function scr_player_climbwall()
 				steppybuffer--;
 			else
 			{
-				create_particle(x + (xscale * 10), y + 43, 1, 0);
+				create_particle(x + (xscale * 10), y + 43, particle.cloudeffect, 0);
 				steppybuffer = 10;
 			}
 			break;

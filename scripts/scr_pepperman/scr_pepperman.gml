@@ -167,7 +167,7 @@ function scr_pepperman_walk()
 	if (grounded && vsp > 0 && sprite_index == spr_pepperman_scared && flickertime > 2)
 	{
 		hsp = Approach(hsp, 0, 0.5);
-		create_particle(x, y, 12);
+		create_particle(x, y, particle.landcloud);
 		vsp = -5;
 		touchedground = true;
 	}
@@ -206,7 +206,7 @@ function scr_pepperman_walk()
 	else if (stomp && cooldown == 0)
 	{
 		fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
-		create_particle(x, y, 5);
+		create_particle(x, y, particle.jumpdust);
 		state = 92;
 		landbuffer2 = 10;
 		if (x != targetplayer.x)
@@ -294,7 +294,7 @@ function scr_pepperman_freefall()
 	}
 	if (grounded)
 	{
-		create_particle(x, y, 14);
+		create_particle(x, y, particle.groundpoundeffect);
 		if (!pizzahead)
 			var _land = wastedhits < 6;
 		else
@@ -612,7 +612,7 @@ function scr_pepperman_mini()
 					image_index = 0;
 					fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
 					attackspeed = 10;
-					create_particle(x, y, 5);
+					create_particle(x, y, particle.jumpdust);
 				}
 			}
 			if (minibuffer <= 0)

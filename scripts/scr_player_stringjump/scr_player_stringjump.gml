@@ -24,7 +24,7 @@ function scr_player_stringjump()
 		state = 0;
 		landAnim = true;
 		sprite_index = spr_land;
-		create_particle(x, y, 12, 0);
+		create_particle(x, y, particle.landcloud, 0);
 	}
 }
 function scr_player_stringfall()

@@ -145,7 +145,7 @@ function scr_player_rocket()
 		steppybuffer--;
 	else if ((collision_flags & 1) <= 0)
 	{
-		create_particle(x, y + random_range(10, 20), 1, 0);
+		create_particle(x, y + random_range(10, 20), particle.cloudeffect, 0);
 		steppybuffer = 8;
 	}
 }

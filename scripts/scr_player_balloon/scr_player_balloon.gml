@@ -15,7 +15,7 @@ function scr_player_balloon()
 		balloonbuffer--;
 	else
 	{
-		create_particle(x, y - 20, 9, 0);
+		create_particle(x, y - 20, particle.genericpoofeffect, 0);
 		instance_create(x, y - 20, obj_balloongrabbableeffect);
 		state = 92;
 		sprite_index = spr_fall;
@@ -23,7 +23,7 @@ function scr_player_balloon()
 	}
 	if (key_jump)
 	{
-		create_particle(x, y - 20, 9, 0);
+		create_particle(x, y - 20, particle.genericpoofeffect, 0);
 		instance_create(x, y - 20, obj_balloongrabbableeffect);
 		state = 92;
 		sprite_index = spr_jump;

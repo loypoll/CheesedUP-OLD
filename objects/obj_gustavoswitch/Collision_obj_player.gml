@@ -8,7 +8,7 @@ if (global.switchbuffer == 0 && global.panic == escape)
 		state = 146;
 	}
 	fmod_event_one_shot("event:/sfx/misc/pepgusswitch");
-	create_particle(x, y, 9);
+	create_particle(x, y, particle.genericpoofeffect);
 	sprite_index = spr_gustavoswitch1;
 	global.switchbuffer = 200;
 	playerid = other.id;

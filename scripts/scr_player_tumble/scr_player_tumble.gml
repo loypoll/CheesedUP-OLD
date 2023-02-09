@@ -75,7 +75,7 @@ function scr_player_tumble()
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_breakdance)
 	{
 		particle_set_scale(5, xscale, 1);
-		create_particle(x, y, 5, 0);
+		create_particle(x, y, particle.jumpdust, 0);
 		movespeed = 12;
 		sprite_index = spr_breakdancesuper;
 	}

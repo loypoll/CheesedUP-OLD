@@ -159,7 +159,7 @@ function scr_player_ratmount()
 			steppybuffer--;
 		else
 		{
-			create_particle(x, y + 43, 1, 0);
+			create_particle(x, y + 43, particle.cloudeffect, 0);
 			steppybuffer = 18;
 			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 		}
@@ -168,7 +168,7 @@ function scr_player_ratmount()
 	{
 		input_buffer_jump = 0;
 		particle_set_scale(4, xscale, 1);
-		create_particle(x, y, 4, 0);
+		create_particle(x, y, particle.highjumpcloud2, 0);
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		if (brick)
 		{
@@ -222,7 +222,7 @@ function scr_player_ratmount()
 	if (input_buffer_slap > 0 && !key_up && gusdashpadbuffer == 0)
 	{
 		particle_set_scale(5, xscale, 1);
-		create_particle(x, y, 5, 0);
+		create_particle(x, y, particle.jumpdust, 0);
 		input_buffer_slap = 0;
 		if (brick == 1)
 		{

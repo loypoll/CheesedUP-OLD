@@ -1,2 +1,2 @@
 active = true;
-create_particle(x, y, 9, 0);
+create_particle(x, y, particle.genericpoofeffect, 0);

@@ -41,7 +41,7 @@ switch (state)
 		if (y >= ystart)
 		{
 			y = ystart;
-			create_particle(x, y, 12);
+			create_particle(x, y, particle.landcloud);
 			state = 0;
 			if (sprite_index == spr_gustavo_exitshuttle)
 			{

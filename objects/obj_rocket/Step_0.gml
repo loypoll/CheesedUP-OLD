@@ -4,7 +4,7 @@ if (playerid != -4)
 	if (playerid.state != 184 && playerid.state != 185 && playerid.state != 61)
 	{
 		visible = true;
-		create_particle(x, y, 9);
+		create_particle(x, y, particle.genericpoofeffect);
 		playerid = -4;
 	}
 }

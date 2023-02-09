@@ -106,7 +106,7 @@ function state_player_normal()
 				steppybuffer--;
 			else if (sprite_index != spr_player_breakdance && sprite_index != spr_pepdance)
 			{
-				create_particle(x, y + 43, 1, 0);
+				create_particle(x, y + 43, particle.cloudeffect, 0);
 				steppybuffer = 12;
 				if (place_meeting(x, y, obj_poodebris))
 					fmod_event_one_shot_3d("event:/sfx/pep/stepinshit", x, y);
@@ -290,7 +290,7 @@ function state_player_normal()
 				image_index = 0;
 			}
 			particle_set_scale(4, xscale, 1);
-			create_particle(x, y, 4, 0);
+			create_particle(x, y, particle.highjumpcloud2, 0);
 			vsp = -11;
 			state = 92;
 			jumpAnim = true;
@@ -338,7 +338,7 @@ function state_player_normal()
 		sprite_index = spr_suplexdash;
 		suplexmove = true;
 		particle_set_scale(5, xscale, 1);
-		create_particle(x, y, 5, 0);
+		create_particle(x, y, particle.jumpdust, 0);
 		fmod_event_instance_play(suplexdashsnd);
 		state = 42;
 		movespeed = 8;
@@ -354,7 +354,7 @@ function state_player_normal()
 		vsp = -14;
 		movespeed = hsp;
 		particle_set_scale(4, xscale, 1);
-		create_particle(x, y, 4, 0);
+		create_particle(x, y, particle.highjumpcloud2, 0);
 	}
 	switch (character)
 	{

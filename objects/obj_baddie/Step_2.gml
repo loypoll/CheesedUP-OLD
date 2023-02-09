@@ -33,7 +33,7 @@ if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && gr
 	var _yy = y + 43;
 	if (object_index == obj_pizzafaceboss_p2 || object_index == obj_pizzafaceboss_p3)
 		_yy = y + 78;
-	create_particle(x - (image_xscale * 20), _yy, 1, 0);
+	create_particle(x - (image_xscale * 20), _yy, particle.cloudeffect, 0);
 }
 if ((object_index != obj_pizzice || state != 129) && object_index != obj_pizzafaceboss_p3 && object_index != obj_fakepepboss && state != 273)
 {

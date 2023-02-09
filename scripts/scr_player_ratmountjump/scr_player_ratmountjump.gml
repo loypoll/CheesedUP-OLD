@@ -130,7 +130,7 @@ function scr_player_ratmountjump()
 	if (input_buffer_slap > 0 && !key_up)
 	{
 		particle_set_scale(5, xscale, 1);
-		create_particle(x, y, 5, 0);
+		create_particle(x, y, particle.jumpdust, 0);
 		input_buffer_slap = 0;
 		if (brick == 1)
 		{
@@ -153,7 +153,7 @@ function scr_player_ratmountjump()
 		bounce = false;
 		input_buffer_jump = 0;
 		particle_set_scale(4, xscale, 1);
-		create_particle(x, y, 4, 0);
+		create_particle(x, y, particle.highjumpcloud2, 0);
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		if (brick)
 		{
@@ -184,7 +184,7 @@ function scr_player_ratmountjump()
 	if (grounded && vsp > 0 && sprite_index != spr_lonegustavo_kick)
 	{
 		doublejump = false;
-		create_particle(x, y, 12, 0);
+		create_particle(x, y, particle.landcloud, 0);
 		state = 191;
 		landAnim = true;
 		jumpstop = false;

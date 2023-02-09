@@ -8,7 +8,7 @@ if (use_collision)
 			with (obj_player1)
 				sprite_index = spr_player_gnomecutscene1;
 			alarm[1] = -1;
-			create_particle(x, y, 12);
+			create_particle(x, y, particle.landcloud);
 			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 			hsp = 0;
 			start = true;

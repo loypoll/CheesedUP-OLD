@@ -1,2 +1,2 @@
-create_particle(x, y, 1, 0);
+create_particle(x, y, particle.cloudeffect, 0);
 alarm[1] = 6;

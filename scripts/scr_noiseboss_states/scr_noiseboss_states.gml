@@ -116,7 +116,7 @@ function noise_do_attack_normal()
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
 			particle_set_scale(5, image_xscale, 1);
-			create_particle(x, y, 5, 0);
+			create_particle(x, y, particle.jumpdust, 0);
 			break;
 	}
 }
@@ -218,7 +218,7 @@ function noise_do_attack_angry()
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
 			particle_set_scale(5, image_xscale, 1);
-			create_particle(x, y, 5, 0);
+			create_particle(x, y, particle.jumpdust, 0);
 			break;
 	}
 }
@@ -563,7 +563,7 @@ function boss_noise_pogo()
 		movespeed = 0;
 		pogospeedprev = false;
 		sprite_index = pogomach ? spr_playerN_pogobouncemach : spr_playerN_pogobounce;
-		create_particle(x, y, 12, 0);
+		create_particle(x, y, particle.landcloud, 0);
 	}
 	if (!pogospeedprev && (sprite_index == spr_playerN_pogobounce || sprite_index == spr_playerN_pogobouncemach) && floor(image_index) == 4)
 	{
@@ -650,7 +650,7 @@ function boss_noise_jetpack()
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
 			particle_set_scale(5, image_xscale, 1);
-			create_particle(x, y, 5, 0);
+			create_particle(x, y, particle.jumpdust, 0);
 		}
 	}
 }
@@ -686,7 +686,7 @@ function boss_noise_jetpackspin()
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
 			particle_set_scale(5, image_xscale, 1);
-			create_particle(x, y, 5, 0);
+			create_particle(x, y, particle.jumpdust, 0);
 		}
 	}
 }

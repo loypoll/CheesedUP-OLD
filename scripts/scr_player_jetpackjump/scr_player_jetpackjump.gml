@@ -146,7 +146,7 @@ function scr_player_jetpackjump()
 		}
 		input_buffer_slap = 0;
 		particle_set_scale(5, xscale, 1);
-		create_particle(x, y, 5, 0);
+		create_particle(x, y, particle.jumpdust, 0);
 		image_index = 0;
 		sprite_index = spr_suplexdashjumpstart;
 		flash = true;

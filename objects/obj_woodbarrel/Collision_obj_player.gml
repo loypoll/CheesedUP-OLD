@@ -14,7 +14,7 @@ if ((other.state == 42 || other.state == 80) && other.grounded == 1)
 }
 if (other.state == 104 || other.state == 121 || (other.state == 65 && grounded))
 {
-	create_particle(x, y, 9, 0);
+	create_particle(x, y, particle.genericpoofeffect, 0);
 	with (other)
 	{
 		vsp = 0;

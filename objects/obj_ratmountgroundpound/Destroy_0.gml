@@ -17,4 +17,4 @@ repeat (3)
 	}
 }
 instance_create(x, y, obj_bangeffect);
-create_particle(x, y + 3, 14, 0);
+create_particle(x, y + 3, particle.groundpoundeffect, 0);

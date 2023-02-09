@@ -1,18 +1,18 @@
-function declare_particle()
+function declare_particle(part, sprite, anim_speed, depth)
 {
-	ds_map_set(global.part_map, argument0, part_type_create());
-	ds_map_set(global.part_depth, argument0, argument3);
-	var p = ds_map_find_value(global.part_map, argument0);
-	part_type_sprite(p, argument1, true, true, false);
-	var t = sprite_get_number(argument1);
-	var s = argument2;
+	ds_map_set(global.part_map, part, part_type_create());
+	ds_map_set(global.part_depth, part, depth);
+	var p = ds_map_find_value(global.part_map, part);
+	part_type_sprite(p, sprite, true, true, false);
+	var t = sprite_get_number(sprite);
+	var s = anim_speed;
 	var spd = t / s;
 	part_type_life(p, spd, spd);
 	return p;
 }
-function particle_set_scale()
+function particle_set_scale(part, xscale, yscale)
 {
-	part_type_scale(ds_map_find_value(global.part_map, argument0), argument1, argument2);
+	part_type_scale(ds_map_find_value(global.part_map, part), xscale, yscale);
 }
 function create_debris(_x, _y, sprite, _animated = false)
 {

@@ -1,1 +1,1 @@
-create_particle(x, y, 15);
+create_particle(x, y, particle.bubblepop);

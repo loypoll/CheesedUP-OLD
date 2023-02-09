@@ -7,7 +7,7 @@ function scr_player_freefall()
 			steppybuffer--;
 		else
 		{
-			create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), 1, 0);
+			create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), particle.cloudeffect, 0);
 			steppybuffer = 8;
 		}
 		if (vsp > 17)
@@ -141,7 +141,7 @@ function scr_player_freefall()
 				combo = 0;
 				bounce = false;
 			}
-			create_particle(x, y + 3, 14, 0);
+			create_particle(x, y + 3, particle.groundpoundeffect, 0);
 			freefallstart = 0;
 		}
 	}

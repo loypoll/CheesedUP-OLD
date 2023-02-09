@@ -1,3 +1,26 @@
+enum particle
+{
+	enum_start, // not to be used
+	
+	cloudeffect,
+	crazyrunothereffect,
+	highjumpcloud1,
+	highjumpcloud2,
+	jumpdust,
+	balloonpop,
+	shotgunimpact,
+	impact,
+	genericpoofeffect,
+	keyparticles,
+	teleporteffect,
+	landcloud,
+	ratmountballooncloud,
+	groundpoundeffect,
+	bubblepop,
+	
+	enum_length // not to be used
+}
+
 if (instance_number(obj_particlesystem) > 1)
 {
 	instance_destroy();
@@ -10,33 +33,34 @@ global.part_depth = ds_map_create();
 global.part_emitter = part_emitter_create(global.particle_system);
 global.debris_list = ds_list_create();
 global.collect_list = ds_list_create();
-var p = declare_particle(1, spr_cloudeffect, 0.5, -4)
+
+var p = declare_particle(particle.cloudeffect, spr_cloudeffect, 0.5, -4)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(2, spr_crazyrunothereffect, 0.5, -99)
+p = declare_particle(particle.crazyrunothereffect, spr_crazyrunothereffect, 0.5, -99)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(3, spr_highjumpcloud1, 0.5, 0)
+p = declare_particle(particle.highjumpcloud1, spr_highjumpcloud1, 0.5, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(4, spr_highjumpcloud2, 0.5, 0)
+p = declare_particle(particle.highjumpcloud2, spr_highjumpcloud2, 0.5, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(5, spr_jumpdust, 0.35, 0)
+p = declare_particle(particle.jumpdust, spr_jumpdust, 0.35, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(6, spr_balloonpop, 0.5, 0)
+p = declare_particle(particle.balloonpop, spr_balloonpop, 0.5, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(7, spr_shotgunimpact, 0.5, 0)
+p = declare_particle(particle.shotgunimpact, spr_shotgunimpact, 0.5, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(8, spr_impact, 0.5, 0)
+p = declare_particle(particle.impact, spr_impact, 0.5, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(9, spr_genericpoofeffect, 0.35, 0)
+p = declare_particle(particle.genericpoofeffect, spr_genericpoofeffect, 0.35, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(15, spr_antigrav_bubblepop, 0.35, 0)
+p = declare_particle(particle.bubblepop, spr_antigrav_bubblepop, 0.35, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(10, spr_keyparticles, 0.35, 0)
+p = declare_particle(particle.keyparticles, spr_keyparticles, 0.35, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(11, spr_teleporteffect, 0.5, 0)
+p = declare_particle(particle.teleporteffect, spr_teleporteffect, 0.5, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(12, spr_landcloud, 0.5, 0)
+p = declare_particle(particle.landcloud, spr_landcloud, 0.5, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(13, spr_ratmountballooncloud, 0.7, 0)
+p = declare_particle(particle.ratmountballooncloud, spr_ratmountballooncloud, 0.7, 0)
 part_type_speed(p, 0, 0, 0, 0)
-p = declare_particle(14, spr_groundpoundeffect, 0.35, 0)
+p = declare_particle(particle.groundpoundeffect, spr_groundpoundeffect, 0.35, 0)
 part_type_speed(p, 0, 0, 0, 0)

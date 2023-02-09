@@ -9,7 +9,7 @@ if (state == 17)
 		{
 			state = 16;
 			vsp = -10;
-			create_particle(x, y, 9, 0);
+			create_particle(x, y, particle.genericpoofeffect, 0);
 			visible = true;
 			other.state = 0;
 		}

@@ -35,14 +35,14 @@ function scr_player_barreljump()
 		sprite_index = spr_player_barreljump;
 		image_index = 0;
 		jumpstop = false;
-		create_particle(x, y, 3, 0);
+		create_particle(x, y, particle.highjumpcloud1, 0);
 	}
 	if (grounded && vsp > 0)
 	{
 		state = 113;
 		sprite_index = spr_player_barrelland;
 		image_index = 0;
-		create_particle(x, y, 12, 0);
+		create_particle(x, y, particle.landcloud, 0);
 	}
 	if (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope))
 		movespeed = 0;

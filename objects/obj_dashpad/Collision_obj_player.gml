@@ -23,7 +23,7 @@ with (other)
 			if (changecoord)
 				y = other.y - 14;
 			vsp = 0;
-			create_particle(x, y, 5, 0);
+			create_particle(x, y, particle.jumpdust, 0);
 			if (character == "P")
 			{
 				if (sprite_index != spr_dashpadmach)
@@ -67,7 +67,7 @@ with (other)
 				if (changecoord)
 					y = other.y - 14;
 				vsp = 0;
-				create_particle(x, y, 5, 0);
+				create_particle(x, y, particle.jumpdust, 0);
 				scr_fmod_soundeffect(global.snd_ventilator, x, y);
 				xscale = sign(other.image_xscale);
 				dir = xscale;
@@ -90,7 +90,7 @@ with (other)
 				if (changecoord)
 					y = other.y - 14;
 				vsp = 0;
-				create_particle(x, y, 5, 0);
+				create_particle(x, y, particle.jumpdust, 0);
 				xscale = sign(other.image_xscale);
 				dir = xscale;
 				with (instance_create(x, y, obj_crazyrunothereffect))

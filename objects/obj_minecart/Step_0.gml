@@ -75,8 +75,8 @@ if (_destroy)
 {
 	instance_destroy();
 	instance_create(xstart, ystart, obj_minecart);
-	create_particle(xstart, ystart, 9);
-	create_particle(x, y, 9);
+	create_particle(xstart, ystart, particle.genericpoofeffect);
+	create_particle(x, y, particle.genericpoofeffect);
 	with (playerid)
 	{
 		state = 16;

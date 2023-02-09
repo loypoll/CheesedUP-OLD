@@ -1,5 +1,5 @@
 image_speed = 0.35;
-create_particle(x, y, 9);
+create_particle(x, y, particle.genericpoofeffect);
 dir = choose(-1, 1);
 spd = 4;
 hooked = false;

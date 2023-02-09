@@ -73,7 +73,7 @@ function scr_player_knightpep()
 	var dj = true;
 	if ((input_buffer_jump > 0 && vsp > 0) && can_jump && (sprite_index == spr_knightpepidle || sprite_index == spr_knightpep_downtrust || sprite_index == spr_knightpepland || sprite_index == spr_knightpepwalk || sprite_index == spr_knightpepfall))
 	{
-		create_particle(x, y, 3);
+		create_particle(x, y, particle.highjumpcloud1);
 		dj = false;
 		input_buffer_jump = 0;
 		image_index = 0;
@@ -110,7 +110,7 @@ function scr_player_knightpep()
 		freefallstart = 0;
 		momemtum = false;
 		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-		create_particle(x, y + 3, 14, 0);
+		create_particle(x, y + 3, particle.groundpoundeffect, 0);
 		sprite_index = spr_knightpepland;
 		GamepadSetVibration((object_index == obj_player1) ? 0 : 1, 1, 1, 0.9);
 	}
@@ -187,7 +187,7 @@ function scr_player_knightpep()
 			steppybuffer--;
 		else
 		{
-			create_particle(x, y + 43, 1, 0);
+			create_particle(x, y + 43, particle.cloudeffect, 0);
 			steppybuffer = 13;
 			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 		}

@@ -1,6 +1,6 @@
 if (state == 148)
 	exit;
-create_particle(x, y, 6, 0);
+create_particle(x, y, particle.balloonpop, 0);
 vsp = -14;
 kicked = false;
 with (other)

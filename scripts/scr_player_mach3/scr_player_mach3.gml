@@ -71,7 +71,7 @@ function scr_player_mach3()
 				input_buffer_jump = 0;
 				scr_fmod_soundeffect(jumpsnd, x, y);
 				particle_set_scale(5, xscale, 1);
-				create_particle(x, y, 5, 0);
+				create_particle(x, y, particle.jumpdust, 0);
 				if (sprite_index != spr_fightball)
 				{
 					image_index = 0;
@@ -133,7 +133,7 @@ function scr_player_mach3()
 			if (key_down && fightball == 0 && sprite_index != spr_dashpadmach)
 			{
 				particle_set_scale(5, xscale, 1);
-				create_particle(x, y, 5, 0);
+				create_particle(x, y, particle.jumpdust, 0);
 				flash = false;
 				state = 5;
 				image_index = 0;
@@ -168,7 +168,7 @@ function scr_player_mach3()
 				suplexmove = true;
 				fmod_event_instance_play(suplexdashsnd);
 				particle_set_scale(5, xscale, 1);
-				create_particle(x, y, 5, 0);
+				create_particle(x, y, particle.jumpdust, 0);
 				state = 42;
 				if (movespeed < 5)
 					movespeed = 5;
@@ -184,7 +184,7 @@ function scr_player_mach3()
 				vsp = -10;
 				movespeed = hsp;
 				particle_set_scale(4, xscale, 1);
-				create_particle(x, y, 4, 0);
+				create_particle(x, y, particle.highjumpcloud2, 0);
 			}
 			if (input_buffer_shoot > 0 && sprite_index != spr_dashpadmach)
 			{
@@ -382,7 +382,7 @@ function scr_player_mach3()
 			if (key_down && fightball == 0 && !place_meeting(x, y, obj_dashpad))
 			{
 				particle_set_scale(5, xscale, 1);
-				create_particle(x, y, 5, 0);
+				create_particle(x, y, particle.jumpdust, 0);
 				flash = false;
 				state = 65;
 				vsp = 10;
@@ -619,7 +619,7 @@ function scr_player_mach3()
 				sprite_index = spr_playerN_noisebombspinjump;
 				image_index = 0;
 				particle_set_scale(5, xscale, 1);
-				create_particle(x, y, 5, 0);
+				create_particle(x, y, particle.jumpdust, 0);
 			}
 			if (key_down && fightball == 0 && !place_meeting(x, y, obj_dashpad) && grounded)
 			{

@@ -70,7 +70,7 @@ if (state == 128)
 		attack_cooldown = attack_max;
 	}
 	if (hsp != 0 && floor(image_index) == (image_number - 1))
-		create_particle(x - (image_xscale * 20), y + 43, 1, 0);
+		create_particle(x - (image_xscale * 20), y + 43, particle.cloudeffect, 0);
 }
 if (flame_buffer > 0)
 	flame_buffer--;

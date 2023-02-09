@@ -13,7 +13,7 @@ function scr_enemy_ghostpossess()
 			vsp = -10;
 			other.state = 138;
 			other.stunned = 50;
-			create_particle(x, y, 9, 0);
+			create_particle(x, y, particle.genericpoofeffect, 0);
 			visible = true;
 		}
 	}

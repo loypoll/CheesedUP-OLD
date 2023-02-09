@@ -33,7 +33,7 @@ function scr_player_cheesepepjump()
 	}
 	if (input_buffer_jump > 0 && can_jump && !grounded)
 	{
-		create_particle(x, y, 3);
+		create_particle(x, y, particle.highjumpcloud1);
 		vsp = -11;
 		image_index = 0;
 		sprite_index = spr_cheesepepjump;

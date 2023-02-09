@@ -48,7 +48,7 @@ function scr_player_superslam()
 			steppybuffer--;
 		else
 		{
-			create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), 1, 0);
+			create_particle(x + irandom_range(-25, 25), y + irandom_range(-10, 35), particle.cloudeffect, 0);
 			steppybuffer = 8;
 		}
 		if (vsp > 17)
@@ -67,7 +67,7 @@ function scr_player_superslam()
 	if (grounded && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + 1, obj_destructibles) && sprite_index == spr_piledriver && vsp > 0)
 	{
 		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-		create_particle(x, y + 3, 14, 0);
+		create_particle(x, y + 3, particle.groundpoundeffect, 0);
 		sprite_index = spr_piledriverland;
 		jumpAnim = true;
 		image_index = 0;
@@ -80,7 +80,7 @@ function scr_player_superslam()
 		bounce = false;
 		with (instance_create(x, y + 35, obj_bangeffect))
 			xscale = obj_player.xscale;
-		create_particle(x, y, 12, 0);
+		create_particle(x, y, particle.landcloud, 0);
 		freefallstart = 0;
 		if (freefallsmash >= 10)
 		{

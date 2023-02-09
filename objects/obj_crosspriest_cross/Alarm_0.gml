@@ -1,2 +1,2 @@
 visible = true;
-create_particle(x, y, 9);
+create_particle(x, y, particle.genericpoofeffect);

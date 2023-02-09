@@ -80,7 +80,7 @@ function state_player_jump()
 				vsp = -9;
 				doublejump = true;
 				particle_set_scale(4, xscale, 1);
-				create_particle(x, y, 4, 0);
+				create_particle(x, y, particle.highjumpcloud2, 0);
 			}
 		}
 	}
@@ -130,7 +130,7 @@ function state_player_jump()
 			image_index = 0;
 		}
 		particle_set_scale(4, xscale, 1);
-		create_particle(x, y, 4, 0);
+		create_particle(x, y, particle.highjumpcloud2, 0);
 	}
 	if (grounded && vsp > 0)
 	{
@@ -150,7 +150,7 @@ function state_player_jump()
 			jumpAnim = true;
 			jumpstop = false;
 			freefallstart = 0;
-			create_particle(x, y, 12, 0);
+			create_particle(x, y, particle.landcloud, 0);
 		}
 	}
 	if (vsp > 5 && sprite_index != spr_mortdoublejump)
@@ -275,7 +275,7 @@ function state_player_jump()
 	{
 		input_buffer_slap = 0;
 		particle_set_scale(5, xscale, 1);
-		create_particle(x, y, 5, 0);
+		create_particle(x, y, particle.jumpdust, 0);
 		image_index = 0;
 		sprite_index = spr_suplexdashjumpstart;
 		suplexmove = true;
@@ -293,7 +293,7 @@ function state_player_jump()
 		vsp = -10;
 		movespeed = hsp;
 		particle_set_scale(4, xscale, 1);
-		create_particle(x, y, 4, 0);
+		create_particle(x, y, particle.highjumpcloud2, 0);
 	}
 	if (input_buffer_shoot > 0)
 	{
@@ -419,7 +419,7 @@ function state_player_jump()
 				}
 			}
 			if (sprite_index == spr_playerV_superjump && floor(image_index) == (image_number - 1))
-				create_particle(x, y + 25, 7, 0);
+				create_particle(x, y + 25, particle.shotgunimpact, 0);
 			if (key_slap2)
 			{
 				sprite_index = spr_playerV_airrevolver;

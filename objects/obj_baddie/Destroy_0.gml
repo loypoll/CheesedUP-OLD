@@ -42,7 +42,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite || elitehit <= 0)
 	{
 		with (instance_create(x, y, obj_whoop))
 		{
-			create_particle(x, y, 9);
+			create_particle(x, y, particle.genericpoofeffect);
 			vsp = -11;
 		}
 	}

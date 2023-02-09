@@ -230,7 +230,7 @@ function scr_pizzagoblin_throw()
 					other.bazookaID = id;
 					baddieID = other.id;
 				}
-				create_particle(xx, y, 6);
+				create_particle(xx, y, particle.balloonpop);
 				break;
 			case obj_farmerbaddie2:
 				var s = 2;

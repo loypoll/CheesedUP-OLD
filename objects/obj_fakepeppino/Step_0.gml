@@ -33,7 +33,7 @@ if (!touched)
 				if (!steppy && (floor(image_index) == 2 || floor(image_index) == 7))
 				{
 					steppy = true;
-					create_particle(x, y + 38, 1, 0);
+					create_particle(x, y + 38, particle.cloudeffect, 0);
 				}
 				if (steppy && floor(image_index) != 2 && floor(image_index) != 7)
 					steppy = false;
@@ -71,7 +71,7 @@ if (!touched)
 			}
 			if (grounded && vsp > 0)
 			{
-				create_particle(x, y, 12, 0);
+				create_particle(x, y, particle.landcloud, 0);
 				sprite_index = spr_fakepeppino_land;
 				image_index = 0;
 				state = 0;

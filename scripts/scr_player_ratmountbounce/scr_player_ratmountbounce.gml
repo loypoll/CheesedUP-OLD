@@ -43,7 +43,7 @@ function scr_player_ratmountbounce()
 		if (input_buffer_slap > 0 && !key_up)
 		{
 			particle_set_scale(5, xscale, 1);
-			create_particle(x, y, 5, 0);
+			create_particle(x, y, particle.jumpdust, 0);
 			input_buffer_slap = 0;
 			if (brick == 1)
 			{

@@ -26,7 +26,7 @@ function scr_player_mach2()
 		sprite_index = spr_secondjump1;
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		particle_set_scale(5, xscale, 1);
-		create_particle(x, y, 5, 0);
+		create_particle(x, y, particle.jumpdust, 0);
 		if (skateboarding)
 			sprite_index = spr_clownjump;
 		vsp = -11;
@@ -95,7 +95,7 @@ function scr_player_mach2()
 			if (sprite_index != spr_rollgetup)
 				sprite_index = spr_mach4;
 			particle_set_scale(5, xscale, 1);
-			create_particle(x, y, 5, 0);
+			create_particle(x, y, particle.jumpdust, 0);
 		}
 	}
 	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
@@ -141,7 +141,7 @@ function scr_player_mach2()
 	if (key_down && !skateboarding && !place_meeting(x, y, obj_dashpad))
 	{
 		particle_set_scale(5, xscale, 1);
-		create_particle(x, y, 5, 0);
+		create_particle(x, y, particle.jumpdust, 0);
 		flash = false;
 		state = 5;
 		vsp = 10;
@@ -247,7 +247,7 @@ function scr_player_mach2()
 		suplexmove = true;
 		fmod_event_instance_play(suplexdashsnd);
 		particle_set_scale(5, xscale, 1);
-		create_particle(x, y, 5, 0);
+		create_particle(x, y, particle.jumpdust, 0);
 		state = 42;
 		if (movespeed < 5)
 			movespeed = 5;
@@ -263,7 +263,7 @@ function scr_player_mach2()
 		vsp = -10;
 		movespeed = hsp;
 		particle_set_scale(4, xscale, 1);
-		create_particle(x, y, 4, 0);
+		create_particle(x, y, particle.highjumpcloud2, 0);
 	}
 	if (input_buffer_shoot > 0 && !skateboarding)
 	{

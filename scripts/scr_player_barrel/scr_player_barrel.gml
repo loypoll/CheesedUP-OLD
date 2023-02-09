@@ -51,7 +51,7 @@ function scr_player_barrel()
 			sprite_index = spr_player_barreljump;
 			image_index = 0;
 			jumpstop = false;
-			create_particle(x, y, 3, 0);
+			create_particle(x, y, particle.highjumpcloud1, 0);
 		}
 		if (key_attack)
 		{
@@ -84,7 +84,7 @@ function scr_player_barrel()
 			steppybuffer--;
 		else
 		{
-			create_particle(x, y + 43, 1, 0);
+			create_particle(x, y + 43, particle.cloudeffect, 0);
 			steppybuffer = 14;
 			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 		}

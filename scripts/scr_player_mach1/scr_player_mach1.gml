@@ -36,7 +36,7 @@ function scr_player_mach1()
 		{
 			state = 104;
 			particle_set_scale(5, xscale, 1);
-			create_particle(x, y, 5, 0);
+			create_particle(x, y, particle.jumpdust, 0);
 		}
 		if (vsp > 0)
 			jumpstop = false;

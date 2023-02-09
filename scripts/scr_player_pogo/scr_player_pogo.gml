@@ -31,7 +31,7 @@ function scr_player_pogo()
 			sprite_index = spr_playerN_pogobouncemach;
 		else
 			sprite_index = spr_playerN_pogobounce;
-		create_particle(x, y, 12, 0);
+		create_particle(x, y, particle.landcloud, 0);
 	}
 	if (floor(image_index) == 3 && pogospeedprev == 0 && (sprite_index == spr_playerN_pogobounce || sprite_index == spr_playerN_pogobouncemach))
 	{

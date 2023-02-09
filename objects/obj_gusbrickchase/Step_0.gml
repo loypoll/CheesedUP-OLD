@@ -9,7 +9,7 @@ if (sprite_index == spr_brickchase)
 if (_index && !steppy)
 {
 	steppy = true;
-	create_particle(x, y + 43, 1);
+	create_particle(x, y + 43, particle.cloudeffect);
 }
 else if (!_index)
 	steppy = false;

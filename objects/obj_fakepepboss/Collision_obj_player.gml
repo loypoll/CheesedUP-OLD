@@ -23,7 +23,7 @@ if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == 42 || other.insta
 	{
 		with (obj_fakepephead)
 		{
-			create_particle(x, y, 9);
+			create_particle(x, y, particle.genericpoofeffect);
 			instance_destroy(id, false);
 		}
 		state = 138;
