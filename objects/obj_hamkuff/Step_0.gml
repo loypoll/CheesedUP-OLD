@@ -44,7 +44,7 @@ switch state
                         if (state != 106 && state != 121 && state != 104 && state != 105 && abs(x - other.x) > dis + abs(movespeed) + 1)
                         {
                             state = 106
-                            fmod_event_one_shot_3d("event:/sfx/pep/	", x, y)
+                            fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
                             sprite_index = spr_bump
                             if (x != other.x)
                             {

@@ -1,3 +1,4 @@
+/// @description steam is handled here.
 steam_update();
 if (!global.steam_api)
 {
