@@ -1,6 +1,6 @@
 with (other)
 {
-	if (state == 42)
+	if (other.buffer <= 0 && state == 42)
 	{
 		fmod_event_one_shot_3d("event:/sfx/weenie/start", x, y);
 		state = 31;

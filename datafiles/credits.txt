@@ -1263,12 +1263,12 @@ RetroKaiju
 Revohell
 Rextorium
 Ricker Jean
-Ricky Robin
 Rico Amato
 Riftderp
 Riguet Alexandre
 Rikki Raspberry
 Rin
+Rixor14
 Robaho
 Robby Preciado
 Robert Bahn
@@ -1745,6 +1745,7 @@ BrickBuster
 Brobot500
 brody
 bruh
+Bubol
 BugsBotany
 BumbyJumby
 Buninlehat

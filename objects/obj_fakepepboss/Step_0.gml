@@ -178,7 +178,11 @@ if (wastedhits >= 6 && !pizzahead)
 		elitehit = 5;
 		create_particle(x, y, 9);
 		instance_destroy(obj_fakepepsolid);
-		instance_destroy(obj_hppickup);
+		with (obj_hppickup)
+        {
+            scr_collect_hat(true)
+            instance_destroy()
+        }
 		lay2 = layer_get_id("Backgrounds_Ring");
 		bg2 = layer_background_get_id(lay2);
 		layer_background_change(bg2, spr_fakepeppino_arena2)

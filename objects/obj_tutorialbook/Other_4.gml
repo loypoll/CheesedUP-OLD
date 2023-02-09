@@ -10,6 +10,10 @@ if (global.panic && string_letters(room_get_name(room)) != "towertutorial")
 	instance_destroy();
 	exit;
 }
+if surface_exists(surfclip)
+    surface_free(surfclip);
+if surface_exists(surffinal)
+    surface_free(surffinal);
 var p = 1;
 var l = string_length(text);
 var old_text = text;

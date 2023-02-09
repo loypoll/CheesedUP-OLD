@@ -6,6 +6,12 @@ if (other.state == 107)
 	exit;
 if (other.state == 186)
 	exit;
+if (other.state == 214)
+	exit;
+if (other.state == 213)
+	exit;
+if (other.state == 212)
+	exit;
 if (object_index != obj_tubeenter && other.state != 150)
 	exit;
 var _offset_x = 32 * image_xscale;

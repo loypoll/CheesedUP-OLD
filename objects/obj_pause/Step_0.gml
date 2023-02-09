@@ -15,6 +15,16 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 		_cutscenehandler = true;
 	with (obj_titlecard)
 		_cutscenehandler = true;
+	with (obj_taxi)
+    {
+        if move
+            _cutscenehandler = true;
+    }
+    with (obj_taxidud)
+    {
+        if (!start)
+            _cutscenehandler = true;
+    }
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
 		selected = 0;

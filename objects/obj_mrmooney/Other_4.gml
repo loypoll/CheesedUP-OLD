@@ -5,7 +5,7 @@ var stickunlocked = ini_read_real(w, "unlocked", false);
 ini_close();
 if (!unlocked && stickunlocked)
 {
-	if ((global.pigtotal - global.pigreduction) >= 50)
+	if ((global.pigtotal - global.pigreduction) >= maxscore)
 	{
 		with (instance_create(0, 0, obj_mrsticknotification))
 			sprite_index = spr_mrmooney_notification;

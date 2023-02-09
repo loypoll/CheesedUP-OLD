@@ -15,6 +15,7 @@ if (!active && !_found)
 		with (obj_frontcanongoblin)
 		{
 			destroyed = false;
+			captain_sprite = spr_captaingoblin;
 			state = 0;
 		}
 	}

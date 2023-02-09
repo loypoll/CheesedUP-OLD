@@ -9,5 +9,5 @@ if (showmoney)
 	var cx = x;
 	var cy = (y - 130) + money_y;
 	draw_sprite(spr_stickmoney, 0, cx, cy);
-	draw_text(cx + 20, cy, concat(50));
+	draw_text(cx + 20, cy, concat(maxscore));
 }

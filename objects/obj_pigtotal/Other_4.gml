@@ -25,6 +25,12 @@ else
 	for (i = 0; i < array_length(_worlds); i++)
 	{
 		b = _worlds[i];
+		var r = ini_read_real(b, "reduction", 0);
+        if (r > 0 && global.stickreq[i] != r)
+        {
+            ini_write_real(b, "reduction", global.stickreq[i]);
+            r = global.stickreq[i];
+        }
 		global.pigreduction += ini_read_real(b, "reduction", 0);
 	}
 	if (ini_read_real("w5stick", "mooneyunlocked", false))

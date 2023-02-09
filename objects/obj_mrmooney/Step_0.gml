@@ -1,7 +1,7 @@
 if (sprite_index == spr_mrmooney_idle)
 {
 	showmoney = place_meeting(x, y, obj_player);
-	if (showmoney && obj_player1.key_up2 && (global.pigtotal - global.pigreduction) >= 50)
+	if (showmoney && obj_player1.key_up2 && (global.pigtotal - global.pigreduction) >= maxscore)
 	{
 		sprite_index = spr_mrmooney_smile;
 		fmod_event_one_shot_3d("event:/sfx/misc/kashing", x, y);

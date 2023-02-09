@@ -74,6 +74,7 @@ function scr_playerreset()
 	instance_destroy(obj_sandparticle);
 	instance_destroy(obj_lap2visual);
 	instance_destroy(obj_keyfollow);
+	instance_destroy(obj_hpeffect);
 	instance_destroy(obj_crosspriest_cross);
 	instance_destroy(obj_gravecorpse, false);
 	

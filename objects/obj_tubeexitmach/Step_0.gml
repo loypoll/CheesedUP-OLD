@@ -12,7 +12,8 @@ if (state == 150)
 				image_index = 0;
 				instance_create(x, y, obj_jumpdust);
 			}
-			xscale = other.image_xscale;
+			if (other.image_xscale != 0)
+				xscale = other.image_xscale;
 			if (place_meeting(x, y, other.id))
 			{
 				while (place_meeting(x, y, other.id))

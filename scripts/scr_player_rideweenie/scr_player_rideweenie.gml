@@ -62,6 +62,7 @@ function scr_player_rideweenie()
 		instance_create(x, y, obj_jumpdust);
 		with (instance_create(x, y, obj_weeniemount))
 		{
+			buffer = 30;
 			depth = -2;
 			image_xscale = other.xscale;
 		}

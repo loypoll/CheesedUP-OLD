@@ -52,6 +52,5 @@ if (place_meeting(x, y + 1, obj_player2) || place_meeting(x, y - 1, obj_player2)
 	{
 		playerindex = 1;
 		instance_destroy();
-		tile_layer_delete_at(1, x, y);
 	}
 }
