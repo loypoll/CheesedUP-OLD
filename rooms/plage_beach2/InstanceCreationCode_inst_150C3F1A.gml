@@ -1,1 +1,2 @@
-particlespr = spr_beachdebris;
+targetRoom = plage_cavern1;
+targetDoor = "A";

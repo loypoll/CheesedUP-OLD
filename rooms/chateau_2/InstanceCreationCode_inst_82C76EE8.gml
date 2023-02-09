@@ -1,1 +1,1 @@
-particlespr = spr_pumpkindebris;
+escape = true;

@@ -1,1 +1,1 @@
-escape = true;
+targetRoom = tower_escape4;

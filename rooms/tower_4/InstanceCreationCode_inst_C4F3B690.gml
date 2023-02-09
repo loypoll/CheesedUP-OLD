@@ -1,1 +1,9 @@
-escape = true;
+targetRoom = street_intro;
+level = "street";
+sprite_index = spr_gate_street;
+bgsprite = spr_Hranksign;
+title_index = 2;
+title_sprite = spr_ghostknight_move;
+titlecard_index = 12;
+title_music = "event:/music/w4/streettitle";
+group_arr = ["citygroup"];

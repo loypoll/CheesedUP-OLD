@@ -1,1 +1,1 @@
-particlespr = spr_storagecratedebris;
+content = obj_pizzakinshroom;

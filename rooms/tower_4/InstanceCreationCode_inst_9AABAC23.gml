@@ -1,2 +1,1 @@
-level = "sewer";
-treasureindex = 13;
+escape = true;

@@ -1,2 +1,1 @@
-targetRoom = plage_ship2;
-targetDoor = "B";
+sprite_index = spr_bananacollect;

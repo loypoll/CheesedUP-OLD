@@ -1,1 +1,1 @@
-particlespr = spr_pumpkindebris;
+content = obj_pizzakinshroom;

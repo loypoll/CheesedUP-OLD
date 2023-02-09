@@ -1,2 +1,2 @@
-text = lang_get_value("hubtips7");
-trace("hubtips7: ", text);
+targetRoom = tower_cheftask4;
+sprite_index = spr_cheftaskdoor;

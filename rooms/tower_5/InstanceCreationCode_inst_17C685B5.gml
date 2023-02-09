@@ -1,0 +1,9 @@
+targetRoom = kidsparty_1;
+level = "kidsparty";
+sprite_index = spr_gate_kidsparty;
+bgsprite = spr_pizzahead_grabdynamite;
+title_index = 9;
+title_sprite = spr_ghostknight_move;
+titlecard_index = 19;
+title_music = "event:/music/w5/kidspartytitle";
+group_arr = ["kidspartygroup"];

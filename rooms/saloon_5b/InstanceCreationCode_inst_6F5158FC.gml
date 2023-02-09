@@ -1,1 +1,2 @@
-type = 2;
+type = 1;
+trigger = 6;

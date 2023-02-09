@@ -1,1 +1,2 @@
-particlespr = spr_factorydebris;
+targetRoom = industrial_3;
+targetDoor = "C";

@@ -1,1 +1,1 @@
-sprite_index = spr_cheesecollect;
+targetRoom = tower_tutorial1;

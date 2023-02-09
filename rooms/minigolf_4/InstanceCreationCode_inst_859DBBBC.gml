@@ -1,1 +1,1 @@
-targetRoom = minigolf_8;
+content = obj_pizzakinshroom;

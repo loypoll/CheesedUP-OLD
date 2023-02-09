@@ -1,0 +1,9 @@
+targetRoom = freezer_1;
+level = "freezer";
+sprite_index = spr_gate_freezer;
+bgsprite = bg_pigwall;
+title_index = 7;
+title_sprite = spr_ghostknight_move;
+titlecard_index = 17;
+title_music = "event:/music/w4/freezertitle";
+group_arr = ["freezergroup"];

@@ -1,1 +1,2 @@
-text = lang_get_value("hubtips6");
+targetRoom = tower_pizzaland;
+targetDoor = "F";

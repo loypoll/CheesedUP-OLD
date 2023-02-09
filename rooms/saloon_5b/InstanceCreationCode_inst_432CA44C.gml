@@ -1,1 +1,1 @@
-type = 2;
+particlespr = bg_beach3;

@@ -30,7 +30,7 @@
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a9cd0124-8d80-452c-933e-4bea9bf9c644",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"50b7f79d-effa-4d79-918e-e23488c9d74c",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"938634e6-1650-482f-b401-b3be95f05285",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"ed4195fa-e2f0-4087-a39e-55fdcc0ba984",},
   ],
   "sequence": {
     "resourceType": "GMSequence",
@@ -49,7 +49,7 @@
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"97a53ee5-e6a3-47c6-90a2-42726e8a4c0f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"a9cd0124-8d80-452c-933e-4bea9bf9c644","path":"sprites/spr_fakepeppino_intro2/spr_fakepeppino_intro2.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"facda4b2-73ac-438e-b22e-ce902b246d50","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"50b7f79d-effa-4d79-918e-e23488c9d74c","path":"sprites/spr_fakepeppino_intro2/spr_fakepeppino_intro2.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"26cf4d6d-300e-4807-a436-a354ccb14a51","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"938634e6-1650-482f-b401-b3be95f05285","path":"sprites/spr_fakepeppino_intro2/spr_fakepeppino_intro2.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"1ef1490d-2d63-432d-8241-2097df503730","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ed4195fa-e2f0-4087-a39e-55fdcc0ba984","path":"sprites/spr_fakepeppino_intro2/spr_fakepeppino_intro2.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,

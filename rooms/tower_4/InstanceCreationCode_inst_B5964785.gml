@@ -1,1 +1,1 @@
-snotty = true;
+targetRoom = tower_graffiti;

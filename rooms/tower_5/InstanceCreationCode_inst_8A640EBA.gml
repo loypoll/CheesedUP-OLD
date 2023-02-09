@@ -1,2 +1,1 @@
-level = "war";
-treasureindex = 19;
+text = lang_get_value("hubtips9");

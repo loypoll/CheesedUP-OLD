@@ -1,2 +1,1 @@
-particlespr = spr_beachdebris;
-targettiles = "Tiles_1";
+targetRoom = plage_cavern3;

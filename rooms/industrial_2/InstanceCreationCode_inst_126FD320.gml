@@ -1,1 +1,1 @@
-particlespr = spr_eyedebris;
+targetRoom = industrial_treasure;

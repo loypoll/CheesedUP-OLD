@@ -1,1 +1,9 @@
-targetRoom = tower_escape4;
+targetRoom = industrial_1;
+level = "industrial";
+sprite_index = spr_gate_industrial;
+bgsprite = spr_halloweencollectibles3;
+title_index = 6;
+title_sprite = spr_ghostknight_move;
+titlecard_index = 16;
+title_music = "event:/music/w4/industrialtitle";
+group_arr = ["factorygroup"];

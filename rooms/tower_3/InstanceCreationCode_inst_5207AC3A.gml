@@ -1,2 +1,2 @@
-targetRoom = tower_pizzaland;
-targetDoor = "F";
+level = "space";
+treasureindex = 10;

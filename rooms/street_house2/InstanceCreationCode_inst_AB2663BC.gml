@@ -1,1 +1,1 @@
-particlespr = spr_streethousedebris;
+particlespr = spr_targetguys;

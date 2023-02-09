@@ -42,7 +42,7 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Rooms",
-    "path": "folders/Rooms.yy",
+    "name": "Unused",
+    "path": "folders/Rooms/Unused.yy",
   },
 }

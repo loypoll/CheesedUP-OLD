@@ -1,2 +1,2 @@
-chosenstate = 23;
-escape = true;
+particlespr = spr_pigbot;
+targettiles = "Tiles_1";
