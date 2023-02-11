@@ -32,7 +32,7 @@ function scr_player_actor()
 		else
 		{
 			landAnim = false;
-			state = 0;
+			state = states.normal;
 		}
 	}
 }

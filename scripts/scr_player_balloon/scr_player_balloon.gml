@@ -17,7 +17,7 @@ function scr_player_balloon()
 	{
 		create_particle(x, y - 20, particle.genericpoofeffect, 0);
 		instance_create(x, y - 20, obj_balloongrabbableeffect);
-		state = 92;
+		state = states.jump;
 		sprite_index = spr_fall;
 		jumpAnim = false;
 	}
@@ -25,7 +25,7 @@ function scr_player_balloon()
 	{
 		create_particle(x, y - 20, particle.genericpoofeffect, 0);
 		instance_create(x, y - 20, obj_balloongrabbableeffect);
-		state = 92;
+		state = states.jump;
 		sprite_index = spr_jump;
 		image_index = 0;
 		jumpAnim = true;

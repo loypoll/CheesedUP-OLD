@@ -47,7 +47,7 @@ function scr_player_barrel()
 				if (sign(movespeed) == 1)
 					xscale = move;
 			}
-			state = 114;
+			state = states.barreljump;
 			sprite_index = spr_player_barreljump;
 			image_index = 0;
 			jumpstop = false;
@@ -59,14 +59,14 @@ function scr_player_barrel()
 			fmod_event_one_shot_3d("event:/sfx/barrel/start", x, y);
 			with (instance_create(x, y, obj_jumpdust))
 				image_xscale = other.xscale;
-			state = 116;
+			state = states.barrelslide;
 			sprite_index = spr_player_barrelslipnslide;
 			image_index = 0;
 		}
 	}
 	else if (!grounded)
 	{
-		state = 114;
+		state = states.barreljump;
 		sprite_index = spr_player_barrelfall;
 		image_index = 0;
 		if (vsp < 0)

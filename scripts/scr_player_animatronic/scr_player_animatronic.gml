@@ -26,7 +26,7 @@ function scr_player_animatronic()
 			image_index = 1;
 		with (create_debris(x, y, spr_animatronicdebris))
 			image_index = 2;
-		state = 0;
+		state = states.normal;
 	}
 	if (animatronic_collect_buffer > 0)
 		animatronic_collect_buffer--;

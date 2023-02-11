@@ -10,7 +10,7 @@ function scr_player_antigrav()
 	{
 		input_buffer_jump = 0;
 		movespeed = abs(hsp);
-		state = 92;
+		state = states.jump;
 		sprite_index = spr_machfreefall;
 		fmod_event_one_shot_3d("event:/sfx/antigrav/end", x, y);
 	}

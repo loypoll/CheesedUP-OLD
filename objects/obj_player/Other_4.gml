@@ -33,8 +33,8 @@ if (global.levelreset)
 	instance_destroy(obj_combotitle);
 	global.combodropped = false;
 }
-if (room == tower_finalhallway && targetDoor == "C" && state == 95)
-	state = 0;
+if (room == tower_finalhallway && targetDoor == "C" && state == states.comingoutdoor)
+	state = states.normal;
 if (global.levelcomplete)
 {
 	global.levelcomplete = false;
@@ -42,7 +42,7 @@ if (global.levelcomplete)
 	global.leveltosave = -4;
 	global.startgate = false;
 }
-if (state == 95 && global.coop == 1 && !place_meeting(x, y, obj_exitgate))
+if (state == states.comingoutdoor && global.coop == 1 && !place_meeting(x, y, obj_exitgate))
 {
 	if (object_index == obj_player1 && obj_player1.spotlight == 0)
 		visible = false;
@@ -57,13 +57,13 @@ if (global.coop == 1)
 	if (!instance_exists(obj_coopflag))
 		instance_create(x, y, obj_coopflag);
 }
-if (state == 79)
-	state = 0;
+if (state == states.grab)
+	state = states.normal;
 if (place_meeting(x, y, obj_boxofpizza) || place_meeting(x, y - 1, obj_boxofpizza))
 {
 	box = true;
 	hallway = false;
-	state = 100;
+	state = states.crouch;
 }
 if (object_index != obj_player2 || global.coop == 1)
 {
@@ -158,9 +158,9 @@ if (verticalhallway)
 			y = _vinst.bbox_bottom + 32;
 		else
 			y = _vinst.bbox_top - 78;
-		if (verticalstate == 37)
-			state = 37;
-		if (state == 37)
+		if (verticalstate == states.climbwall)
+			state = states.climbwall;
+		if (state == states.climbwall)
 		{
 			x = round(x);
 			var i = 0;
@@ -178,7 +178,7 @@ if (verticalhallway)
 	}
 	y += (vhallwaydirection * 20);
 	y = floor(y);
-	verticalstate = 0;
+	verticalstate = states.normal;
 }
 if (character == "M" && place_meeting(x, y, obj_boxofpizza))
 {
@@ -188,12 +188,12 @@ if (character == "M" && place_meeting(x, y, obj_boxofpizza))
 		y -= _inst.image_yscale;
 	}
 }
-if (state == 119)
+if (state == states.taxi)
 {
 	x = obj_stopsign.x;
 	y = obj_stopsign.y;
 }
-if (state == 292)
+if (state == states.animation)
 {
 	x = obj_spaceshuttlestop.x;
 	y = obj_spaceshuttlestop.y;
@@ -218,7 +218,7 @@ x = floor(x);
 y = floor(y);
 roomstartx = x;
 roomstarty = y;
-if (state == 61)
+if (state == states.chainsaw)
 {
 	hitX = x;
 	hitY = y;

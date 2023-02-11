@@ -10,13 +10,13 @@ function scr_player_barrelclimbwall()
 		if (!place_meeting(x, y, obj_solid))
 		{
 			movespeed = 0;
-			state = 114;
+			state = states.barreljump;
 			sprite_index = spr_player_barrelfall;
 		}
 	}
 	if (grounded && vsp > 0)
 	{
-		state = 116;
+		state = states.barrelslide;
 		xscale *= -1;
 		movespeed = xscale * 8;
 	}

@@ -9,5 +9,5 @@ function scr_player_bee()
 	if (bee_buffer > 0)
 		bee_buffer--;
 	else
-		state = 0;
+		state = states.normal;
 }

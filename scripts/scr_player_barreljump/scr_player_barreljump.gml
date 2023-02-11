@@ -31,7 +31,7 @@ function scr_player_barreljump()
 			if (sign(movespeed) == 1)
 				xscale = move;
 		}
-		state = 114;
+		state = states.barreljump;
 		sprite_index = spr_player_barreljump;
 		image_index = 0;
 		jumpstop = false;
@@ -39,7 +39,7 @@ function scr_player_barreljump()
 	}
 	if (grounded && vsp > 0)
 	{
-		state = 113;
+		state = states.barrel;
 		sprite_index = spr_player_barrelland;
 		image_index = 0;
 		create_particle(x, y, particle.landcloud, 0);

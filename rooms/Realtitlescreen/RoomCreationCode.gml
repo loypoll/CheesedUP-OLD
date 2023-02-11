@@ -1,6 +1,4 @@
-enum states
-{
-	normal,
+enum states{normal,
 	revolver,
 	dynamite,
 	boots,
