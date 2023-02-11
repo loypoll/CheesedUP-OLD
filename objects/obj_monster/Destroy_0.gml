@@ -11,7 +11,7 @@ if (destroy)
 	if (ds_list_find_index(global.baddieroom, id) == -1)
 	{
 		ds_list_add(global.baddieroom, id);
-		notification_push(29, [object_index]);
+		notification_push(notifs.monster_dead, [object_index]);
 	}
 	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
 	instance_create(x, y, obj_bangeffect);

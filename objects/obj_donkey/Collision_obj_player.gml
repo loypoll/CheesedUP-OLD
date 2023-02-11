@@ -1,6 +1,6 @@
 if (cooldown == 0)
 {
-	notification_push(38, [room]);
+	notification_push(notifs.cow_kick, [room]);
 	other.x = x - (image_xscale * 35);
 	other.y = y;
 	fmod_event_one_shot_3d("event:/sfx/misc/cowkick", other.x, other.y);

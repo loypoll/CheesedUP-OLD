@@ -1,4 +1,4 @@
-notification_push(19, [room]);
+notification_push(notifs.brickball, [room]);
 image_speed = 0.5;
 hsp = 0;
 vsp = 0;

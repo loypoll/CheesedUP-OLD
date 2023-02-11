@@ -22,7 +22,7 @@ if (targetgolf != -4 && !view_visible[1])
 	view_visible[1] = true;
 	view_enabled = true;
 }
-if (bubblespr != -4 && bubblespr != 1767)
+if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
 {
 	if (prompt != -4)
 		prompt_buffer = 2;
@@ -45,7 +45,7 @@ if (bubblespr != -4 && bubblespr != 1767)
 }
 switch (state)
 {
-	case 0:
+	case states.normal:
 		idlespr = spr_tv_idle;
 		if (!obj_player.ispeppino)
 			idlespr = spr_tv_idleN;
@@ -150,7 +150,7 @@ switch (state)
 				}
 				else
 				{
-					if (bubblespr != -4 && bubblespr != 1767)
+					if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
 						bubblespr = spr_tv_bubbleclose;
 					if (bubblespr == spr_tv_bubbleclosed)
 						bubblespr = -4;
@@ -190,7 +190,8 @@ switch (state)
 				bubblespr = -4;
 		}
 		break;
-	case 8:
+	
+	case states.transition:
 		if (sprite_index == spr_tv_open && floor(image_index) == (image_number - 1))
 			sprite_index = tvsprite;
 		if (sprite_index == tvsprite)
@@ -205,7 +206,8 @@ switch (state)
 			}
 		}
 		break;
-	case 250:
+	
+	case states.tv_whitenoise:
 		if (tv_trans >= sprite_get_number(spr_tv_whitenoise))
 		{
 			if (expressionsprite != -4)
@@ -218,7 +220,8 @@ switch (state)
 			image_index = 0;
 		}
 		break;
-	case 251:
+	
+	case states.tv_expression:
 		var s = state;
 		var es = expressionsprite;
 		_transfospr = scr_tv_get_transfo_sprite();

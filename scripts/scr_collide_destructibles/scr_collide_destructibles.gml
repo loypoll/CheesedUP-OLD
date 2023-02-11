@@ -122,7 +122,7 @@ function scr_collide_destructibles()
 			with (ds_list_find_value(global.instancelist, k))
 			{
 				if (!falling)
-					notification_push(33, [room]);
+					notification_push(notifs.cheeseblock_activate, [room]);
 				falling = true;
 				if (falling == 1)
 					image_speed = 0.35;

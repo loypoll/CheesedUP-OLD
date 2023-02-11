@@ -5,5 +5,5 @@ else
 if (standbuffer >= 600)
 {
 	standbuffer = 0;
-	notification_push(52, [room]);
+	notification_push(notifs.crawl_in_shit, [room]);
 }

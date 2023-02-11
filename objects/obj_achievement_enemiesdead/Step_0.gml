@@ -5,7 +5,7 @@ for (var i = 0; i < array_length(baddie_arr); i++)
 	{
 		if (!instance_exists(b[0]))
 		{
-			notification_push(3, [b[1], room]);
+			notification_push(notifs.enemies_dead, [b[1], room]);
 			baddie_arr[i][0] = -4;
 		}
 	}

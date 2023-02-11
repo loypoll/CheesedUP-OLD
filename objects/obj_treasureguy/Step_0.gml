@@ -38,7 +38,7 @@ switch (state)
 			if (player.x > (x - 80) && player.x < (x + 80) && y <= (player.y + 60) && y >= (player.y - 60) && (player.state == 111 || player.sprite_index == player.spr_piledriverland))
 			{
 				fmod_event_one_shot_3d("event:/sfx/enemies/treasureguy", x, y);
-				notification_push(13, [room, object_index, id]);
+				notification_push(notifs.treasureguy_unbury, [room, object_index, id]);
 				underground = false;
 				visible = true;
 				if (player.x != x)

@@ -6,7 +6,7 @@ if (buffer <= 0 && other.state != 16)
 	{
 		if (ds_list_find_index(global.saveroom, other.id) == -1)
 		{
-			notification_push(39, [room]);
+			notification_push(notifs.corpsesurf, [room]);
 			ds_list_add(global.saveroom, other.id);
 		}
 		fmod_event_one_shot_3d("event:/sfx/pep/gravecorpsestart", x, y);

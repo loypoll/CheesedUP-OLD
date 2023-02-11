@@ -17,7 +17,7 @@ function scr_do_rank(argument0 = true, argument1 = false)
 	if (global.timeattack == 1)
 		obj_timeattack.stop = true;
 	with (obj_wartimer)
-		notification_push(47, [minutes, seconds + addseconds]);
+		notification_push(notifs.wartimer_endlevel, [minutes, seconds + addseconds]);
 	targetDoor = "none";
 	obj_camera.alarm[2] = -1;
 	var roomname = room_get_name(room);
@@ -54,7 +54,7 @@ function scr_do_rank(argument0 = true, argument1 = false)
 			obj_savesystem.ini_str = ini_close();
 			gamesave_async_save();
 		}
-		notification_push(5, [global.leveltosave, global.secretfound, global.level_minutes, global.level_seconds]);
+		notification_push(notifs.end_level, [global.leveltosave, global.secretfound, global.level_minutes, global.level_seconds]);
 		with (obj_achievementtracker)
 			event_perform(3, 0);
 	}

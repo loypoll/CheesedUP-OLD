@@ -44,7 +44,7 @@ function scr_player_lungeattack()
 					finisher_buffer += 15;
 				input_attack_buffer = 0;
 				state = 43;
-				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, 736, 735, 732, spr_punch]);
+				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
 				image_index = 0;
 			}
 		}
@@ -74,7 +74,7 @@ function scr_player_lungeattack()
 					finisher_buffer += 15;
 				input_attack_buffer = 0;
 				state = 43;
-				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, 736, 735, 732, spr_punch]);
+				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
 				image_index = 0;
 			}
 		}

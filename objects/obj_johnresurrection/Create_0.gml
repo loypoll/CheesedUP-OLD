@@ -13,7 +13,7 @@ ini_write_real("Game", "john", treasure);
 obj_savesystem.ini_str = ini_close();
 global.johnresurrection = treasure;
 if (treasure)
-	notification_push(55, []);
+	notification_push(notifs.johnresurrection, []);
 depth = -600;
 state = 0;
 fadein = false;

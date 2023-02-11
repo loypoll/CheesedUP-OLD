@@ -52,7 +52,7 @@ if (state == 223)
 			}
 			
 			if (!instance_exists(obj_ghostcollectibles))
-				notification_push(11, [room, other.type, count, val]);
+				notification_push(notifs.flush, [room, other.type, count, val]);
 		}
 	}
 }

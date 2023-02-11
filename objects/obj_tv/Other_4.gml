@@ -165,6 +165,7 @@ switch (room)
 	case tower_finalhallway:
 		global.srank = 5500;
 		break;
+	
 	case boss_pepperman:
 		global.srank = 6;
 		break;

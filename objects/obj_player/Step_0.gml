@@ -559,20 +559,20 @@ if (state != 61)
 		if (state == 108)
 		{
 			bodyslam_notif = true;
-			notification_push(0, [room]);
+			notification_push(notifs.bodyslam_start, [room]);
 		}
 	}
 	else if (state != 108)
 	{
 		bodyslam_notif = false;
-		notification_push(1, [room]);
+		notification_push(notifs.bodyslam_end, [room]);
 	}
 }
 if (state == 97 || (state == 61 && tauntstoredstate == 97))
 	sjumptimer++;
 else if (sjumptimer > 0)
 {
-	notification_push(42, [sjumptimer, room]);
+	notification_push(notifs.superjump_timer, [sjumptimer, room]);
 	sjumptimer = 0;
 }
 if (invtime > 0)
@@ -1164,7 +1164,7 @@ if ((y > (room_height + 300) || y < -800) && !place_meeting(x, y, obj_verticalha
 			sprite_index = spr_ghostidle;
 		}
 		var s = state;
-		notification_push(8, [id, s]);
+		notification_push(notifs.fall_outofbounds, [id, s]);
 		state = 146;
 		visible = false;
 		hsp = 0;

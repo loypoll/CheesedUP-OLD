@@ -26,7 +26,7 @@ if (empty)
 				other.machslidecount++;
 				other.machslidebuffer = 30;
 				if (other.machslidecount >= machslidemax)
-					notification_push(48, [room]);
+					notification_push(notifs.totem_revive, [room]);
 			}
 		}
 	}

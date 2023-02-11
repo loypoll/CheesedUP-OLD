@@ -11,7 +11,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 			image_speed = 0;
 		}
 	}
-	notification_push(14, [object_index]);
+	notification_push(notifs.levelblock_break, [object_index]);
 	scr_sleep(5);
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
 	ds_list_add(global.saveroom, id);

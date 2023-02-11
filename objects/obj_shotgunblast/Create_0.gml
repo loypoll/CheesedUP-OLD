@@ -9,5 +9,5 @@ with (bulletID)
 }
 image_speed = 0.35;
 depth = -80;
-notification_push(43, [room]);
+notification_push(notifs.shotgunblast_start, [room]);
 fmod_event_one_shot_3d("event:/sfx/pep/shotgunshot", x, y);

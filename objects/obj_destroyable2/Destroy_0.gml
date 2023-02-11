@@ -26,7 +26,7 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 	with (instance_create(x + 16, y, obj_smallnumber))
 		number = string(val);
 	tile_layer_delete_at(1, x, y);
-	notification_push(45, [room]);
+	notification_push(notifs.block_break, [room]);
 	scr_sound_multiple("event:/sfx/misc/breakblock", x, y);
 	ds_list_add(global.saveroom, id);
 }

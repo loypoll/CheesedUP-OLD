@@ -77,7 +77,7 @@ if (state == 74)
 	if (floor(image_index) >= 6 && !shot)
 	{
 		shot = true;
-		notification_push(16, [object_index]);
+		notification_push(notifs.pizzaball, [object_index]);
 		with (golfid)
 		{
 			invincible = false;

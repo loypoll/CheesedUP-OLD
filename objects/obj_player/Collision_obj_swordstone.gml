@@ -12,6 +12,6 @@ if (grounded && other.sprite_index == spr_swordstone && (state == 42 || state ==
 	state = 47;
 	hsp = 0;
 	vsp = 0;
-	notification_push(56, [room]);
+	notification_push(notifs.knighttaken, [room]);
 	create_transformation_tip(lang_get_value("knighttip"), "knight");
 }

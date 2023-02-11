@@ -73,7 +73,7 @@ function scr_player_knightpepslopes()
 		image_index = floor(image_number - 1);
 		state = 49;
 		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-		notification_push(32, []);
+		notification_push(notifs.knightpep_bump, []);
 	}
 	if (scr_slope())
 	{

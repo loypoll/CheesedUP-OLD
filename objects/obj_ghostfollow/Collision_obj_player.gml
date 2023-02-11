@@ -1,6 +1,6 @@
 if (state != 291 && other.state != 112 && other.state != 146 && other.state != 95)
 {
-	notification_push(40, [room]);
+	notification_push(notifs.johnghost_collide, [room]);
 	with (other)
 	{
 		hitX = x;

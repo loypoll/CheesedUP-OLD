@@ -1,4 +1,4 @@
-function add_secrets_achievement(secret, levelarray) // unused function
+function add_secrets_achievement(secret, levelarray)
 {
 	var b = add_achievement_notify(concat("secrets", secret), -4, function(achievement)
 	{
@@ -83,7 +83,7 @@ function scr_custom_notification_destructibles()
 			if (!place_meeting(x, y, obj_destructibles))
 			{
 				active = true;
-				notification_push(15, [room]);
+				notification_push(notifs.destroyed_area, [room]);
 			}
 		}
 	};

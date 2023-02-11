@@ -62,7 +62,7 @@ function scr_monster_stop_music()
 }
 function scr_monster_activate()
 {
-	notification_push(30, [room, object_index]);
+	notification_push(notifs.monster_activate, [room, object_index]);
 	with (obj_monster)
 	{
 		if (state == 217)

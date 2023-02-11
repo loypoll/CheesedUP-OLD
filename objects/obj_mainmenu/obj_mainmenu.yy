@@ -38,6 +38,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Title Screen",
-    "path": "folders/Objects/Game Settings/Title Screen.yy",
+    "path": "folders/Objects/Parents and Gameplay/Title Screen.yy",
   },
 }

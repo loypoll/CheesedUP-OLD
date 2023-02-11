@@ -71,6 +71,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Player",
-    "path": "folders/Objects/Game Settings/Player.yy",
+    "path": "folders/Objects/Parents and Gameplay/Player.yy",
   },
 }

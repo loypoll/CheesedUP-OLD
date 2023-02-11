@@ -1,10 +1,11 @@
-function scr_hurtplayer()
+function scr_hurtplayer(player)
 {
 	var _obj = object_index;
 	var _other = id;
-	var _savedstate = argument0.state;
+	var _savedstate = player.state;
 	var _hurt = false;
-	with (argument0)
+	
+	with (player)
 	{
 		if (global.failcutscene)
 		{
@@ -237,7 +238,8 @@ function scr_hurtplayer()
 		}
 		if (_hurt)
 		{
-			notification_push(7, [argument0.id, _savedstate, _obj]);
+			notification_push(notifs.hurt_player, [player.id, _savedstate, _obj]);
+			
 			global.combotime -= 25;
 			global.style -= 25;
 			global.hurtcounter += 1;

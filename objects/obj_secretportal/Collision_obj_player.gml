@@ -11,9 +11,9 @@ if (active && sprite_index != spr_secretportal_open && !instance_exists(obj_jump
 		with (obj_camera)
 			lock = true;
 		if (secret)
-			notification_push(27, [room]);
+			notification_push(notifs.secret_exit, [room]);
 		else
-			notification_push(26, [room, targetRoom]);
+			notification_push(notifs.secret_enter, [room, targetRoom]);
 		if (!secret)
 		{
 			obj_music.secret = true;

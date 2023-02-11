@@ -11,7 +11,7 @@ if (sprite_index != spr_piraneapple_projectile)
 		GamepadSetVibration(1, 1, 1, 0.9);
 		fmod_event_one_shot_3d("event:/sfx/misc/explosion", x, y);
 	}
-	notification_push(46, [room]);
+	notification_push(notifs.bazooka_explode, [room]);
 	with (baddieID)
 	{
 		if (bombreset > 20)

@@ -10,7 +10,7 @@ if (sprite_index == spr_mrmooney_idle)
 		ini_write_real("w5stick", "mooneyunlocked", true);
 		obj_savesystem.ini_str = ini_close();
 		gamesave_async_save();
-		notification_push(57, [room]);
+		notification_push(notifs.mrmooney_donated, [room]);
 		with (obj_palettedresser)
 		{
 			for (var i = 0; i < array_length(palettes); i++)

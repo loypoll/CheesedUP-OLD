@@ -3,7 +3,7 @@ if ((other.instakillmove == 1 || other.state == 42 || other.state == 104) && !de
 	death = true;
 	var t = other.id;
 	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
-	notification_push(2, [room, id, object_index]);
+	notification_push(notifs.baddie_kill, [room, id, object_index]);
 	ds_list_add(global.baddieroom, id);
 	global.combotime = 60;
 	global.combo++;

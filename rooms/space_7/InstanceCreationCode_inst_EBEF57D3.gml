@@ -23,7 +23,7 @@ step = function()
 				{
 					if (piledriver && !active && !place_meeting(x, y, obj_baddie))
 					{
-						notification_push(15, [room]);
+						notification_push(notifs.destroyed_area, [room]);
 						active = true;
 					}
 				}

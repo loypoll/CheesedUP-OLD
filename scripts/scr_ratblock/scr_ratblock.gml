@@ -6,7 +6,7 @@ function scr_ratblock_destroy()
 		{
 			instance_destroy(other);
 			if (baddie)
-				notification_push(34, [room]);
+				notification_push(notifs.ratblock_explode, [room]);
 		}
 	}
 	with (obj_player)

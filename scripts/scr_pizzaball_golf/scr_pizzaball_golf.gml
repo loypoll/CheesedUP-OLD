@@ -18,7 +18,7 @@ function scr_pizzaball_golf()
 		x = player.x;
 		y = player.y;
 		global.golfhit++;
-		notification_push(16, [player.object_index]);
+		notification_push(notifs.pizzaball, [player.object_index]);
 		GamepadSetVibration(0, 0.8, 0.65);
 		fmod_event_one_shot_3d("event:/sfx/misc/golfpunch", x, y);
 		if (player.key_up || shootup)

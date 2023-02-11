@@ -4,7 +4,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	if (bird)
 	{
 		instance_create(x + 32, y + 32, obj_burd);
-		notification_push(28, [room]);
+		notification_push(notifs.destroy_iceblock, [room]);
 	}
 	repeat (6)
 		create_debris(x + 32, y + 32, spr_icedebris);

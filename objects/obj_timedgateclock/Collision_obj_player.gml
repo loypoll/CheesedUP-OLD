@@ -14,7 +14,7 @@ else if (global.timedgateid != id)
     global.timedgateid = id;
 }
 if (_notif && !instance_exists(obj_ghostcollectibles))
-    notification_push(10, [room, id, time]);
+    notification_push(notifs.timedgateclock, [room, id, time]);
 with (obj_timedgateclock)
 {
 	if (sprite_index != spr_button_pressed && sprite_index != spr_button_goingpressed)

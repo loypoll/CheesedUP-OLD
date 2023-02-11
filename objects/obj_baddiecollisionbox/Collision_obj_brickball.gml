@@ -11,7 +11,7 @@ if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.rattime <= 0 
 	{
 		if (baddieID.destroyable)
 		{
-			notification_push(21, [room, baddieID.object_index]);
+			notification_push(notifs.brick_killenemy, [room, baddieID.object_index]);
 			instance_destroy();
 			instance_destroy(baddieID);
 		}
@@ -19,7 +19,7 @@ if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.rattime <= 0 
 	else
 	{
 		if (!baddieID.elite)
-			notification_push(21, [room, baddieID.object_index]);
+			notification_push(notifs.brick_killenemy, [room, baddieID.object_index]);
 		var lag = 2;
 		baddieID.hitLag = lag;
 		baddieID.hitX = baddieID.x;

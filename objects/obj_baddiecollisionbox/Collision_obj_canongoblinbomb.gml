@@ -11,7 +11,7 @@ if (instance_exists(baddieID) && other.team == 1 && baddieID.invtime == 0 && bad
 	{
 		if (baddieID.destroyable)
 		{
-			notification_push(12, [room, baddieID.object_index, baddieID, other.object_index]);
+			notification_push(notifs.baddie_hurtboxkill, [room, baddieID.object_index, baddieID, other.object_index]);
 			instance_destroy(baddieID);
 			instance_destroy();
 		}

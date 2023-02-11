@@ -9,7 +9,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 			vsp = random_range(-10, 10);
 		}
 	}
-	notification_push(14, [63]);
+	notification_push(notifs.levelblock_break, [obj_deadjohnparent]);
 	repeat (5)
 	{
 		with (instance_create(x + random_range(0, 64), y + random_range(0, 64), obj_parryeffect))

@@ -66,54 +66,54 @@ if (ini_read_string("Game", "finalrank", "none") == "holyshit")
 var r = "yousuck";
 switch (rank_spr)
 {
-	case 2305:
-		r = "wow";
-		break;
-	case 2090:
-		r = "notbad";
-		break;
-	case 3270:
-		r = "nojudgement";
-		break;
-	case 4082:
-		r = "confused";
-		break;
-	case 3357:
-		r = "holyshit";
-		break;
-	case 1737:
-		r = "quick";
-		break;
-	case 2986:
-		r = "officer";
-		break;
+	case spr_rank_wow:
+        r = "wow";
+        break;
+    case spr_rank_notbad:
+        r = "notbad";
+        break;
+    case spr_rank_nojudgement:
+        r = "nojudgement";
+        break;
+    case spr_rank_confused:
+        r = "confused";
+        break;
+    case spr_rank_holyshit:
+        r = "holyshit";
+        break;
+    case spr_rank_quick:
+        r = "quick";
+        break;
+    case spr_rank_officer:
+        r = "officer";
+        break;
 }
 switch (rank_spr)
 {
-	case 2905:
-		bg_index = 0;
-		break;
-	case 2305:
-		bg_index = 6;
-		break;
-	case 2090:
-		bg_index = 5;
-		break;
-	case 3270:
-		bg_index = 4;
-		break;
-	case 4082:
-		bg_index = 1;
-		break;
-	case 3357:
-		bg_index = 7;
-		break;
-	case 1737:
-		bg_index = 2;
-		break;
-	case 2986:
-		bg_index = 3;
-		break;
+	case spr_rank_yousuck:
+        bg_index = 0;
+        break;
+    case spr_rank_wow:
+        bg_index = 6;
+        break;
+    case spr_rank_notbad:
+        bg_index = 5;
+        break;
+    case spr_rank_nojudgement:
+        bg_index = 4;
+        break;
+    case spr_rank_confused:
+        bg_index = 1;
+        break;
+    case spr_rank_holyshit:
+        bg_index = 7;
+        break;
+    case spr_rank_quick:
+        bg_index = 2;
+        break;
+    case spr_rank_officer:
+        bg_index = 3;
+        break;
 }
 ini_write_string("Game", "finalrank", r);
 if (ini_read_real("Game", "snotty", false) == 0)
@@ -122,5 +122,10 @@ obj_savesystem.ini_str = ini_close();
 gamesave_async_save();
 percentage = _perc;
 percvisual = 0;
-text = [[false, concat(lang_get_value("rank_totaltime"), hours, ":", mins, ":", secs)], [false, concat(lang_get_value("rank_totaldamage"), damage)], [false, concat(lang_get_value("rank_totalscore"), _score)], [false, concat(lang_get_value("rank_totalenemies"), _enemies)]];
+text = [
+	[false, concat(lang_get_value("rank_totaltime"), hours, ":", mins, ":", secs)],
+	[false, concat(lang_get_value("rank_totaldamage"), damage)],
+	[false, concat(lang_get_value("rank_totalscore"), _score)],
+	[false, concat(lang_get_value("rank_totalenemies"), _enemies)]
+];
 text_pos = 0;

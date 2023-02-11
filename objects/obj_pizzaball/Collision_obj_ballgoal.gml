@@ -29,6 +29,6 @@ with (instance_create(0, 0, obj_pizzaball_rank))
 	}
 	fmod_event_instance_set_parameter(global.snd_golfjingle, "state", s, true);
 	collectminus = round(collect / 10);
-	notification_push(18, [sprite_index]);
+	notification_push(notifs.pizzaball_goal, [sprite_index]);
 }
 global.golfhit = 0;

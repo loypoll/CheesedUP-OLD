@@ -1,2 +1,2 @@
 instance_destroy();
-notification_push(44, [room]);
+notification_push(notifs.shotgunblast_end, [room]);

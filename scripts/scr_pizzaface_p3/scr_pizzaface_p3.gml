@@ -38,7 +38,7 @@ function scr_pizzaface_p3_do_player_attack()
 		attackcooldown = 0;
 		baddieID = other.id;
 		image_index = 0;
-		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, 736, 735, 732, spr_punch]);
+		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
 		punchcount = 20;
 	}
 	hsp = 0;
@@ -431,7 +431,7 @@ function scr_pizzaface_p3_supergrab()
 							other.hsp = -other.image_xscale * 6;
 							punchcount--;
 							image_index = 0;
-							randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, 736, 735, 732, spr_punch]);
+							randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
 						}
 						else if (other.elitehit > 1)
 						{

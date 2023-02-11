@@ -266,7 +266,7 @@ function ratmount_dotaunt()
 {
 	if (key_taunt2 && state != 84 && brick && gusdashpadbuffer == 0)
 	{
-		notification_push(54, [room]);
+		notification_push(notifs.taunt, [room]);
 		tauntstoredisgustavo = true;
 		taunttimer = 20;
 		tauntstoredmovespeed = movespeed;

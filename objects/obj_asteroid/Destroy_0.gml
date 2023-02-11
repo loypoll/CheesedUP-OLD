@@ -17,7 +17,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	}
 	with (instance_create(x, y, obj_smallnumber))
 		number = string(100);
-	notification_push(14, [object_index]);
+	notification_push(notifs.levelblock_break, [object_index]);
 	var sep = 100;
 	repeat (10)
 	{

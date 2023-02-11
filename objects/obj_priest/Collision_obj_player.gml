@@ -5,7 +5,7 @@ with (other)
 	if (!scr_transformationcheck() && state != 95 && state != 112)
 	{
 		if (state == 16)
-			notification_push(41, [ghosttimer, room]);
+			notification_push(notifs.priest_ghost, [ghosttimer, room]);
 		if (state == 11 || state == 12 || state == 14 || state == 13 || state == 12 || state == 33 || state == 35 || state == 34 || state == 16 || state == 116 || state == 113 || state == 114)
 		{
 			if (hsp != 0)
@@ -40,7 +40,7 @@ if (_transfo)
 		sprite_index = spr_priest_pray;
 	if (collect && ds_list_find_index(global.saveroom, id) == -1)
 	{
-		notification_push(25, [room, id, _state]);
+		notification_push(notifs.priest_collect, [room, id, _state]);
 		ds_list_add(global.saveroom, id);
 		var val = 500;
 		global.collect += val;

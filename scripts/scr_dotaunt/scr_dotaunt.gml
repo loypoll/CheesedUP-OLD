@@ -5,7 +5,7 @@ function scr_dotaunt()
 		input_finisher_buffer = 0;
 		pistolanim = -4;
 		flash = false;
-		notification_push(54, [room]);
+		notification_push(notifs.taunt, [room]);
 		if ((!key_up || !supercharged) && global.tauntcount < 10 && place_meeting(x, y, obj_exitgate) && (global.panic == true || instance_exists(obj_wartimer)) && global.combotime > 0)
 		{
 			global.tauntcount++;

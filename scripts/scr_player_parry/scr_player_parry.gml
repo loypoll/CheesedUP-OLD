@@ -21,7 +21,7 @@ function scr_player_parry()
 		{
 			if ((other.parryID == id || distance_to_object(other) <= parry_threshold) && state != 137 && state != 4 && state != 138 && parryable && !(state == 138 && thrown == 1))
 			{
-				notification_push(4, [id, object_index, room]);
+				notification_push(notifs.parry, [id, object_index, room]);
 				obj_player1.xscale = -image_xscale;
 				grabbedby = _grabbedby;
 				var lag = 5;

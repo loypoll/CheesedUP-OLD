@@ -156,7 +156,7 @@ function scr_bosscontroller_normal()
 		if (room != boss_vigilante || obj_player1.state != 146)
 		{
 			bossdead = true;
-			notification_push(49, [room]);
+			notification_push(notifs.boss_dead, [room]);
 			alarm[0] = 480;
 			with (obj_player1)
 			{

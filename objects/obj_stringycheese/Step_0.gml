@@ -168,7 +168,7 @@ switch (state)
 					state = 8;
 					shootbuffer = 80;
 				}
-				notification_push(24, [room, other.id, id]);
+				notification_push(notifs.mrpinch_launch, [room, other.id, id]);
 			}
 		}
 		break;

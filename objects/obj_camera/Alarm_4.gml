@@ -15,7 +15,7 @@ with (instance_create(x, y, obj_comboend))
 	combo = global.savedcombo;
 	comboscore = global.comboscore;
 	comboscoremax = comboscore;
-	notification_push(50, [combo]);
+	notification_push(notifs.combo_end, [combo]);
 	combominus = round(comboscore / 50);
 }
 global.comboscore = 0;
