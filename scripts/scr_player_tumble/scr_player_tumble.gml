@@ -35,12 +35,12 @@ function scr_player_tumble()
 	{
 		sprite_index = spr_player_poundcancel1;
 		image_index = 0;
-		state = 108;
+		state = states.freefall;
 		dir = xscale;
 		vsp = -6;
 	}
 	if (movespeed <= 2 && sprite_index != spr_tumble && sprite_index != spr_player_breakdance)
-		state = 0;
+		state = states.normal;
 	if (!scr_slope() && sprite_index == spr_tumblestart && floor(image_index) < 11)
 		image_index = 11;
 	if (sprite_index == spr_mach2jump && grounded)
@@ -84,14 +84,14 @@ function scr_player_tumble()
 		sprite_index = spr_tumble;
 		movespeed = 14;
 	}
-	if ((state != 108 && ((place_meeting(x + xscale, y, obj_solid) || scr_solid_slope(x + xscale, y)) && !place_meeting(x + hsp, y, obj_rollblock) && (!place_meeting(x + hsp, y, obj_rattumble) || sprite_index != spr_tumble) && !place_meeting(x + hsp, y, obj_destructibles))) || place_meeting(x, y, obj_timedgate))
+	if ((state != states.freefall && ((place_meeting(x + xscale, y, obj_solid) || scr_solid_slope(x + xscale, y)) && !place_meeting(x + hsp, y, obj_rollblock) && (!place_meeting(x + hsp, y, obj_rattumble) || sprite_index != spr_tumble) && !place_meeting(x + hsp, y, obj_destructibles))) || place_meeting(x, y, obj_timedgate))
 	{
 		hsp = 0;
 		movespeed = 0;
 		if (sprite_index == spr_tumble || sprite_index == spr_tumblestart)
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
-			state = 106;
+			state = states.bump;
 			landAnim = false;
 			sprite_index = spr_tumbleend;
 			image_index = 0;
@@ -102,7 +102,7 @@ function scr_player_tumble()
 		else
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/splat", x, y);
-			state = 106;
+			state = states.bump;
 			image_index = 0;
 			sprite_index = spr_player_wallsplat;
 		}
@@ -114,7 +114,7 @@ function scr_player_tumble()
 	}
 	if (grounded && vsp > 0 && !place_meeting(x, y, obj_bigcheese))
 		jumpstop = false;
-	if (input_buffer_jump > 0 && can_jump && state != 106 && hsp != 0 && sprite_index == spr_tumble && !place_meeting(x, y, obj_pinballlauncher) && !place_meeting(x, y, obj_bigcheese))
+	if (input_buffer_jump > 0 && can_jump && state != states.bump && hsp != 0 && sprite_index == spr_tumble && !place_meeting(x, y, obj_pinballlauncher) && !place_meeting(x, y, obj_bigcheese))
 	{
 		if (!scr_solid(x, y - 16))
 		{
@@ -126,33 +126,33 @@ function scr_player_tumble()
 	}
 	if (crouchslipbuffer > 0)
 		crouchslipbuffer--;
-	if (!key_down && key_attack && grounded && state != 106 && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && sprite_index != spr_player_breakdance)
+	if (!key_down && key_attack && grounded && state != states.bump && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && sprite_index != spr_player_breakdance)
 	{
 		if (crouchslipbuffer == 0)
 		{
 			with (instance_create(x, y, obj_jumpdust))
 				image_xscale = other.xscale;
 			if (movespeed >= 12)
-				state = 121;
+				state = states.mach3;
 			else
-				state = 104;
+				state = states.mach2;
 			image_index = 0;
 			sprite_index = spr_rollgetup;
 			fmod_event_instance_play(rollgetupsnd);
 		}
 	}
-	if (!key_down && !key_attack && grounded && vsp > 0 && state != 106 && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && sprite_index != spr_player_breakdance)
+	if (!key_down && !key_attack && grounded && vsp > 0 && state != states.bump && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && sprite_index != spr_player_breakdance)
 	{
 		if (crouchslipbuffer == 0)
 		{
 			if (movespeed > 6)
 			{
-				state = 105;
+				state = states.machslide;
 				sprite_index = spr_machslidestart;
 				image_index = 0;
 			}
 			else
-				state = 0;
+				state = states.normal;
 		}
 	}
 	if (sprite_index == spr_crouchslip || sprite_index == spr_breakdancesuper || sprite_index == spr_machroll || sprite_index == spr_tumble || sprite_index == spr_tumblestart || sprite_index == spr_player_machroll || sprite_index == spr_player_mach2jump)

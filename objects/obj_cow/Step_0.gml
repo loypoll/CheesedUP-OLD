@@ -9,7 +9,7 @@ switch (state)
 			blockinst.visible = false;
 		}
 		break;
-	case 134:
+	case states.walk:
 		if (blockinst != -4 && instance_exists(blockinst))
 		{
 			instance_destroy(blockinst);

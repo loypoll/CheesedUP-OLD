@@ -6,7 +6,7 @@ function scr_player_morthook()
 	vsp = 0;
 	if (!instance_exists(morthookID))
 	{
-		state = 12;
+		state = states.mortjump;
 		sprite_index = spr_fall;
 		exit;
 	}
@@ -16,7 +16,7 @@ function scr_player_morthook()
 	if (floor(x) == morthookID.x && floor(y) == morthookID.y)
 	{
 		fmod_event_one_shot_3d("event:/sfx/mort/doublejump", x, y);
-		state = 12;
+		state = states.mortjump;
 		sprite_index = spr_mortdoublejumpstart;
 		image_index = 0;
 		vsp = -14;

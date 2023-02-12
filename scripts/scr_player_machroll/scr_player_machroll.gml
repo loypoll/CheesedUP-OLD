@@ -19,7 +19,7 @@ function scr_player_machroll()
 				image_speed = 0.35;
 				flash = false;
 				combo = 0;
-				state = 106;
+				state = states.machslide;
 				hsp = -2.5;
 				vsp = -3;
 				mach2 = 0;
@@ -60,13 +60,13 @@ function scr_player_machroll()
 				{
 					if (!grounded)
 						sprite_index = spr_mach;
-					state = 104;
+					state = states.mach2;
 				}
 				else
 				{
 					if (!grounded)
 						sprite_index = spr_mach4;
-					state = 121;
+					state = states.mach3;
 				}
 			}
 			if (skateboarding && movespeed < 12)
@@ -81,7 +81,7 @@ function scr_player_machroll()
 				image_speed = 0.35;
 				flash = false;
 				combo = 0;
-				state = 106;
+				state = states.machslide;
 				hsp = -2.5;
 				vsp = -3;
 				mach2 = 0;
@@ -94,7 +94,7 @@ function scr_player_machroll()
 				image_speed = 0.35;
 				flash = false;
 				combo = 0;
-				state = 106;
+				state = states.machslide;
 				hsp = 2.5;
 				vsp = -3;
 				mach2 = 0;
@@ -120,7 +120,7 @@ function scr_player_machroll()
 			if (!key_down && !scr_solid(x + 27, y - 32) && !scr_solid(x - 27, y - 32) && !scr_solid(x, y - 32) && !scr_solid(x, y - 16))
 			{
 				image_index = 0;
-				state = 104;
+				state = states.mach2;
 				sprite_index = spr_rollgetup;
 			}
 			break;
@@ -131,7 +131,7 @@ function scr_player_machroll()
 				image_speed = 0.35;
 				flash = false;
 				combo = 0;
-				state = 106;
+				state = states.machslide;
 				hsp = -2.5;
 				vsp = -3;
 				mach2 = 0;
@@ -144,7 +144,7 @@ function scr_player_machroll()
 				image_speed = 0.35;
 				flash = false;
 				combo = 0;
-				state = 106;
+				state = states.machslide;
 				hsp = 2.5;
 				vsp = -3;
 				mach2 = 0;
@@ -154,7 +154,7 @@ function scr_player_machroll()
 			if ((!key_down || !grounded) && !scr_solid(x + 27, y - 32) && !scr_solid(x - 27, y - 32) && !scr_solid(x, y - 32) && !scr_solid(x, y - 16))
 			{
 				image_index = 0;
-				state = 121;
+				state = states.mach3;
 				sprite_index = spr_playerN_jetpackboost;
 			}
 			if (!instance_exists(dashcloudid) && grounded)

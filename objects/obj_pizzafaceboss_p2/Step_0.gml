@@ -6,7 +6,7 @@ switch (state)
 	case 135:
 		scr_pizzaface_p2_fall();
 		break;
-	case 134:
+	case states.walk:
 		scr_pizzaface_p2_normal();
 		break;
 	case 233:
@@ -45,7 +45,7 @@ switch (state)
 	case 154:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
 }

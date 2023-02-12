@@ -37,7 +37,7 @@ function scr_player_climbwall()
 				grabclimbbuffer--;
 			if (!key_attack && !skateboarding && grabclimbbuffer == 0)
 			{
-				state = 0;
+				state =		
 				movespeed = 0;
 				railmovespeed = 6;
 				raildir = -xscale;
@@ -52,12 +52,12 @@ function scr_player_climbwall()
 					wallspeed = 6;
 				if ((wallspeed >= 6 && wallspeed < 12) || skateboarding)
 				{
-					state = 104;
+					state = states.mach2;
 					movespeed = wallspeed;
 				}
 				else if (wallspeed >= 12)
 				{
-					state = 121;
+					state = states.mach3;
 					sprite_index = spr_mach4;
 					movespeed = wallspeed;
 				}
@@ -71,7 +71,7 @@ function scr_player_climbwall()
 				key_jump = false;
 				movespeed = 10;
 				railmovespeed = 0;
-				state = 104;
+				state = states.mach2;
 				image_index = 0;
 				sprite_index = spr_walljumpstart;
 				if (skateboarding)
@@ -81,7 +81,7 @@ function scr_player_climbwall()
 				jumpstop = false;
 				walljumpbuffer = 4;
 			}
-			if (state != 104 && verticalbuffer <= 0 && place_meeting(x, y - 1, obj_solid) && scr_solid(x + xscale, y) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
+			if (state != states.mach2 && verticalbuffer <= 0 && place_meeting(x, y - 1, obj_solid) && scr_solid(x + xscale, y) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
 			{
 				trace("climbwall hit head");
 				if (!skateboarding)
@@ -89,12 +89,12 @@ function scr_player_climbwall()
 					sprite_index = spr_superjumpland;
 					fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
 					image_index = 0;
-					state = 123;
+					state = states.Sjumpland;
 					machhitAnim = false;
 				}
 				else if (!key_jump)
 				{
-					state = 106;
+					state = states.bump;
 					hsp = -2.5 * xscale;
 					vsp = -3;
 					mach2 = 0;
@@ -124,7 +124,7 @@ function scr_player_climbwall()
 				grabclimbbuffer--;
 			if (!key_attack && grabclimbbuffer == 0)
 			{
-				state = 0;
+				state = states.normal
 				movespeed = 0;
 			}
 			if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
@@ -132,7 +132,7 @@ function scr_player_climbwall()
 				sprite_index = spr_superjumpland;
 				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
 				image_index = 0;
-				state = 123;
+				state = states.Sjumpland;
 				machhitAnim = false;
 			}
 			if (!scr_solid(x + xscale, y) && !place_meeting(x, y, obj_verticalhallway))
@@ -140,10 +140,10 @@ function scr_player_climbwall()
 				instance_create(x, y, obj_jumpdust);
 				vsp = 0;
 				if (movespeed >= 6)
-					state = 104;
+					state = states.mach2;
 				if (movespeed >= 12)
 				{
-					state = 121;
+					state = states.mach3;
 					sprite_index = spr_mach4;
 				}
 			}
@@ -151,7 +151,7 @@ function scr_player_climbwall()
 			{
 				input_buffer_jump = 0;
 				movespeed = 8;
-				state = 104;
+				state = states.mach2;
 				image_index = 0;
 				sprite_index = spr_walljumpstart;
 				vsp = -11;
@@ -160,7 +160,7 @@ function scr_player_climbwall()
 			}
 			if ((grounded && wallspeed <= 0) || wallspeed <= 0)
 			{
-				state = 92;
+				state = states.jump;
 				sprite_index = spr_fall;
 			}
 			image_speed = 0.6;
@@ -179,14 +179,14 @@ function scr_player_climbwall()
 			if (floor(image_index) == (image_number - 1) || !key_jump2)
 			{
 				vsp = -15;
-				state = 92;
+				state = states.jump;
 				sprite_index = spr_playerN_jump;
 				image_index = 0;
 			}
 			if (key_jump)
 			{
 				vsp = -15;
-				state = 92;
+				state = states.jump;
 				sprite_index = spr_playerN_jump;
 				image_index = 0;
 			}

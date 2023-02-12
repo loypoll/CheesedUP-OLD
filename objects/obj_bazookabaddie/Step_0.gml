@@ -9,7 +9,7 @@ switch (state)
 	case 130:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		hsp = 0;
 		break;
 	case 136:

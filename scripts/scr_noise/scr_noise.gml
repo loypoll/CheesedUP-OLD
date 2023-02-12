@@ -901,7 +901,7 @@ function scr_noise_fightball()
 					substate = 134;
 			}
 			break;
-		case 134:
+		case states.walk:
 			with (obj_player1)
 			{
 				hsp = other.hsp;
@@ -973,7 +973,7 @@ function scr_noise_finale()
 					substate = 134;
 			}
 			break;
-		case 134:
+		case states.walk:
 			with (obj_player1)
 			{
 				hsp = other.hsp;

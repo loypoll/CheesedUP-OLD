@@ -31,7 +31,7 @@ function scr_player_ratmountladder()
 	ladderbuffer = 20;
 	if (!place_meeting(x, y, obj_ladder) && !place_meeting(x, y, obj_stairs))
 	{
-		state = 192;
+		state = states.ratmountjump;
 		sprite_index = spr_player_ratmountgroundpoundfall;
 		image_index = 0;
 		vsp = 0;
@@ -40,7 +40,7 @@ function scr_player_ratmountladder()
 	{
 		input_buffer_jump = 0;
 		ladderbuffer = 20;
-		state = 192;
+		state = states.ratmountjump;
 		sprite_index = spr_player_ratmountgroundpound;
 		if (key_down)
 			vsp = 5;
@@ -51,7 +51,7 @@ function scr_player_ratmountladder()
 	if (key_down && grounded && !place_meeting(x, y, obj_platform))
 	{
 		sprite_index = spr_player_ratmountgroundpoundfall;
-		state = 192;
+		state = states.ratmountjump;
 		image_index = 0;
 	}
 }

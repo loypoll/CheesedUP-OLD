@@ -23,7 +23,7 @@ function scr_player_grabbing()
 	if (grounded && key_chainsaw2)
 	{
 		fmod_event_instance_play(suplexdashsnd);
-		state = 55;
+		state = states.grabbing;
 		image_index = 0;
 		vsp = 0;
 		sprite_index = spr_player_suplexdash;
@@ -36,7 +36,7 @@ function scr_player_grabbing()
 	if (sprite_index == airattackdash && floor(image_index) == (image_number - 1))
 	{
 		sprite_index = spr_fall;
-		state = 92;
+		state = states.jump;
 	}
 	if (floor(image_index) == (image_number - 1) && (sprite_index == attackdash || sprite_index == spr_player_Sjump))
 		state = 0;
@@ -48,7 +48,7 @@ function scr_player_grabbing()
 		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
 		grav = 0.5;
 		movespeed = 0;
-		state = 106;
+		state = states.bump;
 		hsp = -2.5;
 		vsp = -3;
 		mach2 = 0;
@@ -62,7 +62,7 @@ function scr_player_grabbing()
 		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
 		grav = 0.5;
 		movespeed = 0;
-		state = 106;
+		state = states.bump;
 		hsp = 2.5;
 		vsp = -3;
 		mach2 = 0;
@@ -84,11 +84,11 @@ function scr_player_grabbing()
 		{
 			sprite_index = spr_player_suplexcancel;
 			grav = 0.5;
-			state = 92;
+			state = states.jump;
 		}
 		else
 		{
-			state = 0;
+			state = states.normal;
 			grav = 0.5;
 		}
 	}

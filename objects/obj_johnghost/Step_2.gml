@@ -1,7 +1,7 @@
 var cx = camera_get_view_x(view_camera[0]);
 switch (state)
 {
-	case 134:
+	case states.walk:
 		if (playerid.x != x)
 			image_xscale = sign(playerid.x - x);
 		currentx = Approach(currentx, targetx, 2);

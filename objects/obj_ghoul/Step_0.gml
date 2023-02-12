@@ -29,7 +29,7 @@ switch (state)
 	case 128:
 		scr_enemy_charge();
 		break;
-	case 134:
+	case states.walk:
 		sprite_index = idlespr;
 		var d = point_direction(x, y, xstart, ystart);
 		x += lengthdir_x(8, d);
@@ -93,7 +93,7 @@ switch (state)
 	case 154:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
 }

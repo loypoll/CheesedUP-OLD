@@ -13,22 +13,22 @@ if (!pizzahead || elitehit > 1)
 	destroyable = false;
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		scr_fakepepboss_arenaintro();
 		break;
-	case 134:
+	case states.walk:
 		scr_fakepepboss_walk();
 		break;
-	case 275:
+	case states.boss_deformed:
 		scr_fakepepboss_deformed();
 		break;
-	case 155:
+	case states.staggered:
 		scr_fakepepboss_staggered();
 		break;
-	case 276:
+	case states.boss_grabdash:
 		scr_fakepepboss_grabdash();
 		break;
-	case 277:
+	case states.boss_grabthrow:
 		scr_fakepepboss_grabthrow();
 		break;
 	case 92:

@@ -24,7 +24,7 @@ function scr_player_punch()
 				xscale = dir;
 			}
 			movespeed = abs(movespeed);
-			state = 0;
+			state = states.normal;
 		}
 		if (punch_afterimage > 0)
 			punch_afterimage--;
@@ -76,7 +76,7 @@ function scr_player_punch()
 						case spr_player_kungfu2:
 						case spr_player_kungfu3:
 						case spr_shotgunsuplexdash:
-							state = 0;
+							state = states.normal;
 							if (move != xscale && move != 0)
 								movespeed = 2;
 							break;
@@ -97,7 +97,7 @@ function scr_player_punch()
 				if (!_kungfuground && !_Sjumpcancel)
 				{
 					if (grounded && vsp >= 0)
-						state = 0;
+						state = states.normal;
 				}
 				if (_Sjumpcancel)
 				{
@@ -111,21 +111,21 @@ function scr_player_punch()
 						if (key_attack)
 						{
 							if (movespeed >= 12)
-								state = 121;
+								state = states.mach3;
 							else
-								state = 104;
+								state = states.mach2;
 							movespeed = abs(movespeed);
 							sprite_index = spr_rollgetup;
 							image_index = 0;
 						}
 						else if (movespeed > 6)
 						{
-							state = 105;
+							state = states.machslide;
 							sprite_index = spr_machslidestart;
 							image_index = 0;
 						}
 						else
-							state = 0;
+							state = states.normal;
 					}
 					if (sprite_index == spr_player_Sjumpcancelslide)
 						image_speed = abs(movespeed) / 15;
@@ -135,7 +135,7 @@ function scr_player_punch()
 					vsp = -4;
 					sprite_index = spr_player_kungfujump;
 					image_index = 0;
-					state = 80;
+					state = states.punch;
 					movespeed = -6;
 				}
 				if (punch_afterimage > 0)

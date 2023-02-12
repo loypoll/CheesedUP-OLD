@@ -8,7 +8,7 @@ switch (state)
 	case 130:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		hsp = 0;
 		sprite_index = spr_pizzice_idle;
 		image_speed = 0.35;
@@ -65,7 +65,7 @@ switch (state)
 	case 154:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
 	case 125:

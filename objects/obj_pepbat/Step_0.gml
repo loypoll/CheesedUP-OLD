@@ -53,7 +53,7 @@ switch (state)
 			state = 126;
 		}
 		break;
-	case 134:
+	case states.walk:
 		vsp = 0;
 		hsp = 0;
 		sprite_index = spr_pepbat_move;
@@ -90,7 +90,7 @@ switch (state)
 	case 154:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
 }

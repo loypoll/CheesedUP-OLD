@@ -4,14 +4,14 @@ function scr_player_cheesepepstick()
 	vsp = 0;
 	if (!grounded && !place_meeting(x + 1, y, obj_solid) && !place_meeting(x - 1, y, obj_solid))
 	{
-		state = 26;
+		state = states.cheesepepjump;
 		jumpAnim = false;
 		sprite_index = spr_cheesepepfall;
 	}
 	if (grounded)
 	{
 		fmod_event_one_shot_3d("event:/sfx/cheese/step", x, y);
-		state = 24;
+		state = states.cheesepep;
 		sprite_index = spr_cheesepepland;
 		image_index = 0;
 		landAnim = true;
@@ -24,7 +24,7 @@ function scr_player_cheesepepstick()
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		xscale *= -1;
 		dir = xscale;
-		state = 26;
+		state = states.cheesepepjump;
 		sprite_index = spr_cheesepep_walljump;
 		image_index = 0;
 		movespeed = xscale * 3;
@@ -66,14 +66,14 @@ function scr_player_cheesepepstickside()
 		if (!key_down)
 			vsp = -11;
 		image_index = 0;
-		state = 24;
+		state = states.cheesepep;
 		hsp = move * movespeed;
 		cheesepep_buffer = 0;
 	}
 	if (!place_meeting(x + 1, y, obj_solid) && !place_meeting(x - 1, y, obj_solid))
 	{
 		grav = 0.5;
-		state = 24;
+		state = states.cheesepep;
 		sprite_index = spr_cheesepepidle;
 		hsp = move * movespeed;
 		cheesepep_buffer = 0;
@@ -82,7 +82,7 @@ function scr_player_cheesepepstickside()
 	{
 		cheesepep_buffer = 0;
 		grav = 0.5;
-		state = 24;
+		state = states.cheesepep;;
 		sprite_index = spr_cheesepepidle;
 		hsp = move * movespeed;
 	}
@@ -119,14 +119,14 @@ function scr_player_cheesepepstickside()
 			if (rvsp > 0)
 			{
 				stickdir = -1;
-				state = 30;
+				state = states.cheesepepstickup;
 				sprite_index = spr_cheesepepstickceiling;
 				vsp = 0;
 				hsp = xscale * movespeed;
 			}
 			else
 			{
-				state = 24;
+				state = states.cheesepep;
 				mask_index = spr_player_mask;
 				sprite_index = spr_cheesepepidle;
 				vsp = 0;
@@ -168,7 +168,7 @@ function scr_player_cheesepepstickup()
 	{
 		sprite_index = spr_cheesepepstickside;
 		cheesepep_buffer = cheesepep_max;
-		state = 29;
+		state = states.cheesepepstickside;
 		vsp = move * movespeed;
 	}
 	if (input_buffer_jump > 0 && !(place_meeting(x, y + 1, obj_solid) && place_meeting(x, y - 1, obj_solid)))
@@ -180,14 +180,14 @@ function scr_player_cheesepepstickup()
 				y++;
 		}
 		input_buffer_jump = 0;
-		state = 24;
+		state = states.cheesepep;
 		cheesepep_buffer = 0;
 		vsp = 2;
 		hsp = move * movespeed;
 	}
 	if (!place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y + 1, obj_solid))
 	{
-		state = 24;
+		state = states.cheesepep;
 		cheesepep_buffer = 0;
 		hsp = move * movespeed;
 	}
@@ -202,7 +202,7 @@ function scr_player_cheesepepstickup()
 		}
 		else
 		{
-			state = 30;
+			state = states.cheesepepstickup;
 			stickdir *= -1;
 		}
 	}
@@ -220,7 +220,7 @@ function scr_player_cheesepepstickup()
 			y = old_y;
 			y += (16 * stickdir);
 			cheesepep_buffer = cheesepep_max;
-			state = 29;
+			state = states.cheesepepstickside;
 			sprite_index = spr_cheesepepstickside;
 			hsp = 0;
 			vsp = move * movespeed;

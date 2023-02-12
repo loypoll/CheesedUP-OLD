@@ -104,7 +104,7 @@ switch (state)
 	case 249:
 		boss_pizzahead_slamhead2();
 		break;
-	case 134:
+	case states.walk:
 		grav = 0.5;
 		if (grounded)
 			state = 0;

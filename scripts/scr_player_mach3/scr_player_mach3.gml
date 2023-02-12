@@ -119,7 +119,7 @@ function scr_player_mach3()
 			{
 				sprite_index = spr_machslidestart;
 				fmod_event_one_shot_3d("event:/sfx/pep/break", x, y);
-				state = 105;
+				state = states.machslide;
 				image_index = 0;
 				launched = false;
 			}
@@ -127,7 +127,7 @@ function scr_player_mach3()
 			{
 				fmod_event_one_shot_3d("event:/sfx/pep/machslideboost", x, y);
 				sprite_index = spr_mach3boost;
-				state = 105;
+				state = states.machslide;
 				image_index = 0;
 			}
 			if (key_down && fightball == 0 && sprite_index != spr_dashpadmach)
@@ -135,7 +135,7 @@ function scr_player_mach3()
 				particle_set_scale(5, xscale, 1);
 				create_particle(x, y, particle.jumpdust, 0);
 				flash = false;
-				state = 5;
+				state = states.tumble;
 				image_index = 0;
 				vsp = 10;
 				if (!grounded)
@@ -153,13 +153,13 @@ function scr_player_mach3()
 					wallspeed = 1;
 				else
 					movespeed = wallspeed;
-				state = 37;
+				state = states.climbwall;
 			}
 			if (!grounded && place_meeting(x + sign(hsp), y, obj_climbablewall) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_metalblock))
 			{
 				wallspeed = movespeed;
 				grabclimbbuffer = 0;
-				state = 37;
+				state = states.climbwall;
 			}
 			if (input_buffer_slap > 0 && !key_up && shotgunAnim == 0 && !global.pistol && sprite_index != spr_dashpadmach)
 			{
@@ -169,7 +169,7 @@ function scr_player_mach3()
 				fmod_event_instance_play(suplexdashsnd);
 				particle_set_scale(5, xscale, 1);
 				create_particle(x, y, particle.jumpdust, 0);
-				state = 42;
+				state = states.handstandjump;
 				if (movespeed < 5)
 					movespeed = 5;
 				image_index = 0;
@@ -177,7 +177,7 @@ function scr_player_mach3()
 			else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && sprite_index != spr_dashpadmach && !global.pistol)
 			{
 				input_buffer_slap = 0;
-				state = 80;
+				state = states.punch;
 				image_index = 0;
 				sprite_index = spr_player_breakdanceuppercut;
 				fmod_event_instance_play(snd_uppercut);
@@ -191,7 +191,7 @@ function scr_player_mach3()
 				if (shotgunAnim)
 					scr_shotgunshoot();
 				else if (global.pistol)
-					scr_pistolshoot(121);
+					scr_pistolshoot(states.mach3);
 			}
 			if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 			{
@@ -221,7 +221,7 @@ function scr_player_mach3()
 						fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
 						hsp = 0;
 						flash = false;
-						state = 106;
+						state = states.bump;
 						hsp = -6 * xscale;
 						vsp = -6;
 						mach2 = 0;
@@ -238,7 +238,7 @@ function scr_player_mach3()
 							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
 							hsp = 0;
 							flash = false;
-							state = 106;
+							state = states.bump;
 							hsp = -6 * xscale;
 							vsp = -6;
 							mach2 = 0;
@@ -369,14 +369,14 @@ function scr_player_mach3()
 			{
 				sprite_index = spr_machslidestart;
 				fmod_event_one_shot_3d("event:/sfx/pep/break", x, y);
-				state = 105;
+				state = states.machslide;
 				image_index = 0;
 			}
 			if (move == -xscale && grounded && vsp > 0 && fightball == 0)
 			{
 				fmod_event_one_shot_3d("event:/sfx/pep/machslideboost", x, y);
 				sprite_index = spr_mach3boost;
-				state = 105;
+				state = states.machslide;
 				image_index = 0;
 			}
 			if (key_down && fightball == 0 && !place_meeting(x, y, obj_dashpad))
@@ -384,13 +384,13 @@ function scr_player_mach3()
 				particle_set_scale(5, xscale, 1);
 				create_particle(x, y, particle.jumpdust, 0);
 				flash = false;
-				state = 65;
+				state = states.machroll;
 				vsp = 10;
 			}
 			if ((!grounded && place_meeting(x + hsp, y, obj_solid) && (!place_meeting(x + sign(hsp), y, obj_slope || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + hsp, y, obj_mach3solid))) || (grounded && (place_meeting(x + hsp, y - 32, obj_solid) || scr_solid_slope(x + sign(hsp), y - 32)) && place_meeting(x, y + 1, obj_slope) && !place_meeting(x + hsp, y, obj_mach3solid)))
 			{
 				wallspeed = 10;
-				state = 37;
+				state = states.climbwall;
 			}
 			if ((scr_solid(x + 1, y) && !place_meeting(x + 1, y, obj_mach3solid) && xscale == 1) && !scr_slope() && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting(x + sign(hsp), y, obj_solid)) && (grounded || fightball == 1))
 			{
@@ -418,7 +418,7 @@ function scr_player_mach3()
 						}
 					}
 					flash = false;
-					state = 106;
+					state = states.bump;
 					hsp = -2.5;
 					vsp = -3;
 					mach2 = 0;
@@ -451,7 +451,7 @@ function scr_player_mach3()
 							}
 						}
 						flash = false;
-						state = 106;
+						state = states.bump;
 						hsp = -2.5;
 						vsp = -3;
 						mach2 = 0;
@@ -487,7 +487,7 @@ function scr_player_mach3()
 						}
 					}
 					flash = false;
-					state = 106;
+					state = states.bump;
 					hsp = 2.5;
 					vsp = -3;
 					mach2 = 0;
@@ -520,7 +520,7 @@ function scr_player_mach3()
 							}
 						}
 						flash = false;
-						state = 106;
+						state = states.bump;
 						hsp = -2.5;
 						vsp = -3;
 						mach2 = 0;
@@ -533,7 +533,7 @@ function scr_player_mach3()
 			if (key_slap2 && character == "V")
 			{
 				vsp = -5;
-				state = 1;
+				state = states.revolver;
 				image_index = 0;
 				sprite_index = spr_playerV_airrevolver;
 				image_index = 0;
@@ -547,7 +547,7 @@ function scr_player_mach3()
 			if (key_shoot2 && character == "V" && !instance_exists(dynamite_inst))
 			{
 				vsp = -5;
-				state = 2;
+				state = states.dynamite;
 				image_index = 0;
 				sprite_index = spr_playerV_dynamitethrow;
 				with (instance_create(x, y, obj_dynamite))
@@ -598,7 +598,7 @@ function scr_player_mach3()
 			{
 				sprite_index = spr_playerN_pogostart;
 				image_index = 0;
-				state = 58;
+				state = states.pogo;
 				pogospeed = movespeed;
 			}
 			if (fightball == 0)
@@ -615,7 +615,7 @@ function scr_player_mach3()
 			{
 				jumpstop = false;
 				vsp = -15;
-				state = 92;
+				state = states.jump;
 				sprite_index = spr_playerN_noisebombspinjump;
 				image_index = 0;
 				particle_set_scale(5, xscale, 1);
@@ -627,7 +627,7 @@ function scr_player_mach3()
 					image_xscale = other.xscale;
 				flash = false;
 				sprite_index = spr_playerN_jetpackslide;
-				state = 65;
+				state = states.machroll;
 			}
 			if (!key_jump2 && jumpstop == 0 && vsp < 0.5 && fightball == 1)
 			{
@@ -672,7 +672,7 @@ function scr_player_mach3()
 					}
 				}
 				flash = false;
-				state = 106;
+				state = states.bump;
 				hsp = 2.5;
 				vsp = -3;
 				mach2 = 0;
@@ -684,7 +684,7 @@ function scr_player_mach3()
 	var b = false;
 	with (obj_hamkuff)
 	{
-		if (state == 206 && playerid == other.id)
+		if (state == states.blockstance && playerid == other.id)
 			b = true;
 	}
 	if (!instance_exists(dashcloudid) && grounded && !place_meeting(x, y + 1, obj_water) && !b)
@@ -725,10 +725,10 @@ function scr_player_mach3()
 		image_speed = 0.4;
 	else
 		image_speed = 0.4;
-	if (key_up && fightball == 0 && state == 121 && character == "P" && grounded && vsp > 0 && sprite_index != spr_dashpadmach && !place_meeting(x, y, obj_dashpad))
+	if (key_up && fightball == 0 && state == states.mach3 && character == "P" && grounded && vsp > 0 && sprite_index != spr_dashpadmach && !place_meeting(x, y, obj_dashpad))
 	{
 		sprite_index = spr_superjumpprep;
-		state = 99;
+		state = states.Sjumpprep;
 		hsp = 0;
 		image_index = 0;
 	}
@@ -736,6 +736,6 @@ function scr_player_mach3()
 	{
 		randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
 		image_index = 0;
-		state = 43;
+		state = states.lungeattack;
 	}
 }

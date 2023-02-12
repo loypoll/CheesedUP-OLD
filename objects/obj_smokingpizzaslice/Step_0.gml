@@ -4,7 +4,7 @@ if (bombreset > 0)
 	bombreset--;
 switch (state)
 {
-	case 134:
+	case states.walk:
 		if (state == 129)
 			break;
 		else
@@ -30,7 +30,7 @@ switch (state)
             }
             switch substate
             {
-                case 134:
+                case states.walk:
                     image_speed = 0.35;
                     if (sprite_index != spr_pizzaslug_walk)
                     {

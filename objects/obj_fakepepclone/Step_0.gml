@@ -5,7 +5,7 @@ switch (state)
 	case 8:
 		scr_fakepepclone_transitioncutscene();
 		break;
-	case 134:
+	case states.walk:
 		scr_fakepepclone_walk();
 		break;
 	case 276:

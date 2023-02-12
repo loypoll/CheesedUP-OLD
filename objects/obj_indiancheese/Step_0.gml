@@ -9,7 +9,7 @@ switch (state)
 	case 130:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		scr_enemy_walk();
 		if (totemID != -4)
 			state = 188;

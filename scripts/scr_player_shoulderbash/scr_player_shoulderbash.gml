@@ -15,7 +15,7 @@ function scr_player_shoulderbash()
 		sprite_index = spr_pepperman_shoulderloop;
 	if (sprite_index == spr_pepperman_shoulderloop && !key_attack)
 	{
-		state = 0;
+		state = states.normal;
 		image_index = 0;
 	}
 	if (grounded)
@@ -40,5 +40,5 @@ function scr_player_shoulderbash()
 		}
 	}
 	if (place_meeting(x + xscale, y, obj_solid))
-		state = 0;
+		state = states.normal;
 }

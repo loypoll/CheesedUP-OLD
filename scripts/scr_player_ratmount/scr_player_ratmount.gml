@@ -20,7 +20,7 @@ function scr_player_ratmount()
 			if (_bump)
 			{
 				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-				state = 106;
+				state = states.bump;
 				if (brick)
 					sprite_index = spr_player_ratmountbump;
 				else
@@ -60,7 +60,7 @@ function scr_player_ratmount()
 		if (abs(movespeed) > 2 && abs(hsp) > 2 && grounded)
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/backslide", x, y);
-			state = 204;
+			state = states.ratmountskid;
 			movespeed = abs(movespeed);
 		}
 	}
@@ -164,7 +164,7 @@ function scr_player_ratmount()
 			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
 		}
 	}
-	if (input_buffer_jump > 0 && can_jump && gusdashpadbuffer == 0 && state != 204)
+	if (input_buffer_jump > 0 && can_jump && gusdashpadbuffer == 0 && state != states.ratmountskid)
 	{
 		input_buffer_jump = 0;
 		particle_set_scale(4, xscale, 1);
@@ -183,13 +183,13 @@ function scr_player_ratmount()
 			sprite_index = spr_player_ratmountgroundpound;
 		image_index = 0;
 		jumpAnim = true;
-		state = 192;
+		state = states.ratmountjump;
 		vsp = -11;
 		jumpstop = false;
 	}
 	if (!grounded && sprite_index != spr_player_ratmountswallow)
 	{
-		state = 192;
+		state = states.ratmountjump;
 		jumpAnim = false;
 		if (ratmount_movespeed >= 12)
 		{
@@ -213,7 +213,7 @@ function scr_player_ratmount()
 	{
 		input_buffer_slap = 0;
 		ratmount_kickbrick();
-		if (state == 204)
+		if (state == states.ratmountskid)
 		{
 			movespeed = -movespeed;
 			hsp = movespeed;
@@ -232,7 +232,7 @@ function scr_player_ratmount()
 		brick = false;
 		ratmountpunchtimer = 25;
 		gustavohitwall = false;
-		state = 259;
+		state = states.ratmountpunch;
 		image_index = 0;
 		if (move != 0)
 			xscale = move;
@@ -249,7 +249,7 @@ function scr_player_ratmount()
 	}
 	if ((key_down && grounded && vsp > 0 && gusdashpadbuffer <= 0) || scr_solid(x, y))
 	{
-		state = 260;
+		state = states.ratmountcrouch;
 		if (brick == 1)
 		{
 			with (instance_create(x, y, obj_brickcomeback))
@@ -264,7 +264,7 @@ function scr_player_ratmount()
 }
 function ratmount_dotaunt()
 {
-	if (key_taunt2 && state != 84 && brick && gusdashpadbuffer == 0)
+	if (key_taunt2 && state != states.backbreaker && brick && gusdashpadbuffer == 0)
 	{
 		notification_push(notifs.taunt, [room]);
 		tauntstoredisgustavo = true;
@@ -274,7 +274,7 @@ function ratmount_dotaunt()
 		tauntstoredsprite = sprite_index;
 		tauntstoredstate = state;
 		tauntstoredvsp = vsp;
-		state = 84;
+		state = states.backbreaker;
 		scr_create_parryhitbox();
 		if (!supercharged || !key_up)
 		{
@@ -301,12 +301,12 @@ function ratmount_kickbrick()
 	fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x + (image_xscale * _pad), y);
 	with (instance_create(x + (image_xscale * _pad), y, obj_brickball))
 	{
-		if (other.state == 192 || other.state == 198)
+		if (other.state == states.ratmountjump || other.state == states.bounce)
 			up = true;
 		image_xscale = other.xscale;
 		xoffset = _pad;
 	}
-	state = 197;
+	state = states.ratmountgroundpound;
 	sprite_index = spr_lonegustavo_kick;
 	image_index = 0;
 	image_speed = 0.35;
@@ -319,18 +319,18 @@ function ratmount_shootpowerup()
 	{
 		switch (ratpowerup)
 		{
-			case 660:
+			case obj_noisegoblin:
 				with (instance_create(x + (20 * xscale), y, obj_playernoisearrow))
 					direction = point_direction(x, y, x + (other.xscale * 4), y);
 				break;
-			case 377:
+			case obj_smokingpizzaslice:
 				with (instance_create(x + (20 * xscale), y + 20, obj_playersmokehitbox))
 				{
 					spd += (other.movespeed / 2);
 					image_xscale = other.xscale;
 				}
 				break;
-			case 676:
+			case obj_spitcheese:
 				with (instance_create(x + (20 * xscale), y, obj_playerspikecheese))
 				{
 					spd += other.movespeed;

@@ -29,6 +29,6 @@ function scr_player_trashjump()
 		movespeed = 8;
 		with (instance_create(x, y, obj_jumpdust))
 			image_xscale = other.xscale;
-		state = 211;
+		state = states.trashroll;
 	}
 }

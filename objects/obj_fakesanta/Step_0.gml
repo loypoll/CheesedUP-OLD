@@ -21,7 +21,7 @@ if (activated == 1)
 		case 154:
 			scr_enemy_pummel();
 			break;
-		case 155:
+		case states.staggered:
 			scr_enemy_staggered();
 			break;
 	}

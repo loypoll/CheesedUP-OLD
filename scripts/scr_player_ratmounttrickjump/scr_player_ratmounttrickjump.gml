@@ -16,15 +16,15 @@ function scr_player_ratmounttrickjump()
 		if (sprite_index == spr_mach2jump)
 		{
 			if (movespeed > 2)
-				state = 201;
+				state = states.tumble;
 			else
-				state = 0;
+				state = states.normal;
 		}
 		else
 		{
 			ramp_points = 0;
 			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-			state = 191;
+			state = states.ratmount;
 			sprite_index = spr_player_ratmountland;
 			image_index = 0;
 			landAnim = true;

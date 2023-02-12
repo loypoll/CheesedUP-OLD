@@ -124,7 +124,7 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_superattack();
 		break;
-	case 134:
+	case states.walk:
 		grav = 0.5;
 		state_boss_walk(boss_vigilante_decide_attack);
 		inv_timer = 2;

@@ -23,7 +23,7 @@ function scr_player_transitioncutscene()
 	}
 	if (sprite_index == spr_player_levelcomplete && costumercutscenetimer < 0)
 	{
-		if (grounded && (x > (other.x + 32) && x < (other.x + 160)) && key_up && (state == 0 || state == 103 || state == 104 || state == 121))
+		if (grounded && (x > (other.x + 32) && x < (other.x + 160)) && key_up && (state == states.normal || state == states.mach1 || state == states.mach2 || state == states.mach3))
 		{
 			if (global.collect >= global.srank)
 				global.rank = "s";
@@ -38,11 +38,11 @@ function scr_player_transitioncutscene()
 			ini_open("saveData.ini");
 			if (!instance_exists(obj_endlevelfade))
 				instance_create(x, y, obj_endlevelfade);
-			if (state != 112)
+			if (state != states.door)
 			{
 				audio_stop_all();
 				stop_music();
-				state = 112;
+				state = states.door;
 				obj_endlevelfade.alarm[0] = 235;
 				image_index = 0;
 			}

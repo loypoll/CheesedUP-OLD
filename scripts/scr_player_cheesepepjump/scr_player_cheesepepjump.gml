@@ -21,7 +21,7 @@ function scr_player_cheesepepjump()
 		movespeed = Approach(movespeed, 0, 0.25);
 	if (place_meeting(x + sign(movespeed), y, obj_solid) && !place_meeting(x, y + 1, obj_slope) && !place_meeting(x + sign(movespeed), y, obj_ratblock))
 	{
-		state = 25;
+		state = states.cheesepepstick;
 		fmod_event_one_shot_3d("event:/sfx/cheese/step", x, y);
 		sprite_index = spr_cheesepepstickside;
 		hsp = 0;
@@ -37,7 +37,7 @@ function scr_player_cheesepepjump()
 		vsp = -11;
 		image_index = 0;
 		sprite_index = spr_cheesepepjump;
-		state = 26;
+		state = states.cheesepepjump;
 		fmod_event_one_shot_3d("event:/sfx/cheese/jump", x, y);
 	}
 	if (grounded && vsp > 0)
@@ -45,7 +45,7 @@ function scr_player_cheesepepjump()
 		fmod_event_one_shot_3d("event:/sfx/cheese/step", x, y);
 		repeat (3)
 			create_debris(x + random_range(-8, 8), y + 43, spr_cheesechunk);
-		state = 24;
+		state = states.cheesepep;
 		sprite_index = spr_cheesepepland;
 		image_index = 0;
 		movespeed = abs(movespeed);

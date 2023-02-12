@@ -23,7 +23,7 @@ function scr_player_lungeattack()
 	{
 		suplexmove = true;
 		fmod_event_instance_play(suplexdashsnd);
-		state = 42;
+		state = states.handstandjump;
 		movespeed = 5;
 		image_index = 0;
 		flash = true;
@@ -43,7 +43,7 @@ function scr_player_lungeattack()
 				if (finisher)
 					finisher_buffer += 15;
 				input_attack_buffer = 0;
-				state = 43;
+				state = states.lungeattack;
 				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
 				image_index = 0;
 			}
@@ -51,7 +51,7 @@ function scr_player_lungeattack()
 	}
 	if (floor(image_index) == (image_number - 1))
 	{
-		state = 0;
+		state = states.normal;
 		ds_list_clear(hitlist);
 		hit_connected = false;
 	}
@@ -62,7 +62,7 @@ function scr_player_lungeattack()
 			if (input_finisher_buffer > 0)
 				DoFinisher();
 		}
-		if (state != 80 && input_attack_buffer > 0)
+		if (state != states.punch && input_attack_buffer > 0)
 		{
 			ds_list_clear(hitlist);
 			hit_connected = false;
@@ -73,7 +73,7 @@ function scr_player_lungeattack()
 				if (finisher)
 					finisher_buffer += 15;
 				input_attack_buffer = 0;
-				state = 43;
+				state = states.lungeattack;
 				randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
 				image_index = 0;
 			}
@@ -106,7 +106,7 @@ function DoFinisher()
 	hit_connected = false;
 	if (key_up)
 	{
-		state = 80;
+		state = states.punch;
 		movespeed = 6;
 		image_index = 0;
 		sprite_index = spr_player_breakdanceuppercut;
@@ -117,7 +117,7 @@ function DoFinisher()
 	}
 	else if ((key_left + key_right) == xscale)
 	{
-		state = 80;
+		state = states.punch;
 		sprite_index = spr_player_lungehit;
 		image_index = 0;
 		movespeed = 14;
@@ -133,12 +133,12 @@ function DoFinisher()
 		machhitAnim = false;
 		state = 5;
 		movespeed = 4;
-		state = 5;
+		state = states.tumble;
 		vsp = 10;
 	}
 	else
 	{
-		state = 80;
+		state = states.punch;
 		sprite_index = spr_player_lungehit;
 		image_index = 0;
 		movespeed = 14;

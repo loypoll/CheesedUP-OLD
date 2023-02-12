@@ -8,7 +8,7 @@ switch (state)
 	case 130:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		scr_enemy_walk();
 		break;
 	case 136:

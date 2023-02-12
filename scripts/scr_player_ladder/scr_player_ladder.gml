@@ -50,7 +50,7 @@ function scr_player_ladder()
 	{
 		landAnim = false;
 		jumpAnim = false;
-		state = 0;
+		state = states.normal;
 		image_index = 0;
 		if (!hooked && vsp < 0)
 		{
@@ -82,7 +82,7 @@ function scr_player_ladder()
 		if (place_meeting(x, y, obj_hookup))
 			ladderbuffer = 30;
 		jumpAnim = true;
-		state = 92;
+		state = states.jump;
 		if (key_down)
 			vsp = 5;
 		else
@@ -91,7 +91,7 @@ function scr_player_ladder()
 	}
 	if (key_down && grounded && !place_meeting(x, y, obj_platform))
 	{
-		state = 0;
+		state = states.normal;
 		image_index = 0;
 	}
 }

@@ -9,7 +9,7 @@ switch (state)
 	case 130:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		x = -200;
 		y = -200;
 		if (!instance_exists(obj_pf_fakepepgianthead))
@@ -90,7 +90,7 @@ switch (state)
 	case 154:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
 	case 125:

@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 134:
+	case states.walk:
 		scr_enemy_walk();
 		if ((sprite_index == spr_clownmato_land || sprite_index == spr_clownmato_bounce) && floor(image_index) == (image_number - 1))
 		{

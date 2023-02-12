@@ -26,7 +26,7 @@ function scr_player_ratmountjump()
 			if (_bump)
 			{
 				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-				state = 106;
+				state = states.bump;
 				if (brick)
 					sprite_index = spr_player_ratmountbump;
 				else
@@ -118,7 +118,7 @@ function scr_player_ratmountjump()
 		}
 		brick = false;
 		movespeed = hsp;
-		state = 197;
+		state = states.ratmountgroundpound;
 		image_index = 0;
 		sprite_index = spr_lonegustavo_groundpoundstart;
 	}
@@ -138,7 +138,7 @@ function scr_player_ratmountjump()
 				wait = true;
 		}
 		brick = false;
-		state = 259;
+		state = states.ratmountpunch;
 		gustavohitwall = false;
 		ratmountpunchtimer = 25;
 		image_index = 0;
@@ -168,14 +168,14 @@ function scr_player_ratmountjump()
 			sprite_index = spr_player_ratmountgroundpound;
 		image_index = 0;
 		jumpAnim = true;
-		state = 192;
+		state = states.ratmountjump;
 		vsp = -11;
 		jumpstop = false;
 	}
 	if (key_jump && brick && bounce)
 	{
 		GamepadSetVibration(0, 0.8, 0.65);
-		state = 198;
+		state = states.ratmountbounce;
 		instance_create(x, y, obj_highjumpcloud2);
 		sprite_index = spr_player_ratmountwalljump;
 		image_index = 0;
@@ -185,7 +185,7 @@ function scr_player_ratmountjump()
 	{
 		doublejump = false;
 		create_particle(x, y, particle.landcloud, 0);
-		state = 191;
+		state = states.ratmount;
 		landAnim = true;
 		jumpstop = false;
 		if (brick && !key_attack)

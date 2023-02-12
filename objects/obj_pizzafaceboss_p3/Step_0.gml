@@ -11,10 +11,10 @@ switch (state)
 	case 135:
 		scr_pizzaface_p3_fall();
 		break;
-	case 155:
+	case states.staggered:
 		scr_pizzaface_p3_staggered();
 		break;
-	case 134:
+	case states.walk:
 		scr_pizzaface_p3_walk();
 		break;
 	case 288:

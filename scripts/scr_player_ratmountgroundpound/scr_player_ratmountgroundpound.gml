@@ -54,7 +54,7 @@ function scr_player_ratmountgroundpound()
 				with (instance_place(x, y + 1, obj_slope))
 				{
 					other.xscale = -sign(image_xscale);
-					other.state = 191;
+					other.state = states.ratmount;
 					other.movespeed = other.xscale * 8;
 					with (instance_create(other.x, other.y, obj_jumpdust))
 						image_xscale = -sign(other.image_xscale);
@@ -80,7 +80,7 @@ function scr_player_ratmountgroundpound()
 					{
 						if (shakestun && grounded && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0 && !invincible && groundpound)
 						{
-							state = 138;
+							state = states.stun;
 							if (stunned < 60)
 								stunned = 60;
 							vsp = -11;
@@ -106,7 +106,7 @@ function scr_player_ratmountgroundpound()
 		if (sign(hsp) != 0)
 			xscale = sign(hsp);
 		sprite_index = spr_lonegustavo_idle;
-		state = 191;
+		state = states.ratmount;
 	}
 	if ((sprite_index == spr_lonegustavo_kick || sprite_index == spr_lonegustavo_jumpstart) && floor(image_index) == (image_number - 1))
 	{
@@ -116,7 +116,7 @@ function scr_player_ratmountgroundpound()
 			sprite_index = spr_player_ratmountgroundpoundfall;
 		else
 			sprite_index = spr_lonegustavo_jump;
-		state = 191;
+		state = states.ratmount;
 	}
 	image_speed = 0.35;
 	if (punch_afterimage > 0)

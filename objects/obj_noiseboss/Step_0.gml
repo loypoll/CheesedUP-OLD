@@ -9,7 +9,7 @@ switch (state)
 	case 144:
 		scr_noise_arenaintro();
 		break;
-	case 134:
+	case states.walk:
 		scr_noise_walk();
 		break;
 	case 104:
@@ -87,7 +87,7 @@ switch (state)
 	case 154:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
 }

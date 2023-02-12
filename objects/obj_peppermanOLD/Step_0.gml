@@ -85,7 +85,7 @@ switch (state)
 		grav = 0.5;
 		boss_pepperman_shoulderturn();
 		break;
-	case 134:
+	case states.walk:
 		grav = 0.5;
 		state_boss_walk(boss_pepperman_decide_attack);
 		invincible = true;

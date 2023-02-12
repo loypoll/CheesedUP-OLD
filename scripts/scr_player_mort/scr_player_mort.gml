@@ -58,13 +58,13 @@ function scr_player_mort()
 	}
 	if (!grounded)
 	{
-		state = 12;
+		state = states.mortjump;
 		sprite_index = spr_player_mortjump;
 	}
 	else if (input_buffer_jump > 0)
 	{
 		input_buffer_jump = 0;
-		state = 12;
+		state = states.mortjump;
 		doublejump = false;
 		vsp = -11;
 		sprite_index = spr_player_mortjumpstart;
@@ -79,7 +79,7 @@ function mort_attack()
 	if (input_buffer_slap > 0)
 	{
 		input_buffer_slap = 0;
-		state = 13;
+		state = states.mortattack;
 		sprite_index = spr_player_mortattackfront;
 		image_index = 0;
 		if (move != 0)

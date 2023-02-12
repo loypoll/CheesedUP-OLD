@@ -14,7 +14,7 @@ switch (state)
 		grav = 0.5;
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		grav = 0.5;
 		scr_enemy_walk();
 		break;

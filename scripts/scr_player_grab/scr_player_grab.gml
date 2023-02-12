@@ -183,7 +183,7 @@ function scr_player_grab()
 			move = xscale;
 		hsp = xscale * movespeed;
 		movespeed = hsp;
-		state = 6;
+		state = states.finishingblow;
 		if (!key_up)
 			sprite_index = choose(spr_finishingblow1, spr_finishingblow2, spr_finishingblow3, spr_finishingblow4, spr_finishingblow5);
 		else if (key_up)
@@ -200,7 +200,7 @@ function scr_player_grab()
 		hsp = xscale * movespeed;
 		swingdingendcooldown = 0;
 		swingdingthrow = false;
-		state = 6;
+		state = states.finishingblow;
 		sprite_index = spr_swingdingend;
 		image_index = 0;
 	}
@@ -209,7 +209,7 @@ function scr_player_grab()
 		sprite_index = spr_piledriver;
 		dir = xscale;
 		vsp = -5;
-		state = 76;
+		state = states.superslam;
 		image_index = 0;
 		image_speed = 0.35;
 	}
@@ -217,7 +217,7 @@ function scr_player_grab()
 		instance_create(x, y + 43, obj_cloudeffect);
 	if ((key_down && grounded) && sprite_index != spr_swingding && sprite_index != spr_swingdingend)
 	{
-		state = 100;
+		state = states.crouch;
 		landAnim = false;
 		crouchAnim = true;
 		image_index = 0;
@@ -235,7 +235,7 @@ function scr_player_grab()
 		image_speed = 0.5;
 	if (grabbingenemy && !instance_exists(baddiegrabbedID))
 	{
-		state = 0;
+		state = states.normal;
 		landAnim = false;
 		image_index = 0;
 	}

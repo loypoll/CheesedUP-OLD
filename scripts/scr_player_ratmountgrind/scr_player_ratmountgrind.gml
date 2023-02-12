@@ -36,13 +36,13 @@ function scr_player_ratmountgrind()
 	ds_list_clear(global.instancelist);
 	if (!place_meeting(x, y, obj_grindrail) && !place_meeting(x, y, obj_grindrailslope))
 	{
-		state = 192;
+		state = states.ratmountjump;
 		sprite_index = spr_player_ratmountgroundpoundfall;
 	}
 	if (input_buffer_jump > 0)
 	{
 		input_buffer_jump = 0;
-		state = 192;
+		state = states.ratmountjump;
 		if (key_down)
 		{
 			sprite_index = spr_player_ratmountgroundpoundfall;

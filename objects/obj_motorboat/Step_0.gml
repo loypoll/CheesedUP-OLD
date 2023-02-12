@@ -20,7 +20,7 @@ switch (state)
 			}
 		}
 		break;
-	case 134:
+	case states.walk:
 		x += (dir * 5);
 		playerid.x = x + playerxoffset;
 		playerid.hsp = 0;

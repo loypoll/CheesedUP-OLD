@@ -65,7 +65,7 @@ switch (state)
 		grav = 0.5;
 		boss_noise_jetpackspin();
 		break;
-	case 134:
+	case states.walk:
 		grav = 0.5;
 		state_boss_walk(boss_noise_do_attack);
 		inv_timer = 2;
