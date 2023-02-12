@@ -17,7 +17,7 @@ switch (state)
 	case 262:
 		scr_pizzaface_p3_supergrab();
 		break;
-	case 92:
+	case states.jump:
 		scr_pizzaface_p3_jump();
 		break;
 }

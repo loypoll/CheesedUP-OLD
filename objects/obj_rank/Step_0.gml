@@ -71,7 +71,7 @@ if (brown)
 	brownfade = Approach(brownfade, 1, 0.07);
 	switch (toppin_state)
 	{
-		case 92:
+		case states.jump:
 			if (brownfade < 1)
 				break;
 			else

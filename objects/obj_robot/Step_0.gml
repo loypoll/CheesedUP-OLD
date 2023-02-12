@@ -16,16 +16,16 @@ switch (state)
 	case 136:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
 	case 129:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
 	case 103:
@@ -42,7 +42,7 @@ switch (state)
 			state = 104;
 		}
 		break;
-	case 104:
+	case states.mach2:
 		hsp = Approach(hsp, image_xscale * machspeed, 0.5) + railmovespeed;
 		if (place_meeting(x, y + 1, obj_railparent))
 		{

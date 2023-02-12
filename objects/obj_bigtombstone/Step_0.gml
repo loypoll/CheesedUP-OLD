@@ -30,7 +30,7 @@ switch (state)
 					substate = 92;
 				}
 				break;
-			case 92:
+			case states.jump:
 				if (key_jump)
 					playerid.input_buffer_jump = 0;
 				if (grounded)
@@ -42,7 +42,7 @@ switch (state)
 					hsp = 0;
 				}
 				break;
-			case 108:
+			case states.freefall:
 				instance_destroy(instance_place(x, y + vsp, obj_metalblock));
 				with (obj_destructibles)
 				{

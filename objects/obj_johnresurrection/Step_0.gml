@@ -78,7 +78,7 @@ if (!fadein)
 					other.fadein = true;
 			}
 			break;
-		case 4:
+		case states.grabbed:
 			with (obj_johnresurrection_peppino)
 			{
 				if (!fmod_event_instance_is_playing(other.snd))

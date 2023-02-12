@@ -95,7 +95,7 @@ function scr_pizzaface_p3_arenaintro()
 				}
 			}
 			break;
-		case 92:
+		case states.jump:
 			if (floor(image_index) >= 50)
 			{
 				if (x != obj_player1.x)
@@ -206,7 +206,7 @@ function scr_pizzaface_p3_walk()
 				currentattack = 0;
 			switch (attack)
 			{
-				case 4:
+				case states.grabbed:
 					laugh = cooldown;
 					fmod_event_one_shot("event:/sfx/voice/pizzahead");
 					vulnerable_buffer = laugh;

@@ -12,13 +12,13 @@ switch (state)
 	case states.walk:
 		scr_noise_walk();
 		break;
-	case 104:
+	case states.mach2:
 		scr_noise_mach2();
 		break;
 	case 105:
 		scr_noise_machslide();
 		break;
-	case 92:
+	case states.jump:
 		scr_noise_jump();
 		break;
 	case 170:
@@ -45,7 +45,7 @@ switch (state)
 	case 148:
 		scr_noise_golf();
 		break;
-	case 108:
+	case states.freefall:
 		scr_noise_freefall();
 		break;
 	case 283:
@@ -69,22 +69,22 @@ switch (state)
 	case 289:
 		scr_noise_finale();
 		break;
-	case 298:
+	case states.boss_KO:
 		scr_boss_pizzaheadKO();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_boss_grabbed();
 		break;
-	case 294:
+	case states.pizzaheadjump:
 		scr_boss_pizzaheadjump();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
 	case states.staggered:

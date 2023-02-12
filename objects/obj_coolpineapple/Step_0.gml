@@ -22,11 +22,11 @@ switch (state)
 		grav = 0.5;
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		grav = 0.5;
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		grav = 0.5;
 		scr_enemy_stun();
 		break;
@@ -34,7 +34,7 @@ switch (state)
 		grav = 0.5;
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		grav = 0.5;
 		scr_enemy_grabbed();
 		break;
@@ -92,7 +92,7 @@ if (state != 84 && instance_exists(taunteffect_inst))
 	instance_destroy(taunteffect_inst);
 switch (state)
 {
-	case 84:
+	case states.backbreaker:
 		image_speed = 0;
 		image_index = index;
 		hsp = 0;

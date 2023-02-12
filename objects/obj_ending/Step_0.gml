@@ -136,7 +136,7 @@ switch (state)
 			}
 		}
 		break;
-	case 4:
+	case states.grabbed:
 		fade = Approach(fade, 2, 0.05);
 		if (fade >= 2)
 		{

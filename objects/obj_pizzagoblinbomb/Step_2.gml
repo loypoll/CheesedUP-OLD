@@ -37,7 +37,7 @@ switch (state)
 			vsp += grav;
 		scr_collide();
 		break;
-	case 4:
+	case states.grabbed:
 		grounded = false;
 		x = playerid.x + (-playerid.xscale * 6);
 		y = playerid.y - 55;

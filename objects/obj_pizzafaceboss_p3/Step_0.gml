@@ -23,10 +23,10 @@ switch (state)
 	case 80:
 		scr_pizzaface_p3_punch();
 		break;
-	case 92:
+	case states.jump:
 		scr_pizzaface_p3_jump();
 		break;
-	case 74:
+	case states.throwing:
 		scr_pizzaface_p3_throwing();
 		break;
 	case 287:
@@ -35,19 +35,19 @@ switch (state)
 	case 289:
 		scr_pizzaface_p3_finale();
 		break;
-	case 294:
+	case states.pizzaheadjump:
 		scr_boss_pizzaheadjump();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_boss_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
 }

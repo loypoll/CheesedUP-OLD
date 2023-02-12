@@ -15,7 +15,7 @@ switch (phase)
 		normal_func = boss_pepperman_normal;
 		break;
 	case 3:
-	case 4:
+	case states.grabbed:
 	case 5:
 	case 6:
 		normal_func = boss_pepperman_phase3normal;
@@ -31,13 +31,13 @@ switch (state)
 		grav = 0.5;
 		normal_func();
 		break;
-	case 92:
+	case states.jump:
 		grav = 0.5;
 		boss_pepperman_jump();
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 108:
+	case states.freefall:
 		grav = 0.5;
 		boss_pepperman_freefall();
 		break;
@@ -101,7 +101,7 @@ switch (state)
 		grav = 0.5;
 		state_boss_chainsaw();
 		break;
-	case 84:
+	case states.backbreaker:
 		grav = 0.5;
 		state_boss_taunt();
 		invincible = true;
@@ -113,12 +113,12 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 137:
+	case states.hit:
 		grav = 0.5;
 		scr_enemy_hit();
 		stunned = targetstunned;
 		break;
-	case 138:
+	case states.stun:
 		grav = 0.5;
 		state_boss_stun();
 		break;

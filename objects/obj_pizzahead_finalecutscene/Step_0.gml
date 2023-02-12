@@ -2,7 +2,7 @@ with (obj_player2)
 	state = 18;
 switch (state)
 {
-	case 92:
+	case states.jump:
 		if (room != boss_pizzafacefinale && vsp < 0)
 			y += vsp;
 		vsp = Approach(vsp, -10, 0.1);
@@ -172,7 +172,7 @@ switch (state)
 			image_speed = 0.35;
 		}
 		break;
-	case 137:
+	case states.hit:
 		x = hitX + irandom_range(-4, 4);
 		y = hitY + irandom_range(-4, 4);
 		if (hitLag > 0)
@@ -204,7 +204,7 @@ switch (state)
 			case 3:
 				pizzahead_x = -5;
 				break;
-			case 4:
+			case states.grabbed:
 				pizzahead_x = -10;
 				break;
 			case 5:

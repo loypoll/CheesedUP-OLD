@@ -18,7 +18,7 @@ switch (state)
 	case 269:
 		scr_vigilante_reloading();
 		break;
-	case 104:
+	case states.mach2:
 		scr_vigilante_mach2();
 		break;
 	case 102:
@@ -27,7 +27,7 @@ switch (state)
 	case 2:
 		scr_vigilante_dynamite();
 		break;
-	case 74:
+	case states.throwing:
 		scr_vigilante_throwing();
 		break;
 	case 270:
@@ -42,7 +42,7 @@ switch (state)
 	case 80:
 		scr_vigilante_punch();
 		break;
-	case 92:
+	case states.jump:
 		scr_vigilante_jump();
 		break;
 	case 278:
@@ -60,22 +60,22 @@ switch (state)
 	case 282:
 		scr_vigilante_crate();
 		break;
-	case 294:
+	case states.pizzaheadjump:
 		scr_boss_pizzaheadjump();
 		break;
-	case 298:
+	case states.boss_KO:
 		scr_boss_pizzaheadKO();
 		break;
-	case 137:
+	case states.hit:
 		scr_vigilante_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_boss_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
 	case states.staggered:

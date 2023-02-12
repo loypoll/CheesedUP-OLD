@@ -14,16 +14,16 @@ switch (state)
 	case 136:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
 	case states.staggered:
@@ -35,7 +35,7 @@ switch (state)
 	case 17:
 		scr_enemy_ghostpossess();
 		break;
-	case 294:
+	case states.pizzaheadjump:
 		scr_enemy_pizzaheadjump();
 		break;
 	case 106:

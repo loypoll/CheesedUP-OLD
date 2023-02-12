@@ -17,7 +17,7 @@ switch (state)
 	case 136:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_pizzaball_hit();
 		break;
 	case 148:
@@ -26,7 +26,7 @@ switch (state)
 	case 156:
 		scr_pizzaball_thrown();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		if (stunned > 0)
 			stunned -= 1;
@@ -34,10 +34,10 @@ switch (state)
 	case 129:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_pizzaball_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
 	case states.staggered:

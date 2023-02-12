@@ -14,7 +14,7 @@ switch (state)
 			vsp = -jumpspeed;
 		}
 		break;
-	case 138:
+	case states.stun:
 		sprite_index = stunspr;
 		if (grounded)
 			hsp = 0;

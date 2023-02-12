@@ -15,10 +15,10 @@ switch (state)
 	case 153:
 		scr_pepperman_shoulderbash();
 		break;
-	case 92:
+	case states.jump:
 		scr_pepperman_jump();
 		break;
-	case 108:
+	case states.freefall:
 		scr_pepperman_freefall();
 		break;
 	case 122:
@@ -42,16 +42,16 @@ switch (state)
 	case 273:
 		scr_pepperman_phase1hurt();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_boss_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
 	case states.staggered:

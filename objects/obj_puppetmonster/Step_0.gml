@@ -35,7 +35,7 @@ switch (state)
 						substate = 92;
 				}
 				break;
-			case 92:
+			case states.jump:
 				yy -= 3;
 				if (yy < -100)
 				{

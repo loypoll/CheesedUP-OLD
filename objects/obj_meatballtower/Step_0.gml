@@ -15,7 +15,7 @@ switch (state)
 				image_xscale = sign(obj_player1.x - x);
 		}
 		break;
-	case 92:
+	case states.jump:
 		if (grounded && vsp > 0)
 			state = 0;
 		break;

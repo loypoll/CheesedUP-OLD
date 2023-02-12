@@ -31,7 +31,7 @@ function boss_mrstick_decide_attack()
 				movespeed = 10;
 				target_x = (x > (room_width / 2)) ? (room_width / 7) : (room_width - (room_width / 7));
 				break;
-			case 92:
+			case states.jump:
 				image_xscale = (x > (room_width / 2)) ? 1 : -1;
 				movespeed = 12;
 				vsp = -11;

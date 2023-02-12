@@ -56,7 +56,7 @@ switch (state)
 			}
 		}
 		break;
-	case 84:
+	case states.backbreaker:
 		sprite_index = tauntspr;
 		if (obj_player.state != 84)
 		{

@@ -27,7 +27,7 @@ switch (state)
 		}
 		scr_collide();
 		break;
-	case 138:
+	case states.stun:
 		if (stunned > 0)
 			stunned--;
 		else if (grounded)

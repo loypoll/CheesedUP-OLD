@@ -178,7 +178,7 @@ function scr_tv_get_transfo_sprite()
 				_spr = spr_tv_squished;
 			break;
 		case 0:
-		case 92:
+		case states.jump:
 		case 42:
 		case 100:
 		case 93:
@@ -194,7 +194,7 @@ function scr_tv_get_transfo_sprite()
 			}
 			break;
 		case 122:
-		case 108:
+		case states.freefall:
 		case 111:
 			if (obj_player1.shotgunAnim)
 				_spr = spr_tv_shotgun;
@@ -249,7 +249,7 @@ function scr_tv_get_transfo_sprite()
 		case 12:
 			_spr = spr_tv_mort;
 			break;
-		case 104:
+		case states.mach2:
 		case 37:
 		case 65:
 		case 78:

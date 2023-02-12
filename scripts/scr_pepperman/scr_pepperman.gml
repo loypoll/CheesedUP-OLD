@@ -624,7 +624,7 @@ function scr_pepperman_mini()
 				hsp = 0;
 			}
 			break;
-		case 92:
+		case states.jump:
 			hsp = image_xscale * attackspeed;
 			if (floor(image_index) == (image_number - 1) && sprite_index == spr_pepperman_minijump)
 				sprite_index = spr_pepperman_minifall;

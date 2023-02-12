@@ -369,7 +369,7 @@ function scr_vigilante_walk()
 				if (sprite_index != spr_playerV_revolverend)
 					sprite_index = spr_playerV_idle;
 				break;
-			case 4:
+			case states.grabbed:
 				state = 279;
 				if (targetplayer.x != x)
 					image_xscale = sign(targetplayer.x - x);

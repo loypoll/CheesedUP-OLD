@@ -1,8 +1,8 @@
 with (create_red_afterimage(x, y, sprite_index, image_index - 1, image_xscale))
 {
 	playerid = other.id;
-	if (other.state == 276)
+	if (other.state == states.boss_grabdash)
 		identifier = 7;
 }
-if (state == 125)
+if (state == states.rage)
 	alarm[4] = 5;

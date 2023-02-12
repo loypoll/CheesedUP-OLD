@@ -97,7 +97,7 @@ function scr_pizzaface_p2_fall()
 	}
 	switch (substate)
 	{
-		case 92:
+		case states.jump:
 			vsp = 0;
 			y -= 18;
 			if (y < -600)
@@ -339,7 +339,7 @@ function scr_pizzaface_p2_fishing()
 					substate = 268;
 					attackbuffer = 1;
 					break;
-				case 4:
+				case states.grabbed:
 					sprite_index = spr_pizzahead_pinup;
 					image_index = 0;
 					state = 293;
@@ -602,7 +602,7 @@ function boss_pizzahead_shotgun()
 				}
 			}
 			break;
-		case 74:
+		case states.throwing:
 			if (floor(image_index) == (image_number - 1))
 			{
 				if (sprite_index == spr_pizzahead_grabbox)

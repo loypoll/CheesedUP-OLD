@@ -14,7 +14,7 @@ switch (state)
 			alarm[0] = 50;
 		}
 		break;
-	case 74:
+	case states.throwing:
 		if (floor(image_index) == (image_number - 1))
 			image_index = image_number - 1;
 		if (floor(image_index) >= 3)
@@ -42,7 +42,7 @@ switch (state)
 			scr_ghostcollectible(true);
 		}
 		break;
-	case 92:
+	case states.jump:
 		movespeed += 0.25;
 		y -= movespeed;
 		if (y < -500)

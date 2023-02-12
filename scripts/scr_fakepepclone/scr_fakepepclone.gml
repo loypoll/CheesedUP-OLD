@@ -101,7 +101,7 @@ function scr_fakepepclone_walk()
 						machcooldown = 330;
 					cooldown = attack.cooldown;
 					break;
-				case 4:
+				case states.grabbed:
 					state = 74;
 					hsp = 0;
 					if (!throwing)

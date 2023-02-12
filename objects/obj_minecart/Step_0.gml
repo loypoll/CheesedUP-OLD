@@ -54,7 +54,7 @@ switch (state)
 				if (!place_meeting(x, y, obj_minecart_rail))
 					_destroy = true;
 				break;
-			case 92:
+			case states.jump:
 				hsp = xscale * movespeed;
 				if (place_meeting(x + sign(hsp), y, obj_solid))
 					movespeed = 0;

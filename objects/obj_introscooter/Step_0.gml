@@ -55,7 +55,7 @@ switch (state)
 			}
 		}
 		break;
-	case 4:
+	case states.grabbed:
 		fade = Approach(fade, 0, 0.05);
 		if (introbuffer > 0)
 			introbuffer--;

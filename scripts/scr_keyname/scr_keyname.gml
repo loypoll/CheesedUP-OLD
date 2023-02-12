@@ -137,7 +137,7 @@ function scr_keyname()
 		case 103:
 			return "NUMPAD 7";
 			break;
-		case 104:
+		case states.mach2:
 			return "NUMPAD 8";
 			break;
 		case 105:
@@ -272,7 +272,7 @@ function scr_keyname()
 		case 73:
 			return "I";
 			break;
-		case 74:
+		case states.throwing:
 			return "J";
 			break;
 		case 75:
@@ -302,7 +302,7 @@ function scr_keyname()
 		case 83:
 			return "S";
 			break;
-		case 84:
+		case states.backbreaker:
 			return "T";
 			break;
 		case 85:
@@ -326,7 +326,7 @@ function scr_keyname()
 		case 91:
 			return "LEXPLR";
 			break;
-		case 92:
+		case states.jump:
 			return "REXPLR";
 			break;
 		case 96:
@@ -353,7 +353,7 @@ function scr_keyname()
 		case 103:
 			return "NUMPAD 7";
 			break;
-		case 104:
+		case states.mach2:
 			return "NUMPAD 8";
 			break;
 		case 105:

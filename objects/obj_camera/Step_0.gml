@@ -230,7 +230,7 @@ if (instance_exists(player) && !lock && player.state != 64 && player.state != 89
 				cam_y += ((cam_height - room_height) / 2);
 			camera_set_view_pos(view_camera[0], cam_x, cam_y + irandom_range(-shake_mag, shake_mag));
 			break;
-		case 299:
+		case states.camera_followtarget:
 			cam_width = camera_get_view_width(view_camera[0]);
 			cam_height = camera_get_view_height(view_camera[0]);
 			tx = followtarget.x;

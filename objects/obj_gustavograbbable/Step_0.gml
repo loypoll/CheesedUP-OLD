@@ -27,10 +27,10 @@ switch (state)
 	case 136:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		if (sprite_index == spr_dead)
 			sprite_index = spr_lonegustavo_dashjump;
@@ -38,13 +38,13 @@ switch (state)
 	case 129:
 		scr_pizzagoblin_throw();
 		break;
-	case 294:
+	case states.pizzaheadjump:
 		scr_boss_pizzaheadjump();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
 	case states.staggered:

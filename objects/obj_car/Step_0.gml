@@ -39,7 +39,7 @@ switch (state)
 			}
 		}
 		break;
-	case 137:
+	case states.hit:
 		x = hitX + irandom_range(-1, 1);
 		y = hitY + irandom_range(-1, 1);
 		if (hitLag > 0)

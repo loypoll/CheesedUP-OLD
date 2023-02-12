@@ -12,7 +12,7 @@ switch (state)
 			gerome_index = 0;
 		}
 		break;
-	case 92:
+	case states.jump:
 		cliff_index = 0;
 		peppino_y = Approach(peppino_y, 0, 1);
 		peppino_x = peppino_xstart + irandom_range(-1, 1);

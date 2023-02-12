@@ -26,7 +26,7 @@ switch (state)
 		grav = 0.5;
 		boss_mrstick_panicjump();
 		break;
-	case 92:
+	case states.jump:
 		grav = 0.5;
 		boss_mrstick_jump();
 		break;
@@ -64,7 +64,7 @@ switch (state)
 		grav = 0.5;
 		state_boss_chainsaw();
 		break;
-	case 84:
+	case states.backbreaker:
 		grav = 0.5;
 		state_boss_taunt();
 		invincible = true;
@@ -76,12 +76,12 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 137:
+	case states.hit:
 		grav = 0.5;
 		scr_enemy_hit();
 		stunned = targetstunned;
 		break;
-	case 138:
+	case states.stun:
 		grav = 0.5;
 		state_boss_stun();
 		break;

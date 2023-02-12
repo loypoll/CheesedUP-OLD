@@ -45,7 +45,7 @@ if (drop && global.panic)
 				dropstate = 4;
 			}
 			break;
-		case 4:
+		case states.grabbed:
 			depth = 150;
 			var _ty = drop_y - 100;
 			y = Approach(y, _ty, 3);

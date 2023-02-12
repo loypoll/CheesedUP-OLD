@@ -44,7 +44,7 @@ switch (state)
 						case 3:
 							fakepep_add_flailingclone(0, 0, choose(-1, 1), 45);
 							break;
-						case 4:
+						case states.grabbed:
 							fakepep_add_tauntclones(0, 0, -12, -14, 80);
 							break;
 						default:
@@ -75,19 +75,19 @@ switch (state)
 	case 136:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
 	case 129:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_boss_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
 	case states.staggered:

@@ -23,7 +23,7 @@ switch (state)
 			}
 		}
 		break;
-	case 92:
+	case states.jump:
 		y = Approach(y, ystart, 2);
 		if (y == ystart)
 			state = 0;

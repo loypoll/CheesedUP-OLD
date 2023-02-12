@@ -47,7 +47,7 @@ function noise_do_attack_normal()
 			sprite_index = spr_playerN_spin;
 			image_index = 0;
 			break;
-		case 92:
+		case states.jump:
 			slidejump = 1;
 			movespeed = 6;
 			vsp = -11;
@@ -72,7 +72,7 @@ function noise_do_attack_normal()
 			sprite_index = spr_playerN_noisebombkick;
 			image_index = 0;
 			break;
-		case 74:
+		case states.throwing:
 			sprite_index = spr_playerN_noisebombthrow;
 			image_index = 0;
 			with (instance_create(x, y, obj_noisebossbomb))
@@ -133,7 +133,7 @@ function noise_do_attack_angry()
 			sprite_index = spr_playerN_spin;
 			image_index = 0;
 			break;
-		case 92:
+		case states.jump:
 			spinskateboard = false;
 			slidejump = 1;
 			slideskateboard = true;
@@ -171,7 +171,7 @@ function noise_do_attack_angry()
 			sprite_index = spr_playerN_noisebombkick;
 			image_index = 0;
 			break;
-		case 74:
+		case states.throwing:
 			bombcount = 1;
 			sprite_index = spr_playerN_noisebombthrow;
 			image_index = 0;

@@ -29,7 +29,7 @@ if (important && honor && nexthonor && phase > 3 && state != 160)
 }
 switch (phase)
 {
-	case 4:
+	case states.grabbed:
 	case 5:
 	case 6:
 		normal_func = boss_vigilante_normal_phase4;
@@ -72,7 +72,7 @@ switch (state)
 		grav = 0.5;
 		state_boss_bump();
 		break;
-	case 92:
+	case states.jump:
 		grav = 0.5;
 		boss_vigilante_jump();
 		break;
@@ -96,7 +96,7 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_freefallprep();
 		break;
-	case 108:
+	case states.freefall:
 		grav = 0.5;
 		boss_vigilante_freefall();
 		break;
@@ -134,7 +134,7 @@ switch (state)
 		grav = 0.5;
 		state_boss_chainsaw();
 		break;
-	case 84:
+	case states.backbreaker:
 		grav = 0.5;
 		state_boss_taunt();
 		invincible = true;
@@ -147,12 +147,12 @@ switch (state)
 		inv_timer = 2;
 		normalattack_cooldown = normalattack_max[phase - 1];
 		break;
-	case 137:
+	case states.hit:
 		grav = 0.5;
 		scr_enemy_hit();
 		stunned = targetstunned;
 		break;
-	case 138:
+	case states.stun:
 		grav = 0.5;
 		state_boss_stun();
 		break;

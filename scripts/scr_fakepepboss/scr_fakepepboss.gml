@@ -228,7 +228,7 @@ function scr_fakepepboss_do_projectiles()
 				deformed_cooldown = 0;
 			}
 			break;
-		case 4:
+		case states.grabbed:
 			xx = _attack.x1;
 			if (_attack.direction == -1)
 				xx = _attack.x2;
@@ -424,7 +424,7 @@ function scr_fakepepboss_walk()
 					sprite_index = spr_fakepeppino_superjumpstart;
 					image_index = 0;
 					break;
-				case 4:
+				case states.grabbed:
 					if (ix != 0)
 						image_xscale = ix;
 					attackspeed = 0;

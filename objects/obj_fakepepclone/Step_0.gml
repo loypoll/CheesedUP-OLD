@@ -2,41 +2,41 @@ targetplayer = obj_player1.id;
 mask_index = spr_player_mask;
 switch (state)
 {
-	case 8:
+	case states.transition:
 		scr_fakepepclone_transitioncutscene();
 		break;
 	case states.walk:
 		scr_fakepepclone_walk();
 		break;
-	case 276:
+	case states.boss_grabdash:
 		scr_fakepepboss_grabdash();
 		break;
-	case 277:
+	case states.boss_grabthrow:
 		scr_fakepepboss_grabthrow();
 		break;
-	case 92:
+	case states.jump:
 		scr_fakepepboss_jump();
 		break;
-	case 108:
+	case states.freefall:
 		scr_fakepepboss_freefall();
 		break;
-	case 104:
+	case states.mach2:
 		scr_fakepepboss_mach2();
 		break;
-	case 99:
+	case states.Sjumpprep:
 		scr_fakepepclone_Sjumpprep();
 		break;
-	case 97:
+	case states.Sjump:
 		scr_fakepepclone_Sjump();
 		break;
-	case 74:
+	case states.throwing:
 		scr_fakepepclone_throwing();
 		break;
-	case 84:
+	case states.backbreaker:
 		scr_fakepepboss_backbreaker();
 		break;
 }
-if (state == 97)
+if (state == states.Sjump)
 {
 	if (!instance_exists(hitboxID))
 	{
@@ -48,13 +48,13 @@ if (state == 97)
 		}
 	}
 }
-if ((state == 276 || (state == 104 && attackspeed >= 10) || (state == 74 && sprite_index == spr_fakepeppino_flailing) || state == 108) && alarm[0] == -1)
+if ((state == states.boss_grabdash || (state == states.mach2 && attackspeed >= 10) || (state == states.throwing && sprite_index == spr_fakepeppino_flailing) || state == states.freefall) && alarm[0] == -1)
 {
 	alarm[0] = 10;
-	if (state == 108)
+	if (state == states.freefall)
 		alarm[0] = 5;
 }
-if (state == 92)
+if (state == states.jump)
 	grav = 0.4;
 else
 	grav = 0.5;

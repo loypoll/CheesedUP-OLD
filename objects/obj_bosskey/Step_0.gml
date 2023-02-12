@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 92:
+	case states.jump:
 		y += vsp;
 		if (vsp < 20)
 			vsp += grav;

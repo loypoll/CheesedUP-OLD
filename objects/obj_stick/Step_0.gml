@@ -86,7 +86,7 @@ switch (state)
 			}
 		}
 		break;
-	case 92:
+	case states.jump:
 		if (shot)
 		{
 			with (obj_player1)

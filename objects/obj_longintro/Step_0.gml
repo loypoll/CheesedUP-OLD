@@ -140,7 +140,7 @@ switch (scene)
 			scene++;
 		}
 		break;
-	case 4:
+	case states.grabbed:
 		pizzaface.y = lerp(pizzaface.y, 0, 0.04);
 		if (_switch && floor(pizzaface.y) <= 1)
 		{

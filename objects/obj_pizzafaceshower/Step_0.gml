@@ -66,7 +66,7 @@ switch (state)
 					depth = 5;
 				}
 				break;
-			case 92:
+			case states.jump:
 				movespeed = Approach(movespeed, 0, 0.2);
 				vsp = Approach(vsp, -15, 0.1);
 				x += movespeed;

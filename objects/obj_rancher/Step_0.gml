@@ -17,16 +17,16 @@ switch (state)
 	case 136:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
 	case 129:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
 }

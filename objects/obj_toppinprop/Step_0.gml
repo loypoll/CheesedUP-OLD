@@ -29,7 +29,7 @@ switch (state)
 		sprite_index = idlespr;
 		hsp = 0;
 		break;
-	case 84:
+	case states.backbreaker:
 		hsp = 0;
 		vsp = 0;
 		if (obj_player1.state != 84)

@@ -66,7 +66,7 @@ switch (introstate)
 			introstate++;
 		}
 		break;
-	case 4:
+	case states.grabbed:
 		with (obj_player)
 		{
 			if (floor(image_index) == (image_number - 1) && sprite_index != spr_player_gnomecutscene1)

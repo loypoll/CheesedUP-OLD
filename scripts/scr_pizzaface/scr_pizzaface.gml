@@ -127,7 +127,7 @@ function scr_pizzaface_arenaintro()
 					}
 				}
 				break;
-			case 4:
+			case states.grabbed:
 				with (obj_player1)
 				{
 					if (floor(image_index) == (image_number - 1))
@@ -394,7 +394,7 @@ function scr_pizzaface_ram()
 				y = hitY;
 			}
 			break;
-		case 92:
+		case states.jump:
 			if (floor(image_index) == (image_number - 1))
 				image_index = image_number - 1;
 			if (vsp > 0)
@@ -458,7 +458,7 @@ function scr_pizzaface_transitioncutscene()
 				fmod_event_one_shot_3d("event:/sfx/pizzaface/open", x, y);
 			}
 			break;
-		case 137:
+		case states.hit:
 			if (floor(image_index) == (image_number - 1))
 			{
 				fmod_event_one_shot_3d("event:/sfx/misc/explosion", x, y);

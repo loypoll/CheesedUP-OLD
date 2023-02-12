@@ -54,7 +54,7 @@ switch (global.boxhp)
 		getoutspd = 80;
 		outtimespd = 80;
 		break;
-	case 4:
+	case states.grabbed:
 		getoutspd = 80;
 		outtimespd = 80;
 		break;
@@ -240,7 +240,7 @@ switch (character)
 		downspr = spr_slimepresentdown;
 		deadspr = spr_slimepresentdead;
 		break;
-	case 4:
+	case states.grabbed:
 		upspr = spr_stickpresentup;
 		spr = spr_stickpresent;
 		downspr = spr_stickpresentdown;

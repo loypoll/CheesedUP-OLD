@@ -96,7 +96,7 @@ if (obj_player.state != 89)
 	var perc = 0;
 	switch (rank_ix)
 	{
-		case 4:
+		case states.grabbed:
 			perc = 1;
 			break;
 		case 3:
