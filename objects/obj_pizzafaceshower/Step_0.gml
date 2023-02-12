@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 126:
+	case states.idle:
 		if (start && distance_to_object(obj_player) <= 150)
 		{
 			state = 146;
@@ -22,7 +22,7 @@ switch (state)
 	case 146:
 		switch (substate)
 		{
-			case 126:
+			case states.idle:
 				if (cutscenebuffer > 0)
 					cutscenebuffer--;
 				else

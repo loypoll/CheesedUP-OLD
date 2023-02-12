@@ -359,14 +359,14 @@ switch (introstate)
 			{
 				elitehit = 5;
 				instance_destroy(spotlightID);
-				state = 4;
+				state = states.grabbed;
 				pizzahead = true;
 				grabbedby = 1;
 				camzoom = 0.5;
 				obj_screensizer.camzoom = camzoom;
 				with (obj_player1)
 				{
-					state = 0;
+					state = states.normal;
 					baddiegrabbedID = other.id;
 				}
 				with (obj_bosscontroller)

@@ -5,16 +5,16 @@ if (state == 134 && grounded && vsp > 0 && obj_player.state == 111 && bbox_in_ca
 arrowindex += 0.35;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
 	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
 	case states.hit:
@@ -31,7 +31,7 @@ switch (state)
 		if (stunned > 0)
 			stunned -= 1;
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
 	case states.grabbed:
@@ -43,7 +43,7 @@ switch (state)
 	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
 	case 17:

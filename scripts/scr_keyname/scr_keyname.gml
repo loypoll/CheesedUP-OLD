@@ -248,7 +248,7 @@ function scr_keyname()
 		case 65:
 			return "A";
 			break;
-		case 66:
+		case states.shotgun:
 			return "B";
 			break;
 		case 67:
@@ -281,7 +281,7 @@ function scr_keyname()
 		case 76:
 			return "L";
 			break;
-		case states.skateboard;
+		case states.skateboard:
 			return "M";
 			break;
 		case 78:

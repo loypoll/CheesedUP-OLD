@@ -42,13 +42,13 @@ switch (state)
                     scr_enemy_walk();
                     break;
 				
-                case 126:
+                case states.idle:
                     image_speed = 0.35;
                     hsp = 0;
                     sprite_index = spr_pizzaslug_idle;
                     break;
 				
-                case 130:
+                case states.turn:
                     image_speed = 0.35;
                     substate_buffer = 5;
                     if (sprite_index != spr_pizzaslug_turn)
@@ -65,7 +65,7 @@ switch (state)
                     }
                     break;
 				
-                case 129:
+                case states.pizzagoblinthrow:
                     state = 129;
                     substate_buffer = 0;
                     image_index = 0;
@@ -74,13 +74,13 @@ switch (state)
             }
             break
         }
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
 	case states.hit:
@@ -89,13 +89,13 @@ switch (state)
 	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
 	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
 }

@@ -3,7 +3,7 @@ if (room == rm_editor)
 image_speed = 0.35;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		sprite_index = idlespr;
 		playerid = instance_nearest(x, y, obj_player);
 		hsp = 0;
@@ -72,9 +72,9 @@ switch (state)
 			image_xscale *= -1;
 		}
 		break;
-	case 130:
+	case states.turn:
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
 	case states.hit:
@@ -84,7 +84,7 @@ switch (state)
 		scr_enemy_stun();
 		hit = true;
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
 	case states.grabbed:

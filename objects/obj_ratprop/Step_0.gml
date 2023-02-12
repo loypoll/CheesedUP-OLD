@@ -6,7 +6,7 @@ switch (state)
 		if (place_meeting(x + sign(hsp), y, obj_solid))
 			image_xscale *= -1;
 		break;
-	case 126:
+	case states.idle:
 		sprite_index = spr_stupidratprop2;
 		hsp = 0;
 		break;

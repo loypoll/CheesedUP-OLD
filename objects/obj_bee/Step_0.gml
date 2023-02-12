@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_bee_idle();
 		break;
 	case 141:

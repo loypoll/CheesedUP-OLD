@@ -76,7 +76,7 @@ if (drop && global.panic)
 				}
 			}
 			break;
-		case 126:
+		case states.idle:
 			hand_y -= 6;
 			break;
 	}

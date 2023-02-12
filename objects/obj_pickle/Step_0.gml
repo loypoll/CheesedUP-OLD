@@ -4,19 +4,19 @@ if (!instance_exists(cloneid))
 	cloneid = -4;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
 	case 128:
 		scr_enemy_charge();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
 	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
 	case states.hit:
@@ -26,7 +26,7 @@ switch (state)
 		image_alpha = 1;
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		image_alpha = 1;
 		scr_pizzagoblin_throw();
 		break;

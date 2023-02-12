@@ -2,7 +2,7 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		grav = 0.5;
 		scr_enemy_idle();
 		break;
@@ -10,7 +10,7 @@ switch (state)
 		grav = 0.5;
 		scr_enemy_charge();
 		break;
-	case 130:
+	case states.turn:
 		grav = 0.5;
 		scr_enemy_turn();
 		break;
@@ -18,7 +18,7 @@ switch (state)
 		grav = 0.5;
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		grav = 0.5;
 		scr_enemy_land();
 		break;
@@ -30,7 +30,7 @@ switch (state)
 		grav = 0.5;
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		grav = 0.5;
 		scr_pizzagoblin_throw();
 		break;

@@ -3,7 +3,7 @@ if (room == rm_editor)
 var targetplayer = instance_nearest(x, y, obj_player);
 switch (state)
 {
-	case 126:
+	case states.idle:
 		if (sprite_index != scaredspr)
 		{
 			sprite_index = spr_pepbat_idle;
@@ -39,7 +39,7 @@ switch (state)
 	case 128:
 		scr_enemy_charge();
 		break;
-	case 130:
+	case states.turn:
 		sprite_index = spr_pepbat_move;
 		var dir = point_direction(x, y, xstart, ystart);
 		x = Approach(x, xstart, abs(lengthdir_x(5, dir)));
@@ -71,7 +71,7 @@ switch (state)
 			state = 130;
 		}
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
 	case states.hit:
@@ -81,7 +81,7 @@ switch (state)
 		scr_enemy_stun();
 		hit = true;
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
 	case states.grabbed:

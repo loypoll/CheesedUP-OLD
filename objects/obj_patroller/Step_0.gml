@@ -2,10 +2,10 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
 	case states.walk:
@@ -21,7 +21,7 @@ switch (state)
 			hsp = 0;
 		}
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
 	case states.hit:
@@ -30,7 +30,7 @@ switch (state)
 	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
 	case states.grabbed:
@@ -42,7 +42,7 @@ switch (state)
 	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
 	case 17:

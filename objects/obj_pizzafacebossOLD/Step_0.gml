@@ -30,7 +30,7 @@ switch (state)
 		grav = 0.5;
 		normal_func();
 		break;
-	case 230:
+	case states.pizzaface_ram:
 		grav = 0.5;
 		boss_pizzaface_ram();
 		break;
@@ -53,10 +53,10 @@ switch (state)
 	case 231:
 		boss_pizzaface_phase2transition();
 		break;
-	case 232:
+	case states.pizzahead_look:
 		boss_pizzahead_look();
 		break;
-	case 233:
+	case states.pizzahead_fishing:
 		boss_pizzahead_fishing();
 		break;
 	case 235:
@@ -65,7 +65,7 @@ switch (state)
 	case 236:
 		boss_pizzahead_npcthrow();
 		break;
-	case 237:
+	case states.pizzahead_portraitthrow:
 		boss_pizzahead_portraitthrow();
 		break;
 	case 238:
@@ -74,7 +74,7 @@ switch (state)
 	case 239:
 		boss_pizzahead_sexypicture();
 		break;
-	case 240:
+	case states.pizzahead_pullinglevel:
 		boss_pizzahead_pullinglevel();
 		break;
 	case 241:

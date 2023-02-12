@@ -1,16 +1,16 @@
 var player = instance_nearest(x, y, obj_player);
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
 	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
 	case states.hit:
@@ -19,7 +19,7 @@ switch (state)
 	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
 	case states.grabbed:
@@ -34,7 +34,7 @@ switch (state)
 	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
 	case states.pizzaheadjump:

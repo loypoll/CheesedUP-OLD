@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 126:
+	case states.idle:
 		if (selected)
 		{
 			state = 8;

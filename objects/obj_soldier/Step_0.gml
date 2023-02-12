@@ -2,17 +2,17 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		if (sprite_index != spr_soldier_idleend)
 			scr_enemy_idle();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
 	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
 	case states.hit:
@@ -21,7 +21,7 @@ switch (state)
 	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
 	case states.grabbed:
@@ -33,7 +33,7 @@ switch (state)
 	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
 }
@@ -50,7 +50,7 @@ if (flash == 1 && alarm[2] <= 0)
 var player = instance_nearest(x, y, obj_player);
 switch (state)
 {
-	case 126:
+	case states.idle:
 		if (bush)
 		{
 			var col = collision_line(x, y, player.x, player.y, obj_solid, false, true);

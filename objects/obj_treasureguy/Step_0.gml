@@ -2,13 +2,13 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
 	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
 	case states.hit:
@@ -17,13 +17,13 @@ switch (state)
 	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
 	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
 	case 189:

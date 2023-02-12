@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 126:
+	case states.idle:
 		if (!instance_exists(blockinst))
 		{
 			blockinst = instance_create(x, y, obj_solid);

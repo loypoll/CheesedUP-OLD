@@ -203,7 +203,7 @@ function scr_tv_get_transfo_sprite()
 			if (global.mort)
 				_spr = spr_tv_mort;
 			break;
-		case 66:
+		case states.shotgun:
 		case 69:
 		case 71:
 		case 57:

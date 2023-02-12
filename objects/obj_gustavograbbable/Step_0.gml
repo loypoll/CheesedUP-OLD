@@ -2,10 +2,10 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
 	case states.walk:
@@ -24,7 +24,7 @@ switch (state)
 				image_xscale = sign(_boss.x - x);
 		}
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
 	case states.hit:
@@ -35,7 +35,7 @@ switch (state)
 		if (sprite_index == spr_dead)
 			sprite_index = spr_lonegustavo_dashjump;
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
 	case states.pizzaheadjump:
@@ -50,26 +50,26 @@ switch (state)
 	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
 	case 17:
 		scr_enemy_ghostpossess();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {
@@ -81,7 +81,7 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
-if (state == 294 && obj_player1.state != 42 && place_meeting(x, y, obj_solid))
+if (state == 294 && obj_player1.state != states.handstandjump && place_meeting(x, y, obj_solid))
     invincible = true;
 else
     invincible = false;

@@ -1,19 +1,19 @@
 destroyable = true;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
 	case 128:
 		scr_enemy_charge();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
 	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
 	case states.hit:
@@ -22,7 +22,7 @@ switch (state)
 	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
 	case states.grabbed:
@@ -139,7 +139,7 @@ if (x != targetplayer.x && state != 129 && bombreset == 0)
 					image_speed = 0.6;
 					hsp = 0;
 					break;
-				case 129:
+				case states.pizzagoblinthrow:
 					bombreset = 0;
 					sprite_index = spr_robot_attack;
 					image_index = 0;

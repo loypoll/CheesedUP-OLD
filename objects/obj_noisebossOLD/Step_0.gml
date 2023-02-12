@@ -33,7 +33,7 @@ switch (state)
 		grav = 0.5;
 		boss_noise_crouchslide();
 		break;
-	case states.skateboard;
+	case states.skateboard:
 		grav = 0.5;
 		boss_noise_skateboard();
 		break;

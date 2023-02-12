@@ -9,10 +9,10 @@ switch (state)
 	case 0:
 		scr_pizzaface_p2_normal();
 		break;
-	case 232:
+	case states.pizzahead_look:
 		scr_pizzaface_p2_look();
 		break;
-	case 233:
+	case states.pizzahead_fishing:
 		scr_pizzaface_p2_fishing();
 		break;
 	case 235:
@@ -21,7 +21,7 @@ switch (state)
 	case 236:
 		boss_pizzahead_npcthrow();
 		break;
-	case 237:
+	case states.pizzahead_portraitthrow:
 		boss_pizzahead_portraitthrow();
 		break;
 	case 238:
@@ -30,7 +30,7 @@ switch (state)
 	case 239:
 		boss_pizzahead_sexypicture();
 		break;
-	case 240:
+	case states.pizzahead_pullinglevel:
 		boss_pizzahead_pullinglevel();
 		break;
 	case 241:

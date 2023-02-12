@@ -80,7 +80,7 @@ switch (state)
 			image_index = 0;
 		}
 		break;
-	case 136:
+	case states.land:
 		if (floor(image_index) == (image_number - 1))
 		{
 			sprite_index = spr_gustavo_exitsign;

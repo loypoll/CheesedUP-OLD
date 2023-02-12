@@ -17,7 +17,7 @@ switch (state)
 	case states.walk:
 		scr_pizzaface_p3_walk();
 		break;
-	case 288:
+	case states.boss_stomp:
 		scr_pizzaface_p3_stomp();
 		break;
 	case states.punch:
@@ -29,10 +29,10 @@ switch (state)
 	case states.throwing:
 		scr_pizzaface_p3_throwing();
 		break;
-	case 287:
+	case states.boss_swinging:
 		scr_pizzaface_p3_swinging();
 		break;
-	case states.boss_fightball:
+	case states.boss_finale:
 		scr_pizzaface_p3_finale();
 		break;
 	case states.pizzaheadjump:
@@ -51,12 +51,12 @@ switch (state)
 		scr_enemy_pummel();
 		break;
 }
-if (state != 294)
+if (state != states.pizzaheadjump)
 {
-	if ((state == 135 && vsp < 0) || state == 289)
+	if ((state == states.fall && vsp < 0) || state == states.boss_finale)
 	{
 		use_collision = false;
-		if (state == 135)
+		if (state == states.fall)
 		{
 			x += hsp;
 			y += vsp;
@@ -88,7 +88,7 @@ if (prevhp != elitehit)
 	}
 	prevhp = elitehit;
 }
-if (state == 138)
+if (state == states.stun)
 {
 	if (thrown)
 		savedthrown = true;
@@ -101,38 +101,38 @@ if (state == 138)
 }
 else
 	savedthrown = false;
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if ((state == 80 || state == 288 || state == 287 || state == 92) && alarm[4] == -1)
+if ((state == states.punch || state == states.boss_stomp || state == states.boss_swinging || state == states.jump) && alarm[4] == -1)
 	alarm[4] = 5;
 invincible = true;
-if (vulnerable_buffer > 0 && state == 134 && flickertime <= 0)
+if (vulnerable_buffer > 0 && state == states.walk && flickertime <= 0)
 {
 	vulnerable_buffer--;
 	invincible = false;
 }
-if (state == 138 && !savedthrown)
+if (state == states.stun && !savedthrown)
 	invincible = false;
 if (!invincible && alarm[5] < 0 && !flash)
 	alarm[5] = 0.15 * room_speed;
-if ((state == 276 || (state == 104 && attackspeed >= 10) || (state == 74 && sprite_index == spr_fakepeppino_flailing)) && alarm[4] < 0)
+if ((state == states.boss_grabdash || (state == states.mach2 && attackspeed >= 10) || (state == states.throwing && sprite_index == spr_fakepeppino_flailing)) && alarm[4] < 0)
 {
 	alarm[4] = 10;
-	if (state == 108)
+	if (state == states.freefall)
 		alarm[4] = 5;
 }
 mask_index = spr_pizzahead_idle;
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

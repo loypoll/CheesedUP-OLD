@@ -25,7 +25,7 @@ switch (state)
 		}
 		x += hsp;
 		break;
-	case 126:
+	case states.idle:
 		sprite_index = idlespr;
 		hsp = 0;
 		break;

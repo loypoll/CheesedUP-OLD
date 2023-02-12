@@ -1,8 +1,8 @@
-if (other.state == 42 && other.grounded)
+if (other.state == states.handstandjump && other.grounded)
 {
 	with (other)
 	{
-		state = 293;
+		state = states.animation;
 		sprite_index = spr_player_pistolintro;
 		image_index = 0;
 		image_speed = 0.35;

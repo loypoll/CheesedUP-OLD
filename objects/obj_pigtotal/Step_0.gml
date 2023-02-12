@@ -16,7 +16,7 @@ switch (state)
 			buffer = 1;
 		}
 		break;
-	case 293:
+	case states.animation:
 		if (global.pigtotal_add > 0)
 			global.pigtotal_add--;
 		else

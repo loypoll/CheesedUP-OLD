@@ -193,7 +193,7 @@ if (state == states.taxi)
 	x = obj_stopsign.x;
 	y = obj_stopsign.y;
 }
-if (state == states.animation)
+if (state == states.spaceshuttle)
 {
 	x = obj_spaceshuttlestop.x;
 	y = obj_spaceshuttlestop.y;
