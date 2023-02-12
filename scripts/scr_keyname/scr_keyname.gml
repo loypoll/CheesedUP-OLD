@@ -23,7 +23,7 @@ function scr_keyname()
 		case 32:
 			return "SPACE";
 			break;
-		case 161:
+		case states.boss_shoulderturn:
 			return "SHIFT";
 			break;
 		case 160:
@@ -107,7 +107,7 @@ function scr_keyname()
 		case 121:
 			return "F10";
 			break;
-		case 122:
+		case states.freefallprep:
 			return "F11";
 			break;
 		case 123:
@@ -146,7 +146,7 @@ function scr_keyname()
 		case 106:
 			return "MULTIPLY";
 			break;
-		case 111:
+		case states.freefallland:
 			return "DIVIDE";
 			break;
 		case 107:
@@ -281,7 +281,7 @@ function scr_keyname()
 		case 76:
 			return "L";
 			break;
-		case 77:
+		case states.skateboard;
 			return "M";
 			break;
 		case 78:
@@ -290,7 +290,7 @@ function scr_keyname()
 		case 79:
 			return "O";
 			break;
-		case 80:
+		case states.punch:
 			return "P";
 			break;
 		case 81:
@@ -371,7 +371,7 @@ function scr_keyname()
 		case 110:
 			return "DOT";
 			break;
-		case 111:
+		case states.freefallland:
 			return "SLASH";
 			break;
 		case 112:
@@ -404,13 +404,13 @@ function scr_keyname()
 		case 121:
 			return "F10";
 			break;
-		case 122:
+		case states.freefallprep:
 			return "F11";
 			break;
 		case 123:
 			return "F12";
 			break;
-		case 144:
+		case states.arenaintro:
 			return "NUMLCK";
 			break;
 		case 145:
@@ -419,7 +419,7 @@ function scr_keyname()
 		case 160:
 			return "LSHIFT";
 			break;
-		case 161:
+		case states.boss_shoulderturn:
 			return "RSHIFT";
 			break;
 		case 162:

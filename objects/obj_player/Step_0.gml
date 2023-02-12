@@ -588,7 +588,7 @@ if (sprite_index == spr_noise_phasetrans1P && image_index > 24)
 }
 else if (sprite_index != spr_noise_phasetrans1P)
     noisebossscream = false;
-if (global.pistol && state != states.pizzaheadjump && state != states.actor && state != states.hurt && state != states.bump)
+if (global.pistol && state != states.animation && state != states.actor && state != states.hurt && state != states.bump)
 {
 	if (key_slap || pistolchargeshooting)
 		pistolcharge += 0.5;
@@ -1079,7 +1079,7 @@ if ((state == states.ratmountbounce && vsp >= 0) || sprite_index == spr_player_S
 	instakillmove = true;
 else
 	instakillmove = false;
-if ((global.noisejetpack || holycross > 0) && (state == states.actor || state == states.chainsaw || state ==states.backbreaker || state ==states.gotoplayer || state == states.pizzaheadjump || state == states.arenaintro || state == states.boss_KO || state == states.Sjumpland))
+if ((global.noisejetpack || holycross > 0) && (state == states.actor || state == states.chainsaw || state ==states.backbreaker || state ==states.gotoplayer || state == states.animation || state == states.arenaintro || state == states.boss_KO || state == states.Sjumpland))
 	instakillmove = false;
 if (state == states.ratmountbounce && vsp < 0)
 	stunmove = true;

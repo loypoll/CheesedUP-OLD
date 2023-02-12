@@ -40,7 +40,7 @@ switch (state)
 	case states.pizzaheadjump:
 		scr_enemy_pizzaheadjump();
 		break;
-	case 80:
+	case states.punch:
 		if (sprite_index == spr_minijohn_punchstart)
 		{
 			image_speed = 0.35;

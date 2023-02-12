@@ -5,10 +5,10 @@ targetplayer = obj_player1.id;
 wastedhits = maxhp - elitehit;
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		scr_pizzaface_p3_arenaintro();
 		break;
-	case 135:
+	case states.fall:
 		scr_pizzaface_p3_fall();
 		break;
 	case states.staggered:
@@ -20,7 +20,7 @@ switch (state)
 	case 288:
 		scr_pizzaface_p3_stomp();
 		break;
-	case 80:
+	case states.punch:
 		scr_pizzaface_p3_punch();
 		break;
 	case states.jump:
@@ -32,7 +32,7 @@ switch (state)
 	case 287:
 		scr_pizzaface_p3_swinging();
 		break;
-	case 289:
+	case states.boss_fightball:
 		scr_pizzaface_p3_finale();
 		break;
 	case states.pizzaheadjump:

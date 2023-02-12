@@ -33,11 +33,11 @@ switch (state)
 		grav = 0.5;
 		boss_noise_crouchslide();
 		break;
-	case 77:
+	case states.skateboard;
 		grav = 0.5;
 		boss_noise_skateboard();
 		break;
-	case 167:
+	case states.boss_skateboardturn:
 		grav = 0.5;
 		boss_noise_skateboardturn();
 		break;
@@ -53,11 +53,11 @@ switch (state)
 		grav = 0.5;
 		boss_noise_pogo();
 		break;
-	case 170:
+	case states.boss_jetpackstart:
 		grav = 0.5;
 		boss_noise_jetpackstart();
 		break;
-	case 171:
+	case states.boss_jetpack:
 		grav = 0.5;
 		boss_noise_jetpack();
 		break;

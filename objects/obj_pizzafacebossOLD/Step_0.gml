@@ -86,7 +86,7 @@ switch (state)
 	case 243:
 		boss_pizzahead_spinningrun();
 		break;
-	case 244:
+	case states.pizzahead_spinningkick:
 		boss_pizzahead_spinningkick();
 		break;
 	case 245:

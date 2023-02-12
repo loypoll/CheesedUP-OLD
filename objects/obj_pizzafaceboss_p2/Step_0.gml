@@ -30,7 +30,7 @@ switch (state)
 	case 293:
 		boss_pizzahead_pinup();
 		break;
-	case 273:
+	case states.boss_phase1hurt:
 		boss_pizzahead_p2_phase1hurt();
 		break;
 	case states.hit:

@@ -14,13 +14,13 @@ function scr_fakepepclone_transitioncutscene()
 		if (sprite_index == spr_fakepeppino_reform)
 		{
 			attacked = false;
-			state = 134;
+			state = states.walk;
 			cooldown = 15;
 			if (attack.attack == 2 || attack.attack == 4 || attack.attack == 5)
 				cooldown = 0;
 			if (attack.attack == 3)
 			{
-				state = 99;
+				state = states.Sjumpprep;
 				hsp = 0;
 				sprite_index = spr_fakepeppino_superjumpstart;
 				image_index = 0;
@@ -32,7 +32,7 @@ function scr_fakepepclone_transitioncutscene()
 				create_particle(x, y, particle.highjumpcloud2);
 				attacked = true;
 				taunted = false;
-				state = 84;
+				state = states.backbreaker;
 				sprite_index = spr_fakepeppino_jump;
 				image_index = 0;
 				hsp = 0;
@@ -71,7 +71,7 @@ function scr_fakepepclone_walk()
 					{
 						fmod_event_instance_play(snd_grab);
 						attacked = true;
-						state = 276;
+						state = states.boss_grabdash;
 						grabstart = 10;
 						if (ix != 0)
 							image_xscale = ix;
@@ -86,13 +86,13 @@ function scr_fakepepclone_walk()
 						image_xscale = sign(targetplayer.x - x);
 					sprite_index = spr_fakepeppino_bodyslamstart;
 					image_index = 0;
-					state = 92;
+					state = states.jump;
 					break;
 				case 2:
 					attacked = true;
 					image_xscale = (x > (room_width / 2)) ? 1 : -1;
 					attackspeed = 4;
-					state = 104;
+					state = states.mach2;
 					machdir = 0;
 					bodyslam = attack.bodyslam;
 					if (bodyslam)
@@ -101,8 +101,8 @@ function scr_fakepepclone_walk()
 						machcooldown = 330;
 					cooldown = attack.cooldown;
 					break;
-				case states.grabbed:
-					state = 74;
+				case 4:
+					state = states.throwing;
 					hsp = 0;
 					if (!throwing)
 					{
@@ -120,7 +120,7 @@ function scr_fakepepclone_walk()
 	else
 	{
 		fmod_event_one_shot_3d("event:/sfx/fakepep/deform", x, y);
-		state = 8;
+		state = states.transition;
 		sprite_index = spr_fakepeppino_deform;
 		image_index = 0;
 		if (attack.attack == 3)
@@ -136,7 +136,7 @@ function scr_fakepepclone_Sjumpprep()
 		steppybuffer = 0;
 		piledrivereffect = 0;
 		sjumpbuffer = 0;
-		state = 97;
+		state = states.Sjump;
 		sprite_index = spr_fakepeppino_superjump;
 		fmod_event_one_shot_3d("event:/sfx/fakepep/superjumpclonerelease", x, y);
 	}
@@ -173,7 +173,7 @@ function scr_fakepepclone_Sjump()
 	}
 	if (place_meeting(x, y - 1, obj_solid))
 	{
-		state = 134;
+		state = states.walk;
 		attacked = true;
 		with (instance_create(x, y + 20, obj_explosioneffect))
 		{
@@ -192,7 +192,7 @@ function scr_fakepepclone_throwing()
 			image_xscale = sign(targetplayer.x - x);
 		if (floor(image_index) == (image_number - 1))
 		{
-			state = 134;
+			state = states.walk;
 			attacked = true;
 		}
 		if (floor(image_index) >= 32 && !instance_exists(headID))
@@ -216,7 +216,7 @@ function scr_fakepepclone_throwing()
 		hsp = image_xscale * attackspeed;
 		if (place_meeting(x + sign(hsp), y, obj_solid))
 		{
-			state = 134;
+			state = states.walk;
 			attacked = true;
 		}
 	}

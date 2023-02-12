@@ -109,7 +109,7 @@ function scr_playerreset()
 			{
 				sprite_index = spr_tv_off;
 				tvsprite = spr_tv_idle;
-				state = 0;
+				state = states.normal;
 				tv_set_idle();
 			}
 		}
@@ -241,7 +241,7 @@ function scr_playerreset()
 		image_alpha = 1;
 		hallway = false;
 		verticalhallway = false;
-		tauntstoredstate = 0;
+		tauntstoredstate = states.normal;
 		ratpowerup = -4;
 		scale_xs = 1;
 		scale_ys = 1;
@@ -261,7 +261,7 @@ function scr_playerreset()
 			var destroy = true;
 			with (obj_player)
 			{
-				if (state == 89 || state == 64)
+				if (state == states.gameover || state == states.timesup)
 					destroy = false;
 			}
 			if (destroy)
@@ -277,10 +277,10 @@ function scr_playerreset()
 		stop_music();
 		global.seconds = 59;
 		global.minutes = 1;
-		obj_player1.prevstate = 95;
-		obj_player1.state = 95;
-		obj_player2.prevstate = 95;
-		obj_player2.state = 95;
+		obj_player1.prevstate = states.comingoutdoor;
+		obj_player1.state = states.comingoutdoor;
+		obj_player2.prevstate = states.comingoutdoor;
+		obj_player2.state = states.comingoutdoor;
 		obj_player1.visible = true;
 		obj_player2.visible = true;
 		ds_list_clear(global.saveroom);

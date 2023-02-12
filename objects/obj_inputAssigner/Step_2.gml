@@ -47,7 +47,7 @@ with (obj_player)
 			case 147:
 				GamepadSetVibration(_pindex, 0.8, 0.65);
 				break;
-			case 111:
+			case states.freefallland:
 				GamepadSetVibration(_pindex, 1, 1, 0.85);
 				break;
 			case 61:

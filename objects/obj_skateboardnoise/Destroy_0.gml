@@ -7,7 +7,7 @@ if (playerid != -4)
 	{
 		xscale = other.image_xscale;
 		sprite_index = spr_player_skateboard;
-		state = 106;
+		state = states.bump;
 		sprite_index = spr_bump;
 		hsp = -xscale * 4;
 		vsp = -5;

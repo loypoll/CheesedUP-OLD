@@ -56,7 +56,7 @@ function scr_pizzaface_p3_arenaintro()
 	}
 	switch (introstate)
 	{
-		case 144:
+		case states.arenaintro:
 			hsp = 0;
 			vsp = 0;
 			obj_player1.hsp = 0;

@@ -40,7 +40,7 @@ switch (state)
 	case states.mach2:
 		scr_fakepepboss_mach2();
 		break;
-	case states.freefallprep:
+	case states.Sjumpprep:
 		scr_fakepepboss_Sjumpprep();
 		break;
 	case states.Sjump:

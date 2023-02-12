@@ -138,7 +138,7 @@ switch (state)
 			movespeed = taunt_storedmovespeed;
 		}
 		break;
-	case 80:
+	case states.punch:
 		if (sprite_index == spr_coolpinea_ragestart)
 		{
 			hsp = 0;

@@ -4,7 +4,7 @@ switch (state)
 		hsp = 0;
 		vsp = 0;
 		break;
-	case 135:
+	case states.fall:
 		var num = instance_place_list(x, y + vsp + 1, obj_destructibles, global.instancelist, false);
 		for (var i = 0; i < num; i++)
 			instance_destroy(ds_list_find_value(global.instancelist, i));

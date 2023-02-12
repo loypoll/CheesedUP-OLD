@@ -55,7 +55,7 @@ switch (state)
 			}
 		}
 		break;
-	case 80:
+	case states.punch:
 		hsp = Approach(hsp, 0, 1);
 		if (!shot && floor(image_index) > 14)
 		{

@@ -10,7 +10,7 @@ switch (state)
 			sprite_index = spr_grabbiehand_fall;
 		}
 		break;
-	case 135:
+	case states.fall:
 		var spd = 12;
 		shootdir = angle_rotate(shootdir, point_direction(x, y, targetplayer.x, targetplayer.y), turnspeed);
 		hsp = lengthdir_x(spd, shootdir);

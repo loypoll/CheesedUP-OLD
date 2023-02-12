@@ -3,7 +3,7 @@ targetplayer = obj_player1;
 image_speed = 0.35;
 switch (state)
 {
-	case 135:
+	case states.fall:
 		scr_pizzaface_p2_fall();
 		break;
 	case 0:

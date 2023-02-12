@@ -26,7 +26,7 @@ switch (state)
 			create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
 		}
 		break;
-	case 80:
+	case states.punch:
 		if (!hitboxcreate)
 		{
 			with (instance_create(x, y, obj_forkhitbox))

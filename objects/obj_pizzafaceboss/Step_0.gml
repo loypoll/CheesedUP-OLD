@@ -3,7 +3,7 @@ wastedhits = 8 - elitehit;
 destroyable = false;
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		scr_pizzaface_arenaintro();
 		break;
 	case states.walk:
@@ -15,7 +15,7 @@ switch (state)
 	case 8:
 		scr_pizzaface_transitioncutscene();
 		break;
-	case 273:
+	case states.boss_phase1hurt:
 		scr_boss_phase1hurt();
 		break;
 	case states.hit:

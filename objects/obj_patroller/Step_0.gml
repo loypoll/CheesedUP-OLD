@@ -48,7 +48,7 @@ switch (state)
 	case 17:
 		scr_enemy_ghostpossess();
 		break;
-	case 135:
+	case states.fall:
 		image_speed = 0.35;
 		if (floor(image_index) == (image_number - 1))
 		{

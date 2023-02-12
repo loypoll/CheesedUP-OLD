@@ -20,7 +20,7 @@ switch (state)
 	case states.hit:
 		scr_pizzaball_hit();
 		break;
-	case 148:
+	case states.golf:
 		scr_pizzaball_golf();
 		break;
 	case 156:

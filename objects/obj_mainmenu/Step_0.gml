@@ -249,7 +249,7 @@ switch (state)
 			state = 0;
 		}
 		break;
-	case 289:
+	case states.boss_fightball:
 		exitselect += (key_left2 + key_right2);
 		exitselect = clamp(exitselect, 0, 1);
 		if (key_jump)

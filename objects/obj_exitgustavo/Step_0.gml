@@ -29,7 +29,7 @@ switch (state)
 				sprite_index = spr_stick_fall;
 		}
 		break;
-	case 135:
+	case states.fall:
 		y += vsp;
 		if (vsp < 20)
 			vsp += 0.5;

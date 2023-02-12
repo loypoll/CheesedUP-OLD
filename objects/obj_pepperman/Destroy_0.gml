@@ -11,7 +11,7 @@ if (elitehit <= 0 && pizzahead && destroyable)
 		instance_destroy(spotlightID);
 		pizzahead = true;
 		flickertime = 0;
-		state = 294;
+		state = states.pizzaheadjump;
 		sprite_index = spr_playerV_hurt;
 		image_index = 0;
 		image_speed = 0.35;

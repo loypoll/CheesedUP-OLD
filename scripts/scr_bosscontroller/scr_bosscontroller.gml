@@ -42,7 +42,7 @@ function scr_bosscontroller_intro()
 {
 	with (obj_player)
 	{
-		state = 146;
+		state = states.actor;
 		image_blend = make_colour_hsv(0, 0, 255);
 		hsp = 0;
 		movespeed = 0;
@@ -51,9 +51,9 @@ function scr_bosscontroller_intro()
 	}
 	with (bossID)
 	{
-		if (state != 146)
+		if (state != states.actor)
 			other.bossintrostate = state;
-		state = 146;
+		state = states.actor;
 		x = xstart;
 		y = ystart;
 		hsp = 0;
@@ -96,10 +96,10 @@ function scr_bosscontroller_intro()
 				}
 				break;
 			case 3:
-				state = 0;
+				state = states.normal;
 				with (obj_player)
 				{
-					state = 146;
+					state = states.actor;
 					hsp = 0;
 					movespeed = 0;
 					flash = false;
@@ -153,7 +153,7 @@ function scr_bosscontroller_normal()
 	}
 	if (!instance_exists(bossID) && !bossdead && instance_exists(obj_player1) && obj_player1.state != 91 && obj_player1.state != 95 && room != boss_fakepephallway && room != boss_pizzaface && room != rank_room)
 	{
-		if (room != boss_vigilante || obj_player1.state != 146)
+		if (room != boss_vigilante || obj_player1.state != states.actor)
 		{
 			bossdead = true;
 			notification_push(notifs.boss_dead, [room]);
@@ -166,7 +166,7 @@ function scr_bosscontroller_normal()
 				sprite_index = spr_player_levelcomplete;
 				image_speed = 0.35;
 				image_index = 0;
-				state = 144;
+				state = states.arenaintro;
 			}
 			with (obj_hppickup)
             {
@@ -297,7 +297,7 @@ function scr_collect_hat(_persistent = false)
         if ((player_hp + instance_number(obj_hpeffect)) < player_maxhp)
         {
             fmod_event_one_shot("event:/sfx/misc/cardcollect")
-            pos = scr_bosscontroller_get_health_pos((player_hp + 1), player_rowmax, player_columnmax, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad)
+            var pos = scr_bosscontroller_get_health_pos((player_hp + 1), player_rowmax, player_columnmax, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad)
             with (instance_create(other.x, other.y, obj_hpeffect))
             {
                 if _persistent

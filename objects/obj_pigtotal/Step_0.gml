@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 135:
+	case states.fall:
 		add_y += 8;
 		if (add_y >= 0)
 		{

@@ -38,7 +38,7 @@ switch (state)
 	case 17:
 		scr_enemy_ghostpossess();
 		break;
-	case 80:
+	case states.punch:
 		hsp = image_xscale * chargespeed;
 		if (chargespeed < 24)
 			chargespeed += 0.3;

@@ -1,12 +1,12 @@
-if (state == 153 && hsp != 0)
+if (state == states.shoulderbash && hsp != 0)
 {
 	if (other.flash)
 		other.flash = false;
 	var s = other.state;
 	scr_hurtplayer(other);
-	if (other.state != s && other.state == 107)
+	if (other.state != s && other.state == states.hurt)
 	{
-		state = 138;
+		state = states.stun;
 		hsp = -image_xscale * 5;
 		vsp = -8;
 		stunned = 220;
@@ -22,9 +22,9 @@ if (state == 153 && hsp != 0)
 			create_debris(x, y, spr_slapstar);
 	}
 }
-else if (wastedhits == 9 && phase == 1 && !pizzahead && (other.instakillmove || other.state == 42) && state == 267)
+else if (wastedhits == 9 && phase == 1 && !pizzahead && (other.instakillmove || other.state == states.handstandjump) && state == states.boss_contemplate)
 	scr_boss_do_hurt_phase2(other);
-else if (state == 268 && ministate != 8 && (other.instakillmove || other.state == 42))
+else if (state == states.boss_mini && ministate != states.transition && (other.instakillmove || other.state == states.handstandjump))
 {
 	with (other)
 		scr_pummel();

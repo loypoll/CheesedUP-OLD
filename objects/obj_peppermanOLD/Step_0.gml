@@ -41,15 +41,15 @@ switch (state)
 		grav = 0.5;
 		boss_pepperman_freefall();
 		break;
-	case 111:
+	case states.freefallland:
 		grav = 0.5;
 		boss_pepperman_freefallland();
 		break;
-	case 122:
+	case states.freefallprep:
 		grav = 0.5;
 		boss_pepperman_freefallprep();
 		break;
-	case 153:
+	case states.shoulderbash:
 		grav = 0.5;
 		boss_pepperman_shoulderbash();
 		break;
@@ -81,7 +81,7 @@ switch (state)
 		grav = 0.5;
 		boss_pepperman_shoulder();
 		break;
-	case 161:
+	case states.boss_shoulderturn:
 		grav = 0.5;
 		boss_pepperman_shoulderturn();
 		break;

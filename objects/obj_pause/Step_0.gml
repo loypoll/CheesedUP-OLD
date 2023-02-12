@@ -142,7 +142,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 				case 30:
 					_txt = lang_get_value("cheesedtip");
 					break;
-				case 148:
+				case states.golf:
 					_txt = lang_get_value("golftip");
 					break;
 				case 31:

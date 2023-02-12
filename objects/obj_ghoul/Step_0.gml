@@ -59,7 +59,7 @@ switch (state)
 			sprite_index = spr_ghoul_attack;
 		}
 		break;
-	case 80:
+	case states.punch:
 		attackvsp = Approach(attackvsp, -11, 0.5);
 		vsp = attackvsp;
 		hsp = image_xscale * 10;

@@ -45,7 +45,7 @@ switch (state)
 	case 17:
 		scr_enemy_ghostpossess();
 		break;
-	case 80:
+	case states.punch:
 		hidden = false;
 		cooldown = 100;
 		if (sprite_index != spr_attack)

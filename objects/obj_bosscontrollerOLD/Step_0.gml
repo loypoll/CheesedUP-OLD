@@ -31,7 +31,7 @@ if (instance_exists(bossID))
 }
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		with (obj_player)
 		{
 			state = 146;

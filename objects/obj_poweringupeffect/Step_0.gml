@@ -15,4 +15,6 @@ switch (bossID.object_index)
 			visible = true;
 			break;
 		}
+		else 
+			visible = false;
 }

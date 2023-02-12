@@ -11,7 +11,7 @@ function scr_pizzaface_destroy_sounds()
 }
 function scr_pizzaface_update_sounds()
 {
-	if (state == 230 && (substate == 144 || substate == 230))
+	if (state == states.pizzaface_ram && (substate == states.arenaintro || substate == states.pizzaface_ram))
 	{
 		if (!fmod_event_instance_is_playing(snd_ram))
 			fmod_event_instance_play(snd_ram);
@@ -19,7 +19,7 @@ function scr_pizzaface_update_sounds()
 	}
 	else
 		fmod_event_instance_stop(snd_ram, true);
-	if (state == 8)
+	if (state == states.transition)
 	{
 		if (!fmod_event_instance_is_playing(snd_haywire))
 			fmod_event_instance_play(snd_haywire);
@@ -27,7 +27,7 @@ function scr_pizzaface_update_sounds()
 	}
 	else
 		fmod_event_instance_stop(snd_haywire, true);
-	if (state == 144)
+	if (state == states.arenaintro)
 	{
 		if (!fmod_event_instance_is_playing(snd_wind))
 			fmod_event_instance_play(snd_wind);
@@ -45,7 +45,7 @@ function scr_pizzaface_arenaintro()
 		x = room_width * 0.75;
 		with (obj_player1)
 		{
-			state = 146;
+			state = states.actor;
 			image_speed = 0.35;
 			xscale = 1;
 			hsp = 0;
@@ -190,10 +190,10 @@ function scr_pizzaface_arenaintro()
 				}
 				if (sprite_index == spr_pizzaface && _finish)
 				{
-					state = 134;
+					state = states.walk;
 					with (obj_player1)
 					{
-						state = 0;
+						state = states.normal;
 						sprite_index = spr_idle;
 					}
 				}
@@ -242,8 +242,8 @@ function scr_pizzaface_normal()
 			{
 				sprite_index = spr_pizzaface_attackend;
 				image_index = 0;
-				state = 230;
-				substate = 8;
+				state = states.pizzaface_ram;
+				substate = states.transition;
 				hsp = 0;
 				exit;
 			}
@@ -267,10 +267,10 @@ function scr_pizzaface_normal()
 					else
 					{
 						nosespit = true;
-						state = 230;
+						state = states.pizzaface_ram;
 						sprite_index = spr_pizzaface_attackstart;
 						image_index = 0;
-						substate = 144;
+						substate = states.arenaintro;
 						ramdir = point_direction(x, y, targetplayer.x + irandom_range(-50, 50), 402);
 						ramhsp = -lengthdir_x(6, ramdir);
 						ramvsp = -lengthdir_y(6, ramdir);
@@ -291,7 +291,7 @@ function scr_pizzaface_normal()
 				with (instance_create(x, y, b[0]))
 				{
 					important = true;
-					state = 294;
+					state = states.pizzaheadjump;
 					vsp = 10;
 				}
 			}
@@ -334,21 +334,21 @@ function scr_pizzaface_ram()
 {
 	switch (substate)
 	{
-		case 144:
+		case states.arenaintro:
 			ramhsp = Approach(ramhsp, 0, 0.3);
 			ramvsp = Approach(ramvsp, 0, 0.3);
 			hsp = ramhsp;
 			vsp = ramvsp;
 			if (floor(image_index) == (image_number - 1))
 			{
-				substate = 230;
+				substate = states.pizzaface_ram;
 				var s = wastedhits;
 				ramhsp = lengthdir_x(18 + s, ramdir);
 				ramvsp = lengthdir_y(18 + s, ramdir);
 				sprite_index = spr_pizzaface_attack;
 			}
 			break;
-		case 230:
+		case states.pizzaface_ram:
 			hsp = ramhsp;
 			vsp = ramvsp;
 			if (vsp < -5)
@@ -356,7 +356,7 @@ function scr_pizzaface_ram()
 			if ((vsp > 0 && grounded) || place_meeting(x + sign(hsp), y, obj_solid))
 			{
 				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-				substate = 136;
+				substate = states.land;
 				landbuffer = 80;
 				hitX = x;
 				hitY = y;
@@ -369,7 +369,7 @@ function scr_pizzaface_ram()
 					{
 						important = true;
 						sprite_index = b[1];
-						state = 294;
+						state = states.pizzaheadjump;
 					}
 				}
 				with (obj_camera)
@@ -379,14 +379,14 @@ function scr_pizzaface_ram()
 				}
 			}
 			break;
-		case 136:
+		case states.land:
 			hsp = 0;
 			x = hitX + irandom_range(-1, 1);
 			y = hitY + irandom_range(-1, 1);
 			if (floor(image_index) == (image_number - 1))
 			{
 				fmod_event_one_shot_3d("event:/sfx/pizzaface/jump", x, y);
-				substate = 92;
+				substate = states.jump;
 				sprite_index = spr_pizzaface_attackjump;
 				image_index = 0;
 				vsp = -14;
@@ -399,16 +399,16 @@ function scr_pizzaface_ram()
 				image_index = image_number - 1;
 			if (vsp > 0)
 			{
-				substate = 8;
+				substate = states.transition;
 				vsp = 0;
 				sprite_index = spr_pizzaface_attackend;
 				image_index = 0;
 			}
 			break;
-		case 8:
+		case states.transition:
 			vsp = 0;
 			if (floor(image_index) == (image_number - 1))
-				state = 134;
+				state = states.walk;
 			break;
 	}
 }
@@ -430,13 +430,13 @@ function scr_pizzaface_transitioncutscene()
 	}
 	switch (substate)
 	{
-		case 293:
+		case states.animation:
 			if (introbuffer > 0)
 				introbuffer--;
 			else
-				substate = 8;
+				substate = states.transition;
 			break;
-		case 8:
+		case states.transition:
 			sprite_index = spr_pizzahead_intro1;
 			var tx = room_width / 2;
 			var ty = room_height * 0.35;
@@ -452,7 +452,7 @@ function scr_pizzaface_transitioncutscene()
 				}
 				x = tx;
 				y = ty;
-				substate = 137;
+				substate = states.hit;
 				sprite_index = spr_pizzahead_intro2;
 				image_index = 0;
 				fmod_event_one_shot_3d("event:/sfx/pizzaface/open", x, y);
@@ -468,8 +468,8 @@ function scr_pizzaface_transitioncutscene()
 				{
 					vsp = 0;
 					hsp = 0;
-					state = 135;
-					substate = 92;
+					state = states.fall;
+					substate = states.jump;
 					sprite_index = spr_pizzahead_intro3;
 					if (x != obj_player1.x)
 						image_xscale = sign(obj_player1.x - x);

@@ -84,7 +84,7 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_charge();
 		break;
-	case 80:
+	case states.punch:
 		grav = 0.5;
 		boss_vigilante_punch();
 		break;
@@ -92,7 +92,7 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_groundpunchstart();
 		break;
-	case 122:
+	case states.freefallprep:
 		grav = 0.5;
 		boss_vigilante_freefallprep();
 		break;
@@ -100,7 +100,7 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_freefall();
 		break;
-	case 111:
+	case states.freefallland:
 		grav = 0.5;
 		boss_vigilante_freefallland();
 		break;

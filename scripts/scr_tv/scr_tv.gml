@@ -193,9 +193,9 @@ function scr_tv_get_transfo_sprite()
 					_spr = spr_tv_mort;
 			}
 			break;
-		case 122:
+		case states.freefallprep:
 		case states.freefall:
-		case 111:
+		case states.freefallland:
 			if (obj_player1.shotgunAnim)
 				_spr = spr_tv_shotgun;
 			break;
@@ -218,7 +218,7 @@ function scr_tv_get_transfo_sprite()
 		case 115:
 			_spr = spr_tv_barrel;
 			break;
-		case 148:
+		case states.golf:
 			_spr = spr_tv_golf;
 			break;
 		case 184:

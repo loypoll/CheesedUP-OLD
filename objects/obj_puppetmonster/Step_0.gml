@@ -20,7 +20,7 @@ switch (state)
 		y = camera_get_view_y(view_camera[0]) + yy;
 		switch (substate)
 		{
-			case 135:
+			case states.fall:
 				yy += 2;
 				if (yy > 440)
 				{

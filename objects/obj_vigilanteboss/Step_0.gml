@@ -6,7 +6,7 @@ if (pizzahead && elitehit <= 1)
 	destroyable = true;
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		scr_vigilante_arenaintro();
 		break;
 	case states.walk:
@@ -33,13 +33,13 @@ switch (state)
 	case 270:
 		scr_vigilante_estampede();
 		break;
-	case 273:
+	case states.boss_phase1hurt:
 		scr_vigilante_phase1hurt();
 		break;
 	case 274:
 		scr_vigilante_duel();
 		break;
-	case 80:
+	case states.punch:
 		scr_vigilante_punch();
 		break;
 	case states.jump:

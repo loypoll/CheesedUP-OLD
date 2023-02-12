@@ -550,7 +550,7 @@ function boss_pizzahead_shotgun()
 {
 	switch (substate)
 	{
-		case 268:
+		case states.boss_mini:
 			if (sprite_index == spr_pizzahead_grabgun)
 			{
 				if (floor(image_index) == (image_number - 1))

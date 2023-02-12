@@ -58,7 +58,7 @@ if (drop && global.panic)
 				vsp = 0;
 			}
 			break;
-		case 135:
+		case states.fall:
 			if (vsp < 20)
 				vsp += grav;
 			y += vsp;

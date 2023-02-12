@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 80:
+	case states.punch:
 		if (attackbuffer > 0)
 			attackbuffer--;
 		else
