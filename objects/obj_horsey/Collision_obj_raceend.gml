@@ -10,8 +10,8 @@ if (x == x1 && y == y1 && state != 89)
 		fmod_event_one_shot_3d("event:/sfx/misc/loserace", x, y);
 	spd = 0;
 	other.horseyfinish = true;
-	if (state != 6)
+	if (state != states.finishingblow)
 		ds_list_add(global.baddieroom, id);
-	state = 6;
+	state = states.finishingblow;
 	global.horse = false;
 }

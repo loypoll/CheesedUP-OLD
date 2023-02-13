@@ -38,7 +38,7 @@ switch (state)
 		vsp = 0;
 		if (x > (xstart - 10) && x < (xstart + 10) && y > (ystart - 10) && y < (ystart + 10))
 		{
-			state = 126;
+			state = states.idle;
 			image_xscale = start_xscale;
 			cooldown = 100;
 			x = xstart;
@@ -67,7 +67,7 @@ switch (state)
 		{
 			y = attack_y;
 			vsp = 0;
-			state = 126;
+			state = states.idle;
 			cooldown = 100;
 			image_xscale *= -1;
 		}
@@ -107,13 +107,13 @@ if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;
 if (bombreset > 0)
 	bombreset--;
-if (grounded && state == 129 && floor(image_index) == 3)
+if (grounded && state == states.pizzagoblinthrow && floor(image_index) == 3)
 	vsp = -5;
 if (boundbox == 0)
 {

@@ -90,7 +90,7 @@ function scr_player_handstandjump()
 	if (floor(image_index) == (image_number - 1) && key_attack && sprite_index == attackdash)
 	{
 		image_speed = 0.35;
-		state = 104;
+		state = states.mach2;
 		grav = 0.5;
 	}
 	if (key_down && grounded && global.attackstyle != 2)

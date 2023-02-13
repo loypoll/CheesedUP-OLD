@@ -314,7 +314,7 @@ function scr_noise_mach2()
 	}
 	if (skateboardjumpcooldown > 0)
 		skateboardjumpcooldown--;
-	if (skateboardjumpcooldown == 0 && state != 105)
+	if (skateboardjumpcooldown == 0 && state != states.machslide)
 	{
 		fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
 		vsp = -11;
@@ -340,7 +340,7 @@ function scr_noise_mach2()
 		sprite_index = spr_playerN_mach;
 	var tx = targetplayer.x;
 	var ix = sign(tx - x);
-	if (ix != image_xscale && grounded && sprite_index == spr_playerN_mach && state != 105)
+	if (ix != image_xscale && grounded && sprite_index == spr_playerN_mach && state != states.machslide)
 	{
 		if (!golf)
 		{

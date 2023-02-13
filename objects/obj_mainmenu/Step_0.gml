@@ -261,7 +261,7 @@ switch (state)
 		}
 		break;
 }
-if (state != 18 && state != 8)
+if (state != states.titlescreen && state != 8)
 	extrauialpha = Approach(extrauialpha, 1, 0.1);
 if (currentselect == 0)
 	percentage = global.percentage_1;
@@ -276,7 +276,7 @@ if (currentselect != -1)
 	judgement = global.game_judgement[currentselect];
 }
 perstatus_icon = floor(percentage / 14.285714285714286);
-if (state != 18 && state != 8)
+if (state != states.titlescreen && state != 8)
 {
 	var a = floor(abs(percvisual - percentage) / 10) + 1;
 	percvisual = Approach(percvisual, percentage, a);

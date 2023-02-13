@@ -3,7 +3,7 @@ if (place_meeting(x, y - 1, obj_player))
 {
 	with (obj_player)
 	{
-		if (state != 148 && state != 91 && state != 186 && state != 214 && state != 213 && state != 212)
+		if (state != 148 && state != 91 && state != states.gotoplayer && state != 214 && state != 213 && state != 212)
 		{
 			if (place_meeting(x, y + 1, other))
 			{

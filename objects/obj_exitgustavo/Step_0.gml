@@ -90,7 +90,7 @@ switch (state)
 		}
 		break;
 }
-if (state == 18)
+if (state == states.titlescreen)
 	visible = false;
 else
 	visible = true;

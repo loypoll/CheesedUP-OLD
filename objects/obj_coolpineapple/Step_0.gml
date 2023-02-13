@@ -39,7 +39,7 @@ switch (state)
 		scr_enemy_grabbed();
 		break;
 }
-if (!hitboxcreate && state == 134)
+if (!hitboxcreate && state == states.walk)
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_forkhitbox))
@@ -60,7 +60,7 @@ if (state != states.stun)
 	birdcreated = false;
 if (sprite_index == scaredspr)
 	inv_timer = 0;
-if (state == 134)
+if (state == states.walk)
 {
 	grav = 0.5;
 	if (point_in_camera(x, y, view_camera[0]))
@@ -182,7 +182,7 @@ switch (state)
 }
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

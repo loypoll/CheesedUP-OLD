@@ -1,4 +1,4 @@
-if (state == 126 || (state == 146 && substate == 126))
+if (state == states.idle || (state == 146 && substate == states.idle))
 {
 	repeat (irandom_range(1, 3))
 		create_heatpuff(x + irandom_range(-50, 50), y - 70);

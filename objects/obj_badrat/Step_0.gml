@@ -32,13 +32,13 @@ switch (state)
 	case states.rage:
 		scr_enemy_rage();
 		break;
-	case 17:
+	case states.ghostpossess:
 		scr_enemy_ghostpossess();
 		break;
 	case states.pizzaheadjump:
 		scr_enemy_pizzaheadjump();
 		break;
-	case 106:
+	case states.bump:
 		sprite_index = spr_badrat_stun;
 		if (grounded && vsp > 0)
 		{
@@ -50,18 +50,18 @@ switch (state)
 var targetplayer = instance_nearest(x, y, obj_player);
 if (cooldown > 0)
 	cooldown--;
-if (state == 134 && cooldown <= 0)
+if (state == states.walk && cooldown <= 0)
 {
 	if (targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y > (y - 50) && targetplayer.y < (y + 50))
 	{
-		state = 129;
+		state = states.pizzagoblinthrow;
 		sprite_index = spr_badrat_attack1;
 		image_index = 0;
 		if (x != targetplayer.x)
 			image_xscale = sign(targetplayer.x - x);
 	}
 }
-if (state == 129)
+if (state == states.pizzagoblinthrow)
 {
 	var mv = 8;
 	image_speed = 0.35;
@@ -123,7 +123,7 @@ if (flash == 1 && alarm[2] <= 0)
 if (place_meeting(x, y, obj_canonexplosion))
 	instance_destroy();
 scr_scareenemy();
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (boundbox == 0)
 {

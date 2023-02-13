@@ -118,7 +118,7 @@ switch (state)
 					image_xscale = sign(player.x - x);
 				sprite_index = spr_soldier_shootstart;
 				image_index = 0;
-				state = 128;
+				state = states.charge;
 				bullet_count = bullet_max;
 				can_fire = true;
 			}
@@ -127,14 +127,14 @@ switch (state)
 }
 if (elite)
 {
-	if (state == 134)
+	if (state == states.walk)
 	{
 		if ((player.x > (x - 200) && player.x < (x + 200)) && (y <= (player.y + 60) && y >= (player.y - 60)))
 		{
-			if (state != 125 && ragebuffer == 0)
+			if (state != states.rage && ragebuffer == 0)
 			{
 				hitboxcreate = false;
-				state = 125;
+				state = states.rage;
 				sprite_index = spr_soldier_knife;
 				if (x != player.x)
 					image_xscale = -sign(x - player.x);
@@ -150,7 +150,7 @@ if (elite)
 	if (ragebuffer > 0)
 		ragebuffer--;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

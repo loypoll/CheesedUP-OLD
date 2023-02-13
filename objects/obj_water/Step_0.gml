@@ -2,7 +2,7 @@ if (place_meeting(x, y - 1, obj_player))
 {
 	with (obj_player)
 	{
-		if (state != 186 && state != 210 && state != 209 && state != 121 && state != 147 && sprite_index != spr_mach3boost)
+		if (state != states.gotoplayer && state != 210 && state != 209 && state != 121 && state != 147 && sprite_index != spr_mach3boost)
 		{
 			if (place_meeting(x, y + 1, other))
 			{

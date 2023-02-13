@@ -36,18 +36,18 @@ if (state == states.stun && stunned > 40 && birdcreated == 0)
 }
 if (state != states.stun)
 	birdcreated = false;
-if (place_meeting(x + hsp, y, obj_iceblock) && state == 128)
+if (place_meeting(x + hsp, y, obj_iceblock) && state == states.charge)
 {
 	with (instance_place(x + hsp, y, obj_iceblock))
 		instance_destroy();
 }
 targetplayer = instance_nearest(x, y, obj_player);
-if (state == 134 && attack_cooldown <= 0)
+if (state == states.walk && attack_cooldown <= 0)
 {
 	if (x != targetplayer.x && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y < (y + 50) && targetplayer.y > (y - 50))
 	{
 		flame_buffer = flame_max;
-		state = 128;
+		state = states.charge;
 		image_xscale = sign(targetplayer.x - x);
 		sprite_index = spr_peasanto_flameattack;
 		image_index = 0;
@@ -55,7 +55,7 @@ if (state == 134 && attack_cooldown <= 0)
 		hitboxcreate = false;
 	}
 }
-if (state == 128)
+if (state == states.charge)
 {
 	if (!hitboxcreate)
 	{
@@ -78,7 +78,7 @@ if (attack_cooldown > 0)
 	attack_cooldown--;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

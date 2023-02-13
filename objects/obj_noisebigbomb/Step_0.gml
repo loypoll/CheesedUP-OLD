@@ -6,7 +6,7 @@ if (!noise_grabbed)
 	{
 		vsp = 0;
 		hsp = hithsp;
-		if (place_meeting(x + sign(hithsp), y, obj_solid) || (place_meeting(x, y, obj_player) && obj_player.state != 42))
+		if (place_meeting(x + sign(hithsp), y, obj_solid) || (place_meeting(x, y, obj_player) && obj_player.state != states.handstandjump))
 		{
 			instance_destroy();
 			if (obj_player1.flash)

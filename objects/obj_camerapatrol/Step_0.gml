@@ -55,9 +55,9 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 }
 if (state != states.stun)
 	birdcreated = false;
-if (state == 134 && y > ystart && !scr_solid(x, y - 1))
+if (state == states.walk && y > ystart && !scr_solid(x, y - 1))
 	y--;
-if (state == 134 && y < ystart && !scr_solid(x, y + 1))
+if (state == states.walk && y < ystart && !scr_solid(x, y + 1))
 	y++;
 if (state == states.stun)
 	grav = 0.5;
@@ -65,7 +65,7 @@ else
 	grav = 0;
 if (cooldown > 0)
 	cooldown--;
-if (state == 134)
+if (state == states.walk)
 {
 	if (!patrolfound)
 	{
@@ -79,14 +79,14 @@ if (state == 134)
 	else if (alarm[5] == -1)
 		alarm[5] = 30;
 }
-else if (state == states.stun || state == 4 || state == 137)
+else if (state == states.stun || state == states.grabbed || state == states.hit)
 	alarm[5] = -1;
 if (instance_exists(obj_jumpscare))
 {
 	patrolfound = false;
 	alarm[5] = -1;
 }
-if (state == 134 && point_in_camera(x, y, view_camera[0]))
+if (state == states.walk && point_in_camera(x, y, view_camera[0]))
 {
 	var p = false;
 	with (obj_player)
@@ -112,9 +112,9 @@ if (state == 80)
 }
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state == states.stun || state == 134)
+if (state == states.stun || state == states.walk)
 	movespeed = 0;
 if (state != states.stun)
 	thrown = false;

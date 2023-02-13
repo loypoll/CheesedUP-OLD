@@ -46,24 +46,24 @@ grabbedspr = spr_canongoblin_stun;
 scr_scareenemy();
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;
 if (bombreset > 0)
 	bombreset--;
 var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-if (x != targetplayer.x && state != 129 && bombreset == 0 && grounded)
+if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset == 0 && grounded)
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 20) && y >= (targetplayer.y - 20)))
 	{
-		if (state == 134 || (state == 126 && sprite_index != scaredspr))
+		if (state == states.walk || (state == states.idle && sprite_index != scaredspr))
 		{
 			sprite_index = spr_canongoblin_throwbomb;
 			fmod_event_one_shot_3d("event:/sfx/enemies/cannongoblin", x, y);
 			image_index = 0;
 			image_xscale = -sign(x - targetplayer.x);
-			state = 129;
+			state = states.pizzagoblinthrow;
 		}
 	}
 }

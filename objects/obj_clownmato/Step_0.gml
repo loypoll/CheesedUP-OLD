@@ -61,7 +61,7 @@ if (flash == 1 && alarm[2] <= 0)
 scr_scareenemy();
 if (grounded && state != states.stun)
 	vsp = -11;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

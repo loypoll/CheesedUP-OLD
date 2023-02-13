@@ -67,17 +67,17 @@ if (instance_exists(obj_player))
 {
 	with (obj_player1)
 	{
-		if (other.fadein == 1 && (obj_player1.state == 112 || obj_player1.state == 98) && (sprite_index == spr_victory || place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate)))
+		if (other.fadein == 1 && (obj_player1.state == states.door || obj_player1.state == 98) && (sprite_index == spr_victory || place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate)))
 		{
-			state = 95;
+			state = states.comingoutdoor;
 			image_index = 0;
 			if (global.coop == 1)
 			{
-				obj_player2.state = 95;
+				obj_player2.state = states.comingoutdoor;
 				obj_player2.image_index = 0;
 			}
 		}
-		if (other.fadein == 1 && obj_player1.state == 112 && (obj_player1.sprite_index == spr_downpizzabox || obj_player1.sprite_index == spr_uppizzabox))
+		if (other.fadein == 1 && obj_player1.state == states.door && (obj_player1.sprite_index == spr_downpizzabox || obj_player1.sprite_index == spr_uppizzabox))
 		{
 			state = 101;
 			if (global.coop == 1)
@@ -88,17 +88,17 @@ if (instance_exists(obj_player))
 	{
 		with (obj_player2)
 		{
-			if (other.fadein == 1 && (obj_player2.state == 112 || obj_player2.state == 98) && (place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate)))
+			if (other.fadein == 1 && (obj_player2.state == states.door || obj_player2.state == 98) && (place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate)))
 			{
-				state = 95;
+				state = states.comingoutdoor;
 				image_index = 0;
 				if (global.coop == 1)
 				{
-					obj_player1.state = 95;
+					obj_player1.state = states.comingoutdoor;
 					obj_player1.image_index = 0;
 				}
 			}
-			if (other.fadein == 1 && obj_player2.state == 112 && (obj_player2.sprite_index == spr_downpizzabox || obj_player2.sprite_index == spr_uppizzabox))
+			if (other.fadein == 1 && obj_player2.state == states.door && (obj_player2.sprite_index == spr_downpizzabox || obj_player2.sprite_index == spr_uppizzabox))
 			{
 				state = 101;
 				if (global.coop == 1)
@@ -109,7 +109,7 @@ if (instance_exists(obj_player))
 	with (obj_player2)
 	{
 		if (instance_exists(obj_coopplayerfollow))
-			state = 186;
+			state = states.gotoplayer;
 	}
 }
 if (fadein == 1 && fadealpha < 0)

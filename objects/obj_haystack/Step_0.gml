@@ -3,7 +3,7 @@ if (sprite_index != spr_haystackburning && sprite_index != spr_haystackburningup
 {
 	with (obj_peasanto)
 	{
-		if (state == 128 && place_meeting(x + hsp, y, other))
+		if (state == states.charge && place_meeting(x + hsp, y, other))
 			other.sprite_index = spr_haystackburningup;
 	}
 	with (obj_player)
@@ -41,7 +41,7 @@ else if (sprite_index == spr_haystackburning)
 	}
 	with (instance_place(x, y - 1, obj_baddie))
 	{
-		if (state != 4)
+		if (state != states.grabbed)
 			instance_destroy();
 	}
 	if (ds_list_find_index(global.saveroom, id) == -1)

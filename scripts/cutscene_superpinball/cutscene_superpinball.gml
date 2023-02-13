@@ -3,7 +3,7 @@ function cutscene_superpinball_start()
 	var _finish = false;
 	with (obj_player1)
 	{
-		if (state != 112 && state != 95)
+		if (state != states.door && state != states.comingoutdoor)
 			_finish = true;
 	}
 	if (_finish)

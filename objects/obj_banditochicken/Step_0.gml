@@ -44,14 +44,14 @@ if (state != states.stun)
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-if (state == 134 || state == 126)
+if (state == states.walk || state == states.idle)
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 160) && y >= (targetplayer.y - 160)))
 		activated = true;
 }
-if (!activated && (state == 134 || state == 126))
+if (!activated && (state == states.walk || state == states.idle))
 	sprite_index = spr_banditochicken_sleep;
-if ((state == 134 || state == 126) && activated == 1 && sprite_index != spr_banditochicken_wake && sprite_index != spr_banditochicken_scared)
+if ((state == states.walk || state == states.idle) && activated == 1 && sprite_index != spr_banditochicken_wake && sprite_index != spr_banditochicken_scared)
 {
 	fmod_event_one_shot_3d("event:/sfx/enemies/banditochicken", x, y);
 	movespeed = 0;
@@ -64,16 +64,16 @@ if (sprite_index == spr_banditochicken_wake && floor(image_index) == (image_numb
 {
 	image_xscale *= -1;
 	sprite_index = spr_banditochicken_chase;
-	state = 128;
+	state = states.charge;
 	movespeed = 8;
 	with (instance_create(x, y, obj_jumpdust))
 		image_xscale = other.image_xscale;
 }
-if (state == 128 && bonebuffer > 0)
+if (state == states.charge && bonebuffer > 0)
 	bonebuffer--;
-if (grounded && jumping < 40 && state == 128)
+if (grounded && jumping < 40 && state == states.charge)
 	jumping++;
-if (state == 128 && grounded && jumping >= 40)
+if (state == states.charge && grounded && jumping >= 40)
 {
 	vsp = -11;
 	jumping = 0;
@@ -105,7 +105,7 @@ if (bonebuffer == 0)
 	}
 	bonebuffer = 100;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

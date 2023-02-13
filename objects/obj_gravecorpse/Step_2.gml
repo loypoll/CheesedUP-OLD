@@ -7,5 +7,5 @@ if (playerid.sprite_index == spr_player_corpsesurf)
 	sprite_index = spr_corpsesurf;
 if (playerid.sprite_index == spr_player_corpsestart)
 	sprite_index = spr_corpsestart;
-if (playerid.state != 211 && playerid.state != 61)
+if (playerid.state != 211 && playerid.state != states.chainsaw)
 	instance_destroy();

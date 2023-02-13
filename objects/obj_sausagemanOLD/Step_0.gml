@@ -72,13 +72,13 @@ if (cigar == 0)
 	stompedspr = spr_sausagemannocigar_stomped;
 	grabbedspr = spr_sausagemannocigar_grabbed;
 }
-if (cigar == 1 && cigarcreate == 0 && (state == 126 || state == 134 || state == 130 || state == 136))
+if (cigar == 1 && cigarcreate == 0 && (state == states.idle || state == states.walk || state == 130 || state == 136))
 {
 	cigarcreate = true;
 	with (instance_create(x, y, obj_sausagemancigar))
 		ID = other.id;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

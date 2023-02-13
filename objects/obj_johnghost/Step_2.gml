@@ -8,7 +8,7 @@ switch (state)
 		x = cx + currentx;
 		if (currentx == targetx)
 		{
-			state = 128;
+			state = states.charge;
 			attack_buffer = attack_max;
 		}
 		y = Approach(y, playerid.y, 8);

@@ -24,9 +24,9 @@ switch (state)
 						tauntstoredsprite = sprite_index;
 						tauntstoredstate = state;
 						tauntstoredvsp = vsp;
-						state = 61;
+						state = states.chainsaw;
 					}
-					state = 137;
+					state = states.hit;
 					hitX = x;
 					hitY = y;
 					hitLag = 10;

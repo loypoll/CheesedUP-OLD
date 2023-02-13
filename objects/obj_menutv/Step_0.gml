@@ -25,7 +25,7 @@ switch (state)
 			}
 			else
 			{
-				state = 126;
+				state = states.idle;
 				sprite_index = idlespr;
 			}
 		}

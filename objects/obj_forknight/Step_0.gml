@@ -58,7 +58,7 @@ if (elite && ragecooldown == 0)
 {
 	var player = instance_nearest(x, y, obj_player);
 	var check = (image_xscale > 0) ? (player.x > x && player.x < (x + 400)) : (player.x < x && player.x > (x - 400));
-	if (state == 134)
+	if (state == states.walk)
 	{
 		if (check && (y <= (player.y + 60) && y >= (player.y - 60)))
 		{
@@ -67,15 +67,15 @@ if (elite && ragecooldown == 0)
 			image_index = 0;
 			flash = true;
 			alarm[4] = 5;
-			state = 125;
+			state = states.rage;
 			ragedash = 50;
 			create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
 		}
 	}
 }
-if (ragedash > 0 && state == 125)
+if (ragedash > 0 && state == states.rage)
 	ragedash--;
-if (ragedash == 0 && state == 125)
+if (ragedash == 0 && state == states.rage)
 {
 	state = states.walk;
 	sprite_index = walkspr;
@@ -85,13 +85,13 @@ if (ragecooldown > 0)
 	ragecooldown--;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (hitboxcreate == 0 && state == 134)
+if (hitboxcreate == 0 && state == states.walk)
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_forkhitbox))
 		ID = other.id;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

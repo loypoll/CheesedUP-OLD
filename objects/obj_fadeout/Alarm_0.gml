@@ -31,7 +31,7 @@ if (instance_exists(obj_player))
 			with (obj_player2)
 			{
 				if (instance_exists(obj_coopplayerfollow))
-					state = 186;
+					state = states.gotoplayer;
 			}
 		}
 	}

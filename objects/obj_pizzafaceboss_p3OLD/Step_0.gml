@@ -23,7 +23,7 @@ switch (state)
 }
 if (hp <= 0)
 	instance_destroy();
-if (state == 92)
+if (state == states.jump)
 	use_collision = false;
 else
 	use_collision = true;

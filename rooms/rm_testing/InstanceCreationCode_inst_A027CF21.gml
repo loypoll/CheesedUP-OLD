@@ -1,6 +1,6 @@
 func = function()
 {
-	if (!active && argument0.state == 42)
+	if (!active && argument0.state == states.handstandjump)
 	{
 		active = true;
 		obj_secretmanager.hittriggers++;

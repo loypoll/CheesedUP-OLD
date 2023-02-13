@@ -1,8 +1,8 @@
-if (state != 4)
+if (state != states.grabbed)
 {
 	with (obj_player)
 	{
-		if (y < other.y && attacking == 0 && state == 92 && vsp > 0)
+		if (y < other.y && attacking == 0 && state == states.jump && vsp > 0)
 		{
 			if (vsp > 0)
 			{
@@ -35,7 +35,7 @@ if (state != 4)
 				}
 			}
 		}
-		if (state == 103)
+		if (state == states.mach1)
 		{
 			instance_create(x, y, obj_bumpeffect);
 			other.stunned = 40;
@@ -52,7 +52,7 @@ if (state != 4)
 			image_index = 0;
 			state = 91;
 		}
-		if (state == 104 && other.grounded == 1)
+		if (state == states.mach2 && other.grounded == 1)
 		{
 			other.hp = 0;
 			instance_create(x, y, obj_bumpeffect);
@@ -65,7 +65,7 @@ if (state != 4)
 			if (!scr_solid(x, y + 1) && state != 108)
 				vsp = -10;
 		}
-		if (attacking == 1 && state != 104)
+		if (attacking == 1 && state != states.mach2)
 		{
 			if (state == 121)
 				other.shot = true;
@@ -87,12 +87,12 @@ if (state != 4)
 			other.image_xscale = -xscale;
 			other.hsp = -other.image_xscale * 4;
 			other.vsp = -4;
-			if (other.state == 134 || other.state == 130)
-				other.state = 126;
+			if (other.state == states.walk || other.state == 130)
+				other.state = states.idle;
 			image_index = 0;
 			state = 106;
 			if (other.state == 136)
-				other.state = 126;
+				other.state = states.idle;
 		}
 	}
 }

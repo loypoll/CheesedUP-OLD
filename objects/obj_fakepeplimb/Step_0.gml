@@ -102,7 +102,7 @@ if (hidden)
 	invincible = true;
 else
 	invincible = false;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

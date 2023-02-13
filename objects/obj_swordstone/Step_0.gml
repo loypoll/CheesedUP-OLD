@@ -1,6 +1,6 @@
 if (room == rm_editor)
 	exit;
-if (obj_player.state == 47 || (obj_player.state == 61 && (obj_player.tauntstoredstate == 47 || obj_player.tauntstoredstate == 38)) || obj_player.state == 48 || obj_player.state == 38 || obj_player.state == 49)
+if (obj_player.state == 47 || (obj_player.state == states.chainsaw && (obj_player.tauntstoredstate == 47 || obj_player.tauntstoredstate == 38)) || obj_player.state == 48 || obj_player.state == 38 || obj_player.state == 49)
 	sprite_index = spr_swordstonetaken;
 else
 	sprite_index = spr_swordstone;

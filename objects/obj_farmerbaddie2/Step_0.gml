@@ -1,9 +1,9 @@
-if (idle && state == 134 && bombreset <= 0)
+if (idle && state == states.walk && bombreset <= 0)
 {
 	var targetplayer = instance_nearest(x, y, obj_player);
 	if (abs(targetplayer.x - x) <= 250 && targetplayer.y > y && targetplayer.y < (y + 300))
 	{
-		state = 129;
+		state = states.pizzagoblinthrow;
 		sprite_index = spr_farmer2_throw;
 		image_index = 0;
 	}

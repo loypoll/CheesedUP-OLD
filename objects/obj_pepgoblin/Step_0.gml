@@ -46,7 +46,7 @@ if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;
@@ -54,20 +54,20 @@ scr_scareenemy();
 if (bombreset > 0)
 	bombreset--;
 var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-if (x != targetplayer.x && state != 129 && obj_player.state != 5 && bombreset <= 0 && grounded)
+if (x != targetplayer.x && state != states.pizzagoblinthrow && obj_player.state != 5 && bombreset <= 0 && grounded)
 {
 	if ((targetplayer.x > (x - 80) && targetplayer.x < (x + 80)) && (y <= (targetplayer.y + 100) && y >= (targetplayer.y - 100)))
 	{
-		if (state == 134)
+		if (state == states.walk)
 		{
 			image_index = 0;
 			sprite_index = spr_pepgoblin_kick;
 			image_xscale = -sign(x - targetplayer.x);
-			state = 129;
+			state = states.pizzagoblinthrow;
 		}
 	}
 }
-if (grounded && state == 129 && floor(image_index) == 3)
+if (grounded && state == states.pizzagoblinthrow && floor(image_index) == 3)
 	vsp = -5;
 if (boundbox == 0)
 {

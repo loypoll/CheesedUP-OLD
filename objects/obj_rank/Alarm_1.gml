@@ -7,7 +7,7 @@ with (obj_player)
 	room = backtohubroom;
 	x = backtohubstartx;
 	y = backtohubstarty;
-	state = 95;
+	state = states.comingoutdoor;
 	sprite_index = spr_walkfront;
 	image_index = 0;
 	image_blend = c_white;

@@ -3,7 +3,7 @@ if (!instance_exists(ID))
 	instance_destroy();
 	exit;
 }
-if (ID.state != 128)
+if (ID.state != states.charge)
 {
 	ID.hitboxcreate = false;
 	instance_destroy();

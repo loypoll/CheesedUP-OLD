@@ -34,9 +34,9 @@ if (state == states.stun && stunned > 40 && birdcreated == 0)
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state == 134)
-	state = 128;
-if (hitboxcreate == 0 && state == 128 && obj_player.state != 121)
+if (state == states.walk)
+	state = states.charge;
+if (hitboxcreate == 0 && state == states.charge && obj_player.state != 121)
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_forkhitbox))
@@ -46,7 +46,7 @@ if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

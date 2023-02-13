@@ -38,17 +38,17 @@ if (state != states.stun)
 	birdcreated = false;
 if (bombreset > 0)
 	bombreset--;
-if (state != 129 && bombreset == 0)
+if (state != states.pizzagoblinthrow && bombreset == 0)
 {
-	if (state == 134 || state == 126)
+	if (state == states.walk || state == states.idle)
 	{
 		image_index = 0;
-		state = 129;
+		state = states.pizzagoblinthrow;
 	}
 }
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

@@ -1,4 +1,4 @@
-if ((other.state != 5 || (other.sprite_index != other.spr_tumble && other.sprite_index != other.spr_tumblestart && other.sprite_index != other.spr_tumbleend)) && other.state != 84 && other.state != 61 && other.state != 106 && other.y > other.yprevious && ((!other.isgustavo && other.y <= (y + 10)) || (other.isgustavo && other.y < y)))
+if ((other.state != 5 || (other.sprite_index != other.spr_tumble && other.sprite_index != other.spr_tumblestart && other.sprite_index != other.spr_tumbleend)) && other.state != 84 && other.state != states.chainsaw && other.state != 106 && other.y > other.yprevious && ((!other.isgustavo && other.y <= (y + 10)) || (other.isgustavo && other.y < y)))
 {
 	if (!other.isgustavo)
 	{

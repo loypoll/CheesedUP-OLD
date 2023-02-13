@@ -205,7 +205,7 @@ function scr_tv_get_transfo_sprite()
 			break;
 		case states.shotgun:
 		case states.shotgunshoot:
-		case states.freefall:
+		case states.shotgunfreefall:
 		case states.shotgunjump:
 		case states.shotgundash:
 		case states.shotguncrouch:

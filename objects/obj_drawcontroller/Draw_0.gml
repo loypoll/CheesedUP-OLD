@@ -89,12 +89,12 @@ with (obj_pizzagoblinbomb)
 }
 with (obj_player2)
 {
-	if (visible && state != 18 && bbox_in_camera(view_camera[0], 32))
+	if (visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
 		draw_player();
 }
 with (obj_player1)
 {
-	if (visible && state != 18 && bbox_in_camera(view_camera[0], 32))
+	if (visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
 		draw_player();
 }
 with (obj_sausageman_dead)

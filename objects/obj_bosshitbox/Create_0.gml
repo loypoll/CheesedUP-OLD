@@ -13,7 +13,7 @@ function SUPER_player_hurt()
 		with (argument1)
 		{
 			var lag = 8;
-			if (state == 61 || state == 137)
+			if (state == states.chainsaw || state == states.hit)
 			{
 				x = hitX;
 				y = hitY;
@@ -27,7 +27,7 @@ function SUPER_player_hurt()
 			hithsp = 15;
 			hitstunned = 100;
 			hitvsp = -8;
-			state = 137;
+			state = states.hit;
 			instance_create(other.x, other.y, obj_parryeffect);
 			instance_create(x, y, obj_slapstar);
 			instance_create(x, y, obj_slapstar);

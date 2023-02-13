@@ -52,19 +52,19 @@ grabbedspr = spr_swedishmonkey_stun;
 scr_scareenemy();
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;
 if (bombreset > 0)
 	bombreset--;
-if (state != 129 && bombreset == 0 && grounded)
+if (state != states.pizzagoblinthrow && bombreset == 0 && grounded)
 {
-	if (state == 134)
+	if (state == states.walk)
 	{
 		image_index = 0;
 		sprite_index = spr_swedishmonkey_eat;
-		state = 129;
+		state = states.pizzagoblinthrow;
 	}
 }
 if (boundbox == 0)

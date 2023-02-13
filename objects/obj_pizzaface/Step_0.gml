@@ -9,7 +9,7 @@ if (!instance_exists(playerid))
 var _move = true;
 with (obj_player)
 {
-	if (state == 119 || state == 98 || state == 90 || state == 46 || state == 112 || state == 292)
+	if (state == 119 || state == 98 || state == 90 || state == 46 || state == states.door || state == 292)
 		_move = false;
 }
 if (!treasure)

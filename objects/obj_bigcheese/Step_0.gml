@@ -28,7 +28,7 @@ switch (state)
 		scr_enemy_grabbed();
 		break;
 }
-if (state == 134)
+if (state == states.walk)
 	hsp = 0;
 else if (state == 74)
 {
@@ -173,7 +173,7 @@ else
 	image_speed = 0.35;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

@@ -38,39 +38,39 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 }
 if (state != states.stun)
 	birdcreated = false;
-if (state == 134 && y > ystart && !scr_solid(x, y - 1))
+if (state == states.walk && y > ystart && !scr_solid(x, y - 1))
 	y--;
-if (state == 134 && y < ystart && !scr_solid(x, y + 1))
+if (state == states.walk && y < ystart && !scr_solid(x, y + 1))
 	y++;
 if (state == states.stun)
 	grav = 0.5;
 else
 	grav = 0;
-if (bombreset > 0 && state == 134)
+if (bombreset > 0 && state == states.walk)
 	bombreset--;
 var player = instance_nearest(x, y, obj_player);
 if (ragebuffer > 0)
 	ragebuffer--;
 if ((player.x > (x - 200) && player.x < (x + 200)) && (player.y <= (y + 400) && player.y >= (y - 60)))
 {
-	if (x != player.x && state != 129 && bombreset == 0)
+	if (x != player.x && state != states.pizzagoblinthrow && bombreset == 0)
 	{
-		if (state == 134)
+		if (state == states.walk)
 		{
 			sprite_index = spr_kentukybomber_attack;
 			image_index = 0;
-			state = 129;
+			state = states.pizzagoblinthrow;
 		}
 	}
 }
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state == 129 || state == 125)
+if (state == states.pizzagoblinthrow || state == states.rage)
 {
 	hsp = 0;
 	vsp = 0;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 scr_scareenemy();
 if (state != states.stun)

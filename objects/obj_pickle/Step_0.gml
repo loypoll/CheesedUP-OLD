@@ -48,7 +48,7 @@ if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;
@@ -61,7 +61,7 @@ if (sprite_index == scaredspr)
 	image_alpha = 1;
 	attacking = false;
 }
-if (bombreset == 0 && state == 134)
+if (bombreset == 0 && state == states.walk)
 {
 	attacking = false;
 	targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
@@ -132,7 +132,7 @@ if (state == 141)
 			image_xscale = -sign(x - targetplayer.x);
 			if (image_xscale == 0)
 				image_xscale = old_xscale;
-			state = 129;
+			state = states.pizzagoblinthrow;
 			if (elite && cloneid == -4)
 			{
 				var tx = image_xscale * 32;
@@ -146,7 +146,7 @@ if (state == 141)
 					bombreset = 0;
 					image_index = 0;
 					image_xscale = other.image_xscale;
-					state = 129;
+					state = states.pizzagoblinthrow;
 					hsp = other.image_xscale * 2;
 					vsp = -6;
 				}
@@ -158,7 +158,7 @@ if (state == 141)
 	}
 }
 invincible = attacking;
-if (state == 126)
+if (state == states.idle)
 {
 	if (scaredbuffer > 0 && attacking)
 	{

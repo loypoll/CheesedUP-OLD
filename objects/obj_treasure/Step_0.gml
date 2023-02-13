@@ -18,7 +18,7 @@ if (player == 0 && place_meeting(x, y, obj_player))
 		var _player = ds_list_find_value(global.instancelist, i);
 		with (_player)
 		{
-			if (state != 186)
+			if (state != states.gotoplayer)
 			{
 				treasure_x = x;
 				treasure_y = y;

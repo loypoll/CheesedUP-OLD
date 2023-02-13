@@ -11,6 +11,6 @@ if (global.panic)
 	instance_destroy(obj_door);
 	instance_destroy(obj_bossdoor);
 }
-global.door_sprite = spr_rank_confused;
+global.door_sprite = spr_door;
 global.door_index = 4;
 scr_random_granny();

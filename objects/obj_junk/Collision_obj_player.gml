@@ -1,4 +1,4 @@
-if (!grabbed && (other.state == 42 || other.state == 80 || other.state == 43) && unpickable == 0)
+if (!grabbed && (other.state == states.handstandjump || other.state == 80 || other.state == 43) && unpickable == 0)
 {
 	instance_create(x + (obj_player1.xscale * 40), y, obj_punchdust);
 	with (other)
@@ -7,7 +7,7 @@ if (!grabbed && (other.state == 42 || other.state == 80 || other.state == 43) &&
 		sprite_index = spr_haulingstart;
 		baddiegrabbedID = other.id;
 		grabbingenemy = true;
-		state = 79;
+		state = states.grab;
 	}
 	playerid = other.object_index;
 	grabbed = true;

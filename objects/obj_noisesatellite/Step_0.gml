@@ -45,7 +45,7 @@ if (cigar == 0)
 	stompedspr = spr_noisesatellite;
 	grabbedspr = spr_noisesatellitestun;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

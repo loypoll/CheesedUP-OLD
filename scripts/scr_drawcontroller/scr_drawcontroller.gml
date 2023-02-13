@@ -49,7 +49,7 @@ function enemy_is_superslam(baddieid)
 {
 	with baddieid
 	{
-		if state == 4
+		if state == states.grabbed
 		{
 			var g = grabbedby == 1 ? obj_player1.id : obj_player2.id;
 			if g.state == states.superslam || (g.state == states.chainsaw && g.tauntstoredstate == states.superslam)

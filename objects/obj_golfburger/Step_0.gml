@@ -92,7 +92,7 @@ if (state == 74)
 }
 if (state != 74)
 	scr_scareenemy();
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

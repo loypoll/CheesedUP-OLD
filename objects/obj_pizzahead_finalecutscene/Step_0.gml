@@ -1,5 +1,5 @@
 with (obj_player2)
-	state = 18;
+	state = states.titlescreen;
 switch (state)
 {
 	case states.jump:
@@ -24,7 +24,7 @@ switch (state)
 					}
 				}
 			}
-			state = 137;
+			state = states.hit;
 			hitX = x;
 			hitY = y;
 			hitLag = 5;
@@ -160,13 +160,13 @@ switch (state)
 		}
 		if (superslam)
 		{
-			if (state == 137)
+			if (state == states.hit)
 			{
 				x = hitX;
 				y = hitY;
 			}
 			fmod_event_instance_play(snd);
-			state = 76;
+			state = states.superslam;
 			sprite_index = spr_pizzahead_piledriverfinal;
 			image_index = 0;
 			image_speed = 0.35;

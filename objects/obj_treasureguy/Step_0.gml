@@ -79,12 +79,12 @@ if (state != states.stun)
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-if (state == 134)
+if (state == states.walk)
 {
 	sprite_index = walkspr;
 	hsp = 0;
 }
-if (state == 126)
+if (state == states.idle)
 {
 	if (sprite_index == scaredspr)
 	{
@@ -97,11 +97,11 @@ if (state == 126)
 		image_speed = 0.35;
 	}
 }
-if (state != 126 && state != 189 && state != 4 && state != 137 && state != states.stun && state != 141 && !running)
+if (state != states.idle && state != 189 && state != states.grabbed && state != states.hit && state != states.stun && state != 141 && !running)
 {
 	if ((x < (targetplayer.x + threshold_x) && x > (targetplayer.x - threshold_x)) && (y < (targetplayer.y + threshold_y) && y > (targetplayer.y - threshold_y)))
 	{
-		state = 126;
+		state = states.idle;
 		image_index = 0;
 		sprite_index = scaredspr;
 		scaredbuffer = scared_max;
@@ -143,7 +143,7 @@ if (state == 141)
 	if (distance_to_object(targetplayer) > idle_threshold)
 		state = states.walk;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

@@ -1,6 +1,6 @@
 if (room == rm_editor)
 	exit;
-if (state == 134 && grounded && vsp > 0 && obj_player.state == 111 && bbox_in_camera(view_camera[0], 32))
+if (state == states.walk && grounded && vsp > 0 && obj_player.state == 111 && bbox_in_camera(view_camera[0], 32))
 	scr_pizzaball_go_to_thrown(0, -10);
 arrowindex += 0.35;
 switch (state)
@@ -66,7 +66,7 @@ if (state == 156)
 			playerid = other.id;
 	}
 }
-if ((state == 134 || state == 126) && sit)
+if ((state == states.walk || state == states.idle) && sit)
 {
 	hsp = 0;
 	sprite_index = spr_pizzaball_idle1;
@@ -107,7 +107,7 @@ if (hitbuffer > 0)
 	invincible = true;
 	hitbuffer--;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

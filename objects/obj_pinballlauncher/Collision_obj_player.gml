@@ -3,7 +3,7 @@ with (other)
 {
 	if (scr_transformationcheck() || state == 5)
 	{
-		if ((state != 106 || sprite_index != spr_player_catched) && (state != 5 || xscale != _obj.image_xscale) && state != 47 && state != 38 && state != 84 && state != 186)
+		if ((state != 106 || sprite_index != spr_player_catched) && (state != 5 || xscale != _obj.image_xscale) && state != 47 && state != 38 && state != 84 && state != states.gotoplayer)
 		{
 			state = 5;
 			fmod_event_one_shot_3d("event:/sfx/misc/pepbotkick", x, y);

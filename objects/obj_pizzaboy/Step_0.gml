@@ -29,9 +29,9 @@ switch (state)
 }
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state == 134)
-	state = 126;
-if (state != 4)
+if (state == states.walk)
+	state = states.idle;
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

@@ -56,9 +56,9 @@ if (state != states.stun)
 	birdcreated = false;
 if (stuntouchbuffer > 0)
 	stuntouchbuffer--;
-if (!instance_exists(spawnenemyID) && state == 134)
+if (!instance_exists(spawnenemyID) && state == states.walk)
 {
-	state = 126;
+	state = states.idle;
 	sprite_index = spr_tank_spawnenemy;
 	image_index = 0;
 	with (instance_create(x, y - 18, content))
@@ -72,9 +72,9 @@ if (bombreset > 0)
 	bombreset--;
 if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)))
 {
-	if (state != 125 && bombreset <= 0 && (global.stylethreshold >= 3 || elite) && state == 134)
+	if (state != states.rage && bombreset <= 0 && (global.stylethreshold >= 3 || elite) && state == states.walk)
 	{
-		state = 125;
+		state = states.rage;
 		sprite_index = spr_tank_chargestart;
 		if (x != player.x)
 			image_xscale = -sign(x - player.x);
@@ -86,11 +86,11 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
 		bombreset = 200;
 		create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
 	}
-	else if (x != player.x && state != 125 && grounded && bombreset <= 0)
+	else if (x != player.x && state != states.rage && grounded && bombreset <= 0)
 	{
-		if (state == 134)
+		if (state == states.walk)
 		{
-			state = 129;
+			state = states.pizzagoblinthrow;
 			hsp = 0;
 			sprite_index = spr_tank_shoot;
 		}
@@ -98,13 +98,13 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
 }
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (hitboxcreate == 0 && state == 125)
+if (hitboxcreate == 0 && state == states.rage)
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_minijohn_hitbox))
 		ID = other.id;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

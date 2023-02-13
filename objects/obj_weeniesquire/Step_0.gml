@@ -56,7 +56,7 @@ switch (state)
 		}
 		break;
 }
-if (state == 134 && grounded && vsp > 0)
+if (state == states.walk && grounded && vsp > 0)
 	hsp = 0;
 if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
@@ -70,7 +70,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 var player = instance_nearest(x, y, obj_player);
 var check = player.x > (x - 300) && player.x < (x + 300);
-if (state == 134 && check && y <= (player.y + 60) && y >= (player.y - 60) && state != 80 && chargebuffer <= 0)
+if (state == states.walk && check && y <= (player.y + 60) && y >= (player.y - 60) && state != 80 && chargebuffer <= 0)
 {
 	state = 80;
 	flash = true;
@@ -88,7 +88,7 @@ if (state == 134 && check && y <= (player.y + 60) && y >= (player.y - 60) && sta
 }
 if (state != 80 && chargebuffer > 0)
 	chargebuffer--;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

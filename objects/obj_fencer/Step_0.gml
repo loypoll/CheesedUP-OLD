@@ -53,9 +53,9 @@ if (ragebuffer > 0)
 	ragebuffer--;
 if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)))
 {
-	if (state != 125 && ragebuffer == 0 && elite && (state == 134 || state == 128))
+	if (state != states.rage && ragebuffer == 0 && elite && (state == states.walk || state == states.charge))
 	{
-		state = 125;
+		state = states.rage;
 		sprite_index = spr_fencer_rage;
 		if (x != player.x)
 			image_xscale = -sign(x - player.x);
@@ -68,21 +68,21 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
 	}
 	else if (x != player.x && grounded)
 	{
-		if (state == 134 && charging == 0)
+		if (state == states.walk && charging == 0)
 		{
 			fmod_event_instance_play(chargesnd);
 			fmod_event_instance_set_3d_attributes(chargesnd, x, y);
 			with (instance_create(x, y, obj_forkhitbox))
 				ID = other.id;
 			charging = true;
-			state = 128;
+			state = states.charge;
 			movespeed = 5;
 			vsp = -7;
 			sprite_index = spr_fencer_chargestart;
 		}
 	}
 }
-if (state == states.stun || state == 134)
+if (state == states.stun || state == states.walk)
 {
 	charging = false;
 	movespeed = 0;
@@ -91,13 +91,13 @@ if (sprite_index == spr_fencer_chargestart && floor(image_index) == (image_numbe
 	sprite_index = spr_fencer_charge;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (hitboxcreate == 0 && (state == 134 || state == 125 || state == 128))
+if (hitboxcreate == 0 && (state == states.walk || state == states.rage || state == states.charge))
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_forkhitbox))
 		ID = other.id;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

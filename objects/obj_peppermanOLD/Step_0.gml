@@ -124,4 +124,4 @@ switch (state)
 		break;
 }
 xscale = image_xscale;
-colliding = !(state == 76 || state == 162 || state == 158 || state == 159);
+colliding = !(state == states.superslam || state == 162 || state == 158 || state == 159);

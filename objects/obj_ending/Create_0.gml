@@ -66,5 +66,5 @@ with (towerID)
 	sprite_index = spr_towerending_tower;
 }
 with (obj_player)
-	state = 18;
+	state = states.titlescreen;
 depth = -10;

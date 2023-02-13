@@ -44,7 +44,7 @@ if (obj_player.state != 252)
 						xscale = 1;
 						suplexmove = true;
 						sfx_gain(suplexdashsnd);
-						state = 42;
+						state = states.handstandjump;
 						movespeed = 10;
 						image_index = random_range(0, image_number - 1);
 						sprite_index = spr_player_groundedattack;

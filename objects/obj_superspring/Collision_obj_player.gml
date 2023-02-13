@@ -1,7 +1,7 @@
 var v = id;
 with (other)
 {
-	if (state != 97 && state != 186 && state != 146)
+	if (state != 97 && state != states.gotoplayer && state != 146)
 	{
 		if (state == 47 || state == 48 || state == 38)
 		{

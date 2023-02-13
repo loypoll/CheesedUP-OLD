@@ -367,7 +367,7 @@ function state_player_normal()
 				if (movespeed < 6)
 					movespeed = 6;
 			}
-			if (global.kungfu && key_attack && state != 42)
+			if (global.kungfu && key_attack && state != states.handstandjump)
 			{
 				state = states.blockstance;
 				sprite_index = spr_player_airattack;

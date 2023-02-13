@@ -8,7 +8,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	}
 	with (obj_player)
 	{
-		if ((state == 98 && place_meeting(x, y, obj_startgate)) || (state == 112 && place_meeting(x, y, obj_exitgate)))
+		if ((state == 98 && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
 			_cutscenehandler = true;
 	}
 	with (obj_charswitch_intro)
@@ -90,7 +90,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 		with (obj_player1)
 		{
 			_state = state;
-			if (state == 61)
+			if (state == states.chainsaw)
 				_state = tauntstoredstate;
 			switch (_state)
 			{

@@ -25,7 +25,7 @@ switch (state)
 					targetRoom = other.targetRoom;
 					targetDoor = other.targetDoor;
 					if (check_player_coop())
-						state = 112;
+						state = states.door;
 				}
 				instance_create(0, 0, obj_fadeout);
 			}

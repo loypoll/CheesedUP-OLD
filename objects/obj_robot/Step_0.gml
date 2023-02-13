@@ -39,7 +39,7 @@ switch (state)
 			}
 			sprite_index = spr_robot_mach;
 			image_index = 0;
-			state = 104;
+			state = states.mach2;
 		}
 		break;
 	case states.mach2:
@@ -113,18 +113,18 @@ if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;
 if (bombreset > 0)
 	bombreset--;
 targetplayer = instance_nearest(x, y, obj_player);
-if (x != targetplayer.x && state != 129 && bombreset == 0)
+if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset == 0)
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 20) && y >= (targetplayer.y - 20)))
 	{
-		if (state == 134 || (state == 126 && sprite_index != scaredspr))
+		if (state == states.walk || (state == states.idle && sprite_index != scaredspr))
 		{
 			fmod_event_one_shot_3d("event:/sfx/enemies/projectile", x, y);
 			image_index = 0;
@@ -183,7 +183,7 @@ if (state == 23 && image_index > 11)
 	}
 	snd = true;
 }
-if (state == 104)
+if (state == states.mach2)
 {
 	if (snd == 0)
 		fmod_event_instance_play(mach2snd);
@@ -195,9 +195,9 @@ if (state == 91 && image_index > 8)
 		fmod_event_instance_play(tacklesnd);
 	snd = true;
 }
-if (state != 23 && state != 104 && state != 91)
+if (state != 23 && state != states.mach2 && state != 91)
 	snd = false;
-if (state == 104 || (state == 23 && image_index > 11) || (state == 91 && image_index > 8))
+if (state == states.mach2 || (state == 23 && image_index > 11) || (state == 91 && image_index > 8))
 {
 	if (!hitboxcreate)
 	{
@@ -206,7 +206,7 @@ if (state == 104 || (state == 23 && image_index > 11) || (state == 91 && image_i
 		{
 			if (other.state == 23)
 				sprite_index = spr_swordhitbox;
-			else if (other.state == 104 || other.state == 91)
+			else if (other.state == states.mach2 || other.state == 91)
 				sprite_index = spr_bighitbox;
 			ID = other.id;
 		}

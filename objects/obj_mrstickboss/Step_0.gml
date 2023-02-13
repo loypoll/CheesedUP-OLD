@@ -86,4 +86,4 @@ switch (state)
 		state_boss_stun();
 		break;
 }
-colliding = !(state == 92 || state == 180 || state == 181);
+colliding = !(state == states.jump || state == 180 || state == 181);

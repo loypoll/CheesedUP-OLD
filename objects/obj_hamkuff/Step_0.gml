@@ -13,7 +13,7 @@ switch state
     case 206:
         if (!instance_exists(playerid))
         {
-            state = 134
+            state = states.walk
             break
         }
         else
@@ -26,7 +26,7 @@ switch state
                 with (playerid)
                 {
                     if (state == 152)
-                        other.state = 134
+                        other.state = states.walk
                     else if (!launched)
                     {
                         hamkuffID = other.id
@@ -37,11 +37,11 @@ switch state
                         var m = (abs(x - other.x) > dis ? abs(hsp) : abs(hsp) - max(0, abs(hsp) - 2))
                         if (hsp == 0)
                             m = _xs
-                        if !(state == 105 && sprite_index == spr_mach3boost)
+                        if !(state == states.machslide && sprite_index == spr_mach3boost)
                             hsp_carry = _xs * abs(m)
                         else
                             hsp_carry = -hsp
-                        if (state != 106 && state != 121 && state != 104 && state != 105 && abs(x - other.x) > dis + abs(movespeed) + 1)
+                        if (state != 106 && state != 121 && state != states.mach2 && state != states.machslide && abs(x - other.x) > dis + abs(movespeed) + 1)
                         {
                             state = 106
                             fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
@@ -65,9 +65,9 @@ switch state
                             flash = true;
                             fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
                         }
-                        if (state == 121 || (state == 105 && sprite_index == spr_mach3boost))
+                        if (state == 121 || (state == states.machslide && sprite_index == spr_mach3boost))
                             launch = 1
-                        if (state == 105 && sprite_index == spr_mach3boost && launch)
+                        if (state == states.machslide && sprite_index == spr_mach3boost && launch)
                             movespeed -= 0.6
                         if (state == 121 && movespeed > 15)
                             movespeed = 15
@@ -111,7 +111,7 @@ switch state
                         }
                         if launched
                         {
-                            other.state = 134
+                            other.state = states.walk
                             instance_destroy(other)
                             global.combotime = 60
                         }
@@ -181,7 +181,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 if (state != states.walk && state != 206)
     attract_player = 0
 var _dis = 300
-if (state == 134 && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != 292 && obj_player1.state != 119 && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
+if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != 292 && obj_player1.state != 119 && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
 {
     state = 206
     sprite_index = spr_hamkuff_chain1
@@ -227,7 +227,7 @@ if (state != states.stun)
     birdcreated = 0
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = (0.15 * room_speed)
-if (state != 4)
+if (state != states.grabbed)
     depth = 0
 if (state != states.stun)
     thrown = 0

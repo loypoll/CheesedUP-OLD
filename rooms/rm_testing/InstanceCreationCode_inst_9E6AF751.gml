@@ -6,7 +6,7 @@ stepfunc = function()
 		active = true;
 	with (obj_player)
 	{
-		if (state == 55 && place_meeting(x, y, other))
+		if (state == states.grabbing && place_meeting(x, y, other))
 			other.active = true;
 	}
 };

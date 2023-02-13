@@ -677,7 +677,7 @@ if (!place_meeting(x, y + 1, obj_railparent))
 	else
 		railmovespeed = Approach(railmovespeed, 0, 0.5);
 }
-if (state != 42 && state != states.tumble)
+if (state != states.handstandjump && state != states.tumble)
 	crouchslipbuffer = 0;
 if (state != states.mach3 && (state != states.chainsaw || tauntstoredstate != states.mach3))
 	mach4mode = false;
@@ -1229,7 +1229,7 @@ if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != 165 && 
 with (obj_ratblock)
 	scr_ratblock_destroy();
 scr_collide_destructibles();
-if (state != 290 && state != 17 && state != 186 && state != 208 && state != 18 && state != 150 && state != 4 && state != 112 && state != 97 && state != 7 && state != 95 && state != 118 && state != 90 && state != 98 && state != 39 && state != 64 && state != 46 && state != 89)
+if (state != states.backtohub && state != states.ghostpossess && state != states.gotoplayer && state != states.gotoplayer && state != states.titlescreen && state != states.tube && state != states.grabbed && state != states.door && state != 97 && state != 7 && state != states.comingoutdoor && state != 118 && state != 90 && state != 98 && state != 39 && state != 64 && state != 46 && state != 89)
 	scr_collide_player();
 if (state == states.tube || state ==states.gotoplayer || state == states.debugstate)
 {
@@ -1238,7 +1238,7 @@ if (state == states.tube || state ==states.gotoplayer || state == states.debugst
 }
 if (state == states.boulder)
 	scr_collide_player();
-if (state != 95)
+if (state != states.comingoutdoor)
 	image_blend = c_white;
 prevstate = state;
 prevsprite = sprite_index;

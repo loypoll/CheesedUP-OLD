@@ -1,6 +1,6 @@
 if (room == rm_editor)
 	exit;
-if (other.state != 186)
+if (other.state != states.gotoplayer)
 {
 	if (object_index != obj_escapecollect)
 		scr_sound_multiple("event:/sfx/misc/collect", x, y);

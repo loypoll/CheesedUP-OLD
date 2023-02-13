@@ -1,8 +1,8 @@
-if (state == 128)
+if (state == states.charge)
 {
 	with (other)
 	{
-		if (state != 3 && state != 89 && state != 31 && state != 186)
+		if (state != 3 && state != 89 && state != 31 && state != states.gotoplayer)
 		{
 			var _pindex = (object_index == obj_player1) ? 0 : 1;
 			GamepadSetVibration(_pindex, 1, 1, 0.85);

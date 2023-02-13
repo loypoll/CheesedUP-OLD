@@ -39,7 +39,7 @@ switch (text_state)
 	case 18:
 		repeat (_hide + 1)
 			text_y = Approach(text_y, -(text_sprite_height * text_yscale), 5);
-		if (obj_player1.state != 290 && place_meeting(x, y, obj_player) && !_hide)
+		if (obj_player1.state != states.backtohub && place_meeting(x, y, obj_player) && !_hide)
 		{
 			text_state = 135;
 			text_vsp = 0;

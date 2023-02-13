@@ -41,7 +41,7 @@ if (state != states.stun)
 scr_scareenemy();
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;
@@ -50,18 +50,18 @@ if (bombreset > 0)
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (sprite_index == spr_archergoblin_shoot && x != targetplayer.x)
 	image_xscale = -sign(x - targetplayer.x);
-if (x != targetplayer.x && targetplayer.state != 51 && state != 129 && bombreset == 0 && grounded)
+if (x != targetplayer.x && targetplayer.state != 51 && state != states.pizzagoblinthrow && bombreset == 0 && grounded)
 {
 	if ((targetplayer.x > (x - 200) && targetplayer.x < (x + 200)) && (y <= (targetplayer.y + 200) && y >= (targetplayer.y - 200)))
 	{
-		if (state == 134 || (state == 126 && sprite_index != scaredspr))
+		if (state == states.walk || (state == states.idle && sprite_index != scaredspr))
 		{
 			fmod_event_one_shot_3d("event:/sfx/enemies/noisegoblinbow");
 			sprite_index = spr_archergoblin_shoot;
 			image_index = 0;
 			if (x != targetplayer.x)
 				image_xscale = -sign(x - targetplayer.x);
-			state = 129;
+			state = states.pizzagoblinthrow;
 		}
 	}
 }

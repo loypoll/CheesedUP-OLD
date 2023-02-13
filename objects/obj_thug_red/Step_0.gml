@@ -3,7 +3,7 @@ if (room == rm_editor)
 var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (bombreset > 0)
 	bombreset--;
-if (state == 134)
+if (state == states.walk)
 {
 	if (!chasing)
 	{
@@ -13,7 +13,7 @@ if (state == 134)
 		if ((targetplayer.x > (x - 150) && targetplayer.x < (x + 150)) && (y <= (targetplayer.y + 60) && y >= (targetplayer.y - 60)))
 		{
 			chasing = true;
-			state = 128;
+			state = states.charge;
 			attack_count = attack_max;
 			if (x != targetplayer.x)
 				image_xscale = -sign(x - targetplayer.x);
@@ -50,7 +50,7 @@ else if (state == 141)
 	{
 		if ((targetplayer.x > (x - attackthreshold_x) && targetplayer.x < (x + attackthreshold_x)) && (targetplayer.y > (y - attackthreshold_y) && targetplayer.y < (y + attackthreshold_y)))
 		{
-			state = 128;
+			state = states.charge;
 			hsp = 0;
 			attack_count = attack_max;
 		}
@@ -77,7 +77,7 @@ else if (state == 141)
 		sprite_index = spr_shrimp_land;
 		image_index = 0;
 	}
-	if (((inst_front != -4 || inst_up != -4) || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != 128)
+	if (((inst_front != -4 || inst_up != -4) || (inst_down == -4 && inst_down2 == -4)) && targetplayer.y <= (y + 32) && grounded && state != states.charge)
 	{
 		vsp = -11;
 		sprite_index = spr_shrimp_jump;
@@ -85,7 +85,7 @@ else if (state == 141)
 		hsp = image_xscale * chasespeed;
 	}
 }
-if (state == 128)
+if (state == states.charge)
 {
 	bombreset = attackreset;
 	if (attack_count > 0)
@@ -176,7 +176,7 @@ if (state != states.stun)
 if (elite && ragecooldown <= 0)
 {
 	var player = instance_nearest(x, y, obj_player);
-	if (state == 134 || state == 128)
+	if (state == states.walk || state == states.charge)
 	{
 		if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)))
 		{
@@ -185,7 +185,7 @@ if (elite && ragecooldown <= 0)
 			fmod_event_one_shot_3d("event:/sfx/enemies/projectile", x, y);
 			image_index = 0;
 			shot = false;
-			state = 125;
+			state = states.rage;
 			ragecooldown = 100;
 		}
 	}
@@ -193,7 +193,7 @@ if (elite && ragecooldown <= 0)
 if (ragecooldown > 0)
 	ragecooldown--;
 scr_scareenemy();
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

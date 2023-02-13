@@ -44,19 +44,19 @@ if (bombreset > 0)
 	bombreset--;
 if (x != player.x && grounded && player.x > (x - 500) && player.x < (x + 500) && player.y > (y - 500) && player.y < (y + 500) && !instance_exists(bazookaID))
 {
-	if (state == 134 && bombreset <= 0)
+	if (state == states.walk && bombreset <= 0)
 	{
 		if (x != player.x)
 			image_xscale = -sign(x - player.x);
 		image_index = 0;
-		state = 129;
+		state = states.pizzagoblinthrow;
 	}
 }
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (floor(image_index) == (image_number - 1) && sprite_index == spr_spitcheese_spit)
 	sprite_index = spr_spitcheese_idle;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

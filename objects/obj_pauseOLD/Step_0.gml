@@ -108,8 +108,8 @@ if (pause && !instance_exists(obj_option))
 					global.leveltosave = -4;
 					scr_playerreset();
 					alarm[0] = 2;
-					obj_player1.state = 18;
-					obj_player2.state = 18;
+					obj_player1.state = states.titlescreen;
+					obj_player2.state = states.titlescreen;
 					obj_player1.targetDoor = "A";
 					if (instance_exists(obj_player2))
 						obj_player2.targetDoor = "A";

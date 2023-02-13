@@ -353,7 +353,7 @@ function scr_keyname(_key)
 		case 103:
 			return "NUMPAD 7";
 			break;
-		case states.mach2:
+		case 104:
 			return "NUMPAD 8";
 			break;
 		case 105:
@@ -371,7 +371,7 @@ function scr_keyname(_key)
 		case 110:
 			return "DOT";
 			break;
-		case states.freefallland:
+		case 111:
 			return "SLASH";
 			break;
 		case 112:
@@ -404,7 +404,7 @@ function scr_keyname(_key)
 		case 121:
 			return "F10";
 			break;
-		case states.freefallprep:
+		case 122:
 			return "F11";
 			break;
 		case 123:

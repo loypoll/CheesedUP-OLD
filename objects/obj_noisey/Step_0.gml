@@ -69,13 +69,13 @@ if (state != 149)
 	scr_scareenemy();
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (hitboxcreate == 0 && state == 134 && grounded && vsp > 0 && state != states.stun)
+if (hitboxcreate == 0 && state == states.walk && grounded && vsp > 0 && state != states.stun)
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_forkhitbox))
 		ID = other.id;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

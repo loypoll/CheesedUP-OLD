@@ -70,20 +70,20 @@ scr_scareenemy();
 var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (bombreset > 0)
 	bombreset--;
-if (x != targetplayer.x && state != 129 && bombreset == 0 && grounded)
+if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset == 0 && grounded)
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 20) && y >= (targetplayer.y - 20)))
 	{
-		if (state == 134 && !scr_solid_line(targetplayer))
+		if (state == states.walk && !scr_solid_line(targetplayer))
 		{
 			sprite_index = spr_ufogrounded_shoot;
 			image_index = 0;
 			image_xscale = -sign(x - targetplayer.x);
-			state = 129;
+			state = states.pizzagoblinthrow;
 		}
 	}
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

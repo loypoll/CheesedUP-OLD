@@ -1,7 +1,7 @@
 var t = id;
 with (other)
 {
-	if (state != 186 && state != 16 && state != 146)
+	if (state != states.gotoplayer && state != 16 && state != 146)
 	{
 		if (boxxed == 0 && isgustavo == 0 && other.buffer == 0 && other.sprite_index == spr_dashpad)
 		{

@@ -14,7 +14,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 {
 	with (other)
 	{
-		if (key_up && !instance_exists(obj_jumpscare) && other.sprite_index == spr_elevatoropen && grounded && (state == 0 || state == 103 || state == 104 || state == 58 || state == 121 || state == 99) && ((character != "M" && y == (other.y + 50)) || (character == "M" && y == (other.y + 55))) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != 112 && state != 95)
+		if (key_up && !instance_exists(obj_jumpscare) && other.sprite_index == spr_elevatoropen && grounded && (state == 0 || state == states.mach1 || state == states.mach2 || state == states.pogo || state == 121 || state == 99) && ((character != "M" && y == (other.y + 50)) || (character == "M" && y == (other.y + 55))) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
 		{
 			obj_player1.lastroom = room;
 			obj_player2.lastroom = room;
@@ -30,7 +30,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 			obj_player2.targetDoor = other.targetDoor;
 			obj_player2.targetRoom = other.targetRoom2;
 			obj_player.image_index = 0;
-			obj_player.state = 112;
+			obj_player.state = states.door;
 			obj_player.mach2 = 0;
 			if (instance_exists(obj_player2) && global.coop == 1)
 			{

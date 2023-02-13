@@ -131,7 +131,7 @@ if (state == 141 && ragecooldown <= 0)
 			flash = true;
 			alarm[4] = 5;
 			ragecooldown = 100;
-			state = 125;
+			state = states.rage;
 			create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
 			with (instance_create(x, y, obj_forkhitbox))
 			{
@@ -157,7 +157,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != 141)
 	momentum = 0;
-if (state == 134 || state == 126)
+if (state == states.walk || state == states.idle)
 {
 	var targetplayer = obj_player1;
 	if (obj_player1.spotlight == 0)
@@ -171,16 +171,16 @@ if (instance_exists(obj_player2))
 {
 	if ((obj_player2.x > (x - 400) && obj_player2.x < (x + 400)) && (y <= (obj_player2.y + 60) && y >= (obj_player2.y - 60)))
 	{
-		if (state != 126 && obj_player2.state == 121)
+		if (state != states.idle && obj_player2.state == 121)
 		{
-			state = 126;
+			state = states.idle;
 			sprite_index = scaredspr;
 			if (x != obj_player2.x)
 				image_xscale = -sign(x - obj_player2.x);
 		}
 	}
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

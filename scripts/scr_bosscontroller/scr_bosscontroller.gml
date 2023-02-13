@@ -151,7 +151,7 @@ function scr_bosscontroller_normal()
 				scr_bosscontroller_particle_anim(1618, 0, pos[0] - 30, pos[1] - 30, 0.5);
 		}
 	}
-	if (!instance_exists(bossID) && !bossdead && instance_exists(obj_player1) && obj_player1.state != 91 && obj_player1.state != 95 && room != boss_fakepephallway && room != boss_pizzaface && room != rank_room)
+	if (!instance_exists(bossID) && !bossdead && instance_exists(obj_player1) && obj_player1.state != 91 && obj_player1.state != states.comingoutdoor && room != boss_fakepephallway && room != boss_pizzaface && room != rank_room)
 	{
 		if (room != boss_vigilante || obj_player1.state != states.actor)
 		{

@@ -44,23 +44,23 @@ stunspr = spr_kentukykenny_stun;
 grabbedspr = spr_kentukykenny_stun;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;
 if (bombreset > 0)
 	bombreset--;
 var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1.id;
-if (x != targetplayer.x && state != 129 && bombreset <= 0 && grounded && targetplayer.state != 61)
+if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset <= 0 && grounded && targetplayer.state != states.chainsaw)
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 20) && y >= (targetplayer.y - 20)))
 	{
-		if (state == 134 || (state == 126 && sprite_index != scaredspr))
+		if (state == states.walk || (state == states.idle && sprite_index != scaredspr))
 		{
 			sprite_index = spr_kentukykenny_throw;
 			image_index = 0;
 			image_xscale = -sign(x - targetplayer.x);
-			state = 129;
+			state = states.pizzagoblinthrow;
 		}
 	}
 }

@@ -4,7 +4,7 @@ switch (state)
 		if (start && distance_to_object(obj_player) <= 150)
 		{
 			state = 146;
-			substate = 126;
+			substate = states.idle;
 			cutscenebuffer = 120;
 			with (obj_player)
 			{

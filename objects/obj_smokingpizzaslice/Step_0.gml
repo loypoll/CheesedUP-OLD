@@ -5,7 +5,7 @@ if (bombreset > 0)
 switch (state)
 {
 	case states.walk:
-		if (state == 129)
+		if (state == states.pizzagoblinthrow)
 			break;
 		else
         {
@@ -17,9 +17,9 @@ switch (state)
                 var old_substate = substate;
                 while (substate == old_substate)
                     substate = choose(134, 126, 130);
-                if (substate == 130 && state == 129)
+                if (substate == 130 && state == states.pizzagoblinthrow)
                     substate = states.walk;
-                if (substate == 134)
+                if (substate == states.walk)
                     image_xscale = choose(-1, 1);
                 else if (substate == 130)
                 {
@@ -60,13 +60,13 @@ switch (state)
                     {
                         image_xscale *= -1;
                         substate_buffer = substate_max;
-                        substate = 126;
+                        substate = states.idle;
                         sprite_index = spr_pizzaslug_idle;
                     }
                     break;
 				
                 case states.pizzagoblinthrow:
-                    state = 129;
+                    state = states.pizzagoblinthrow;
                     substate_buffer = 0;
                     image_index = 0;
                     sprite_index = spr_pizzaslug_cough;
@@ -110,7 +110,7 @@ if (state != states.stun)
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 var player = instance_nearest(x, y, obj_player);
-if (state == 134 && substate != 130)
+if (state == states.walk && substate != 130)
 {
 	if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)) && ragecooldown == 0)
 	{
@@ -123,14 +123,14 @@ if (state == 134 && substate != 130)
 			shot = false;
 			sprite_index = spr_pizzaslug_rage;
 			image_index = 0;
-			state = 125;
+			state = states.rage;
 		}
 		else
 		{
 			if (x != player.x)
 				image_xscale = -sign(x - player.x);
 			ragecooldown = 160;
-			state = 129;
+			state = states.pizzagoblinthrow;
 			substate_buffer = 0;
 			image_index = 0;
 			sprite_index = spr_pizzaslug_cough;
@@ -140,7 +140,7 @@ if (state == 134 && substate != 130)
 if (ragecooldown > 0)
 	ragecooldown--;
 scr_scareenemy();
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

@@ -131,7 +131,7 @@ if (!invincible && !flash && alarm[5] == -1)
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 scr_scareenemy();
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

@@ -59,13 +59,13 @@ var player = instance_nearest(x, y, obj_player);
 if (elite)
 {
 	var check = (image_xscale > 0) ? (player.x > x && player.x < (x + 200)) : (player.x < x && player.x > (x - 200));
-	if (state == 134)
+	if (state == states.walk)
 	{
 		if (check && (y <= (player.y + 60) && y >= (player.y - 60)))
 		{
-			if (state != 125 && ragebuffer == 0)
+			if (state != states.rage && ragebuffer == 0)
 			{
-				state = 125;
+				state = states.rage;
 				sprite_index = ragespr;
 				if (x != player.x)
 					image_xscale = -sign(x - player.x);
@@ -81,7 +81,7 @@ if (elite)
 	if (ragebuffer > 0)
 		ragebuffer--;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

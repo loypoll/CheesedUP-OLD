@@ -1,20 +1,20 @@
-if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state != 186)
+if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state != states.gotoplayer)
 {
 	other.jumpstop = true;
 	with (other)
 	{
 		grounded = false;
-		if (state == 105)
+		if (state == states.machslide)
 			state = 92;
 		if (state == 0 || state == 108)
 			state = 92;
 		if (state == 37)
-			state = 104;
+			state = states.mach2;
 	}
 	if (sprite_index != spr_bigmushroom_bounce || image_index > 5)
 		fmod_event_one_shot_3d("event:/sfx/misc/mushroombounce", x, y);
 	sprite_index = spr_bigmushroom_bounce;
-	if (other.state == 92 || other.state == 0)
+	if (other.state == states.jump || other.state == 0)
 	{
 		other.sprite_index = other.spr_machfreefall;
 		other.image_index = 0;
@@ -37,7 +37,7 @@ if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state
 				other.sprite_index = spr_lonegustavo_dashjump;
 		}
 		other.jumpAnim = true;
-		other.state = 192;
+		other.state = states.ratmountjump;
 		other.image_index = 0;
 	}
 }

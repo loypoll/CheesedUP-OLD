@@ -2,10 +2,10 @@ with (other)
 {
 	if (vsp > -5)
 		vsp = Approach(vsp, -5, 5);
-	if (state == 92)
+	if (state == states.jump)
 		sprite_index = spr_machfreefall;
 	jumpstop = true;
-	if ((state == 105 || state == 108) || (state == 5 && sprite_index != spr_dive))
+	if ((state == states.machslide || state == 108) || (state == 5 && sprite_index != spr_dive))
 	{
 		state = 92;
 		movespeed = 0;

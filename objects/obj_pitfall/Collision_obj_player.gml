@@ -25,7 +25,7 @@ with (other)
 		}
 		other.visited = true;
 		image_index = 0;
-		if (state == 105)
+		if (state == states.machslide)
 			state = 0;
 		instance_create(x, y, obj_fadeout);
 	}

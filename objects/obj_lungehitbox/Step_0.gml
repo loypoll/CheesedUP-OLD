@@ -1,4 +1,4 @@
-if (playerid.state != 43 && playerid.state != 42)
+if (playerid.state != 43 && playerid.state != states.handstandjump)
 {
 	instance_destroy();
 	exit;

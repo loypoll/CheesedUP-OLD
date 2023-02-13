@@ -29,9 +29,9 @@ switch (state)
 			state = 0;
 		break;
 }
-if (state == 92 && alarm[0] == -1)
+if (state == states.jump && alarm[0] == -1)
 	alarm[0] = 10;
-else if (state != 92)
+else if (state != states.jump)
 	image_alpha = 1;
 if (!place_meeting(x, y, obj_trapghost) && !place_meeting(xstart, ystart, obj_trapghost))
 	sprite_index = spr_kingghost_anchor;

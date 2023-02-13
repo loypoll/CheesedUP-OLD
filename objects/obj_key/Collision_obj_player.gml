@@ -4,7 +4,7 @@ if (global.key_inv)
 	exit;
 with (other)
 {
-	if (state != 51 && state != 186 && state != 16 && state != 47 && state != 21 && state != 33 && state != 24 && state != 48 && state != 38 && state != 107 && state != 49)
+	if (state != 51 && state != states.gotoplayer && state != 16 && state != 47 && state != 21 && state != 33 && state != 24 && state != 48 && state != 38 && state != 107 && state != 49)
 	{
 		instance_destroy(other);
 		global.key_inv = true;

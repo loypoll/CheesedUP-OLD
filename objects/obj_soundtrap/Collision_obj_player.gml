@@ -1,6 +1,6 @@
 with (other)
 {
-	if (state != 186 && state != 9)
+	if (state != states.gotoplayer && state != 9)
 	{
 		image_index = 0;
 		state = 9;

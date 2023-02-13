@@ -2,7 +2,7 @@ if (image_index == 1 && global.panic == false && room != war_13)
 {
 	with (obj_player)
 	{
-		if (state == 95 && floor(image_index) == (image_number - 2))
+		if (state == states.comingoutdoor && floor(image_index) == (image_number - 2))
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
 			GamepadSetVibration(0, 1, 1, 0.9);
@@ -37,11 +37,11 @@ if (image_index == 1 && global.panic == false && room != war_13)
 		}
 	}
 }
-if (drop && dropstate != 126)
+if (drop && dropstate != states.idle)
 	exit;
 with (obj_player)
 {
-	if (grounded && (x > (other.x - 160) && x < (other.x + 160)) && key_up && (state == 0 || state == 99 || state == 103 || state == 104 || state == 121) && (global.panic == true || global.snickchallenge == 1 || room == war_13))
+	if (grounded && (x > (other.x - 160) && x < (other.x + 160)) && key_up && (state == 0 || state == 99 || state == states.mach1 || state == states.mach2 || state == 121) && (global.panic == true || global.snickchallenge == 1 || room == war_13))
 	{
 		global.noisejetpack = false;
 		global.startgate = false;

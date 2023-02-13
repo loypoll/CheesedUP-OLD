@@ -1,6 +1,6 @@
 if (instance_exists(baddieID))
 {
-	if (baddieID.vsp > 0 && baddieID.state != 4)
+	if (baddieID.vsp > 0 && baddieID.state != states.grabbed)
 	{
 		instance_create(x, y, obj_bumpeffect);
 		baddieID.stunned = 200;

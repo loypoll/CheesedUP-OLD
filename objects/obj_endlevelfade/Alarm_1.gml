@@ -3,7 +3,7 @@ with (obj_player)
 {
 	targetRoom = other.targetRoom;
 	targetDoor = other.targetDoor;
-	state = 95;
+	state = states.comingoutdoor;
 	image_index = 0;
 }
 scr_playerreset();

@@ -87,15 +87,15 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (bombreset > 0 && state != states.stun)
 	bombreset--;
-else if (state == 134 && distance_to_object(obj_player) < 250)
+else if (state == states.walk && distance_to_object(obj_player) < 250)
 {
-	state = 129;
+	state = states.pizzagoblinthrow;
 	cooldown = 20;
 	sprite_index = spr_pizzice_walk;
 	image_speed = 0.25;
 	shot = 3;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

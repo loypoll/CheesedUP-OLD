@@ -89,13 +89,13 @@ if (flash == 1 && alarm[2] <= 0)
 var player = instance_nearest(x, y, obj_player);
 if (elite && ragecooldown > 0)
 	ragecooldown--;
-if (state == 134 && state != states.stun && sprite_index == walkspr && sprite_index != spr_indiancheese_scared && elite && ragecooldown == 0)
+if (state == states.walk && state != states.stun && sprite_index == walkspr && sprite_index != spr_indiancheese_scared && elite && ragecooldown == 0)
 {
 	if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)))
 	{
 		if (x != player.x)
 			image_xscale = -sign(x - player.x);
-		state = 125;
+		state = states.rage;
 		sprite_index = spr_indiancheese_howl;
 		image_index = 0;
 		shot = false;
@@ -109,7 +109,7 @@ else if (image_speed == 0)
 	image_speed = 0.35;
 if (sprite_index == spr_indiancheese_land && floor(image_index) == (image_number - 1))
 	sprite_index = spr_indiancheese_walk;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;

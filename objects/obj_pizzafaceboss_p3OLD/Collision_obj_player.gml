@@ -1,8 +1,8 @@
 if (state == 156)
 	exit;
-if (other.state == 42)
+if (other.state == states.handstandjump)
 {
-	if (state == 42)
+	if (state == states.handstandjump)
 	{
 		with (other)
 		{
@@ -37,7 +37,7 @@ if (other.state == 42)
 		cooldown += 15;
 	}
 }
-else if (state == 42)
+else if (state == states.handstandjump)
 {
 	state = 262;
 	substate = 79;

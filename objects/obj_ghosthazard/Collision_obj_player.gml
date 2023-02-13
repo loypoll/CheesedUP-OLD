@@ -2,7 +2,7 @@ with (other)
 {
 	if (character == "V")
 		scr_hurtplayer(id);
-	else if (!isgustavo && state != 16 && state != 17 && state != 146 && state != 147 && state != 186)
+	else if (!isgustavo && state != 16 && state != states.ghostpossess && state != 146 && state != 147 && state != states.gotoplayer)
 	{
 		scr_losepoints();
 		create_transformation_tip(lang_get_value("ghosttip"), "ghost");

@@ -9,7 +9,7 @@ function scr_player_ratmountgroundpound()
 	hsp = movespeed;
 	if (brick == 1)
 	{
-		state = 192;
+		state = states.ratmountjump;
 		sprite_index = spr_player_ratmountfall;
 	}
 	if (gustavokicktimer > 0)

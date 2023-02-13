@@ -25,7 +25,7 @@ if (activated == 1)
 			scr_enemy_staggered();
 			break;
 	}
-	if (state == 134)
+	if (state == states.walk)
 	{
 		highest_y = -250;
 		var _instY = collision_line(obj_player1.x, obj_player1.y, obj_player1.x, obj_player1.y - 270, obj_solid, false, true);
@@ -102,7 +102,7 @@ if (activated == 1)
 	}
 	if (flash == 1 && alarm[2] <= 0)
 		alarm[2] = 0.15 * room_speed;
-	if (state != 4)
+	if (state != states.grabbed)
 		depth = 0;
 	if (state != states.stun)
 		thrown = false;

@@ -6,7 +6,7 @@ if (hp <= 0 && state != 145)
 }
 if (chooseparry_buffer > 0)
 	chooseparry_buffer--;
-if ((state == 42 || state == 102 || state == 167 || state == 171 || state == 173 || (state == 58 && pogochargeactive) || state == 77) && alarm[0] <= 0)
+if ((state == states.handstandjump || state == 102 || state == 167 || state == 171 || state == 173 || (state == states.pogo && pogochargeactive) || state == 77) && alarm[0] <= 0)
 	alarm[0] = 6;
 switch (state)
 {
@@ -98,4 +98,4 @@ switch (state)
 		break;
 }
 angry = phase > 6;
-attacking = state == 42 || state == 102 || state == 77 || state == 167 || state == 58 || state == 170 || state == 171 || state == 173 || state == 74;
+attacking = state == states.handstandjump || state == 102 || state == 77 || state == 167 || state == states.pogo || state == 170 || state == 171 || state == 173 || state == 74;

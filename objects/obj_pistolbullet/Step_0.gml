@@ -27,7 +27,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 		switch (object_index)
 		{
 			case obj_vigilanteboss:
-				if (state != 137 && (state != 104 || kick) && (flickertime <= 0 && vsp > 0) && !reposition)
+				if (state != states.hit && (state != states.mach2 || kick) && (flickertime <= 0 && vsp > 0) && !reposition)
 				{
 					flash = true;
 					alarm[2] = 3;
@@ -50,7 +50,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 							create_debris(other.x, other.y, spr_slimedebris);
 						instance_create(other.x, other.y, obj_parryeffect);
 						scr_sleep(30);
-						state = 137;
+						state = states.hit;
 						linethrown = true;
 						hitX = x;
 						hitY = y;
@@ -86,7 +86,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 				}
 				break;
 			case obj_pizzafaceboss_p2:
-				if (state != 137 && (flickertime <= 0 && grounded && vsp > 0))
+				if (state != states.hit && (flickertime <= 0 && grounded && vsp > 0))
 				{
 					flash = true;
 					alarm[2] = 3;

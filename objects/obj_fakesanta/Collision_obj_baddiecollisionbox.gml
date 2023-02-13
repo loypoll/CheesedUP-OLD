@@ -1,5 +1,5 @@
 var baddieID = id;
-if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.thrown != 1 && !other.baddieID.mach3destroy && baddieID.state != 137 && other.baddieID.thrown == 1 && other.baddieID.state != 137)
+if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.thrown != 1 && !other.baddieID.mach3destroy && baddieID.state != states.hit && other.baddieID.thrown == 1 && other.baddieID.state != states.hit)
 {
 	fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
 	if (!baddieID.important)
@@ -18,7 +18,7 @@ if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.thr
 			baddieID.hp -= 1;
 		instance_create(baddieID.x, baddieID.y, obj_parryeffect);
 		baddieID.alarm[3] = 3;
-		baddieID.state = 137;
+		baddieID.state = states.hit;
 		baddieID.image_xscale = other.baddieID.image_xscale;
 		instance_create(x, y, obj_slapstar);
 		instance_create(x, y, obj_slapstar);

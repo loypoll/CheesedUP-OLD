@@ -2,7 +2,7 @@ var _transfo = false;
 var _state = other.state;
 with (other)
 {
-	if (!scr_transformationcheck() && state != 95 && state != 112)
+	if (!scr_transformationcheck() && state != states.comingoutdoor && state != states.door)
 	{
 		if (state == 16)
 			notification_push(notifs.priest_ghost, [ghosttimer, room]);

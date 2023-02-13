@@ -38,7 +38,7 @@ switch (state)
 		scr_enemy_rage();
 		break;
 }
-if (state == 134 || state == 126)
+if (state == states.walk || state == states.idle)
 {
 	if (sprite_index != spr_golfdemon_idle2)
 		sprite_index = spr_golfdemon_idle;
@@ -57,7 +57,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != 141)
 	momentum = 0;
-if (state == 134 || state == 126)
+if (state == states.walk || state == states.idle)
 {
 	var targetplayer = instance_nearest(x, y, obj_player);
 	if (sprite_index != spr_golfdemon_idle2 && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y > (y - 200) && targetplayer.y < (y + 200))
@@ -93,7 +93,7 @@ if (state == 141)
 }
 else
 	fmod_event_instance_stop(snd, true);
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;
@@ -107,7 +107,7 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
-if (state != 141 && state != 137)
+if (state != 141 && state != states.hit)
 	invincible = false;
 if (state == 141)
 	invincible = true;
