@@ -1,8 +1,8 @@
 with (obj_player2)
-	state = 18;
+	state = states.titlescreen;
 switch (state)
 {
-	case 92:
+	case states.jump:
 		if (room != boss_pizzafacefinale && vsp < 0)
 			y += vsp;
 		vsp = Approach(vsp, -10, 0.1);
@@ -24,7 +24,7 @@ switch (state)
 					}
 				}
 			}
-			state = 137;
+			state = states.hit;
 			hitX = x;
 			hitY = y;
 			hitLag = 5;
@@ -160,19 +160,19 @@ switch (state)
 		}
 		if (superslam)
 		{
-			if (state == 137)
+			if (state == states.hit)
 			{
 				x = hitX;
 				y = hitY;
 			}
 			fmod_event_instance_play(snd);
-			state = 76;
+			state = states.superslam;
 			sprite_index = spr_pizzahead_piledriverfinal;
 			image_index = 0;
 			image_speed = 0.35;
 		}
 		break;
-	case 137:
+	case states.hit:
 		x = hitX + irandom_range(-4, 4);
 		y = hitY + irandom_range(-4, 4);
 		if (hitLag > 0)
@@ -204,7 +204,7 @@ switch (state)
 			case 3:
 				pizzahead_x = -5;
 				break;
-			case 4:
+			case states.grabbed:
 				pizzahead_x = -10;
 				break;
 			case 5:

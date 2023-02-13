@@ -9,7 +9,7 @@ function scr_player_mach1()
 	if (scr_solid(x + xscale, y) && (!place_meeting(x + xscale, y, obj_slope) || scr_solid_slope(x + sign(hsp), y)))
 	{
 		mach2 = 0;
-		state = 0;
+		state = states.normal;
 		movespeed = 0;
 	}
 	if (!place_meeting(x, y + 1, obj_railparent))
@@ -34,7 +34,7 @@ function scr_player_mach1()
 			movespeed += 0.075;
 		if (movespeed >= 8)
 		{
-			state = 104;
+			state = states.mach2;
 			particle_set_scale(5, xscale, 1);
 			create_particle(x, y, particle.jumpdust, 0);
 		}
@@ -70,7 +70,7 @@ function scr_player_mach1()
 		sprite_index = spr_airdash2;
 	if (!key_attack)
 	{
-		state = 0;
+		state = states.normal;
 		image_index = 0;
 	}
 	if (!key_jump2 && !jumpstop && vsp < 0.5)
@@ -81,7 +81,7 @@ function scr_player_mach1()
 	if (place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope))
 	{
 		movespeed = 0;
-		state = 0;
+		state = states.normal;
 	}
 	switch (character)
 	{
@@ -91,7 +91,7 @@ function scr_player_mach1()
 				sprite_index = spr_playerV_airrevolver;
 				image_index = 0;
 				vsp = -5;
-				state = 1;
+				state = states.revolver;
 				with (instance_create(x + (xscale * 20), y + 20, obj_shotgunbullet))
 				{
 					is_solid = false;
@@ -103,7 +103,7 @@ function scr_player_mach1()
 				image_index = 0;
 				sprite_index = spr_playerV_dynamitethrow;
 				vsp = -5;
-				state = 2;
+				state = states.dynamite;
 				with (instance_create(x, y, obj_dynamite))
 				{
 					image_xscale = other.xscale;
@@ -121,14 +121,14 @@ function scr_player_mach1()
 		{
 			sprite_index = spr_bodyslamstart;
 			image_index = 0;
-			state = 122;
+			state = states.freefallprep;
 			vsp = -5;
 		}
 		else
 		{
 			sprite_index = spr_player_shotgunjump1;
 			image_index = 0;
-			state = 122;
+			state = states.freefallprep;
 			vsp = -5;
 			with (instance_create(x + (xscale * 30), y + 60, obj_shotgunbullet))
 			{

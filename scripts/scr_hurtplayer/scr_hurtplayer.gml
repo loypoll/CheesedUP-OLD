@@ -10,7 +10,7 @@ function scr_hurtplayer(player)
 		if (global.failcutscene)
 		{
 		}
-		else if (state == 196 || state == 262 || state == 231 || state == 147 || instance_exists(obj_vigilante_duelintro) || state == 119 || state == 292 || state == 150 || state == 208 || state == 148 || state == 165)
+		else if (state == states.ratmounthurt || state == states.supergrab || state == states.pizzaface_phase2transition || state == states.parry || instance_exists(obj_vigilante_duelintro) || state == states.taxi || state == states.animation || state == states.tube || state == states.debugstate || state == states.golf || state == states.slipbanan)
 		{
 		}
 		else if (global.noisejetpack == 1)
@@ -22,14 +22,14 @@ function scr_hurtplayer(player)
 		else if (sprite_index == spr_player_jetpackstart2)
 		{
 		}
-		else if ((state == 84 && (parrytimer > 0 || instance_exists(obj_parryhitbox) || sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmountsupertaunt)) || state == 61 || state == 273 || state == 146 || instance_exists(obj_bossdark))
+		else if ((state == states.backbreaker && (parrytimer > 0 || instance_exists(obj_parryhitbox) || sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmountsupertaunt)) || state == states.chainsaw || state == 273 || state == 146 || instance_exists(obj_bossdark))
 		{
-			if (state == 84)
+			if (state == states.backbreaker)
 				trace(parrytimer);
 		}
 		else if (global.kungfu)
 		{
-			if (state == 206)
+			if (state == states.blockstance)
 			{
 				if (sprite_index != spr_player_airattackstart)
 				{
@@ -39,7 +39,7 @@ function scr_hurtplayer(player)
 				sprite_index = spr_player_airattackstart;
 				hsp = -xscale * 2;
 			}
-			else if (state != 156 && state != 137 && !hurted)
+			else if (state != states.thrown && state != states.hit && !hurted)
 			{
 				instance_create(x, y, obj_parryeffect);
 				repeat (5)
@@ -49,7 +49,7 @@ function scr_hurtplayer(player)
 				}
 				hitLag = 3;
 				hitxscale = (x != other.x) ? sign(other.x - x) : -other.image_xscale;
-				state = 137;
+				state = states.hit;
 				hitstunned = 50;
 				hurted = true;
 				alarm[7] = hitstunned + 30;
@@ -86,7 +86,7 @@ function scr_hurtplayer(player)
 					xscale = sign(other.x - x);
 				if (irandom(100) <= 50)
 					fmod_event_one_shot_3d("event:/sfx/voice/gushurt", x, y);
-				state = 196;
+				state = states.ratmounthurt;
 				movespeed = 6;
 				vsp = -9;
 				flash = true;
@@ -99,43 +99,43 @@ function scr_hurtplayer(player)
 				_hurt = true;
 			}
 		}
-		else if (state == 70)
+		else if (state == states.shotgundash)
 		{
 		}
-		else if ((state == 47 || state == 48 || state == 38 || state == 49) && cutscene == 0)
+		else if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.knightpepbump) && cutscene == 0)
 		{
 		}
-		else if (state == 16)
+		else if (state == states.ghost)
 		{
 		}
-		else if (state == 17)
+		else if (state == states.ghostpossess)
 		{
-			if (instance_exists(possessID) && object_get_parent(possessID) == 622)
+			if (instance_exists(possessID) && object_get_parent(possessID) == obj_baddie)
 			{
-				state = 16;
+				state = states.ghost;
 				with (obj_baddie)
 				{
-					if (is_controllable && state == 17 && playerid == other.id)
+					if (is_controllable && state == states.ghostpossess && playerid == other.id)
 						instance_destroy();
 				}
 			}
 		}
-		else if (state == 94)
+		else if (state == states.slipnslide)
 		{
 		}
-		else if (state == 187)
+		else if (state == states.trickjump)
 		{
 		}
-		else if (state == 41)
+		else if (state == states.chainsawbump)
 		{
 		}
-		else if (state == 51 && hurted == 0)
+		else if (state == states.bombpep && hurted == 0)
 		{
 		}
-		else if (state == 31)
+		else if (state == states.rideweenie)
 		{
 		}
-		else if (state == 94)
+		else if (state == states.slipnslide)
 		{
 		}
 		else if (pizzashield == 1)
@@ -145,7 +145,7 @@ function scr_hurtplayer(player)
 				sprite_index = spr_pizzashield_collectible;
 			hsp = -xscale * 4;
 			vsp = -5;
-			state = 106;
+			state = states.bump;
 			sprite_index = spr_bump;
 			invhurt_buffer = 120;
 			alarm[8] = 60;
@@ -153,9 +153,9 @@ function scr_hurtplayer(player)
 			hurted = true;
 			fmod_event_one_shot_3d("event:/sfx/pep/hurt", x, y);
 		}
-		else if (state != 107 && state != 196 && state != 4 && (hurted == 0 || state == 24 || state == 29 || state == 30) && cutscene == 0)
+		else if (state != states.hurt && state != states.ratmounthurt && state != states.grabbed && (hurted == 0 || state == states.cheesepep || state == states.cheesepepstickside || state == states.cheesepepstickup) && cutscene == 0)
 		{
-			if (state == 225)
+			if (state == states.animatronic)
 			{
 				with (create_debris(x, y, spr_animatronicdebris))
 					image_index = 0;
@@ -164,7 +164,7 @@ function scr_hurtplayer(player)
 				with (create_debris(x, y, spr_animatronicdebris))
 					image_index = 2;
 			}
-			if (state == 113 || state == 115 || state == 114 || state == 116)
+			if (state == states.barrel || state == states.barrelclimbwall || state == states.barreljump || state == states.barrelslide)
 			{
 				repeat (4)
 					create_debris(x, y, spr_barreldebris);
@@ -172,7 +172,7 @@ function scr_hurtplayer(player)
 			var _old_xscale = xscale;
 			if (x != other.x)
 				xscale = sign(other.x - x);
-			if (state == 11 || state == 14 || state == 12 || state == 13)
+			if (state == states.mort || state == states.morthook || state == states.mortjump || state == states.mortattack)
 			{
 				fmod_event_one_shot_3d("event:/sfx/mort/mortdead", x, y);
 				create_debris(x, y - 40, spr_mortdead);
@@ -204,14 +204,14 @@ function scr_hurtplayer(player)
 					}
 				}
 			}
-			if (state == 4)
+			if (state == states.grabbed)
 			{
 				if (object_index == obj_player1)
 					y = obj_player2.y;
 				else
 					y = obj_player1.y;
 			}
-			if (state == 211 || state == 210)
+			if (state == states.trashroll || state == states.trashjump)
 				create_debris(x, y, spr_player_trashlid);
 			scr_sleep(100);
 			fmod_event_one_shot_3d("event:/sfx/pep/hurt", x, y);
@@ -230,7 +230,7 @@ function scr_hurtplayer(player)
 			timeuntilhpback = 300;
 			pistolanim = -4;
 			instance_create(x, y, obj_spikehurteffect);
-			state = 107;
+			state = states.hurt;
 			image_index = 0;
 			flash = true;
 			repeat (5)

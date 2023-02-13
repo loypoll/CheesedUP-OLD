@@ -12,7 +12,7 @@ add_y = -150;
 if (global.pigtotal_add > 0)
 {
 	alarm[0] = 100;
-	state = 18;
+	state = states.titlescreen;
 }
 global.pigtotal = 0;
 global.pigreduction = 0;

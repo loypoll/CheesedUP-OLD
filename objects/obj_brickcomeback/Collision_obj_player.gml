@@ -10,7 +10,7 @@ if (!trapped)
 			else
 				other.sprite_index = spr_player_ratmountidle;
 		}
-		if (other.state == 192)
+		if (other.state == states.ratmountjump)
 		{
 			other.sprite_index = spr_player_ratmountfall;
 			other.jumpAnim = false;

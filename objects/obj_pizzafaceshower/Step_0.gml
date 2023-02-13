@@ -1,10 +1,10 @@
 switch (state)
 {
-	case 126:
+	case states.idle:
 		if (start && distance_to_object(obj_player) <= 150)
 		{
 			state = 146;
-			substate = 126;
+			substate = states.idle;
 			cutscenebuffer = 120;
 			with (obj_player)
 			{
@@ -22,7 +22,7 @@ switch (state)
 	case 146:
 		switch (substate)
 		{
-			case 126:
+			case states.idle:
 				if (cutscenebuffer > 0)
 					cutscenebuffer--;
 				else
@@ -66,7 +66,7 @@ switch (state)
 					depth = 5;
 				}
 				break;
-			case 92:
+			case states.jump:
 				movespeed = Approach(movespeed, 0, 0.2);
 				vsp = Approach(vsp, -15, 0.1);
 				x += movespeed;

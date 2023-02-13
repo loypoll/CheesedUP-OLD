@@ -57,7 +57,7 @@ switch (state)
                 {
                     case obj_anchortrap:
                         sprite_index = spr_kingghost_anchor2
-                        if (state != 135 && state != 92 && obj_player1.x > x - 100 && obj_player1.x < x + 100 && obj_player1.y > y && obj_player1.y < y + 500)
+                        if (state != 135 && state != states.jump && obj_player1.x > x - 100 && obj_player1.x < x + 100 && obj_player1.y > y && obj_player1.y < y + 500)
                         {
                             fmod_event_one_shot_3d("event:/sfx/enemies/presentfall", x, y)
                             state = 135

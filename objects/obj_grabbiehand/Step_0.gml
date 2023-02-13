@@ -10,7 +10,7 @@ switch (state)
 			sprite_index = spr_grabbiehand_fall;
 		}
 		break;
-	case 135:
+	case states.fall:
 		var spd = 12;
 		shootdir = angle_rotate(shootdir, point_direction(x, y, targetplayer.x, targetplayer.y), turnspeed);
 		hsp = lengthdir_x(spd, shootdir);
@@ -19,7 +19,7 @@ switch (state)
 			image_xscale = sign(hsp);
 		if (grounded)
 		{
-			state = 138;
+			state = states.stun;
 			stunned = 50;
 			hsp = 0;
 			vsp = 0;
@@ -27,7 +27,7 @@ switch (state)
 		}
 		scr_collide();
 		break;
-	case 138:
+	case states.stun:
 		if (stunned > 0)
 			stunned--;
 		else if (grounded)

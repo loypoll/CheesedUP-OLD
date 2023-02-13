@@ -1,2 +1,2 @@
-if (state != 92)
+if (state != states.jump)
 	event_inherited();

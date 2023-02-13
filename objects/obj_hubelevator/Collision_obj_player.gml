@@ -1,10 +1,10 @@
-if (state != 18 && other.grounded && other.key_up2)
+if (state != states.titlescreen && other.grounded && other.key_up2)
 {
 	if (other.isgustavo)
 		isgustavo = true;
 	else
 		isgustavo = false;
-	state = 18;
+	state = states.titlescreen;
 	playerid = other.id;
 	other.state = 146;
 	other.key_up2 = false;

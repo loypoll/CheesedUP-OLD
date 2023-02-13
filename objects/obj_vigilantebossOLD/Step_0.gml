@@ -4,7 +4,7 @@ if (hp <= 0 && state != 145 && state != 162)
 	if (!thrown && !destroyable)
 		boss_destroy(lastplayerid);
 }
-if ((state == 103 || state == 105 || state == 102 || state == 82 || state == 80 || state == 166 || state == 42) && alarm[0] <= 0)
+if ((state == states.mach1 || state == states.machslide || state == 102 || state == 82 || state == 80 || state == 166 || state == states.handstandjump) && alarm[0] <= 0)
 	alarm[0] = 6;
 if (chooseparry_buffer > 0)
 	chooseparry_buffer--;
@@ -13,7 +13,7 @@ if (important && honor && nexthonor && phase > 3 && state != 160)
 	var ch = false;
 	with (obj_player)
 	{
-		if (state == 41)
+		if (state == states.chainsawbump)
 			ch = true;
 	}
 	if (instance_exists(obj_shotgunbullet) || ch)
@@ -29,7 +29,7 @@ if (important && honor && nexthonor && phase > 3 && state != 160)
 }
 switch (phase)
 {
-	case 4:
+	case states.grabbed:
 	case 5:
 	case 6:
 		normal_func = boss_vigilante_normal_phase4;
@@ -72,7 +72,7 @@ switch (state)
 		grav = 0.5;
 		state_boss_bump();
 		break;
-	case 92:
+	case states.jump:
 		grav = 0.5;
 		boss_vigilante_jump();
 		break;
@@ -80,11 +80,11 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_dynamite();
 		break;
-	case 128:
+	case states.charge:
 		grav = 0.5;
 		boss_vigilante_charge();
 		break;
-	case 80:
+	case states.punch:
 		grav = 0.5;
 		boss_vigilante_punch();
 		break;
@@ -92,15 +92,15 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_groundpunchstart();
 		break;
-	case 122:
+	case states.freefallprep:
 		grav = 0.5;
 		boss_vigilante_freefallprep();
 		break;
-	case 108:
+	case states.freefall:
 		grav = 0.5;
 		boss_vigilante_freefall();
 		break;
-	case 111:
+	case states.freefallland:
 		grav = 0.5;
 		boss_vigilante_freefallland();
 		break;
@@ -124,7 +124,7 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_superattack();
 		break;
-	case 134:
+	case states.walk:
 		grav = 0.5;
 		state_boss_walk(boss_vigilante_decide_attack);
 		inv_timer = 2;
@@ -134,7 +134,7 @@ switch (state)
 		grav = 0.5;
 		state_boss_chainsaw();
 		break;
-	case 84:
+	case states.backbreaker:
 		grav = 0.5;
 		state_boss_taunt();
 		invincible = true;
@@ -147,12 +147,12 @@ switch (state)
 		inv_timer = 2;
 		normalattack_cooldown = normalattack_max[phase - 1];
 		break;
-	case 137:
+	case states.hit:
 		grav = 0.5;
 		scr_enemy_hit();
 		stunned = targetstunned;
 		break;
-	case 138:
+	case states.stun:
 		grav = 0.5;
 		state_boss_stun();
 		break;
@@ -161,7 +161,7 @@ if (hitstate == 160 || state == 160)
 {
 	with (lastplayerid)
 	{
-		if (state != 137 && state != 156)
+		if (state != states.hit && state != 156)
 		{
 			if (sprite_index == spr_player_pistolshot && image_index > (image_number - 1))
 				sprite_index = spr_player_pistolidle;
@@ -170,4 +170,4 @@ if (hitstate == 160 || state == 160)
 		}
 	}
 }
-attacking = state == 1 || state == 103 || state == 128 || state == 80 || state == 164 || state == 166 || state == 108 || state == 82 || state == 42 || state == 160 || state == 158 || state == 102;
+attacking = state == 1 || state == states.mach1 || state == states.charge || state == 80 || state == 164 || state == 166 || state == 108 || state == 82 || state == states.handstandjump || state == 160 || state == 158 || state == 102;

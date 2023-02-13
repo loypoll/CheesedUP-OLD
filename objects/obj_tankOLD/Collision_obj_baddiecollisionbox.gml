@@ -4,7 +4,7 @@ with (_baddie)
 {
 	if (instance_exists(baddieID) && baddieID != other.id)
 	{
-		if (baddieID.state == 138 && baddieID.thrown == 1)
+		if (baddieID.state == states.stun && baddieID.thrown == 1)
 		{
 			with (_tank)
 				instance_destroy();

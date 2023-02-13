@@ -9,7 +9,7 @@ function scr_player_estampede()
 		image_speed = 0;
 		if (sprite_index == spr_slipbanan2 && abs(hsp) <= 2)
 		{
-			state = 0;
+			state = states.normal;
 			movespeed = 0;
 		}
 	}

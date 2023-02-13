@@ -6,7 +6,7 @@ if (hp <= 0 && state != 145)
 }
 if (chooseparry_buffer > 0)
 	chooseparry_buffer--;
-if ((state == 42 || state == 102 || state == 167 || state == 171 || state == 173 || (state == 58 && pogochargeactive) || state == 77) && alarm[0] <= 0)
+if ((state == states.handstandjump || state == 102 || state == 167 || state == 171 || state == 173 || (state == states.pogo && pogochargeactive) || state == 77) && alarm[0] <= 0)
 	alarm[0] = 6;
 switch (state)
 {
@@ -33,19 +33,19 @@ switch (state)
 		grav = 0.5;
 		boss_noise_crouchslide();
 		break;
-	case 77:
+	case states.skateboard:
 		grav = 0.5;
 		boss_noise_skateboard();
 		break;
-	case 167:
+	case states.boss_skateboardturn:
 		grav = 0.5;
 		boss_noise_skateboardturn();
 		break;
-	case 92:
+	case states.jump:
 		grav = 0.5;
 		boss_noise_jump();
 		break;
-	case 74:
+	case states.throwing:
 		grav = 0.5;
 		boss_noise_throwing();
 		break;
@@ -53,11 +53,11 @@ switch (state)
 		grav = 0.5;
 		boss_noise_pogo();
 		break;
-	case 170:
+	case states.boss_jetpackstart:
 		grav = 0.5;
 		boss_noise_jetpackstart();
 		break;
-	case 171:
+	case states.boss_jetpack:
 		grav = 0.5;
 		boss_noise_jetpack();
 		break;
@@ -65,7 +65,7 @@ switch (state)
 		grav = 0.5;
 		boss_noise_jetpackspin();
 		break;
-	case 134:
+	case states.walk:
 		grav = 0.5;
 		state_boss_walk(boss_noise_do_attack);
 		inv_timer = 2;
@@ -75,7 +75,7 @@ switch (state)
 		grav = 0.5;
 		state_boss_chainsaw();
 		break;
-	case 84:
+	case states.backbreaker:
 		grav = 0.5;
 		state_boss_taunt();
 		invincible = true;
@@ -87,15 +87,15 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 137:
+	case states.hit:
 		grav = 0.5;
 		scr_enemy_hit();
 		stunned = targetstunned;
 		break;
-	case 138:
+	case states.stun:
 		grav = 0.5;
 		state_boss_stun();
 		break;
 }
 angry = phase > 6;
-attacking = state == 42 || state == 102 || state == 77 || state == 167 || state == 58 || state == 170 || state == 171 || state == 173 || state == 74;
+attacking = state == states.handstandjump || state == 102 || state == 77 || state == 167 || state == states.pogo || state == 170 || state == 171 || state == 173 || state == 74;

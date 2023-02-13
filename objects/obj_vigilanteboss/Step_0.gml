@@ -6,105 +6,105 @@ if (pizzahead && elitehit <= 1)
 	destroyable = true;
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		scr_vigilante_arenaintro();
 		break;
-	case 134:
+	case states.walk:
 		scr_vigilante_walk();
 		break;
-	case 1:
+	case states.revolver:
 		scr_vigilante_revolver();
 		break;
-	case 269:
+	case states.boss_reloading:
 		scr_vigilante_reloading();
 		break;
-	case 104:
+	case states.mach2:
 		scr_vigilante_mach2();
 		break;
-	case 102:
+	case states.crouchslide:
 		scr_vigilante_crouchslide();
 		break;
-	case 2:
+	case states.dynamite:
 		scr_vigilante_dynamite();
 		break;
-	case 74:
+	case states.throwing:
 		scr_vigilante_throwing();
 		break;
-	case 270:
+	case states.estampede:
 		scr_vigilante_estampede();
 		break;
-	case 273:
+	case states.boss_phase1hurt:
 		scr_vigilante_phase1hurt();
 		break;
-	case 274:
+	case states.boss_duel:
 		scr_vigilante_duel();
 		break;
-	case 80:
+	case states.punch:
 		scr_vigilante_punch();
 		break;
-	case 92:
+	case states.jump:
 		scr_vigilante_jump();
 		break;
-	case 278:
+	case states.boss_wait:
 		scr_vigilante_wait();
 		break;
-	case 279:
+	case states.boss_flamethrower:
 		scr_vigilante_flamethrower();
 		break;
-	case 280:
+	case states.boss_machinegun:
 		scr_vigilante_machinegun();
 		break;
-	case 281:
+	case states.boss_bazooka:
 		scr_vigilante_bazooka();
 		break;
-	case 282:
+	case states.boss_crate:
 		scr_vigilante_crate();
 		break;
-	case 294:
+	case states.pizzaheadjump:
 		scr_boss_pizzaheadjump();
 		break;
-	case 298:
+	case states.boss_KO:
 		scr_boss_pizzaheadKO();
 		break;
-	case 137:
+	case states.hit:
 		scr_vigilante_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_boss_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 262:
+	case states.supergrab:
 		if (elitehit <= 0)
 			destroyable = true;
 		break;
 }
 boss_update_pizzaheadKO(spr_bossfight_vigiHP, spr_bossfight_vigipalette);
-if (state != 279 && flameID != -4)
+if (state != states.boss_flamethrower && flameID != -4)
 {
 	instance_destroy(obj_flamethrowerhurtbox);
 	flameID = -4;
 }
-if (state == 1 || state == 278 || state == 2 || state == 74 || state == 270)
+if (state == states.revolver || state == states.boss_wait || state == states.dynamite || state == states.throwing || state == states.estampede)
 {
 	if (targetplayer.x != x)
 		image_xscale = -sign(x - targetplayer.x);
 }
 boss_hurt_gustavo();
-if (!pizzahead && obj_player1.state != 146 && obj_player1.state != 61 && obj_player1.state != 262 && !obj_player1.instakillmove && obj_player1.y >= (y - 20) && obj_player1.state != 293 && state != 137 && state != 138 && state != 273 && state != 262 && hsp == 0)
+if (!pizzahead && obj_player1.state != states.actor && obj_player1.state != states.chainsaw && obj_player1.state != states.supergrab && !obj_player1.instakillmove && obj_player1.y >= (y - 20) && obj_player1.state != states.animation && state != states.hit && state != states.stun && state != states.boss_phase1hurt && state != states.supergrab && hsp == 0)
 {
 	if (place_meeting(x, y, obj_player1))
 	{
 		with (obj_player)
 		{
-			if (state != 91)
+			if (state != states.tackle)
 			{
 				var ix = (x > (room_width / 2)) ? 1 : -1;
 				xscale = ix;
@@ -112,7 +112,7 @@ if (!pizzahead && obj_player1.state != 146 && obj_player1.state != 61 && obj_pla
 				hsp = -xscale * 5;
 				movespeed = abs(hsp);
 				vsp = -3;
-				state = 91;
+				state = states.tackle;
 				grounded = false;
 				fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
 				instance_create(x, y, obj_bumpeffect);
@@ -182,14 +182,14 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
 			dark_alpha = 1;
 		}
 	}
-	else if (phase == 2 && state != 274 && state != 137 && !thrown)
+	else if (phase == 2 && state != states.boss_duel && state != states.hit && !thrown)
 	{
 		instance_destroy(obj_johnecheese);
 		instance_destroy(obj_johnecheese_spawner);
 		fmod_event_one_shot_3d("event:/sfx/voice/vigiduel", x, y);
 		if (!destroyable)
 		{
-			state = 274;
+			state = states.boss_duel;
 			hsp = 0;
 			vsp = 0;
 			sprite_index = spr_playerV_idle;
@@ -222,7 +222,7 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
 			with (obj_player1)
 			{
 				pistolanim = -4;
-				state = 274;
+				state = states.boss_duel;
 				hsp = 0;
 				vsp = 0;
 				xscale = 1;
@@ -235,7 +235,7 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
 			instance_destroy();
 	}
 }
-if (state == 138)
+if (state == states.stun)
 {
 	if (wastedhits >= 7 && sprite_index == spr_pepperman_shoulderhurt && grounded && vsp > 0 && !thrown && stunned > 10)
 		stunned = 1;
@@ -250,38 +250,38 @@ if (state == 138)
 }
 else
 	savedthrown = false;
-if (state != 274)
+if (state != states.boss_duel)
 	signy = Approach(signy, -sprite_get_height(signspr), 20);
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state == 269 || (state == 138 && savedthrown == thrown && !savedthrown))
+if (state == states.boss_reloading || (state == states.stun && savedthrown == thrown && !savedthrown))
 	invincible = false;
 else
 	invincible = true;
 if (wastedhits == 4 && phase == 1)
 	invincible = true;
-if (state == 298)
+if (state == states.boss_KO)
 	invincible = true;
-if (pizzahead && state == 138 && !thrown && alarm[5] == -1 && !flash)
+if (pizzahead && state == states.stun && !thrown && alarm[5] == -1 && !flash)
 	alarm[5] = 0.15 * room_speed;
-if (state == 102 && alarm[4] < 0)
+if (state == states.crouchslide && alarm[4] < 0)
 {
 	alarm[4] = 10;
 	if (state == 108)
 		alarm[4] = 5;
 }
 mask_index = spr_player_mask;
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

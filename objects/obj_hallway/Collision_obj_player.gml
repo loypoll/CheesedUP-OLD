@@ -1,6 +1,6 @@
 if (obj_player1.state == 208)
 	exit;
-if (obj_player1.state == 290)
+if (obj_player1.state == states.backtohub)
 	exit;
 if (instance_exists(obj_jumpscare))
 	exit;

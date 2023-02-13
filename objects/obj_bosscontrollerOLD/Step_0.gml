@@ -15,7 +15,7 @@ if (player_hp <= 0)
 		with (bossID)
 			player_destroy(lastplayerid);
 	}
-	else if (bossID.state != 61 && state != 89)
+	else if (bossID.state != states.chainsaw && state != 89)
 	{
 		state = 89;
 		alarm[1] = room_speed * 4;
@@ -31,7 +31,7 @@ if (instance_exists(bossID))
 }
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		with (obj_player)
 		{
 			state = 146;
@@ -94,9 +94,9 @@ switch (state)
 			instance_destroy(obj_noisebossbomb);
 			with (obj_player)
 			{
-				if (state != 146 && state != 95 && state != 137 && !instance_exists(obj_fadeout))
+				if (state != 146 && state != states.comingoutdoor && state != states.hit && !instance_exists(obj_fadeout))
 				{
-					if (state == 137 || state == 61)
+					if (state == states.hit || state == states.chainsaw)
 					{
 						hitLag = 0;
 						x = hitX;
@@ -118,7 +118,7 @@ switch (state)
 			}
 			with (par_boss)
 			{
-				if (state == 137 || state == 61)
+				if (state == states.hit || state == states.chainsaw)
 				{
 					hitLag = 0;
 					x = hitX;
@@ -211,7 +211,7 @@ switch (state)
 		instance_destroy(obj_baddie);
 		if (player_hp > 0)
 		{
-			if (!instance_exists(bossID) || bossID.state != 137)
+			if (!instance_exists(bossID) || bossID.state != states.hit)
 			{
 				fade -= 0.05;
 				fade = clamp(fade, 0, 1);
@@ -222,7 +222,7 @@ switch (state)
 			var hit = false;
 			with (obj_player)
 			{
-				if (state == 137)
+				if (state == states.hit)
 					hit = true;
 			}
 			if (!hit)
@@ -243,11 +243,11 @@ portrait1_index += 0.35;
 portrait2_index += 0.35;
 if (state == 0 && instance_exists(bossID))
 {
-	if (obj_player1.state == 137 || obj_player1.state == 156)
+	if (obj_player1.state == states.hit || obj_player1.state == 156)
 		portrait1_sprite = portrait1_hurt;
 	else
 		portrait1_sprite = portrait1_idle;
-	if (bossID.state == 137 || bossID.state == 138)
+	if (bossID.state == states.hit || bossID.state == states.stun)
 		portrait2_sprite = portrait2_hurt;
 	else
 		portrait2_sprite = portrait2_idle;

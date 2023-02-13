@@ -1,10 +1,15 @@
-if ((state == 104 && hsp != 0) || (state == 244 && image_index > 3) || (state == 108 && !grounded) || state == 105 || state == 58 || state == 171 || state == 127)
+
+
+
+
+
+if ((state == states.mach2 && hsp != 0) || (state == states.pizzahead_spinningkick && image_index > 3) || (state == states.freefall && !grounded) || state == states.machslide || state == states.pogo || state == states.boss_jetpack || state == states.bounce)
 {
 	if (other.flash)
 		other.flash = false;
 	scr_hurtplayer(other);
 }
-else if (((state == 134 || (state == 138 && !savedthrown)) && flickertime <= 0 && wastedhits == 7 && (other.instakillmove || other.state == 42)) && !pizzahead)
+else if (((state == states.walk || (state == states.stun && !savedthrown)) && flickertime <= 0 && wastedhits == 7 && (other.instakillmove || other.state == states.handstandjump)) && !pizzahead)
 {
 	if (phase == 1)
 		scr_boss_do_hurt_phase2(other);
@@ -14,12 +19,12 @@ else if (((state == 134 || (state == 138 && !savedthrown)) && flickertime <= 0 &
 		instance_destroy(obj_noiseyspawner);
 		instance_destroy(obj_noiseyspawner2);
 		fightballcount = 0;
-		substate = 295;
-		state = 289;
+		substate = states.boss_fightball;
+		state = states.boss_finale;
 		sprite_index = spr_playerN_fightball;
 		image_index = 0;
 		image_speed = 0.35;
-		other.state = 146;
+		other.state = states.actor;
 		other.image_speed = 0.35;
 		other.sprite_index = spr_player_fightball;
 		other.image_index = 0;

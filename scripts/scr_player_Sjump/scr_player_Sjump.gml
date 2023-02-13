@@ -68,7 +68,7 @@ function scr_player_Sjump()
 		}
 		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
 		image_index = 0;
-		state = 123;
+		state = states.Sjumpland;
 		machhitAnim = false;
 	}
 	else if ((key_attack2 || input_buffer_slap > 0) && character == "P" && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
@@ -91,7 +91,7 @@ function scr_player_Sjump()
 			movespeed = 13;
 			image_index = 0;
 			sprite_index = spr_player_Sjumpcancel;
-			state = 121;
+			state = states.mach3;
 			with (instance_create(x, y, obj_crazyrunothereffect))
 				image_xscale = other.xscale;
 		}
@@ -100,7 +100,7 @@ function scr_player_Sjump()
 	{
 		jumpstop = false;
 		vsp = -15;
-		state = 92;
+		state = states.jump;
 		sprite_index = spr_playerN_noisebombspinjump;
 		image_index = 0;
 		with (instance_create(x, y, obj_jumpdust))
@@ -115,7 +115,7 @@ function scr_player_Sjump()
 	}
 	if (character == "V" && floor(image_index) == (image_number - 1))
 	{
-		state = 92;
+		state = states.jump;
 		sprite_index = spr_playerV_fall;
 	}
 	image_speed = 0.5;

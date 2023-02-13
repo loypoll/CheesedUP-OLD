@@ -8,7 +8,7 @@ with (obj_player)
 	lastroom = room;
 	targetDoor = other.targetDoor;
 	visible = false;
-	if (state != 186)
+	if (state != states.gotoplayer)
 		state = 152;
 	cutscene = true;
 	hsp = 0;

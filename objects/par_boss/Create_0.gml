@@ -56,7 +56,7 @@ function SUPER_player_destroy()
 		other.hitY = room_height / 2;
 		other.x = other.hitX;
 		other.y = other.hitY;
-		other.state = 61;
+		other.state = states.chainsaw;
 		other.hitstate = 145;
 		other.hitvsp = -4;
 		other.hithsp = -other.image_xscale * 8;
@@ -71,7 +71,7 @@ function SUPER_player_destroy()
 		hithsp = 15;
 		hitstunned = 10000;
 		hitvsp = -8;
-		state = 137;
+		state = states.hit;
 		instance_create(other.x, other.y, obj_parryeffect);
 		with (obj_camera)
 		{
@@ -93,9 +93,9 @@ function SUPER_boss_destroy()
 		{
 			sprite_index = spr_player_attackdash;
 			image_index = 6;
-			state = 42;
+			state = states.handstandjump;
 		}
-		if (state != 61)
+		if (state != states.chainsaw)
 		{
 			tauntstoredmovespeed = movespeed;
 			tauntstoredsprite = sprite_index;
@@ -110,7 +110,7 @@ function SUPER_boss_destroy()
 		other.y = other.hitY;
 		other.hitvsp = -8;
 		other.hithsp = -other.image_xscale * 15;
-		other.state = 137;
+		other.state = states.hit;
 		other.thrown = true;
 		other.destroyable = true;
 		other.colliding = true;
@@ -120,7 +120,7 @@ function SUPER_boss_destroy()
 		hitY = room_height / 2;
 		x = hitX;
 		y = hitY;
-		state = 61;
+		state = states.chainsaw;
 		instance_create(other.x, other.y, obj_parryeffect);
 		instance_create(x, y, obj_slapstar);
 		instance_create(x, y, obj_slapstar);
@@ -147,29 +147,29 @@ function SUPER_boss_hurt()
 	with (argument1)
 	{
 		var atstate = state;
-		if (state == 42)
+		if (state == states.handstandjump)
 		{
-			state = 6;
+			state = states.finishingblow;
 			sprite_index = choose(spr_finishingblow1, spr_finishingblow2, spr_finishingblow3, spr_finishingblow4, spr_finishingblow5);
 			image_index = 6;
 		}
-		if (state != 61)
+		if (state != states.chainsaw)
 		{
 			tauntstoredmovespeed = movespeed;
 			tauntstoredsprite = sprite_index;
 			tauntstoredstate = state;
 		}
-		state = 61;
+		state = states.chainsaw;
 		var lag = 8;
 		hitLag = lag;
 		hitX = x;
 		hitY = y;
-		if (state == 61 || state == 137)
+		if (state == states.chainsaw || state == states.hit)
 		{
 			x = hitX;
 			y = hitY;
 		}
-		if (other.state == 137 || other.state == 61)
+		if (other.state == states.hit || other.state == states.chainsaw)
 		{
 			other.x = other.hitX;
 			other.y = other.hitY;
@@ -187,7 +187,7 @@ function SUPER_boss_hurt()
 			other.movespeed = 0;
 		}
 		other.hithsp = -other.image_xscale * other.movespeed;
-		other.state = 137;
+		other.state = states.hit;
 		instance_create(other.x, other.y, obj_parryeffect);
 		instance_create(x, y, obj_slapstar);
 		instance_create(x, y, obj_slapstar);
@@ -212,7 +212,7 @@ function SUPER_boss_hurt_noplayer()
 			super += 30;
 	}
 	var lag = 8;
-	if (state == 137 || state == 61)
+	if (state == states.hit || state == states.chainsaw)
 	{
 		x = hitX;
 		y = hitY;
@@ -223,7 +223,7 @@ function SUPER_boss_hurt_noplayer()
 	hitY = y;
 	hitvsp = -8;
 	hithsp = other.image_xscale * 15;
-	state = 137;
+	state = states.hit;
 	instance_create(x, y, obj_parryeffect);
 	instance_create(x, y, obj_slapstar);
 	instance_create(x, y, obj_slapstar);
@@ -246,12 +246,12 @@ function SUPER_player_hurt()
 	with (argument1)
 	{
 		var lag = 8;
-		if (state == 137 || state == 61)
+		if (state == states.hit || state == states.chainsaw)
 		{
 			x = hitX;
 			y = hitY;
 		}
-		if (other.state == 61 || other.state == 137)
+		if (other.state == states.chainsaw || other.state == states.hit)
 		{
 			other.x = other.hitX;
 			other.y = other.hitY;
@@ -259,7 +259,7 @@ function SUPER_player_hurt()
 		other.hitLag = lag;
 		other.hitX = other.x;
 		other.hitY = other.y;
-		other.state = 61;
+		other.state = states.chainsaw;
 		hitLag = lag;
 		hitX = x;
 		hitY = y;
@@ -276,7 +276,7 @@ function SUPER_player_hurt()
 		else
 			hitstunned = 100;
 		hitvsp = -8;
-		state = 137;
+		state = states.hit;
 		instance_create(other.x, other.y, obj_parryeffect);
 		instance_create(x, y, obj_slapstar);
 		instance_create(x, y, obj_slapstar);

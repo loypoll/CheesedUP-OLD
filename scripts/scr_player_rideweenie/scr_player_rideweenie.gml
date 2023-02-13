@@ -55,7 +55,7 @@ function scr_player_rideweenie()
 		if (movespeed < 8)
 			movespeed = 8;
 		dir = xscale;
-		state = 104;
+		state = states.mach2;
 		sprite_index = spr_mach2jump;
 		jumpstop = false;
 		vsp = -11;

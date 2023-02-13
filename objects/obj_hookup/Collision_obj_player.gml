@@ -1,6 +1,6 @@
 with (other)
 {
-	if (other.appear == -1 && key_up && ladderbuffer == 0 && (state == 9 || state == 80 || state == 0 || state == 58 || state == 104 || state == 121 || state == 103 || state == 57 || state == 92 || state == 60) && state != 107 && state != 105 && state != 108 && state != 111)
+	if (other.appear == -1 && key_up && ladderbuffer == 0 && (state == 9 || state == 80 || state == 0 || state == states.pogo || state == states.mach2 || state == 121 || state == states.mach1 || state == 57 || state == states.jump || state == 60) && state != 107 && state != states.machslide && state != 108 && state != 111)
 	{
 		fmod_event_instance_play(other.snd);
 		other.hooked = true;

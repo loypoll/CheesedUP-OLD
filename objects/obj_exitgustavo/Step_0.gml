@@ -29,7 +29,7 @@ switch (state)
 				sprite_index = spr_stick_fall;
 		}
 		break;
-	case 135:
+	case states.fall:
 		y += vsp;
 		if (vsp < 20)
 			vsp += 0.5;
@@ -80,7 +80,7 @@ switch (state)
 			image_index = 0;
 		}
 		break;
-	case 136:
+	case states.land:
 		if (floor(image_index) == (image_number - 1))
 		{
 			sprite_index = spr_gustavo_exitsign;
@@ -90,7 +90,7 @@ switch (state)
 		}
 		break;
 }
-if (state == 18)
+if (state == states.titlescreen)
 	visible = false;
 else
 	visible = true;

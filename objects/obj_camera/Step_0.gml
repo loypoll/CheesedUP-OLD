@@ -142,7 +142,7 @@ if (instance_exists(player) && !lock && player.state != 64 && player.state != 89
 			var target = player;
 			var tx = target.x;
 			var ty = target.y;
-			if (target.state == 290)
+			if (target.state == states.backtohub)
 				ty = target.backtohubstarty;
 			if (target.cutscene || (target.collision_flags & 1) > 0)
 			{
@@ -151,19 +151,19 @@ if (instance_exists(player) && !lock && player.state != 64 && player.state != 89
 				else
 					chargecamera = Approach(chargecamera, 0, 10);
 			}
-			else if (target.state == 104 || target.state == 121)
+			else if (target.state == states.mach2 || target.state == 121)
 			{
 				var _targetcharge = target.xscale * ((target.movespeed / 4) * 50);
 				var _tspeed = 0.3;
 				chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
 			}
-			else if (target.ratmount_movespeed > 2 && target.key_attack && (target.state == 191 || target.state == 192))
+			else if (target.ratmount_movespeed > 2 && target.key_attack && (target.state == 191 || target.state == states.ratmountjump))
 			{
 				_targetcharge = target.xscale * ((abs(target.hsp) / 4) * 70);
 				_tspeed = 0.3;
 				chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
 			}
-			else if ((abs(target.hsp) >= 16 || (target.state == 61 && target.tauntstoredmovespeed >= 16)) && player.state != 37 && player.state != 97)
+			else if ((abs(target.hsp) >= 16 || (target.state == states.chainsaw && target.tauntstoredmovespeed >= 16)) && player.state != 37 && player.state != 97)
 			{
 				_targetcharge = target.xscale * ((abs(target.hsp) / 4) * 50);
 				_tspeed = 2;
@@ -171,7 +171,7 @@ if (instance_exists(player) && !lock && player.state != 64 && player.state != 89
 					_tspeed = 8;
 				chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
 			}
-			else if (target.state == 105)
+			else if (target.state == states.machslide)
 				chargecamera = Approach(chargecamera, 0, 10);
 			else
 				chargecamera = Approach(chargecamera, 0, 6);
@@ -189,7 +189,7 @@ if (instance_exists(player) && !lock && player.state != 64 && player.state != 89
 					cam_y = clamp(cam_y, 0, room_height - cam_height);
 					camera_zoom(1, 0.035);
 				}
-				else if (obj_player2.state != 18)
+				else if (obj_player2.state != states.titlescreen)
 				{
 					cam_x = ((obj_player1.x + obj_player2.x) / 2) - (cam_width / 2);
 					cam_y = ((obj_player1.y + obj_player2.y) / 2) - (cam_height / 2);
@@ -230,7 +230,7 @@ if (instance_exists(player) && !lock && player.state != 64 && player.state != 89
 				cam_y += ((cam_height - room_height) / 2);
 			camera_set_view_pos(view_camera[0], cam_x, cam_y + irandom_range(-shake_mag, shake_mag));
 			break;
-		case 299:
+		case states.camera_followtarget:
 			cam_width = camera_get_view_width(view_camera[0]);
 			cam_height = camera_get_view_height(view_camera[0]);
 			tx = followtarget.x;

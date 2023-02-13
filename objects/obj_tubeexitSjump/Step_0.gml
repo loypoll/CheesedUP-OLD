@@ -1,4 +1,4 @@
-if (state == 150)
+if (state == states.tube)
 {
 	if (floor(image_index) >= 6)
 	{

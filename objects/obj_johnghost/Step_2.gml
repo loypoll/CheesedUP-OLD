@@ -1,19 +1,19 @@
 var cx = camera_get_view_x(view_camera[0]);
 switch (state)
 {
-	case 134:
+	case states.walk:
 		if (playerid.x != x)
 			image_xscale = sign(playerid.x - x);
 		currentx = Approach(currentx, targetx, 2);
 		x = cx + currentx;
 		if (currentx == targetx)
 		{
-			state = 128;
+			state = states.charge;
 			attack_buffer = attack_max;
 		}
 		y = Approach(y, playerid.y, 8);
 		break;
-	case 128:
+	case states.charge:
 		if (playerid.x != x)
 			image_xscale = sign(playerid.x - x);
 		y = Approach(y, playerid.y, 8);
@@ -26,7 +26,7 @@ switch (state)
 			create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
 		}
 		break;
-	case 80:
+	case states.punch:
 		if (!hitboxcreate)
 		{
 			with (instance_create(x, y, obj_forkhitbox))

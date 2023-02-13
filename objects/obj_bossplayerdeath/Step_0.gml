@@ -6,7 +6,7 @@ with (obj_player1)
 	image_speed = 0.35;
 	switch (other.state)
 	{
-		case 92:
+		case states.jump:
 			if (sprite_index == spr_player_outofpizza1 && floor(image_index) == (image_number - 1))
 				sprite_index = spr_player_outofpizza2;
 			hsp = deathspeed * -xscale;

@@ -18,7 +18,7 @@ switch (text_state)
 			text_vsp = 0;
 		}
 		break;
-	case 135:
+	case states.fall:
 		text_y += text_vsp;
 		if (text_vsp < 20)
 			text_vsp += 0.5;

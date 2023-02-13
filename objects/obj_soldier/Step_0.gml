@@ -2,55 +2,55 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		if (sprite_index != spr_soldier_idleend)
 			scr_enemy_idle();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 var player = instance_nearest(x, y, obj_player);
 switch (state)
 {
-	case 126:
+	case states.idle:
 		if (bush)
 		{
 			var col = collision_line(x, y, player.x, player.y, obj_solid, false, true);
@@ -68,11 +68,11 @@ switch (state)
 		}
 		else if (sprite_index == spr_soldier_idleend && floor(image_index) == (image_number - 1))
 		{
-			state = 134;
+			state = states.walk;
 			sprite_index = spr_soldier_walk;
 		}
 		break;
-	case 128:
+	case states.charge:
 		hsp = Approach(hsp, 0, 0.5);
 		if (sprite_index == spr_soldier_shootstart && floor(image_index) == (image_number - 1))
 			sprite_index = spr_soldier_shoot;
@@ -99,11 +99,11 @@ switch (state)
 			{
 				sprite_index = walkspr;
 				attack_cooldown = attack_max;
-				state = 134;
+				state = states.walk;
 			}
 		}
 		break;
-	case 134:
+	case states.walk:
 		if (attack_cooldown > 0)
 			attack_cooldown--;
 		else
@@ -118,7 +118,7 @@ switch (state)
 					image_xscale = sign(player.x - x);
 				sprite_index = spr_soldier_shootstart;
 				image_index = 0;
-				state = 128;
+				state = states.charge;
 				bullet_count = bullet_max;
 				can_fire = true;
 			}
@@ -127,14 +127,14 @@ switch (state)
 }
 if (elite)
 {
-	if (state == 134)
+	if (state == states.walk)
 	{
 		if ((player.x > (x - 200) && player.x < (x + 200)) && (y <= (player.y + 60) && y >= (player.y - 60)))
 		{
-			if (state != 125 && ragebuffer == 0)
+			if (state != states.rage && ragebuffer == 0)
 			{
 				hitboxcreate = false;
-				state = 125;
+				state = states.rage;
 				sprite_index = spr_soldier_knife;
 				if (x != player.x)
 					image_xscale = -sign(x - player.x);
@@ -150,9 +150,9 @@ if (elite)
 	if (ragebuffer > 0)
 		ragebuffer--;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

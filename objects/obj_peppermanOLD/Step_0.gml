@@ -15,7 +15,7 @@ switch (phase)
 		normal_func = boss_pepperman_normal;
 		break;
 	case 3:
-	case 4:
+	case states.grabbed:
 	case 5:
 	case 6:
 		normal_func = boss_pepperman_phase3normal;
@@ -31,25 +31,25 @@ switch (state)
 		grav = 0.5;
 		normal_func();
 		break;
-	case 92:
+	case states.jump:
 		grav = 0.5;
 		boss_pepperman_jump();
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 108:
+	case states.freefall:
 		grav = 0.5;
 		boss_pepperman_freefall();
 		break;
-	case 111:
+	case states.freefallland:
 		grav = 0.5;
 		boss_pepperman_freefallland();
 		break;
-	case 122:
+	case states.freefallprep:
 		grav = 0.5;
 		boss_pepperman_freefallprep();
 		break;
-	case 153:
+	case states.shoulderbash:
 		grav = 0.5;
 		boss_pepperman_shoulderbash();
 		break;
@@ -81,17 +81,17 @@ switch (state)
 		grav = 0.5;
 		boss_pepperman_shoulder();
 		break;
-	case 161:
+	case states.boss_shoulderturn:
 		grav = 0.5;
 		boss_pepperman_shoulderturn();
 		break;
-	case 134:
+	case states.walk:
 		grav = 0.5;
 		state_boss_walk(boss_pepperman_decide_attack);
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 128:
+	case states.charge:
 		grav = 0.5;
 		boss_pepperman_charge();
 		invincible = true;
@@ -101,7 +101,7 @@ switch (state)
 		grav = 0.5;
 		state_boss_chainsaw();
 		break;
-	case 84:
+	case states.backbreaker:
 		grav = 0.5;
 		state_boss_taunt();
 		invincible = true;
@@ -113,15 +113,15 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 137:
+	case states.hit:
 		grav = 0.5;
 		scr_enemy_hit();
 		stunned = targetstunned;
 		break;
-	case 138:
+	case states.stun:
 		grav = 0.5;
 		state_boss_stun();
 		break;
 }
 xscale = image_xscale;
-colliding = !(state == 76 || state == 162 || state == 158 || state == 159);
+colliding = !(state == states.superslam || state == 162 || state == 158 || state == 159);

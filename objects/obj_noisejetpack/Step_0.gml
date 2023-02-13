@@ -9,7 +9,7 @@ switch (state)
 			instance_destroy(effectid);
 		}
 		break;
-	case 135:
+	case states.fall:
 		var ty = playerid.y + 30;
 		y = Approach(y, ty, movespeed);
 		if (abs(y - ty) <= 50)

@@ -15,7 +15,7 @@ switch (state)
 			state = 92;
 		}
 		break;
-	case 92:
+	case states.jump:
 		sprite_index = spr_mrstick_helicopterhat;
 		y -= 10;
 		if (y < -100)

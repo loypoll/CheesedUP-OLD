@@ -1,4 +1,4 @@
-if ((other.state == 42 || other.state == 80) && other.grounded == 1)
+if ((other.state == states.handstandjump || other.state == 80) && other.grounded == 1)
 {
 	instance_create(x + (obj_player1.xscale * 40), y, obj_punchdust);
 	with (other)
@@ -7,12 +7,12 @@ if ((other.state == 42 || other.state == 80) && other.grounded == 1)
 		sprite_index = spr_haulingstart;
 		grabbingenemy = true;
 		baddiegrabbedID = other.id;
-		state = 79;
+		state = states.grab;
 	}
 	playerid = other.object_index;
 	grabbed = true;
 }
-if (other.state == 104 || other.state == 121 || (other.state == 65 && grounded))
+if (other.state == states.mach2 || other.state == 121 || (other.state == 65 && grounded))
 {
 	create_particle(x, y, particle.genericpoofeffect, 0);
 	with (other)

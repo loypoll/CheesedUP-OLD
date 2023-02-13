@@ -49,9 +49,9 @@ function scr_player_cheeseball()
 		image_index = 0;
 		movespeed = 0;
 		cheesepeptimer = 2;
-		state = 26;
+		state = states.cheesepepjump;
 		create_transformation_tip(lang_get_value("cheesedtip"), "cheesed");
-		state = 25;
+		state = states.cheesepepstick;
 		sprite_index = spr_cheesepepstickside;
 		hsp = 0;
 		vsp = 0;

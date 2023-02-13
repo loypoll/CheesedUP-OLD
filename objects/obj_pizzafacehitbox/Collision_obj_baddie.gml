@@ -2,11 +2,11 @@ if (!instance_exists(baddieID))
 	exit;
 var slam = enemy_is_superslam(other.id) && baddieID.superslambuffer <= 0;
 var _enemy = other.id;
-if (baddieID != other.id && (other.thrown || slam) && other.state != 137 && baddieID.flickertime <= 0 && baddieID.on_y && baddieID.state != 137)
+if (baddieID != other.id && (other.thrown || slam) && other.state != states.hit && baddieID.flickertime <= 0 && baddieID.on_y && baddieID.state != states.hit)
 {
 	with (baddieID)
 	{
-		state = 138;
+		state = states.stun;
 		stunned = 1000;
 		thrown = false;
 		if (_enemy.hsp != 0)

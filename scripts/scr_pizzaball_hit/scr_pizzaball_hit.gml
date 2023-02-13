@@ -13,7 +13,7 @@ function scr_pizzaball_hit()
 			s = tauntstoredstate;
 		notification_push(notifs.pizzaball, [obj_player1]);
 		var p = obj_player1.id;
-		if (s == 104 || (p.sprite_index == p.spr_machslidestart || p.sprite_index == p.spr_machslide || p.sprite_index == p.spr_machslideend))
+		if (s == states.mach2 || (p.sprite_index == p.spr_machslidestart || p.sprite_index == p.spr_machslide || p.sprite_index == p.spr_machslideend))
 			scr_pizzaball_go_to_thrown(hithsp * 0.5, hitvsp * 0.5);
 		else
 			scr_pizzaball_go_to_thrown(hithsp * 1.5, -12);
@@ -27,13 +27,13 @@ function scr_pizzaball_grabbed()
 	{
 		sprite_index = spr_golfidle;
 		image_index = 0;
-		state = 148;
+		state = states.golf;
 		golfid = other.id;
 		hsp = 0;
 		vsp = 0;
 	}
 	player = pl;
-	state = 148;
+	state = states.golf;
 	create_transformation_tip(lang_get_value("golftip"), "golf");
 }
 function scr_pizzaball_go_to_thrown(argument0, argument1, argument2 = true)
@@ -48,6 +48,6 @@ function scr_pizzaball_go_to_thrown(argument0, argument1, argument2 = true)
 		jumpspeed = 12;
 	vsp = -jumpspeed;
 	bounced = false;
-	state = 156;
-	substate = 156;
+	state = states.thrown;
+	substate = states.thrown;
 }

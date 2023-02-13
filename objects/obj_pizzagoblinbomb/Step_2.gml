@@ -37,16 +37,16 @@ switch (state)
 			vsp += grav;
 		scr_collide();
 		break;
-	case 4:
+	case states.grabbed:
 		grounded = false;
 		x = playerid.x + (-playerid.xscale * 6);
 		y = playerid.y - 55;
 		image_xscale = playerid.xscale;
-		if (playerid.state != 52 && playerid.state != 76)
+		if (playerid.state != 52 && playerid.state != states.superslam)
 			state = 0;
-		if (state == 4 && _destroyed)
+		if (state == states.grabbed && _destroyed)
 			scr_hurtplayer(playerid);
-		if (playerid.state == 76)
+		if (playerid.state == states.superslam)
 		{
 			if (playerid.grounded)
 				instance_destroy();

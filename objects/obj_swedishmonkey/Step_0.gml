@@ -2,47 +2,47 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 idlespr = spr_swedishmonkey_idle;
 stunfallspr = spr_swedishmonkey_stun;
@@ -52,19 +52,19 @@ grabbedspr = spr_swedishmonkey_stun;
 scr_scareenemy();
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (bombreset > 0)
 	bombreset--;
-if (state != 129 && bombreset == 0 && grounded)
+if (state != states.pizzagoblinthrow && bombreset == 0 && grounded)
 {
-	if (state == 134)
+	if (state == states.walk)
 	{
 		image_index = 0;
 		sprite_index = spr_swedishmonkey_eat;
-		state = 129;
+		state = states.pizzagoblinthrow;
 	}
 }
 if (boundbox == 0)

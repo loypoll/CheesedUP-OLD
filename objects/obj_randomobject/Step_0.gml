@@ -23,7 +23,7 @@ switch (state)
 				else
 					substate = 92;
 				break;
-			case 92:
+			case states.jump:
 				var spd = 24;
 				hsp = moveX * spd;
 				vsp = moveY * spd;

@@ -1,6 +1,6 @@
 currentselect = 0;
 visualselect = 0;
-state = 18;
+state = states.titlescreen;
 image_speed = 0.35;
 depth = 0;
 mainmenu_sprite = -1;

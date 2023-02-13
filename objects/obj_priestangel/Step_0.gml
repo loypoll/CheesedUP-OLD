@@ -18,7 +18,7 @@ switch (state)
 		x = lerp(x, tx, 0.2);
 		y = lerp(y, ty, 0.2);
 		break;
-	case 92:
+	case states.jump:
 		x += 4;
 		y -= 8;
 		if (!bbox_in_camera(view_camera[0], 10))

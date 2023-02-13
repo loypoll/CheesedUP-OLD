@@ -11,7 +11,7 @@ else
 }
 switch (state)
 {
-	case 135:
+	case states.fall:
 		if (sprite_index == spr_stick_helicopter)
 		{
 			hsp = 0;
@@ -86,7 +86,7 @@ switch (state)
 			}
 		}
 		break;
-	case 92:
+	case states.jump:
 		if (shot)
 		{
 			with (obj_player1)

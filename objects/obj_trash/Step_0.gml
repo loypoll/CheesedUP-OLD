@@ -47,7 +47,7 @@ switch (state)
 				case 3:
 					playerid.y = y - 44;
 					break;
-				case 4:
+				case states.grabbed:
 					playerid.y = y - 44;
 					break;
 				case 5:

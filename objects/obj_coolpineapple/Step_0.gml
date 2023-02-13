@@ -2,44 +2,44 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		grav = 0.5;
 		scr_enemy_idle();
 		break;
-	case 128:
+	case states.charge:
 		grav = 0.5;
 		scr_enemy_charge();
 		break;
-	case 130:
+	case states.turn:
 		grav = 0.5;
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		grav = 0.5;
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		grav = 0.5;
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		grav = 0.5;
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		grav = 0.5;
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		grav = 0.5;
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		grav = 0.5;
 		scr_enemy_grabbed();
 		break;
 }
-if (!hitboxcreate && state == 134)
+if (!hitboxcreate && state == states.walk)
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_forkhitbox))
@@ -50,17 +50,17 @@ if (!hitboxcreate && state == 134)
 }
 if (inv_timer <= 0)
 	scr_scareenemy();
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (sprite_index == scaredspr)
 	inv_timer = 0;
-if (state == 134)
+if (state == states.walk)
 {
 	grav = 0.5;
 	if (point_in_camera(x, y, view_camera[0]))
@@ -92,7 +92,7 @@ if (state != 84 && instance_exists(taunteffect_inst))
 	instance_destroy(taunteffect_inst);
 switch (state)
 {
-	case 84:
+	case states.backbreaker:
 		image_speed = 0;
 		image_index = index;
 		hsp = 0;
@@ -103,7 +103,7 @@ switch (state)
 		{
 			sprite_index = walkspr;
 			grav = taunt_storedgrav;
-			state = 134;
+			state = states.walk;
 			hsp = taunt_storedhsp;
 			movespeed = taunt_storedmovespeed;
 		}
@@ -138,7 +138,7 @@ switch (state)
 			movespeed = taunt_storedmovespeed;
 		}
 		break;
-	case 80:
+	case states.punch:
 		if (sprite_index == spr_coolpinea_ragestart)
 		{
 			hsp = 0;
@@ -174,7 +174,7 @@ switch (state)
 			else
 			{
 				sprite_index = walkspr;
-				state = 134;
+				state = states.walk;
 				breakdanceinst = -4;
 			}
 		}
@@ -182,9 +182,9 @@ switch (state)
 }
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

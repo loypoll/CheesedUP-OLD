@@ -20,7 +20,7 @@ switch (state)
 		y = camera_get_view_y(view_camera[0]) + yy;
 		switch (substate)
 		{
-			case 135:
+			case states.fall:
 				yy += 2;
 				if (yy > 440)
 				{
@@ -35,7 +35,7 @@ switch (state)
 						substate = 92;
 				}
 				break;
-			case 92:
+			case states.jump:
 				yy -= 3;
 				if (yy < -100)
 				{

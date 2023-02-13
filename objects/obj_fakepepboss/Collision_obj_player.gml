@@ -1,10 +1,10 @@
-if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == 42 || other.instakillmove) && visible && (state == 134 || (state == 92 && sprite_index == spr_fakepeppino_bodyslamstart) || (state == 108 && sprite_index == spr_fakepeppino_bodyslamland) || (state == 104 && attackspeed < 18) || state == 99 || (state == 74 && sprite_index != spr_fakepeppino_flailing))))
+if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == states.handstandjump || other.instakillmove) && visible && (state == states.walk || (state == states.jump && sprite_index == spr_fakepeppino_bodyslamstart) || (state == states.freefall && sprite_index == spr_fakepeppino_bodyslamland) || (state == states.mach2 && attackspeed < 18) || state == states.Sjumpprep || (state == states.throwing && sprite_index != spr_fakepeppino_flailing))))
 {
 	if (subhp > 0)
 	{
-		if (state == 134)
+		if (state == states.walk)
 		{
-			state = 155;
+			state = states.staggered;
 			image_xscale = -other.xscale;
 			hsp = -image_xscale * 20;
 			vsp = 0;
@@ -26,7 +26,7 @@ if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == 42 || other.insta
 			create_particle(x, y, particle.genericpoofeffect);
 			instance_destroy(id, false);
 		}
-		state = 138;
+		state = states.stun;
 		image_xscale = -other.xscale;
 		hsp = -image_xscale * 8;
 		vsp = -6;
@@ -41,13 +41,13 @@ if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == 42 || other.insta
 	with (other)
 	{
 		fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
-		state = 91;
+		state = states.tackle;
 		movespeed = 4;
 		sprite_index = choose(spr_player_lungehit, spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
 		image_index = 0;
 	}
 }
-else if (state == 108 || (state == 104 && attackspeed >= 18) || state == 97 || (state == 74 && attackspeed > 4))
+else if (state == states.freefall || (state == states.mach2 && attackspeed >= 18) || state == states.Sjump || (state == states.throwing && attackspeed > 4))
 {
 	if (other.flash)
 		flash = false;

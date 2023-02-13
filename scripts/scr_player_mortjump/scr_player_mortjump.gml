@@ -37,7 +37,7 @@ function scr_player_mortjump()
 	{
 		dj = false;
 		input_buffer_jump = 0;
-		state = 12;
+		state = states.mortjump;
 		vsp = -11;
 		sprite_index = spr_player_mortjumpstart;
 		image_index = 0;
@@ -48,7 +48,7 @@ function scr_player_mortjump()
 	}
 	if (grounded && vsp > 0)
 	{
-		state = 11;
+		state = states.mort;
 		landAnim = true;
 		sprite_index = spr_player_mortland;
 		image_index = 0;
@@ -60,7 +60,7 @@ function scr_player_mortjump()
 		jumpstop = false;
 		input_buffer_jump = 0;
 		doublejump = true;
-		state = 12;
+		state = states.mortjump;
 		sprite_index = spr_player_mortdoublejump;
 		image_index = 0;
 		vsp = -11;

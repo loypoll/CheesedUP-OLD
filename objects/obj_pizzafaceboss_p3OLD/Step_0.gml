@@ -17,13 +17,13 @@ switch (state)
 	case 262:
 		scr_pizzaface_p3_supergrab();
 		break;
-	case 92:
+	case states.jump:
 		scr_pizzaface_p3_jump();
 		break;
 }
 if (hp <= 0)
 	instance_destroy();
-if (state == 92)
+if (state == states.jump)
 	use_collision = false;
 else
 	use_collision = true;

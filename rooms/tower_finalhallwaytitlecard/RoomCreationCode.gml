@@ -4,7 +4,7 @@ global.leveltosave = "exit";
 global.exitrank = false;
 with (obj_player)
 {
-	state = 18;
+	state = states.titlescreen;
 	targetRoom = tower_finalhallway;
 	targetDoor = "C";
 }

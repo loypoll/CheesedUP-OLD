@@ -2,9 +2,9 @@ if (place_meeting(x, y, obj_player))
 {
 	with (obj_player)
 	{
-		if (state == 103 || state == 104)
+		if (state == states.mach1 || state == states.mach2)
 		{
-			state = 6;
+			state = states.finishingblow;
 			sprite_index = spr_player_finishingblow1;
 			image_index = 0;
 			hsp = 0;
@@ -26,7 +26,7 @@ if (grabbed == 1)
 	image_xscale = -obj_player.xscale;
 	grav = 0;
 	obj_player.baddiegrabbedID = id;
-	if (obj_player.state == 55 || obj_player.state == 79 || obj_player.state == 74 || obj_player.state == 75 || obj_player.state == 20)
+	if (obj_player.state == states.grabbing || obj_player.state == states.grab || obj_player.state == 74 || obj_player.state == 75 || obj_player.state == 20)
 	{
 		grounded = false;
 		x = obj_player.x;
@@ -45,7 +45,7 @@ if (grabbed == 1)
 	with (obj_player)
 	{
 		move = key_left2 + key_right2;
-		if (!(state == 79 || state == 55 || state == 74 || state == 75 || state == 20 || state == 80 || state == 76 || state == 81 || state == 82 || state == 83))
+		if (!(state == states.grab || state == states.grabbing || state == 74 || state == 75 || state == 20 || state == 80 || state == states.superslam || state == 81 || state == 82 || state == 83))
 		{
 			other.x = x;
 			other.y = y;
@@ -134,7 +134,7 @@ if (grabbed == 1)
 		x = obj_player.x + (obj_player.xscale * 15);
 		y = obj_player.y;
 	}
-	if (obj_player.state == 76)
+	if (obj_player.state == states.superslam)
 	{
 		if (obj_player.character == "P")
 		{

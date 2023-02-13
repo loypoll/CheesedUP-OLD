@@ -13,5 +13,5 @@ else if (col_buffer == 0)
 	col_buffer = -1;
 	collisioned = false;
 }
-if (baddieID.state != 166 && baddieID.state != 61)
+if (baddieID.state != 166 && baddieID.state != states.chainsaw)
 	instance_destroy();

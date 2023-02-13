@@ -4,7 +4,7 @@ if (state != 0)
 	exit;
 if (other.state == 107)
 	exit;
-if (other.state == 186)
+if (other.state == states.gotoplayer)
 	exit;
 if (other.state == 214)
 	exit;
@@ -12,7 +12,7 @@ if (other.state == 213)
 	exit;
 if (other.state == 212)
 	exit;
-if (object_index != obj_tubeenter && other.state != 150)
+if (object_index != obj_tubeenter && other.state != states.tube)
 	exit;
 var _offset_x = 32 * image_xscale;
 var _offset_y = 14 * image_yscale;
@@ -21,13 +21,13 @@ with (other)
 	if (other.object_index == obj_tubeenter)
 	{
 		shot = false;
-		if (state != 150)
+		if (state != states.tube)
 		{
 			repeat (6)
 				create_debris(x, y, spr_waterdrop, false);
 		}
 	}
-	state = 150;
+	state = states.tube;
 	hsp = 0;
 	movespeed = 0;
 	vsp = 0;
@@ -49,7 +49,7 @@ if (floor(other.x) == (xstart + _offset_x) && floor(other.y) == (ystart + _offse
 	else
 		fmod_event_one_shot_3d("event:/sfx/pipe/end", x, y);
 	image_speed = 0.5;
-	other.state = 150;
+	other.state = states.tube;
 	other.tube_vsp = 0;
-	state = 150;
+	state = states.tube;
 }

@@ -36,7 +36,7 @@ function scr_player_boxxedpepjump()
 		movespeed = Approach(movespeed, 0, 0.25);
 	if (grounded)
 	{
-		state = 33;
+		state = states.boxxedpep;
 		sprite_index = spr_boxxedpepidle;
 	}
 	if (key_jump && boxxedpepjump > 4)
@@ -54,7 +54,7 @@ function scr_player_boxxedpepjump()
 				sprite_index = spr_cloudeffect;
 			}
 		}
-		state = 35;
+		state = states.boxxedpepjump;
 		boxxedpepjump *= 0.9;
 		vsp = -boxxedpepjump;
 	}
@@ -63,7 +63,7 @@ function scr_player_boxxedpepjump()
 	if (input_buffer_slap > 0)
 	{
 		input_buffer_slap = 0;
-		state = 34;
+		state = states.boxxedpepspin;
 		sprite_index = spr_boxxedpep_spin;
 		image_index = 0;
 		movespeed = xscale * 12;

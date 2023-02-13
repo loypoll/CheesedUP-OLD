@@ -37,7 +37,7 @@ if (set == 0)
 			global.toppinwarriorid3 = id;
 			set = true;
 			break;
-		case 4:
+		case states.grabbed:
 			depth = 13;
 			spr_idle = spr_twarrior4_idle;
 			spr_pose = spr_twarrior4_pose;

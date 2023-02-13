@@ -49,7 +49,7 @@ function scr_player_backtohub()
 			backtohubbuffer--;
 		else
 		{
-			state = 0;
+			state = states.normal;
 			landAnim = false;
 			facestompAnim = true;
 		}

@@ -113,11 +113,11 @@ function scr_do_rank(argument0 = true, argument1 = false)
 			}
 		}
 	}
-	obj_player1.state = 112;
+	obj_player1.state = states.door;
 	obj_player1.sprite_index = obj_player1.spr_lookdoor;
 	if (instance_exists(obj_player2))
 	{
-		obj_player2.state = 112;
+		obj_player2.state = states.door;
 		obj_player2.sprite_index = obj_player2.spr_lookdoor;
 		if (global.coop)
 			obj_player2.visible = true;

@@ -2,50 +2,50 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 scr_scareenemy();
 var player = instance_nearest(x, y, obj_player);
@@ -53,9 +53,9 @@ if (ragebuffer > 0)
 	ragebuffer--;
 if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)))
 {
-	if (state != 125 && ragebuffer == 0 && elite && (state == 134 || state == 128))
+	if (state != states.rage && ragebuffer == 0 && elite && (state == states.walk || state == states.charge))
 	{
-		state = 125;
+		state = states.rage;
 		sprite_index = spr_fencer_rage;
 		if (x != player.x)
 			image_xscale = -sign(x - player.x);
@@ -68,21 +68,21 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
 	}
 	else if (x != player.x && grounded)
 	{
-		if (state == 134 && charging == 0)
+		if (state == states.walk && charging == 0)
 		{
 			fmod_event_instance_play(chargesnd);
 			fmod_event_instance_set_3d_attributes(chargesnd, x, y);
 			with (instance_create(x, y, obj_forkhitbox))
 				ID = other.id;
 			charging = true;
-			state = 128;
+			state = states.charge;
 			movespeed = 5;
 			vsp = -7;
 			sprite_index = spr_fencer_chargestart;
 		}
 	}
 }
-if (state == 138 || state == 134)
+if (state == states.stun || state == states.walk)
 {
 	charging = false;
 	movespeed = 0;
@@ -91,15 +91,15 @@ if (sprite_index == spr_fencer_chargestart && floor(image_index) == (image_numbe
 	sprite_index = spr_fencer_charge;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (hitboxcreate == 0 && (state == 134 || state == 125 || state == 128))
+if (hitboxcreate == 0 && (state == states.walk || state == states.rage || state == states.charge))
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_forkhitbox))
 		ID = other.id;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

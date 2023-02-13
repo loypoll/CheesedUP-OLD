@@ -18,14 +18,14 @@ function scr_player_slipnslide()
 	crouchslideAnim = true;
 	if (movespeed <= 0)
 	{
-		state = 0;
+		state = states.normal;
 		movespeed = 0;
 		mach2 = 0;
 		image_index = 0;
 	}
 	if (scr_solid(x + xscale, y) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
-		state = 92;
+		state = states.jump;
 		vsp = -14;
 		jumpstop = true;
 	}
@@ -53,7 +53,7 @@ function scr_player_slipnslide()
 		vsp = -5;
 		sprite_index = spr_slipbanan1;
 		image_index = 0;
-		state = 165;
+		state = states.slipbanan;
 	}
 	if (sprite_index == spr_slipnslide && place_meeting(x, y + 1, obj_current))
 		sprite_index = spr_currentplayer;

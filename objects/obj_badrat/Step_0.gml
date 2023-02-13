@@ -2,47 +2,47 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
-	case 17:
+	case states.ghostpossess:
 		scr_enemy_ghostpossess();
 		break;
-	case 294:
+	case states.pizzaheadjump:
 		scr_enemy_pizzaheadjump();
 		break;
-	case 106:
+	case states.bump:
 		sprite_index = spr_badrat_stun;
 		if (grounded && vsp > 0)
 		{
-			state = 134;
+			state = states.walk;
 			sprite_index = walkspr;
 		}
 		break;
@@ -50,18 +50,18 @@ switch (state)
 var targetplayer = instance_nearest(x, y, obj_player);
 if (cooldown > 0)
 	cooldown--;
-if (state == 134 && cooldown <= 0)
+if (state == states.walk && cooldown <= 0)
 {
 	if (targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y > (y - 50) && targetplayer.y < (y + 50))
 	{
-		state = 129;
+		state = states.pizzagoblinthrow;
 		sprite_index = spr_badrat_attack1;
 		image_index = 0;
 		if (x != targetplayer.x)
 			image_xscale = sign(targetplayer.x - x);
 	}
 }
-if (state == 129)
+if (state == states.pizzagoblinthrow)
 {
 	var mv = 8;
 	image_speed = 0.35;
@@ -104,26 +104,26 @@ if (state == 129)
 		if (floor(image_index) == (image_number - 1))
 		{
 			sprite_index = walkspr;
-			state = 134;
+			state = states.walk;
 			instance_destroy(hitboxID);
 			cooldown = 80;
 		}
 	}
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (place_meeting(x, y, obj_canonexplosion))
 	instance_destroy();
 scr_scareenemy();
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
 if (boundbox == 0)
 {
@@ -135,5 +135,5 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
-if (state != 138)
+if (state != states.stun)
 	thrown = false;

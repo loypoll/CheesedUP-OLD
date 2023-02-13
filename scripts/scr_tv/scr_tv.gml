@@ -2,7 +2,7 @@ function tv_set_idle()
 {
 	with (obj_tv)
 	{
-		state = 0;
+		state = states.normal
 		sprite_index = spr_tv_idle;
 	}
 }
@@ -10,7 +10,7 @@ function tv_reset()
 {
 	with (obj_tv)
 	{
-		state = 0;
+		state = states.normal;
 		sprite_index = spr_tv_idle;
 		ds_list_clear(tvprompts_list);
 	}
@@ -140,51 +140,51 @@ function tv_do_expression()
 function scr_tv_get_transfo_sprite()
 {
 	var _state = obj_player1.state;
-	if (_state == 84 || _state == 61)
+	if (_state == states.backbreaker || _state == states.chainsaw)
 		_state = obj_player1.tauntstoredstate;
 	var _spr = noone;
 	switch (_state)
 	{
-		case 47:
-		case 48:
-		case 49:
-		case 38:
+		case states.knightpep:
+		case states.knightpepattack:
+		case states.knightpepbump:
+		case states.knightpepslopes:
 			_spr = spr_tv_knight;
 			break;
-		case 51:
-		case 52:
+		case states.bombpep:
+		case states.bombgrab:
 			_spr = spr_tv_bombpep;
 			break;
-		case 9:
+		case states.fireass:
 			_spr = spr_tv_fireass;
 			if (obj_player1.sprite_index == obj_player1.spr_scaredjump1 || obj_player1.sprite_index == obj_player1.spr_scaredjump2)
 				_spr = spr_tv_scaredjump;
 			break;
-		case 5:
+		case states.tumble:
 			if (obj_player1.sprite_index == obj_player1.spr_tumble || obj_player1.sprite_index == obj_player1.spr_tumblestart || obj_player1.sprite_index == obj_player1.spr_tumbleend)
 				_spr = spr_tv_tumble;
 			else if (obj_player1.shotgunAnim)
 				_spr = spr_tv_shotgun;
 			break;
-		case 10:
+		case states.firemouth:
 			_spr = spr_tv_firemouth;
 			break;
-		case 16:
-		case 17:
+		case states.ghost:
+		case states.ghostpossess:
 			_spr = spr_tv_ghost;
 			break;
-		case 59:
+		case states.stunned:
 			if (obj_player1.sprite_index == obj_player1.spr_squished)
 				_spr = spr_tv_squished;
 			break;
-		case 0:
-		case 92:
-		case 42:
-		case 100:
-		case 93:
-		case 121:
-		case 105:
-		case 106:
+		case states.normal:
+		case states.jump:
+		case states.handstandjump:
+		case states.crouch:
+		case states.ladder:
+		case states.mach3:
+		case states.machslide:
+		case states.bump:
 			with (obj_player1)
 			{
 				if (shotgunAnim)
@@ -193,46 +193,46 @@ function scr_tv_get_transfo_sprite()
 					_spr = spr_tv_mort;
 			}
 			break;
-		case 122:
-		case 108:
-		case 111:
+		case states.freefallprep:
+		case states.freefall:
+		case states.freefallland:
 			if (obj_player1.shotgunAnim)
 				_spr = spr_tv_shotgun;
 			break;
-		case 72:
+		case states.pistol:
 			if (global.mort)
 				_spr = spr_tv_mort;
 			break;
-		case 66:
-		case 69:
-		case 71:
-		case 57:
-		case 70:
-		case 67:
-		case 68:
+		case states.shotgun:
+		case states.shotgunshoot:
+		case states.shotgunfreefall:
+		case states.shotgunjump:
+		case states.shotgundash:
+		case states.shotguncrouch:
+		case states.shotguncrouchjump:
 			_spr = spr_tv_shotgun;
 			break;
-		case 113:
-		case 114:
-		case 116:
-		case 115:
+		case states.barrel:
+		case states.barreljump:
+		case states.barrelslide:
+		case states.barrelclimbwall:
 			_spr = spr_tv_barrel;
 			break;
-		case 148:
+		case states.golf:
 			_spr = spr_tv_golf;
 			break;
-		case 184:
-		case 185:
+		case states.rocket:
+		case states.rocketslide:
 			_spr = spr_tv_rocket;
 			break;
-		case 21:
+		case states.cheeseball:
 			_spr = spr_tv_cheeseball;
 			break;
-		case 24:
-		case 26:
-		case 25:
-		case 29:
-		case 30:
+		case states.cheesepep:
+		case states.cheesepepjump:
+		case states.cheesepepstick:
+		case states.cheesepepstickside:
+		case states.cheesepepstickup:
 			_spr = spr_tv_cheesepep;
 			break;
 		case 33:
@@ -240,19 +240,19 @@ function scr_tv_get_transfo_sprite()
 		case 34:
 			_spr = spr_tv_boxxedpep;
 			break;
-		case 31:
+		case states.rideweenie:
 			_spr = spr_tv_weenie;
 			break;
-		case 11:
-		case 13:
-		case 14:
-		case 12:
+		case states.mort:
+		case states.mortattack:
+		case states.morthook:
+		case states.mortjump:
 			_spr = spr_tv_mort;
 			break;
-		case 104:
-		case 37:
-		case 65:
-		case 78:
+		case states.mach2:
+		case states.climbwall:
+		case states.machroll:
+		case states.grind:
 			if (obj_player1.skateboarding)
 				_spr = spr_tv_clown;
 			else if (obj_player1.shotgunAnim)
@@ -261,7 +261,7 @@ function scr_tv_get_transfo_sprite()
 	}
 	with (obj_player1)
 	{
-		if (state == 146 && sprite_index == spr_tumble)
+		if (state == states.actor && sprite_index == spr_tumble)
 			_spr = spr_tv_tumble;
 	}
 	return _spr;

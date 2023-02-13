@@ -1,7 +1,7 @@
 if (state == 0)
 {
 	hsp = 0;
-	state = 126;
+	state = states.idle;
 	alarm[0] = 80 + irandom(110);
 }
 else if (state != 84)

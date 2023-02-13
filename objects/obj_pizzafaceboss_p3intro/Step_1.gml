@@ -66,7 +66,7 @@ switch (introstate)
 			introstate++;
 		}
 		break;
-	case 4:
+	case states.grabbed:
 		with (obj_player)
 		{
 			if (floor(image_index) == (image_number - 1) && sprite_index != spr_player_gnomecutscene1)
@@ -359,14 +359,14 @@ switch (introstate)
 			{
 				elitehit = 5;
 				instance_destroy(spotlightID);
-				state = 4;
+				state = states.grabbed;
 				pizzahead = true;
 				grabbedby = 1;
 				camzoom = 0.5;
 				obj_screensizer.camzoom = camzoom;
 				with (obj_player1)
 				{
-					state = 0;
+					state = states.normal;
 					baddiegrabbedID = other.id;
 				}
 				with (obj_bosscontroller)

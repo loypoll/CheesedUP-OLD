@@ -1,4 +1,4 @@
-if (other.state == 129 && !collisioned)
+if (other.state == states.pizzagoblinthrow && !collisioned)
 {
 	if (obj_player1.x != other.x)
 		obj_player1.xscale = sign(other.x - obj_player1.x);

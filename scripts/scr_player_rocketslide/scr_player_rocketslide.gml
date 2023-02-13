@@ -12,7 +12,7 @@ function scr_player_rocketslide()
 	}
 	if (movespeed <= 0)
 	{
-		state = 184;
+		state = states.rocket;
 		sprite_index = spr_rocket;
 		image_index = 0;
 		movespeed = 12;

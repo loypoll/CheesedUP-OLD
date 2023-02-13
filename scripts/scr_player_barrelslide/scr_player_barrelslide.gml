@@ -40,10 +40,10 @@ function scr_player_barrelslide()
 		if (!place_meeting(x, y, obj_solid))
 		{
 			if (grounded)
-				state = 113;
+				state = states.barrel;
 			else
 			{
-				state = 114;
+				state = states.barreljump;
 				sprite_index = spr_player_barrelfall;
 			}
 		}
@@ -62,7 +62,7 @@ function scr_player_barrelslide()
 				vsp = -12;
 			else
 				vsp = -abs(movespeed);
-			state = 115;
+			state = states.barrelclimbwall;
 			movespeed = 0;
 			fmod_event_one_shot_3d("event:/sfx/barrel/slope", x, y);
 			if (sprite_index != spr_player_barrelroll)

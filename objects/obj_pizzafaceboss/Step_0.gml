@@ -3,40 +3,40 @@ wastedhits = 8 - elitehit;
 destroyable = false;
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		scr_pizzaface_arenaintro();
 		break;
-	case 134:
+	case states.walk:
 		scr_pizzaface_normal();
 		break;
-	case 230:
+	case states.pizzaface_ram:
 		scr_pizzaface_ram();
 		break;
-	case 8:
+	case states.transition:
 		scr_pizzaface_transitioncutscene();
 		break;
-	case 273:
+	case states.boss_phase1hurt:
 		scr_boss_phase1hurt();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_boss_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
 }
 if (superslambuffer > 0)
 	superslambuffer--;
-if (state != 134)
+if (state != states.walk)
 	on_y = true;
 if (prevhp != elitehit)
 {
@@ -65,8 +65,8 @@ if (prevhp != elitehit)
 			instance_destroy(obj_spitcheesespike);
 			instance_destroy(obj_banditochicken_dynamite);
 			instance_destroy(obj_banditochicken_projectile);
-			state = 8;
-			substate = 293;
+			state = states.transition;
+			substate = states.animation;
 			introbuffer = 100;
 			flickertime = 0;
 			elitehit = 0;
@@ -82,7 +82,7 @@ if (prevhp != elitehit)
 				movespeed = 0;
 				sprite_index = spr_player_gnomecutscene1;
 				image_speed = 0.35;
-				state = 146;
+				state = states.actor;
 				x = roomstartx;
 				y = roomstarty;
 			}
@@ -98,7 +98,7 @@ if (prevhp != elitehit)
 	}
 	prevhp = elitehit;
 }
-if (state == 138)
+if (state == states.stun)
 {
 	if (thrown)
 		savedthrown = true;
@@ -110,28 +110,28 @@ if (state == 138)
 }
 else
 	savedthrown = false;
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state == 138 && savedthrown == thrown && !savedthrown && elitehit > 1)
+if (state == states.stun && savedthrown == thrown && !savedthrown && elitehit > 1)
 	invincible = false;
 else
 	invincible = true;
-if ((!invincible || (state == 138 && savedthrown == thrown && !savedthrown && elitehit == 1)) && !flash && alarm[5] < 0)
+if ((!invincible || (state == states.stun && savedthrown == thrown && !savedthrown && elitehit == 1)) && !flash && alarm[5] < 0)
 	alarm[5] = 0.15 * room_speed;
-else if (invincible && (state != 138 || (savedthrown != thrown && savedthrown) || elitehit > 1))
+else if (invincible && (state != states.stun || (savedthrown != thrown && savedthrown) || elitehit > 1))
 	flash = false;
-if ((state == 230 && substate != 8) && alarm[4] < 0)
+if ((state == states.pizzaface_ram && substate != 8) && alarm[4] < 0)
 	alarm[4] = 6;
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

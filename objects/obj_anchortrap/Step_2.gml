@@ -4,7 +4,7 @@ switch (state)
 		hsp = 0;
 		vsp = 0;
 		break;
-	case 135:
+	case states.fall:
 		var num = instance_place_list(x, y + vsp + 1, obj_destructibles, global.instancelist, false);
 		for (var i = 0; i < num; i++)
 			instance_destroy(ds_list_find_value(global.instancelist, i));
@@ -23,15 +23,15 @@ switch (state)
 			}
 		}
 		break;
-	case 92:
+	case states.jump:
 		y = Approach(y, ystart, 2);
 		if (y == ystart)
 			state = 0;
 		break;
 }
-if (state == 92 && alarm[0] == -1)
+if (state == states.jump && alarm[0] == -1)
 	alarm[0] = 10;
-else if (state != 92)
+else if (state != states.jump)
 	image_alpha = 1;
 if (!place_meeting(x, y, obj_trapghost) && !place_meeting(xstart, ystart, obj_trapghost))
 	sprite_index = spr_kingghost_anchor;

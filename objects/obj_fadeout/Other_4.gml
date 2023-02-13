@@ -1,4 +1,4 @@
-if (room == Titlescreen && obj_player.state == 18)
+if (room == Titlescreen && obj_player.state == states.titlescreen)
 {
 	obj_player1.sprite_index = spr_player_machfreefall;
 	obj_player1.state = 84;

@@ -38,7 +38,7 @@ function scr_player_superslam()
 				playerid = other.id;
 				maxmovespeed = 6;
 				vertical = true;
-				fadeoutstate = 76;
+				fadeoutstate = states.superslam;
 			}
 		}
 	}
@@ -86,9 +86,9 @@ function scr_player_superslam()
 		{
 			with (obj_baddie)
 			{
-				if (shakestun && grounded && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0 && !invincible && groundpound && state != 4)
+				if (shakestun && grounded && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0 && !invincible && groundpound && state != states.grabbed)
 				{
-					state = 138;
+					state = states.stun;
 					if (stunned < 60)
 						stunned = 60;
 					vsp = -11;
@@ -117,7 +117,7 @@ function scr_player_superslam()
 	if (sprite_index == spr_piledriverland && floor(image_index) == (image_number - 1))
 	{
 		vsp = -6;
-		state = 92;
+		state = states.jump;
 	}
 	if (move != 0)
 	{

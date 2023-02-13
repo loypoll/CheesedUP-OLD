@@ -21,7 +21,7 @@ function __view_set_internal()
 			__cam = view_get_camera(__index);
 			camera_set_view_size(__cam, camera_get_view_width(__cam), __val);
 			break;
-		case 4:
+		case states.grabbed:
 			__cam = view_get_camera(__index);
 			camera_set_view_angle(__cam, __val);
 			break;

@@ -45,7 +45,7 @@ if (drop && global.panic)
 				dropstate = 4;
 			}
 			break;
-		case 4:
+		case states.grabbed:
 			depth = 150;
 			var _ty = drop_y - 100;
 			y = Approach(y, _ty, 3);
@@ -58,7 +58,7 @@ if (drop && global.panic)
 				vsp = 0;
 			}
 			break;
-		case 135:
+		case states.fall:
 			if (vsp < 20)
 				vsp += grav;
 			y += vsp;
@@ -67,7 +67,7 @@ if (drop && global.panic)
 				depth = 50;
 				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
 				y = drop_y;
-				dropstate = 126;
+				dropstate = states.idle;
 				handsprite = spr_grabbiehand_idle;
 				with (obj_camera)
 				{
@@ -76,7 +76,7 @@ if (drop && global.panic)
 				}
 			}
 			break;
-		case 126:
+		case states.idle:
 			hand_y -= 6;
 			break;
 	}

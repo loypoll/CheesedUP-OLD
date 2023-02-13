@@ -42,7 +42,7 @@ function scr_player_boxxedpep()
 		fmod_event_one_shot_3d("event:/sfx/boxxed/flap", x, y);
 		instance_create(x, y, obj_highjumpcloud2);
 		vsp = -boxxedpepjump;
-		state = 35;
+		state = states.boxxedpepjump;
 		sprite_index = spr_boxxedpep_flap;
 		image_index = 0;
 		repeat (7)
@@ -97,7 +97,7 @@ function scr_player_boxxedpep()
 			else if (boxxeddashbuffer <= 0)
 			{
 				sprite_index = spr_boxxedpepair;
-				state = 35;
+				state = states.boxxedpepjump;
 			}
 		}
 	}
@@ -105,7 +105,7 @@ function scr_player_boxxedpep()
 	{
 		GamepadSetVibration(0, 0.8, 0.65);
 		input_buffer_slap = 0;
-		state = 34;
+		state = states.boxxedpepspin;
 		sprite_index = spr_boxxedpep_spin;
 		boxxedspinbuffer = 25;
 		image_index = 0;

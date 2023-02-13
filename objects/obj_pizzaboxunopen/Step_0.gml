@@ -173,7 +173,7 @@ if (place_meeting(x, y, obj_player) && sprite_index == spr_pizzaboxunopen)
 		with (instance_create(x, y - 25, content))
 		{
 			image_xscale = other.image_xscale;
-			state = 138;
+			state = states.stun;
 			stunned = 20;
 			vsp = -5;
 		}

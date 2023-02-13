@@ -22,7 +22,7 @@ with (obj_player)
 			{
 				with (possessID)
 				{
-					state = 138;
+					state = states.stun;
 					stunned = 50;
 				}
 				state = 0;

@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 126:
+	case states.idle:
 		if (selected)
 		{
 			state = 8;
@@ -25,7 +25,7 @@ switch (state)
 			}
 			else
 			{
-				state = 126;
+				state = states.idle;
 				sprite_index = idlespr;
 			}
 		}

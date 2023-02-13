@@ -1,46 +1,46 @@
 var player = instance_nearest(x, y, obj_player);
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
 	case 141:
 		scr_enemy_chase();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
-	case 294:
+	case states.pizzaheadjump:
 		scr_enemy_pizzaheadjump();
 		break;
-	case 80:
+	case states.punch:
 		if (sprite_index == spr_minijohn_punchstart)
 		{
 			image_speed = 0.35;
@@ -111,7 +111,7 @@ switch (state)
 		}
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
@@ -131,7 +131,7 @@ if (state == 141 && ragecooldown <= 0)
 			flash = true;
 			alarm[4] = 5;
 			ragecooldown = 100;
-			state = 125;
+			state = states.rage;
 			create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
 			with (instance_create(x, y, obj_forkhitbox))
 			{
@@ -151,13 +151,13 @@ if (state == 141 && ragecooldown <= 0)
 }
 if (ragecooldown > 0)
 	ragecooldown--;
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != 141)
 	momentum = 0;
-if (state == 134 || state == 126)
+if (state == states.walk || state == states.idle)
 {
 	var targetplayer = obj_player1;
 	if (obj_player1.spotlight == 0)
@@ -171,18 +171,18 @@ if (instance_exists(obj_player2))
 {
 	if ((obj_player2.x > (x - 400) && obj_player2.x < (x + 400)) && (y <= (obj_player2.y + 60) && y >= (obj_player2.y - 60)))
 	{
-		if (state != 126 && obj_player2.state == 121)
+		if (state != states.idle && obj_player2.state == 121)
 		{
-			state = 126;
+			state = states.idle;
 			sprite_index = scaredspr;
 			if (x != obj_player2.x)
 				image_xscale = -sign(x - obj_player2.x);
 		}
 	}
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

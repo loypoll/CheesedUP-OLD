@@ -1,6 +1,6 @@
 with (other)
 {
-	if ((!instakillmove || state == 104) && state != 225 && state != 106 && other.state == 134 && state != 61)
+	if ((!instakillmove || state == states.mach2) && state != 225 && state != 106 && other.state == states.walk && state != states.chainsaw)
 	{
 		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
 		vsp = -4;

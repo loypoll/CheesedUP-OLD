@@ -116,7 +116,7 @@ switch (state)
 		if (floor(image_index) != (image_number - 1))
 			steppy = false;
 		break;
-	case 135:
+	case states.fall:
 		image_speed = 0.5;
 		if (floor(image_index) == (image_number - 1))
 			image_index = image_number - 1;

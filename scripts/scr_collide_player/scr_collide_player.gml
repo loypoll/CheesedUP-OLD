@@ -58,7 +58,7 @@ function scr_collide_player()
 			{
 				if (scr_solid_player(x + sh, y) && !scr_solid_player(x + sh, y - k))
 					y -= k;
-				if (state != 16 && state != 184)
+				if (state != states.ghost && state != states.rocket)
 				{
 					if (!scr_solid_player(x + sh, y) && !scr_solid_player(x + sh, y + 1) && scr_solid_player(x + sh, y + (k + 1)))
 						y += k;

@@ -1,7 +1,7 @@
 var gate = id;
 with (other)
 {
-	if (place_meeting(x, y, other) && key_up && grounded && (state == 0 || state == 103 || state == 104 || state == 121) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != 98 && state != 95 && spotlight == 1)
+	if (place_meeting(x, y, other) && key_up && grounded && (state == 0 || state == states.mach1 || state == states.mach2 || state == 121) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != 98 && state != states.comingoutdoor && spotlight == 1)
 	{
 		audio_stop_all();
 		stop_music();

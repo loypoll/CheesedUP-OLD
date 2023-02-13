@@ -18,7 +18,7 @@ if (!got)
 		var _player = ds_list_find_value(global.instancelist, i);
 		with (_player)
 		{
-			if (state != 186)
+			if (state != states.gotoplayer)
 			{
 				if (grounded)
 				{

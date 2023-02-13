@@ -283,7 +283,7 @@ switch (state)
 			case spr_tv_exprmach3:
 				with (obj_player1)
 				{
-					if (state != 121 && state != 37 && (state != 61 || (tauntstoredstate != 121 && tauntstoredstate != 37)) && sprite_index != spr_mach3boost && mach4mode == 0)
+					if (state != 121 && state != 37 && (state != states.chainsaw || (tauntstoredstate != 121 && tauntstoredstate != 37)) && sprite_index != spr_mach3boost && mach4mode == 0)
 					{
 						other.state = 250;
 						other.expressionsprite = -4;
@@ -295,7 +295,7 @@ switch (state)
 			case spr_tv_exprmach4:
 				with (obj_player1)
 				{
-					if (mach4mode == 0 && (state != 61 || (tauntstoredstate != 121 && tauntstoredstate != 37)))
+					if (mach4mode == 0 && (state != states.chainsaw || (tauntstoredstate != 121 && tauntstoredstate != 37)))
 					{
 						other.state = 250;
 						other.expressionsprite = -4;

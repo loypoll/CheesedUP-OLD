@@ -4,7 +4,7 @@ switch (state)
 	case 0:
 		state_turret_normal();
 		break;
-	case 128:
+	case states.charge:
 		state_turret_charge();
 		break;
 }

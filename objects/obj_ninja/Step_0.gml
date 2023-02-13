@@ -1,50 +1,50 @@
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 294:
+	case states.pizzaheadjump:
 		scr_enemy_pizzaheadjump();
 		break;
 }
 if (sprite_index != spr_pizzaboy)
 	usepalette = true;
-if (state != 128 && sprite_index != spr_pizzaboy)
+if (state != states.charge && sprite_index != spr_pizzaboy)
 	scr_scareenemy();
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 targetplayer = instance_nearest(x, y, obj_player);
-if (state == 134)
+if (state == states.walk)
 {
 	if (sprite_index == spr_pizzaboy)
 		hsp = 0;
@@ -83,7 +83,7 @@ else if (state == 80)
 	hsp = 0;
 	if (floor(image_index) == (image_number - 1))
 	{
-		state = 134;
+		state = states.walk;
 		sprite_index = walkspr;
 	}
 	if (image_index > 4 && image_index < 14)
@@ -115,7 +115,7 @@ if (sprite_index == spr_pizzaboy)
 {
 	if (x != targetplayer.x && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y > (y - 150) && targetplayer.y < (y + 20))
 	{
-		if (state == 134 || state == 126)
+		if (state == states.walk || state == states.idle)
 		{
 			if (sprite_index == spr_pizzaboy)
 				create_particle(x, y, particle.balloonpop, 0);
@@ -123,7 +123,7 @@ if (sprite_index == spr_pizzaboy)
 			image_xscale = -sign(x - targetplayer.x);
 			sprite_index = spr_ninja_uppercut;
 			image_index = 0;
-			state = 128;
+			state = states.charge;
 			roaming = true;
 			vsp = -14;
 			hsp = image_xscale * 4;
@@ -138,7 +138,7 @@ if (sprite_index == spr_pizzaboy)
 		}
 	}
 }
-else if (state == 134 && attack_buffer <= 0)
+else if (state == states.walk && attack_buffer <= 0)
 {
 	attack_buffer = attack_max + irandom_range(-attack_random, attack_random);
 	state = 80;
@@ -166,9 +166,9 @@ else
 	invincible = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

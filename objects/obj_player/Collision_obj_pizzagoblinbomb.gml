@@ -1,12 +1,12 @@
 if (!other.grabbable)
 	exit;
-if (state != 34)
+if (state != states.boxxedpepspin)
 {
-	if (state == 42 || state == 43 || state == 80)
+	if (state == states.handstandjump || state == states.lungeattack || state == states.punch)
 	{
-		if (other.state == 0 && scr_transformationcheck() && !cutscene && state != 52 && (state == 42 || state == 80 || state == 43))
+		if (other.state == 0 && scr_transformationcheck() && !cutscene && state != states.bombgrab && (state == states.handstandjump || state == states.punch || state == states.lungeattack))
 		{
-			state = 52;
+			state = states.bombgrab;
 			image_index = 0;
 			sprite_index = spr_haulingstart;
 			other.defused = true;
@@ -20,7 +20,7 @@ if (state != 34)
 			}
 			with (other)
 			{
-				state = 4;
+				state = states.grabbed;
 				playerid = other.id;
 			}
 		}

@@ -1,8 +1,8 @@
-if (state == 138 && thrown && other.state != 5 && other.state != 138)
+if (state == states.stun && thrown && other.state != 5 && other.state != states.stun)
 {
 	with (other)
 	{
-		state = 138;
+		state = states.stun;
 		vsp = -5;
 		stunstate = 0;
 		stunned = 100;

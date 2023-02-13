@@ -13,7 +13,7 @@ function scr_boss_grabbed()
 	var playerid = (grabbedby == 1) ? obj_player1.id : obj_player2.id;
 	with (playerid)
 	{
-		if (state != 262 || baddiegrabbedID != other)
+		if (state != states.supergrab || baddiegrabbedID != other)
 		{
 			if (other.elitehit <= 1 && other.object_index != obj_pizzafaceboss)
 				other.destroyable = true;
@@ -37,8 +37,8 @@ function scr_boss_grabbed()
 			supergraby = other.y - y;
 			camzoom = other.camzoom;
 			baddiegrabbedID = other.id;
-			state = 262;
-			supergrabstate = 80;
+			state = states.supergrab;
+			supergrabstate = states.punch;
 			sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7);
 			image_index = sprite_get_number(sprite_index) - 1;
 			other.camzoom = 1;
@@ -46,7 +46,7 @@ function scr_boss_grabbed()
 	}
 	image_xscale = -playerid.xscale;
 	sprite_index = grabbedspr;
-	state = 262;
+	state = states.supergrab;
 }
 function scr_boss_pizzaheadjump()
 {
@@ -85,10 +85,10 @@ function scr_boss_pizzaheadjump()
 	}
 	if (grounded && vsp > 0)
 	{
-		state = 134;
+		state = states.walk;
 		if (object_index == obj_noisey)
 		{
-			state = 138;
+			state = states.stun;
 			stunned = 0;
 		}
 	}
@@ -106,8 +106,8 @@ function boss_update_pizzaheadKO()
 			boss_palette = argument1;
 		}
 		image_alpha = 1;
-		if (state == 298)
-			state = 134;
+		if (state == states.boss_KO)
+			state = states.walk;
 	}
 }
 function boss_hurt_gustavo()
@@ -117,11 +117,11 @@ function boss_hurt_gustavo()
 		with (obj_gustavograbbable)
 		{
 			var _slam = enemy_is_superslam(id) || enemy_is_swingding(id);
-			if ((thrown || _slam) && other.state != 298 && (place_meeting(x + hsp, y, other) || place_meeting(x - image_xscale, y, other) || place_meeting(x - (32 * image_xscale), y, other) || place_meeting(x + (32 * image_xscale), y, other)))
+			if ((thrown || _slam) && other.state != states.boss_KO && (place_meeting(x + hsp, y, other) || place_meeting(x - image_xscale, y, other) || place_meeting(x - (32 * image_xscale), y, other) || place_meeting(x + (32 * image_xscale), y, other)))
 			{
 				with (other)
 				{
-					state = 138;
+					state = states.stun;
 					stunned = 1000;
 					thrown = false;
 					savedthrown = false;
@@ -146,7 +146,7 @@ function boss_do_pizzaheadKO()
 	if (pizzahead && pizzaheadKO && state != 294 && elitehit <= 3)
 	{
 		pizzaheadKO_buffer = 5;
-		state = 298;
+		state = states.boss_KO;
 		image_alpha = 1;
 	}
 }
@@ -188,7 +188,7 @@ function scr_boss_genericintro()
 		introbuffer = 30;
 	with (obj_player1)
 	{
-		state = 146;
+		state = states.actor;
 		image_speed = 0.35;
 		hsp = 0;
 		movespeed = 0;
@@ -203,7 +203,7 @@ function scr_boss_genericintro()
 		introbuffer--;
 	else
 	{
-		state = 134;
+		state = states.walk;
 		if (instance_exists(spotlightID))
 			spotlightID.expand = true;
 		with (obj_player)
@@ -217,7 +217,7 @@ function scr_boss_do_hurt_phase2(object, inv_time = 100)
 {
 	with (object)
 	{
-		state = 273;
+		state = states.boss_phase1hurt;
 		invtime = inv_time + 40;
 		hurted = false;
 		image_alpha = 1;
@@ -231,7 +231,7 @@ function scr_boss_do_hurt_phase2(object, inv_time = 100)
 		hitY = y;
 	}
 	pulse = 0;
-	state = 273;
+	state = states.boss_phase1hurt;
 	buildup = inv_time;
 	buildup_playerID = object;
 	camzoom = 1;
@@ -293,9 +293,9 @@ function scr_boss_phase1hurt(func = noone)
 		camera_set_view_size(view_camera[0], SCREEN_WIDTH * camzoom, SCREEN_HEIGHT * camzoom);
 		with (player)
 		{
-			if (state != 6)
+			if (state != states.finishingblow)
 			{
-				state = 6;
+				state = states.finishingblow;
 				image_speed = 0.35;
 				image_index = 0;
 				hsp = 0;
@@ -318,7 +318,7 @@ function scr_boss_phase1hurt(func = noone)
 			GamepadSetVibration((player.object_index == obj_player1) ? 0 : 1, 0.8, 0.65);
 			fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
 			fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
-			state = 138;
+			state = states.stun;
 			image_xscale = -player.xscale;
 			instance_create(x, y, obj_slapstar);
 			instance_create(x, y, obj_slapstar);

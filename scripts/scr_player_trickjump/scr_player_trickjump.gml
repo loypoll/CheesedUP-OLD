@@ -29,7 +29,7 @@ function scr_player_trickjump()
 		{
 			sprite_index = spr_rollgetup;
 			if (movespeed < 12)
-				state = 104;
+				state = states.mach2;
 			else
 				state = 121;
 		}

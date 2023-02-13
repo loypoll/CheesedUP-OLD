@@ -1,6 +1,4 @@
-enum states
-{
-	normal,
+enum states{normal,
 	revolver,
 	dynamite,
 	boots,
@@ -291,6 +289,7 @@ enum states
 	boss_stomp,
 	boss_finale,
 	backtohub,
+	johnghost,
 	spaceshuttle,
 	animation,
 	pizzaheadjump,

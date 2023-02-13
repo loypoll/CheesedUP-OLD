@@ -96,6 +96,6 @@ function scr_player_shoulder()
 	crouchslideAnim = true;
 	crouchAnim = true;
 	if (floor(image_index) == (image_number - 1))
-		state = 0;
+		state = states.normal;
 	image_speed = 0.35;
 }

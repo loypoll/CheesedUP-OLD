@@ -1,6 +1,6 @@
-if (state != 138)
+if (state != states.stun)
 {
-	state = 138;
+	state = states.stun;
 	stunned = 1000;
 	thrown = false;
 	hsp = -image_xscale * 8;

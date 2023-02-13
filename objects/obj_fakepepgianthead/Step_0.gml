@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 0:
+	case states.normal:
 		image_speed = 0.35;
 		targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 		var _g = distance_to_point(targetplayer.x, targetplayer.y);
@@ -14,17 +14,17 @@ switch (state)
 			scr_hurtplayer(obj_player1);
 			if (s != obj_player1.state)
 			{
-				state = 135;
+				state = states.fall;
 				target_x = obj_player1.x - 700;
 				movespeed = 0;
 			}
 		}
 		break;
-	case 135:
+	case states.fall:
 		image_speed = 0.5;
 		x = Approach(x, target_x, movespeed);
 		movespeed += 0.2;
 		if (x == target_x)
-			state = 0;
+			state = states.normal;
 		break;
 }

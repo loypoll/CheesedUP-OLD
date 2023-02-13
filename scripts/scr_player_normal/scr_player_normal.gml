@@ -292,7 +292,7 @@ function state_player_normal()
 			particle_set_scale(4, xscale, 1);
 			create_particle(x, y, particle.highjumpcloud2, 0);
 			vsp = -11;
-			state = 92;
+			state = states.jump;
 			jumpAnim = true;
 			jumpstop = false;
 			if (place_meeting(x, y + 1, obj_railparent))
@@ -301,7 +301,7 @@ function state_player_normal()
 		}
 		if (key_down || (grounded && vsp > 0 && scr_solid(x, y - 3) && scr_solid(x, y)) || place_meeting(x, y, obj_solid))
 		{
-			state = 100;
+			state = states.crouch;
 			landAnim = false;
 			crouchAnim = true;
 			image_index = 0;
@@ -323,14 +323,14 @@ function state_player_normal()
 		}
 		else
 			jumpAnim = true;
-		state = 92;
+		state = states.jump;
 	}
 	if (input_buffer_shoot > 0)
 	{
 		if (shotgunAnim)
 			scr_shotgunshoot();
 		else if (global.pistol)
-			scr_pistolshoot(0);
+			scr_pistolshoot(states.normal);
 	}
 	if (input_buffer_slap > 0 && !key_up && shotgunAnim == 0 && !global.pistol)
 	{
@@ -340,13 +340,13 @@ function state_player_normal()
 		particle_set_scale(5, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		fmod_event_instance_play(suplexdashsnd);
-		state = 42;
+		state = states.handstandjump;
 		movespeed = 8;
 		image_index = 0;
 	}
 	else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && !global.pistol)
 	{
-		state = 80;
+		state = states.punch;
 		input_buffer_slap = 0;
 		image_index = 0;
 		sprite_index = spr_player_breakdanceuppercut;
@@ -359,17 +359,17 @@ function state_player_normal()
 	switch (character)
 	{
 		case "P":
-			if (key_attack && state != 42 && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu)
+			if (key_attack && state != states.handstandjump && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu)
 			{
 				sprite_index = spr_mach1;
 				image_index = 0;
-				state = 104;
+				state = states.mach2;
 				if (movespeed < 6)
 					movespeed = 6;
 			}
-			if (global.kungfu && key_attack && state != 42)
+			if (global.kungfu && key_attack && state != states.handstandjump)
 			{
-				state = 206;
+				state = states.blockstance;
 				sprite_index = spr_player_airattack;
 				hsp = 0;
 				movespeed = 0;
@@ -380,7 +380,7 @@ function state_player_normal()
 			{
 				if (key_attack2)
 				{
-					state = 99;
+					state = states.Sjumpprep;
 					image_index = 0;
 					sprite_index = !key_up ? spr_playerN_jetpackstart : spr_superjumpprep;
 					hsp = 0;
@@ -391,7 +391,7 @@ function state_player_normal()
 			{
 				sprite_index = spr_playerN_pogostart;
 				image_index = 0;
-				state = 58;
+				state = states.pogo;
 			}
 			break;
 		case "V":
@@ -403,14 +403,14 @@ function state_player_normal()
 					sprite_index = spr_mach1;
 					image_index = 0;
 					jumpAnim = true;
-					state = 103;
+					state = states.mach1;
 				}
 				else
 				{
 					movespeed = 21;
 					sprite_index = spr_crazyrun;
 					jumpAnim = true;
-					state = 121;
+					state = states.mach3;
 					movespeed = 20;
 				}
 			}
@@ -418,7 +418,7 @@ function state_player_normal()
 			{
 				if (move == 0)
 					movespeed = 0;
-				state = 2;
+				state = states.dynamite;
 				sprite_index = spr_playerV_dynamitethrow;
 				image_index = 0;
 				with (instance_create(x, y, obj_dynamite))
@@ -436,7 +436,7 @@ function state_player_normal()
 					movespeed = 0;
 				sprite_index = spr_playerV_revolverstart;
 				image_index = 0;
-				state = 1;
+				state = states.revolver;
 			}
 			break;
 	}
@@ -481,20 +481,20 @@ function state_pepperman_normal()
 		sprite_index = spr_jump;
 		image_index = 0;
 		vsp = -pepperman_jumpspeed;
-		state = 92;
+		state = states.jump;
 		with (instance_create(x, y - 5, obj_highjumpcloud2))
 			image_xscale = other.xscale;
 	}
 	if (!grounded && !key_jump)
 	{
-		state = 92;
+		state = states.jump;
 		sprite_index = spr_fall;
 	}
 	if (key_attack && (!place_meeting(x + xscale, y, obj_solid) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
 	{
 		if (move != 0)
 			xscale = move;
-		state = 153;
+		state = states.shoulderbash;
 		sprite_index = spr_pepperman_shoulderstart;
 		image_index = 0;
 	}

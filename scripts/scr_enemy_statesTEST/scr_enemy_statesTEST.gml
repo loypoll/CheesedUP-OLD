@@ -7,12 +7,12 @@ function scr_enemy_pummel()
 	image_xscale = sign(_playerinst.x - x);
 	with (_playerinst)
 	{
-		if (state != 154)
+		if (state != states.pummel)
 		{
 			with (other)
 			{
 				stagger_dir = -image_xscale;
-				state = 155;
+				state = states.staggered;
 				stagger_buffer = stagger_max;
 				hsp = 0;
 			}
@@ -30,10 +30,10 @@ function scr_enemy_pummel()
 				else
 				{
 					sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4);
-					state = 91;
+					state = states.tackle;
 					movespeed = 5;
 					image_index = 0;
-					other.state = 138;
+					other.state = states.stun;
 					other.grav = 0;
 					other.hsp = -other.image_xscale * 25;
 					other.vsp = -2;
@@ -51,7 +51,7 @@ function scr_enemy_pummel()
 			{
 				if (key_up)
 				{
-					state = 80;
+					state = states.punch;
 					sprite_index = spr_player_breakdanceuppercut;
 					image_index = 0;
 					vsp = -14;
@@ -67,8 +67,8 @@ function scr_enemy_pummel()
 					with (other)
 					{
 						hp -= 2;
-						state = (hp <= 0) ? 138 : 155;
-						if (state == 155)
+						state = (hp <= 0) ? states.stun : states.staggered;
+						if (state == states.staggered)
 						{
 							stunned = 100;
 							stuntouchbuffer = 50;
@@ -81,7 +81,7 @@ function scr_enemy_pummel()
 				{
 					vsp = -4;
 					movespeed = 9;
-					state = 80;
+					state = states.punch;
 					sprite_index = spr_player_breakdancestart;
 					breakdance = 35;
 					image_index = 0;
@@ -96,8 +96,8 @@ function scr_enemy_pummel()
 					with (other)
 					{
 						hp -= 2;
-						state = (hp <= 0) ? 138 : 155;
-						if (state == 155)
+						state = (hp <= 0) ? states.stun : states.staggered;
+						if (state == states.staggered)
 						{
 							stunned = 100;
 							stuntouchbuffer = 50;
@@ -148,6 +148,6 @@ function scr_enemy_staggered()
 	{
 		image_index = 0;
 		sprite_index = walkspr;
-		state = 134;
+		state = states.walk;
 	}
 }

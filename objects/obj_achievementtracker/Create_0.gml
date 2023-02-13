@@ -485,7 +485,7 @@ add_achievement_notify("medieval3", function(data) {},
 function(data)
 {
 	var type = data[0];
-	if (type == 2 && global.leveltosave == "medieval" && (obj_player1.state == 5 || (obj_player1.tauntstoredstate == 5 && obj_player1.state == 61)) && (obj_player1.sprite_index == obj_player1.spr_tumblestart || obj_player1.sprite_index == obj_player1.spr_tumbleend || obj_player1.sprite_index == obj_player1.spr_tumble))
+	if (type == 2 && global.leveltosave == "medieval" && (obj_player1.state == 5 || (obj_player1.tauntstoredstate == 5 && obj_player1.state == states.chainsaw)) && (obj_player1.sprite_index == obj_player1.spr_tumblestart || obj_player1.sprite_index == obj_player1.spr_tumbleend || obj_player1.sprite_index == obj_player1.spr_tumble))
 		achievement_unlock(name, "Spherical", spr_achievement_medieval, 2);
 });
 
@@ -632,7 +632,7 @@ add_achievement_notify("graveyard2", function(data)
 	var arr = data[1];
 	if (global.leveltosave == "graveyard")
 	{
-		if (type == 2 && (obj_player1.state == 16 || (obj_player1.state == 61 && obj_player1.tauntstoredstate == 16)))
+		if (type == 2 && (obj_player1.state == 16 || (obj_player1.state == states.chainsaw && obj_player1.tauntstoredstate == 16)))
 		{
 			achievement_get_variable("grav2count").value += 1;
 			if (achievement_get_variable("grav2count").value >= 20)

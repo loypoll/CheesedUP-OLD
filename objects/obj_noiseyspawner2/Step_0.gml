@@ -1,14 +1,14 @@
 var b = true;
 with (obj_bosscontroller)
 {
-	if (state == 144)
+	if (state == states.arenaintro)
 		b = false;
 }
 with (obj_noisey)
 	b = false;
 with (obj_noiseboss)
 {
-	if ((state == 144 || state == 138) || phase == 1)
+	if ((state == states.arenaintro || state == states.stun) || phase == 1)
 		b = false;
 }
 if (b)
@@ -22,7 +22,7 @@ if (b)
 		{
 			instance_create(x, y, obj_genericpoofeffect);
 			important = true;
-			state = 138;
+			state = states.stun;
 			bounce = true;
 			stunned = 10;
 			image_xscale = other.image_xscale;

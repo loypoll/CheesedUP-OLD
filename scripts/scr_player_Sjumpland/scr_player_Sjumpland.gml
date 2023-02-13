@@ -18,7 +18,7 @@ function scr_player_Sjumpland()
 	if (floor(image_index) == 6)
 	{
 		sprite_index = spr_machfreefall;
-		state = 92;
+		state = states.jump;
 		jumpAnim = false;
 	}
 }

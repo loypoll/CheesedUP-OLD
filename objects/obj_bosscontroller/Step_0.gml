@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		scr_bosscontroller_intro();
 		break;
 	case 0:

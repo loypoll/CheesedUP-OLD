@@ -3,7 +3,7 @@ switch (state)
 	case 0:
 		with (obj_player)
 		{
-			if (other.state != 134 && state == 0 && vsp > 0 && key_up && place_meeting(x, y + 1, other))
+			if (other.state != states.walk && state == 0 && vsp > 0 && key_up && place_meeting(x, y + 1, other))
 			{
 				state = 146;
 				hsp = 0;
@@ -13,14 +13,14 @@ switch (state)
 				{
 					playerid = other.id;
 					playerxoffset = other.x - x;
-					state = 134;
+					state = states.walk;
 					if (place_meeting(x + (dir * 32), y, obj_solid))
 						dir *= -1;
 				}
 			}
 		}
 		break;
-	case 134:
+	case states.walk:
 		x += (dir * 5);
 		playerid.x = x + playerxoffset;
 		playerid.hsp = 0;

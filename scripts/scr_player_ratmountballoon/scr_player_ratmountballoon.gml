@@ -25,7 +25,7 @@ function scr_player_ratmountballoon()
 		input_buffer_jump_negative = 10;
 		fmod_event_one_shot_3d("event:/sfx/rat/deflateeat", x, y);
 		create_particle(x, y, particle.ratmountballooncloud, 0);
-		state = 192;
+		state = states.ratmountjump;
 		sprite_index = spr_player_ratmountballoonend1;
 		image_index = 0;
 		jumpAnim = true;

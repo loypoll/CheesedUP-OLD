@@ -4,7 +4,7 @@ if (image_alpha <= 0)
 	exit;
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		if (arenastate < 3)
 		{
 			draw_set_alpha(1);

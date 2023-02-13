@@ -1,49 +1,49 @@
 if (room == rm_editor)
 	exit;
-if (state == 134 && grounded && vsp > 0 && obj_player.state == 111 && bbox_in_camera(view_camera[0], 32))
+if (state == states.walk && grounded && vsp > 0 && obj_player.state == 111 && bbox_in_camera(view_camera[0], 32))
 	scr_pizzaball_go_to_thrown(0, -10);
 arrowindex += 0.35;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_pizzaball_hit();
 		break;
-	case 148:
+	case states.golf:
 		scr_pizzaball_golf();
 		break;
 	case 156:
 		scr_pizzaball_thrown();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		if (stunned > 0)
 			stunned -= 1;
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_pizzaball_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
 	case 17:
@@ -66,14 +66,14 @@ if (state == 156)
 			playerid = other.id;
 	}
 }
-if ((state == 134 || state == 126) && sit)
+if ((state == states.walk || state == states.idle) && sit)
 {
 	hsp = 0;
 	sprite_index = spr_pizzaball_idle1;
 }
-if (state != 134)
+if (state != states.walk)
 	sit = false;
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
@@ -85,7 +85,7 @@ if (state == 156 && !instance_exists(pointerID))
 	pointerID.sprite_index = spr_icon_pizzaball;
 	pointerID.objectID = id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
@@ -107,9 +107,9 @@ if (hitbuffer > 0)
 	invincible = true;
 	hitbuffer--;
 }
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

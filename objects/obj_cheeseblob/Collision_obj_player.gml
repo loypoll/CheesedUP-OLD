@@ -1,4 +1,4 @@
-if (other.state != 61)
+if (other.state != states.chainsaw)
 {
 	repeat (8)
 	{

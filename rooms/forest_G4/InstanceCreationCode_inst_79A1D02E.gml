@@ -1,1 +1,1 @@
-particlespr = spr_bee;
+particlespr = spr_plaindebris;

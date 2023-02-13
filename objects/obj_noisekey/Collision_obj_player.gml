@@ -1,4 +1,4 @@
-if (other.instakillmove || other.state == 42)
+if (other.instakillmove || other.state == states.handstandjump)
 {
 	with (other)
 	{
@@ -6,7 +6,7 @@ if (other.instakillmove || other.state == 42)
 		vsp = 0;
 		flash = true;
 		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
-		state = 46;
+		state = states.gottreasure;
 		with (instance_create(x, y - 50, obj_noisebigkey))
 			alarm[0] = 150;
 	}

@@ -1,4 +1,4 @@
-if (other.state == 186)
+if (other.state == states.gotoplayer)
 	exit;
 if (sprite_index == spr_grabbiehand_fall && player == -4)
 {

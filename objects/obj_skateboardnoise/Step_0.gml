@@ -6,7 +6,7 @@ if (playerid != -4)
 {
 	with (playerid)
 	{
-		if (state != 285)
+		if (state != states.skateboardnoise)
 			other.playerid = -4;
 		else
 		{

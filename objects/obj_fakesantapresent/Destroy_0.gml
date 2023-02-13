@@ -5,7 +5,7 @@ if (spawn)
 	{
 		santaID = other.baddieID;
 		important = true;
-		state = 138;
+		state = states.stun;
 		vsp = -8;
 		stunned = 20;
 		create_particle(x, y, particle.genericpoofeffect);

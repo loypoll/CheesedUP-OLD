@@ -25,13 +25,13 @@ function scr_player_bump()
 			if (!skateboarding)
 			{
 				if (sprite_index != spr_rockethitwall || (grounded && vsp > 0))
-					state = 0;
+					state = states.normal;
 			}
 			else
-				state = 104;
+				state = states.mach2;
 		}
 		if (grounded && vsp > 0 && _gus)
-			state = 191;
+			state = states.ratmount;
 		if (sprite_index != spr_player_catched && sprite_index != spr_boxxedpep_air && sprite_index != spr_rockethitwall && sprite_index != spr_tumbleend && sprite_index != spr_hitwall && !_gus && sprite_index != spr_mach && sprite_index != spr_mach4)
 			sprite_index = !skateboarding ? spr_bump : spr_clownbump;
 	}
@@ -41,9 +41,9 @@ function scr_player_bump()
 		hsp = 0;
 		vsp = 0;
 		if (floor(image_index) == (image_number - 1))
-			state = 0;
+			state = states.normal;
 		image_speed = 0.35;
 	}
-	if (state == 0 && isgustavo)
-		state = 191;
+	if (state == states.normal && isgustavo)
+		state = states.ratmount;
 }

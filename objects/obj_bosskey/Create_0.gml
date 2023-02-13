@@ -1,6 +1,6 @@
 vsp = 0;
 grav = 0.5;
-state = 92;
+state = states.jump;
 y_to = y;
 touchedground = false;
 save = "w1stick";

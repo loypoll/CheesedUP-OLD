@@ -68,7 +68,7 @@ switch (state)
 		handy = playerid.y;
 		drawhandx = handx;
 		drawhandy = handy;
-		if (handy < (y - 200) || playerid.state == 150)
+		if (handy < (y - 200) || playerid.state == states.tube)
 		{
 			state = 0;
 			with (playerid)
@@ -91,7 +91,7 @@ switch (state)
             drawhandx = handx
             drawhandy = handy
             hand_xscale = playerid.xscale
-            if playerid.state != 150
+            if playerid.state != states.tube
             {
                 with (playerid)
                 {

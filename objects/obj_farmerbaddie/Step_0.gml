@@ -2,13 +2,13 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		if (!idle)
 			scr_enemy_walk();
 		else
@@ -17,28 +17,28 @@ switch (state)
 			hsp = Approach(hsp, 0, 1);
 		}
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
-	case 125:
+	case states.rage:
 		scr_enemy_rage();
 		break;
 	case 17:
@@ -48,9 +48,9 @@ switch (state)
 if (bombreset > 0)
 	bombreset--;
 scr_scareenemy();
-if (state != 134 && object_index != obj_farmerbaddie2 && object_index != obj_farmerbaddie3)
+if (state != states.walk && object_index != obj_farmerbaddie2 && object_index != obj_farmerbaddie3)
 	idle = false;
-if (state == 134)
+if (state == states.walk)
 {
 	var x1 = disx;
 	playerid = instance_nearest(x, y, obj_player);
@@ -67,18 +67,18 @@ if (state == 134)
 			image_xscale = sign(playerid.x - x);
 	}
 }
-else if (state == 92)
+else if (state == states.jump)
 {
 	if (grounded && vsp > 0)
 	{
 		fmod_event_instance_play(chargesnd);
 		fmod_event_instance_set_3d_attributes(chargesnd, x, y);
-		state = 128;
+		state = states.charge;
 		sprite_index = ragespr;
 		attackspeed = 6;
 	}
 }
-else if (state == 128)
+else if (state == states.charge)
 {
 	idle = false;
 	if (object_index != obj_farmerbaddie3 && !instance_exists(hitboxID))
@@ -112,30 +112,30 @@ else if (state == 128)
 	if (attackspeed <= 0)
 	{
 		cooldown = 60;
-		state = 134;
+		state = states.walk;
 		sprite_index = walkspr;
 	}
 	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope))
 		image_xscale *= -1;
 }
-if (state != 128 && hitboxID != -4 && instance_exists(hitboxID))
+if (state != states.charge && hitboxID != -4 && instance_exists(hitboxID))
 {
 	instance_destroy(hitboxID);
 	hitboxID = -4;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

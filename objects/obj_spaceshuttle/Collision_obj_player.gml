@@ -1,9 +1,9 @@
 with (other)
 {
-	if (other.state == 0 && state != 292 && key_up && grounded && ((state == 191 && brick) || state == 0 || state == 103 || state == 121 || state == 58 || state == 121 || state == 99))
+	if (other.state == 0 && state != 292 && key_up && grounded && ((state == 191 && brick) || state == 0 || state == states.mach1 || state == 121 || state == states.pogo || state == 121 || state == 99))
 	{
 		instance_create(x, y, obj_genericpoofeffect);
-		other.state = 137;
+		other.state = states.hit;
 		other.hitLag = 80;
 		other.hitX = other.x;
 		other.hitY = other.y;

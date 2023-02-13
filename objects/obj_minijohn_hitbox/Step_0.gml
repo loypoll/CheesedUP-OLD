@@ -8,7 +8,7 @@ if (instance_exists(ID))
 	image_index = ID.image_index;
 	with (ID)
 	{
-		if (state != 141 && state != 125)
+		if (state != 141 && state != states.rage)
 		{
 			hitboxcreate = false;
 			instance_destroy(other);

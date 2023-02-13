@@ -24,7 +24,7 @@ function scr_player_ratmountbounce()
 		{
 			if (hsp != 0)
 				xscale = sign(hsp);
-			state = 191;
+			state = states.ratmount;
 		}
 	}
 	else
@@ -51,7 +51,7 @@ function scr_player_ratmountbounce()
 					wait = true;
 			}
 			brick = false;
-			state = 259;
+			state = states.ratmountpunch;
 			gustavohitwall = false;
 			ratmountpunchtimer = 25;
 			image_index = 0;
@@ -66,7 +66,7 @@ function scr_player_ratmountbounce()
 			if (move != 0 && move == sign(hsp) && key_jump2)
 			{
 				fmod_event_one_shot_3d("event:/sfx/ratmount/walljump1", x, y);
-				state = 195;
+				state = states.climbwall;
 				sticktime = 15;
 				xscale = sign(hsp);
 				landAnim = false;
@@ -89,7 +89,7 @@ function scr_player_ratmountbounce()
 			{
 				if (shakestun && grounded && point_in_camera(x, y, view_camera[0]) && grounded && vsp > 0 && !invincible && groundpound)
 				{
-					state = 138;
+					state = states.stun;
 					if (stunned < 60)
 						stunned = 60;
 					vsp = -11;

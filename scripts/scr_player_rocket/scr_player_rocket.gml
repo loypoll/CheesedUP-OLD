@@ -39,7 +39,7 @@ function scr_player_rocket()
 	{
 		input_buffer_jump = 0;
 		dir = xscale;
-		state = 104;
+		state = states.mach2;
 		sprite_index = spr_mach2jump;
 		jumpstop = false;
 		vsp = -11;
@@ -63,9 +63,9 @@ function scr_player_rocket()
 	if (grounded)
 	{
 		move = key_left + key_right;
-		if (move != 0 && move != xscale && sprite_index != spr_rocketstart && state != 104)
+		if (move != 0 && move != xscale && sprite_index != spr_rocketstart && state != states.mach2)
 		{
-			state = 185;
+			state = states.rocketslide;
 			fmod_event_one_shot_3d("event:/sfx/pep/machslideboost", x, y);
 			sprite_index = spr_player_rocketslide;
 			image_index = 0;
@@ -96,7 +96,7 @@ function scr_player_rocket()
 			}
 		}
 		flash = false;
-		state = 106;
+		state = states.bump;
 		hsp = -3.5 * xscale;
 		vsp = -6;
 		mach2 = 0;

@@ -23,7 +23,7 @@ function scr_player_boxxedpepspin()
 	}
 	if ((!key_slap || abs(movespeed) <= 3) && boxxedspinbuffer == 0)
 	{
-		state = 35;
+		state = states.boxxedpepjump;
 		sprite_index = spr_boxxedpepair;
 	}
 }

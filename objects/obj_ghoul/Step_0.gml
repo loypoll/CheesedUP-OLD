@@ -3,7 +3,7 @@ if (room == rm_editor)
 image_speed = 0.35;
 switch (state)
 {
-	case 126:
+	case states.idle:
 		sprite_index = idlespr;
 		playerid = instance_nearest(x, y, obj_player);
 		hsp = 0;
@@ -26,10 +26,10 @@ switch (state)
 			}
 		}
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
-	case 134:
+	case states.walk:
 		sprite_index = idlespr;
 		var d = point_direction(x, y, xstart, ystart);
 		x += lengthdir_x(8, d);
@@ -38,7 +38,7 @@ switch (state)
 		vsp = 0;
 		if (x > (xstart - 10) && x < (xstart + 10) && y > (ystart - 10) && y < (ystart + 10))
 		{
-			state = 126;
+			state = states.idle;
 			image_xscale = start_xscale;
 			cooldown = 100;
 			x = xstart;
@@ -59,7 +59,7 @@ switch (state)
 			sprite_index = spr_ghoul_attack;
 		}
 		break;
-	case 80:
+	case states.punch:
 		attackvsp = Approach(attackvsp, -11, 0.5);
 		vsp = attackvsp;
 		hsp = image_xscale * 10;
@@ -67,53 +67,53 @@ switch (state)
 		{
 			y = attack_y;
 			vsp = 0;
-			state = 126;
+			state = states.idle;
 			cooldown = 100;
 			image_xscale *= -1;
 		}
 		break;
-	case 130:
+	case states.turn:
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		hit = true;
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (bombreset > 0)
 	bombreset--;
-if (grounded && state == 129 && floor(image_index) == 3)
+if (grounded && state == states.pizzagoblinthrow && floor(image_index) == 3)
 	vsp = -5;
 if (boundbox == 0)
 {

@@ -1,2 +1,2 @@
-if (state == 0 && other.state != 47)
+if (state == states.normal && other.state != 47)
 	scr_hurtplayer(other);

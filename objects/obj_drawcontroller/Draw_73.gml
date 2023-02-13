@@ -56,7 +56,7 @@ if (kidsparty_lightning || dark_lightning)
 			draw_set_color(c_white);
 			with (obj_patrolcone)
 			{
-				if (instance_exists(baddieID) && baddieID.state == 134)
+				if (instance_exists(baddieID) && baddieID.state == states.walk)
 				{
 					var points = get_triangle_points(x, y, image_angle, len, size);
 					var c = c_white;
@@ -78,7 +78,7 @@ if (kidsparty_lightning || dark_lightning)
 			draw_set_color(c_white);
 			with (obj_patrolcone)
 			{
-				if (instance_exists(baddieID) && baddieID.state == 134)
+				if (instance_exists(baddieID) && baddieID.state == states.walk)
 				{
 					c = c_white;
 					draw_surface_ext(other.patrolcone_tex, x - surf_x, y - surf_y - (tsh / 2), (image_angle > 90) ? -1 : 1, 1, 0, c, 1);
@@ -90,7 +90,7 @@ if (kidsparty_lightning || dark_lightning)
 			draw_set_alpha(0.3);
 			with (obj_patrolcone)
 			{
-				if (instance_exists(baddieID) && baddieID.state == 134)
+				if (instance_exists(baddieID) && baddieID.state == states.walk)
 				{
 					if (collision || (instance_exists(baddieID) && baddieID.alarm[5] != -1))
 					{
@@ -123,13 +123,13 @@ if (kidsparty_lightning || dark_lightning)
 				draw_set_alpha(circle_alpha_out);
 				with (_player)
 				{
-					if (state != 186)
+					if (state != states.gotoplayer)
 						draw_circle((x - surf_x) + irandom_range(-1, 1), (y - surf_y) + irandom_range(-1, 1), 178, false);
 				}
 				draw_set_alpha(circle_alpha_in);
 				with (_player)
 				{
-					if (state != 186)
+					if (state != states.gotoplayer)
 						draw_circle((x - surf_x) + irandom_range(-1, 1), (y - surf_y) + irandom_range(-1, 1), 128, false);
 				}
 			}

@@ -1,11 +1,11 @@
-if (state == 150)
+if (state == states.tube)
 {
 	if (floor(image_index) >= 11 && !shot)
 	{
 		shot = true;
 		with (playerid)
 		{
-			state = 150;
+			state = states.tube;
 			tube_id = other.id;
 			if (other.stored_spd == 0)
 				other.stored_spd = 1;

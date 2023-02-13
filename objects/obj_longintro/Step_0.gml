@@ -1,5 +1,5 @@
 with (obj_player)
-	state = 18;
+	state = states.titlescreen;
 if (scene >= 0)
 {
 	if (!showtext && (keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4))
@@ -140,7 +140,7 @@ switch (scene)
 			scene++;
 		}
 		break;
-	case 4:
+	case states.grabbed:
 		pizzaface.y = lerp(pizzaface.y, 0, 0.04);
 		if (_switch && floor(pizzaface.y) <= 1)
 		{

@@ -7,14 +7,14 @@ function boss_mrstick_decide_attack()
 		state = attack_pool[irandom(array_length(attack_pool) - 1)];
 		switch (state)
 		{
-			case 174:
+			case states.boss_shield:
 				movespeed = 0;
 				hsp = 0;
 				shield_buffer = shield_max;
 				image_index = 0;
 				sprite_index = spr_mrstick_shield;
 				break;
-			case 175:
+			case states.boss_helicopterhat:
 				sprite_index = spr_mrstick_helicopterhat;
 				image_index = 0;
 				vsp = -14;
@@ -24,31 +24,31 @@ function boss_mrstick_decide_attack()
 				movespeed = 0;
 				helicopterstate = 0;
 				break;
-			case 176:
+			case states.boss_panicjump:
 				sprite_index = spr_mrstick_jump;
 				vsp = -11;
 				image_xscale = (x > (room_width / 2)) ? -1 : 1;
 				movespeed = 10;
 				target_x = (x > (room_width / 2)) ? (room_width / 7) : (room_width - (room_width / 7));
 				break;
-			case 92:
+			case states.jump:
 				image_xscale = (x > (room_width / 2)) ? 1 : -1;
 				movespeed = 12;
 				vsp = -11;
 				warped = false;
 				break;
-			case 177:
+			case states.boss_smokebombstart:
 				image_xscale = (x > (room_width / 2)) ? -1 : 1;
 				sprite_index = spr_mrstick_idle;
 				image_index = 0;
 				break;
-			case 179:
+			case states.boss_springshoes:
 				sprite_index = spr_mrstick_jump;
 				vsp = -20;
 				image_xscale = (x > (room_width / 2)) ? -1 : 1;
 				movespeed = 4;
 				break;
-			case 180:
+			case states.boss_cardboard:
 				with (instance_create(x, y, obj_mrstickcardboard))
 				{
 					image_index = other.image_index;
@@ -114,7 +114,7 @@ function boss_mrstick_normal()
 	{
 		do_mockery_buffer = do_mockery_max;
 		mockery_buffer = mockery_max;
-		state = 182;
+		state = states.boss_mockery;
 		sprite_index = spr_mrstick_tauntanim;
 	}
 }
@@ -153,7 +153,7 @@ function boss_mrstick_helicopterhat()
 			image_xscale = (x > (room_width / 2)) ? -1 : 1;
 			vsp = 5;
 			if (grounded)
-				state = 0;
+				state = states.normal;
 			break;
 	}
 }
@@ -212,7 +212,7 @@ function boss_mrstick_jump()
 		if (y > (room_height + sprite_height))
 			y = room_height / 4;
 		if (scr_solid(x, y + vsp) && !scr_solid(x, y))
-			state = 0;
+			state = states.normal;
 	}
 	if (vsp < 20)
 		vsp += grav;
@@ -226,7 +226,7 @@ function boss_mrstick_smokebombstart()
 		sprite_index = spr_mrstick_run;
 		image_index = 0;
 		target_x = (x > (room_width / 2)) ? (room_width / 7) : (room_width - (room_width / 7));
-		state = 178;
+		state = states.boss_smokebombcrawl;
 		with (instance_create(x, y, obj_chainsawpuff))
 		{
 			image_speed = 0.1;
@@ -243,7 +243,7 @@ function boss_mrstick_smokebombcrawl()
 	hsp = image_xscale * movespeed;
 	if (x > (target_x - 16) && x < (target_x + 16))
 	{
-		state = 0;
+		state = states.normal;
 		movespeed = 6;
 	}
 }
@@ -262,7 +262,7 @@ function boss_mrstick_springshoes()
 	{
 		hsp = 0;
 		movespeed = 0;
-		state = 138;
+		state = states.stun;
 		stunned = 100;
 		sprite_index = spr_mrstick_hurt;
 		with (obj_camera)
@@ -284,7 +284,7 @@ function boss_mrstick_cardboard()
 	{
 		instance_destroy(obj_mrstickcardboard);
 		cardboard_buffer = 0;
-		state = 181;
+		state = states.boss_cardboardend;
 		movespeed = 8;
 		x = target_x;
 		image_xscale = (x < (room_width / 2)) ? 1 : -1;
@@ -296,7 +296,7 @@ function boss_mrstick_cardboardend()
 	hsp = image_xscale * movespeed;
 	if (scr_solid(x, y + vsp) && !scr_solid(x, y))
 	{
-		state = 0;
+		state = states.normal;
 		instance_destroy(obj_spike);
 	}
 	if (vsp < 20)
@@ -309,5 +309,5 @@ function boss_mrstick_mockery()
 	if (mockery_buffer > 0)
 		mockery_buffer--;
 	else
-		state = 0;
+		state = states.normal;
 }

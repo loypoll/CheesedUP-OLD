@@ -13,7 +13,7 @@ with (obj_player1)
 		backtohubstarty = obj_doorC.y - 14;
 		x = backtohubstartx;
 		y = backtohubstarty - (obj_screensizer.actual_height * 2);
-		state = 290;
+		state = states.backtohub;
 		sprite_index = spr_slipbanan1;
 		image_index = 10;
 	}

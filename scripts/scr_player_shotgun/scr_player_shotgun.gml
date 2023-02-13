@@ -10,7 +10,7 @@ function scr_player_shotgun()
 		{
 			sprite_index = spr_shotgunidle;
 			image_index = 0;
-			state = 0;
+			state = states.normal
 			exit;
 		}
 		else
@@ -58,14 +58,14 @@ function scr_player_shotgun()
 	}
 	if (!grounded)
 	{
-		state = 57;
+		state = states.shotgunjump;
 		sprite_index = spr_shotgunfall;
 		image_index = 0;
 	}
 	else if (input_buffer_jump > 0)
 	{
 		input_buffer_jump = 0;
-		state = 57;
+		state = states.shotgunjump;
 		sprite_index = spr_shotgunjump;
 		image_index = 0;
 		jumpstop = false;
@@ -73,13 +73,13 @@ function scr_player_shotgun()
 	}
 	if (grounded && key_down)
 	{
-		state = 67;
+		state = states.shotguncrouch;
 		sprite_index = spr_shotgungoduck;
 		image_index = 0;
 	}
 	if (key_attack2)
 	{
-		state = 70;
+		state = states.shotgundash;
 		sprite_index = spr_shotgunsuplexdash;
 		image_index = 0;
 		movespeed = 10;
@@ -87,7 +87,7 @@ function scr_player_shotgun()
 	if (key_slap2)
 	{
 		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
-		state = 69;
+		state = states.shotgunshoot;
 		sprite_index = spr_shotgunshoot;
 		image_index = 0;
 		with (instance_create(x, y, obj_pistoleffect))

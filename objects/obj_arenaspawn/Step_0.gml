@@ -19,7 +19,7 @@ switch (state)
 			}
 		}
 		break;
-	case 144:
+	case states.arenaintro:
 		with (obj_player)
 			state = 46;
 		if (cutscene_count > 0)

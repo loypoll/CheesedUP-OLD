@@ -8,7 +8,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			b = image_blend;
 			var a = other.alpha[identifier];
 			var shd = false;
-			if (identifier == 3)
+			if (identifier == afterimage.firemouth)
 			{
 				a = alpha;
 				shd = true;
@@ -17,7 +17,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				shader_set_uniform_f(other.shd_color_green, 0.43);
 				shader_set_uniform_f(other.shd_color_blue, 0.09);
 			}
-			else if (identifier == 4)
+			else if (identifier == afterimage.blue)
 			{
 				a = alpha;
 				shd = true;
@@ -26,7 +26,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				shader_set_uniform_f(other.shd_color_green, 0.49);
 				shader_set_uniform_f(other.shd_color_blue, 0.9);
 			}
-			else if (identifier == 6)
+			else if (identifier == afterimage.enemy)
 			{
 				a = alpha;
 				shd = true;
@@ -35,7 +35,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				shader_set_uniform_f(other.shd_color_green, 0.1843137254901961);
 				shader_set_uniform_f(other.shd_color_blue, 0);
 			}
-			else if (identifier == 7)
+			else if (identifier == afterimage.fakepep)
 			{
 				a = alpha;
 				shd = true;
@@ -44,7 +44,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				shader_set_uniform_f(other.shd_color_green, 0);
 				shader_set_uniform_f(other.shd_color_blue, 0);
 			}
-			else if (identifier == 5)
+			else if (identifier == afterimage.blur)
 			{
 				a = alpha;
 				b = get_dark(other.image_blend, obj_drawcontroller.use_dark, true, x, y);

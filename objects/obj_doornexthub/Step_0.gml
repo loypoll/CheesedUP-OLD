@@ -1,5 +1,5 @@
 var _save = false;
-if (key && (obj_player1.state == 0 || obj_player1.state == 103 || obj_player1.state == 58 || obj_player1.state == 104 || obj_player1.state == 121 || obj_player1.state == 99) && sprite_index == spr_elevatorlocked && obj_player1.key_up && obj_player1.grounded && place_meeting(x, y, obj_player1))
+if (key && (obj_player1.state == 0 || obj_player1.state == states.mach1 || obj_player1.state == states.pogo || obj_player1.state == states.mach2 || obj_player1.state == 121 || obj_player1.state == 99) && sprite_index == spr_elevatorlocked && obj_player1.key_up && obj_player1.grounded && place_meeting(x, y, obj_player1))
 {
 	_save = true;
 	ds_list_add(global.saveroom, id);

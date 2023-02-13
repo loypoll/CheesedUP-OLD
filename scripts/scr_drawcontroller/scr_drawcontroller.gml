@@ -49,10 +49,10 @@ function enemy_is_superslam(baddieid)
 {
 	with baddieid
 	{
-		if state == 4
+		if state == states.grabbed
 		{
 			var g = grabbedby == 1 ? obj_player1.id : obj_player2.id;
-			if g.state == 76 || (g.state == 61 && g.tauntstoredstate == 76)
+			if g.state == states.superslam || (g.state == states.chainsaw && g.tauntstoredstate == states.superslam)
 				return true;
 		}
 	}
@@ -62,10 +62,10 @@ function enemy_is_swingding(baddieid)
 {
     with baddieid
     {
-        if state == 4
+        if state == states.grabbed
         {
-            g = grabbedby == 1 ? obj_player1.id : obj_player2.id;
-            if (g.state == 79 || (g.state == 61 && g.tauntstoredstate == 79)) && g.sprite_index == g.spr_swingding
+            var g = grabbedby == 1 ? obj_player1.id : obj_player2.id;
+            if (g.state == states.grab || (g.state == states.chainsaw && g.tauntstoredstate == states.grab)) && g.sprite_index == g.spr_swingding
                 return true;
         }
     }
@@ -74,9 +74,9 @@ function enemy_is_swingding(baddieid)
 function draw_enemy(healthbar, palette, color = c_white)
 {
 	var _stun = 0;
-	if ((state == 138 && thrown == 0 && object_index != obj_peppinoclone) || state == 294 || (state == 262 && sprite_index == stunfallspr))
+	if ((state == states.stun && thrown == 0 && object_index != obj_peppinoclone) || state == states.pizzaheadjump || (state == states.supergrab && sprite_index == stunfallspr))
 		_stun = 25;
-	if (state == 294 && object_index == obj_gustavograbbable)
+	if (state == states.pizzaheadjump && object_index == obj_gustavograbbable)
 		_stun = 0;
 	if (visible && object_index != obj_pizzaball && object_index != obj_fakesanta && bbox_in_camera(view_camera[0], 32))
 	{
@@ -102,7 +102,7 @@ function draw_enemy(healthbar, palette, color = c_white)
 			pal_swap_set(spr_palette, paletteselect, false);
 		}
 		var _ys = 1;
-		if (state == 4)
+		if (state == states.grabbed)
 		{
 			if (enemy_is_superslam(id))
 			{
@@ -129,7 +129,7 @@ function draw_enemy(healthbar, palette, color = c_white)
 			shader_reset();
 		if (object_index == obj_hamkuff)
 		{
-			if (state == 206 && instance_exists(playerid))
+			if (state == states.blockstance && instance_exists(playerid))
 			{
 				var x1 = x + (6 * image_xscale);
 				var y1 = y + 29;
@@ -152,7 +152,7 @@ function draw_enemy(healthbar, palette, color = c_white)
 }
 function draw_superslam_enemy()
 {
-	if (state == 76 && floor(image_index) >= 5 && floor(image_index) <= 7 && instance_exists(baddiegrabbedID))
+	if (state == states.superslam && floor(image_index) >= 5 && floor(image_index) <= 7 && instance_exists(baddiegrabbedID))
 	{
 		with (baddiegrabbedID)
 			draw_enemy(global.kungfu, true);

@@ -136,7 +136,7 @@ switch (state)
 			}
 		}
 		break;
-	case 4:
+	case states.grabbed:
 		fade = Approach(fade, 2, 0.05);
 		if (fade >= 2)
 		{
@@ -172,7 +172,7 @@ switch (state)
 		if (obj_player1.key_jump)
 		{
 			with (obj_player)
-				state = 18;
+				state = states.titlescreen;
 			room_goto(Realtitlescreen);
 		}
 		break;

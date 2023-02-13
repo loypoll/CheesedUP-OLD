@@ -23,7 +23,7 @@ if (inv_timer > 0)
 	inv_timer--;
 else
 	invincible = false;
-if (state == 128)
+if (state == states.charge)
 {
 	if (image_index > (image_number - 1))
 	{
@@ -33,7 +33,7 @@ if (state == 128)
 		state = 141;
 	}
 }
-if (state == 126)
+if (state == states.idle)
 {
 	image_speed = 0.35;
 	if (!patrolling)
@@ -45,7 +45,7 @@ if (state == 126)
 			patrolling = true;
 			sprite_index = walkspr;
 			image_index = 0;
-			state = 134;
+			state = states.walk;
 		}
 	}
 }
@@ -65,42 +65,42 @@ else if (state == 141)
 		image_index = 0;
 		attackmode = 0;
 		hsp = -image_xscale * 2;
-		state = 138;
+		state = states.stun;
 		stunned = 30;
 		vsp = -5;
 	}
 }
 switch (state)
 {
-	case 130:
+	case states.turn:
 		scr_enemy_turn();
 		break;
-	case 134:
+	case states.walk:
 		scr_enemy_walk();
 		break;
-	case 136:
+	case states.land:
 		scr_enemy_land();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 129:
+	case states.pizzagoblinthrow:
 		scr_pizzagoblin_throw();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (bombreset > 0)
 	bombreset--;
@@ -115,17 +115,17 @@ if (state == 142)
 			important = true;
 			vsp = -8;
 			hsp = -other.image_xscale;
-			state = 138;
+			state = states.stun;
 			stunned = 50;
 		}
 	}
 	if (image_index > (image_number - 1))
 	{
 		sprite_index = walkspr;
-		state = 134;
+		state = states.walk;
 	}
 }
-if (state == 134 && bombreset == 0 && forcespawn == 0)
+if (state == states.walk && bombreset == 0 && forcespawn == 0)
 {
 	attackmode = choose(0, 0, 1, 1);
 	switch (attackmode)
@@ -137,7 +137,7 @@ if (state == 134 && bombreset == 0 && forcespawn == 0)
 			if (x != targetplayer.x)
 				image_xscale = -sign(x - targetplayer.x);
 			forcespawn = true;
-			state = 129;
+			state = states.pizzagoblinthrow;
 			break;
 		case 1:
 			nextattack = 0;
@@ -146,14 +146,14 @@ if (state == 134 && bombreset == 0 && forcespawn == 0)
 			sprite_index = spr_tank_chargestart;
 			image_index = 0;
 			ram_count = ram_max;
-			state = 128;
+			state = states.charge;
 			forcespawn = true;
 			if (slide_buffer <= 0)
 				hsp = 0;
 			break;
 	}
 }
-if (state == 134 && bombreset == 0 && forcespawn == 1)
+if (state == states.walk && bombreset == 0 && forcespawn == 1)
 {
 	nextattack = 2;
 	if (slide_buffer <= 0)
@@ -165,7 +165,7 @@ if (state == 134 && bombreset == 0 && forcespawn == 1)
 	state = 142;
 	forcespawn = false;
 }
-if (state == 138)
+if (state == states.stun)
 {
 	if (sprite_index == spr_tank_hitwall && image_index > (image_number - 1))
 		image_index = image_number - 1;
@@ -182,7 +182,7 @@ if (state == 138)
 }
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;

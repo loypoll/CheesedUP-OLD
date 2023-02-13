@@ -13,7 +13,7 @@ switch (array_length(current_scene) - 1)
 	case 3:
 		current_scene[0](current_scene[1], current_scene[2], current_scene[3]);
 		break;
-	case 4:
+	case states.grabbed:
 		current_scene[0](current_scene[1], current_scene[2], current_scene[3], current_scene[4]);
 		break;
 	case 5:

@@ -1,4 +1,4 @@
-if (other.state != 186 && other.state != 61)
+if (other.state != states.gotoplayer && other.state != states.chainsaw)
 {
 	if (other.state == 47 || other.state == 38 || other.state == 21)
 	{

@@ -13,73 +13,73 @@ if (!pizzahead || elitehit > 1)
 	destroyable = false;
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		scr_fakepepboss_arenaintro();
 		break;
-	case 134:
+	case states.walk:
 		scr_fakepepboss_walk();
 		break;
-	case 275:
+	case states.boss_deformed:
 		scr_fakepepboss_deformed();
 		break;
-	case 155:
+	case states.staggered:
 		scr_fakepepboss_staggered();
 		break;
-	case 276:
+	case states.boss_grabdash:
 		scr_fakepepboss_grabdash();
 		break;
-	case 277:
+	case states.boss_grabthrow:
 		scr_fakepepboss_grabthrow();
 		break;
-	case 92:
+	case states.jump:
 		scr_fakepepboss_jump();
 		break;
-	case 108:
+	case states.freefall:
 		scr_fakepepboss_freefall();
 		break;
-	case 104:
+	case states.mach2:
 		scr_fakepepboss_mach2();
 		break;
-	case 99:
+	case states.Sjumpprep:
 		scr_fakepepboss_Sjumpprep();
 		break;
-	case 97:
+	case states.Sjump:
 		scr_fakepepboss_Sjump();
 		break;
-	case 74:
+	case states.throwing:
 		scr_fakepepboss_throwing();
 		break;
-	case 84:
+	case states.backbreaker:
 		scr_fakepepboss_backbreaker();
 		break;
-	case 294:
+	case states.pizzaheadjump:
 		scr_boss_pizzaheadjump();
 		break;
-	case 298:
+	case states.boss_KO:
 		scr_boss_pizzaheadKO();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_boss_grabbed();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
 }
 boss_update_pizzaheadKO(spr_bossfight_fakepephp, spr_bossfight_fakepeppalette);
-if (phase == 2 && state != 138 && state != 275)
+if (phase == 2 && state != states.stun && state != states.boss_deformed)
 {
 	if (deformed_cooldown > 0)
 		deformed_cooldown--;
 	else
 		scr_fakepepboss_do_projectiles(phase - 1, wastedhits);
 }
-if (state == 97)
+if (state == states.Sjump)
 {
 	if (!instance_exists(hitboxID))
 	{
@@ -91,7 +91,7 @@ if (state == 97)
 		}
 	}
 }
-if (state == 138)
+if (state == states.stun)
 {
 	stunned = 100;
 	cooldown = 0;
@@ -104,11 +104,11 @@ if (state == 138)
 if (flashbuffer > 0)
 	flashbuffer--;
 boss_hurt_gustavo();
-if (state == 92)
+if (state == states.jump)
 	grav = 0.4;
 else
 	grav = 0.5;
-if (state == 138)
+if (state == states.stun)
 	instance_destroy(obj_grabmarker);
 if (prevhp != elitehit)
 {
@@ -122,7 +122,7 @@ if (prevhp != elitehit)
 		subhp = maxsubhp;
 		var timer = fakepep_get_attack(phase - 1, wastedhits).deformed_timer;
 		var attack = fakepep_get_projectile(phase - 1, wastedhits, currentprojectile);
-		state = 134;
+		state = states.walk;
 		if (phase == 1)
 			formed = false;
 		deformed_cooldown = attack.cooldown;
@@ -188,7 +188,7 @@ if (wastedhits >= 6 && !pizzahead)
 		layer_background_change(bg2, spr_fakepeppino_arena2)
 	}
 }
-if (state == 138)
+if (state == states.stun)
 {
 	if (thrown)
 		savedthrown = true;
@@ -201,19 +201,19 @@ if (state == 138)
 }
 else
 	savedthrown = false;
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state == 138 && savedthrown == thrown && !savedthrown)
+if (state == states.stun && savedthrown == thrown && !savedthrown)
 	invincible = false;
 else
 	invincible = true;
 if (!visible)
 	invincible = true;
-if (state == 298)
+if (state == states.boss_KO)
 	invincible = true;
 if pizzahead
 {
@@ -225,18 +225,18 @@ if pizzahead
 }
 if (!invincible && !flash && alarm[5] < 0)
 	alarm[5] = 0.15 * room_speed;
-else if (invincible && state != 155 && flashbuffer <= 0)
+else if (invincible && state != states.staggered && flashbuffer <= 0)
 	flash = false;
-if ((state == 276 || (state == 104 && attackspeed >= 10) || (state == 74 && sprite_index == spr_fakepeppino_flailing && attackspeed > 4) || state == 108) && alarm[4] < 0)
+if ((state == states.boss_grabdash || (state == states.mach2 && attackspeed >= 10) || (state == states.throwing && sprite_index == spr_fakepeppino_flailing && attackspeed > 4) || state == states.freefall) && alarm[4] < 0)
 	alarm[4] = 10;
 mask_index = spr_player_mask;
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

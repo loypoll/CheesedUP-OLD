@@ -130,7 +130,7 @@ function player_hurt()
 				shake_mag = 3;
 				shake_mag_acc = 3 / room_speed;
 			}
-			hitstate = 138;
+			hitstate = states.stun;
 			stunned = 70;
 			hitvsp = -4;
 			hithsp = -image_xscale * 8;
@@ -156,16 +156,16 @@ function player_hurt()
 			hitstate = 0;
 		}
 	}
-	else if (state == 76)
+	else if (state == states.superslam)
 	{
 		with (argument1)
 		{
-			if (state == 137 || state == 61)
+			if (state == states.hit || state == states.chainsaw)
 			{
 				x = hitX;
 				y = hitY;
 			}
-			if (other.state == 137 || other.state == 61)
+			if (other.state == states.hit || other.state == states.chainsaw)
 			{
 				other.x = hitX;
 				other.y = hitY;

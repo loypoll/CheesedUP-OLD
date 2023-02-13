@@ -37,7 +37,7 @@ switch (state)
 			}
 		}
 		break;
-	case 135:
+	case states.fall:
 		image_index -= 0.35;
 		if (image_index <= 0)
 		{

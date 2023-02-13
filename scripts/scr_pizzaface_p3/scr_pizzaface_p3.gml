@@ -33,8 +33,8 @@ function scr_pizzaface_p3_do_player_attack()
 {
 	with (argument0)
 	{
-		state = 262;
-		substate = 79;
+		state = states.supergrab;
+		substate = states.grab;
 		attackcooldown = 0;
 		baddieID = other.id;
 		image_index = 0;
@@ -44,7 +44,7 @@ function scr_pizzaface_p3_do_player_attack()
 	hsp = 0;
 	image_xscale = -argument0.xscale;
 	playerid = argument0;
-	state = 262;
+	state = states.supergrab;
 	substate = 4;
 }
 function scr_pizzaface_p3_arenaintro()
@@ -56,14 +56,14 @@ function scr_pizzaface_p3_arenaintro()
 	}
 	switch (introstate)
 	{
-		case 144:
+		case states.arenaintro:
 			hsp = 0;
 			vsp = 0;
 			obj_player1.hsp = 0;
 			if (floor(image_index) == (image_number - 1))
 			{
 				image_index = image_number - 1;
-				introstate = 126;
+				introstate = states.idle;
 				introbuffer = 80;
 				with (obj_player1)
 				{
@@ -75,7 +75,7 @@ function scr_pizzaface_p3_arenaintro()
 				}
 			}
 			break;
-		case 126:
+		case states.idle:
 			image_index = image_number - 1;
 			if (obj_player1.sprite_index != obj_player1.spr_victory)
 			{
@@ -91,11 +91,11 @@ function scr_pizzaface_p3_arenaintro()
 					fmod_event_one_shot("event:/sfx/misc/checkpoint");
 					sprite_index = spr_pizzahead_phase3_intro2;
 					image_index = 0;
-					introstate = 92;
+					introstate = states.jump;
 				}
 			}
 			break;
-		case 92:
+		case states.jump:
 			if (floor(image_index) >= 50)
 			{
 				if (x != obj_player1.x)
@@ -140,7 +140,7 @@ function scr_pizzaface_p3_arenaintro()
 function scr_pizzaface_p3_fall()
 {
 	if (grounded && vsp > 0)
-		state = 134;
+		state = states.walk;
 }
 function scr_pizzaface_p3_walk()
 {
@@ -206,7 +206,7 @@ function scr_pizzaface_p3_walk()
 				currentattack = 0;
 			switch (attack)
 			{
-				case 4:
+				case states.grabbed:
 					laugh = cooldown;
 					fmod_event_one_shot("event:/sfx/voice/pizzahead");
 					vulnerable_buffer = laugh;
@@ -290,11 +290,11 @@ function scr_pizzaface_p3_jump()
 	if (sprite_index == spr_pizzahead_phase3jumpland && floor(image_index) == (image_number - 1))
 	{
 		walkspeed = maxwalkspeed;
-		state = 134;
+		state = states.walk;
 		image_xscale *= -1;
 		sprite_index = spr_pizzahead_phase3walk;
 	}
-	if (grounded && vsp > 0 && sprite_index != spr_pizzahead_phase3jumpland && state != 134)
+	if (grounded && vsp > 0 && sprite_index != spr_pizzahead_phase3jumpland && state != states.walk)
 	{
 		sprite_index = spr_pizzahead_phase3jumpland;
 		image_index = 0;
@@ -335,7 +335,7 @@ function scr_pizzaface_p3_stomp()
 		}
 	}
 	if (floor(image_index) == (image_number - 1))
-		state = 134;
+		state = states.walk;
 }
 function scr_pizzaface_p3_punch()
 {
@@ -356,7 +356,7 @@ function scr_pizzaface_p3_punch()
 	if (floor(image_index) >= 38)
 		instance_destroy(hitboxID);
 	if (floor(image_index) == (image_number - 1))
-		state = 134;
+		state = states.walk;
 }
 function scr_pizzaface_p3_swinging()
 {
@@ -377,7 +377,7 @@ function scr_pizzaface_p3_swinging()
 		if (attackspeed < 10)
 			attackspeed += 0.5;
 		if (place_meeting(x + hsp, y, obj_solid))
-			state = 134;
+			state = states.walk;
 	}
 }
 function scr_pizzaface_p3_throwing()
@@ -388,7 +388,7 @@ function scr_pizzaface_p3_throwing()
 		if (getoutbuffer > 0)
 			getoutbuffer--;
 		else
-			state = 134;
+			state = states.walk;
 	}
 }
 function scr_pizzaface_p3_staggered()
@@ -397,7 +397,7 @@ function scr_pizzaface_p3_staggered()
 	if (cooldown > 0)
 		cooldown--;
 	if (abs(hsp) == 0)
-		state = 134;
+		state = states.walk;
 }
 function scr_pizzaface_p3_handstandjump()
 {
@@ -406,7 +406,7 @@ function scr_pizzaface_p3_handstandjump()
 	if (attackcooldown > 0)
 		attackcooldown--;
 	else
-		state = 0;
+		state = states.normal;
 }
 function scr_pizzaface_p3_supergrab()
 {
@@ -415,11 +415,11 @@ function scr_pizzaface_p3_supergrab()
 	with (playerid)
 	{
 		image_speed = 1.2;
-		if (state == 262)
+		if (state == states.supergrab)
 		{
 			switch (substate)
 			{
-				case 79:
+				case states.grab:
 					hsp = 0;
 					vsp = 0;
 					x = other.x + (other.image_xscale * 12);
@@ -436,18 +436,18 @@ function scr_pizzaface_p3_supergrab()
 						else if (other.elitehit > 1)
 						{
 							sprite_index = choose(spr_finishingblow1, spr_finishingblow2, spr_finishingblow3, spr_finishingblow4, spr_finishingblow4, spr_finishingblow5);
-							substate = 6;
+							substate = states.finishingblow;
 							shot = false;
 						}
 						else
 						{
-							other.state = 289;
-							state = 289;
+							other.state = states.boss_finale;
+							state = states.boss_finale;
 							other.finale_x = x + ((other.x - x) / 2);
 						}
 					}
 					break;
-				case 6:
+				case states.finishingblow:
 					if (floor(image_index) >= 3 && !shot)
 					{
 						fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
@@ -459,7 +459,7 @@ function scr_pizzaface_p3_supergrab()
 							hithsp = -image_xscale * 25;
 							hitvsp = -5;
 							linethrown = true;
-							state = 137;
+							state = states.hit;
 							hitLag = 1;
 						}
 					}

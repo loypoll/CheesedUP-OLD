@@ -5,7 +5,7 @@ function scr_shotgunshoot()
 	with (instance_create(x, y, obj_pistoleffect))
 		image_xscale = other.xscale;
 	sprite_index = spr_shotgunshoot;
-	state = 69;
+	state = states.shotgunshoot;
 	if (grounded)
 		movespeed = 0;
 	jumpAnim = true;

@@ -45,7 +45,7 @@ function scr_player_trashroll()
 	{
 		input_buffer_jump = 0;
 		dir = xscale;
-		state = 104;
+		state = states.mach2;
 		sprite_index = spr_mach2jump;
 		jumpstop = false;
 		vsp = -11;
@@ -55,7 +55,7 @@ function scr_player_trashroll()
 	{
 		image_index = 0;
 		sprite_index = spr_bump;
-		state = 106;
+		state = states.bump;
 		hsp = -xscale * 3;
 		vsp = -3;
 	}

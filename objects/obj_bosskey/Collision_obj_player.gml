@@ -1,12 +1,12 @@
-if (state == 0)
+if (state == states.normal)
 {
 	with (other)
 	{
 		fmod_event_one_shot("event:/sfx/misc/bosskey");
-		state = 46;
+		state = states.gottreasure;
 		sprite_index = spr_gottreasure;
 	}
-	state = 46;
+	state = states.gottreasure;
 	x = other.x;
 	y = other.y - 50;
 	if (!instance_exists(obj_bosscontroller))
@@ -14,7 +14,7 @@ if (state == 0)
 	depth = -20;
 	with (obj_bosscontroller)
 	{
-		state = 98;
+		state = states.victory;
 		with (obj_hpeffect)
 			spd = 16;
 	}

@@ -4,7 +4,7 @@ if (state != 55 && other.state != 52 && x == xstart && y == ystart)
 	{
 		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
 		fmod_event_instance_play(other.snd);
-		if (state != 61 && state != 84)
+		if (state != states.chainsaw && state != 84)
 		{
 			tauntstoredmovespeed = movespeed;
 			tauntstoredvsp = vsp;
@@ -23,7 +23,7 @@ if (state != 55 && other.state != 52 && x == xstart && y == ystart)
 		else
 			sprite_index = spr_boxxedpep_air;
 		other.playerid = id;
-		other.state = 55;
+		other.state = states.grabbing;
 		if (tauntstoredstate != 104 && tauntstoredstate != 121)
 		{
 			tauntstoredstate = 92;

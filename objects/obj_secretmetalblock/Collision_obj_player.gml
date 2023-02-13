@@ -1,2 +1,2 @@
-if (other.state != 61 && other.state != 4 && other.state != 137 && other.state != 186)
+if (other.state != states.chainsaw && other.state != states.grabbed && other.state != states.hit && other.state != states.gotoplayer)
 	instance_destroy();

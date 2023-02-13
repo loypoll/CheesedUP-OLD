@@ -6,88 +6,88 @@ if (elitehit <= 1 && pizzahead)
 	destroyable = true;
 switch (state)
 {
-	case 144:
+	case states.arenaintro:
 		scr_noise_arenaintro();
 		break;
-	case 134:
+	case states.walk:
 		scr_noise_walk();
 		break;
-	case 104:
+	case states.mach2:
 		scr_noise_mach2();
 		break;
-	case 105:
+	case states.machslide:
 		scr_noise_machslide();
 		break;
-	case 92:
+	case states.jump:
 		scr_noise_jump();
 		break;
-	case 170:
+	case states.boss_jetpackstart:
 		scr_noise_jetpackstart();
 		break;
-	case 171:
+	case states.boss_jetpack:
 		scr_noise_jetpack();
 		break;
-	case 127:
+	case states.bounce:
 		scr_noise_bounce();
 		break;
-	case 58:
+	case states.pogo:
 		scr_noise_pogo();
 		break;
-	case 271:
+	case states.boss_dropstart:
 		scr_noise_dropstart();
 		break;
-	case 272:
+	case states.boss_drop:
 		scr_noise_drop();
 		break;
-	case 284:
+	case states.boss_droptrap:
 		scr_noise_droptrap();
 		break;
-	case 148:
+	case states.golf:
 		scr_noise_golf();
 		break;
-	case 108:
+	case states.freefall:
 		scr_noise_freefall();
 		break;
-	case 283:
+	case states.boss_noisecrusher:
 		scr_noise_noisecrusher();
 		break;
-	case 244:
+	case states.pizzahead_spinningkick:
 		scr_noise_spin();
 		break;
-	case 286:
+	case states.boss_noiseballooncrash:
 		scr_noise_noiseballooncrash();
 		break;
-	case 273:
+	case states.boss_phase1hurt:
 		scr_noise_phase1hurt();
 		break;
-	case 295:
+	case states.boss_fightball:
 		scr_noise_fightball();
 		break;
-	case 80:
+	case states.punch:
 		scr_vigilante_punch();
 		break;
-	case 289:
+	case states.boss_finale:
 		scr_noise_finale();
 		break;
-	case 298:
+	case states.boss_KO:
 		scr_boss_pizzaheadKO();
 		break;
-	case 137:
+	case states.hit:
 		scr_enemy_hit();
 		break;
-	case 138:
+	case states.stun:
 		scr_enemy_stun();
 		break;
-	case 4:
+	case states.grabbed:
 		scr_boss_grabbed();
 		break;
-	case 294:
+	case states.pizzaheadjump:
 		scr_boss_pizzaheadjump();
 		break;
-	case 154:
+	case states.pummel:
 		scr_enemy_pummel();
 		break;
-	case 155:
+	case states.staggered:
 		scr_enemy_staggered();
 		break;
 }
@@ -123,12 +123,12 @@ with (obj_noisey)
 	}
 }
 boss_hurt_gustavo();
-if (droptrap && (state == 134 || state == 138))
+if (droptrap && (state == states.walk || state == states.stun))
 {
 	if (abs(x - targetplayer.x) <= 200)
 	{
 		droptrap = false;
-		state = 284;
+		state = states.boss_droptrap;
 		sprite_index = spr_noise_copyexplode;
 		image_index = 0;
 	}
@@ -149,7 +149,7 @@ if (wastedhits >= 8 && phase == 1 && !pizzahead)
 	destroyable = true;
 	scr_sleep(25);
 }
-if (state == 138)
+if (state == states.stun)
 {
 	if (thrown)
 		savedthrown = true;
@@ -195,19 +195,19 @@ if (prevhp != elitehit)
 	}
 	prevhp = elitehit;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if ((state == 134 || (state == 138 && !savedthrown)) && flickertime <= 0 && (wastedhits != 7 || pizzahead))
+if ((state == states.walk || (state == states.stun && !savedthrown)) && flickertime <= 0 && (wastedhits != 7 || pizzahead))
 	invincible = false;
 else
 	invincible = true;
 if (instance_exists(obj_noiseballooncrash))
 	invincible = true;
-if (state == 298)
+if (state == states.boss_KO)
 	invincible = true;
 if (pizzahead)
 {
@@ -217,20 +217,20 @@ if (pizzahead)
 			other.invincible = true;
 	}
 }
-if ((!invincible || ((state == 134 && flickertime <= 0) || (state == 138 && !savedthrown))) && !flash && alarm[5] < 0)
+if ((!invincible || ((state == states.walk && flickertime <= 0) || (state == states.stun && !savedthrown))) && !flash && alarm[5] < 0)
 	alarm[5] = 0.15 * room_speed;
-else if (invincible && (state != 134 || flickertime > 0) && (state != 138 || savedthrown))
+else if (invincible && (state != states.walk || flickertime > 0) && (state != states.stun || savedthrown))
 	flash = false;
-if ((state == 104 || state == 105 || state == 171 || state == 127 || state == 58) && alarm[4] < 0)
+if ((state == states.mach2 || state == states.machslide || state == states.boss_jetpack || state == states.bounce || state == states.pogo) && alarm[4] < 0)
 	alarm[4] = 5;
 mask_index = spr_player_mask;
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 4)
+if (state != states.grabbed)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

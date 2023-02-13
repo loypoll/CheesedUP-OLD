@@ -1,6 +1,6 @@
 with (other)
 {
-	if (other.playerid == -4 && state != 184 && state != 146 && state != 185 && state != 186)
+	if (other.playerid == -4 && state != 184 && state != 146 && state != 185 && state != states.gotoplayer)
 	{
 		xscale = other.image_xscale;
 		state = 184;

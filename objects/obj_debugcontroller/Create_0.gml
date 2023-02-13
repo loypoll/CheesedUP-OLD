@@ -1,5 +1,5 @@
 depth = -500;
-DEBUG = false;
+DEBUG = true;
 if (parameter_count() > 2)
 	DEBUG = true;
 if (!DEBUG)
@@ -286,7 +286,7 @@ if (DEBUG)
 		}
 	});
 	active = false;
-	showcollisions = false;
+	showcollisions = true;
 	showhud = true;
 	state_map = ds_map_create();
 	ds_map_set(state_map, "states.normal", 0);

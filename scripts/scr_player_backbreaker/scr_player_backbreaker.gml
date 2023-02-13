@@ -16,7 +16,7 @@ function scr_player_backbreaker()
 	landAnim = false;
 	if (sprite_index == spr_player_machfreefall && place_meeting(x, y + 1, obj_solid))
 	{
-		state = 105;
+		state = states.machslide;
 		sprite_index = spr_player_crouchslide;
 	}
 	if (sprite_index == spr_taunt || sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmounttaunt || sprite_index == spr_player_ratmountsupertaunt)
@@ -31,7 +31,7 @@ function scr_player_backbreaker()
 				if (point_in_camera(x, y, view_camera[0]) && supertauntable)
 				{
 					hp = -99;
-					state = 137;
+					state = states.hit;
 					hitLag = lag;
 					hitX = x;
 					hitY = y;
@@ -103,13 +103,13 @@ function scr_player_backbreaker()
 			scr_change_farmers();
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_eatspaghetti)
-		state = 0;
+		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_throw)
-		state = 0;
+		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_Timesup && place_meeting(x, y, obj_exitgate))
-		state = 0;
+		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_player_levelcomplete || sprite_index == spr_playerN_victory))
-		state = 0;
+		state = states.normal;
 	if (key_jump && sprite_index == spr_player_phoneidle)
 	{
 		global.panic = true;
@@ -122,7 +122,7 @@ function scr_player_backbreaker()
 		}
 	}
 	if (global.miniboss == 1 && sprite_index == spr_bossintro && floor(image_index) == (image_number - 1))
-		state = 0;
+		state = states.normal;
 	image_speed = 0.4;
 	if (supercharged && key_up)
 		scr_dotaunt();

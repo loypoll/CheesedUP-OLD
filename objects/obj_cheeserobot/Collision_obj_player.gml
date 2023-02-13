@@ -1,8 +1,8 @@
-if (state != 4)
+if (state != states.grabbed)
 {
 	with (obj_player)
 	{
-		if (y < other.y && attacking == 0 && state == 92 && vsp > 0)
+		if (y < other.y && attacking == 0 && state == states.jump && vsp > 0)
 		{
 			if (vsp > 0)
 			{
@@ -15,7 +15,7 @@ if (state != 4)
 					other.vsp = -5;
 					other.hsp = -other.image_xscale * 3;
 					instance_create(x, y + 50, obj_stompeffect);
-					other.state = 138;
+					other.state = states.stun;
 					stompAnim = true;
 					other.image_index = 0;
 					vsp = -14;
@@ -26,7 +26,7 @@ if (state != 4)
 					other.vsp = -5;
 					other.hsp = -other.image_xscale * 3;
 					instance_create(x, y + 50, obj_stompeffect);
-					other.state = 138;
+					other.state = states.stun;
 					stompAnim = true;
 					other.image_index = 0;
 					vsp = -9;
@@ -34,7 +34,7 @@ if (state != 4)
 				}
 			}
 		}
-		if (state == 103)
+		if (state == states.mach1)
 		{
 			instance_create(x, y, obj_bumpeffect);
 			other.stunned = 40;
@@ -47,18 +47,18 @@ if (state != 4)
 			machpunchAnim = true;
 			if (x != other.x)
 				other.image_xscale = -sign(other.x - x);
-			other.state = 138;
+			other.state = states.stun;
 			image_index = 0;
 			state = 91;
 		}
-		if ((state == 104 || state == 79) && other.grounded == 1)
+		if ((state == states.mach2 || state == states.grab) && other.grounded == 1)
 		{
 			instance_create(x, y, obj_bumpeffect);
 			other.vsp = -10;
 			other.hsp = xscale;
 			other.image_index = 0;
 			other.stunned = 200;
-			other.state = 138;
+			other.state = states.stun;
 			machpunchAnim = true;
 			if (!grounded && state != 108)
 			{
@@ -66,7 +66,7 @@ if (state != 4)
 				vsp = -10;
 			}
 		}
-		if (attacking == 1 && state != 104)
+		if (attacking == 1 && state != states.mach2)
 		{
 			if (state == 121)
 				other.shot = true;
@@ -76,7 +76,7 @@ if (state != 4)
 			if (!grounded && state != 108)
 				vsp = -10;
 		}
-		if (attacking == 0 && (state != 91 && state != 107) && !(y < other.y) && grabbing == 0 && other.state != 138)
+		if (attacking == 0 && (state != 91 && state != 107) && !(y < other.y) && grabbing == 0 && other.state != states.stun)
 		{
 			if (x != other.x)
 			{
@@ -88,12 +88,12 @@ if (state != 4)
 			other.image_xscale = -xscale;
 			other.hsp = -other.image_xscale * 4;
 			other.vsp = -4;
-			if (other.state == 134 || other.state == 130)
-				other.state = 126;
+			if (other.state == states.walk || other.state == 130)
+				other.state = states.idle;
 			image_index = 0;
 			state = 106;
 			if (other.state == 136)
-				other.state = 126;
+				other.state = states.idle;
 		}
 	}
 }

@@ -29,7 +29,7 @@ function scr_player_jetpackjump()
 	}
 	if (grounded && vsp > 0 && !place_meeting(x, y + vsp, obj_destructibles) && !place_meeting(x, y + vsp, obj_iceblock_breakable))
 	{
-		state = 0;
+		state = states.normal;
 		if (sprite_index != spr_player_jetpackstart2)
 		{
 			with (instance_create(x, y, obj_rocketdead))
@@ -152,7 +152,7 @@ function scr_player_jetpackjump()
 		flash = true;
 		suplexmove = true;
 		fmod_event_instance_play(suplexdashsnd);
-		state = 42;
+		state = states.handstandjump;
 		movespeed = 5;
 	}
 	if (place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + xscale, y, obj_destructibles))

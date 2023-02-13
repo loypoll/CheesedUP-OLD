@@ -31,6 +31,6 @@ function state_boss_stun()
 	{
 		image_index = 0;
 		sprite_index = walkspr;
-		state = 134;
+		state = states.walk;
 	}
 }

@@ -1,16 +1,16 @@
 switch (state)
 {
-	case 135:
+	case states.fall:
 		hsp = 0;
 		if (grounded && vsp > 0)
 		{
 			fmod_event_one_shot_3d("event:/sfx/noise/bombbounce", x, y);
 			sprite_index = spr_playerN_noisebombland;
 			image_index = 0;
-			state = 136;
+			state = states.land;
 		}
 		break;
-	case 0:
+	case states.normal:
 		hsp = image_xscale * 6;
 		if (floor(image_index) == (image_number - 1))
 		{
@@ -24,7 +24,7 @@ switch (state)
 			fmod_event_one_shot_3d("event:/sfx/noise/bombbounce", x, y);
 			sprite_index = spr_playerN_noisebombland;
 			image_index = 0;
-			state = 136;
+			state = states.land;
 		}
 		else if (place_meeting(x + sign(hsp), y, obj_solid))
 		{
@@ -33,19 +33,19 @@ switch (state)
 			image_xscale *= -1;
 		}
 		break;
-	case 136:
+	case states.land:
 		hsp = 0;
 		vsp = 0;
 		if (floor(image_index) >= 5)
 		{
-			state = 0;
+			state = states.normal;
 			vsp = -5;
 		}
 		break;
 }
 if (sprite_index == spr_playerN_noisebomb && cooldown <= 60)
 	sprite_index = spr_playerN_noisebombflash;
-if (state != 135)
+if (state != states.fall)
 {
 	if (cooldown > 0)
 		cooldown--;

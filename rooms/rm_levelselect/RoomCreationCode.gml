@@ -4,5 +4,5 @@ with (obj_player)
 {
 	x = -100;
 	y = -100;
-	state = 18;
+	state = states.titlescreen;
 }

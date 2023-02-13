@@ -2,7 +2,7 @@ if (room == hub_loadingscreen && state != 2)
 {
 	with (obj_player)
 	{
-		state = 95;
+		state = states.comingoutdoor;
 		sprite_index = spr_walkfront;
 		image_index = 0;
 	}
@@ -27,7 +27,7 @@ if (room == hub_loadingscreen && state != 2)
 			{
 				targetRoom = Finalintro;
 				targetDoor = "A";
-				state = 18;
+				state = states.titlescreen;
 			}
 		}
 		with (instance_create(x, y, obj_fadeout))

@@ -66,7 +66,7 @@ switch (state)
 			state++;
 		}
 		break;
-	case 4:
+	case states.grabbed:
 		brownfade = Approach(brownfade, 1, 0.06);
 		if (introbuffer > 0)
 			introbuffer--;
@@ -93,7 +93,7 @@ switch (state)
 		if (fade >= 1.4)
 		{
 			with (obj_player)
-				state = 18;
+				state = states.titlescreen;
 			room_goto(Realtitlescreen);
 		}
 		break;

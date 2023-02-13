@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 135:
+	case states.fall:
 		add_y += 8;
 		if (add_y >= 0)
 		{
@@ -16,7 +16,7 @@ switch (state)
 			buffer = 1;
 		}
 		break;
-	case 293:
+	case states.animation:
 		if (global.pigtotal_add > 0)
 			global.pigtotal_add--;
 		else

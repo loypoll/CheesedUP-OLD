@@ -1,2 +1,2 @@
-particlespr = spr_cheesedragon_goingup;
+particlespr = spr_beachdebris;
 targettiles = "Tiles_1";

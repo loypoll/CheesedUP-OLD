@@ -44,14 +44,14 @@ function scr_enemy_walk()
 				image_xscale *= -1;
 				image_index = 0;
 				sprite_index = spr_forknight_turn;
-				state = 126;
+				state = states.idle;
 			}
 			else if (object_index == obj_snowman)
 			{
 				image_xscale *= -1;
 				image_index = 0;
 				sprite_index = spr_newpizzice_turn;
-				state = 126;
+				state = states.idle;
 			}
 			else if (object_index == obj_patroller)
 			{
@@ -60,7 +60,7 @@ function scr_enemy_walk()
 					image_xscale *= -1;
 					image_index = 0;
 					sprite_index = spr_patroller_turn;
-					state = 126;
+					state = states.idle;
 				}
 			}
 			else if (object_index == obj_tank)
@@ -68,14 +68,14 @@ function scr_enemy_walk()
 				image_xscale *= -1;
 				image_index = 0;
 				sprite_index = spr_tank_turn;
-				state = 126;
+				state = states.idle;
 			}
 			else if (object_index == obj_ghostknight)
 			{
 				image_xscale *= -1;
 				image_index = 0;
 				sprite_index = spr_ghostknight_turn;
-				state = 126;
+				state = states.idle;
 			}
 			else
 			{
@@ -105,14 +105,14 @@ function scr_enemy_walk()
 					image_xscale *= -1;
 					image_index = 0;
 					sprite_index = spr_forknight_turn;
-					state = 126;
+					state = states.idle;
 				}
 				else if (object_index == obj_snowman)
 				{
 					image_xscale *= -1;
 					image_index = 0;
 					sprite_index = spr_newpizzice_turn;
-					state = 126;
+					state = states.idle;
 				}
 				else if (object_index == obj_patroller)
 				{
@@ -121,7 +121,7 @@ function scr_enemy_walk()
 						image_xscale *= -1;
 						image_index = 0;
 						sprite_index = spr_patroller_turn;
-						state = 126;
+						state = states.idle;
 					}
 				}
 				else if (object_index == obj_indiancheese)
@@ -129,21 +129,21 @@ function scr_enemy_walk()
 					image_xscale *= -1;
 					image_index = 0;
 					sprite_index = spr_indiancheese_turn;
-					state = 126;
+					state = states.idle;
 				}
 				else if (object_index == obj_ghostknight)
 				{
 					image_xscale *= -1;
 					image_index = 0;
 					sprite_index = spr_ghostknight_turn;
-					state = 126;
+					state = states.idle;
 				}
 				else if (object_index == obj_tank)
 				{
 					image_xscale *= -1;
 					image_index = 0;
 					sprite_index = spr_tank_turn;
-					state = 126;
+					state = states.idle;
 				}
 				else
 				{

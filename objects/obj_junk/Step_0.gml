@@ -9,12 +9,12 @@ if (grabbed == 1 && !ratgrabbed)
 	image_xscale = -playerid.xscale;
 	grav = 0;
 	playerid.baddiegrabbedID = id;
-	if (playerid.state == 6 || playerid.state == 55 || playerid.state == 79 || playerid.state == 74 || playerid.state == 75 || playerid.state == 20)
+	if (playerid.state == states.finishingblow || playerid.state == states.grabbing || playerid.state == states.grab || playerid.state == 74 || playerid.state == 75 || playerid.state == 20)
 	{
 		grav = 0;
 		grounded = false;
 		x = playerid.x;
-		if (playerid.sprite_index != spr_player_haulingstart && playerid.state != 6)
+		if (playerid.sprite_index != spr_player_haulingstart && playerid.state != states.finishingblow)
 			y = playerid.y - 60;
 		else if (floor(playerid.image_index) == 0)
 			y = playerid.y - 20;
@@ -29,7 +29,7 @@ if (grabbed == 1 && !ratgrabbed)
 	with (playerid)
 	{
 		move = key_left2 + key_right2;
-		if (!(state == 6 || state == 79 || state == 55 || state == 74 || state == 75 || state == 20 || state == 80 || state == 76 || state == 81 || state == 82 || state == 83))
+		if (!(state == states.finishingblow || state == states.grab || state == states.grabbing || state == 74 || state == 75 || state == 20 || state == 80 || state == states.superslam || state == 81 || state == 82 || state == 83))
 		{
 			other.grav = 0.5;
 			other.x = x;
@@ -38,12 +38,12 @@ if (grabbed == 1 && !ratgrabbed)
 		}
 	}
 	hsp = 0;
-	if (playerid.state == 6)
+	if (playerid.state == states.finishingblow)
 	{
 		x = playerid.x + (playerid.xscale * 50);
 		y = playerid.y;
 	}
-	if (playerid.state == 79 && playerid.sprite_index == playerid.spr_swingding)
+	if (playerid.state == states.grab && playerid.sprite_index == playerid.spr_swingding)
 	{
 		if (floor(playerid.image_index) == 0)
 		{
@@ -154,7 +154,7 @@ if (grabbed == 1 && !ratgrabbed)
 		x = playerid.x + (playerid.xscale * 15);
 		y = playerid.y;
 	}
-	if (playerid.state == 76)
+	if (playerid.state == states.superslam)
 	{
 		if (playerid.character == "P")
 		{

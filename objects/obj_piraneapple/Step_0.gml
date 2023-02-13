@@ -2,7 +2,7 @@ if (room == rm_editor)
 	exit;
 switch (state)
 {
-	case 134:
+	case states.walk:
 		var targetplayer = obj_player1.id;
 		if (hamspotted == 1)
 			targetplayer = 1077;
@@ -55,7 +55,7 @@ switch (state)
 		{
 			if (grounded)
 			{
-				state = 134;
+				state = states.walk;
 				sprite_index = spr_piraneappleattack;
 			}
 			scr_collide();
