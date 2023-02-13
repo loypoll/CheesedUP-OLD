@@ -42,7 +42,7 @@ switch (state)
 		sprite_index = spr_badrat_stun;
 		if (grounded && vsp > 0)
 		{
-			state = 134;
+			state = states.walk;
 			sprite_index = walkspr;
 		}
 		break;
@@ -104,19 +104,19 @@ if (state == 129)
 		if (floor(image_index) == (image_number - 1))
 		{
 			sprite_index = walkspr;
-			state = 134;
+			state = states.walk;
 			instance_destroy(hitboxID);
 			cooldown = 80;
 		}
 	}
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
@@ -135,5 +135,5 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
-if (state != 138)
+if (state != states.stun)
 	thrown = false;

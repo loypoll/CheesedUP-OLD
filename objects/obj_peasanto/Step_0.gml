@@ -3,7 +3,7 @@ switch (state)
 	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
 	case states.turn:
@@ -28,13 +28,13 @@ switch (state)
 		scr_enemy_grabbed();
 		break;
 }
-if (state == 138 && stunned > 40 && birdcreated == 0)
+if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (place_meeting(x + hsp, y, obj_iceblock) && state == 128)
 {
@@ -65,7 +65,7 @@ if (state == 128)
 	}
 	if (flame_buffer <= 0)
 	{
-		state = 134;
+		state = states.walk;
 		sprite_index = walkspr;
 		attack_cooldown = attack_max;
 	}
@@ -80,7 +80,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

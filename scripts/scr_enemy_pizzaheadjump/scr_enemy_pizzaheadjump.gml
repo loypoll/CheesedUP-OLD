@@ -17,7 +17,7 @@ function scr_enemy_pizzaheadjump()
 	if (grounded && vsp > 0)
 	{
 		stompable = true;
-		state = 138;
+		state = states.stun;
 		stunned = 2;
 	}
 }

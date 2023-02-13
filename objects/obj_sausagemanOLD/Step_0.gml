@@ -22,13 +22,13 @@ switch (state)
 		scr_enemy_grabbed();
 		break;
 }
-if (state == 138 && stunned > 40 && birdcreated == 0)
+if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (hp <= 0)
 	instance_destroy();
@@ -80,7 +80,7 @@ if (cigar == 1 && cigarcreate == 0 && (state == 126 || state == 134 || state == 
 }
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;

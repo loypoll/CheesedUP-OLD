@@ -11,7 +11,7 @@ with (ID)
 {
 	if (object_index == obj_coolpineapple || object_index == obj_ghostknight || object_index == obj_forknight || object_index == obj_noisey || object_index == obj_smokingpizzaslice)
 	{
-		if (state != 134 && state != 125)
+		if (state != states.walk && state != 125)
 		{
 			hitboxcreate = false;
 			instance_destroy(other);
@@ -77,7 +77,7 @@ with (ID)
 				instance_destroy(other);
 			break;
 		case obj_indiancheese:
-			if (state != 134 && sprite_index != spr_indiancheese_howl)
+			if (state != states.walk && sprite_index != spr_indiancheese_howl)
 			{
 				hitboxcreate = false;
 				instance_destroy(other);

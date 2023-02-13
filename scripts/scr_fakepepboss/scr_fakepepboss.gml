@@ -656,7 +656,7 @@ function scr_fakepepboss_mach2()
 		if (attackspeed > 0)
 			attackspeed -= 0.25;
 		else
-			state = 134;
+			state = states.walk;
 	}
 	else if (attackspeed < 8)
 		attackspeed = 8;

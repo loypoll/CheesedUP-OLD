@@ -1,4 +1,4 @@
-if (state != 138)
+if (state != states.stun)
 {
 	if (!other.isgustavo)
 	{

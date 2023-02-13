@@ -3,7 +3,7 @@ switch (state)
 	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
 	case states.turn:
@@ -31,13 +31,13 @@ switch (state)
 		scr_enemy_rage();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 var player = instance_nearest(x, y, obj_player);
 if (bombreset > 0)
@@ -58,7 +58,7 @@ if (floor(image_index) == (image_number - 1) && sprite_index == spr_spitcheese_s
 	sprite_index = spr_spitcheese_idle;
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

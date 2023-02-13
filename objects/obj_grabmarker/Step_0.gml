@@ -12,7 +12,7 @@ if (instance_exists(ID))
 			y = ID.y - 32;
 			break;
 		case obj_fakepepboss:
-			if (ID.state != 134)
+			if (ID.state != states.walk)
 				visible = false;
 			else
 				visible = true;

@@ -1,8 +1,8 @@
-if (state == 102)
+if (state == states.crouchslide)
 {
 	if (other.flash)
 		other.flash = false;
 	scr_hurtplayer(other);
 }
-else if ((state == 269 || (state == 138 && savedthrown == thrown && !savedthrown)) && wastedhits == 4 && phase == 1 && (other.instakillmove || other.state == 42))
+else if ((state == states.boss_reloading || (state == states.stun && savedthrown == thrown && !savedthrown)) && wastedhits == 4 && phase == 1 && (other.instakillmove || other.state == states.handstandjump))
 	scr_vigilante_do_hurt_phase2(other);

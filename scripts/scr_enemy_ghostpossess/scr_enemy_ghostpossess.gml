@@ -9,9 +9,9 @@ function scr_enemy_ghostpossess()
 		_move = key_left + key_right;
 		if (key_up2)
 		{
-			state = 16;
+			state = states.ghost;
 			vsp = -10;
-			other.state = 138;
+			other.state = states.stun;
 			other.stunned = 50;
 			create_particle(x, y, particle.genericpoofeffect, 0);
 			visible = true;

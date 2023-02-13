@@ -108,7 +108,7 @@ if (state == states.jump)
 	grav = 0.4;
 else
 	grav = 0.5;
-if (state == 138)
+if (state == states.stun)
 	instance_destroy(obj_grabmarker);
 if (prevhp != elitehit)
 {

@@ -15,7 +15,7 @@ function do_dialog()
 			visible = true;
 			with (possessID)
 			{
-				state = 138;
+				state = states.stun;
 				stunned = 50;
 			}
 		}

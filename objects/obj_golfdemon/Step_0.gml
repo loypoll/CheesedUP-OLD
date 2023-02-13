@@ -43,7 +43,7 @@ if (state == 134 || state == 126)
 	if (sprite_index != spr_golfdemon_idle2)
 		sprite_index = spr_golfdemon_idle;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
@@ -51,7 +51,7 @@ if (state == 138 && stunned > 100 && birdcreated == 0)
 }
 if (ragecooldown > 0)
 	ragecooldown--;
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
@@ -95,7 +95,7 @@ else
 	fmod_event_instance_stop(snd, true);
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

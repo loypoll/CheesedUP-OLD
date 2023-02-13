@@ -1,4 +1,4 @@
-if (golfcooldown <= 0 && state != 74 && state != 138 && state != 4 && other.state != 148 && other.state != 4 && other.bigcheeseID == -4)
+if (golfcooldown <= 0 && state != 74 && state != states.stun && state != 4 && other.state != 148 && other.state != 4 && other.bigcheeseID == -4)
 {
 	golfid = other.id;
 	shot = false;

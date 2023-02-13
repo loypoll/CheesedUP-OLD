@@ -51,7 +51,7 @@ switch (state)
 		}
 		else if (grounded && vsp > 0)
 		{
-			state = 134;
+			state = states.walk;
 			sprite_index = idlespr;
 		}
 		break;
@@ -66,15 +66,15 @@ else
     parryable = true;
     supertauntable = true;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state == 138 && thrown)
+if (state == states.stun && thrown)
 	sprite_index = stunfallspr;
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
@@ -97,7 +97,7 @@ if (state == 126)
 		image_speed = 0.35;
 	}
 }
-if (state != 126 && state != 189 && state != 4 && state != 137 && state != 138 && state != 141 && !running)
+if (state != 126 && state != 189 && state != 4 && state != 137 && state != states.stun && state != 141 && !running)
 {
 	if ((x < (targetplayer.x + threshold_x) && x > (targetplayer.x - threshold_x)) && (y < (targetplayer.y + threshold_y) && y > (targetplayer.y - threshold_y)))
 	{
@@ -141,11 +141,11 @@ if (state == 141)
 			jumped = false;
 	}
 	if (distance_to_object(targetplayer) > idle_threshold)
-		state = 134;
+		state = states.walk;
 }
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

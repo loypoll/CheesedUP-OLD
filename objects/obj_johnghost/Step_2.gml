@@ -13,7 +13,7 @@ switch (state)
 		}
 		y = Approach(y, playerid.y, 8);
 		break;
-	case 128:
+	case states.charge:
 		if (playerid.x != x)
 			image_xscale = sign(playerid.x - x);
 		y = Approach(y, playerid.y, 8);

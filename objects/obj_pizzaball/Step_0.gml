@@ -71,9 +71,9 @@ if ((state == 134 || state == 126) && sit)
 	hsp = 0;
 	sprite_index = spr_pizzaball_idle1;
 }
-if (state != 134)
+if (state != states.walk)
 	sit = false;
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
@@ -85,7 +85,7 @@ if (state == 156 && !instance_exists(pointerID))
 	pointerID.sprite_index = spr_icon_pizzaball;
 	pointerID.objectID = id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
@@ -109,7 +109,7 @@ if (hitbuffer > 0)
 }
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

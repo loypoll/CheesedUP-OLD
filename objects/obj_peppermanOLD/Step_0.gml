@@ -91,7 +91,7 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 128:
+	case states.charge:
 		grav = 0.5;
 		boss_pepperman_charge();
 		invincible = true;

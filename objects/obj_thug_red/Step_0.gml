@@ -121,7 +121,7 @@ if (state == 80)
 	if (attackspeed == 0)
 	{
 		bombreset = attackreset;
-		state = 134;
+		state = states.walk;
 		sprite_index = walkspr;
 		image_index = 0;
 	}
@@ -165,13 +165,13 @@ switch (state)
 		scr_enemy_rage();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (elite && ragecooldown <= 0)
 {
@@ -195,7 +195,7 @@ if (ragecooldown > 0)
 scr_scareenemy();
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

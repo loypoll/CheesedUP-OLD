@@ -2,7 +2,7 @@ function scr_collide_destructibles()
 {
 	with (obj_player)
 	{
-		if ((state == 92 && sprite_index == spr_playerN_noisebombspinjump) || (ghostdash && sprite_index != spr_ghostidle) || state == 165 || state == 31 || state == 187 || state == 198 || (state == 58 && pogochargeactive == 1))
+		if ((state == states.jump && sprite_index == spr_playerN_noisebombspinjump) || (ghostdash && sprite_index != spr_ghostidle) || state == states.slipbanan || state == states.rideweenie || state == states.trickjump || state == states.ratmountbounce || (state == states.pogo && pogochargeactive == 1))
 		{
 			var arr = [[xscale, 0], [hsp + xscale, 0], [0, vsp + 1], [0, vsp - 1], [0, 1], [0, -1]];
 			for (var i = 0; i < array_length(arr); i++)
@@ -27,7 +27,7 @@ function scr_collide_destructibles()
 				}
 			}
 		}
-		if (state == 211 || state == 34 || ratmount_movespeed >= 12 || state == 259 || state == 201 || state == 80 || state == 42 || state == 193 || state == 43 || state == 21 || state == 53 || state == 184 || state == 70 || state == 124 || state == 94 || state == 20 || sprite_index == spr_barrelroll || sprite_index == spr_player_barrelslipnslide || state == 41 || state == 121 || state == 47 || (state == 35 && boxxeddash) || (state == 33 && boxxeddash) || state == 65 || state == 38 || state == 48 || state == 5 || state == 19 || state == 153)
+		if (state == states.trashroll || state == states.boxxedpepspin || ratmount_movespeed >= 12 || state == states.ratmountpunch || state == states.ratmounttumble || state == states.punch || state == states.handstandjump || state == states.ratmountattack || state == states.lungeattack || state == states.cheeseball || state == states.bombpepside || state == states.rocket || state == states.shotgundash || state == states.faceplant || state == states.slipnslide || state == states.tacklecharge || sprite_index == spr_barrelroll || sprite_index == spr_player_barrelslipnslide || state == states.chainsawbump || state == states.mach3 || state == states.knightpep || (state == states.boxxedpepjump && boxxeddash) || (state == states.boxxedpep && boxxeddash) || state == states.machroll || state == states.knightpepslopes || state == states.knightpepattack || state == states.tumble || state == states.hookshot || state == states.shoulderbash)
 		{
 			if (place_meeting(x + hsp, y, obj_destructibles))
 			{
@@ -38,12 +38,12 @@ function scr_collide_destructibles()
 						GamepadSetVibration(0, 0.8, 0.5);
 						instance_destroy();
 					}
-					if (state == 104)
+					if (state == states.mach2)
 						machpunchAnim = true;
 				}
 			}
 		}
-		if (state == 107 && thrown == 1)
+		if (state == states.hurt && thrown == 1)
 		{
 			if (place_meeting(x - hsp, y, obj_destructibles))
 			{
@@ -54,10 +54,10 @@ function scr_collide_destructibles()
 				}
 			}
 		}
-		if ((state == 47 || sprite_index == spr_lonegustavo_groundpoundstart || state == 198 || sprite_index == spr_lonegustavo_groundpound || state == 254 || state == 10 || state == 165 || state == 76 || state == 19 || (state == 54 && bombup_dir == 1)) && vsp > 0)
+		if ((state == states.knightpep || sprite_index == spr_lonegustavo_groundpoundstart || state == states.ratmountbounce || sprite_index == spr_lonegustavo_groundpound || state == states.jetpackjump || state == states.firemouth || state == states.slipbanan || state == states.superslam || state == states.hookshot || (state == states.bombpepup && bombup_dir == 1)) && vsp > 0)
 		{
 			var vy = 1;
-			if (state == 198 || sprite_index == spr_lonegustavo_groundpoundstart || sprite_index == spr_lonegustavo_groundpound)
+			if (state == states.ratmountbounce || sprite_index == spr_lonegustavo_groundpoundstart || sprite_index == spr_lonegustavo_groundpound)
 				vy = vsp;
 			if (place_meeting(x, y + vy, obj_destructibles))
 			{
@@ -71,7 +71,7 @@ function scr_collide_destructibles()
 					}
 				}
 				ds_list_clear(global.instancelist);
-				if (state == 10 || state == 254)
+				if (state == states.firemouth || state == states.jetpackjump)
 				{
 					with (instance_place(x, y + vy, obj_tntblock))
 					{
@@ -84,7 +84,7 @@ function scr_collide_destructibles()
 				}
 			}
 		}
-		if (state == 10)
+		if (state == states.firemouth)
 		{
 			with (instance_place(x + xscale, y, obj_tntblock))
 			{
@@ -130,10 +130,10 @@ function scr_collide_destructibles()
 		}
 		ds_list_clear(global.instancelist);
 		
-		if (vsp <= 0.5 && (state == 92 || state == 192 || state == 121 || state == 104 || state == 265 || state == 58 || (state == 54 && bombup_dir == -1) || state == 80 || state == 37 || state == 9 || state == 97 || state == 22 || state == 121 || (state == 80 && (sprite_index == spr_player_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend))))
+		if (vsp <= 0.5 && (state == states.jump || state == states.ratmountjump || state == states.mach3 || state == states.mach2 || state == states.antigrav || state == states.pogo || (state == states.bombpepup && bombup_dir == -1) || state == states.punch || state == states.climbwall || state == states.fireass || state == states.Sjump || state == states.cheeseballclimbwall || state == states.mach3 || (state == states.punch && (sprite_index == spr_player_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend))))
 		{
 			vy = -1;
-			if (state == 80 && (sprite_index == spr_player_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend))
+			if (state == states.punch && (sprite_index == spr_player_breakdanceuppercut || sprite_index == spr_player_breakdanceuppercutend))
 				vy = vsp;
 			if (place_meeting(x, y + vy, obj_destructibles))
 			{
@@ -143,15 +143,15 @@ function scr_collide_destructibles()
 					instance_destroy();
 					with (other)
 					{
-						if (state != 97 && state != 80 && state != 37)
+						if (state != states.Sjump && state != states.punch && state != states.climbwall)
 							vsp = 0;
-						if (state == 97)
+						if (state == states.Sjump)
 							vsp = -11;
 					}
 				}
 			}
 		}
-		if (vsp >= 0 && (state == 108 || state == 76 || state == 111 || state == 197 || (state == 198 && vsp >= 0) || (state == 165 && vsp >= 10)))
+		if (vsp >= 0 && (state == states.freefall || state == states.superslam || state == states.freefallland || state == states.ratmountgroundpound || (state == states.ratmountbounce && vsp >= 0) || (state == states.slipbanan && vsp >= 10)))
 		{
 			if (place_meeting(x, y + vsp + 2, obj_destructibles))
 			{
@@ -161,25 +161,25 @@ function scr_collide_destructibles()
 				ds_list_clear(global.instancelist);
 			}
 		}
-		if (state == 108 || state == 76 || state == 111 || state == 165 || (state == 198 && vsp > 0))
+		if (state == states.freefall || state == states.superslam || state == states.freefallland || state == states.slipbanan || (state == states.ratmountbounce && vsp > 0))
 		{
 			vy = 1;
-			if (state == 198)
+			if (state == states.ratmountbounce)
 				vy = vsp + 4;
-			if (place_meeting(x, y + vy, obj_metalblock) && (freefallsmash >= 10 || state == 165 || state == 198))
+			if (place_meeting(x, y + vy, obj_metalblock) && (freefallsmash >= 10 || state == states.slipbanan || state == states.ratmountbounce))
 			{
 				with (instance_place(x, y + vy, obj_metalblock))
 					instance_destroy();
 			}
 		}
-		if (state == 102 || state == 65 || state == 104 || state == 80)
+		if (state == states.crouchslide || state == states.machroll || state == states.mach2 || state == states.punch)
 		{
 			with (instance_place(x + hsp, y, obj_destructibles))
 			{
 				var _destroyed = false;
 				with (other)
 				{
-					if (place_meeting(x + hsp, y, obj_bigdestructibles) && state != 102 && state != 104 && state != 65)
+					if (place_meeting(x + hsp, y, obj_bigdestructibles) && state != states.crouchslide && state != states.mach2 && state != states.machroll)
 					{
 						instance_destroy(other);
 						_destroyed = true;
@@ -189,7 +189,7 @@ function scr_collide_destructibles()
 						instance_destroy(other);
 						_destroyed = true;
 					}
-					if (_destroyed && state == 43)
+					if (_destroyed && state == states.lungeattack)
 						hit_connected = true;
 				}
 			}

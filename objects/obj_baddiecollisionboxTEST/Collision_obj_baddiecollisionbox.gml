@@ -4,7 +4,7 @@ if (object_index != obj_pizzaball)
 	{
 		if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID != other.id && other.baddieID.killbyenemy)
 		{
-			if (baddieID.state == 138 && baddieID.thrown == 1)
+			if (baddieID.state == states.stun && baddieID.thrown == 1)
 			{
 				instance_destroy(other.baddieID);
 				if (baddieID.pepperman_grab == 1)

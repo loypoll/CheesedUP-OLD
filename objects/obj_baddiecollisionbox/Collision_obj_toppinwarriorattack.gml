@@ -8,7 +8,7 @@ if (instance_exists(baddieID))
 			baddieID.image_xscale = -sign(baddieID.x - other.x);
 		baddieID.vsp = -5;
 		baddieID.hsp = other.image_xscale * 2;
-		baddieID.state = 138;
+		baddieID.state = states.stun;
 		baddieID.image_index = 0;
 	}
 }

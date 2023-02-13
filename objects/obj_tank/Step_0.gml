@@ -5,7 +5,7 @@ switch (state)
 	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
 	case states.turn:
@@ -39,20 +39,20 @@ switch (state)
 		scr_enemy_rage();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state == 138 && lasthp != hp && !tired && grounded)
+if (state == states.stun && lasthp != hp && !tired && grounded)
 {
 	tired = true;
 	stunned = 10;
 	lasthp = hp;
 	killprotection = false;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (stuntouchbuffer > 0)
 	stuntouchbuffer--;
@@ -106,7 +106,7 @@ if (hitboxcreate == 0 && state == 125)
 }
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

@@ -37,13 +37,13 @@ switch (state)
 		scr_enemy_rage();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
@@ -68,11 +68,11 @@ switch (state)
 		}
 		else if (sprite_index == spr_soldier_idleend && floor(image_index) == (image_number - 1))
 		{
-			state = 134;
+			state = states.walk;
 			sprite_index = spr_soldier_walk;
 		}
 		break;
-	case 128:
+	case states.charge:
 		hsp = Approach(hsp, 0, 0.5);
 		if (sprite_index == spr_soldier_shootstart && floor(image_index) == (image_number - 1))
 			sprite_index = spr_soldier_shoot;
@@ -99,7 +99,7 @@ switch (state)
 			{
 				sprite_index = walkspr;
 				attack_cooldown = attack_max;
-				state = 134;
+				state = states.walk;
 			}
 		}
 		break;
@@ -152,7 +152,7 @@ if (elite)
 }
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

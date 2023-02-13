@@ -7,9 +7,9 @@ else if (state == 266)
 if (room == boss_pizzaface && state != 294)
 	use_collision = true;
 scr_squash();
-if (state != 138 && state != 137)
+if (state != states.stun && state != 137)
 	linethrown = false;
-if (state == 138 && !thrown)
+if (state == states.stun && !thrown)
 	linethrown = false;
 if (object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 && object_index != obj_gustavograbbable && object_index != obj_noiseboss && object_index != obj_pizzafaceboss && object_index != obj_pepperman && object_index != obj_pf_fakepep && object_index != obj_fakepepboss && object_index != obj_pizzaball && (place_meeting(x + 1, y, obj_spike) || place_meeting(x - 1, y, obj_spike) || place_meeting(x, y + 1, obj_spike) || place_meeting(x, y - 1, obj_spike)))
 {

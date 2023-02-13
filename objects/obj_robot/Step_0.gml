@@ -4,7 +4,7 @@ switch (state)
 	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
 	case states.turn:
@@ -56,7 +56,7 @@ switch (state)
 		if (place_meeting(x + sign(hsp), y, obj_solid) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
-			state = 138;
+			state = states.stun;
 			stunned = 100;
 			vsp = -4;
 			hsp = -image_xscale * 2;
@@ -77,7 +77,7 @@ switch (state)
 		}
 		if (image_index > (image_number - 1))
 		{
-			state = 134;
+			state = states.walk;
 			hsp = 0;
 			railspeed = 0;
 			sprite_index = walkspr;
@@ -85,7 +85,7 @@ switch (state)
 		if (place_meeting(x + sign(hsp), y, obj_solid) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
-			state = 138;
+			state = states.stun;
 			stunned = 100;
 			vsp = -8;
 			hsp = -image_xscale * 5;
@@ -96,26 +96,26 @@ switch (state)
 		hsp = 0;
 		if (image_index > (image_number - 1))
 		{
-			state = 134;
+			state = states.walk;
 			sprite_index = walkspr;
 		}
 		break;
 }
-if (elitehit <= 0 && state != 138)
+if (elitehit <= 0 && state != states.stun)
 	instance_destroy();
-if (state == 138 && stunned > 40 && birdcreated == 0)
+if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (bombreset > 0)
 	bombreset--;

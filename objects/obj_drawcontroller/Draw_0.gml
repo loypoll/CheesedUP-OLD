@@ -52,7 +52,7 @@ shader_set(shd_hit);
 with (obj_baddie)
 {
 	var _stun = 0;
-	if (state == 138 && object_index != obj_pizzaball)
+	if (state == states.stun && object_index != obj_pizzaball)
 		_stun = 25;
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
 		draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale, angle, image_blend, image_alpha);

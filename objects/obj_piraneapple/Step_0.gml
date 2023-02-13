@@ -55,7 +55,7 @@ switch (state)
 		{
 			if (grounded)
 			{
-				state = 134;
+				state = states.walk;
 				sprite_index = spr_piraneappleattack;
 			}
 			scr_collide();

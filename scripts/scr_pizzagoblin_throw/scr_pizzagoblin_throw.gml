@@ -7,7 +7,7 @@ function scr_pizzagoblin_throw()
 		hsp = 5;
 	if (floor(image_index) == (image_number - 1))
 	{
-		state = 134;
+		state = states.walk;
 		sprite_index = walkspr;
 	}
 	if (bombreset <= 0 && floor(image_index) == global.throw_frame[object_index])
@@ -196,7 +196,7 @@ function scr_pizzagoblin_throw()
 					image_xscale = other.image_xscale;
 				break;
 			case obj_smokingpizzaslice:
-				substate = choose(134, 126, 126);
+				substate = choose(states.walk, states.idle, states.idle);
 				substate_buffer = substate_max;
 				fmod_event_one_shot_3d("event:/sfx/enemies/coughing", x, y);
 				with (instance_create(x + (50 * image_xscale), y + 20, obj_smokingprojectile))

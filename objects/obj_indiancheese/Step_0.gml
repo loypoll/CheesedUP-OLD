@@ -3,7 +3,7 @@ switch (state)
 	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
 	case states.turn:
@@ -75,21 +75,21 @@ if (state == 188 && totemID != -4)
 	}
 }
 else if (state == 188 && totemID == -4)
-	state = 134;
-if (state == 138 && stunned > 40 && birdcreated == 0)
+	state = states.walk;
+if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 var player = instance_nearest(x, y, obj_player);
 if (elite && ragecooldown > 0)
 	ragecooldown--;
-if (state == 134 && state != 138 && sprite_index == walkspr && sprite_index != spr_indiancheese_scared && elite && ragecooldown == 0)
+if (state == 134 && state != states.stun && sprite_index == walkspr && sprite_index != spr_indiancheese_scared && elite && ragecooldown == 0)
 {
 	if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)))
 	{
@@ -111,7 +111,7 @@ if (sprite_index == spr_indiancheese_land && floor(image_index) == (image_number
 	sprite_index = spr_indiancheese_walk;
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

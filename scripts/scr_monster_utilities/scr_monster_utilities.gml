@@ -65,9 +65,9 @@ function scr_monster_activate()
 	notification_push(notifs.monster_activate, [room, object_index]);
 	with (obj_monster)
 	{
-		if (state == 217)
+		if (state == states.robotidle)
 		{
-			state = 218;
+			state = states.robotintro;
 			with (instance_create(x, y, obj_objecticontracker))
 			{
 				objectID = other.id;
@@ -123,7 +123,7 @@ function scr_monster_detect()
 		{
 			with (argument2)
 			{
-				if (state != 100 || (!scr_solid(x, y - 24) && !place_meeting(x, y - 24, obj_platform)))
+				if (state != states.crouch || (!scr_solid(x, y - 24) && !place_meeting(x, y - 24, obj_platform)))
 					detect = true;
 			}
 		}
@@ -159,8 +159,8 @@ function scr_puppet_appear()
 	}
 	x = argument0.x + (abs(_xdir) * argument0.xscale);
 	y = argument0.y;
-	state = 220;
-	substate = 135;
+	state = states.robotchase;
+	substate = states.fall;
 	playerid = argument0;
 	while (place_meeting(x, y, obj_solid))
 	{
@@ -210,14 +210,14 @@ function scr_monsterinvestigate()
 				waitbuffer--;
 			else
 			{
-				state = 219;
+				state = states.robotroaming;
 				image_xscale *= -1;
 				instance_create(x, y, obj_patroller);
 			}
 			break;
 	}
 	if (scr_monster_detect(300, room_height, targetplayer))
-		state = 220;
+		state = states.chase;
 }
 function scr_monster_detect_audio()
 {
@@ -225,7 +225,7 @@ function scr_monster_detect_audio()
 	{
 		if (!point_in_camera(x, y, view_camera[0]))
 		{
-			state = 221;
+			state = states.robotinvestigate;
 			investigatestate = 0;
 		}
 		else
@@ -233,12 +233,12 @@ function scr_monster_detect_audio()
 			targetplayer = instance_nearest(x, y, obj_player);
 			if (object_index == obj_blobmonster)
 			{
-				state = 135;
+				state = states.fall;
 				gravdir *= -1;
 				chase = false;
 			}
 			else
-				state = 220;
+				state = states.chase;
 		}
 	}
 }

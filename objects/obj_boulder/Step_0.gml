@@ -13,7 +13,7 @@ switch (state)
 			}
 		}
 		else if (grounded)
-			state = 134;
+			state = states.walk;
 		break;
 	case states.turn:
 		scr_enemy_turn();
@@ -102,7 +102,7 @@ switch (state)
 			vsp = 0;
 			image_index = 0;
 			sprite_index = walkspr;
-			state = 134;
+			state = states.walk;
 		}
 		if (place_meeting(x, y + 1, obj_railparent))
 		{
@@ -130,15 +130,15 @@ switch (state)
 		scr_enemy_ghostpossess();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
-if (state == 138)
+if (state == states.stun)
 {
 	if (stuntouchbuffer > 0)
 		stuntouched = true;
@@ -157,7 +157,7 @@ angle = 0;
 flash = false;
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

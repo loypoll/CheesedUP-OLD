@@ -3,7 +3,7 @@ switch (state)
 	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
 	case states.turn:
@@ -28,7 +28,7 @@ switch (state)
 		scr_enemy_grabbed();
 		break;
 }
-if (state == 138 && stunned > 40 && birdcreated == 0)
+if (state == states.stun && stunned > 40 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
@@ -42,13 +42,13 @@ if (hitboxcreate == 0 && state == 128 && obj_player.state != 121)
 	with (instance_create(x, y, obj_forkhitbox))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

@@ -247,7 +247,7 @@ if (state == 0 && instance_exists(bossID))
 		portrait1_sprite = portrait1_hurt;
 	else
 		portrait1_sprite = portrait1_idle;
-	if (bossID.state == 137 || bossID.state == 138)
+	if (bossID.state == 137 || bossID.state == states.stun)
 		portrait2_sprite = portrait2_hurt;
 	else
 		portrait2_sprite = portrait2_idle;

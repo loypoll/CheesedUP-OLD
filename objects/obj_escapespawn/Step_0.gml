@@ -29,7 +29,7 @@ switch (state)
 				y = other.y;
 				if (escapestun)
 				{
-					state = 138;
+					state = states.stun;
 					sprite_index = stunfallspr;
 					stunned = 20;
 					if (elite)

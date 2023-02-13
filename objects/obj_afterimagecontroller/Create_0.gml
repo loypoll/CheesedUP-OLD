@@ -1,6 +1,20 @@
+enum afterimage
+{
+	afterimage,
+	mach3effect,
+	heatattack,
+	firemouth,
+	blue,
+	blur,
+	enemy,
+	fakepep,
+	enum_length,
+}
+
+
 depth = 1;
 global.afterimage_list = ds_list_create();
-alpha = array_create(8, 1);
+alpha = array_create(afterimage.enum_length, 1);
 alpha[2] = 0.5;
 shd_alpha = shader_get_uniform(shd_firemouth_afterimage, "newAlpha");
 shd_color_red = shader_get_uniform(shd_color_afterimage, "red");

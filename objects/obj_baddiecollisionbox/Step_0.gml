@@ -29,7 +29,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 					other.baddieID.hsp = xscale * 5;
 					if (other.baddieID.vsp >= 0 && other.baddieID.grounded)
 						other.baddieID.vsp = -5;
-					other.baddieID.state = 138;
+					other.baddieID.state = states.stun;
 					if (other.baddieID.stunned < 100)
 						other.baddieID.stunned = 100;
 					other.baddieID.xscale = 1.4;
@@ -192,7 +192,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 						pogospeedprev = false;
 						other.baddieID.vsp = -3;
 						fmod_event_one_shot_3d("event:/sfx/enemies/stomp", x, y);
-						other.baddieID.state = 138;
+						other.baddieID.state = states.stun;
 						if (other.baddieID.stunned < 100)
 							other.baddieID.stunned = 100;
 						sprite_index = spr_playerN_pogobounce;
@@ -209,7 +209,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 				vsp = 0;
 			}
 			var pepp_grab = false;
-			if (character == "M" && instance_exists(other.baddieID) && (state == 0 || state == 92) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw && other.baddieID.state == 138 && other.baddieID.stuntouchbuffer == 0 && !other.baddieID.thrown && !other.baddieID.invincible)
+			if (character == "M" && instance_exists(other.baddieID) && (state == 0 || state == 92) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw && other.baddieID.state == states.stun && other.baddieID.stuntouchbuffer == 0 && !other.baddieID.thrown && !other.baddieID.invincible)
 			{
 				other.baddieID.pepperman_grab = true;
 				pepperman_grabID = other.baddieID.id;
@@ -260,7 +260,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 					if (x != other.baddieID.x)
 						other.baddieID.image_xscale = -sign(other.baddieID.x - x);
 					image_index = 0;
-					other.baddieID.state = 138;
+					other.baddieID.state = states.stun;
 					if (other.baddieID.stunned < 100)
 						other.baddieID.stunned = 100;
 					if (key_jump2)

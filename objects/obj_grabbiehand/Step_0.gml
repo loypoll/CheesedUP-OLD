@@ -19,7 +19,7 @@ switch (state)
 			image_xscale = sign(hsp);
 		if (grounded)
 		{
-			state = 138;
+			state = states.stun;
 			stunned = 50;
 			hsp = 0;
 			vsp = 0;

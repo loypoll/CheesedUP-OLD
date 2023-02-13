@@ -9,7 +9,7 @@ switch (state)
 			sprite_index = spr_pepbat_idle;
 			if (targetplayer.x > (x - 150) && targetplayer.x < (x + 150) && targetplayer.y > y && targetplayer.y < (y + 200))
 			{
-				state = 134;
+				state = states.walk;
 				hit = false;
 			}
 		}
@@ -36,7 +36,7 @@ switch (state)
 			}
 		}
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
 	case states.turn:
@@ -94,19 +94,19 @@ switch (state)
 		scr_enemy_staggered();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (sprite_index == spr_pepbat_move && floor(image_index) == 3 && sfxcooldown == 0)
 {

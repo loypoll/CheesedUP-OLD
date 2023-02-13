@@ -1,4 +1,4 @@
-if (other.id != baddieID && other.state != 5 && other.state != 138)
+if (other.id != baddieID && other.state != 5 && other.state != states.stun)
 {
 	with (other)
 	{

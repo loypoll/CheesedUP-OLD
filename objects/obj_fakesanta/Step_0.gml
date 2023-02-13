@@ -98,13 +98,13 @@ if (activated == 1)
 		{
 		}
 		if (ii == (image_number - 1))
-			state = 134;
+			state = states.walk;
 	}
 	if (flash == 1 && alarm[2] <= 0)
 		alarm[2] = 0.15 * room_speed;
 	if (state != 4)
 		depth = 0;
-	if (state != 138)
+	if (state != states.stun)
 		thrown = false;
 	if (fmod_event_instance_is_playing(global.snd_fakesanta))
 		fmod_event_instance_set_3d_attributes(global.snd_fakesanta, x, y);

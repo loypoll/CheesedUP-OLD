@@ -80,7 +80,7 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_dynamite();
 		break;
-	case 128:
+	case states.charge:
 		grav = 0.5;
 		boss_vigilante_charge();
 		break;

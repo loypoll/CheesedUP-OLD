@@ -15,7 +15,7 @@ if (state != 4)
 					other.vsp = -5;
 					other.hsp = -other.image_xscale * 3;
 					instance_create(x, y + 50, obj_stompeffect);
-					other.state = 138;
+					other.state = states.stun;
 					stompAnim = true;
 					other.image_index = 0;
 					vsp = -14;
@@ -26,7 +26,7 @@ if (state != 4)
 					other.vsp = -5;
 					other.hsp = -other.image_xscale * 3;
 					instance_create(x, y + 50, obj_stompeffect);
-					other.state = 138;
+					other.state = states.stun;
 					stompAnim = true;
 					other.image_index = 0;
 					vsp = -9;
@@ -47,7 +47,7 @@ if (state != 4)
 			machpunchAnim = true;
 			if (x != other.x)
 				other.image_xscale = -sign(other.x - x);
-			other.state = 138;
+			other.state = states.stun;
 			image_index = 0;
 			state = 91;
 		}
@@ -58,7 +58,7 @@ if (state != 4)
 			other.hsp = xscale;
 			other.image_index = 0;
 			other.stunned = 200;
-			other.state = 138;
+			other.state = states.stun;
 			machpunchAnim = true;
 			if (!grounded && state != 108)
 			{
@@ -76,7 +76,7 @@ if (state != 4)
 			if (!grounded && state != 108)
 				vsp = -10;
 		}
-		if (attacking == 0 && (state != 91 && state != 107) && !(y < other.y) && grabbing == 0 && other.state != 138)
+		if (attacking == 0 && (state != 91 && state != 107) && !(y < other.y) && grabbing == 0 && other.state != states.stun)
 		{
 			if (x != other.x)
 			{

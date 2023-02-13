@@ -23,6 +23,6 @@ switch (state)
 		if (stuntouchbuffer > 0)
 			stuntouchbuffer--;
 		else
-			state = 134;
+			state = states.walk;
 		break;
 }

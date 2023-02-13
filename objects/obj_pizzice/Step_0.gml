@@ -52,7 +52,7 @@ switch (state)
 			if (shot <= 0)
 			{
 				bombreset = 180;
-				state = 138;
+				state = states.stun;
 				stunned = 100;
 				image_speed = 0.35;
 				sprite_index = stunfallspr;
@@ -75,17 +75,17 @@ switch (state)
 		scr_enemy_ghostpossess();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (bombreset > 0 && state != 138)
+if (bombreset > 0 && state != states.stun)
 	bombreset--;
 else if (state == 134 && distance_to_object(obj_player) < 250)
 {
@@ -97,7 +97,7 @@ else if (state == 134 && distance_to_object(obj_player) < 250)
 }
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

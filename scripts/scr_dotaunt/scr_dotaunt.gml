@@ -1,6 +1,6 @@
 function scr_dotaunt()
 {
-	if ((key_taunt2 || input_finisher_buffer > 0 || (state == 84 && key_up && supercharged)) && !skateboarding)
+	if ((key_taunt2 || input_finisher_buffer > 0 || (state == states.backbreaker && key_up && supercharged)) && !skateboarding)
 	{
 		input_finisher_buffer = 0;
 		pistolanim = -4;
@@ -18,14 +18,14 @@ function scr_dotaunt()
 		if (!finisher)
 		{
 			taunttimer = 20;
-			if (state != 84 && sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4 && sprite_index != spr_player_ratmountsupertaunt)
+			if (state != states.backbreaker && sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4 && sprite_index != spr_player_ratmountsupertaunt)
 			{
 				tauntstoredmovespeed = movespeed;
 				tauntstoredvsp = vsp;
 				tauntstoredsprite = sprite_index;
 				tauntstoredstate = state;
 			}
-			state = 84;
+			state = states.backbreaker;
 			scr_create_parryhitbox();
 			if (supercharged && key_up)
 			{

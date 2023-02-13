@@ -32,7 +32,7 @@ if (!instance_exists(obj_fadeout) && state != 217 && other.state != 146 && other
 		{
 			x = xstart;
 			y = ystart;
-			state = 134;
+			state = states.walk;
 		}
 		x = xstart;
 		y = ystart;

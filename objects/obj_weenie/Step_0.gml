@@ -1,8 +1,8 @@
 if (room == rm_editor)
 	exit;
-if (state != 138 && state != 5)
+if (state != states.stun && state != 5)
 	stunstate = 0;
-else if (state == 138)
+else if (state == states.stun)
 {
 	if (stunstate == 0 && stunned > 50 && grounded)
 	{
@@ -61,7 +61,7 @@ switch (state)
 		if (stuntimer > 0)
 			stuntimer--;
 		else
-			state = 138;
+			state = states.stun;
 		if (!instance_exists(hitboxID))
 		{
 			hitboxID = instance_create(x, y, obj_weeniehitbox);
@@ -69,20 +69,20 @@ switch (state)
 		}
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 scr_scareenemy();
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

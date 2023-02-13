@@ -172,13 +172,13 @@ switch state
         break
 }
 
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
     birdcreated = 1
     with (instance_create(x, y, obj_enemybird))
         ID = other.id
 }
-if (state != 134 && state != 206)
+if (state != states.walk && state != 206)
     attract_player = 0
 var _dis = 300
 if (state == 134 && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != 292 && obj_player1.state != 119 && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
@@ -223,11 +223,11 @@ if (state == 134 && obj_player1.isgustavo && !obj_player1.cutscene && obj_player
         state = 191
     }
 }
-if (state != 138)
+if (state != states.stun)
     birdcreated = 0
 if (flash == 1 && alarm[2] <= 0)
     alarm[2] = (0.15 * room_speed)
 if (state != 4)
     depth = 0
-if (state != 138)
+if (state != states.stun)
     thrown = 0

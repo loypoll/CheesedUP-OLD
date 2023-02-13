@@ -76,7 +76,7 @@ switch (state)
 			instance_destroy(hitboxID);
 		if (floor(image_index) == (image_number - 1))
 		{
-			state = 134;
+			state = states.walk;
 			instance_destroy(hitboxID);
 			cooldown = 100;
 		}
@@ -109,21 +109,21 @@ switch (state)
 		scr_enemy_ghostpossess();
 		break;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state == 138 && fmod_event_instance_is_playing(snd))
+if (state == states.stun && fmod_event_instance_is_playing(snd))
 	fmod_event_instance_stop(snd);
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

@@ -1,3 +1,3 @@
-if (other.thrown && state != 138)
+if (other.thrown && state != states.stun)
 {
 }

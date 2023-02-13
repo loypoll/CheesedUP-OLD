@@ -48,7 +48,7 @@ switch (state)
 if (bombreset > 0)
 	bombreset--;
 scr_scareenemy();
-if (state != 134 && object_index != obj_farmerbaddie2 && object_index != obj_farmerbaddie3)
+if (state != states.walk && object_index != obj_farmerbaddie2 && object_index != obj_farmerbaddie3)
 	idle = false;
 if (state == 134)
 {
@@ -112,7 +112,7 @@ else if (state == 128)
 	if (attackspeed <= 0)
 	{
 		cooldown = 60;
-		state = 134;
+		state = states.walk;
 		sprite_index = walkspr;
 	}
 	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope))
@@ -123,19 +123,19 @@ if (state != 128 && hitboxID != -4 && instance_exists(hitboxID))
 	instance_destroy(hitboxID);
 	hitboxID = -4;
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {

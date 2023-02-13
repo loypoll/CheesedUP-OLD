@@ -5,7 +5,7 @@ switch (state)
 	case states.idle:
 		scr_enemy_idle();
 		break;
-	case 128:
+	case states.charge:
 		scr_enemy_charge();
 		break;
 	case states.turn:
@@ -48,7 +48,7 @@ switch (state)
 var _b = false;
 if (bounce && grounded && vsp > 0)
 {
-	state = 138;
+	state = states.stun;
 	stunned = 100;
 	vsp = -8;
 	hsp = 0;
@@ -57,19 +57,19 @@ if (bounce && grounded && vsp > 0)
 	_b = true;
 	create_particle(x, y, particle.highjumpcloud1);
 }
-if (state == 138 && stunned > 100 && birdcreated == 0)
+if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
 	birdcreated = true;
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state != 138)
+if (state != states.stun)
 	birdcreated = false;
 if (state != 149)
 	scr_scareenemy();
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (hitboxcreate == 0 && state == 134 && grounded && vsp > 0 && state != 138)
+if (hitboxcreate == 0 && state == 134 && grounded && vsp > 0 && state != states.stun)
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_forkhitbox))
@@ -77,7 +77,7 @@ if (hitboxcreate == 0 && state == 134 && grounded && vsp > 0 && state != 138)
 }
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0 && ((grounded && vsp > 0) || _b))
 {

@@ -33,7 +33,7 @@ if (state == 134)
 	state = 126;
 if (state != 4)
 	depth = 0;
-if (state != 138)
+if (state != states.stun)
 	thrown = false;
 if (boundbox == 0)
 {
