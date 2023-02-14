@@ -18,7 +18,7 @@ switch (state)
 		{
 			create_particle(x, y, particle.genericpoofeffect);
 			scr_sound_multiple("event:/sfx/misc/collect", x, y);
-			state = 8;
+			state = states.transition;
 			cutscenebuffer = 70;
 			flamebuffer = 0;
 			orangealpha = 1.5;
@@ -89,7 +89,7 @@ switch (state)
 				if (music != -4)
 					fmod_event_instance_set_parameter(music.event, "state", 1, true);
 			}
-			playerid.state = 0;
+			playerid.state = states.normal;
 			playerid.landAnim = false;
 			playerid.flash = true;
 			instance_destroy();

@@ -2,13 +2,13 @@ with (other)
 {
 	if (character == "V")
 		scr_hurtplayer(id);
-	else if (!isgustavo && state != 16 && state != states.ghostpossess && state != 146 && state != 147 && state != states.gotoplayer)
+	else if (!isgustavo && state != states.ghost && state != states.ghostpossess && state != 146 && state != 147 && state != states.gotoplayer)
 	{
 		scr_losepoints();
 		create_transformation_tip(lang_get_value("ghosttip"), "ghost");
 		fmod_event_one_shot("event:/sfx/pep/ghostintro");
 		grav /= 2;
-		state = 16;
+		state = states.ghost;
 		movespeed = hsp;
 		ghostdash = false;
 		ghostpepper = 0;

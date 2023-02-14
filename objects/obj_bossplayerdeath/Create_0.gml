@@ -10,7 +10,7 @@ depth = -600;
 fade = 0;
 fade2 = 0;
 fade2start = false;
-state = 92;
+state = states.jump;
 with (obj_music)
 {
 	if (music != -4)

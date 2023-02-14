@@ -123,7 +123,7 @@ function boss_mrstick_shield()
 	if (shield_buffer > 0)
 		shield_buffer--;
 	else
-		state = 0;
+		state = states.normal;
 }
 function boss_mrstick_helicopterhat()
 {
@@ -167,7 +167,7 @@ function boss_mrstick_panicjump()
 		sprite_index = spr_mrstick_fall;
 	}
 	if (x > (target_x - 16) && x < (target_x + 16))
-		state = 0;
+		state = states.normal;
 	if (grounded)
 	{
 		if (movespeed < panicjumpspeed)

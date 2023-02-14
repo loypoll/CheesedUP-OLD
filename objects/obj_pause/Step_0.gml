@@ -8,7 +8,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	}
 	with (obj_player)
 	{
-		if ((state == 98 && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
+		if ((state == states.victory && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
 			_cutscenehandler = true;
 	}
 	with (obj_charswitch_intro)
@@ -25,7 +25,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
         if (!start)
             _cutscenehandler = true;
     }
-	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
+	if (obj_savesystem.state == states.normal && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
 		selected = 0;
 		fadein = true;

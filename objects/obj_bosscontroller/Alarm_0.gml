@@ -11,7 +11,7 @@ with (obj_bosskeyspawn)
 		{
 			if (state == 144)
 			{
-				state = 0;
+				state = states.normal;
 				isgustavo = false;
 			}
 		}
@@ -25,7 +25,7 @@ with (obj_bosskeyspawn)
 	{
 		with (other)
 		{
-			state = 98;
+			state = states.victory;
 			with (obj_hpeffect)
 				spd = 16;
 		}

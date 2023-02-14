@@ -42,7 +42,7 @@ if (active && sprite_index != spr_secretportal_open && !instance_exists(obj_jump
 	if (!touched)
 	{
 		other.superchargedeffectid = -4;
-		if (other.state != 47 && other.state != 38 && other.state != 49 && other.state != 10)
+		if (other.state != 47 && other.state != states.knightpepslopes && other.state != states.knightpepbump && other.state != states.firemouth)
 		{
 			if (!other.isgustavo)
 				other.sprite_index = other.spr_hurt;
@@ -50,10 +50,10 @@ if (active && sprite_index != spr_secretportal_open && !instance_exists(obj_jump
 				other.sprite_index = spr_player_ratmounthurt;
 			other.image_speed = 0.35;
 		}
-		if (other.state == 38)
+		if (other.state == states.knightpepslopes)
 		{
 			other.sprite_index = other.spr_knightpepfall;
-			other.state = 47;
+			other.state = states.knightpep;
 			other.hsp = 0;
 			other.vsp = 0;
 		}

@@ -15,7 +15,7 @@ if (global.fill <= 0 && global.panic == true && !global.tutorial_room && !instan
 			instance_destroy(obj_fadeout);
 			targetDoor = "A";
 			room = timesuproom;
-			state = 64;
+			state = states.timesup;
 			sprite_index = spr_Timesup;
 			image_index = 0;
 			backtohubroom = 739;

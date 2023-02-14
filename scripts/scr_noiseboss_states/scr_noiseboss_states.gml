@@ -444,7 +444,7 @@ function boss_noise_jump()
 	}
 	if (grounded)
 	{
-		state = 0;
+		state = states.normal;
 		if (slidejump == 2)
 		{
 			slidejump = 0;

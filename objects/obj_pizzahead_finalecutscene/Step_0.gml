@@ -181,7 +181,7 @@ switch (state)
 		{
 			x = hitX;
 			y = hitY;
-			state = 92;
+			state = states.jump;
 		}
 		break;
 	case 76:

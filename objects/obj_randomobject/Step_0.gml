@@ -43,10 +43,10 @@ switch (state)
 					instance_destroy();
 					with (playerid)
 					{
-						state = 16;
+						state = states.ghost;
 						visible = true;
 					}
-					state = 0;
+					state = states.normal;
 				}
 				break;
 		}

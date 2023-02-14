@@ -1,4 +1,4 @@
-if (state != 147 && state != 84)
+if (state != 147 && state != states.backbreaker)
 	exit;
 with (other)
 {

@@ -13,7 +13,7 @@ if (place_meeting(x, y - 1, obj_player))
 					sprite_index = spr_scaredjump1;
 					image_index = 0;
 					image_speed = 0.35;
-					state = 9;
+					state = states.fireass;
 					movespeed = hsp;
 					vsp = -14;
 					instance_create(x, y + 20, obj_piranneapplewater);

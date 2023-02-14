@@ -79,7 +79,7 @@ if (_destroy)
 	create_particle(x, y, particle.genericpoofeffect);
 	with (playerid)
 	{
-		state = 16;
+		state = states.ghost;
 		visible = true;
 	}
 }

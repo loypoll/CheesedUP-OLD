@@ -109,7 +109,7 @@ if (prevhp != elitehit)
 	prevhp = elitehit;
 	sprite_index = spr_fakepeppino_deform;
 	image_index = 0;
-	state = 8;
+	state = states.transition;
 	hsp = 0;
 }
 if (state == states.stun && stunned > 100 && birdcreated == 0)

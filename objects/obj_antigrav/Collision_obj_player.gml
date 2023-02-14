@@ -1,7 +1,7 @@
 var p = other.id;
 with (other)
 {
-	if (state != 265 && state != 84 && state != states.chainsaw && other.cooldown == 0)
+	if (state != 265 && state != states.backbreaker && state != states.chainsaw && other.cooldown == 0)
 	{
 		create_transformation_tip(lang_get_value("antigravtip"), "antigrav");
 		if (state == 184 || state == 185)

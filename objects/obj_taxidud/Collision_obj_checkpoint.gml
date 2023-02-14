@@ -5,7 +5,7 @@ if (playerid.visible == 0)
 	with (obj_player1)
 	{
 		fmod_event_one_shot("event:/sfx/misc/taxibeep");
-		state = 0;
+		state = states.normal;
 		instance_create(x, y, obj_genericpoofeffect);
 		cutscene = false;
 		if (isgustavo)
@@ -18,7 +18,7 @@ if (playerid.visible == 0)
 	{
 		with (obj_player2)
 		{
-			state = 0;
+			state = states.normal;
 			cutscene = false;
 			if (isgustavo)
 				state = 191;

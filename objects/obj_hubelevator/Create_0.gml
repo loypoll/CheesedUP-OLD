@@ -1,4 +1,4 @@
-state = 0;
+state = states.normal;
 hub_array[0] = [624, "RECEPTION"];
 hub_array[1] = [626, "PIZZA TOWER LOBBY"];
 hub_array[2] = [639, "FARMLAND"];

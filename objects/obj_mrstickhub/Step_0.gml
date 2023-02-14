@@ -9,10 +9,10 @@ switch (state)
 			with (bossdoorID)
 			{
 				vsp = -5;
-				state = 92;
+				state = states.jump;
 				event_perform(ev_other, ev_room_start);
 			}
-			state = 92;
+			state = states.jump;
 		}
 		break;
 	case states.jump:

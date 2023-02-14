@@ -1,23 +1,23 @@
-if (!instance_exists(bossID) && bossID != -4 && state != 98 && !fakedeath)
+if (!instance_exists(bossID) && bossID != -4 && state != states.victory && !fakedeath)
 {
-	state = 98;
+	state = states.victory;
 	alarm[1] = room_speed * 4;
 }
 if (player_hp <= 0)
 {
 	fakedeath = false;
-	if (state != 8 && state != 89)
+	if (state != states.transition && state != states.gameover)
 	{
 		if (endroundfunc != -4)
 			endroundfunc();
 		depth = obj_player1.depth + 1;
-		state = 8;
+		state = states.transition;
 		with (bossID)
 			player_destroy(lastplayerid);
 	}
-	else if (bossID.state != states.chainsaw && state != 89)
+	else if (bossID.state != states.chainsaw && state != states.gameover)
 	{
-		state = 89;
+		state = states.gameover;
 		alarm[1] = room_speed * 4;
 	}
 }
@@ -26,7 +26,7 @@ if (instance_exists(bossID))
 	if (bossID.destroyed && !fakedeath)
 	{
 		depth = bossID.depth + 1;
-		state = 8;
+		state = states.transition;
 	}
 }
 switch (state)
@@ -62,14 +62,14 @@ switch (state)
 			state = 145;
 		else
 		{
-			state = 0;
+			state = states.normal;
 			with (obj_player)
 			{
 				if (object_index != obj_player2 || global.coop)
-					state = 0;
+					state = states.normal;
 			}
 			with (par_boss)
-				state = 0;
+				state = states.normal;
 		}
 		break;
 	case 145:
@@ -140,14 +140,14 @@ switch (state)
 			round_timer = round_timermax;
 			bell_sprite = spr_bosstimer_bell;
 			alarm[0] = 1;
-			state = 0;
+			state = states.normal;
 			with (obj_player)
 			{
 				if (object_index == obj_player1 || global.coop)
-					state = 0;
+					state = states.normal;
 			}
 			with (par_boss)
-				state = 0;
+				state = states.normal;
 		}
 		break;
 	case 0:
@@ -241,7 +241,7 @@ switch (state)
 bell_index += 0.35;
 portrait1_index += 0.35;
 portrait2_index += 0.35;
-if (state == 0 && instance_exists(bossID))
+if (state == states.normal && instance_exists(bossID))
 {
 	if (obj_player1.state == states.hit || obj_player1.state == 156)
 		portrait1_sprite = portrait1_hurt;

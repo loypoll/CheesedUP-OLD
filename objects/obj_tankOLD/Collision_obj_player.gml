@@ -23,7 +23,7 @@ if (state != 141)
 					sprite_index = spr_stompprep;
 			}
 		}
-		if (y >= other.y && other.thrown == 0 && other.stuntouchbuffer == 0 && other.vsp > 0 && state != 106 && other.state != 141)
+		if (y >= other.y && other.thrown == 0 && other.stuntouchbuffer == 0 && other.vsp > 0 && state != states.bump && other.state != 141)
 		{
 			if (state != 51 && state != states.mach1 && state != 102)
 				movespeed = 0;
@@ -31,7 +31,7 @@ if (state != 141)
 			if (floor(_xs) == 0)
 				_xs = xscale;
 			hsp = 3 * _xs;
-			state = 106;
+			state = states.bump;
 			xscale = -_xs;
 			sprite_index = spr_bump;
 			vsp = -4;

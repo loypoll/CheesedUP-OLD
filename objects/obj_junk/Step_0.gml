@@ -1,7 +1,7 @@
 if (grounded && grabbed == 0 && !ratgrabbed)
 	thrown = false;
 if (!ratgrabbed)
-	state = 0;
+	state = states.normal;
 if (ratgrabbed && ratplayerid.ratgrabbedID != id)
 	ratgrabbed = false;
 if (grabbed == 1 && !ratgrabbed)
@@ -9,7 +9,7 @@ if (grabbed == 1 && !ratgrabbed)
 	image_xscale = -playerid.xscale;
 	grav = 0;
 	playerid.baddiegrabbedID = id;
-	if (playerid.state == states.finishingblow || playerid.state == states.grabbing || playerid.state == states.grab || playerid.state == 74 || playerid.state == 75 || playerid.state == 20)
+	if (playerid.state == states.finishingblow || playerid.state == states.grabbing || playerid.state == states.grab || playerid.state == 74 || playerid.state == 75 || playerid.state == states.tacklecharge)
 	{
 		grav = 0;
 		grounded = false;
@@ -29,7 +29,7 @@ if (grabbed == 1 && !ratgrabbed)
 	with (playerid)
 	{
 		move = key_left2 + key_right2;
-		if (!(state == states.finishingblow || state == states.grab || state == states.grabbing || state == 74 || state == 75 || state == 20 || state == 80 || state == states.superslam || state == 81 || state == 82 || state == 83))
+		if (!(state == states.finishingblow || state == states.grab || state == states.grabbing || state == 74 || state == 75 || state == states.tacklecharge || state == states.punch || state == states.superslam || state == 81 || state == 82 || state == 83))
 		{
 			other.grav = 0.5;
 			other.x = x;
@@ -149,7 +149,7 @@ if (grabbed == 1 && !ratgrabbed)
 			shake_mag_acc = 3 / room_speed;
 		}
 	}
-	if (playerid.state == 20)
+	if (playerid.state == states.tacklecharge)
 	{
 		x = playerid.x + (playerid.xscale * 15);
 		y = playerid.y;
@@ -246,7 +246,7 @@ if (place_meeting(x, y, obj_swordhitbox) && thrown == 0)
 		shake_mag = 3;
 		shake_mag_acc = 3 / room_speed;
 	}
-	state = 107;
+	state = states.hurt;
 	if (scr_solid(x, y))
 	{
 		x = playerid.x;

@@ -76,7 +76,7 @@ switch (state)
 					substate = 89;
 					with (obj_player)
 					{
-						state = 0;
+						state = states.normal;
 						landAnim = false;
 					}
 				}

@@ -4,7 +4,7 @@ if (hp <= 0 && state != 145 && state != 162)
 	if (!thrown && !destroyable)
 		boss_destroy(lastplayerid);
 }
-if ((state == states.mach1 || state == states.machslide || state == 102 || state == 82 || state == 80 || state == 166 || state == states.handstandjump) && alarm[0] <= 0)
+if ((state == states.mach1 || state == states.machslide || state == 102 || state == 82 || state == states.punch || state == 166 || state == states.handstandjump) && alarm[0] <= 0)
 	alarm[0] = 6;
 if (chooseparry_buffer > 0)
 	chooseparry_buffer--;
@@ -170,4 +170,4 @@ if (hitstate == 160 || state == 160)
 		}
 	}
 }
-attacking = state == 1 || state == states.mach1 || state == states.charge || state == 80 || state == 164 || state == 166 || state == 108 || state == 82 || state == states.handstandjump || state == 160 || state == 158 || state == 102;
+attacking = state == 1 || state == states.mach1 || state == states.charge || state == states.punch || state == 164 || state == 166 || state == states.freefall || state == 82 || state == states.handstandjump || state == 160 || state == 158 || state == 102;

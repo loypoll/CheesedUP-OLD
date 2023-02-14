@@ -6,7 +6,7 @@ function cutscene_gustavo_start()
 		if (id < _id)
 			instance_destroy();
 	}
-	if (!instance_exists(obj_fadeout) && obj_player1.state != 119 && obj_player1.state != states.comingoutdoor && obj_player1.state != 107)
+	if (!instance_exists(obj_fadeout) && obj_player1.state != 119 && obj_player1.state != states.comingoutdoor && obj_player1.state != states.hurt)
 	{
 		with (obj_player1)
 		{

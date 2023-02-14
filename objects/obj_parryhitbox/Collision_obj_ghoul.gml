@@ -1,4 +1,4 @@
-if (other.state == 80)
+if (other.state == states.punch)
 {
 	if (!collisioned)
 	{

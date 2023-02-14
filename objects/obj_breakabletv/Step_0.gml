@@ -13,7 +13,7 @@ if (place_meeting(x, y, obj_player))
 		if (state == 121)
 		{
 			hsp = -xscale * 3;
-			state = 106;
+			state = states.bump;
 			mach2 = 0;
 			image_index = 0;
 			vsp = -5;
@@ -26,7 +26,7 @@ if (grabbed == 1)
 	image_xscale = -obj_player.xscale;
 	grav = 0;
 	obj_player.baddiegrabbedID = id;
-	if (obj_player.state == states.grabbing || obj_player.state == states.grab || obj_player.state == 74 || obj_player.state == 75 || obj_player.state == 20)
+	if (obj_player.state == states.grabbing || obj_player.state == states.grab || obj_player.state == 74 || obj_player.state == 75 || obj_player.state == states.tacklecharge)
 	{
 		grounded = false;
 		x = obj_player.x;
@@ -45,7 +45,7 @@ if (grabbed == 1)
 	with (obj_player)
 	{
 		move = key_left2 + key_right2;
-		if (!(state == states.grab || state == states.grabbing || state == 74 || state == 75 || state == 20 || state == 80 || state == states.superslam || state == 81 || state == 82 || state == 83))
+		if (!(state == states.grab || state == states.grabbing || state == 74 || state == 75 || state == states.tacklecharge || state == states.punch || state == states.superslam || state == 81 || state == 82 || state == 83))
 		{
 			other.x = x;
 			other.y = y;
@@ -53,7 +53,7 @@ if (grabbed == 1)
 		}
 	}
 	hsp = 0;
-	if (obj_player.state == 80)
+	if (obj_player.state == states.punch)
 	{
 		instance_create(x + (obj_player.xscale * 30), y, obj_bumpeffect);
 		grabbed = false;
@@ -129,7 +129,7 @@ if (grabbed == 1)
 			shake_mag_acc = 3 / room_speed;
 		}
 	}
-	if (obj_player.state == 20)
+	if (obj_player.state == states.tacklecharge)
 	{
 		x = obj_player.x + (obj_player.xscale * 15);
 		y = obj_player.y;

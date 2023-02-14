@@ -7,7 +7,7 @@ switch (state)
 			image_xscale *= -1;
 		if (obj_player1.state == 111)
 		{
-			state = 92;
+			state = states.jump;
 			hsp = 0;
 			vsp = -12;
 			sprite_index = spr_meatball_dead;
@@ -17,7 +17,7 @@ switch (state)
 		break;
 	case states.jump:
 		if (grounded && vsp > 0)
-			state = 0;
+			state = states.normal;
 		break;
 }
 mask_index = spr_meatball_roll;

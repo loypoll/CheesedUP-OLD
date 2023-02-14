@@ -12,7 +12,7 @@ if (!place_meeting(x, y, obj_doorblocked))
 {
 	with (other)
 	{
-		if (key_up && !instance_exists(obj_jumpscare) && other.image_index == 1 && grounded && (state == 0 || state == states.mach1 || state == states.mach2 || state == states.pogo || state == 121 || state == 99) && ((character != "M" && y == (other.y + 50)) || (character == "M" && y == (other.y + 55))) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor && ((obj_player1.spotlight == 1 && object_index == obj_player1) || (obj_player1.spotlight == 0 && object_index == obj_player2)))
+		if (key_up && !instance_exists(obj_jumpscare) && other.image_index == 1 && grounded && (state == states.normal || state == states.mach1 || state == states.mach2 || state == states.pogo || state == 121 || state == states.Sjumpprep) && ((character != "M" && y == (other.y + 50)) || (character == "M" && y == (other.y + 55))) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor && ((obj_player1.spotlight == 1 && object_index == obj_player1) || (obj_player1.spotlight == 0 && object_index == obj_player2)))
 		{
 			obj_player1.lastroom = room;
 			obj_player2.lastroom = room;

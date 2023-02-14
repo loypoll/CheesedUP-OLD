@@ -1,9 +1,9 @@
 if (room == rm_editor)
 	exit;
 targetplayer = instance_nearest(x, y, obj_player);
-if (ceiling && (state == 100 || state == 80))
+if (ceiling && (state == states.crouch || state == states.punch))
 	grav = 0;
-else if (ceiling && (state != 100 && state != 80))
+else if (ceiling && (state != states.crouch && state != states.punch))
 	grav = 0.5;
 switch (state)
 {
@@ -15,7 +15,7 @@ switch (state)
 		break;
 	case states.walk:
 		ceiling = false;
-		state = 100;
+		state = states.crouch;
 		grav = 0.5;
 		break;
 	case states.land:
@@ -63,7 +63,7 @@ switch (state)
 		else if (floor(image_index) == (image_number - 1))
 		{
 			image_speed = 0.35;
-			state = 100;
+			state = states.crouch;
 			instance_destroy(hitboxID);
 			sprite_index = spr_hidden;
 		}
@@ -75,7 +75,7 @@ switch (state)
 			if (targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y < (y + 300) && targetplayer.y > (y - 300))
 			{
 				hidden = false;
-				state = 80;
+				state = states.punch;
 			}
 		}
 		else
@@ -84,7 +84,7 @@ switch (state)
 			if (cooldown > 0)
 				cooldown--;
 			else
-				state = 80;
+				state = states.punch;
 		}
 		break;
 }

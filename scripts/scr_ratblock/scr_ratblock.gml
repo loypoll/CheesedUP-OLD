@@ -13,7 +13,7 @@ function scr_ratblock_destroy()
 	{
 		if ((other.sprite_index == spr_rattumbleblock || other.sprite_index == spr_rattumbleblock_big) && sprite_index == spr_tumble && (place_meeting(x + 1, y, other) || place_meeting(x - 1, y, other)))
 			instance_destroy(other);
-		if (state != 11 && state != 52 && (!scr_transformationcheck() || state == 113) && (place_meeting(x + 1, y, other) || place_meeting(x - 1, y, other) || place_meeting(x, y + 1, other) || place_meeting(x, y - 1, other)))
+		if (state != states.mort && state != states.bombgrab && (!scr_transformationcheck() || state == 113) && (place_meeting(x + 1, y, other) || place_meeting(x - 1, y, other) || place_meeting(x, y + 1, other) || place_meeting(x, y - 1, other)))
 		{
 			switch (state)
 			{

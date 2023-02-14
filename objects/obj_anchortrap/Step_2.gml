@@ -15,7 +15,7 @@ switch (state)
 		{
 			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
 			create_particle(x, y, particle.landcloud);
-			state = 92;
+			state = states.jump;
 			with (obj_camera)
 			{
 				shake_mag = 5;
@@ -26,7 +26,7 @@ switch (state)
 	case states.jump:
 		y = Approach(y, ystart, 2);
 		if (y == ystart)
-			state = 0;
+			state = states.normal;
 		break;
 }
 if (state == states.jump && alarm[0] == -1)

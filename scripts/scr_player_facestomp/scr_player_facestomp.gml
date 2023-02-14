@@ -22,7 +22,7 @@ function scr_player_facestomp()
 		superslam = 0;
 	if (vsp > 15)
 	{
-		state = 108;
+		state = states.freefall;
 		superslam = 0;
 	}
 	if (grounded && (!place_meeting(x, y + 1, obj_destructibles) || place_meeting(x, y + 1, obj_metalblock)) && vsp > 0)

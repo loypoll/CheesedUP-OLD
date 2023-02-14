@@ -10,7 +10,7 @@ if (sprite_index == spr_peppinoswitch2 && floor(image_index) == (image_number - 
 		gustavodash = 0;
 		ratmount_movespeed = 8;
 		isgustavo = false;
-		state = 0;
+		state = states.normal;
 		jumpAnim = false;
 		sprite_index = spr_player_idle;
 		brick = false;

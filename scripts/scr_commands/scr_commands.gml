@@ -21,7 +21,7 @@ function scr_undo_command()
 		if (b.state == 1)
 		{
 			b.Undo();
-			b.state = 0;
+			b.state = states.normal;
 		}
 		if (undo < ds_list_size(commandlist))
 			undo++;

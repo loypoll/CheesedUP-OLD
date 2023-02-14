@@ -53,7 +53,7 @@ function tv_push_prompt()
 				break;
 		}
 		if (play)
-			state = 0;
+			state = states.normal;
 	}
 }
 function tv_push_prompt_array()

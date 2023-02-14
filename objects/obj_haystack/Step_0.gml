@@ -8,7 +8,7 @@ if (sprite_index != spr_haystackburning && sprite_index != spr_haystackburningup
 	}
 	with (obj_player)
 	{
-		if ((state == 10 && (place_meeting(x + hsp, y, other) || place_meeting(x, y + 1, other))) || (state == 9 && place_meeting(x, y + 1, other)))
+		if ((state == states.firemouth && (place_meeting(x + hsp, y, other) || place_meeting(x, y + 1, other))) || (state == states.fireass && place_meeting(x, y + 1, other)))
 			other.sprite_index = spr_haystackburningup;
 	}
 }
@@ -56,17 +56,17 @@ else if (sprite_index == spr_haystackburning)
 	playerid = instance_place(x, y - 1, obj_player);
 	with (playerid)
 	{
-		if (state != 9 && state != 47)
+		if (state != states.fireass && state != 47)
 		{
 			if (character == "V")
 				scr_hurtplayer(id);
 			else if (scr_transformationcheck())
 			{
 				scr_losepoints();
-				if (state != 9)
+				if (state != states.fireass)
 				{
 				}
-				state = 9;
+				state = states.fireass;
 				image_index = 0;
 				vsp = -5;
 				sprite_index = spr_fireass;
@@ -74,7 +74,7 @@ else if (sprite_index == spr_haystackburning)
 		}
 	}
 }
-if (state == 8)
+if (state == states.transition)
 {
 	hsp = movespeed * dir;
 	if (place_meeting(x + sign(hsp), y, obj_solid) && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
@@ -83,6 +83,6 @@ if (state == 8)
 	{
 		x = x_to;
 		hsp = 0;
-		state = 0;
+		state = states.normal;
 	}
 }

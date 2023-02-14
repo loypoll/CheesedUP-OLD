@@ -485,7 +485,7 @@ add_achievement_notify("medieval3", function(data) {},
 function(data)
 {
 	var type = data[0];
-	if (type == 2 && global.leveltosave == "medieval" && (obj_player1.state == 5 || (obj_player1.tauntstoredstate == 5 && obj_player1.state == states.chainsaw)) && (obj_player1.sprite_index == obj_player1.spr_tumblestart || obj_player1.sprite_index == obj_player1.spr_tumbleend || obj_player1.sprite_index == obj_player1.spr_tumble))
+	if (type == 2 && global.leveltosave == "medieval" && (obj_player1.state == states.tumble || (obj_player1.tauntstoredstate == 5 && obj_player1.state == states.chainsaw)) && (obj_player1.sprite_index == obj_player1.spr_tumblestart || obj_player1.sprite_index == obj_player1.spr_tumbleend || obj_player1.sprite_index == obj_player1.spr_tumble))
 		achievement_unlock(name, "Spherical", spr_achievement_medieval, 2);
 });
 
@@ -632,7 +632,7 @@ add_achievement_notify("graveyard2", function(data)
 	var arr = data[1];
 	if (global.leveltosave == "graveyard")
 	{
-		if (type == 2 && (obj_player1.state == 16 || (obj_player1.state == states.chainsaw && obj_player1.tauntstoredstate == 16)))
+		if (type == 2 && (obj_player1.state == states.ghost || (obj_player1.state == states.chainsaw && obj_player1.tauntstoredstate == 16)))
 		{
 			achievement_get_variable("grav2count").value += 1;
 			if (achievement_get_variable("grav2count").value >= 20)
@@ -670,7 +670,7 @@ add_achievement_notify("farm1", function(data)
 	{
 		var n = achievement_get_variable("f1_count");
 		var r = room_get_name(arr[1]);
-		if (obj_player.state == 84 && (string_letters(r) == "farm" || string_letters(r) == "farmb"))
+		if (obj_player.state == states.backbreaker && (string_letters(r) == "farm" || string_letters(r) == "farmb"))
 		{
 			n.value++;
 			if (n.value >= 3)
@@ -799,7 +799,7 @@ add_achievement_update("forest1", 5, -4, function(data)
 		var b = false;
 		with (obj_player)
 		{
-			if (!b && state == 84 && distance_to_object(obj_beedeco) < 300)
+			if (!b && state == states.backbreaker && distance_to_object(obj_beedeco) < 300)
 				b = true;
 		}
 		if (b)

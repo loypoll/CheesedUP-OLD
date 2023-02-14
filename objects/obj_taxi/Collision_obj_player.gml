@@ -1,6 +1,6 @@
 with (other)
 {
-	if (key_up && grounded && ((state == 191 && brick) || state == 0 || state == states.mach1 || state == states.mach2 || state == states.pogo || state == 121 || state == 99) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_taxidud) && !instance_exists(obj_fadeout) && state != 119 && ((obj_player1.spotlight == 1 && object_index == obj_player1) || (obj_player1.spotlight == 0 && object_index == obj_player2)))
+	if (key_up && grounded && ((state == 191 && brick) || state == states.normal || state == states.mach1 || state == states.mach2 || state == states.pogo || state == 121 || state == states.Sjumpprep) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_taxidud) && !instance_exists(obj_fadeout) && state != 119 && ((obj_player1.spotlight == 1 && object_index == obj_player1) || (obj_player1.spotlight == 0 && object_index == obj_player2)))
 	{
 		with (other)
 		{

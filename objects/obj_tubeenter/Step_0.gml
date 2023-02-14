@@ -30,7 +30,7 @@ if (state == states.tube)
 			with (other)
 			{
 				playerid = -1;
-				state = 0;
+				state = states.normal;
 				shot = false;
 			}
 		}

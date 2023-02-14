@@ -3,7 +3,7 @@ switch (state)
 	case states.idle:
 		if (selected)
 		{
-			state = 8;
+			state = states.transition;
 			sprite_index = transspr;
 			image_index = 0;
 		}
@@ -15,7 +15,7 @@ switch (state)
 			{
 				if (fmod_event_instance_is_playing(staticsnd))
 					fmod_event_instance_stop(staticsnd, true);
-				state = 0;
+				state = states.normal;
 				sprite_index = selectedspr;
 				if (!global.game_started[trigger])
 				{
@@ -37,7 +37,7 @@ switch (state)
 		{
 			sprite_index = transspr;
 			image_index = 2;
-			state = 8;
+			state = states.transition;
 		}
 		break;
 }

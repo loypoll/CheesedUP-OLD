@@ -1,8 +1,8 @@
 if (playerid > -1)
 	exit;
-if (state != 0)
+if (state != states.normal)
 	exit;
-if (other.state == 107)
+if (other.state == states.hurt)
 	exit;
 if (other.state == states.gotoplayer)
 	exit;

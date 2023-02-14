@@ -20,7 +20,7 @@ with (obj_player1)
 			{
 				image_index = 0;
 				sprite_index = spr_player_outofpizza3;
-				other.state = 0;
+				other.state = states.normal;
 				other.alarm[0] = 200;
 				other.alarm[2] = 150;
 			}

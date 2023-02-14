@@ -208,7 +208,7 @@ function scr_boss_genericintro()
 			spotlightID.expand = true;
 		with (obj_player)
 		{
-			state = 0;
+			state = states.normal;
 			sprite_index = spr_idle;
 		}
 	}

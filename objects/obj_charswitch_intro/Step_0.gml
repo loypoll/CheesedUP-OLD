@@ -3,7 +3,7 @@ switch (state)
 	case 8:
 		if (floor(image_index) == (image_number - 1))
 		{
-			state = 0;
+			state = states.normal;
 			introbuffer = 50;
 		}
 		break;

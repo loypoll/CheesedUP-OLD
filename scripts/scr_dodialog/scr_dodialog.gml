@@ -10,7 +10,7 @@ function do_dialog()
 	}
 	with (obj_player)
 	{
-		if (state == 17)
+		if (state == states.ghostpossess)
 		{
 			visible = true;
 			with (possessID)

@@ -1,4 +1,4 @@
-if ((other.state == states.handstandjump || other.state == 80) && other.grounded == 1)
+if ((other.state == states.handstandjump || other.state == states.punch) && other.grounded == 1)
 {
 	instance_create(x + (obj_player1.xscale * 40), y, obj_punchdust);
 	with (other)

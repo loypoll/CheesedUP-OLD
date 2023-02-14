@@ -15,7 +15,7 @@ function scr_player_trickjump()
 	}
 	if (scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
-		state = 106;
+		state = states.bump;
 		image_index = 0;
 		fmod_event_one_shot_3d("event:/sfx/pep/splat", x, y);
 		sprite_index = spr_player_wallsplat;

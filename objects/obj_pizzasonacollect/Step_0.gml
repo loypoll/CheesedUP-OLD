@@ -26,7 +26,7 @@ switch (state)
 			}
 			else if (!instance_exists(onebyoneID))
 			{
-				state = 8;
+				state = states.transition;
 				sprite_index = transitionspr;
 				image_index = 0;
 			}
@@ -35,7 +35,7 @@ switch (state)
 	case 8:
 		if (floor(image_index) == (image_number - 1))
 		{
-			state = 92;
+			state = states.jump;
 			sprite_index = idlespr;
 			movespeed = 4;
 			showtext = false;

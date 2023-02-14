@@ -70,9 +70,9 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 var player = instance_nearest(x, y, obj_player);
 var check = player.x > (x - 300) && player.x < (x + 300);
-if (state == states.walk && check && y <= (player.y + 60) && y >= (player.y - 60) && state != 80 && chargebuffer <= 0)
+if (state == states.walk && check && y <= (player.y + 60) && y >= (player.y - 60) && state != states.punch && chargebuffer <= 0)
 {
-	state = 80;
+	state = states.punch;
 	flash = true;
 	sprite_index = spr_weeniesquire_charge;
 	chargebuffer = 80;
@@ -86,7 +86,7 @@ if (state == states.walk && check && y <= (player.y + 60) && y >= (player.y - 60
 	if (x != player.x)
 		image_xscale = sign(player.x - x);
 }
-if (state != 80 && chargebuffer > 0)
+if (state != states.punch && chargebuffer > 0)
 	chargebuffer--;
 if (state != states.grabbed)
 	depth = 0;

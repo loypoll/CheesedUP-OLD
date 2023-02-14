@@ -4,7 +4,7 @@ switch (state)
 		add_y += 8;
 		if (add_y >= 0)
 		{
-			state = 8;
+			state = states.transition;
 			y += 20;
 		}
 		break;
@@ -20,6 +20,6 @@ switch (state)
 		if (global.pigtotal_add > 0)
 			global.pigtotal_add--;
 		else
-			state = 0;
+			state = states.normal;
 		break;
 }

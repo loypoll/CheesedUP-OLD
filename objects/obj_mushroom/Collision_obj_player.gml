@@ -5,16 +5,16 @@ if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state
 	{
 		grounded = false;
 		if (state == states.machslide)
-			state = 92;
-		if (state == 0 || state == 108)
-			state = 92;
-		if (state == 37)
+			state = states.jump;
+		if (state == states.normal || state == states.freefall)
+			state = states.jump;
+		if (state == states.climbwall)
 			state = states.mach2;
 	}
 	if (sprite_index != spr_bigmushroom_bounce || image_index > 5)
 		fmod_event_one_shot_3d("event:/sfx/misc/mushroombounce", x, y);
 	sprite_index = spr_bigmushroom_bounce;
-	if (other.state == states.jump || other.state == 0)
+	if (other.state == states.jump || other.state == states.normal)
 	{
 		other.sprite_index = other.spr_machfreefall;
 		other.image_index = 0;

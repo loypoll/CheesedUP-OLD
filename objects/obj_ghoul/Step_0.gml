@@ -19,7 +19,7 @@ switch (state)
 				cooldown--;
 			else if (t)
 			{
-				state = 8;
+				state = states.transition;
 				sprite_index = spr_ghoul_attackstart;
 				image_index = 0;
 				attack_y = y;
@@ -53,7 +53,7 @@ switch (state)
 		if (floor(image_index) == (image_number - 1))
 		{
 			fmod_event_one_shot_3d("event:/sfx/enemies/minijohnpunch", x, y);
-			state = 80;
+			state = states.punch;
 			attackvsp = 11;
 			attack_y = y;
 			sprite_index = spr_ghoul_attack;

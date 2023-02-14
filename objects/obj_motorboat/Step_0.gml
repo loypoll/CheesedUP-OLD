@@ -3,7 +3,7 @@ switch (state)
 	case 0:
 		with (obj_player)
 		{
-			if (other.state != states.walk && state == 0 && vsp > 0 && key_up && place_meeting(x, y + 1, other))
+			if (other.state != states.walk && state == states.normal && vsp > 0 && key_up && place_meeting(x, y + 1, other))
 			{
 				state = 146;
 				hsp = 0;
@@ -28,8 +28,8 @@ switch (state)
 		if (place_meeting(x + dir, y, obj_solid))
 		{
 			with (playerid)
-				state = 0;
-			state = 0;
+				state = states.normal;
+			state = states.normal;
 			with (obj_camera)
 			{
 				shake_mag = 5;

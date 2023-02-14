@@ -1,4 +1,4 @@
-if (state == 8)
+if (state == states.transition)
 {
 	var ty = SCREEN_HEIGHT / 2;
 	y -= movespeed;
@@ -7,7 +7,7 @@ if (state == 8)
 	if (abs(y - ty) < 16)
 	{
 		y = ty;
-		state = 0;
+		state = states.normal;
 	}
 }
 else if (state == 135)

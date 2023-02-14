@@ -1,4 +1,4 @@
-if (state == 0)
+if (state == states.normal)
 {
 	if (spawnbuffer > 0)
 	{
@@ -25,7 +25,7 @@ if (state == 0)
 		var b = true;
 		with (obj_fakepepclone)
 		{
-			if (spawnerID == other.id && state != 99)
+			if (spawnerID == other.id && state != states.Sjumpprep)
 				b = false;
 		}
 		if (b)

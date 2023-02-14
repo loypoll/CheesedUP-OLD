@@ -13,7 +13,7 @@ switch (state)
 	case 8:
 		sprite_index = spr_kingghost_dash;
 		if (!instance_exists(trapid) || (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap))
-			state = 0;
+			state = states.normal;
 		if (instance_exists(trapid))
 		{
 			var xto = trapid.x + trapid.xoffset;
@@ -28,7 +28,7 @@ switch (state)
 	case 141:
 		if (!instance_exists(trapid) || (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap && (trapid.object_index != obj_pinballtrap || trapid.sprite_index != spr_kingghost_pinball3)))
 		{
-			state = 0;
+			state = states.normal;
 			with (trapid)
 			{
 				switch (object_index)
@@ -65,16 +65,16 @@ switch (state)
                         }
                         break
                     case obj_knighttrap:
-                        if (cooldown == 0 && state != 80 && obj_player1.x > x - 200 && obj_player1.x < x + 200 && obj_player1.y > y - 100 && obj_player1.y < y + 100)
+                        if (cooldown == 0 && state != states.punch && obj_player1.x > x - 200 && obj_player1.x < x + 200 && obj_player1.y > y - 100 && obj_player1.y < y + 100)
                         {
-                            state = 80
+                            state = states.punch
                             sprite_index = spr_kingghost_spike3
                             fmod_event_one_shot_3d("event:/sfx/enemies/pizzardelectricity", x, y)
                             image_index = 0
                             attackbuffer = 30
                             cooldown = 50
                         }
-                        if (state == 0)
+                        if (state == states.normal)
                             sprite_index = spr_kingghost_spike2
                         break
                     case obj_tvtrap:
@@ -97,7 +97,7 @@ if (alpha)
 if (room == rank_room)
 	instance_destroy();
 fmod_event_instance_set_3d_attributes(snd_move, x, y);
-if (state == 0)
+if (state == states.normal)
 {
 	if (!fmod_event_instance_is_playing(snd_loop))
 		fmod_event_instance_play(snd_loop);

@@ -1,6 +1,6 @@
-if (state != 8 && state != 146)
+if (state != states.transition && state != 146)
 	draw_self();
-else if (state == 8)
+else if (state == states.transition)
 {
 	draw_set_alpha(orangealpha);
 	with (playerid)

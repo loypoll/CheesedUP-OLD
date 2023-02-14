@@ -1,14 +1,14 @@
-if (visible == 1 && obj_player.state != 7)
+if (visible == 1 && obj_player.state != states.ejected)
 {
 	if (place_meeting(x, y - 1, obj_player1))
 	{
 		with (obj_player1)
 		{
-			if (state == 47)
-				state = 38;
-			else if (state != 38)
+			if (state == states.knightpep)
+				state = states.knightpepslopes;
+			else if (state != states.knightpepslopes)
 			{
-				state = 94;
+				state = states.slipnslide;
 				sprite_index = spr_slipnslide;
 			}
 			if (movespeed < 12)
@@ -19,11 +19,11 @@ if (visible == 1 && obj_player.state != 7)
 	{
 		with (obj_player2)
 		{
-			if (state == 47)
-				state = 38;
-			else if (state != 38)
+			if (state == states.knightpep)
+				state = states.knightpepslopes;
+			else if (state != states.knightpepslopes)
 			{
-				state = 94;
+				state = states.slipnslide;
 				sprite_index = spr_slipnslide;
 			}
 			if (movespeed < 12)

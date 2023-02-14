@@ -1,7 +1,7 @@
 var my_player = obj_player1.id;
 if (player_id == 2)
 	my_player = obj_player2.id;
-if (my_player.state != 84 && my_player.state != 147)
+if (my_player.state != states.backbreaker && my_player.state != 147)
 	instance_destroy();
 if (my_player.parrytimer <= 0)
 	instance_destroy();

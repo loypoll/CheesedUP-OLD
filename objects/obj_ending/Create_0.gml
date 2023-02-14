@@ -1,4 +1,4 @@
-state = 0;
+state = states.normal;
 snd = fmod_event_create_instance("event:/sfx/ending/towercollapse");
 credits = [[-4, lang_get_value_newline("credits_game")], [-4, string_replace_all(lang_get_value_newline("credits_music"), "%", "\"")], [-4, string_replace_all(lang_get_value_newline("credits_sfx"), "%", "\"")], [-4, string_replace_all(lang_get_value_newline("credits_mort"), "%", "\"")], [-4, string_replace_all(lang_get_value_newline("credits_playtester1"), "%", "\"")], [-4, string_replace_all(lang_get_value_newline("credits_playtester2"), "%", "\"")], [-4, string_replace_all(lang_get_value_newline("credits_playtester3"), "%", "\"")], [-4, string_replace_all(lang_get_value_newline("credits_playtester4"), "%", "\"")], [0, -4], [1, -4], [2, -4], [3, -4], [4, -4], [5, -4], [6, -4], [7, -4], [9, -4], [10, -4], [11, -4], [12, -4], [-4, lang_get_value_newline("credits_fmod")]];
 for (var i = 0; i < array_length(credits); i++)

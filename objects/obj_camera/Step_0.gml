@@ -134,7 +134,7 @@ if (shake_mag > 0)
 detachedby = -1;
 detach = false;
 follow_golf = false;
-if (instance_exists(player) && !lock && player.state != 64 && player.state != 89)
+if (instance_exists(player) && !lock && player.state != states.timesup && player.state != states.gameover)
 {
 	switch (state)
 	{
@@ -163,7 +163,7 @@ if (instance_exists(player) && !lock && player.state != 64 && player.state != 89
 				_tspeed = 0.3;
 				chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
 			}
-			else if ((abs(target.hsp) >= 16 || (target.state == states.chainsaw && target.tauntstoredmovespeed >= 16)) && player.state != 37 && player.state != 97)
+			else if ((abs(target.hsp) >= 16 || (target.state == states.chainsaw && target.tauntstoredmovespeed >= 16)) && player.state != states.climbwall && player.state != states.Sjump)
 			{
 				_targetcharge = target.xscale * ((abs(target.hsp) / 4) * 50);
 				_tspeed = 2;
@@ -239,7 +239,7 @@ if (instance_exists(player) && !lock && player.state != 64 && player.state != 89
 			cx = Approach(cx, followtarget.x, followspeed);
 			cy = Approach(cy, ty, followspeed);
 			if (abs(cx - followtarget.x) <= 4 && abs(cy - ty) <= 4)
-				state = 0;
+				state = states.normal;
 			cam_x = cx - (cam_width / 2);
 			cam_y = cy - (cam_height / 2);
 			cam_x = clamp(cam_x, 0, room_width - cam_width);

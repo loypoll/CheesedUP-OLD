@@ -1,7 +1,7 @@
 var t = id;
 with (other)
 {
-	if (state != states.gotoplayer && state != 16 && state != 146)
+	if (state != states.gotoplayer && state != states.ghost && state != 146)
 	{
 		if (boxxed == 0 && isgustavo == 0 && other.buffer == 0 && other.sprite_index == spr_dashpad)
 		{
@@ -78,7 +78,7 @@ with (other)
 					movespeed += (xscale * 0.5);
 				sprite_index = spr_boxxedpepwalk;
 				boxxeddashbuffer = 40;
-				state = 33;
+				state = states.boxxedpep;
 				other.buffer = 30;
 			}
 			if (isgustavo && other.buffer == 0 && gusdashpadbuffer == 0)

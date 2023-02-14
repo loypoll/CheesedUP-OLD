@@ -214,7 +214,7 @@ function scr_pizzaface_p3_walk()
 				case 0:
 					laugh = 0;
 					vulnerable_buffer = 0;
-					state = 92;
+					state = states.jump;
 					fmod_event_instance_play(snd_jump);
 					sprite_index = spr_pizzahead_phase3jumpstart;
 					image_index = 0;
@@ -231,7 +231,7 @@ function scr_pizzaface_p3_walk()
 					attackspeed = 0;
 					break;
 				case 2:
-					state = 80;
+					state = states.punch;
 					fmod_event_one_shot_3d("event:/sfx/pizzahead/bigpunchstart", x, y);
 					sprite_index = spr_pizzahead_bigpunch;
 					image_index = 0;

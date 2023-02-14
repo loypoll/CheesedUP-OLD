@@ -120,7 +120,7 @@ function boss_destroy()
 		{
 			alarm[1] = room_speed * 4;
 			fakedeath = true;
-			state = 8;
+			state = states.transition;
 			depth = other.depth + 1;
 		}
 	}
@@ -163,7 +163,7 @@ function boss_hurt_noplayer()
 }
 function player_hurt()
 {
-	if (!argument1.inv_frames && (argument1.state != 84 || argument1.parry_inst == -4))
+	if (!argument1.inv_frames && (argument1.state != states.backbreaker || argument1.parry_inst == -4))
 	{
 		hitstate = state;
 		hithsp = hsp;

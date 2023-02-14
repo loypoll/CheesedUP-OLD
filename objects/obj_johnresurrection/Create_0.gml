@@ -15,7 +15,7 @@ global.johnresurrection = treasure;
 if (treasure)
 	notification_push(notifs.johnresurrection, []);
 depth = -600;
-state = 0;
+state = states.normal;
 fadein = false;
 fade = 0;
 treasure_dir = -1;

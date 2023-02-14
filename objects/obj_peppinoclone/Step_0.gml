@@ -21,7 +21,7 @@ switch (state)
 				hsp = Approach(hsp, 0, 0.5);
 				if (cooldown <= 0)
 				{
-					state = 80;
+					state = states.punch;
 					sprite_index = spr_pepclone_attack;
 					image_index = 0;
 					shot = false;
@@ -29,7 +29,7 @@ switch (state)
 			}
 			else
 				hsp = image_xscale * 6;
-			if (state != 80)
+			if (state != states.punch)
 			{
 				if (grounded)
 				{

@@ -1,8 +1,8 @@
-if (other.state == 47 && state == 238 && vsp > 0)
+if (other.state == states.knightpep && state == 238 && vsp > 0)
 {
 	hp--;
-	other.state = 0;
+	other.state = states.normal;
 	other.jumpstop = true;
 	other.vsp = -11;
-	state = 0;
+	state = states.normal;
 }

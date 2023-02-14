@@ -1,3 +1,3 @@
 ds_list_destroy(baddielist);
-if (state == 98 || state == 8)
+if (state == states.victory || state == states.transition)
 	event_perform(1, 0);

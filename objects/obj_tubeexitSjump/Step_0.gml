@@ -6,7 +6,7 @@ if (state == states.tube)
 		{
 			visible = true;
 			sprite_index = spr_superspringplayer;
-			state = 97;
+			state = states.Sjump;
 			vsp = -10;
 			if (place_meeting(x, y, obj_solid))
 			{
@@ -25,7 +25,7 @@ if (state == states.tube)
 			{
 				GamepadSetVibration(0, 1, 1, 0.65);
 				playerid = -1;
-				state = 0;
+				state = states.normal;
 			}
 		}
 	}

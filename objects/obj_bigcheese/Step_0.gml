@@ -137,7 +137,7 @@ else if (state == 74)
 				y = other.y;
 				xscale = other.image_xscale;
 				movespeed = 12;
-				state = 5;
+				state = states.tumble;
 				vsp = -14;
 				jumpstop = true;
 			}

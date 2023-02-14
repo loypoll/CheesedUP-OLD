@@ -1,10 +1,10 @@
-if (state != 55 && other.state != 52 && x == xstart && y == ystart)
+if (state != 55 && other.state != states.bombgrab && x == xstart && y == ystart)
 {
 	with (other)
 	{
 		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
 		fmod_event_instance_play(other.snd);
-		if (state != states.chainsaw && state != 84)
+		if (state != states.chainsaw && state != states.backbreaker)
 		{
 			tauntstoredmovespeed = movespeed;
 			tauntstoredvsp = vsp;
@@ -17,7 +17,7 @@ if (state != 55 && other.state != 52 && x == xstart && y == ystart)
 			sprite_index = spr_grabhangeffect;
 			image_speed = 0.35;
 		}
-		state = 106;
+		state = states.bump;
 		if (boxxed == 0)
 			sprite_index = spr_player_catched;
 		else

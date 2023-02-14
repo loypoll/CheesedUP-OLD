@@ -12,10 +12,10 @@ if (!global.bossintro)
 	global.bossintro = true;
 else if (room != rank_room)
 {
-	state = 0;
+	state = states.normal;
 	with (obj_player1)
 	{
-		state = 0;
+		state = states.normal;
 		hsp = 0;
 		movespeed = 0;
 		flash = false;

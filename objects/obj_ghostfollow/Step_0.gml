@@ -62,8 +62,8 @@ switch (state)
 				image_alpha = other.image_alpha;
 				if (image_alpha >= 1)
 				{
-					state = 0;
-					other.state = 0;
+					state = states.normal;
+					other.state = states.normal;
 					other.image_alpha = other.start_alpha;
 				}
 			}

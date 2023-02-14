@@ -1,4 +1,4 @@
-state = 0;
+state = states.normal;
 maxhp = 8;
 hp = maxhp;
 fishcount = 1;

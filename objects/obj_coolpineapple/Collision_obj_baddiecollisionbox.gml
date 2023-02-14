@@ -1,4 +1,4 @@
-if (state != 147 && state != 84)
+if (state != 147 && state != states.backbreaker)
 	exit;
 var my_id = id;
 var other_baddie = other.id;

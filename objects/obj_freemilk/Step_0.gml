@@ -12,7 +12,7 @@ if (playerid != -4)
 		}
 		if (floor(image_index) == (image_number - 1))
 		{
-			state = 0;
+			state = states.normal;
 			landAnim = false;
 			with (other)
 			{

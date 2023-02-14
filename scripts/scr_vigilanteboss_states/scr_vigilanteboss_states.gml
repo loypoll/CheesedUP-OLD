@@ -645,7 +645,7 @@ function boss_vigilante_charge()
 	if (image_index > (image_number - 1))
 	{
 		movespeed = 17;
-		state = 80;
+		state = states.punch;
 		sprite_index = spr_playerV_divekick;
 	}
 }

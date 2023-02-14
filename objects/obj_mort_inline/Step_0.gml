@@ -17,7 +17,7 @@ if (waitforhurt && !instance_exists(obj_dialogcontroller))
 	var b = false;
 	with (obj_player)
 	{
-		if (state == 107)
+		if (state == states.hurt)
 			b = true;
 	}
 	if (!b)

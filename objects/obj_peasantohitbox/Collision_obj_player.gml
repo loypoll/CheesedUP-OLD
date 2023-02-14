@@ -2,11 +2,11 @@ with (other)
 {
 	if (character == "V")
 		scr_hurtplayer(id);
-	else if (state != 121 && (state != states.chainsaw || tauntstoredstate != 121) && state != 3 && state != 89 && state != 31 && state != states.gotoplayer)
+	else if (state != 121 && (state != states.chainsaw || tauntstoredstate != 121) && state != 3 && state != states.gameover && state != states.rideweenie && state != states.gotoplayer)
 	{
 		var _pindex = (object_index == obj_player1) ? 0 : 1;
 		GamepadSetVibration(_pindex, 1, 1, 0.85);
-		state = 9;
+		state = states.fireass;
 		vsp = -25;
 		sprite_index = spr_fireass;
 		image_index = 0;

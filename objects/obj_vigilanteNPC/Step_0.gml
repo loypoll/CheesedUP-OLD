@@ -18,14 +18,14 @@ with (obj_player)
 		}
 		else if (dis < 200)
 		{
-			if (state == 17)
+			if (state == states.ghostpossess)
 			{
 				with (possessID)
 				{
 					state = states.stun;
 					stunned = 50;
 				}
-				state = 0;
+				state = states.normal;
 			}
 			with (other)
 			{
@@ -40,7 +40,7 @@ if (waitforhurt && !instance_exists(obj_dialogcontroller))
 	var b = false;
 	with (obj_player)
 	{
-		if (state == 107)
+		if (state == states.hurt)
 			b = true;
 	}
 	if (!b)

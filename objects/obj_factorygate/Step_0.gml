@@ -16,14 +16,14 @@ switch (state)
 	case 8:
 		if (sprite_index == spr_arenagate_open && floor(image_index) == (image_number - 1))
 		{
-			state = 0;
+			state = states.normal;
 			sprite_index = spr_arenagate_opened;
 			instance_destroy(blockinst);
 		}
 		else if (sprite_index == spr_arenagate_close && floor(image_index) == (image_number - 1))
 		{
 			image_index = image_number - 1;
-			state = 0;
+			state = states.normal;
 			with (instance_create(x, y, obj_solid))
 			{
 				visible = false;

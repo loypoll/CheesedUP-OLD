@@ -1,6 +1,6 @@
 alarm[0] = 80;
 depth = -599;
-state = 0;
+state = states.normal;
 fadein = true;
 fade = 0;
 color = c_white;

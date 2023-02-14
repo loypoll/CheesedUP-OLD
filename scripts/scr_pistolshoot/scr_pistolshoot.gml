@@ -13,7 +13,7 @@ function scr_pistolshoot(required_state)
 		crouchAnim = false;
 		stompAnim = false;
 		if (required_state == states.mach3 || required_state == states.mach2)
-			state = 0;
+			state = states.normal;
 		windingAnim = 0;
 		with (instance_create(x + (xscale * 35), y, obj_parryeffect))
 		{

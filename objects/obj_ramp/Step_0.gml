@@ -13,7 +13,7 @@ if (place_meeting(x, y - s, obj_player))
 		var bx = 8;
 		if (state == 121 || state == 201)
 			bx = 18;
-		if ((state == states.mach2 || state == 201 || state == 211 || state == 5 || state == 121 || state == 187) && y <= (other.y + by) && xscale == sign(other.image_xscale) && place_meeting(x, y + s, other))
+		if ((state == states.mach2 || state == 201 || state == 211 || state == states.tumble || state == 121 || state == 187) && y <= (other.y + by) && xscale == sign(other.image_xscale) && place_meeting(x, y + s, other))
 		{
 			vsp = -12;
 			movespeed = 14;

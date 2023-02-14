@@ -1,7 +1,7 @@
 var myplayer = obj_player1.id;
 if (player_id == 2)
 	myplayer = obj_player2.id;
-if (myplayer.state != 107)
+if (myplayer.state != states.hurt)
 {
 	with (myplayer)
 	{

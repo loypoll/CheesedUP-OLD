@@ -24,16 +24,16 @@ with (ID)
 				instance_destroy(other);
 			break;
 		case obj_pizzafaceboss_p3:
-			if ((state != 80 && state != 287) || (state == 80 && floor(image_index) >= 38))
+			if ((state != states.punch && state != 287) || (state == states.punch && floor(image_index) >= 38))
 				instance_destroy(other);
 			break;
 		case obj_fakepepclone:
 		case obj_fakepepboss:
-			if (state != 97 && (state != 99 || image_index >= 11))
+			if (state != states.Sjump && (state != states.Sjumpprep || image_index >= 11))
 				instance_destroy(other);
 			break;
 		case obj_pepperman:
-			if (state != 108)
+			if (state != states.freefall)
 				instance_destroy(other);
 			break;
 		case obj_badrat:
@@ -50,19 +50,19 @@ with (ID)
 			break;
 		case obj_peppinoclone:
 			other.x = x - (image_xscale * 10);
-			if (state != 80)
+			if (state != states.punch)
 				instance_destroy(other);
 			break;
 		case obj_motodude:
 			other.x = x + (image_xscale * 32);
 			break;
 		case obj_robot:
-			if (state != states.mach2 && state != 23 && state != 91)
+			if (state != states.mach2 && state != states.slap && state != 91)
 			{
 				hitboxcreate = false;
 				instance_destroy(other);
 			}
-			else if (state == 23)
+			else if (state == states.slap)
 			{
 				other.x = x + (image_xscale * 32);
 				if (floor(image_index) == (image_number - 2) || floor(image_index) < 8)
@@ -86,27 +86,27 @@ with (ID)
 		case obj_thug_red:
 		case obj_thug_blue:
 		case obj_thug_green:
-			if (state != 80)
+			if (state != states.punch)
 			{
 				instance_destroy(other);
 				punchinst = -4;
 			}
 			break;
 		case obj_weeniesquire:
-			if (state != 80)
+			if (state != states.punch)
 			{
 				hitboxcreate = false;
 				instance_destroy(other);
 			}
 			break;
 		case obj_minijohn:
-			if (state != states.rage && state != 80)
+			if (state != states.rage && state != states.punch)
 				instance_destroy(other);
 			break;
 		case obj_ninja:
-			if (state != states.charge && state != 80)
+			if (state != states.charge && state != states.punch)
 				instance_destroy(other);
-			if (state == 80)
+			if (state == states.punch)
 			{
 				if (image_index > 14)
 					instance_destroy(other);

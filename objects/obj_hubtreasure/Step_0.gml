@@ -7,7 +7,7 @@ if (playerid != -4)
 	}
 	x = playerid.x;
 	y = playerid.y - 35;
-	if (playerid.state != 46)
+	if (playerid.state != states.gottreasure)
 		instance_destroy();
 }
 if (!got)
@@ -24,7 +24,7 @@ if (!got)
 				{
 					hsp = 0;
 					vsp = 0;
-					state = 46;
+					state = states.gottreasure;
 					with (other)
 					{
 						got = true;

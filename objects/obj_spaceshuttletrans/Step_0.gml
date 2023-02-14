@@ -30,7 +30,7 @@ if (y > (obj_spaceshuttlestop.y - 18))
 				}
 			}
 			flash = false;
-			state = 106;
+			state = states.bump;
 			hsp = 0;
 			vsp = -11;
 			mach2 = 0;

@@ -81,7 +81,7 @@ function state_boss_taunt()
 	image_speed = 0;
 	hsp = 0;
 	vsp = 0;
-	if (taunt_buffer > 0 && state == 84)
+	if (taunt_buffer > 0 && state == states.backbreaker)
 	{
 		taunt_buffer--;
 		if (place_meeting(x, y, obj_player))

@@ -80,7 +80,7 @@ switch (state)
 			{
 				targetRoom = tower_entrancehall;
 				targetDoor = "A";
-				state = 98;
+				state = states.victory;
 				sprite_index = spr_victory;
 			}
 			with (instance_create_unique(0, 0, obj_fadeout))

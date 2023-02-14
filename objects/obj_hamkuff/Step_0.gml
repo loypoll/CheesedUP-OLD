@@ -41,9 +41,9 @@ switch state
                             hsp_carry = _xs * abs(m)
                         else
                             hsp_carry = -hsp
-                        if (state != 106 && state != 121 && state != states.mach2 && state != states.machslide && abs(x - other.x) > dis + abs(movespeed) + 1)
+                        if (state != states.bump && state != 121 && state != states.mach2 && state != states.machslide && abs(x - other.x) > dis + abs(movespeed) + 1)
                         {
-                            state = 106
+                            state = states.bump
                             fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
                             sprite_index = spr_bump
                             if (x != other.x)
@@ -72,12 +72,12 @@ switch state
                         if (state == 121 && movespeed > 15)
                             movespeed = 15
                         freefallsmash = 0
-                        if (state == 78 || state == 37 || state == 99 || state == 97 || state == 123 || y < other.y - 400)
+                        if (state == states.grind || state == states.climbwall || state == states.Sjumpprep || state == states.Sjump || state == 123 || y < other.y - 400)
                         {
                             fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
                             vsp = -4
                             hsp = -3 * xscale
-                            state = 106
+                            state = states.bump
                             sprite_index = spr_bump
                             image_index = 0
                         }
@@ -105,7 +105,7 @@ switch state
                             {
                                 x = tx
                                 y = ty
-                                state = 92
+                                state = states.jump
                                 other.attract_player = 0
                             }
                         }

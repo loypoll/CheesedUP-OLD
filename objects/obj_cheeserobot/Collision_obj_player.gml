@@ -60,7 +60,7 @@ if (state != states.grabbed)
 			other.stunned = 200;
 			other.state = states.stun;
 			machpunchAnim = true;
-			if (!grounded && state != 108)
+			if (!grounded && state != states.freefall)
 			{
 				sprite_index = spr_player_mach2jump;
 				vsp = -10;
@@ -73,10 +73,10 @@ if (state != states.grabbed)
 			image_index = 0;
 			instance_destroy(other);
 			machpunchAnim = true;
-			if (!grounded && state != 108)
+			if (!grounded && state != states.freefall)
 				vsp = -10;
 		}
-		if (attacking == 0 && (state != 91 && state != 107) && !(y < other.y) && grabbing == 0 && other.state != states.stun)
+		if (attacking == 0 && (state != 91 && state != states.hurt) && !(y < other.y) && grabbing == 0 && other.state != states.stun)
 		{
 			if (x != other.x)
 			{
@@ -91,7 +91,7 @@ if (state != states.grabbed)
 			if (other.state == states.walk || other.state == 130)
 				other.state = states.idle;
 			image_index = 0;
-			state = 106;
+			state = states.bump;
 			if (other.state == 136)
 				other.state = states.idle;
 		}

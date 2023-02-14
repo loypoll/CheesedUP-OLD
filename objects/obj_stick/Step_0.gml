@@ -32,7 +32,7 @@ switch (state)
 			}
 		}
 		else if (floor(image_index) == (image_number - 1))
-			state = 0;
+			state = states.normal;
 		break;
 	case 0:
 		if (arrowID == -4)
@@ -69,7 +69,7 @@ switch (state)
 			ini_write_real(save, "reduction", maxscore);
 			global.pigreduction += maxscore;
 			obj_savesystem.ini_str = ini_close();
-			state = 92;
+			state = states.jump;
 			sprite_index = spr_stick_takemoney1;
 			image_index = 0;
 			shot = false;
@@ -159,7 +159,7 @@ switch (state)
 				}
 				with (obj_player1)
 				{
-					state = 0;
+					state = states.normal;
 					landAnim = false;
 				}
 			}

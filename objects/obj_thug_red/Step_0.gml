@@ -99,12 +99,12 @@ if (state == states.charge)
 	}
 	else
 	{
-		state = 80;
+		state = states.punch;
 		attackspeed = attackspeed_max;
 		hsp = image_xscale * attackspeed;
 	}
 }
-if (state == 80)
+if (state == states.punch)
 {
 	if (!instance_exists(punchinst))
 	{

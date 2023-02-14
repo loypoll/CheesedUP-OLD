@@ -2,7 +2,7 @@ instance_destroy();
 with (playerid)
 {
 	if (!isgustavo)
-		state = 0;
+		state = states.normal;
 	else
 		state = 191;
 	visible = true;

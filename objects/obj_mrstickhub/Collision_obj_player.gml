@@ -7,6 +7,6 @@ if (other.key_up2 && total >= maxscore && !unlocked)
 	ini_write_real(save, "reduction", maxscore);
 	global.pigreduction += maxscore;
 	obj_savesystem.ini_str = ini_close();
-	state = 8;
+	state = states.transition;
 	gamesave_async_save();
 }

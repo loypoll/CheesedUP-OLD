@@ -11,7 +11,7 @@ if (hooked)
 {
 	with (obj_player)
 	{
-		if (state == 93 && hooked)
+		if (state == states.ladder && hooked)
 		{
 			x = other.x + 16;
 			y = other.y + 40;

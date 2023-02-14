@@ -195,7 +195,7 @@ function scr_player_cheesepepstickup()
 	{
 		if (!place_meeting(x, y - (4 * stickdir), obj_solid))
 		{
-			state = 24;
+			state = states.cheesepep;
 			cheesepep_buffer = 2;
 			hsp = move * movespeed;
 			sprite_index = spr_cheesepepidle;

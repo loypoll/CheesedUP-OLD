@@ -21,7 +21,7 @@ if (room == hub_loadingscreen && state != 2)
 			{
 				targetRoom = tower_entrancehall;
 				targetDoor = "A";
-				state = 98;
+				state = states.victory;
 			}
 			else
 			{

@@ -5,7 +5,7 @@ fmod_event_one_shot("event:/sfx/ui/tvswitchback");
 with (playerid)
 {
 	if (!isgustavo)
-		state = 0;
+		state = states.normal;
 	else
 		state = 191;
 	visible = true;

@@ -89,7 +89,7 @@ if (activated == 1)
 		x = lerp(x, obj_player1.x + hsp, 0.08);
 		y = lerp(y, obj_player1.y + obj_player1.vsp + vsp, 0.04);
 	}
-	else if (state == 80)
+	else if (state == states.punch)
 	{
 		var ii = floor(image_index);
 		hsp = 0;

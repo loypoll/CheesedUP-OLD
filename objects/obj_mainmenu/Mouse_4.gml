@@ -1,4 +1,4 @@
-if (state == 0 && !instance_exists(obj_option))
+if (state == states.normal && !instance_exists(obj_option))
 {
 	if (sprite_index != spr_titlepep_punch && sprite_index != spr_titlepep_angry)
 	{

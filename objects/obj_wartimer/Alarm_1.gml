@@ -5,7 +5,7 @@ if (room != rank_room && minutes <= 0 && seconds <= 0 && addseconds <= 0)
 	{
 		targetDoor = "A";
 		room = timesuproom;
-		state = 64;
+		state = states.timesup;
 		sprite_index = spr_Timesup;
 		image_index = 0;
 		stop_music();

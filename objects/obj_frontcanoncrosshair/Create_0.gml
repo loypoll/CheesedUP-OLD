@@ -1,6 +1,6 @@
 image_speed = 0;
 image_index = 0;
-state = 0;
+state = states.normal;
 collisioned = true;
 cooldown = 0;
 threshold_x = 250;

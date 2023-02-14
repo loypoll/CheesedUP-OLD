@@ -32,7 +32,7 @@ function scr_player_lungeattack()
 	var cancelindex = 4;
 	if (floor(image_index) > (image_number - 2) && !hit_connected)
 	{
-		if (state != 80 && input_attack_buffer > 0)
+		if (state != states.punch && input_attack_buffer > 0)
 		{
 			ds_list_clear(hitlist);
 			hit_connected = false;
@@ -131,7 +131,7 @@ function DoFinisher()
 		sprite_index = spr_player_breakdance;
 		image_index = 0;
 		machhitAnim = false;
-		state = 5;
+		state = states.tumble;
 		movespeed = 4;
 		state = states.tumble;
 		vsp = 10;

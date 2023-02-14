@@ -42,7 +42,7 @@ switch (state)
 			vsp = other.vsp;
 			if (state != 264 && state != 148)
 			{
-				other.state = 0;
+				other.state = states.normal;
 				other.cooldown = 200;
 			}
 			if (x != other.x || y != other.y)

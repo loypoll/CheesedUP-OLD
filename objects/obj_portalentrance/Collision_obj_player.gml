@@ -1,2 +1,2 @@
-if (other.state == 39)
+if (other.state == states.portal)
 	sprite_index = spr_pizzaportalentrancestart;

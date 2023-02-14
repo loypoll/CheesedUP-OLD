@@ -9,7 +9,7 @@ vsp = 0;
 grav = 0.5;
 grounded = false;
 movespeed = 0;
-state = 0;
+state = states.normal;
 team = 1;
 important = true;
 mach3destroy = false;
@@ -89,7 +89,7 @@ function SUPER_boss_destroy()
 	with (argument0)
 	{
 		camera_zoom(1, 0.1);
-		if (state == 162 || state == 160 || state == 147 || state == 84)
+		if (state == 162 || state == 160 || state == 147 || state == states.backbreaker)
 		{
 			sprite_index = spr_player_attackdash;
 			image_index = 6;

@@ -86,7 +86,7 @@ function cutscene_superpinball_end()
 	with (obj_player)
 	{
 		if (check_player_coop())
-			state = 0;
+			state = states.normal;
 	}
 	global.pubcutscene = true;
 	quick_ini_write_real(get_savefile_ini(), "cutscene", "pub", true);

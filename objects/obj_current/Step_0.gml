@@ -11,9 +11,9 @@ if (place_meeting(x, y - 1, obj_player))
 				{
 					if (state != 113 && state != 114 && state != 116 && state != 115)
 					{
-						if (state != 94 || sprite_index != spr_currentplayer)
+						if (state != states.slipnslide || sprite_index != spr_currentplayer)
 							fmod_event_one_shot_3d("event:/sfx/misc/waterslidesplash", x, y);
-						state = 94;
+						state = states.slipnslide;
 						sprite_index = spr_currentplayer;
 					}
 					else

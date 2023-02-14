@@ -1,6 +1,6 @@
 with (obj_player)
 {
-	if (grounded && state != 8)
+	if (grounded && state != states.transition)
 	{
 		global.timeractive = false;
 		global.panic = false;
@@ -8,7 +8,7 @@ with (obj_player)
 		image_speed = 0.35;
 		x = other.x + 30;
 		xscale = -1;
-		state = 8;
+		state = states.transition;
 		image_index = 0;
 		costumercutscenetimer = 70;
 		sprite_index = spr_player_knock;

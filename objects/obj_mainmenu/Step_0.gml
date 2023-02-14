@@ -8,7 +8,7 @@ switch (state)
 		currentselect = -1;
 		if ((keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4 || scr_checkanystick(obj_inputAssigner.player_input_device[0])) && !instance_exists(obj_mainmenu_jumpscare))
 		{
-			state = 8;
+			state = states.transition;
 			currentselect = -1;
 			visualselect = -1;
 			darkcount = 7;
@@ -49,7 +49,7 @@ switch (state)
 				currentselect = 0;
 				visualselect = 0;
 				dark = false;
-				state = 0;
+				state = states.normal;
 				sprite_index = spr_titlepep_forwardtoleft;
 				image_index = 0;
 			}
@@ -145,14 +145,14 @@ switch (state)
             }
             if key_jump
             {
-                state = 98
+                state = states.victory
                 with (obj_menutv)
                 {
                     if (trigger == other.currentselect)
                     {
                         fmod_event_instance_stop(obj_music.music.event, 1)
                         fmod_event_one_shot("event:/sfx/ui/fileselect")
-                        state = 98
+                        state = states.victory
                         sprite_index = confirmspr
                     }
                 }
@@ -246,7 +246,7 @@ switch (state)
 					shake_mag_acc = 5 / room_speed;
 				}
 			}
-			state = 0;
+			state = states.normal;
 		}
 		break;
 	case states.boss_fightball:
@@ -257,11 +257,11 @@ switch (state)
 			if (exitselect == 0)
 				game_end();
 			else
-				state = 0;
+				state = states.normal;
 		}
 		break;
 }
-if (state != states.titlescreen && state != 8)
+if (state != states.titlescreen && state != states.transition)
 	extrauialpha = Approach(extrauialpha, 1, 0.1);
 if (currentselect == 0)
 	percentage = global.percentage_1;
@@ -276,7 +276,7 @@ if (currentselect != -1)
 	judgement = global.game_judgement[currentselect];
 }
 perstatus_icon = floor(percentage / 14.285714285714286);
-if (state != states.titlescreen && state != 8)
+if (state != states.titlescreen && state != states.transition)
 {
 	var a = floor(abs(percvisual - percentage) / 10) + 1;
 	percvisual = Approach(percvisual, percentage, a);

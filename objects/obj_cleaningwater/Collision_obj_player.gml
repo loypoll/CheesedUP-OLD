@@ -1,8 +1,8 @@
 with (other)
 {
-	if (state == 24 || skateboarding == 1 || state == 33 || state == 25 || state == 29 || state == 30)
+	if (state == states.cheesepep || skateboarding == 1 || state == states.boxxedpep || state == states.cheesepepstick || state == states.cheesepepstickside || state == 30)
 	{
-		state = 0;
+		state = states.normal;
 		boxxed = false;
 		skateboarding = false;
 	}

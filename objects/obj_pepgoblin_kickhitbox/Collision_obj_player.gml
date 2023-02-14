@@ -4,10 +4,10 @@ with (other)
 		scr_hurtplayer(object_index);
 	else if (scr_transformationcheck())
 	{
-		if (instance_exists(other.baddieID) && sprite_index != spr_tumbleend && state != 5 && state != 47 && state != 38 && state != 147)
+		if (instance_exists(other.baddieID) && sprite_index != spr_tumbleend && state != states.tumble && state != 47 && state != states.knightpepslopes && state != 147)
 		{
 			scr_losepoints();
-			state = 5;
+			state = states.tumble;
 			xscale = other.baddieID.image_xscale;
 			movespeed = 10;
 			vsp = 0;

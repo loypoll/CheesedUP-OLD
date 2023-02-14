@@ -21,14 +21,14 @@ switch (state)
 		break;
 	case states.arenaintro:
 		with (obj_player)
-			state = 46;
+			state = states.gottreasure;
 		if (cutscene_count > 0)
 			cutscene_count--;
 		else
 		{
 			with (obj_player)
 			{
-				state = 0;
+				state = states.normal;
 				image_index = 0;
 			}
 			state = 145;
@@ -116,11 +116,11 @@ switch (state)
 		break;
 	case 8:
 		if (floor(image_index) == (image_number - 1))
-			state = 98;
+			state = states.victory;
 		break;
 	case 98:
 		instance_destroy();
 		break;
 }
-if (state != 0 && state != 144)
+if (state != states.normal && state != 144)
 	visible = false;

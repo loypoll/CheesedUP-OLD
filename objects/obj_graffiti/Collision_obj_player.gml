@@ -1,4 +1,4 @@
-if (ds_list_find_index(global.saveroom, id) == -1 && other.state == 84)
+if (ds_list_find_index(global.saveroom, id) == -1 && other.state == states.backbreaker)
 {
 	other.state = 85;
 	other.sprite_index = other.spr_victory;

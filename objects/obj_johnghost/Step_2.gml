@@ -22,7 +22,7 @@ switch (state)
 			attack_buffer--;
 		else
 		{
-			state = 80;
+			state = states.punch;
 			create_heatattack_afterimage(x, y, sprite_index, image_index, image_xscale);
 		}
 		break;

@@ -68,7 +68,7 @@ if (state == states.walk)
 		var _taunt = false;
 		with (obj_player)
 		{
-			if (state == 84)
+			if (state == states.backbreaker)
 				_taunt = true;
 		}
 		if (_taunt)
@@ -81,14 +81,14 @@ if (state == states.walk)
 			taunt_storedstate = state;
 			taunt_storedmovespeed = movespeed;
 			taunt_storedhsp = hsp;
-			state = 84;
+			state = states.backbreaker;
 			hsp = 0;
 			vsp = 0;
 			grav = 0;
 		}
 	}
 }
-if (state != 84 && instance_exists(taunteffect_inst))
+if (state != states.backbreaker && instance_exists(taunteffect_inst))
 	instance_destroy(taunteffect_inst);
 switch (state)
 {

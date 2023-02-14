@@ -2,7 +2,7 @@ if (player < 0)
 {
 	if (start == 1)
 	{
-		if (other.state != 297 && other.state != 84 && other.state != states.chainsaw && other.state != states.hit && other.state != states.gotoplayer)
+		if (other.state != 297 && other.state != states.backbreaker && other.state != states.chainsaw && other.state != states.hit && other.state != states.gotoplayer)
 		{
 			fmod_event_one_shot_3d("event:/sfx/misc/teleporterstart", x, y);
 			player = other.id;

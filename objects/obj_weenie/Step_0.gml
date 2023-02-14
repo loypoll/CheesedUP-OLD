@@ -1,6 +1,6 @@
 if (room == rm_editor)
 	exit;
-if (state != states.stun && state != 5)
+if (state != states.stun && state != states.tumble)
 	stunstate = 0;
 else if (state == states.stun)
 {
@@ -8,11 +8,11 @@ else if (state == states.stun)
 	{
 		stunstate = 1;
 		stunned = 0;
-		state = 5;
+		state = states.tumble;
 		stuntimer = stunmax;
 	}
 }
-invincible = state == 5;
+invincible = state == states.tumble;
 switch (state)
 {
 	case states.idle:

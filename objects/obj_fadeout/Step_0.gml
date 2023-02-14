@@ -26,7 +26,7 @@ if (fadealpha > f)
 	{
 		with (obj_player)
 		{
-			state = 0;
+			state = states.normal;
 			movespeed = 0;
 			landAnim = false;
 			hallway = true;
@@ -67,7 +67,7 @@ if (instance_exists(obj_player))
 {
 	with (obj_player1)
 	{
-		if (other.fadein == 1 && (obj_player1.state == states.door || obj_player1.state == 98) && (sprite_index == spr_victory || place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate)))
+		if (other.fadein == 1 && (obj_player1.state == states.door || obj_player1.state == states.victory) && (sprite_index == spr_victory || place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate)))
 		{
 			state = states.comingoutdoor;
 			image_index = 0;
@@ -79,16 +79,16 @@ if (instance_exists(obj_player))
 		}
 		if (other.fadein == 1 && obj_player1.state == states.door && (obj_player1.sprite_index == spr_downpizzabox || obj_player1.sprite_index == spr_uppizzabox))
 		{
-			state = 101;
+			state = states.crouchjump;
 			if (global.coop == 1)
-				obj_player2.state = 101;
+				obj_player2.state = states.crouchjump;
 		}
 	}
 	if (instance_exists(obj_player2))
 	{
 		with (obj_player2)
 		{
-			if (other.fadein == 1 && (obj_player2.state == states.door || obj_player2.state == 98) && (place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate)))
+			if (other.fadein == 1 && (obj_player2.state == states.door || obj_player2.state == states.victory) && (place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate)))
 			{
 				state = states.comingoutdoor;
 				image_index = 0;
@@ -100,9 +100,9 @@ if (instance_exists(obj_player))
 			}
 			if (other.fadein == 1 && obj_player2.state == states.door && (obj_player2.sprite_index == spr_downpizzabox || obj_player2.sprite_index == spr_uppizzabox))
 			{
-				state = 101;
+				state = states.crouchjump;
 				if (global.coop == 1)
-					obj_player1.state = 101;
+					obj_player1.state = states.crouchjump;
 			}
 		}
 	}

@@ -40,7 +40,7 @@ if (!touched)
 			}
 			if (!grounded)
 			{
-				state = 92;
+				state = states.jump;
 				if (vsp < 0)
 				{
 					with (instance_create(x, y, obj_highjumpcloud1))
@@ -74,7 +74,7 @@ if (!touched)
 				create_particle(x, y, particle.landcloud, 0);
 				sprite_index = spr_fakepeppino_land;
 				image_index = 0;
-				state = 0;
+				state = states.normal;
 			}
 			break;
 	}

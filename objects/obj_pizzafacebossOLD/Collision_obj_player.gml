@@ -2,9 +2,9 @@ if (phase == 0 && attacking)
 {
 	if (state == 230)
 	{
-		if (other.state == 84 && other.parry_inst != -4)
+		if (other.state == states.backbreaker && other.parry_inst != -4)
 		{
-			state = 0;
+			state = states.normal;
 			boss_hurt(10, other.id);
 			stunned = 50;
 			with (other)
@@ -54,13 +54,13 @@ if (phase == 0 && attacking)
 		}
 		else
 		{
-			state = 0;
+			state = states.normal;
 			player_hurt(20, other.id);
 		}
 	}
 	else
 	{
-		state = 0;
+		state = states.normal;
 		player_hurt(20, other.id);
 	}
 }

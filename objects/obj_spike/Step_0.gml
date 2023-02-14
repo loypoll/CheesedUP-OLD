@@ -17,7 +17,7 @@ with (obj_player)
 			{
 				with (other)
 				{
-					state = 106;
+					state = states.bump;
 					sprite_index = spr_bump;
 					image_index = 0;
 					hsp = -6 * xscale;

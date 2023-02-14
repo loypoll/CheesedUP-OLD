@@ -145,7 +145,7 @@ if (state == 141 && ragecooldown <= 0)
 			sprite_index = spr_minijohn_punchstart;
 			image_index = 0;
 			ragecooldown = 100;
-			state = 80;
+			state = states.punch;
 		}
 	}
 }

@@ -5,9 +5,9 @@ with (other)
 	if (state == states.jump)
 		sprite_index = spr_machfreefall;
 	jumpstop = true;
-	if ((state == states.machslide || state == 108) || (state == 5 && sprite_index != spr_dive))
+	if ((state == states.machslide || state == states.freefall) || (state == states.tumble && sprite_index != spr_dive))
 	{
-		state = 92;
+		state = states.jump;
 		movespeed = 0;
 		vsp = -5;
 		grounded = false;

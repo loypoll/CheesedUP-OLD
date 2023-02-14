@@ -8,7 +8,7 @@ switch (state)
 		if (y > ystart && vsp > 0)
 		{
 			y = ystart;
-			state = 0;
+			state = states.normal;
 		}
 		break;
 }

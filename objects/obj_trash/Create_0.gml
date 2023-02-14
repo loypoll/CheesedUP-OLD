@@ -5,6 +5,6 @@ hsp_carry = 0;
 vsp_carry = 0;
 platformid = -4;
 grounded = false;
-state = 0;
+state = states.normal;
 substate = 0;
 trashbuffer = 0;

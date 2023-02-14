@@ -9,7 +9,7 @@ if (!instance_exists(playerid))
 var _move = true;
 with (obj_player)
 {
-	if (state == 119 || state == 98 || state == 90 || state == 46 || state == states.door || state == 292)
+	if (state == 119 || state == states.victory || state == states.keyget || state == states.gottreasure || state == states.door || state == 292)
 		_move = false;
 }
 if (!treasure)
@@ -68,7 +68,7 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
 		instance_destroy(obj_fadeout);
 		targetDoor = "A";
 		room = timesuproom;
-		state = 64;
+		state = states.timesup;
 		sprite_index = spr_Timesup;
 		image_index = 0;
 		if (isgustavo)

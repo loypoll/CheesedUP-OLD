@@ -50,7 +50,7 @@ if (object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 &&
 	{
 		with (instance_nearest(x, y, obj_player))
 		{
-			if (state == 84)
+			if (state == states.backbreaker)
 			{
 				other.stunned = 0;
 				if (other.state != states.pizzagoblinthrow && !other.provoked && other.bombreset > 0)

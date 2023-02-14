@@ -1,7 +1,7 @@
 if (room == Titlescreen && obj_player.state == states.titlescreen)
 {
 	obj_player1.sprite_index = spr_player_machfreefall;
-	obj_player1.state = 84;
+	obj_player1.state = states.backbreaker;
 	obj_player1.movespeed = 6;
 	obj_player1.vsp = 5;
 	obj_player1.xscale = 1;
@@ -38,7 +38,7 @@ if (obj_player.state == 152)
 	with (obj_player)
 	{
 		visible = true;
-		state = 0;
+		state = states.normal;
 	}
 }
 if (obj_player.state == 292)

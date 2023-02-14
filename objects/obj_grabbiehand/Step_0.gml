@@ -32,7 +32,7 @@ switch (state)
 			stunned--;
 		else if (grounded)
 		{
-			state = 7;
+			state = states.ejected;
 			sprite_index = spr_grabbiehand_idle;
 			grounded = false;
 		}
@@ -46,7 +46,7 @@ switch (state)
 		y = Approach(y, ystart, abs(lengthdir_y(8, _dir)));
 		if (x > (xstart - 8) && x < (xstart + 8) && y > (ystart - 8) && y < (ystart + 8))
 		{
-			state = 0;
+			state = states.normal;
 			x = xstart;
 			y = ystart;
 			fmod_event_instance_stop(snd, true);
@@ -68,7 +68,7 @@ switch (state)
 			xscale = other.image_xscale;
 			if (object_index != obj_pizzagoblinbomb)
 			{
-				state = 106;
+				state = states.bump;
 				if (boxxed == 0)
 					sprite_index = spr_player_catched;
 				else
@@ -98,7 +98,7 @@ switch (state)
 				}
 			}
 			sprite_index = spr_grabbiehand_idle;
-			state = 7;
+			state = states.ejected;
 			if (fake)
 				instance_destroy();
 		}

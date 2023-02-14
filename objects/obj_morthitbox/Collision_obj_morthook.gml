@@ -9,10 +9,10 @@ if (instance_exists(obj_parryeffect))
 }
 with (playerid)
 {
-	if (state != 14)
+	if (state != states.morthook)
 	{
 		fmod_event_one_shot_3d("event:/sfx/mort/hook", other.x, other.y);
-		state = 14;
+		state = states.morthook;
 		morthookID = mh_id;
 		tauntstoredmovespeed = movespeed;
 		movespeed = 12;

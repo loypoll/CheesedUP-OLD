@@ -1,2 +1,2 @@
-if (state != 8)
+if (state != states.transition)
 	event_inherited();
