@@ -1,5 +1,7 @@
 var j = menu;
-if (instance_exists(obj_keyconfig))
+if (instance_exists(obj_keyconfig) || menu == (5 << 0) || menu == (7 << 0))
+	j = 4;
+if (menu >= (4 << 0) && menu <= (7 << 0))
 	j = 4;
 for (var i = 0; i < array_length(bg_alpha); i++)
 {
@@ -13,8 +15,8 @@ bg_y -= 1;
 if (instance_exists(obj_keyconfig))
 	exit;
 scr_getinput();
-key_jump = key_jump || keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space);
-key_back = keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2);
+key_jump = (key_jump || (global.key_start != vk_return && keyboard_check_pressed(vk_return)) || (global.key_start != vk_space && keyboard_check_pressed(vk_space)));
+key_back = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2));
 if (backbuffer > 0)
 {
 	backbuffer--;
@@ -136,6 +138,6 @@ if ((key_back || key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_ex
 					fmod_event_instance_stop(b.sound, true);
 			}
 		}
-		menu_goto(0);
+		menu_goto(m.backmenu);
 	}
 }

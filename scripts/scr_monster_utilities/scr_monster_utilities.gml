@@ -35,10 +35,10 @@ function scr_monster_deactivate(stopmusic = true)
 		patrolfound = false;
 	}
 	if instance_exists(obj_ghostcollectibles)
-    {
-        instance_destroy(obj_patroller)
-        instance_destroy(obj_camerapatrol)
-    }
+	{
+		instance_destroy(obj_patroller)
+		instance_destroy(obj_camerapatrol)
+	}
 	fmod_event_instance_stop(global.snd_alarm, true);
 	if (stopmusic)
 		scr_monster_stop_music();
@@ -62,7 +62,8 @@ function scr_monster_stop_music()
 }
 function scr_monster_activate()
 {
-	notification_push(notifs.monster_activate, [room, object_index]);
+	if !instance_exists(obj_ghostcollectibles)
+		notification_push(notifs.monster_activate, [room, object_index]);
 	with (obj_monster)
 	{
 		if (state == states.robotidle)

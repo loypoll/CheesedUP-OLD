@@ -276,7 +276,7 @@ function scr_hurtplayer(player)
 			else if (damage_n == 100)
 				tv_do_expression(spr_tv_exprhurt10);
 			if (obj_tv.expressionsprite != spr_tv_exprhurt && obj_tv.expressionsprite != spr_tv_hurtG)
-            {
+			{
 				instance_destroy(obj_transfotip);
 				var txt = lang_get_value("peppinohurt");
 				if (isgustavo)

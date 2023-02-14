@@ -54,37 +54,37 @@ function hub_state(argument0, argument1, argument2)
 	switch (argument0)
 	{
 		 case tower_1:
-        case tower_1up:
-        case tower_cheftask1:
-        case tower_johngutterhall:
-        case tower_ruinsecret:
-            s = 0
-            break
-        case tower_2:
-        case tower_2up:
-        case tower_cheftask2:
-        case tower_ravine:
-            s = 1
-            break
-        case tower_3:
-        case tower_3up:
-        case tower_cheftask3:
-        case tower_pizzaland:
-            s = 2
-            break
-        case tower_4:
-        case tower_4up:
-        case tower_cheftask4:
-        case tower_graffiti:
-        case tower_noisettecafe:
-            s = 3
-            break
-        case tower_5:
-        case tower_cheftask5:
-        case tower_laundryroom:
-        case tower_mansion:
-            s = 4
-            break
+		case tower_1up:
+		case tower_cheftask1:
+		case tower_johngutterhall:
+		case tower_ruinsecret:
+			s = 0
+			break
+		case tower_2:
+		case tower_2up:
+		case tower_cheftask2:
+		case tower_ravine:
+			s = 1
+			break
+		case tower_3:
+		case tower_3up:
+		case tower_cheftask3:
+		case tower_pizzaland:
+			s = 2
+			break
+		case tower_4:
+		case tower_4up:
+		case tower_cheftask4:
+		case tower_graffiti:
+		case tower_noisettecafe:
+			s = 3
+			break
+		case tower_5:
+		case tower_cheftask5:
+		case tower_laundryroom:
+		case tower_mansion:
+			s = 4
+			break
 	}
 	fmod_event_instance_set_parameter(argument1, "hub", s, false);
 }

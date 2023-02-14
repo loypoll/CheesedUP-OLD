@@ -218,7 +218,7 @@ function state_player_jump()
 	}
 	else if (sprite_index == spr_stompprep && floor(image_index) == (image_number - 1))
 		sprite_index = spr_stomp;
-	if (key_down2 && !global.kungfu)
+	if (scr_check_groundpound() && !global.kungfu)
 	{
 		input_buffer_slap = 0;
 		if (!shotgunAnim)

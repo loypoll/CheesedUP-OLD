@@ -30,13 +30,13 @@ switch (state)
 			playerid = instance_place(handx, handy, obj_player);
 			with (playerid)
 			{
-				if (state == states.cheeseball)
+				if (state == 21)
 				{
 					repeat (3)
 						create_debris(x + (xscale * 30), y + random_range(-8, 8), spr_cheesechunk);
 				}
 			}
-			if (playerid.state != states.hook)
+			if (playerid.state != 15)
 			{
 				launch_hsp = sign(playerid.hsp) * 3;
 				launch_vsp = -20;
@@ -57,7 +57,7 @@ switch (state)
 					else
 						movespeeddeccel = 0.5;
 				}
-				state = states.hook;
+				state = 15;
 			}
 		}
 		break;
@@ -70,17 +70,17 @@ switch (state)
 		drawhandy = handy;
 		if (handy < (y - 200) || playerid.state == states.tube)
 		{
-			state = states.normal;
+			state = 0;
 			with (playerid)
 			{
 				if (state == 214)
 				{
 					if (tauntstoredstate == 26)
-						state = states.cheesepepjump;
+						state = 26;
 					else
 					{
 						sprite_index = spr_machfreefall;
-						state = states.jump;
+						state = 92;
 					}
 				}
 			}
@@ -88,49 +88,55 @@ switch (state)
 		}
 		else
 		{
-            drawhandx = handx
-            drawhandy = handy
-            hand_xscale = playerid.xscale
-            if playerid.state != states.tube
-            {
-                with (playerid)
-                {
-                    sprite_index = spr_player_mrpinch
-                    stringid = other.id
-                    state = 214
-                    if (grounded && vsp > 0)
-                    {
-                        hsp_carry = (sign((other.x - x)) * 4)
-                        if (abs(hsp) > abs(hsp_carry) && sign(hsp) != sign(hsp_carry))
-                            hsp_carry = (-hsp)
-                    }
-                    if (y > other.y)
-                    {
-                        if (y > (other.y + (other.maxhandlen / 2)) && vsp > 0 && y > other.y)
-                        {
-                            other.state = states.hookshot
-                            other.shootbuffer = 60
-                            other.launch_dir = point_direction(0, 0, other.launch_hsp, other.launch_vsp)
-                            stringid = other.id
-                        }
-                    }
-                    if (vsp > 0 && y < other.y)
-                        other.idlebuffer++
-                    else
-                        other.idlebuffer = 0
-                    if (other.idlebuffer > 60)
-                    {
-                        other.state = states.normal
-                        other.shootbuffer = 20
-                        other.idlebuffer = 0
-                        state = states.normal
-                    }
-                }
-            }
-            else
-                state = states.normal
-            break
-        }
+			drawhandx = handx;
+			drawhandy = handy;
+			hand_xscale = playerid.xscale;
+			if playerid.state != states.tube
+			{
+				with (playerid)
+				{
+					sprite_index = spr_player_mrpinch;
+					stringid = other.id;
+					state = 214;
+					if (grounded && vsp > 0)
+					{
+						hsp_carry = sign(other.x - x) * 4;
+						if (abs(hsp) > abs(hsp_carry) && sign(hsp) != sign(hsp_carry))
+							hsp_carry = -hsp;
+					}
+					if (y > other.y)
+					{
+						if (y > other.y + (other.maxhandlen / 2) && vsp > 0 && y > other.y)
+						{
+							other.state = 19;
+							other.shootbuffer = 60;
+							other.launch_dir = point_direction(0, 0, other.launch_hsp, other.launch_vsp);
+							stringid = other.id;
+						}
+					}
+					var _solid = false;
+					with (other)
+					{
+						if place_meeting(x, y - 1, obj_solid)
+							_solid = true;
+					}
+					if (_solid || (vsp > 0 && y < other.y))
+						other.idlebuffer++;
+					else
+						other.idlebuffer = 0;
+					if (other.idlebuffer > 60)
+					{
+						other.state = 0;
+						other.shootbuffer = 20;
+						other.idlebuffer = 0;
+						state = 0;
+					}
+				}
+			}
+			else
+				state = 0;
+			break;
+		}
 		
 	case 19:
 		sprite_index = spr_mrpinch_face2;
@@ -162,10 +168,10 @@ switch (state)
 				momemtum = true;
 				jumpstop = true;
 				sprite_index = spr_machfreefall;
-				state = states.jump;
+				state = 92;
 				with (other)
 				{
-					state = states.transition;
+					state = 8;
 					shootbuffer = 80;
 				}
 				notification_push(notifs.mrpinch_launch, [room, other.id, id]);
@@ -184,7 +190,7 @@ switch (state)
 			shootbuffer--;
 		else
 		{
-			state = states.normal;
+			state = 0;
 			shootbuffer = 30;
 		}
 		break;

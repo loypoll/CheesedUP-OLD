@@ -30,8 +30,8 @@ if (frames <= 0)
 			if (!rectangle_in_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, cx - other.offset, cy - other.offset, cx + cw + other.offset, cy + ch + other.offset))
 			{
 				var q = {
-                    object_index: b
-                }
+					object_index: b
+				}
 				
 				q.ID = id;
 				q.bbox_left = bbox_left;

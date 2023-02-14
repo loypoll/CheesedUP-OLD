@@ -7,8 +7,8 @@ with (obj_player1)
 	global.leveltorestart = -4;
 	global.leveltosave = -4;
 	global.startgate = 0;
-    ds_list_clear(global.saveroom);
-    ds_list_clear(global.baddieroom);
+	ds_list_clear(global.saveroom);
+	ds_list_clear(global.baddieroom);
 	pistolanim = -4;
 	targetDoor = "HUB";
 	targetRoom = backtohubroom;
@@ -22,7 +22,7 @@ with (obj_player1)
 	image_index = 10;
 }
 with (obj_screensizer)
-    camzoom = 1;
+	camzoom = 1;
 with (instance_create(0, 0, obj_backtohub_fadeout))
 {
 	fadealpha = 1;

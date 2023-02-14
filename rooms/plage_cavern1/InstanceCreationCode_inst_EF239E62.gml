@@ -1,4 +1,4 @@
 if (!instance_exists(obj_frontcanongoblin))
-    instance_destroy()
+	instance_destroy()
 else
-    active = 1
+	active = 1

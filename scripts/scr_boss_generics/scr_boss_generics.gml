@@ -238,7 +238,7 @@ function scr_boss_do_hurt_phase2(object, inv_time = 100)
 	flashbuffer = inv_time - 40;
 	fmod_event_one_shot("event:/sfx/misc/blackoutpunch");
 	instance_create_unique(0, 0, obj_blackoutline)
-    instance_create_unique(0, 0, obj_superattackeffect)
+	instance_create_unique(0, 0, obj_superattackeffect)
 	image_xscale = -object.xscale;
 	instance_create(0, 0, obj_bossdark);
 }

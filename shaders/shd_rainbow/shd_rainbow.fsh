@@ -18,5 +18,5 @@ void main()
 	vec4 texColor = texture2D( gm_BaseTexture, v_vTexcoord );
 	vec3 col = vec3((u_time * u_speed), 1.0, 1.0);
 	vec4 finalCol = vec4(hsv2rgb(col), texColor.a);
-    gl_FragColor = v_vColour *  finalCol;
+	gl_FragColor = v_vColour *  finalCol;
 }

@@ -39,7 +39,7 @@ function scr_playerreset()
 	global.pistol = false;
 	
 	with (obj_screensizer)
-        camzoom = 1;
+		camzoom = 1;
 	with (obj_camera)
 		lock = false;
 	
@@ -213,8 +213,8 @@ function scr_playerreset()
 			instance_destroy(obj_snickexe);
 		
 		with (obj_pizzaface)
-            destroy_sounds([snd])
-        instance_destroy(obj_pizzaface, false)
+			destroy_sounds([snd])
+		instance_destroy(obj_pizzaface, false)
 		
 		if (instance_exists(obj_pizzashield))
 			instance_destroy(obj_pizzashield);

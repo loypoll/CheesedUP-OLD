@@ -179,10 +179,10 @@ if (wastedhits >= 6 && !pizzahead)
 		create_particle(x, y, particle.genericpoofeffect);
 		instance_destroy(obj_fakepepsolid);
 		with (obj_hppickup)
-        {
-            scr_collect_hat(true)
-            instance_destroy()
-        }
+		{
+			scr_collect_hat(true)
+			instance_destroy()
+		}
 		lay2 = layer_get_id("Backgrounds_Ring");
 		bg2 = layer_background_get_id(lay2);
 		layer_background_change(bg2, spr_fakepeppino_arena2)
@@ -217,11 +217,11 @@ if (state == states.boss_KO)
 	invincible = true;
 if pizzahead
 {
-    with (obj_gustavograbbable)
-    {
-        if (enemy_is_superslam(id) || enemy_is_swingding(id))
-            other.invincible = 1
-    }
+	with (obj_gustavograbbable)
+	{
+		if (enemy_is_superslam(id) || enemy_is_swingding(id))
+			other.invincible = 1
+	}
 }
 if (!invincible && !flash && alarm[5] < 0)
 	alarm[5] = 0.15 * room_speed;

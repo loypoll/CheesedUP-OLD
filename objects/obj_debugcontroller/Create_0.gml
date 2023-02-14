@@ -1,5 +1,5 @@
 depth = -500;
-DEBUG = true;
+DEBUG = debug;
 if (parameter_count() > 2)
 	DEBUG = true;
 if (!DEBUG)
@@ -286,7 +286,7 @@ if (DEBUG)
 		}
 	});
 	active = false;
-	showcollisions = true;
+	showcollisions = false;
 	showhud = true;
 	state_map = ds_map_create();
 	ds_map_set(state_map, "states.normal", 0);
@@ -303,79 +303,79 @@ if (DEBUG)
 	ds_list_clear(search_commands);
 	search_w = 0;
 	keyboard_string = "";
-	function FindCommand()
+	function FindCommand(_id)
 	{
 		for (var i = 0; i < ds_list_size(command_list); i++)
 		{
 			var b = ds_list_find_value(command_list, i);
-			if (b.command_id == argument0)
+			if (b.command_id == _id)
 				return b;
 		}
 		return undefined;
 	}
-	function DoCommand()
+	function DoCommand(text)
 	{
-		var commands = string_split(argument0, " ");
+		var commands = _string_split(text, " ");
 		if (array_length(commands) > 1)
 		{
 			var c = FindCommand(commands[1]);
 			if (c != undefined)
 			{
-				TextList_Add(1, argument0);
+				TextList_Add(1, text);
 				array_delete(commands, 0, 2);
 				c.Invoke(commands);
 				return true;
 			}
 			else
 			{
-				TextList_Add(0, argument0);
+				TextList_Add(0, text);
 				TextList_Add(3, "Invalid command");
 			}
 		}
 		else
 		{
-			TextList_Add(0, argument0);
+			TextList_Add(0, text);
 			TextList_Add(3, "No text typed");
 		}
 		return false;
 	}
-	function GetDouble()
+	function GetDouble(str)
 	{
-		var n = string_digits(argument0);
+		var n = string_digits(str);
 		if (n != undefined && n != "")
 		{
-			n = real(argument0);
+			n = real(str);
 			return n;
 		}
 		return undefined;
 	}
-	function get_bool()
+	function get_bool(str)
 	{
-		if (argument0 == "true")
+		if (str == "true")
 		{
-			argument0 = true;
-			return argument0;
+			str = true;
+			return str;
 		}
-		else if (argument0 == "false")
+		else if (str == "false")
 		{
-			argument0 = false;
-			return argument0;
+			str = false;
+			return str;
 		}
-		else if (is_real(real(string_digits(argument0))))
+		else if (is_real(real(string_digits(str))))
 		{
-			argument0 = bool(real(string_digits(argument0)));
-			return argument0;
+			str = bool(real(string_digits(str)));
+			return str;
 		}
 		return undefined;
 	}
-	function get_number_string()
+	function get_number_string(str)
 	{
-		var n = argument0;
-		if (is_string(argument0))
+		var n = str;
+		if (is_string(str))
 		{
-			n = real(string_digits(argument0));
-			if (string_char_at(argument0, 1) == "-")
-				n = -real(string_digits(argument0));
+			n = real(string_digits(str));
+			if (string_char_at(str, 1) == "-")
+				n = -real(string_digits(str));
 		}
 		return n;
 	}

@@ -1,1 +1,1 @@
-targetRoom = sewer_8;
+targetRoom = sewer_8

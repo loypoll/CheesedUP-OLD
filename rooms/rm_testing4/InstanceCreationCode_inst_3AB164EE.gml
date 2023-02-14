@@ -1,1 +1,1 @@
-content = obj_farmerbaddie;
+content = obj_banditochicken_dynamite

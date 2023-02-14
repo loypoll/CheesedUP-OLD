@@ -12,9 +12,9 @@ function scr_player_grabbing()
 		else if (!grounded)
 			movespeed = 12;
 	}
-	var attackdash = 745;
-	var airattackdash = 1019;
-	var airattackdashstart = 1023;
+	var attackdash = spr_player_suplexdash;
+	var airattackdash = spr_player_suplexgrabjump;
+	var airattackdashstart = spr_player_suplexgrabjumpstart;
 	if (sprite_index == attackdash && !grounded)
 	{
 		image_index = 0;

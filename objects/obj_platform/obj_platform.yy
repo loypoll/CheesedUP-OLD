@@ -7,7 +7,7 @@
     "path": "sprites/spr_baddie/spr_baddie.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

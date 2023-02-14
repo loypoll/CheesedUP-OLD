@@ -51,7 +51,7 @@ function scr_player_firemouth()
 		sprite_index = spr_firemouth;
 		dir = xscale;
 	}
-	if (key_down2 && !grounded)
+	if (scr_check_groundpound() && !grounded)
 		vsp += 10;
 	if (sprite_index != spr_firemouthintro && sprite_index != spr_firemouthend)
 	{

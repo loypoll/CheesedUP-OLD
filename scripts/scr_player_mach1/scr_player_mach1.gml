@@ -115,7 +115,7 @@ function scr_player_mach1()
 			}
 			break;
 	}
-	if (key_down && !grounded)
+	if (scr_check_groundpound() && !grounded)
 	{
 		if (!shotgunAnim)
 		{

@@ -1,3 +1,3 @@
 if (buffer > 0)
-    buffer--;
+	buffer--;
 scr_collide();

@@ -32,7 +32,7 @@ draw_set_font(lang_get_font("bigfont"));
 draw_set_halign(1);
 draw_set_valign(1);
 draw_set_color(c_white);
-draw_sprite(spr_controlseggplant, 0, SCREEN_WIDTH * 0.853125, 84);
+draw_sprite(spr_controlseggplant, (obj_inputAssigner.player_input_device[0] < 0 ? 0 : 1), SCREEN_WIDTH * 0.853125, 84);
 var status_x = 183;
 var status_y = 312;
 var percentstate_x = 199;

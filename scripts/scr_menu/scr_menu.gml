@@ -1,10 +1,10 @@
-function menu_goto()
+function menu_goto(menu_id)
 {
 	menu = 0;
 	for (var i = 0; i < array_length(menus); i++)
 	{
 		var b = menus[i];
-		if (b.menu_id == argument0)
+		if b.menu_id == menu_id
 		{
 			menu = i;
 			break;
@@ -12,55 +12,56 @@ function menu_goto()
 	}
 	optionselected = 0;
 }
-function create_menu_fixed()
+function create_menu_fixed(_menuid, _anchor, _xpad, _ypad, _backmenu = (0 << 0))
 {
 	return 
 	{
-		menu_id: argument0,
-		type: 0,
-		anchor: argument1,
-		xpad: argument2,
-		ypad: argument3,
+		menu_id: _menuid,
+		type: (0 << 0),
+		anchor: _anchor,
+		xpad: _xpad,
+		ypad: _ypad,
+		backmenu: _backmenu,
 		options: []
 	};
 }
-function add_option_press()
+function add_option_press(_menu, _optionid, _name, _func)
 {
 	var b = 
 	{
-		option_id: argument1,
-		type: 2,
-		func: argument3,
-		name: argument2
+		option_id: _optionid,
+		type: (2 << 0),
+		func: _func,
+		name: _name
 	};
-	array_push(argument0.options, b);
+	array_push(_menu.options, b);
 	return b;
 }
-function add_option_toggle(argument0, argument1, argument2, argument3 = noone)
+function add_option_toggle(_menu, _optionid, _name, _onchanged = noone)
 {
 	var b = 
 	{
-		option_id: argument1,
-		type: 0,
+		option_id: _optionid,
+		type: (2 << 0),
 		value: false,
-		name: argument2,
-		on_changed: argument3
+		name: _name,
+		on_changed: _onchanged
 	};
-	array_push(argument0.options, b);
+	array_push(_menu.options, b);
 	return b;
 }
-function add_option_multiple(argument0, argument1, argument2, argument3, argument4 = noone)
+function add_option_multiple(_menu, _optionid, _name, _values, _onchanged = noone)
 {
 	var b = 
 	{
-		option_id: argument1,
-		type: 1,
-		values: argument3,
+		option_id: _optionid,
+		type: (1 << 0),
+		values: _values,
 		value: 0,
-		name: argument2,
-		on_changed: argument4
+		name: _name,
+		on_changed: _onchanged
 	};
-	array_push(argument0.options, b);
+	array_push(_menu.options, b);
 	return b;
 }
 function create_option_value(_name, _value, _localization = true)
@@ -72,23 +73,23 @@ function create_option_value(_name, _value, _localization = true)
 		localization: _localization
 	};
 }
-function add_option_slide(argument0, argument1, argument2, argument3 = noone, argument4 = noone, argument5 = noone)
+function add_option_slide(_menu, _optionid, _name, _onmove = noone, _onchanged = noone, _sound = noone)
 {
 	var b = 
 	{
-		option_id: argument1,
-		type: 3,
+		option_id: _optionid,
+		type: (3 << 0),
 		value: 100,
 		moved: false,
-		name: argument2,
-		on_changed: argument4,
-		on_move: argument3,
+		name: _name,
+		on_changed: _onchanged,
+		on_move: _onmove,
 		slidecount: 0,
 		moving: false,
 		sound: -4
 	};
-	if (argument5 != -4)
-		b.sound = fmod_event_create_instance(argument5);
-	array_push(argument0.options, b);
+	if _sound != noone
+		b.sound = fmod_event_create_instance(_sound);
+	array_push(_menu.options, b);
 	return b;
 }

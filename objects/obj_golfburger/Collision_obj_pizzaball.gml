@@ -7,7 +7,7 @@ if (golfcooldown <= 0 && state != 74 && state != states.stun && state != states.
 	image_index = 0;
 	other.bigcheeseID = id;
 	if (shootdir == 0)
-		image_xscale = choose(-1, 1);
+		image_xscale *= -1;
 	else
 		image_xscale = shootdir;
 }

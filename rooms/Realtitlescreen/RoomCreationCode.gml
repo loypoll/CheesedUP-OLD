@@ -1,4 +1,6 @@
-enum states{normal,
+enum states
+{
+	normal,
 	revolver,
 	dynamite,
 	boots,
@@ -287,13 +289,13 @@ enum states{normal,
 	boss_noiseballooncrash,
 	boss_swinging,
 	boss_stomp,
-	boss_finale,
+	boss_finale, // reused by obj_mainmenu, suggests it could be called just "exit"
 	backtohub,
 	johnghost,
 	spaceshuttle,
 	animation,
 	pizzaheadjump,
-	boss_fightball,
+	fightball,
 	secretenter,
 	teleport,
 	boss_KO,

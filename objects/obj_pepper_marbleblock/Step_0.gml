@@ -17,8 +17,8 @@ if (!fall && grounded && vsp > 0)
 	fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
 	fall = true;
 	grabID = instance_create(x + (32 * image_xscale), y, obj_grabmarker);
-    with (grabID)
-        ID = other.id;
+	with (grabID)
+		ID = other.id;
 	with (obj_camera)
 	{
 		shake_mag = 3;
@@ -40,4 +40,4 @@ if (contemplated)
 }
 image_index = round(maxhp - hp);
 if floor(image_index) == image_number - 1
-    instance_destroy(grabID);
+	instance_destroy(grabID);

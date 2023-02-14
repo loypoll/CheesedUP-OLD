@@ -1,13 +1,18 @@
 function scr_checkanystick(device, deadzone = 0.5)
 {
-    if (gamepad_axis_value(device, gp_axislh) > deadzone || gamepad_axis_value(device, gp_axislh) < -deadzone)
-        return true;
-    if (gamepad_axis_value(device, gp_axislv) > deadzone || gamepad_axis_value(device, gp_axislv) < -deadzone)
-        return true;
-    if (gamepad_axis_value(device, gp_axisrh) > deadzone || gamepad_axis_value(device, gp_axisrh) < -deadzone)
-        return true;
-    if (gamepad_axis_value(device, gp_axisrv) > deadzone || gamepad_axis_value(device, gp_axisrv) < -deadzone)
-        return true;
+	if (gamepad_axis_value(device, gp_axislh) > deadzone || gamepad_axis_value(device, gp_axislh) < -deadzone)
+		return true;
+	if (gamepad_axis_value(device, gp_axislv) > deadzone || gamepad_axis_value(device, gp_axislv) < -deadzone)
+		return true;
+	if (gamepad_axis_value(device, gp_axisrh) > deadzone || gamepad_axis_value(device, gp_axisrh) < -deadzone)
+		return true;
+	if (gamepad_axis_value(device, gp_axisrv) > deadzone || gamepad_axis_value(device, gp_axisrv) < -deadzone)
+		return true;
+}
+
+function scr_check_menu_key(key)
+{
+	return (global.key_start != key && global.key_slap != key && global.key_taunt != key);
 }
 
 function scr_checkanygamepad(device)

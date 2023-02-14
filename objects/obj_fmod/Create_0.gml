@@ -18,113 +18,30 @@ global.steam_api = false;
 #region macros
 
 // function aliases
-#macro sound_play fmod_event_one_shot
-#macro sound_play_3d fmod_event_one_shot_3d
-#macro sound_get_length fmod_event_get_length
-#macro sound_pause_all fmod_event_instance_set_paused_all
+#macro sound_play fmod_event_one_shot // event (string)
+#macro sound_play_3d fmod_event_one_shot_3d // event (string), x, y
+#macro sound_get_length fmod_event_get_length // event (string)
+#macro sound_pause_all fmod_event_instance_set_paused_all // enabled (bool)
+// pauses ALL sounds.
+#macro sound_set_parameter fmod_set_parameter // parameter (string), value (double), instant (bool)
+// sets global parameter.
+#macro sound_get_parameter fmod_get_parameter // parameter (string)
+// gets global parameter.
 
-#macro sound_instance_create fmod_event_create_instance
-#macro sound_instance_destroy fmod_event_instance_release
-#macro sound_instance_play fmod_event_instance_play
-#macro sound_instance_stop fmod_event_instance_stop
-#macro sound_instance_move fmod_event_instance_set_3d_attributes
-#macro sound_instance_parameter fmod_event_instance_set_parameter
-#macro sound_instance_get_parameter fmod_event_instance_get_parameter
-#macro sound_instance_is_playing fmod_event_instance_is_playing
-#macro sound_instance_pause fmod_event_instance_set_paused
-#macro sound_instance_is_paused fmod_event_instance_get_paused
-#macro sound_instance_track_position fmod_event_instance_get_timeline_pos
-#macro sound_instance_set_track_position fmod_event_instance_set_timeline_pos
-
-// music
-/*
-#macro mu_pizzatime "event:/music/pizzatime"
-#macro mu_finalescape "event:/music/finalescape"
-#macro mu_rank "event:/music/rank"
-#macro mu_timesup "event:/music/timesup"
-#macro mu_finalrank "event:/music/finalrank"
-#macro mu_intro "event:/music/intro"
-#macro mu_ending "event:/music/ending"
-#macro mu_credits "event:/music/credits"
-#macro mu_title "event:/music/title"
-#macro mu_pause "event:/music/pause"
-
-#macro mu_pillar "event:/music/pillarmusic"
-#macro mu_tutorial "event:/music/tutorial"
-#macro mu_hub "event:/music/hub"
-#macro mu_finalhallway "event:/music/w5/finalhallway"
-#macro mu_boss_pepperman "event:/music/boss/pepperman"
-#macro mu_boss_vigilante "event:/music/boss/vigilante"
-#macro mu_boss_noise "event:/music/boss/noise"
-#macro mu_boss_noisette "event:/music/boss/noisette"
-#macro mu_boss_fakepep "event:/music/boss/fakepep"
-#macro mu_boss_pizzaface "event:/music/boss/pizzaface"
-#macro mu_fakepepambient "event:/music/boss/fakepepambient"
-
-#macro mu_entrance "event:/music/w1/entrance"
-#macro mu_entrancesecret "event:/music/w1/entrancesecret"
-#macro mu_medieval "event:/music/w1/medieval"
-#macro mu_medievalsecret "event:/music/w1/medievalsecret"
-#macro mu_ruin "event:/music/w1/ruin"
-#macro mu_ruinsecret "event:/music/w1/ruinsecret"
-#macro mu_dungeon "event:/music/w1/dungeon"
-#macro mu_dungeonsecret "event:/music/w1/dungeonsecret"
-
-#macro mu_desert "event:/music/w2/desert"
-#macro mu_desertsecret "event:/music/w2/desertsecret"
-#macro mu_farm "event:/music/w2/farm"
-#macro mu_farmsecret "event:/music/w2/farmsecret"
-#macro mu_graveyard "event:/music/w2/graveyard"
-#macro mu_graveyardsecret "event:/music/w2/graveyardsecret"
-#macro mu_saloon "event:/music/w2/saloon"
-#macro mu_saloonsecret "event:/music/w2/saloonsecret"
-
-#macro mu_beach "event:/music/w3/beach"
-#macro mu_beachsecret "event:/music/w3/beachsecret"
-#macro mu_forest "event:/music/w3/forest"
-#macro mu_forestsecret "event:/music/w3/forestsecret"
-#macro mu_golf "event:/music/w3/golf"
-#macro mu_golfsecret "event:/music/w3/golfsecret"
-#macro mu_space "event:/music/w3/space"
-#macro mu_spacesecret "event:/music/w3/spacesecret"
-
-#macro mu_freezer "event:/music/w4/freezer"
-#macro mu_freezersecret "event:/music/w4/freezersecret"
-#macro mu_industrial "event:/music/w4/industrial"
-#macro mu_industrialsecret "event:/music/w4/industrialsecret"
-#macro mu_sewer "event:/music/w4/sewer"
-#macro mu_sewersecret "event:/music/w4/sewersecret"
-#macro mu_street "event:/music/w4/street"
-#macro mu_streetsecret "event:/music/w4/streetsecret"
-
-#macro mu_chateau "event:/music/w5/chateau"
-#macro mu_kidsparty "event:/music/w5/kidsparty"
-#macro mu_kidspartysecret "event:/music/w5/kidspartysecret"
-#macro mu_kidspartychase "event:/music/w5/kidspartychase"
-#macro mu_war "event:/music/w5/war"
-#macro mu_warsecret "event:/music/w5/warsecret"
-
-// title cards
-#macro mu_entrancetitle "event:/music/w1/entrancetitle"
-#macro mu_medievaltitle "event:/music/w1/medievaltitle"
-#macro mu_ruintitle "event:/music/w1/ruintitle"
-#macro mu_dungeontitle "event:/music/w1/dungeontitle"
-#macro mu_deserttitle "event:/music/w2/deserttitle"
-#macro mu_saloontitle "event:/music/w2/saloontitle"
-#macro mu_graveyardtitle "event:/music/w2/graveyardtitle"
-#macro mu_farmtitle "event:/music/w2/farmtitle"
-#macro mu_golftitle "event:/music/w3/golftitle"
-#macro mu_foresttitle "event:/music/w3/foresttitle"
-#macro mu_spacetitle "event:/music/w3/spacetitle"
-#macro mu_beachtitle "event:/music/w3/beachtitle"
-#macro mu_industrialtitle "event:/music/w4/industrialtitle"
-#macro mu_freezertitle "event:/music/w4/freezertitle"
-#macro mu_sewertitle "event:/music/w4/sewertitle"
-#macro mu_streettitle "event:/music/w4/streettitle"
-#macro mu_kidspartytitle "event:/music/w5/kidspartytitle"
-#macro mu_wartitle "event:/music/w5/wartitle"
-#macro mu_chateautitle "event:/music/w5/chateautitle"
-*/
+#macro sound_instance_create fmod_event_create_instance // event (string)
+// returns sound instance (number)
+#macro sound_instance_destroy fmod_event_instance_release // sound instance
+#macro sound_instance_play fmod_event_instance_play // sound instance
+#macro sound_instance_stop fmod_event_instance_stop // sound instance
+#macro sound_instance_move fmod_event_instance_set_3d_attributes // sound instance, x, y
+#macro sound_instance_set_parameter fmod_event_instance_set_parameter // sound instance, parameter, value, instant
+#macro sound_instance_get_parameter fmod_event_instance_get_parameter // sound instance, parameter
+#macro sound_instance_is_playing fmod_event_instance_is_playing // sound instance
+#macro sound_instance_pause fmod_event_instance_set_paused // sound instance, enabled (bool)
+#macro sound_instance_is_paused fmod_event_instance_get_paused // sound instance
+#macro sound_instance_track_position fmod_event_instance_get_timeline_pos // sound instance
+// returns in milliseconds
+#macro sound_instance_set_track_position fmod_event_instance_set_timeline_pos // sound instance, position (milliseconds)
 
 // sounds
 #macro sfx_step "event:/sfx/ui/step"
@@ -512,5 +429,95 @@ global.steam_api = false;
 #macro sfx_towercollapsetrack "event:/sfx/ending/towercollapsetrack"
 #macro sfx_towercollapse "event:/sfx/ending/towercollapse"
 #macro sfx_johnending "event:/sfx/ending/johnending"
+
+// music (not recommended)
+/*
+#macro mu_pizzatime "event:/music/pizzatime"
+#macro mu_finalescape "event:/music/finalescape"
+#macro mu_rank "event:/music/rank"
+#macro mu_timesup "event:/music/timesup"
+#macro mu_finalrank "event:/music/finalrank"
+#macro mu_intro "event:/music/intro"
+#macro mu_ending "event:/music/ending"
+#macro mu_credits "event:/music/credits"
+#macro mu_title "event:/music/title"
+#macro mu_pause "event:/music/pause"
+
+#macro mu_pillar "event:/music/pillarmusic"
+#macro mu_tutorial "event:/music/tutorial"
+#macro mu_hub "event:/music/hub"
+#macro mu_finalhallway "event:/music/w5/finalhallway"
+#macro mu_boss_pepperman "event:/music/boss/pepperman"
+#macro mu_boss_vigilante "event:/music/boss/vigilante"
+#macro mu_boss_noise "event:/music/boss/noise"
+#macro mu_boss_noisette "event:/music/boss/noisette"
+#macro mu_boss_fakepep "event:/music/boss/fakepep"
+#macro mu_boss_pizzaface "event:/music/boss/pizzaface"
+#macro mu_fakepepambient "event:/music/boss/fakepepambient"
+
+#macro mu_entrance "event:/music/w1/entrance"
+#macro mu_entrancesecret "event:/music/w1/entrancesecret"
+#macro mu_medieval "event:/music/w1/medieval"
+#macro mu_medievalsecret "event:/music/w1/medievalsecret"
+#macro mu_ruin "event:/music/w1/ruin"
+#macro mu_ruinsecret "event:/music/w1/ruinsecret"
+#macro mu_dungeon "event:/music/w1/dungeon"
+#macro mu_dungeonsecret "event:/music/w1/dungeonsecret"
+
+#macro mu_desert "event:/music/w2/desert"
+#macro mu_desertsecret "event:/music/w2/desertsecret"
+#macro mu_farm "event:/music/w2/farm"
+#macro mu_farmsecret "event:/music/w2/farmsecret"
+#macro mu_graveyard "event:/music/w2/graveyard"
+#macro mu_graveyardsecret "event:/music/w2/graveyardsecret"
+#macro mu_saloon "event:/music/w2/saloon"
+#macro mu_saloonsecret "event:/music/w2/saloonsecret"
+
+#macro mu_beach "event:/music/w3/beach"
+#macro mu_beachsecret "event:/music/w3/beachsecret"
+#macro mu_forest "event:/music/w3/forest"
+#macro mu_forestsecret "event:/music/w3/forestsecret"
+#macro mu_golf "event:/music/w3/golf"
+#macro mu_golfsecret "event:/music/w3/golfsecret"
+#macro mu_space "event:/music/w3/space"
+#macro mu_spacesecret "event:/music/w3/spacesecret"
+
+#macro mu_freezer "event:/music/w4/freezer"
+#macro mu_freezersecret "event:/music/w4/freezersecret"
+#macro mu_industrial "event:/music/w4/industrial"
+#macro mu_industrialsecret "event:/music/w4/industrialsecret"
+#macro mu_sewer "event:/music/w4/sewer"
+#macro mu_sewersecret "event:/music/w4/sewersecret"
+#macro mu_street "event:/music/w4/street"
+#macro mu_streetsecret "event:/music/w4/streetsecret"
+
+#macro mu_chateau "event:/music/w5/chateau"
+#macro mu_kidsparty "event:/music/w5/kidsparty"
+#macro mu_kidspartysecret "event:/music/w5/kidspartysecret"
+#macro mu_kidspartychase "event:/music/w5/kidspartychase"
+#macro mu_war "event:/music/w5/war"
+#macro mu_warsecret "event:/music/w5/warsecret"
+
+// title cards
+#macro mu_entrancetitle "event:/music/w1/entrancetitle"
+#macro mu_medievaltitle "event:/music/w1/medievaltitle"
+#macro mu_ruintitle "event:/music/w1/ruintitle"
+#macro mu_dungeontitle "event:/music/w1/dungeontitle"
+#macro mu_deserttitle "event:/music/w2/deserttitle"
+#macro mu_saloontitle "event:/music/w2/saloontitle"
+#macro mu_graveyardtitle "event:/music/w2/graveyardtitle"
+#macro mu_farmtitle "event:/music/w2/farmtitle"
+#macro mu_golftitle "event:/music/w3/golftitle"
+#macro mu_foresttitle "event:/music/w3/foresttitle"
+#macro mu_spacetitle "event:/music/w3/spacetitle"
+#macro mu_beachtitle "event:/music/w3/beachtitle"
+#macro mu_industrialtitle "event:/music/w4/industrialtitle"
+#macro mu_freezertitle "event:/music/w4/freezertitle"
+#macro mu_sewertitle "event:/music/w4/sewertitle"
+#macro mu_streettitle "event:/music/w4/streettitle"
+#macro mu_kidspartytitle "event:/music/w5/kidspartytitle"
+#macro mu_wartitle "event:/music/w5/wartitle"
+#macro mu_chateautitle "event:/music/w5/chateautitle"
+*/
 
 #endregion

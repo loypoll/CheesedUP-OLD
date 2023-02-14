@@ -587,7 +587,7 @@ if (sprite_index == spr_noise_phasetrans1P && image_index > 24)
 	}
 }
 else if (sprite_index != spr_noise_phasetrans1P)
-    noisebossscream = false;
+	noisebossscream = false;
 if (global.pistol && state != states.animation && state != states.actor && state != states.hurt && state != states.bump)
 {
 	if (key_slap || pistolchargeshooting)

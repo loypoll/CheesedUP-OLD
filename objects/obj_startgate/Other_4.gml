@@ -6,50 +6,50 @@ if (global.panic)
 }
 switch targetRoom
 {
-    case entrance_1:
-    case medieval_1:
-    case ruin_1:
-    case dungeon_1:
-        world = 1
-        break
-    case desert_1:
-    case graveyard_1:
-    case farm_1:
-    case ufo_1:
-        world = 2
-        break
-    case beach_1:
-    case forest_1:
-    case minigolf_1:
-        world = 3
-        break
-    case space_1:
-    case city_1:
-    case sewer_1:
-    case war_1:
-        world = 4
-        break
-    case factory_1:
-    case freezer_1:
-    case mansion_1:
-    case kidsparty_entrance1:
-        world = 5
-        break
-    case boss_pepperman:
-        level = "b_pepperman"
-        break
-    case boss_vigilante:
-        level = "b_vigilante"
-        break
-    case boss_noise:
-        level = "b_noise"
-        break
-    case boss_fakepep:
-        level = "b_fakepep"
-        break
-    case boss_pizzaface:
-        level = "b_pizzaface"
-        break
+	case entrance_1:
+	case medieval_1:
+	case ruin_1:
+	case dungeon_1:
+		world = 1
+		break
+	case desert_1:
+	case graveyard_1:
+	case farm_1:
+	case ufo_1:
+		world = 2
+		break
+	case beach_1:
+	case forest_1:
+	case minigolf_1:
+		world = 3
+		break
+	case space_1:
+	case city_1:
+	case sewer_1:
+	case war_1:
+		world = 4
+		break
+	case factory_1:
+	case freezer_1:
+	case mansion_1:
+	case kidsparty_entrance1:
+		world = 5
+		break
+	case boss_pepperman:
+		level = "b_pepperman"
+		break
+	case boss_vigilante:
+		level = "b_vigilante"
+		break
+	case boss_noise:
+		level = "b_noise"
+		break
+	case boss_fakepep:
+		level = "b_fakepep"
+		break
+	case boss_pizzaface:
+		level = "b_pizzaface"
+		break
 }
 if (targetRoom == boss_pepperman || targetRoom == boss_vigilante || targetRoom == boss_noise || targetRoom == boss_fakepep)
 	boss = true;

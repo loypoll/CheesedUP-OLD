@@ -8,7 +8,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	}
 	with (obj_player)
 	{
-		if ((state == states.victory && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
+		if ((state == 98 && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
 			_cutscenehandler = true;
 	}
 	with (obj_charswitch_intro)
@@ -16,16 +16,16 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	with (obj_titlecard)
 		_cutscenehandler = true;
 	with (obj_taxi)
-    {
-        if move
-            _cutscenehandler = true;
-    }
-    with (obj_taxidud)
-    {
-        if (!start)
-            _cutscenehandler = true;
-    }
-	if (obj_savesystem.state == states.normal && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
+	{
+		if move
+			_cutscenehandler = true;
+	}
+	with (obj_taxidud)
+	{
+		if (!start)
+			_cutscenehandler = true;
+	}
+	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
 		selected = 0;
 		fadein = true;
@@ -228,8 +228,8 @@ var prevpause = pause;
 if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 {
 	scr_getinput();
-	key_jump = key_jump || keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_space);
-	key_back = keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_start);
+	key_jump = (key_jump || (global.key_start != vk_return && keyboard_check_pressed(vk_return)) || (global.key_start != vk_space && keyboard_check_pressed(vk_space)))
+	key_back = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_start))
 	if (backbuffer > 0)
 	{
 		backbuffer--;
@@ -261,25 +261,25 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 				if (room == Endingroom || room == tower_soundtest || room == Creditsroom || room == Johnresurrectionroom)
 					break;
 				else
-                {
-                    if !global.snickchallenge
-                    {
-                        var rm = global.leveltorestart;
-                        if rm != noone && rm != -1
-                        {
-                            alarm[5] = 1;
+				{
+					if !global.snickchallenge
+					{
+						var rm = global.leveltorestart;
+						if rm != noone && rm != -1
+						{
+							alarm[5] = 1;
 							roomtorestart = rm;
-                            pause_unpause_music();
-                            stop_music();
-                            scr_pause_activate_objects();
-                            scr_pause_stop_sounds();
-                            pause = false;
-                        }
-                        else
-                            fmod_event_one_shot("event:/sfx/ui/select");
-                    }
-                    break;
-                }
+							pause_unpause_music();
+							stop_music();
+							scr_pause_activate_objects();
+							scr_pause_stop_sounds();
+							pause = false;
+						}
+						else
+							fmod_event_one_shot("event:/sfx/ui/select");
+					}
+					break;
+				}
 			
 			case 1:
 				fmod_event_one_shot("event:/sfx/ui/select");
@@ -291,52 +291,52 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 				if (room == Endingroom || room == Creditsroom || room == Johnresurrectionroom)
 					break;
 				else
-                {
-                    pause_unpause_music();
-                    stop_music();
-                    scr_pause_stop_sounds();
-                    fmod_event_instance_stop(global.snd_bossbeaten, 1);
-                    fmod_event_instance_stop(pausemusicID, 1);
-                    obj_music.music = noone;
-                    var sl = ds_list_create();
-                    var il = ds_list_create();
-                    var arr = noone;
-                    ds_list_copy(sl, sound_list);
-                    ds_list_copy(il, instance_list);
-                    if (room == hub_room1 || room == Finalintro || room == characterselect || room == cowboytask || room == Titlescreen || room == Mainmenu || room == Scootertransition || room == rm_levelselect || (string_copy(room_get_name(room), 1, 5) == "tower" && (!global.panic)))
-                    {
-                        if global.startgate
-                        {
-                            hub = 1;
-                            arr = ["hubgroup"];
-                            global.startgate = false;
-                        }
-                        else
-                        {
-                            hub = 0;
-                            arr = ["menugroup"];
-                        }
-                    }
-                    else
-                    {
-                        global.startgate = false;
-                        hub = 1;
-                        arr = ["hubgroup"];
-                    }
-                    alarm[3] = 1;
-                    ds_list_add(il, id);
-                    with textures_offload(arr)
-                    {
-                        ds_list_clear(sound_list);
-                        ds_list_clear(instance_list);
-                        ds_list_copy(sound_list, sl);
-                        ds_list_copy(instance_list, il);
-                    }
-                    instance_deactivate_object(id);
-                    ds_list_destroy(sl);
-                    ds_list_destroy(il);
-                    break;
-                }
+				{
+					pause_unpause_music();
+					stop_music();
+					scr_pause_stop_sounds();
+					fmod_event_instance_stop(global.snd_bossbeaten, 1);
+					fmod_event_instance_stop(pausemusicID, 1);
+					obj_music.music = noone;
+					var sl = ds_list_create();
+					var il = ds_list_create();
+					var arr = noone;
+					ds_list_copy(sl, sound_list);
+					ds_list_copy(il, instance_list);
+					if (room == hub_room1 || room == Finalintro || room == characterselect || room == cowboytask || room == Titlescreen || room == Mainmenu || room == Scootertransition || room == rm_levelselect || (string_copy(room_get_name(room), 1, 5) == "tower" && (!global.panic)))
+					{
+						if global.startgate
+						{
+							hub = 1;
+							arr = ["hubgroup"];
+							global.startgate = false;
+						}
+						else
+						{
+							hub = 0;
+							arr = ["menugroup"];
+						}
+					}
+					else
+					{
+						global.startgate = false;
+						hub = 1;
+						arr = ["hubgroup"];
+					}
+					alarm[3] = 1;
+					ds_list_add(il, id);
+					with textures_offload(arr)
+					{
+						ds_list_clear(sound_list);
+						ds_list_clear(instance_list);
+						ds_list_copy(sound_list, sl);
+						ds_list_copy(instance_list, il);
+					}
+					instance_deactivate_object(id);
+					ds_list_destroy(sl);
+					ds_list_destroy(il);
+					break;
+				}
 		}
 	}
 }

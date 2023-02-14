@@ -51,5 +51,5 @@ function scr_player_slipbanan()
 		scr_sleep(1);
 	}
 	if (sprite_index != spr_slipbanan2 && scr_solid_player(x, y))
-        state = states.crouch;
+		state = states.crouch;
 }

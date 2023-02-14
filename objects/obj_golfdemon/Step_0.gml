@@ -84,12 +84,12 @@ if (state == 141)
 	fmod_event_instance_set_3d_attributes(snd, x, y);
 	
 	snd_count = 0;
-    with (obj_golfdemon)
-    {
-        if (point_in_camera(x, y, view_camera[0]) && fmod_event_instance_is_playing(snd))
-            other.snd_count++;
-    }
-    fmod_event_instance_set_parameter(snd, "count", snd_count, 1);
+	with (obj_golfdemon)
+	{
+		if (point_in_camera(x, y, view_camera[0]) && fmod_event_instance_is_playing(snd))
+			other.snd_count++;
+	}
+	fmod_event_instance_set_parameter(snd, "count", snd_count, 1);
 }
 else
 	fmod_event_instance_stop(snd, true);
