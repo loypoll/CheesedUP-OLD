@@ -40,11 +40,11 @@ if (DEBUG)
 		{
 			ds_list_clear(search_commands);
 			search_w = 0;
-			for (i = 0; i < ds_list_size(command_list); i++)
+			for (var i = 0; i < ds_list_size(command_list); i++)
 			{
-				b = ds_list_find_value(command_list, i);
+				var b = ds_list_find_value(command_list, i);
 				var s = b.command_id;
-				d = string_split(input_text, " ");
+				var d = _string_split(input_text, " ");
 				var t = d[1];
 				if (string_copy(s, 1, string_length(t)) == t)
 				{
