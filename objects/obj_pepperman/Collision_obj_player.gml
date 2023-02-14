@@ -46,8 +46,8 @@ else if (state == states.boss_mini && ministate != states.transition && (other.i
 	scr_sleep(25);
 	instance_destroy(obj_peppermanartdude);
 	instance_destroy(obj_peppermanbowlingball);
-    instance_destroy(obj_peppermanbowlingballspawner);
-    instance_destroy(obj_peppermanGIANTbowlingball);
+	instance_destroy(obj_peppermanbowlingballspawner);
+	instance_destroy(obj_peppermanGIANTbowlingball);
 	destroyable = true;
 	spr_dead = spr_pepperman_minifall;
 	instance_destroy();

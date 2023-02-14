@@ -5,7 +5,7 @@ switch (state)
 		targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 		var _g = distance_to_point(targetplayer.x, targetplayer.y);
 		if (movespeed < 8.25)
-            movespeed += 0.05
+			movespeed += 0.05
 		x += movespeed;
 		fmod_event_instance_set_3d_attributes(snd, x, y);
 		if (place_meeting(x, y, obj_player1) || x > obj_player1.x)

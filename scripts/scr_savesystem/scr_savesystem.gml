@@ -9,12 +9,12 @@ function get_percentage()
 	var count = 0;
 	var extracount = 0;
 	var _rank_map = ds_map_create();
-    ds_map_set(_rank_map, "p", 4);
-    ds_map_set(_rank_map, "s", 4);
-    ds_map_set(_rank_map, "a", 3);
-    ds_map_set(_rank_map, "b", 2);
-    ds_map_set(_rank_map, "c", 1);
-    ds_map_set(_rank_map, "d", 0);
+	ds_map_set(_rank_map, "p", 4);
+	ds_map_set(_rank_map, "s", 4);
+	ds_map_set(_rank_map, "a", 3);
+	ds_map_set(_rank_map, "b", 2);
+	ds_map_set(_rank_map, "c", 1);
+	ds_map_set(_rank_map, "d", 0);
 	for (var i = 0; i < array_length(levels); i++)
 	{
 		var level = levels[i];
@@ -30,8 +30,8 @@ function get_percentage()
 		}
 		var r = ini_read_string("Ranks", level, "d");
 		if (r == "p")
-            extracount++;
-        count += ds_map_find_value(_rank_map, r);
+			extracount++;
+		count += ds_map_find_value(_rank_map, r);
 		count += ini_read_real("Secret", level, 0);
 		var ac = 0;
 		for (j = 0; j < 3; j++)
@@ -53,8 +53,8 @@ function get_percentage()
 		boss = bossranks[i];
 		r = ini_read_string("Ranks", level, "d");
 		if (r == "p")
-            extracount++;
-        count += ds_map_find_value(_rank_map, r);
+			extracount++;
+		count += ds_map_find_value(_rank_map, r);
 	}
 	for (i = 0; i < array_length(bossach); i++)
 	{
@@ -63,11 +63,11 @@ function get_percentage()
 	}
 	var per = floor((count / _basemax) * 100);
 	if (per > 100)
-        per = 100;
-    var extraper = extracount >= _extramax;
+		per = 100;
+	var extraper = extracount >= _extramax;
 	trace("Percentage: ", per, " and ", extraper);
 	trace("Extra count: ", extracount, " out of ", _extramax);
-    trace("Percentage: ", per, " and ", extraper);
+	trace("Percentage: ", per, " and ", extraper);
 	return per + extraper;
 }
 function gamesave_async_load()

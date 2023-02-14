@@ -58,13 +58,13 @@ switch (state)
 }
 if (state == 189)
 {
-    parryable = false;
-    supertauntable = false;
+	parryable = false;
+	supertauntable = false;
 }
 else
 {
-    parryable = true;
-    supertauntable = true;
+	parryable = true;
+	supertauntable = true;
 }
 if (state == states.stun && stunned > 100 && birdcreated == 0)
 {

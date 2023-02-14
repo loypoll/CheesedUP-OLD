@@ -33,13 +33,13 @@ if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
 		switch (bubblespr)
 		{
 			case spr_tv_bubbleopen:
-                bubblespr = spr_tv_bubble
-                break
-            case spr_tv_bubbleclose:
-                bubblespr = spr_tv_bubbleclosed
-                if (prompt == -4 || prompt == "")
-                    bubblespr = -4
-                break
+				bubblespr = spr_tv_bubble
+				break
+			case spr_tv_bubbleclose:
+				bubblespr = spr_tv_bubbleclosed
+				if (prompt == -4 || prompt == "")
+					bubblespr = -4
+				break
 		}
 	}
 }
@@ -228,16 +228,16 @@ switch (state)
 		switch (expressionsprite)
 		{
 			case spr_tv_exprhurt:
-            case spr_tv_exprhurt1:
-            case spr_tv_exprhurt2:
-            case spr_tv_exprhurt3:
-            case spr_tv_exprhurt4:
-            case spr_tv_exprhurt5:
-            case spr_tv_exprhurt6:
-            case spr_tv_exprhurt7:
-            case spr_tv_exprhurt8:
-            case spr_tv_exprhurt9:
-            case spr_tv_exprhurt10:
+			case spr_tv_exprhurt1:
+			case spr_tv_exprhurt2:
+			case spr_tv_exprhurt3:
+			case spr_tv_exprhurt4:
+			case spr_tv_exprhurt5:
+			case spr_tv_exprhurt6:
+			case spr_tv_exprhurt7:
+			case spr_tv_exprhurt8:
+			case spr_tv_exprhurt9:
+			case spr_tv_exprhurt10:
 				if (obj_player1.state != 107)
 				{
 					if (expressionbuffer > 0)
@@ -271,7 +271,7 @@ switch (state)
 				}
 				break;
 			case spr_tv_exprcollect:
-            case spr_tv_happyG:
+			case spr_tv_happyG:
 				if (expressionbuffer > 0)
 					expressionbuffer--;
 				else

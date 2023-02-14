@@ -51,26 +51,26 @@ function magnitude(a, b)
 // https://forum.gamemaker.io/index.php?threads/smooth-camera-rotation.84059/
 function cycle(value, min, max)
 {
-    var result, delta;
-    delta = (max - min);
-    // % is remainder-of-division operator here.
-    // limit input to (-delta .. +delta):
-    result = (value - min) % delta;
-    // wrap negative results around the limit:
-    if (result < 0) result += delta;
-    // return adjusted input:
-    return result + min;
+	var result, delta;
+	delta = (max - min);
+	// % is remainder-of-division operator here.
+	// limit input to (-delta .. +delta):
+	result = (value - min) % delta;
+	// wrap negative results around the limit:
+	if (result < 0) result += delta;
+	// return adjusted input:
+	return result + min;
 }
 function angle_rotate(angle, target, speed)
 {
 	var diff;
-    // 180 is to be replaced by "pi" for radians
-    diff = cycle(target - angle, -180, 180);
-    // clamp rotations by speed:
-    if (diff < -speed) return angle - speed;
-    if (diff > speed) return angle + speed;
-    // if difference within speed, rotation's done:
-    return target;
+	// 180 is to be replaced by "pi" for radians
+	diff = cycle(target - angle, -180, 180);
+	// clamp rotations by speed:
+	if (diff < -speed) return angle - speed;
+	if (diff > speed) return angle + speed;
+	// if difference within speed, rotation's done:
+	return target;
 }
 
 function get_velocity(a, b)

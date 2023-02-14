@@ -9,12 +9,12 @@ function scr_get_languages()
 	for (var i = 0; i < array_length(arr); i++)
 	{
 		var fo = file_text_open_read("lang/" + arr[i]);
-        var str = "";
-        while !file_text_eof(fo)
-        {
-            str += file_text_readln(fo);
-            str += "\n";
-        }
+		var str = "";
+		while !file_text_eof(fo)
+		{
+			str += file_text_readln(fo);
+			str += "\n";
+		}
 		file_text_close(fo);
 		lang_parse(str);
 	}
@@ -136,8 +136,8 @@ function lang_lexer(list, str)
 							ds_list_add(list, [lang.keyword, start, false]);
 							break;
 						case "noone":
-                            ds_list_add(list, [lang.keyword, start, noone]);
-                            break
+							ds_list_add(list, [lang.keyword, start, noone]);
+							break
 						case "true":
 							ds_list_add(list, [lang.keyword, start, true]);
 							break;
@@ -182,21 +182,21 @@ function lang_exec(token_list) // HAHAHA
 
 function lang_get_custom_font(fontname, language)
 {
-    var _dir = concat(fontname, "_dir");
-    if ds_map_find_value(language, _dir) != noone
-    {
-        var font_map = ds_map_find_value(language, concat(fontname, "_map"));
-        var font_size = string_length(font_map);
-        var font_sep = ds_map_find_value(language, concat(fontname, "_sep"));
-        font_sep = real(font_sep);
-        var font_xorig = 0;
-        var font_yorig = 0;
-        var spr = sprite_add(concat("lang/", ds_map_find_value(language, _dir)), font_size, true, false, font_xorig, font_yorig);
-        
+	var _dir = concat(fontname, "_dir");
+	if ds_map_find_value(language, _dir) != noone
+	{
+		var font_map = ds_map_find_value(language, concat(fontname, "_map"));
+		var font_size = string_length(font_map);
+		var font_sep = ds_map_find_value(language, concat(fontname, "_sep"));
+		font_sep = real(font_sep);
+		var font_xorig = 0;
+		var font_yorig = 0;
+		var spr = sprite_add(concat("lang/", ds_map_find_value(language, _dir)), font_size, true, false, font_xorig, font_yorig);
+		
 		return font_add_sprite_ext(spr, font_map, 0, font_sep);
-    }
-    else
-        return lang_get_font(fontname);
+	}
+	else
+		return lang_get_font(fontname);
 }
 
 function lang_get_font(fontname)

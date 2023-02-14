@@ -1,8 +1,8 @@
 var j = menu;
 if (instance_exists(obj_keyconfig) || menu == (5 << 0) || menu == (7 << 0))
-    j = 4;
+	j = 4;
 if (menu >= (4 << 0) && menu <= (7 << 0))
-    j = 4;
+	j = 4;
 for (var i = 0; i < array_length(bg_alpha); i++)
 {
 	if (i == j)

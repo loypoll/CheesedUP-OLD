@@ -67,8 +67,8 @@ switch (m.anchor)
 					var x2 = x1 + aw;
 					var y2 = y1 + h;
 					var spr = spr_slidericon;
-                    if menu != (1 << 0)
-                        spr = spr_slidericon2;
+					if menu != (1 << 0)
+						spr = spr_slidericon2;
 					draw_set_alpha(a);
 					draw_sprite_ext(spr_slider, 0, x1, y1, 1, 1, 0, c_dkgray, a);
 					draw_sprite_ext(spr_slider, 0, x1, y1, 1, 1, 0, c, a);

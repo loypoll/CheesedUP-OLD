@@ -9,8 +9,8 @@ x += (image_xscale * spd);
 y += -spdh;
 if instance_exists(obj_bossplayerdeath)
 {
-    instance_destroy();
-    exit;
+	instance_destroy();
+	exit;
 }
 if (sprite_index == spr_peppinobulletGIANT)
 	var dmg = 6;

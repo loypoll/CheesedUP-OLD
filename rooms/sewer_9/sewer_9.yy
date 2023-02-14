@@ -362,8 +362,6 @@
     {"name":"inst_0A3FED2C","path":"rooms/sewer_9/sewer_9.yy",},
     {"name":"inst_9FE25BA4","path":"rooms/sewer_9/sewer_9.yy",},
     {"name":"inst_1496C91C","path":"rooms/sewer_9/sewer_9.yy",},
-    {"name":"inst_99494784","path":"rooms/sewer_9/sewer_9.yy",},
-    {"name":"inst_2DFDB5FC","path":"rooms/sewer_9/sewer_9.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

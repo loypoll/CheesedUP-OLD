@@ -130,10 +130,10 @@ add_option_multiple(video_menu, 2, "option_resolution", res, function(val)
 
 add_option_toggle(video_menu, 4, "option_texfilter", function(val)
 {
-    ini_open_from_string(obj_savesystem.ini_str_options);
-    ini_write_real("Option", "texfilter", val);
-    obj_savesystem.ini_str_options = ini_close();
-    global.option_texfilter = val;
+	ini_open_from_string(obj_savesystem.ini_str_options);
+	ini_write_real("Option", "texfilter", val);
+	obj_savesystem.ini_str_options = ini_close();
+	global.option_texfilter = val;
 }
 ).value = global.option_texfilter;
 
@@ -216,57 +216,57 @@ array_push(menus, game_menu);
 
 var controls_menu = create_menu_fixed((4 << 0), (1 << 0), 150, 40);
 add_option_press(controls_menu, 0, "option_back", function() {
-    menu_goto((0 << 0));
+	menu_goto((0 << 0));
 });
 add_option_press(controls_menu, 1, "option_keyboard", function()
 {
-    obj_option.key_jump = false;
-    instance_create_unique(0, 0, obj_keyconfig);
+	obj_option.key_jump = false;
+	instance_create_unique(0, 0, obj_keyconfig);
 });
 add_option_press(controls_menu, 2, "option_controller", function() {
-    menu_goto((5 << 0));
+	menu_goto((5 << 0));
 });
 add_option_press(controls_menu, 3, "option_reset_config", function()
 {
-    ini_open_from_string(obj_savesystem.ini_str_options)
-    ini_section_delete("ControlsKeys")
-    ini_section_delete("ControllerButton")
-    ini_section_delete("ControllerConfig")
-    scr_initinput(false)
-    obj_savesystem.ini_str_options = ini_close()
-    with (obj_option)
-    {
-        for (i = 0; i < array_length(menus); i++)
-        {
-            b = menus[i]
-            if (b.menu_id == (5 << 0) || b.menu_id == (7 << 0))
-            {
-                for (var j = 0; j < array_length(b.options); j++)
-                {
-                    var q = b.options[j]
-                    if (q.name == "option_deadzone")
-                        q.value = (global.gamepad_deadzone * 100)
-                    else if (q.name == "option_deadzone_h")
-                        q.value = (global.gamepad_deadzone_horizontal * 100)
-                    else if (q.name == "option_deadzone_v")
-                        q.value = (global.gamepad_deadzone_vertical * 100)
-                    else if (q.name == "option_deadzone_press")
-                        q.value = (global.gamepad_deadzone_press * 100)
-                    else if (q.name == "option_deadzone_superjump")
-                        q.value = (global.gamepad_deadzone_superjump * 100)
-                    else if (q.name == "option_controller_superjump")
-                        q.value = global.gamepad_superjump
-                    else if (q.name == "option_controller_groundpound")
-                        q.value = global.gamepad_groundpound
-                }
-            }
-        }
-    }
-    with (create_transformation_tip(lang_get_value("option_controls_resetted")))
-    {
-        depth = -700
-        alarm[1] = 100
-    }
+	ini_open_from_string(obj_savesystem.ini_str_options)
+	ini_section_delete("ControlsKeys")
+	ini_section_delete("ControllerButton")
+	ini_section_delete("ControllerConfig")
+	scr_initinput(false)
+	obj_savesystem.ini_str_options = ini_close()
+	with (obj_option)
+	{
+		for (i = 0; i < array_length(menus); i++)
+		{
+			b = menus[i]
+			if (b.menu_id == (5 << 0) || b.menu_id == (7 << 0))
+			{
+				for (var j = 0; j < array_length(b.options); j++)
+				{
+					var q = b.options[j]
+					if (q.name == "option_deadzone")
+						q.value = (global.gamepad_deadzone * 100)
+					else if (q.name == "option_deadzone_h")
+						q.value = (global.gamepad_deadzone_horizontal * 100)
+					else if (q.name == "option_deadzone_v")
+						q.value = (global.gamepad_deadzone_vertical * 100)
+					else if (q.name == "option_deadzone_press")
+						q.value = (global.gamepad_deadzone_press * 100)
+					else if (q.name == "option_deadzone_superjump")
+						q.value = (global.gamepad_deadzone_superjump * 100)
+					else if (q.name == "option_controller_superjump")
+						q.value = global.gamepad_superjump
+					else if (q.name == "option_controller_groundpound")
+						q.value = global.gamepad_groundpound
+				}
+			}
+		}
+	}
+	with (create_transformation_tip(lang_get_value("option_controls_resetted")))
+	{
+		depth = -700
+		alarm[1] = 100
+	}
 });
 array_push(menus, controls_menu)
 
@@ -275,32 +275,32 @@ array_push(menus, controls_menu)
 
 var controller_menu = create_menu_fixed((5 << 0), (1 << 0), 150, 40, (4 << 0))
 add_option_press(controller_menu, 0, "option_back", function() {
-    menu_goto((4 << 0))
+	menu_goto((4 << 0))
 });
 add_option_press(controller_menu, 1, "option_controller_binds", function(val)
 {
-    obj_option.key_jump = false;
-    with (instance_create_unique(0, 0, obj_keyconfig))
-    {
-        controller = 1;
-        array_pop(input);
-        array_push(input, ["key_superjump"]);
-        array_push(input, ["key_groundpound"]);
-    }
+	obj_option.key_jump = false;
+	with (instance_create_unique(0, 0, obj_keyconfig))
+	{
+		controller = 1;
+		array_pop(input);
+		array_push(input, ["key_superjump"]);
+		array_push(input, ["key_groundpound"]);
+	}
 });
 add_option_press(controller_menu, 2, "option_deadzone_title", function(val) {
-    menu_goto((7 << 0))
+	menu_goto((7 << 0))
 });
 add_option_toggle(controller_menu, 3, "option_controller_superjump", function(val)
 {
-    global.gamepad_superjump = val;
-    set_controller_config();
+	global.gamepad_superjump = val;
+	set_controller_config();
 }).value = global.gamepad_superjump;
 
 add_option_toggle(controller_menu, 4, "option_controller_groundpound", function(val)
 {
-    global.gamepad_groundpound = val;
-    set_controller_config();
+	global.gamepad_groundpound = val;
+	set_controller_config();
 }).value = global.gamepad_groundpound;
 
 array_push(menus, controller_menu)
@@ -310,44 +310,44 @@ array_push(menus, controller_menu)
 
 var deadzones_menu = create_menu_fixed((7 << 0), (1 << 0), 150, 40, (5 << 0));
 add_option_press(deadzones_menu, 0, "option_back", function() {
-    menu_goto((5 << 0))
+	menu_goto((5 << 0))
 });
 add_option_slide(deadzones_menu, 1, "option_deadzone", function(val)
 {
-    if (val > 90)
-        val = 90
-    global.gamepad_deadzone = (val / 100)
-    set_controller_config()
+	if (val > 90)
+		val = 90
+	global.gamepad_deadzone = (val / 100)
+	set_controller_config()
 }).value = (global.gamepad_deadzone * 100);
 
 add_option_slide(deadzones_menu, 2, "option_deadzone_h", function(val)
 {
-    if (val > 90)
-        val = 90
-    global.gamepad_deadzone_horizontal = (val / 100)
-    set_controller_config()
+	if (val > 90)
+		val = 90
+	global.gamepad_deadzone_horizontal = (val / 100)
+	set_controller_config()
 }).value = (global.gamepad_deadzone_horizontal * 100);
 
 add_option_slide(deadzones_menu, 3, "option_deadzone_v", function(val)
 {
-    if (val > 90)
-        val = 90
-    global.gamepad_deadzone_vertical = (val / 100)
-    set_controller_config()
+	if (val > 90)
+		val = 90
+	global.gamepad_deadzone_vertical = (val / 100)
+	set_controller_config()
 }).value = (global.gamepad_deadzone_vertical * 100);
 
 add_option_slide(deadzones_menu, 4, "option_deadzone_press", function(val)
 {
-    if (val > 90)
-        val = 90
-    global.gamepad_deadzone_press = (val / 100)
-    set_controller_config()
+	if (val > 90)
+		val = 90
+	global.gamepad_deadzone_press = (val / 100)
+	set_controller_config()
 }).value = (global.gamepad_deadzone_press * 100);
 
 add_option_slide(deadzones_menu, 5, "option_deadzone_superjump", function(val)
 {
-    global.gamepad_deadzone_superjump = (val / 100)
-    set_controller_config()
+	global.gamepad_deadzone_superjump = (val / 100)
+	set_controller_config()
 }).value = (global.gamepad_deadzone_superjump * 100);
 
 array_push(menus, deadzones_menu);

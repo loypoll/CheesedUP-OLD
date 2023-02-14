@@ -60,16 +60,16 @@ function enemy_is_superslam(baddieid)
 }
 function enemy_is_swingding(baddieid)
 {
-    with baddieid
-    {
-        if state == states.grabbed
-        {
-            var g = grabbedby == 1 ? obj_player1.id : obj_player2.id;
-            if (g.state == states.grab || (g.state == states.chainsaw && g.tauntstoredstate == states.grab)) && g.sprite_index == g.spr_swingding
-                return true;
-        }
-    }
-    return false;
+	with baddieid
+	{
+		if state == states.grabbed
+		{
+			var g = grabbedby == 1 ? obj_player1.id : obj_player2.id;
+			if (g.state == states.grab || (g.state == states.chainsaw && g.tauntstoredstate == states.grab)) && g.sprite_index == g.spr_swingding
+				return true;
+		}
+	}
+	return false;
 }
 function draw_enemy(healthbar, palette, color = c_white)
 {

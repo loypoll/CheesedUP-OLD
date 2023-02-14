@@ -15,8 +15,8 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 	fmod_event_instance_play(global.snd_johndead);
 	
 	var combototal = 10 + floor(global.combo * 0.5);
-    global.collect += combototal;
-    global.comboscore += combototal;
+	global.collect += combototal;
+	global.comboscore += combototal;
 	global.combo += 1;
 	global.enemykilled += 1;
 	global.combotime = 60;

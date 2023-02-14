@@ -96,11 +96,11 @@ function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 						b = (10 << 0);
 						break;
 					case "[g]":
-                        b = (11 << 0);
-                        break;
-                    case "[s]":
-                        b = (12 << 0);
-                        break;
+						b = (11 << 0);
+						break;
+					case "[s]":
+						b = (12 << 0);
+						break;
 				}
 				array_push(arr, [char_x, char_y, t, b]);
 				char_x += 32;
@@ -264,17 +264,17 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 							ix = scr_get_gamepadicon(global.key_tauntC);
 							break;
 						case (11 << 0):
-                            if global.gamepad_groundpound
-                                ix = scr_get_gamepadicon(global.key_downC);
-                            else
-                                ix = scr_get_gamepadicon(global.key_groundpoundC);
-                            break;
-                        case (12 << 0):
-                            if global.gamepad_superjump
-                                ix = scr_get_gamepadicon(global.key_upC);
-                            else
-                                ix = scr_get_gamepadicon(global.key_superjumpC);
-                            break;
+							if global.gamepad_groundpound
+								ix = scr_get_gamepadicon(global.key_downC);
+							else
+								ix = scr_get_gamepadicon(global.key_groundpoundC);
+							break;
+						case (12 << 0):
+							if global.gamepad_superjump
+								ix = scr_get_gamepadicon(global.key_upC);
+							else
+								ix = scr_get_gamepadicon(global.key_superjumpC);
+							break;
 					}
 				}
 				else

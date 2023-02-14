@@ -8,9 +8,9 @@ function screen_apply_size()
 	with (obj_screensizer)
 	{
 		if steam_utils_is_steam_running_on_steam_deck()
-            screen_apply_fullscreen(true);
-        else
-        {
+			screen_apply_fullscreen(true);
+		else
+		{
 			if global.option_resolution == 0 && global.option_scale_mode == 1
 				global.option_resolution = 1;
 			if gameframe_get_fullscreen() == false
@@ -18,7 +18,7 @@ function screen_apply_size()
 		
 			window_set_size(get_resolution_width(global.option_resolution, aspect_ratio), get_resolution_height(global.option_resolution, aspect_ratio));
 			if steam_utils_is_steam_running_on_steam_deck() // redundant - but go off, paid dev.
-                screen_apply_fullscreen(true);
+				screen_apply_fullscreen(true);
 			alarm[0] = 2;
 		}
 	}

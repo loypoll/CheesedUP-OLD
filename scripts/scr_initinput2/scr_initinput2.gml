@@ -16,16 +16,16 @@ function scr_initinput2()
 	global.key_chainsawN = ini_read_string("ControlsKeys", "chainsaw", 77);
 	
 	global.key_upCN = ini_read_string("ControllerButton", "up", gp_padu);
-    global.key_rightCN = ini_read_string("ControllerButton", "right", gp_padr);
-    global.key_leftCN = ini_read_string("ControllerButton", "left", gp_padl);
-    global.key_downCN = ini_read_string("ControllerButton", "down", gp_padd);
-    global.key_jumpCN = ini_read_string("ControllerButton", "jump", gp_face1);
-    global.key_slapCN = ini_read_string("ControllerButton", "slap", gp_face3);
-    global.key_tauntCN = ini_read_string("ControllerButton", "taunt", gp_face4);
-    global.key_shootCN = ini_read_string("ControllerButton", "shoot", gp_face2);
-    global.key_attackCN = ini_read_string("ControllerButton", "attack", gp_shoulderr);
-    global.key_startCN = ini_read_string("ControllerButton", "start", gp_start);
-    global.key_chainsawCN = ini_read_string("ControlsKeys", "chainsaw", gp_shoulderl);
+	global.key_rightCN = ini_read_string("ControllerButton", "right", gp_padr);
+	global.key_leftCN = ini_read_string("ControllerButton", "left", gp_padl);
+	global.key_downCN = ini_read_string("ControllerButton", "down", gp_padd);
+	global.key_jumpCN = ini_read_string("ControllerButton", "jump", gp_face1);
+	global.key_slapCN = ini_read_string("ControllerButton", "slap", gp_face3);
+	global.key_tauntCN = ini_read_string("ControllerButton", "taunt", gp_face4);
+	global.key_shootCN = ini_read_string("ControllerButton", "shoot", gp_face2);
+	global.key_attackCN = ini_read_string("ControllerButton", "attack", gp_shoulderr);
+	global.key_startCN = ini_read_string("ControllerButton", "start", gp_start);
+	global.key_chainsawCN = ini_read_string("ControlsKeys", "chainsaw", gp_shoulderl);
 	
 	ini_close();
 }

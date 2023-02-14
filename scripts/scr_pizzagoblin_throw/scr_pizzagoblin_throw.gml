@@ -52,9 +52,9 @@ function scr_pizzagoblin_throw()
 				break;
 			case obj_noisegoblin:
 				with (instance_create(x, y, obj_noisegoblin_arrow))
-                {
-                }
-                break
+				{
+				}
+				break
 			case obj_cheeserobot:
 				with (instance_create(x, y, obj_cheeseblob))
 				{

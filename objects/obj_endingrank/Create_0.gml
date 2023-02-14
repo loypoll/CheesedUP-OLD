@@ -67,53 +67,53 @@ var r = "yousuck";
 switch (rank_spr)
 {
 	case spr_rank_wow:
-        r = "wow";
-        break;
-    case spr_rank_notbad:
-        r = "notbad";
-        break;
-    case spr_rank_nojudgement:
-        r = "nojudgement";
-        break;
-    case spr_rank_confused:
-        r = "confused";
-        break;
-    case spr_rank_holyshit:
-        r = "holyshit";
-        break;
-    case spr_rank_quick:
-        r = "quick";
-        break;
-    case spr_rank_officer:
-        r = "officer";
-        break;
+		r = "wow";
+		break;
+	case spr_rank_notbad:
+		r = "notbad";
+		break;
+	case spr_rank_nojudgement:
+		r = "nojudgement";
+		break;
+	case spr_rank_confused:
+		r = "confused";
+		break;
+	case spr_rank_holyshit:
+		r = "holyshit";
+		break;
+	case spr_rank_quick:
+		r = "quick";
+		break;
+	case spr_rank_officer:
+		r = "officer";
+		break;
 }
 switch (rank_spr)
 {
 	case spr_rank_yousuck:
-        bg_index = 0;
-        break;
-    case spr_rank_wow:
-        bg_index = 6;
-        break;
-    case spr_rank_notbad:
-        bg_index = 5;
-        break;
-    case spr_rank_nojudgement:
-        bg_index = 4;
-        break;
-    case spr_rank_confused:
-        bg_index = 1;
-        break;
-    case spr_rank_holyshit:
-        bg_index = 7;
-        break;
-    case spr_rank_quick:
-        bg_index = 2;
-        break;
-    case spr_rank_officer:
-        bg_index = 3;
-        break;
+		bg_index = 0;
+		break;
+	case spr_rank_wow:
+		bg_index = 6;
+		break;
+	case spr_rank_notbad:
+		bg_index = 5;
+		break;
+	case spr_rank_nojudgement:
+		bg_index = 4;
+		break;
+	case spr_rank_confused:
+		bg_index = 1;
+		break;
+	case spr_rank_holyshit:
+		bg_index = 7;
+		break;
+	case spr_rank_quick:
+		bg_index = 2;
+		break;
+	case spr_rank_officer:
+		bg_index = 3;
+		break;
 }
 ini_write_string("Game", "finalrank", r);
 if (ini_read_real("Game", "snotty", false) == 0)

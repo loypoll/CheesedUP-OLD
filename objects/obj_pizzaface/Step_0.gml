@@ -5,7 +5,7 @@ fmod_event_instance_set_3d_attributes(snd, x, y);
 if (!fmod_event_instance_is_playing(snd))
 	fmod_event_instance_play(snd);
 if (!instance_exists(playerid))
-    exit;
+	exit;
 var _move = true;
 with (obj_player)
 {

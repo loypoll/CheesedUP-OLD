@@ -7,13 +7,13 @@ if (!deactivated)
 		{
 			device_selected[0] = true;
 			if player_input_device[0] != _index
-            {
-                for (var j = 0; j < gamepad_get_device_count(); j++)
-                {
-                    if gamepad_is_connected(j)
-                        gamepad_set_vibration(j, 0, 0);
-                }
-            }
+			{
+				for (var j = 0; j < gamepad_get_device_count(); j++)
+				{
+					if gamepad_is_connected(j)
+						gamepad_set_vibration(j, 0, 0);
+				}
+			}
 			player_input_device[0] = _index;
 			press_start = false;
 		}

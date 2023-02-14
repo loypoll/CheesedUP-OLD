@@ -28,13 +28,13 @@ function set_audio_config(save = true)
 
 function set_controller_config()
 {
-    ini_open_from_string(obj_savesystem.ini_str_options);
-    ini_write_real("ControllerConfig", "deadzone", global.gamepad_deadzone);
-    ini_write_real("ControllerConfig", "deadzone_vert", global.gamepad_deadzone_vertical);
-    ini_write_real("ControllerConfig", "deadzone_horiz", global.gamepad_deadzone_horizontal);
-    ini_write_real("ControllerConfig", "deadzonepress", global.gamepad_deadzone_press);
-    ini_write_real("ControllerConfig", "deadzonesuperjump", global.gamepad_deadzone_superjump);
-    ini_write_real("ControllerConfig", "superjump", global.gamepad_superjump);
-    ini_write_real("ControllerConfig", "groundpound", global.gamepad_groundpound);
-    obj_savesystem.ini_str_options = ini_close();
+	ini_open_from_string(obj_savesystem.ini_str_options);
+	ini_write_real("ControllerConfig", "deadzone", global.gamepad_deadzone);
+	ini_write_real("ControllerConfig", "deadzone_vert", global.gamepad_deadzone_vertical);
+	ini_write_real("ControllerConfig", "deadzone_horiz", global.gamepad_deadzone_horizontal);
+	ini_write_real("ControllerConfig", "deadzonepress", global.gamepad_deadzone_press);
+	ini_write_real("ControllerConfig", "deadzonesuperjump", global.gamepad_deadzone_superjump);
+	ini_write_real("ControllerConfig", "superjump", global.gamepad_superjump);
+	ini_write_real("ControllerConfig", "groundpound", global.gamepad_groundpound);
+	obj_savesystem.ini_str_options = ini_close();
 }
