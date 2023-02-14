@@ -60,7 +60,7 @@ switch (state)
 	case states.boss_phase1hurt:
 		scr_noise_phase1hurt();
 		break;
-	case states.boss_fightball:
+	case states.fightball:
 		scr_noise_fightball();
 		break;
 	case states.punch:

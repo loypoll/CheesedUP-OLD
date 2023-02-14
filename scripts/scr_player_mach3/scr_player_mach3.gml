@@ -725,7 +725,7 @@ function scr_player_mach3()
 		image_speed = 0.4;
 	else
 		image_speed = 0.4;
-	if (key_up && fightball == 0 && state == states.mach3 && character == "P" && grounded && vsp > 0 && sprite_index != spr_dashpadmach && !place_meeting(x, y, obj_dashpad))
+	if (scr_check_superjump() && fightball == 0 && state == states.mach3 && character == "P" && grounded && vsp > 0 && sprite_index != spr_dashpadmach && !place_meeting(x, y, obj_dashpad))
 	{
 		sprite_index = spr_superjumpprep;
 		state = states.Sjumpprep;

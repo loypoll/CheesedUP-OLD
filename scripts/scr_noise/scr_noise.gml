@@ -880,7 +880,7 @@ function scr_noise_fightball()
 {
 	switch (substate)
 	{
-		case states.boss_fightball:
+		case states.fightball:
 			hsp = image_xscale * 10;
 			with (obj_player1)
 			{
@@ -952,7 +952,7 @@ function scr_noise_finale()
 	}
 	switch (substate)
 	{
-		case states.boss_fightball:
+		case states.fightball:
 			hsp = image_xscale * 10;
 			with (obj_player1)
 			{
@@ -1110,13 +1110,13 @@ function scr_noise_phase1hurt()
 			y = obj_player1.y;
 			hsp = 0;
 			vsp = 0;
-			state = states.boss_fightball;
+			state = states.fightball;
 			fightballcount = 0;
 			image_xscale = ix;
 			image_speed = 0.35;
 			sprite_index = spr_playerN_fightball;
 			image_index = 0;
-			substate = states.boss_fightball;
+			substate = states.fightball;
 		}
 	});
 }

@@ -90,7 +90,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Pizza score",
-    "path": "folders/Sprites/HUD/Pizza score.yy",
+    "name": "Pizza Score",
+    "path": "folders/Sprites/HUD/Pizza Score.yy",
   },
 }

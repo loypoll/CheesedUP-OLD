@@ -4,7 +4,7 @@
 lang = "en"
 display_name = "ENGLISH"
 custom_fonts = false
-game_version = "V1.0.196"
+game_version = "V1.0.21"
 
 # --------------------
 # CUSTOM FONT EXAMPLE
@@ -21,6 +21,11 @@ game_version = "V1.0.196"
 # smallfont_dir = "fonts/smallfont_en.png"
 # smallfont_map "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.:?1234567890"
 # smallfont_sep = "0"
+#
+# NOTE: If you want to use the default font when making a new lang file you need to declare
+# the *_dir variable to noone, like so:
+#
+# creditsfont_dir = noone
 #
 # ---------------------------------------------------------------------------------
 # The code above will automatically generate new variables called %fontname%_%lang%
@@ -50,6 +55,8 @@ smallfont = "smallfont_en"
 # [J] Jump
 # [S] Shoot
 # [T] Taunt
+# [g] Groundpound
+# [s] Superjump
 # --------
 # EFFECTS
 # --------
@@ -61,7 +68,7 @@ smallfont = "smallfont_en"
 # TUTORIAL
 # ---------
 tutorial1 = "Press [J] to jump! Hold [D] and a direction to crawl!"
-tutorial2 = "You can break marble and metal blocks underneath you with a bodyslam! Press [D] while in the air!"
+tutorial2 = "You can break marble and metal blocks underneath you with a bodyslam! Press [g] while in the air!"
 tutorial3 = "Start the bodyslam from higher to destroy metal blocks!"
 tutorial4 = "Some blocks may be hidden, keep an eye out for them! Press [G] to destroy them!"
 tutorial5 = "Press [G] to do the Grab Dash! It can destroy marble blocks!"
@@ -77,7 +84,7 @@ tutorial14 = "In order to destroy metal blocks, you need to gain speed by doing 
 tutorial15 = "Running down a slope will make you go faster!"
 tutorial16 = "To turn while retaining Mach Run, press the opposite direction."
 tutorial17 = "Try turning before falling down a hole, you will retain your speed once on the ground"
-tutorial18 = "While at high speed, hold [U] then release it to perform the Super Jump! You can also adjust your position with [L][R] while you are holding [U]!"
+tutorial18 = "While at high speed, hold [s] then release it to perform the Super Jump! You can also adjust your position with [L][R] while you are holding [s]!"
 tutorial19 = "After starting a Super Jump, you can also dash forward in the air by pressing [G]! Give it a try!"
 tutorial20 = "Another trick: Press [G] then [D] immediately to go through gaps faster!"
 tutorial21 = "You can grab things with the Grab Dash and throw them by pressing [G] again!"
@@ -135,9 +142,9 @@ garbage15 = "Kiss my ass!"
 # -------------------
 # TRANSFORMATION TIPS
 # -------------------
-knighttip = "{u}[J][J] Double Jump [J][D] Down Thrust/"
+knighttip = "{u}[J][J] Double Jump [J][g] Down Thrust/"
 firemouthtip = "{u}[J][G] Air Dash/"
-shotguntip = "{u}[G] Shoot [J][D] Shoot down/"
+shotguntip = "{u}[G] Shoot [J][g] Shoot down/"
 boxxedtip = "{u}[J] Flap [G] Spin/"
 morttip = "{u}[J][J] Double Jump [G] Attack/"
 ghosttip = "{u}[U][D][L][R] Move/"
@@ -150,7 +157,7 @@ jetpack2tip = "{u}[J] Hold in the air to spin/"
 trashrolltip = "{u}[J] Jump/"
 antigravtip = "{u}[J] Pop/"
 cheesedtip = "{u}[F][J] Stick to wall [J] Walljump/"
-golftip = "{u}[U][D][L][R] Aim [G] Shoot/"
+golftip = "{u}[U][L][R] Aim [G] Shoot/"
 weenietip = "{u}[J] Jump/"
 crosspriesttip = "{u}Kill the ghosts!!/"
 supertaunttip = "{u}[U][T] Super Taunt/"
@@ -198,12 +205,26 @@ option_timer_level = "PER LEVEL"
 option_timer_save = "PER SAVE"
 option_erase_save = "ERASE SAVE DATA"
 
+option_controller = "CONTROLLER"
+option_keyboard = "KEYBOARD"
+option_reset_config = "RESET CONFIG"
 option_controls_saved = "{u}Controls saved!/"
+option_controls_resetted = "{u}Configuration resetted!/"
+
+option_deadzone = "GENERAL DEADZONE"
+option_deadzone_title = "DEADZONES"
+option_deadzone_h = "HORIZ. DEADZONE"
+option_deadzone_v = "VERT. DEADZONE"
+option_deadzone_press = "PRESS DEADZONE"
+option_deadzone_superjump = "SUPERJUMP WALK DZ"
+option_controller_binds = "BINDINGS"
+option_controller_superjump = "JOYSTICK SUPERJUMP"
+option_controller_groundpound = "JOYSTICK GROUNDPOUND"
 
 # ---------------
 # MISC TEXT
 # ---------------
-menu_delete = "DELETE SAVE %?"
+menu_delete = "HOLD TO DELETE SAVE %"
 menu_controller_disconnected = "CONTROLLER DISCONNECTED\n\nPRESS START TO CONTINUE"
 menu_exit = "EXIT THE GAME?"
 menu_skip = "Press [G] to skip"

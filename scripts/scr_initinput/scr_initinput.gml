@@ -1,6 +1,7 @@
-function scr_initinput()
+function scr_initinput(open_savedata = true)
 {
-	ini_open("saveData.ini");
+	if open_savedata
+		ini_open("saveData.ini");
 	
 	global.key_up = ini_read_string("ControlsKeys", "up", vk_up);
 	global.key_right = ini_read_string("ControlsKeys", "right", vk_right);
@@ -25,6 +26,17 @@ function scr_initinput()
     global.key_attackC = ini_read_string("ControllerButton", "attack", gp_shoulderr);
     global.key_startC = ini_read_string("ControllerButton", "start", gp_start);
     global.key_chainsawC = ini_read_string("ControllerButton", "chainsaw", gp_shoulderl);
+	global.key_superjumpC = ini_read_string("ControllerButton", "superjump", noone);
+    global.key_groundpoundC = ini_read_string("ControllerButton", "groundpound", noone);
 	
-	ini_close();
+    global.gamepad_deadzone = ini_read_real("ControllerConfig", "deadzone", 0.4);
+    global.gamepad_deadzone_vertical = ini_read_real("ControllerConfig", "deadzone_vert", 0.65);
+    global.gamepad_deadzone_horizontal = ini_read_real("ControllerConfig", "deadzone_horiz", 0.5);
+    global.gamepad_deadzone_press = ini_read_real("ControllerConfig", "deadzonepress", 0.5);
+    global.gamepad_deadzone_superjump = ini_read_real("ControllerConfig", "deadzonesuperjump", 0.46);
+    global.gamepad_superjump = ini_read_real("ControllerConfig", "superjump", 1);
+    global.gamepad_groundpound = ini_read_real("ControllerConfig", "groundpound", 1);
+	
+	if open_savedata
+		ini_close();
 }

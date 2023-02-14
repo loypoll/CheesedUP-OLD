@@ -204,7 +204,7 @@ function scr_player_grab()
 		sprite_index = spr_swingdingend;
 		image_index = 0;
 	}
-	if (key_down && !grounded)
+	if (scr_check_groundpound2() && !grounded)
 	{
 		sprite_index = spr_piledriver;
 		dir = xscale;

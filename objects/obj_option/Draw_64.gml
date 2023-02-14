@@ -66,11 +66,14 @@ switch (m.anchor)
 					var y1 = yy + (m.ypad * i);
 					var x2 = x1 + aw;
 					var y2 = y1 + h;
+					var spr = spr_slidericon;
+                    if menu != (1 << 0)
+                        spr = spr_slidericon2;
 					draw_set_alpha(a);
 					draw_sprite_ext(spr_slider, 0, x1, y1, 1, 1, 0, c_dkgray, a);
 					draw_sprite_ext(spr_slider, 0, x1, y1, 1, 1, 0, c, a);
 					draw_set_alpha(1);
-					draw_sprite(spr_slidericon, o.moving ? 1 : 0, x2, y2 - h);
+					draw_sprite(spr, o.moving ? 1 : 0, x2, y2 - h);
 					break;
 				case 1:
 					var select = o.values[o.value];

@@ -1,6 +1,7 @@
 function scr_player_animatronic()
 {
 	sprite_index = spr_pepanimatronic;
+	image_speed = 0.35;
 	move = key_left + key_right;
 	hsp = move * movespeed;
 	if (vsp < 0 && !key_jump2 && !jumpstop)

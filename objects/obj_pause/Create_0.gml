@@ -1,6 +1,7 @@
 pause = false;
 i = false;
 color = make_color_rgb(121, 103, 151);
+scr_init_input();
 player1 = -4;
 player2 = -4;
 selected = 0;

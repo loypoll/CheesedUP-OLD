@@ -13,12 +13,18 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 		}
 	}
 	fmod_event_instance_play(global.snd_johndead);
+	
+	var combototal = 10 + floor(global.combo * 0.5);
+    global.collect += combototal;
+    global.comboscore += combototal;
 	global.combo += 1;
 	global.enemykilled += 1;
 	global.combotime = 60;
+	
 	global.fill = 4000;
 	notification_push(notifs.hungrypillar_dead, [room]);
-	switch (room)
+	
+	switch room
 	{
 		case entrance_10:
 			global.fill = 1860;
@@ -83,6 +89,7 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 			break;
 	}
 	instance_create_unique(0, 0, obj_hungrypillarflash);
+	
 	with (obj_tv)
 		chunkmax = global.fill;
 	with (obj_escapecollect)
@@ -93,6 +100,7 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 	}
 	with (obj_escapecollectbig)
 		image_alpha = 1;
+	
 	fmod_event_instance_play(global.snd_escaperumble);
 	obj_camera.alarm[1] = 60;
 	instance_create(x, y, obj_bangeffect);
@@ -124,7 +132,8 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
 	instance_create(x, y + 600, obj_itspizzatime);
 	global.panic = true;
-	switch (room)
+	
+	switch room // how do you fuck this up
 	{
 		case entrance_10:
 			global.minutes = 2;

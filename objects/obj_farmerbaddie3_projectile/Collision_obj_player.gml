@@ -1,11 +1,12 @@
 with (other)
 {
-	if (state != 3 && state != 89 && state != 31 && state != states.gotoplayer)
+	if (state != 3 && state != 89 && state != 31 && state != states.gotoplayer && state != 84)
 	{
 		var _pindex = (object_index == obj_player1) ? 0 : 1;
 		GamepadSetVibration(_pindex, 1, 1, 0.85);
 		if (state != 9)
 		{
+			
 		}
 		hurted = false;
 		state = 9;

@@ -20,11 +20,15 @@ switch (state)
 			}
 		}
 		break;
+	
 	case states.fall:
 		image_speed = 0.5;
 		x = Approach(x, target_x, movespeed);
 		movespeed += 0.2;
 		if (x == target_x)
+		{
 			state = states.normal;
+			movespeed = 5;
+		}
 		break;
 }

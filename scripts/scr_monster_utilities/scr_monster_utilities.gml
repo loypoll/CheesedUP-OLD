@@ -62,7 +62,8 @@ function scr_monster_stop_music()
 }
 function scr_monster_activate()
 {
-	notification_push(notifs.monster_activate, [room, object_index]);
+	if !instance_exists(obj_ghostcollectibles)
+		notification_push(notifs.monster_activate, [room, object_index]);
 	with (obj_monster)
 	{
 		if (state == states.robotidle)

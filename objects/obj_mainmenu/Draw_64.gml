@@ -9,7 +9,7 @@ if (state == 183)
 	draw_set_halign(1);
 	draw_set_valign(1);
 	var _str = embed_value_string(lang_get_value("menu_delete"), [string(currentselect + 1)]);
-	draw_text_color(SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 2) - 30, _str, c_white, c_white, c_white, c_white, 1);
+	draw_text_color(SCREEN_WIDTH / 2, (SCREEN_HEIGHT / 2) - 30, _str, c_red, c_red, c_red, c_red, 1);
 	var w = string_width(_str) / 2;
 	draw_sprite(spr_menu_filedelete, index, (SCREEN_WIDTH / 2) + w + 70, SCREEN_HEIGHT / 2);
 	draw_sprite(spr_menu_filedelete, index, (SCREEN_WIDTH / 2) - w - 70, SCREEN_HEIGHT / 2);

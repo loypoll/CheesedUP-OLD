@@ -10,6 +10,11 @@ function scr_checkanystick(device, deadzone = 0.5)
         return true;
 }
 
+function scr_check_menu_key(key)
+{
+    return (global.key_start != key && global.key_slap != key && global.key_taunt != key);
+}
+
 function scr_checkanygamepad(device)
 {
 	if (gamepad_button_check_pressed(device, gp_face1))

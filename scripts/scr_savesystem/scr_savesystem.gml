@@ -5,7 +5,7 @@ function get_percentage()
 	var bossach = ["pepperman", "vigilante", "noise", "fakepep", "pizzaface"];
 	var bossranks = ["b_pepperman", "b_vigilante", "b_noise", "b_fakepep"];
 	var _basemax = ((array_length(bosses) + array_length(levels) + ((array_length(levels) - 1) * 5) + array_length(levels)) - 1) + array_length(levels) + array_length(levels) + array_length(levels) + array_length(levels) + array_length(bossranks) + array_length(bossranks) + array_length(bossranks) + array_length(bossranks) + ((array_length(levels) - 1) * 3);
-	var _extramax = (array_length(bossach) + array_length(levels) + array_length(bossranks) + array_length(levels)) - 3;
+	var _extramax = (array_length(bossach) + array_length(levels) + array_length(bossranks) + array_length(levels)) - 1;
 	var count = 0;
 	var extracount = 0;
 	var _rank_map = ds_map_create();

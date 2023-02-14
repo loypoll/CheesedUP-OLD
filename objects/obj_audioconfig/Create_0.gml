@@ -4,6 +4,7 @@ audiosaved_music = global.option_music_volume * 100;
 audiosaved_sfx = global.option_sfx_volume * 100;
 selecting = -1;
 player = 0;
+scr_init_input();
 stickpressed = false;
 key_buffer = 0;
 key_max = 5;

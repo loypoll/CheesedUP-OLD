@@ -86,7 +86,7 @@ function scr_player_knightpepslopes()
 			}
 		}
 	}
-	if (!grounded && key_down2 && sprite_index != spr_knightpep_downtrust)
+	if (!grounded && scr_check_groundpound() && sprite_index != spr_knightpep_downtrust)
 	{
 		fmod_event_one_shot_3d("event:/sfx/knight/down", x, y);
 		if (vsp >= 12)

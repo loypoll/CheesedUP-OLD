@@ -2,6 +2,7 @@ key_select = -1;
 selecting = false;
 player = 0;
 depth = -200;
+scr_init_input();
 stickpressed = false;
 key_back = false;
 startbuffer = 2;
@@ -16,3 +17,4 @@ input = [
 	["key_taunt"],
 	["key_start"]
 ];
+controller = false;

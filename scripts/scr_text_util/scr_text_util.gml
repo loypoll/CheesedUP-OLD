@@ -29,12 +29,13 @@ function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 	{
 		var start = argument1;
 		var char = string_ord_at(argument0, argument1);
-		switch (char)
+		switch char
 		{
 			case 10:
 				char_y += newline;
 				char_x = 0;
 				break;
+			
 			case 123:
 				var effect = string_copy(argument0, argument1, 3);
 				var te = 1;
@@ -43,10 +44,10 @@ function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 				switch (effect)
 				{
 					case "{s}":
-						te = 1;
+						te = (1 << 0);
 						break;
 					case "{u}":
-						te = 2;
+						te = (2 << 0);
 						break;
 				}
 				array_push(arr, [char_x, char_y, 2, te, n[0]]);
@@ -54,50 +55,58 @@ function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 				char_x = n[2];
 				char_y = n[3];
 				break;
+			
 			case 91:
 				var button = string_copy(argument0, argument1, 3);
-				var t = 1;
+				var t = (1 << 0);
 				var b = 0;
 				switch (button)
 				{
 					case "[D]":
-						b = 3;
+						b = (3 << 0);
 						break;
 					case "[U]":
-						b = 0;
+						b = (0 << 0);
 						break;
 					case "[M]":
-						b = 7;
+						b = (7 << 0);
 						break;
 					case "[J]":
-						b = 8;
+						b = (8 << 0);
 						break;
 					case "[G]":
-						b = 6;
+						b = (6 << 0);
 						break;
 					case "[F]":
-						b = 4;
+						b = (4 << 0);
 						break;
 					case "[B]":
-						b = 5;
+						b = (5 << 0);
 						break;
 					case "[L]":
-						b = 1;
+						b = (1 << 0);
 						break;
 					case "[R]":
-						b = 2;
+						b = (2 << 0);
 						break;
 					case "[S]":
-						b = 9;
+						b = (9 << 0);
 						break;
 					case "[T]":
-						b = 10;
+						b = (10 << 0);
 						break;
+					case "[g]":
+                        b = (11 << 0);
+                        break;
+                    case "[s]":
+                        b = (12 << 0);
+                        break;
 				}
 				array_push(arr, [char_x, char_y, t, b]);
 				char_x += 32;
 				argument1 += 2;
 				break;
+			
 			case 47:
 				if (argument2)
 				{
@@ -105,6 +114,7 @@ function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 					argument1 = len + 1;
 				}
 				break;
+			
 			default:
 				while ((argument1 + 1) <= len)
 				{
@@ -115,7 +125,7 @@ function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 						break;
 				}
 				n = string_copy(argument0, start, (argument1 - start) + 1);
-				array_push(arr, [char_x, char_y, 0, n]);
+				array_push(arr, [char_x, char_y, (0 << 0), n]);
 				char_x += string_width(n);
 				break;
 		}
@@ -138,11 +148,12 @@ function scr_text_arr_size(argument0)
 		var val = b[3];
 		switch (t)
 		{
-			case 1:
+			case (1 << 0):
 				if ((cx + 32) > w)
 					w += 32;
 				break;
-			case 2:
+			
+			case (2 << 0):
 				var val2 = b[4];
 				var q = scr_text_arr_size(val2);
 				if ((cy + q[1]) > h)
@@ -150,7 +161,8 @@ function scr_text_arr_size(argument0)
 				else if ((cx + q[0]) > w)
 					w += q[0];
 				break;
-			case 0:
+			
+			case (0 << 0):
 				if (cy > h)
 					h += newline;
 				else
@@ -189,7 +201,7 @@ function scr_draw_granny_texture(argument0, argument1, argument2, argument3, arg
 }
 function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white, argument4 = 1, argument5 = 0, argument6 = noone)
 {
-	if (argument2 == -4)
+	if argument2 == noone
 		exit;
 	
 	for (var i = 0; i < array_length(argument2); i++)
@@ -199,121 +211,137 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 		var cy = argument1 + b[1];
 		var t = b[2];
 		var val = b[3];
-		switch (t)
+		
+		switch t
 		{
-			case 1:
+			case (1 << 0):
 				var spr = -4;
 				var ix = 0;
 				var txt = -4;
-				if (obj_inputAssigner.player_input_device[0] >= 0)
+				
+				if obj_inputAssigner.player_input_device[0] >= 0
 				{
 					spr = spr_tutorialgamepad;
-					switch (val)
+					switch val
 					{
-						case 3:
-							ix = 5;
+						case (3 << 0):
+							ix = scr_get_gamepadicon(global.key_downC);
 							break;
-						case 0:
-							ix = 4;
+						case (0 << 0):
+							ix = scr_get_gamepadicon(global.key_upC);
 							break;
-						case 7:
-							ix = 9;
+						case (7 << 0):
+							ix = scr_get_gamepadicon(global.key_attackC);
 							break;
-						case 8:
-							ix = 1;
+						case (8 << 0):
+							ix = scr_get_gamepadicon(global.key_jumpC);
 							break;
-						case 6:
-							ix = 0;
+						case (6 << 0):
+							ix = scr_get_gamepadicon(global.key_slapC);
 							break;
-						case 4:
+						case (4 << 0):
 							if (instance_exists(obj_player1) && obj_player1.xscale > 0)
-								ix = 17;
+								ix = scr_get_gamepadicon(global.key_rightC);
 							else
-								ix = 16;
+								ix = scr_get_gamepadicon(global.key_leftC);
 							break;
-						case 5:
+						case (5 << 0):
 							if (instance_exists(obj_player1) && obj_player1.xscale > 0)
-								ix = 16;
+								ix = scr_get_gamepadicon(global.key_leftC);
 							else
-								ix = 17;
+								ix = scr_get_gamepadicon(global.key_rightC);
 							break;
-						case 1:
-							ix = 16;
+						case (1 << 0):
+							ix = scr_get_gamepadicon(global.key_leftC);
 							break;
-						case 2:
-							ix = 17;
+						case (2 << 0):
+							ix = scr_get_gamepadicon(global.key_rightC);
 							break;
-						case 9:
-							ix = 2;
+						case (9 << 0):
+							ix = scr_get_gamepadicon(global.key_shootC);
 							break;
-						case 10:
-							ix = 3;
+						case (10 << 0):
+							ix = scr_get_gamepadicon(global.key_tauntC);
 							break;
+						case (11 << 0):
+                            if global.gamepad_groundpound
+                                ix = scr_get_gamepadicon(global.key_downC);
+                            else
+                                ix = scr_get_gamepadicon(global.key_groundpoundC);
+                            break;
+                        case (12 << 0):
+                            if global.gamepad_superjump
+                                ix = scr_get_gamepadicon(global.key_upC);
+                            else
+                                ix = scr_get_gamepadicon(global.key_superjumpC);
+                            break;
 					}
 				}
 				else
 				{
 					spr = spr_tutorialkey;
 					ix = 0;
-					var arr = -4;
-					switch (val)
+					
+					var arr = noone;
+					switch val
 					{
-						case 3:
+						case (3 << 0):
 							arr = scr_get_tutorial_key(global.key_down);
 							break;
-						case 0:
+						case (0 << 0):
 							arr = scr_get_tutorial_key(global.key_up);
 							break;
-						case 7:
+						case (7 << 0):
 							arr = scr_get_tutorial_key(global.key_attack);
 							break;
-						case 8:
+						case (8 << 0):
 							arr = scr_get_tutorial_key(global.key_jump);
 							break;
-						case 6:
+						case (6 << 0):
 							arr = scr_get_tutorial_key(global.key_slap);
 							break;
-						case 4:
+						case (4 << 0):
 							if (instance_exists(obj_player1) && obj_player1.xscale > 0)
 								arr = scr_get_tutorial_key(global.key_right);
 							else
 								arr = scr_get_tutorial_key(global.key_left);
 							break;
-						case 5:
+						case (5 << 0):
 							if (instance_exists(obj_player1) && obj_player1.xscale > 0)
 								arr = scr_get_tutorial_key(global.key_left);
 							else
 								arr = scr_get_tutorial_key(global.key_right);
 							break;
-						case 1:
+						case (1 << 0):
 							arr = scr_get_tutorial_key(global.key_left);
 							break;
-						case 2:
+						case (2 << 0):
 							arr = scr_get_tutorial_key(global.key_right);
 							break;
-						case 9:
+						case (9 << 0):
 							arr = scr_get_tutorial_key(global.key_shoot);
 							break;
-						case 10:
+						case (10 << 0):
 							arr = scr_get_tutorial_key(global.key_taunt);
 							break;
 					}
-					if (arr != -4)
+					if arr != noone
 					{
 						spr = arr[0];
 						ix = arr[1];
 						txt = arr[2];
 					}
 				}
-				if (argument5 != 0)
+				
+				if argument5 != (0 << 0)
 				{
-					switch (argument5)
+					switch argument5
 					{
-						case 1:
+						case (1 << 0):
 							cx += irandom_range(-2, 2);
 							cy += irandom_range(-2, 2);
 							break;
-						case 2:
+						case (2 << 0):
 							var o = 1;
 							if (argument6 != -4)
 								o = argument6.offset;
@@ -323,10 +351,12 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 							break;
 					}
 				}
-				if (spr != -4)
+				
+				if spr != -4
 				{
-					draw_sprite(spr, ix, cx, cy);
-					if (txt != -4)
+					if ix != -4
+						draw_sprite(spr, ix, cx, cy);
+					if txt != -4
 					{
 						var f = draw_get_font();
 						draw_set_halign(1);
@@ -339,19 +369,21 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 					}
 				}
 				break;
-			case 2:
+			
+			case (2 << 0):
 				var val2 = b[4];
 				scr_draw_text_arr(cx, cy, val2, argument3, argument4, val);
 				break;
-			case 0:
-				if (argument5 == 0)
+			
+			case (0 << 0):
+				if argument5 == 0
 					draw_text_color(cx, cy, val, argument3, argument3, argument3, argument3, argument4);
 				else
 				{
 					var x2 = 0;
-					switch (argument5)
+					switch argument5
 					{
-						case 1:
+						case (1 << 0):
 							for (var j = 1; j <= string_length(val); j++)
 							{
 								var q = string_char_at(val, j);
@@ -361,7 +393,8 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 								x2 += string_width(q);
 							}
 							break;
-						case 2:
+						
+						case (2 << 0):
 							for (j = 1; j <= string_length(val); j++)
 							{
 								q = string_char_at(val, j);
