@@ -8,7 +8,7 @@ if (room == Titlescreen && obj_player.state == states.titlescreen)
 	obj_player1.player_x = 50;
 	obj_player1.player_y = 50;
 }
-if (obj_player.state == 119)
+if (obj_player.state == states.taxi)
 {
 	if (!global.pizzadelivery)
 	{
@@ -33,7 +33,7 @@ if (obj_player.state == 119)
 		}
 	}
 }
-if (obj_player.state == 152)
+if (obj_player.state == states.policetaxi)
 {
 	with (obj_player)
 	{

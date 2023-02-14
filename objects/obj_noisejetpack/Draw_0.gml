@@ -1,4 +1,4 @@
-if (state != states.transition && state != 146)
+if (state != states.transition && state != states.actor)
 	draw_self();
 else if (state == states.transition)
 {
@@ -13,7 +13,7 @@ else if (state == states.transition)
 	with (obj_firemouthflame)
 		draw_self();
 }
-else if (state == 146)
+else if (state == states.actor)
 {
 	draw_rectangle_color(camera_get_view_x(view_camera[0]), camera_get_view_y(view_camera[0]), camera_get_view_x(view_camera[0]) + SCREEN_WIDTH, camera_get_view_y(view_camera[0]) + SCREEN_HEIGHT, c_white, c_white, c_white, c_white, false);
 	with (playerid)

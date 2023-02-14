@@ -12,7 +12,7 @@ if ((other.state == states.handstandjump || other.state == states.punch) && othe
 	playerid = other.object_index;
 	grabbed = true;
 }
-if (other.state == states.mach2 || other.state == 121 || (other.state == 65 && grounded))
+if (other.state == states.mach2 || other.state == states.mach3 || (other.state == 65 && grounded))
 {
 	create_particle(x, y, particle.genericpoofeffect, 0);
 	with (other)
@@ -21,7 +21,7 @@ if (other.state == states.mach2 || other.state == 121 || (other.state == 65 && g
 		mask_index = spr_crouchmask;
 		x = other.x;
 		y = other.y;
-		state = 113;
+		state = states.barrel;
 		sprite_index = spr_barrelroll;
 		movespeed = 12;
 	}

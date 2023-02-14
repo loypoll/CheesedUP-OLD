@@ -12,7 +12,7 @@ if (instance_exists(obj_player))
 			scr_room_goto(obj_player1.targetRoom);
 			with (obj_player)
 			{
-				if (state == states.ejected || state == 152)
+				if (state == states.ejected || state == states.policetaxi)
 				{
 					visible = true;
 					state = states.normal;

@@ -48,7 +48,7 @@ switch (state)
 			global.combotime = 60;
 			with (playerid)
 			{
-				state = 146;
+				state = states.actor;
 				sprite_index = spr_player_poweredup;
 				image_index = 0;
 				image_speed = 0.35;
@@ -62,7 +62,7 @@ switch (state)
 				}
 			}
 			cutscenebuffer = 100;
-			state = 146;
+			state = states.actor;
 		}
 		break;
 	case 146:

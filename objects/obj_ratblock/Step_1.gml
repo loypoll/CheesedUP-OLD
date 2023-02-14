@@ -1,6 +1,6 @@
 with (obj_player)
 {
-	if ((state == states.handstandjump || state == 121 || state == states.mach2 || (state == states.tumble && sprite_index == spr_crouchslip)) && (place_meeting(x + sign(hsp), y, other) || place_meeting(x + xscale, y, other)))
+	if ((state == states.handstandjump || state == states.mach3 || state == states.mach2 || (state == states.tumble && sprite_index == spr_crouchslip)) && (place_meeting(x + sign(hsp), y, other) || place_meeting(x + xscale, y, other)))
 	{
 		state = states.bump;
 		hsp = -xscale * 5;

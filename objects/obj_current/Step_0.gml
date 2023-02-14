@@ -3,13 +3,13 @@ if (place_meeting(x, y - 1, obj_player))
 {
 	with (obj_player)
 	{
-		if (state != 148 && state != 91 && state != states.gotoplayer && state != 214 && state != 213 && state != 212)
+		if (state != states.golf && state != 91 && state != states.gotoplayer && state != 214 && state != 213 && state != 212)
 		{
 			if (place_meeting(x, y + 1, other))
 			{
 				if (state != 210 && state != 211)
 				{
-					if (state != 113 && state != 114 && state != 116 && state != 115)
+					if (state != states.barrel && state != states.barreljump && state != states.barrelslide && state != states.barrelclimbwall)
 					{
 						if (state != states.slipnslide || sprite_index != spr_currentplayer)
 							fmod_event_one_shot_3d("event:/sfx/misc/waterslidesplash", x, y);
@@ -18,7 +18,7 @@ if (place_meeting(x, y - 1, obj_player))
 					}
 					else
 					{
-						state = 116;
+						state = states.barrelslide;
 						if (sprite_index != spr_player_barrelslipnslide)
 							sprite_index = spr_player_barrelroll;
 					}

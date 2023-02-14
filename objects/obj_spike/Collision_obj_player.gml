@@ -1,4 +1,4 @@
-if (other.state != 113)
+if (other.state != states.barrel)
 {
 	scr_hurtplayer(other);
 	if (fake)

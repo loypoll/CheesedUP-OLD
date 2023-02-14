@@ -1,6 +1,6 @@
 with (other)
 {
-	if (key_up && (state == states.normal || state == states.mach1 || state == states.mach2 || state == 121 || state == states.Sjumpprep) && y == (other.y + 50) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
+	if (key_up && (state == states.normal || state == states.mach1 || state == states.mach2 || state == states.mach3 || state == states.Sjumpprep) && y == (other.y + 50) && !instance_exists(obj_noisesatellite) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
 	{
 		lastroom_x = other.x;
 		lastroom_y = other.y;

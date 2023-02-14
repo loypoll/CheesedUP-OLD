@@ -2,7 +2,7 @@ with (obj_player)
 {
 	if (character != "V")
 	{
-		if ((state == states.knightpepslopes || state == 184) && (place_meeting(x + hsp, y, other) || place_meeting(x + xscale, y, other)))
+		if ((state == states.knightpepslopes || state == states.rocket) && (place_meeting(x + hsp, y, other) || place_meeting(x + xscale, y, other)))
 			instance_destroy(other);
 		with (other)
 		{

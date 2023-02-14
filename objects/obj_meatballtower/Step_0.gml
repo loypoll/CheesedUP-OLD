@@ -5,7 +5,7 @@ switch (state)
 		hsp = image_xscale * 5;
 		if (place_meeting(x + sign(hsp), y, obj_solid))
 			image_xscale *= -1;
-		if (obj_player1.state == 111)
+		if (obj_player1.state == states.freefallland)
 		{
 			state = states.jump;
 			hsp = 0;

@@ -4,7 +4,7 @@ with (obj_player)
 	{
 		with (other)
 		{
-			if (other.state != 113)
+			if (other.state != states.barrel)
 			{
 				var h = other.hurted;
 				scr_hurtplayer(other);

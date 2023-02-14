@@ -1,10 +1,10 @@
-if (other.cutscene == 0 && other.state != 146 && state != 146 && other.state != states.gotoplayer && state != states.gotoplayer)
+if (other.cutscene == 0 && other.state != states.actor && state != states.actor && other.state != states.gotoplayer && state != states.gotoplayer)
 {
 	if (hurted == 0 && other.hurted == 0 && fightballadvantage == 1 && (state == states.handstandjump || state == states.punch) && (other.state == states.handstandjump || other.state == states.punch))
 	{
 		if (object_index == obj_player1)
 		{
-			obj_player1.state = 121;
+			obj_player1.state = states.mach3;
 			obj_player2.state = states.grabbed;
 			obj_player2.xscale = xscale;
 			obj_player1.depth = -7;
@@ -12,7 +12,7 @@ if (other.cutscene == 0 && other.state != 146 && state != 146 && other.state != 
 		}
 		if (object_index == obj_player2)
 		{
-			obj_player2.state = 121;
+			obj_player2.state = states.mach3;
 			obj_player1.state = states.grabbed;
 			obj_player1.xscale = xscale;
 			obj_player1.depth = -6;

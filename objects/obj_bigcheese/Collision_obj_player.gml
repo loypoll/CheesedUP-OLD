@@ -6,6 +6,6 @@ if (state != 74)
 	state = 74;
 	sprite_index = spr_bigcheese_throw;
 	image_index = 0;
-	other.state = 146;
+	other.state = states.actor;
 	other.sprite_index = other.spr_tumble;
 }

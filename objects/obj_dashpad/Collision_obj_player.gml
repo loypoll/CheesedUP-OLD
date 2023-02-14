@@ -1,7 +1,7 @@
 var t = id;
 with (other)
 {
-	if (state != states.gotoplayer && state != states.ghost && state != 146)
+	if (state != states.gotoplayer && state != states.ghost && state != states.actor)
 	{
 		if (boxxed == 0 && isgustavo == 0 && other.buffer == 0 && other.sprite_index == spr_dashpad)
 		{
@@ -42,7 +42,7 @@ with (other)
 			}
 			scr_fmod_soundeffect(snd_dashpad, x, y);
 			machhitAnim = false;
-			state = 121;
+			state = states.mach3;
 			xscale = sign(other.image_xscale);
 			dir = xscale;
 			if (movespeed < 14)

@@ -34,13 +34,13 @@ switch (state)
 	case states.arenaintro:
 		with (obj_player)
 		{
-			state = 146;
+			state = states.actor;
 			xscale = (x > (room_width / 2)) ? -1 : 1;
 			image_blend = make_colour_hsv(0, 0, 255);
 		}
 		with (par_boss)
 		{
-			state = 146;
+			state = states.actor;
 			x = xstart;
 		}
 		if (playerx != 0)
@@ -94,7 +94,7 @@ switch (state)
 			instance_destroy(obj_noisebossbomb);
 			with (obj_player)
 			{
-				if (state != 146 && state != states.comingoutdoor && state != states.hit && !instance_exists(obj_fadeout))
+				if (state != states.actor && state != states.comingoutdoor && state != states.hit && !instance_exists(obj_fadeout))
 				{
 					if (state == states.hit || state == states.chainsaw)
 					{
@@ -109,11 +109,11 @@ switch (state)
 					image_speed = 0.35;
 					xscale = (x > (room_width / 2)) ? -1 : 1;
 					image_blend = make_colour_hsv(0, 0, 255);
-					state = 146;
+					state = states.actor;
 					visible = true;
 					image_alpha = 1;
 				}
-				if (state == 146)
+				if (state == states.actor)
 					state_player_arenaround();
 			}
 			with (par_boss)

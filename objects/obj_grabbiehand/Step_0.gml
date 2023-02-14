@@ -90,7 +90,7 @@ switch (state)
 					vsp = 0;
 					sprite_index = tauntstoredsprite;
 					state = tauntstoredstate;
-					if (state == 121)
+					if (state == states.mach3)
 					{
 						sprite_index = spr_mach4;
 						machhitAnim = false;

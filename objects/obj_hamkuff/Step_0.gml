@@ -25,7 +25,7 @@ switch state
             {
                 with (playerid)
                 {
-                    if (state == 152)
+                    if (state == states.policetaxi)
                         other.state = states.walk
                     else if (!launched)
                     {
@@ -41,7 +41,7 @@ switch state
                             hsp_carry = _xs * abs(m)
                         else
                             hsp_carry = -hsp
-                        if (state != states.bump && state != 121 && state != states.mach2 && state != states.machslide && abs(x - other.x) > dis + abs(movespeed) + 1)
+                        if (state != states.bump && state != states.mach3 && state != states.mach2 && state != states.machslide && abs(x - other.x) > dis + abs(movespeed) + 1)
                         {
                             state = states.bump
                             fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
@@ -65,14 +65,14 @@ switch state
                             flash = true;
                             fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
                         }
-                        if (state == 121 || (state == states.machslide && sprite_index == spr_mach3boost))
+                        if (state == states.mach3 || (state == states.machslide && sprite_index == spr_mach3boost))
                             launch = 1
                         if (state == states.machslide && sprite_index == spr_mach3boost && launch)
                             movespeed -= 0.6
-                        if (state == 121 && movespeed > 15)
+                        if (state == states.mach3 && movespeed > 15)
                             movespeed = 15
                         freefallsmash = 0
-                        if (state == states.grind || state == states.climbwall || state == states.Sjumpprep || state == states.Sjump || state == 123 || y < other.y - 400)
+                        if (state == states.grind || state == states.climbwall || state == states.Sjumpprep || state == states.Sjump || state == states.Sjumpland || y < other.y - 400)
                         {
                             fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
                             vsp = -4
@@ -91,7 +91,7 @@ switch state
                         if other.attract_player
                         {
                             launched = 0
-                            state = 146
+                            state = states.actor
                             hsp = 0
                             vsp = 0
                             movespeed = 0
@@ -181,7 +181,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 if (state != states.walk && state != 206)
     attract_player = 0
 var _dis = 300
-if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != 292 && obj_player1.state != 119 && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
+if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != 292 && obj_player1.state != states.taxi && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
 {
     state = 206
     sprite_index = spr_hamkuff_chain1

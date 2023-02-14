@@ -1,7 +1,7 @@
 var v = id;
 with (other)
 {
-	if (state != states.Sjump && state != states.gotoplayer && state != 146)
+	if (state != states.Sjump && state != states.gotoplayer && state != states.actor)
 	{
 		if (state == states.knightpep || state == 48 || state == states.knightpepslopes)
 		{

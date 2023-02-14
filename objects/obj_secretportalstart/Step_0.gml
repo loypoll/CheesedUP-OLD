@@ -35,7 +35,7 @@ switch (sprite_index)
 						cutscene = false;
 						sprite_index = spr_bodyslamstart;
 						image_index = 0;
-						state = 122;
+						state = states.freefallprep;
 						vsp = (character == "P") ? -5 : -7;
 					}
 					else if (isgustavo)

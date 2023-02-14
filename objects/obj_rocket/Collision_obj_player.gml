@@ -1,9 +1,9 @@
 with (other)
 {
-	if (other.playerid == -4 && state != 184 && state != 146 && state != 185 && state != states.gotoplayer)
+	if (other.playerid == -4 && state != states.rocket && state != states.actor && state != states.rocketslide && state != states.gotoplayer)
 	{
 		xscale = other.image_xscale;
-		state = 184;
+		state = states.rocket;
 		other.playerid = id;
 		create_transformation_tip(lang_get_value("rockettip"), "rocket");
 		sprite_index = spr_rocketstart;

@@ -81,7 +81,7 @@ switch (state)
 				vsp = 0;
 				sprite_index = spr_idle;
 				image_speed = 0.35;
-				state = 146;
+				state = states.actor;
 				xscale = -other.image_xscale;
 			}
 		}

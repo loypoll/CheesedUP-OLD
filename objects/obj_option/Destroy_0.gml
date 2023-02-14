@@ -1,6 +1,6 @@
 with (obj_player)
 {
-	if (state == 146)
+	if (state == states.actor)
 		state = states.normal;
 }
 gamesave_async_save_options();

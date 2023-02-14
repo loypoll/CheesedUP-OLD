@@ -69,7 +69,7 @@ function scr_pizzaface_p3_arenaintro()
 				{
 					if (x != other.x)
 						xscale = sign(other.x - x);
-					state = 146;
+					state = states.actor;
 					sprite_index = spr_player_levelcomplete;
 					image_index = 0;
 				}

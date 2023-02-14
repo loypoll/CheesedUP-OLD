@@ -4,7 +4,7 @@ if (state != states.grabbed && (other.state != states.handstandjump || invincibl
 	if (other.flash)
 		other.flash = false;
 	scr_hurtplayer(other);
-	if (other.state != s && other.state != 147)
+	if (other.state != s && other.state != states.parry)
 	{
 		state = states.stun;
 		hsp = -image_xscale * 7;

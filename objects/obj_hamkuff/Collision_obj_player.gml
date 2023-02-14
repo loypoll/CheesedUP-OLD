@@ -2,7 +2,7 @@ if (state != states.stun)
 {
 	if (!other.isgustavo)
 	{
-		if (other.state != 121 || !other.launched)
+		if (other.state != states.mach3 || !other.launched)
 		{
 			if (state != 206)
 			{

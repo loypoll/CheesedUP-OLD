@@ -31,13 +31,13 @@ function scr_player_trickjump()
 			if (movespeed < 12)
 				state = states.mach2;
 			else
-				state = 121;
+				state = states.mach3;
 		}
 		else
 		{
 			ramp_points = 0;
 			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-			state = 111;
+			state = states.freefallland;
 			sprite_index = spr_bodyslamland;
 			image_index = 0;
 		}

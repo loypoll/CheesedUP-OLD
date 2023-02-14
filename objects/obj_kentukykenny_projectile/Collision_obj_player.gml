@@ -4,7 +4,7 @@ with (other)
 		scr_hurtplayer(object_index);
 	else if (scr_transformationcheck())
 	{
-		if (state != states.firemouth && state != 147 && hurted == 0)
+		if (state != states.firemouth && state != states.parry && hurted == 0)
 		{
 			fmod_event_one_shot_3d("event:/sfx/firemouth/start", x, y);
 			create_transformation_tip(lang_get_value("firemouthtip"), "firemouth");

@@ -34,7 +34,7 @@ function player_hurt()
 	var _prevstate = state;
 	if (phase < 2)
 		SUPER_player_hurt(argument0, argument1);
-	else if ((argument1.state != states.backbreaker || argument1.parry_inst == -4) && argument1.state != 147 && ds_list_find_index(hitlist, argument1) == -1)
+	else if ((argument1.state != states.backbreaker || argument1.parry_inst == -4) && argument1.state != states.parry && ds_list_find_index(hitlist, argument1) == -1)
 	{
 		ds_list_add(hitlist, argument1);
 		SUPER_player_hurt(argument0, argument1);
@@ -60,7 +60,7 @@ function boss_hurt()
 				vsp = -11;
 				movespeed = 6;
 			}
-			else if (state != 43 && state != 147)
+			else if (state != 43 && state != states.parry)
 				_removehp = false;
 			if (state == 43)
 				movespeed = 4;

@@ -1,7 +1,7 @@
 var _actor = false;
 with (obj_player)
 {
-	if (state == 146)
+	if (state == states.actor)
 		_actor = true;
 }
 if (_actor)
@@ -10,7 +10,7 @@ with (other)
 {
 	if (key_up && grounded && ((character != "M" && y == (other.y + 50)) || (character == "M" && y == (other.y + 55))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor && ((obj_player1.spotlight == 1 && object_index == obj_player1) || (obj_player1.spotlight == 0 && object_index == obj_player2)))
 	{
-		if (state == states.normal || state == states.mach1 || state == states.mach2 || state == states.pogo || state == 121 || state == states.Sjumpprep)
+		if (state == states.normal || state == states.mach1 || state == states.mach2 || state == states.pogo || state == states.mach3 || state == states.Sjumpprep)
 		{
 			global.currentsavefile = other.file;
 			obj_player1.lastroom = room;

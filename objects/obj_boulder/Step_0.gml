@@ -6,7 +6,7 @@ switch (state)
 			hsp = 0;
 			vsp = 0;
 			sprite_index = spr_meatball_idle;
-			if (point_in_camera(x, y, view_camera[0]) && (obj_camera.shake_mag >= 10 || obj_player.state == 111))
+			if (point_in_camera(x, y, view_camera[0]) && (obj_camera.shake_mag >= 10 || obj_player.state == states.freefallland))
 			{
 				active = true;
 				sprite_index = spr_meatball_roll;

@@ -8,4 +8,4 @@ use_static = true;
 alarm[0] = 80;
 fmod_event_one_shot("event:/sfx/ui/tvswitch");
 with (obj_player)
-	state = 146;
+	state = states.actor;

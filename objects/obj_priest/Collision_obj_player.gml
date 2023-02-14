@@ -6,7 +6,7 @@ with (other)
 	{
 		if (state == states.ghost)
 			notification_push(notifs.priest_ghost, [ghosttimer, room]);
-		if (state == states.mort || state == states.mortjump || state == states.morthook || state == states.mortattack || state == states.mortjump || state == states.boxxedpep || state == states.boxxedpepjump || state == states.boxxedpepspin || state == states.ghost || state == 116 || state == 113 || state == 114)
+		if (state == states.mort || state == states.mortjump || state == states.morthook || state == states.mortattack || state == states.mortjump || state == states.boxxedpep || state == states.boxxedpepjump || state == states.boxxedpepspin || state == states.ghost || state == states.barrelslide || state == states.barrel || state == states.barreljump)
 		{
 			if (hsp != 0)
 				xscale = sign(hsp);

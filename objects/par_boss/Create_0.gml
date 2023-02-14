@@ -89,7 +89,7 @@ function SUPER_boss_destroy()
 	with (argument0)
 	{
 		camera_zoom(1, 0.1);
-		if (state == 162 || state == 160 || state == 147 || state == states.backbreaker)
+		if (state == 162 || state == 160 || state == states.parry || state == states.backbreaker)
 		{
 			sprite_index = spr_player_attackdash;
 			image_index = 6;

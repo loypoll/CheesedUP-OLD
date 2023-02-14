@@ -171,7 +171,7 @@ if (instance_exists(obj_player2))
 {
 	if ((obj_player2.x > (x - 400) && obj_player2.x < (x + 400)) && (y <= (obj_player2.y + 60) && y >= (obj_player2.y - 60)))
 	{
-		if (state != states.idle && obj_player2.state == 121)
+		if (state != states.idle && obj_player2.state == states.mach3)
 		{
 			state = states.idle;
 			sprite_index = scaredspr;

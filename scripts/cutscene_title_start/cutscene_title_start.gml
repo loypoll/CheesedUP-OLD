@@ -1,7 +1,7 @@
 function cutscene_title_start()
 {
 	with (obj_player1)
-		state = 146;
+		state = states.actor;
 	cutscene_end_action();
 }
 function cutscene_title_middle()

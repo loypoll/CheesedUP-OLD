@@ -15,7 +15,7 @@ if (sprite_index == spr_tvstatic)
 	{
 		with (obj_player)
 		{
-			if (state == 146)
+			if (state == states.actor)
 				state = 225;
 		}
 		fmod_event_one_shot("event:/sfx/ui/tvswitchback");

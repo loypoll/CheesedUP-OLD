@@ -20,7 +20,7 @@ if (destroyable && elitehit <= 0)
 	with (instance_create(room_width * 0.6, 369, obj_pizzafaceboss_p3intro))
 	{
 		image_xscale = -1;
-		state = 144;
+		state = states.arenaintro;
 		sprite_index = spr_pizzahead_phase3_intro1;
 		image_index = 0;
 		introbuffer = 120;
@@ -31,7 +31,7 @@ if (destroyable && elitehit <= 0)
 		vsp = 0;
 		x = room_width * 0.3;
 		y = 402;
-		state = 146;
+		state = states.actor;
 		xscale = 1;
 		sprite_index = spr_idle;
 		image_speed = 0.35;

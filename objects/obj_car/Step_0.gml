@@ -7,7 +7,7 @@ switch (state)
 			for (var i = 0; i < num; i++)
 			{
 				var b = ds_list_find_value(global.instancelist, i);
-				if (b.state == 121)
+				if (b.state == states.mach3)
 				{
 					player_inst = b;
 					hsp = sign(player_inst.hsp);

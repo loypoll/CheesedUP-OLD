@@ -1,4 +1,4 @@
-if (state == 148)
+if (state == states.golf)
 	exit;
 x = other.x;
 kicked = false;

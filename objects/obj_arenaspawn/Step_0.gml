@@ -122,5 +122,5 @@ switch (state)
 		instance_destroy();
 		break;
 }
-if (state != states.normal && state != 144)
+if (state != states.normal && state != states.arenaintro)
 	visible = false;

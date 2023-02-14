@@ -67,7 +67,7 @@ if (state != states.grabbed)
 		}
 		if (attacking == 1 && state != states.mach2)
 		{
-			if (state == 121)
+			if (state == states.mach3)
 				other.shot = true;
 			image_index = 0;
 			instance_destroy(other);

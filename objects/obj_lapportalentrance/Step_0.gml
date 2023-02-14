@@ -2,7 +2,7 @@ if (active)
 {
 	with (obj_player)
 	{
-		state = 146;
+		state = states.actor;
 		hsp = 0;
 		vsp = 0;
 		visible = false;

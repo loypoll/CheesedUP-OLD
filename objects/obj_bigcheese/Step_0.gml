@@ -103,7 +103,7 @@ else if (state == 74)
 				movespeed = 0;
 				hsp = 0;
 				vsp = 0;
-				state = 146;
+				state = states.actor;
 				jumpstop = true;
 				x = lerp(x, tx, 0.2);
 				y = lerp(y, ty, 0.2);

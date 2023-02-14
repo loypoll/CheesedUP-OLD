@@ -2,7 +2,7 @@ with (obj_player1)
 {
 	if (character != "V")
 	{
-		if ((place_meeting(x + hsp, y, other) || place_meeting(x + xscale, y, other)) && (obj_player1.state == 121 || (obj_player1.ghostdash == 1 && obj_player1.ghostpepper >= 3) || obj_player1.ratmount_movespeed >= 12 || obj_player1.state == 184 || obj_player1.state == states.knightpepslopes || obj_player1.state == 153))
+		if ((place_meeting(x + hsp, y, other) || place_meeting(x + xscale, y, other)) && (obj_player1.state == states.mach3 || (obj_player1.ghostdash == 1 && obj_player1.ghostpepper >= 3) || obj_player1.ratmount_movespeed >= 12 || obj_player1.state == states.rocket || obj_player1.state == states.knightpepslopes || obj_player1.state == 153))
 		{
 			playerindex = 0;
 			instance_destroy(other);
@@ -35,7 +35,7 @@ if (place_meeting(x, y + 1, obj_player1) || place_meeting(x, y - 1, obj_player1)
 }
 with (obj_player2)
 {
-	if ((place_meeting(x + hsp, y, other) || place_meeting(x + xscale, y, other)) && (obj_player2.state == 121 || obj_player2.state == states.knightpepslopes || obj_player2.state == 153))
+	if ((place_meeting(x + hsp, y, other) || place_meeting(x + xscale, y, other)) && (obj_player2.state == states.mach3 || obj_player2.state == states.knightpepslopes || obj_player2.state == 153))
 	{
 		playerindex = 1;
 		instance_destroy(other);

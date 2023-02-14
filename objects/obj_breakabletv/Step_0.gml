@@ -10,7 +10,7 @@ if (place_meeting(x, y, obj_player))
 			hsp = 0;
 			movespeed = 0;
 		}
-		if (state == 121)
+		if (state == states.mach3)
 		{
 			hsp = -xscale * 3;
 			state = states.bump;

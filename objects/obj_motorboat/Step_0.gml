@@ -5,7 +5,7 @@ switch (state)
 		{
 			if (other.state != states.walk && state == states.normal && vsp > 0 && key_up && place_meeting(x, y + 1, other))
 			{
-				state = 146;
+				state = states.actor;
 				hsp = 0;
 				vsp = 0;
 				sprite_index = spr_idle;

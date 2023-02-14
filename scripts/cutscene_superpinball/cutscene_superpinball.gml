@@ -12,7 +12,7 @@ function cutscene_superpinball_start()
 		{
 			if (check_player_coop())
 			{
-				state = 146;
+				state = states.actor;
 				sprite_index = spr_idle;
 			}
 		}

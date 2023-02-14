@@ -146,12 +146,12 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
 				ty = target.backtohubstarty;
 			if (target.cutscene || (target.collision_flags & 1) > 0)
 			{
-				if (player.state == 146 && room == tower_pizzafacehall)
+				if (player.state == states.actor && room == tower_pizzafacehall)
 					chargecamera = Approach(chargecamera, 150, 8);
 				else
 					chargecamera = Approach(chargecamera, 0, 10);
 			}
-			else if (target.state == states.mach2 || target.state == 121)
+			else if (target.state == states.mach2 || target.state == states.mach3)
 			{
 				var _targetcharge = target.xscale * ((target.movespeed / 4) * 50);
 				var _tspeed = 0.3;

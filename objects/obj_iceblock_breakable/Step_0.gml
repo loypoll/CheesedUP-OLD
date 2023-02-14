@@ -8,7 +8,7 @@ if (place_meeting(x, y - 1, obj_player))
 				state = states.knightpepslopes;
 			else if (state != states.knightpepslopes && state != states.Sjumpprep)
 			{
-				if (state != states.machslide && state != states.tumble && state != states.handstandjump && state != states.mach1 && state != states.mach2 && state != 121)
+				if (state != states.machslide && state != states.tumble && state != states.handstandjump && state != states.mach1 && state != states.mach2 && state != states.mach3)
 				{
 					if (icedir != -xscale && move != 0)
 					{

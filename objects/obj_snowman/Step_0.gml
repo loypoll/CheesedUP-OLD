@@ -36,7 +36,7 @@ if (state == states.stun && stunned > 40 && birdcreated == 0)
 }
 if (state == states.walk)
 	state = states.charge;
-if (hitboxcreate == 0 && state == states.charge && obj_player.state != 121)
+if (hitboxcreate == 0 && state == states.charge && obj_player.state != states.mach3)
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_forkhitbox))

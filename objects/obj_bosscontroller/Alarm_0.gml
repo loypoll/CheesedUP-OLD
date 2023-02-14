@@ -9,7 +9,7 @@ with (obj_bosskeyspawn)
 	{
 		with (obj_player1)
 		{
-			if (state == 144)
+			if (state == states.arenaintro)
 			{
 				state = states.normal;
 				isgustavo = false;
