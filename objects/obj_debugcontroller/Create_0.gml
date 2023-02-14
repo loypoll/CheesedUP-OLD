@@ -286,7 +286,7 @@ if (DEBUG)
 		}
 	});
 	active = false;
-	showcollisions = true;
+	showcollisions = false;
 	showhud = true;
 	state_map = ds_map_create();
 	ds_map_set(state_map, "states.normal", 0);
