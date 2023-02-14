@@ -1,5 +1,5 @@
 depth = -500;
-DEBUG = true;
+DEBUG = debug;
 if (parameter_count() > 2)
 	DEBUG = true;
 if (!DEBUG)

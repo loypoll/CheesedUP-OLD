@@ -1,3 +1,7 @@
+// macros
+#macro debug true
+
+// functions
 function Approach(a, b, amount)
 {
 	if (a < b)
