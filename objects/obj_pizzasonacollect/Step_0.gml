@@ -3,17 +3,18 @@ if (x != obj_player1.x)
 	image_xscale = sign(obj_player1.x - x);
 switch (state)
 {
-	case 0:
+	case states.normal:
 		sprite_index = idlespr;
 		if (!instance_exists(collectID))
 		{
-			state = 74;
+			state = states.throwing;
 			sprite_index = throwspr;
 			image_index = 0;
 			showtext = true;
 			alarm[0] = 50;
 		}
 		break;
+	
 	case states.throwing:
 		if (floor(image_index) == (image_number - 1))
 			image_index = image_number - 1;
@@ -26,22 +27,24 @@ switch (state)
 			}
 			else if (!instance_exists(onebyoneID))
 			{
-				state = 8;
+				state = states.transition;
 				sprite_index = transitionspr;
 				image_index = 0;
 			}
 		}
 		break;
-	case 8:
+	
+	case states.transition:
 		if (floor(image_index) == (image_number - 1))
 		{
-			state = 92;
+			state = states.jump;
 			sprite_index = idlespr;
 			movespeed = 4;
 			showtext = false;
 			scr_ghostcollectible(true);
 		}
 		break;
+	
 	case states.jump:
 		movespeed += 0.25;
 		y -= movespeed;

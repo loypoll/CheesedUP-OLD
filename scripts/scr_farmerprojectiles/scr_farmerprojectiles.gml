@@ -1,32 +1,32 @@
-function scr_farmerpeasanto_projectile()
+function scr_farmerpeasanto_projectile(haystack)
 {
-	with (argument0)
+	with (haystack)
 	{
 		if (sprite_index != spr_haystackburning && sprite_index != spr_haystackburningup)
 		{
 			sprite_index = spr_haystackburningup;
 			image_index = 0;
-			state = 0;
+			state = states.normal;
 			return true;
 		}
 	}
 	return false;
 }
-function scr_farmer2_projectile()
+function scr_farmer2_projectile(haystack, projectile)
 {
-	with (argument0)
+	with (haystack)
 	{
-		x_to = x + (64 * argument1.image_xscale);
-		dir = argument1.image_xscale;
+		x_to = x + (64 * projectile.image_xscale);
+		dir = projectile.image_xscale;
 	}
 	return true;
 }
-function scr_farmer3_projectile()
+function scr_farmer3_projectile(haystack, projectile)
 {
-	with (argument0)
+	with (haystack)
 	{
-		x_to = x + (64 * -argument1.image_xscale);
-		dir = -argument1.image_xscale;
+		x_to = x + (64 * -projectile.image_xscale);
+		dir = -projectile.image_xscale;
 	}
 	return true;
 }
@@ -34,11 +34,11 @@ function scr_shoot_farmerprojectile()
 {
 	if (global.hasfarmer[farmerpos])
 	{
-		var inst = 411;
+		var inst = obj_farmerpeasantoprojectile;
 		if (farmerpos == 1)
-			inst = 230;
+			inst = obj_farmer2projectile;
 		else if (farmerpos == 2)
-			inst = 144;
+			inst = obj_farmer3projectile;
 		with (instance_create(x, y, inst))
 		{
 			image_xscale = other.xscale;

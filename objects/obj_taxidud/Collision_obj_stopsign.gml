@@ -6,9 +6,9 @@ if (playerid.visible == 0)
 	{
 		fmod_event_one_shot("event:/sfx/misc/taxibeep");
 		if (isgustavo)
-			state = 191;
+			state = states.ratmount;
 		else
-			state = 0;
+			state = states.normal;
 		instance_create(x, y, obj_genericpoofeffect);
 		movespeed = 0;
 		ratmount_movespeed = 0;
@@ -18,7 +18,7 @@ if (playerid.visible == 0)
 	{
 		with (obj_player2)
 		{
-			state = 0;
+			state = states.normal;
 			cutscene = false;
 		}
 	}

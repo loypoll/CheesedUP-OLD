@@ -65,6 +65,7 @@ else if (sprite_index == spr_haystackburning)
 				scr_losepoints();
 				if (state != 9)
 				{
+					
 				}
 				state = 9;
 				image_index = 0;
@@ -74,7 +75,7 @@ else if (sprite_index == spr_haystackburning)
 		}
 	}
 }
-if (state == 8)
+if (state == states.transition)
 {
 	hsp = movespeed * dir;
 	if (place_meeting(x + sign(hsp), y, obj_solid) && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
@@ -83,6 +84,6 @@ if (state == 8)
 	{
 		x = x_to;
 		hsp = 0;
-		state = 0;
+		state = states.normal;
 	}
 }

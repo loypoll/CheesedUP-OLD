@@ -1,6 +1,6 @@
 x += hsp;
 y += vsp;
-var num = collision_line_list(x, y, xprevious, yprevious, 591, false, true, global.instancelist, false);
+var num = collision_line_list(x, y, xprevious, yprevious, obj_haystack, false, true, global.instancelist, false);
 if (num > 0)
 {
 	for (var i = 0; i < num; i++)
@@ -9,14 +9,14 @@ if (num > 0)
 		var t = false;
 		with (b)
 		{
-			if (state == 0)
+			if (state == states.normal)
 			{
-				state = 8;
+				state = states.transition;
 				if (other.func(b, other.id))
 					t = true;
 				else
 				{
-					state = 0;
+					state = states.normal;
 					t = false;
 				}
 			}

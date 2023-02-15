@@ -26,7 +26,7 @@ if (fadealpha > f)
 	{
 		with (obj_player)
 		{
-			state = 0;
+			state = states.normal;
 			movespeed = 0;
 			landAnim = false;
 			hallway = true;

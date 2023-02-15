@@ -2,7 +2,7 @@ function cutscene_entrance_end()
 {
 	with (obj_player)
 	{
-		state = 0;
+		state = states.normal;
 		x = backtohubstartx;
 		y = backtohubstarty;
 	}
@@ -15,7 +15,7 @@ function cutscene_factory_end()
 {
 	with (obj_player)
 	{
-		state = 0;
+		state = states.normal;
 		x = backtohubstartx;
 		y = backtohubstarty;
 	}

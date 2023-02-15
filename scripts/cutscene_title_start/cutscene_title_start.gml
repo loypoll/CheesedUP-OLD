@@ -23,7 +23,7 @@ function cutscene_title_end()
 	if (obj_inputAssigner.device_selected[0])
 	{
 		with (obj_player1)
-			state = 0;
+			state = states.normal;
 		cutscene_end_action();
 	}
 	else

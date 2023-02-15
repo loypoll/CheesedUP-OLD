@@ -5,7 +5,7 @@ if (instance_number(object_index) > 1)
 	exit;
 }
 depth = 101;
-state = 0;
+state = states.normal;
 x = SCREEN_WIDTH - 100;
 y = SCREEN_HEIGHT - 100;
 add_y = -150;

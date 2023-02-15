@@ -5,12 +5,12 @@ if (playerid.visible == 0)
 	with (obj_player1)
 	{
 		fmod_event_one_shot("event:/sfx/misc/taxibeep");
-		state = 0;
+		state = states.normal;
 		instance_create(x, y, obj_genericpoofeffect);
 		cutscene = false;
 		if (isgustavo)
 		{
-			state = 191;
+			state = states.ratmount;
 			sprite_index = spr_player_ratmountidle;
 		}
 	}
@@ -18,10 +18,10 @@ if (playerid.visible == 0)
 	{
 		with (obj_player2)
 		{
-			state = 0;
+			state = states.normal;
 			cutscene = false;
 			if (isgustavo)
-				state = 191;
+				state = states.ratmount;
 		}
 	}
 	obj_player1.visible = true;

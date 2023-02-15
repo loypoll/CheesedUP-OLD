@@ -5,7 +5,7 @@ with (instance_place(x - 1, y, obj_player))
 		movespeed = abs(movespeed);
 		other.eaten = true;
 		grav = 0.5;
-		state = 0;
+		state = states.normal;
 	}
 }
 with (instance_place(x + 1, y, obj_player))
@@ -15,7 +15,7 @@ with (instance_place(x + 1, y, obj_player))
 		movespeed = abs(movespeed);
 		other.eaten = true;
 		grav = 0.5;
-		state = 0;
+		state = states.normal;
 	}
 }
 if (eaten)

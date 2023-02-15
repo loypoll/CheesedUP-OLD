@@ -311,7 +311,7 @@ function boss_pepperman_freefallland()
 {
 	if (image_index > (image_number - 1))
 	{
-		state = 0;
+		state = states.normal;
 		sprite_index = idlespr;
 		if (jumping_pepper && superjumping_pepper)
 		{

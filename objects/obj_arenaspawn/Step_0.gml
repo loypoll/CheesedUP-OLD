@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 0:
+	case states.normal:
 		if (obj_player1.x <= x)
 		{
 			state = 145;
@@ -19,28 +19,31 @@ switch (state)
 			}
 		}
 		break;
+	
 	case states.arenaintro:
 		with (obj_player)
-			state = 46;
+			state = states.gottreasure;
 		if (cutscene_count > 0)
 			cutscene_count--;
 		else
 		{
 			with (obj_player)
 			{
-				state = 0;
+				state = states.normal;
 				image_index = 0;
 			}
 			state = 145;
 			round_count = 10;
 		}
 		break;
+	
 	case 145:
 		if (round_count > 0)
 			round_count--;
 		else
 			state = 142;
 		break;
+	
 	case 142:
 		if (!ds_list_empty(baddielist))
 		{
@@ -80,6 +83,7 @@ switch (state)
 			}
 		}
 		break;
+	
 	case 143:
 		var _doorfinish = true;
 		with (obj_arenadoor)
@@ -114,13 +118,15 @@ switch (state)
 			}
 		}
 		break;
-	case 8:
+	
+	case states.transition:
 		if (floor(image_index) == (image_number - 1))
 			state = 98;
 		break;
+	
 	case 98:
 		instance_destroy();
 		break;
 }
-if (state != 0 && state != 144)
+if (state != states.normal && state != 144)
 	visible = false;

@@ -1,2 +1,2 @@
 with (playerid)
-	state = 0;
+	state = states.normal;

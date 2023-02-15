@@ -35,7 +35,7 @@ else
 	{
 		sprite_index = spr_gerome_keyidle;
 		instance_destroy(tauntID);
-		state = 0;
+		state = states.normal;
 	}
 }
 if (room == rank_room || room == timesuproom)

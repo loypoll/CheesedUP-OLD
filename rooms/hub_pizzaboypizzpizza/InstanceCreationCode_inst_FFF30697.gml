@@ -28,7 +28,7 @@ if (global.levelcomplete && !global.kidspartycutscene)
 	{
 		with (obj_player)
 		{
-			state = 0;
+			state = states.normal;
 			x = backtohubstartx;
 			y = backtohubstarty;
 		}

@@ -15,17 +15,17 @@ function tv_reset()
 		ds_list_clear(tvprompts_list);
 	}
 }
-function tv_create_prompt()
+function tv_create_prompt(text, type, sprite, textspeed)
 {
-	return [argument0, argument1, argument2, argument3];
+	return [text, type, sprite, textspeed];
 }
-function tv_push_prompt()
+function tv_push_prompt(text, type, sprite, textspeed)
 {
 	with (obj_tv)
 	{
-		var b = [argument0, argument1, argument2, argument3];
+		var b = [text, type, sprite, textspeed];
 		var play = false;
-		switch (argument1)
+		switch (type)
 		{
 			case 0:
 				play = true;
@@ -53,39 +53,35 @@ function tv_push_prompt()
 				break;
 		}
 		if (play)
-			state = 0;
+			state = states.normal;
 	}
 }
-function tv_push_prompt_array()
+function tv_push_prompt_array(prompt_array)
 {
-	for (var i = 0; i < array_length(argument0); i++)
+	for (var i = 0; i < array_length(prompt_array); i++)
 	{
 		with (obj_tv)
 		{
-			var b = argument0[i];
+			var b = prompt_array[i];
 			tv_push_prompt(b[0], b[1], b[2], b[3]);
 		}
 	}
 }
-function tv_push_prompt_once()
+function tv_push_prompt_once(prompt_array, prompt_entry)
 {
 	with (obj_tv)
 	{
 		if (special_prompts == -4)
-		{
 			return false;
-		}
-		var b = ds_map_find_value(special_prompts, argument1);
+		var b = ds_map_find_value(special_prompts, prompt_entry);
 		if (is_undefined(b))
-		{
 			return false;
-		}
-		if (b != 1)
+		if (b != true)
 		{
-			tv_push_prompt(argument0[0], argument0[1], argument0[2], argument0[3]);
-			ds_map_set(special_prompts, argument1, 1);
+			tv_push_prompt(prompt_array[0], prompt_array[1], prompt_array[2], prompt_array[3]);
+			ds_map_set(special_prompts, prompt_entry, 1);
 			ini_open_from_string(obj_savesystem.ini_str);
-			ini_write_real("Prompts", argument1, 1);
+			ini_write_real("Prompts", prompt_entry, 1);
 			obj_savesystem.ini_str = ini_close();
 			return true;
 		}
@@ -96,14 +92,14 @@ function tv_default_condition()
 {
 	return place_meeting(x, y, obj_player);
 }
-function tv_do_expression()
+function tv_do_expression(sprite)
 {
 	with (obj_tv)
 	{
-		if (expressionsprite != argument0 && bubblespr == -4)
+		if (expressionsprite != sprite && bubblespr == -4)
 		{
-			state = 250;
-			expressionsprite = argument0;
+			state = states.tv_whitenoise;
+			expressionsprite = sprite;
 			switch expressionsprite
 			{
 				case spr_tv_exprhurt:

@@ -34,7 +34,7 @@ function scr_player_revolver()
 		if (key_attack && movespeed >= 6)
 			state = states.mach2;
 		else
-			state = 0;
+			state = states.normal;
 	}
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerV_airrevolver)
 	{

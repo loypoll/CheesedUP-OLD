@@ -107,7 +107,7 @@ switch (state)
 	case states.walk:
 		grav = 0.5;
 		if (grounded)
-			state = 0;
+			state = states.normal;
 		invincible = true;
 		inv_timer = 2;
 		break;

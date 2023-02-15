@@ -1,20 +1,22 @@
 switch (state)
 {
-	case 0:
+	case states.normal:
 		break;
-	case 8:
+	
+	case states.transition:
 		if (floor(image_index) == (image_number - 1))
 		{
 			instance_activate_object(bossdoorID);
 			with (bossdoorID)
 			{
 				vsp = -5;
-				state = 92;
+				state = states.jump;
 				event_perform(ev_other, ev_room_start);
 			}
-			state = 92;
+			state = states.jump;
 		}
 		break;
+	
 	case states.jump:
 		sprite_index = spr_mrstick_helicopterhat;
 		y -= 10;

@@ -62,14 +62,14 @@ switch (state)
 			state = 145;
 		else
 		{
-			state = 0;
+			state = states.normal;
 			with (obj_player)
 			{
 				if (object_index != obj_player2 || global.coop)
-					state = 0;
+					state = states.normal;
 			}
 			with (par_boss)
-				state = 0;
+				state = states.normal;
 		}
 		break;
 	case 145:
@@ -140,14 +140,14 @@ switch (state)
 			round_timer = round_timermax;
 			bell_sprite = spr_bosstimer_bell;
 			alarm[0] = 1;
-			state = 0;
+			state = states.normal;
 			with (obj_player)
 			{
 				if (object_index == obj_player1 || global.coop)
-					state = 0;
+					state = states.normal;
 			}
 			with (par_boss)
-				state = 0;
+				state = states.normal;
 		}
 		break;
 	case 0:

@@ -38,7 +38,7 @@ if (obj_player.state == 152)
 	with (obj_player)
 	{
 		visible = true;
-		state = 0;
+		state = states.normal;
 	}
 }
 if (obj_player.state == 292)

@@ -39,7 +39,7 @@ function scr_player_grabbing()
 		state = states.jump;
 	}
 	if (floor(image_index) == (image_number - 1) && (sprite_index == attackdash || sprite_index == spr_player_Sjump))
-		state = 0;
+		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && sprite_index == airattackdashstart)
 		sprite_index = airattackdash;
 	grav = 0;

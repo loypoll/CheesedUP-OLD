@@ -1,4 +1,4 @@
-if (state != 55 && x == xstart && y == ystart)
+if (state != states.grabbing && x == xstart && y == ystart)
 {
 	with (other)
 	{
@@ -6,7 +6,7 @@ if (state != 55 && x == xstart && y == ystart)
 		other.state = states.grabbing;
 		if (state == states.grabbed)
 		{
-			state = 0;
+			state = states.normal;
 			with (playerid)
 				bombgrabID = -4;
 		}

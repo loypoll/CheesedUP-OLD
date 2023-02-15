@@ -60,7 +60,7 @@ switch (state)
 		sprite_index = tauntspr;
 		if (obj_player.state != 84)
 		{
-			state = 0;
+			state = states.normal;
 			hsp = tauntstoredhsp;
 			vsp = tauntstoredvsp;
 		}

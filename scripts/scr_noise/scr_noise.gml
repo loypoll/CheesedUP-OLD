@@ -863,7 +863,7 @@ function scr_noise_noiseballooncrash()
 	{
 		state = states.walk;
 		with (obj_player1)
-			state = 0;
+			state = states.normal;
 		repeat (2)
 		{
 			with (create_debris(x + random_range(-64, 64), y + random_range(-64, 64), spr_flashdots, true))

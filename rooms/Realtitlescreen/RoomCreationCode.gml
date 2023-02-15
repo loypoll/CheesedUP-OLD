@@ -89,7 +89,7 @@ enum states
 	bossdefeat,
 	pizzathrow,
 	bossintro,
-	gameover,
+	gameover, // or just "dead", it's used in obj_pizzafaceshower
 	keyget,
 	tackle,
 	jump,
@@ -430,7 +430,7 @@ global.chateauswap = -4;
 global.warcutscene = -4;
 pal_swap_init_system(shd_pal_swapper);
 with (obj_player1)
-	state = 0;
+	state = states.normal;
 global.loadeditor = false;
 if (global.longintro)
 {
