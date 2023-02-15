@@ -52,6 +52,8 @@ switch (state)
 					state = 214;
 					stringid = other.id;
 					movespeed = hsp;
+					other.previousx = x;
+                    other.previousy = y;
 					if (abs(movespeed) >= 16)
 						movespeeddeccel = 1.8;
 					else
@@ -115,15 +117,14 @@ switch (state)
 						}
 					}
 					var _solid = false;
-					with (other)
-					{
-						if place_meeting(x, y - 1, obj_solid)
-							_solid = true;
-					}
-					if (_solid || (vsp > 0 && y < other.y))
+					if place_meeting(x, y - 1, obj_solid)
+                        _solid = true;
+                    if (_solid || (vsp > 0 && y < other.y) || (x == other.previousx && y == other.previousy))
 						other.idlebuffer++;
 					else
 						other.idlebuffer = 0;
+					other.previousx = x;
+                    other.previousy = y;
 					if (other.idlebuffer > 60)
 					{
 						other.state = 0;

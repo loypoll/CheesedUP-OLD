@@ -5,7 +5,7 @@ function scr_get_tutorial_key(char)
 	var txt = -4;
 	switch (char)
 	{
-		case 37:
+		case 37: // TODO
 			spr = spr_tutorialgamepad;
 			ix = 16;
 			break;
