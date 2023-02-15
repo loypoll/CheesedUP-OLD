@@ -18,7 +18,7 @@ if (!touched)
 	image_speed = 0.35;
 	switch (state)
 	{
-		case 0:
+		case states.normal:
 			if (sprite_index != spr_fakepeppino_land)
 			{
 				if (x != xprevious)
@@ -61,6 +61,7 @@ if (!touched)
 				}
 			}
 			break;
+		
 		case states.jump:
 			if (floor(image_index) == (image_number - 1))
 			{

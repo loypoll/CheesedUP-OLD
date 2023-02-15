@@ -31,7 +31,7 @@ function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 		var char = string_ord_at(argument0, argument1);
 		switch char
 		{
-			case 10:
+			case 10: // TODO
 				char_y += newline;
 				char_x = 0;
 				break;
@@ -63,7 +63,7 @@ function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 				switch (button)
 				{
 					case "[D]":
-						b = (3 << 0);
+						b = (3 << 0); // TODO
 						break;
 					case "[U]":
 						b = (0 << 0);
@@ -148,7 +148,7 @@ function scr_text_arr_size(argument0)
 		var val = b[3];
 		switch (t)
 		{
-			case (1 << 0):
+			case (1 << 0): // TODO
 				if ((cx + 32) > w)
 					w += 32;
 				break;
@@ -224,7 +224,7 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 					spr = spr_tutorialgamepad;
 					switch val
 					{
-						case (3 << 0):
+						case (3 << 0): // TODO
 							ix = scr_get_gamepadicon(global.key_downC);
 							break;
 						case (0 << 0):
@@ -285,7 +285,7 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 					var arr = noone;
 					switch val
 					{
-						case (3 << 0):
+						case (3 << 0): // TODO
 							arr = scr_get_tutorial_key(global.key_down);
 							break;
 						case (0 << 0):
@@ -324,6 +324,12 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 						case (10 << 0):
 							arr = scr_get_tutorial_key(global.key_taunt);
 							break;
+						case (11 << 0):
+                            arr = scr_get_tutorial_key(global.key_down);
+                            break;
+                        case (12 << 0):
+                            arr = scr_get_tutorial_key(global.key_up);
+                            break;
 					}
 					if arr != noone
 					{
@@ -383,7 +389,7 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 					var x2 = 0;
 					switch argument5
 					{
-						case (1 << 0):
+						case (1 << 0): // TODO
 							for (var j = 1; j <= string_length(val); j++)
 							{
 								var q = string_char_at(val, j);

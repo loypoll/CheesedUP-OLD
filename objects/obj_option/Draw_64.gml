@@ -4,7 +4,7 @@ for (var i = 0; i < array_length(bg_alpha); i++)
 if (room != Mainmenu)
 {
 	with (obj_keyconfig)
-		event_perform(8, 64);
+		event_perform(ev_draw, ev_gui);
 }
 if (instance_exists(obj_keyconfig))
 	exit;
@@ -89,5 +89,5 @@ switch (m.anchor)
 if (room != Mainmenu)
 {
 	with (obj_transfotip)
-		event_perform(8, 64);
+		event_perform(ev_draw, ev_gui);
 }

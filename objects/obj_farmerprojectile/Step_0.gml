@@ -1,6 +1,6 @@
 x += hsp;
 y += vsp;
-var num = collision_line_list(x, y, xprevious, yprevious, 591, false, true, global.instancelist, false);
+var num = collision_line_list(x, y, xprevious, yprevious, obj_haystack, false, true, global.instancelist, false);
 if (num > 0)
 {
 	for (var i = 0; i < num; i++)

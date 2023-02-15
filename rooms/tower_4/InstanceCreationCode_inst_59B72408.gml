@@ -1,7 +1,7 @@
 targetRoom = sewer_1;
 level = "sewer";
 sprite_index = spr_gate_sewer;
-bgsprite = spr_stylepizza;
+bgsprite = spr_gate_sewerBG;
 title_index = 3;
 title_sprite = spr_titlecards_title2;
 titlecard_index = 13;

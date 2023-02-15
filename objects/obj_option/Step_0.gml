@@ -15,7 +15,10 @@ bg_y -= 1;
 if (instance_exists(obj_keyconfig))
 	exit;
 scr_getinput();
-key_jump = (key_jump || (global.key_start != vk_return && keyboard_check_pressed(vk_return)) || (global.key_start != vk_space && keyboard_check_pressed(vk_space)));
+var _dvc = obj_inputAssigner.player_input_device[0];
+if (key_jump && _dvc >= 0 && gamepad_button_check_pressed(_dvc, global.key_jumpC) && global.key_jumpC == gp_face2)
+    key_jump = false;
+key_jump = (key_jump || (global.key_start != vk_return && keyboard_check_pressed(vk_return)) || (global.key_start != vk_space && keyboard_check_pressed(vk_space)) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face1));
 key_back = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2));
 if (backbuffer > 0)
 {
@@ -39,14 +42,14 @@ var option = m.options[optionselected];
 var move2 = key_left2 + key_right2;
 switch (option.type)
 {
-	case 2:
+	case (2 << 0):
 		if (key_jump && option.func != -4)
 		{
 			fmod_event_one_shot("event:/sfx/ui/select");
 			option.func();
 		}
 		break;
-	case 0:
+	case (0 << 0):
 		if (key_jump || -key_left2 || key_right2)
 		{
 			fmod_event_one_shot("event:/sfx/ui/select");
@@ -55,7 +58,7 @@ switch (option.type)
 				option.on_changed(option.value);
 		}
 		break;
-	case 1:
+	case (1 << 0):
 		if (move2 != 0)
 		{
 			fmod_event_one_shot("event:/sfx/ui/step");
@@ -68,7 +71,7 @@ switch (option.type)
 				option.on_changed(option.values[option.value].value);
 		}
 		break;
-	case 3:
+	case (3 << 0):
 		move2 = key_left + key_right;
 		if (move2 != 0 && slidebuffer <= 0)
 		{

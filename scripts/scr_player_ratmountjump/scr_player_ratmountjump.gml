@@ -129,7 +129,7 @@ function scr_player_ratmountjump()
 	}
 	if (input_buffer_slap > 0 && !key_up)
 	{
-		particle_set_scale(5, xscale, 1);
+		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		input_buffer_slap = 0;
 		if (brick == 1)
@@ -152,7 +152,7 @@ function scr_player_ratmountjump()
 	{
 		bounce = false;
 		input_buffer_jump = 0;
-		particle_set_scale(4, xscale, 1);
+		particle_set_scale(particle.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particle.highjumpcloud2, 0);
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		if (brick)

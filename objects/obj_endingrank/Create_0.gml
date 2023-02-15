@@ -7,7 +7,7 @@ bg_y = 0;
 sprite_index = spr_finaljudgement;
 image_speed = 0.35;
 fade = 1;
-state = states.normal;
+state = 0; // not an enum
 introbuffer = 300;
 brown = false;
 brownfade = 0;
@@ -34,7 +34,33 @@ if (secs < 10)
 	secs = concat("0", secs);
 else
 	secs = concat(secs);
-var levels = ["entrance", "medieval", "ruin", "dungeon", "badland", "graveyard", "farm", "saloon", "plage", "forest", "minigolf", "space", "sewer", "industrial", "street", "freezer", "chateau", "war", "kidsparty", "exit", "w1stick", "w2stick", "w3stick", "w4stick", "w5stick"];
+var levels = [
+	"entrance",
+	"medieval",
+	"ruin",
+	"dungeon",
+	"badland",
+	"graveyard",
+	"farm",
+	"saloon",
+	"plage",
+	"forest",
+	"minigolf",
+	"space",
+	"sewer",
+	"industrial",
+	"street",
+	"freezer",
+	"chateau",
+	"war",
+	"kidsparty",
+	"exit",
+	"w1stick",
+	"w2stick",
+	"w3stick",
+	"w4stick",
+	"w5stick"
+];
 ini_open_from_string(obj_savesystem.ini_str);
 var damage = ini_read_real("Game", "damage", 0);
 var _score = 0;

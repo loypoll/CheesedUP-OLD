@@ -89,7 +89,7 @@ enum states
 	bossdefeat,
 	pizzathrow,
 	bossintro,
-	gameover,
+	gameover, // or just "dead", it's used in obj_pizzafaceshower
 	keyget,
 	tackle,
 	jump,

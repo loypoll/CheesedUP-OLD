@@ -102,7 +102,11 @@ add_option_press(video_menu, 0, "option_back", function()
 	menu_goto(0);
 });
 
-var modes = [create_option_value("option_off", 0, true), create_option_value("option_exclusive", 1, true), create_option_value("option_borderless", 2, true)];
+var modes = [
+	create_option_value("option_off", 0, true), 
+	create_option_value("option_exclusive", 1, true), 
+	create_option_value("option_borderless", 2, true)
+];
 add_option_multiple(video_menu, 1, "option_fullscreen", modes, function(val)
 {
 	screen_apply_fullscreen(val);

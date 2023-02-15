@@ -289,7 +289,7 @@ function state_player_normal()
 					sprite_index = spr_player_pistoljump1;
 				image_index = 0;
 			}
-			particle_set_scale(4, xscale, 1);
+			particle_set_scale(particle.highjumpcloud2, xscale, 1);
 			create_particle(x, y, particle.highjumpcloud2, 0);
 			vsp = -11;
 			state = states.jump;
@@ -337,7 +337,7 @@ function state_player_normal()
 		input_buffer_slap = 0;
 		sprite_index = spr_suplexdash;
 		suplexmove = true;
-		particle_set_scale(5, xscale, 1);
+		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		fmod_event_instance_play(suplexdashsnd);
 		state = states.handstandjump;
@@ -353,7 +353,7 @@ function state_player_normal()
 		fmod_event_instance_play(snd_uppercut);
 		vsp = -14;
 		movespeed = hsp;
-		particle_set_scale(4, xscale, 1);
+		particle_set_scale(particle.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particle.highjumpcloud2, 0);
 	}
 	switch (character)

@@ -25,7 +25,7 @@ function scr_player_mach2()
 		image_index = 0;
 		sprite_index = spr_secondjump1;
 		scr_fmod_soundeffect(jumpsnd, x, y);
-		particle_set_scale(5, xscale, 1);
+		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		if (skateboarding)
 			sprite_index = spr_clownjump;
@@ -94,7 +94,7 @@ function scr_player_mach2()
 			flash = true;
 			if (sprite_index != spr_rollgetup)
 				sprite_index = spr_mach4;
-			particle_set_scale(5, xscale, 1);
+			particle_set_scale(particle.jumpdust, xscale, 1);
 			create_particle(x, y, particle.jumpdust, 0);
 		}
 	}
@@ -140,7 +140,7 @@ function scr_player_mach2()
 		sprite_index = spr_clownfall;
 	if (key_down && !skateboarding && !place_meeting(x, y, obj_dashpad))
 	{
-		particle_set_scale(5, xscale, 1);
+		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		flash = false;
 		state = states.tumble;
@@ -246,7 +246,7 @@ function scr_player_mach2()
 		sprite_index = spr_suplexdash;
 		suplexmove = true;
 		fmod_event_instance_play(suplexdashsnd);
-		particle_set_scale(5, xscale, 1);
+		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		state = states.handstandjump;
 		if (movespeed < 5)
@@ -262,7 +262,7 @@ function scr_player_mach2()
 		fmod_event_instance_play(snd_uppercut);
 		vsp = -10;
 		movespeed = hsp;
-		particle_set_scale(4, xscale, 1);
+		particle_set_scale(particle.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particle.highjumpcloud2, 0);
 	}
 	if (input_buffer_shoot > 0 && !skateboarding)

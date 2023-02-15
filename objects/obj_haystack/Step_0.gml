@@ -65,6 +65,7 @@ else if (sprite_index == spr_haystackburning)
 				scr_losepoints();
 				if (state != states.fireass)
 				{
+					
 				}
 				state = states.fireass;
 				image_index = 0;

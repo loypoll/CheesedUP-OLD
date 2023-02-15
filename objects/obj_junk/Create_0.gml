@@ -1,6 +1,6 @@
 ratgrabbed = false;
 grabbed = false;
-state = states.normal;
+state = states.normal; // redundant
 hsp = 0;
 vsp = 0;
 grav = 0.5;
@@ -8,7 +8,7 @@ flash = true;
 unpickable = false;
 hp = 0;
 grounded = true;
-state = states.normal;
+state = 0; // not an enum
 playerid = obj_player1;
 image_speed = 0;
 image_index = random_range(0, image_number - 1);

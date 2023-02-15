@@ -1,9 +1,10 @@
 switch (state)
 {
-	case 0:
+	case states.normal:
 		hsp = 0;
 		vsp = 0;
 		break;
+	
 	case states.fall:
 		var num = instance_place_list(x, y + vsp + 1, obj_destructibles, global.instancelist, false);
 		for (var i = 0; i < num; i++)
@@ -23,6 +24,7 @@ switch (state)
 			}
 		}
 		break;
+	
 	case states.jump:
 		y = Approach(y, ystart, 2);
 		if (y == ystart)

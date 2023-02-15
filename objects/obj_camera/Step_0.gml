@@ -138,7 +138,7 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
 {
 	switch (state)
 	{
-		case 0:
+		case states.normal:
 			var target = player;
 			var tx = target.x;
 			var ty = target.y;
@@ -230,6 +230,7 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
 				cam_y += ((cam_height - room_height) / 2);
 			camera_set_view_pos(view_camera[0], cam_x, cam_y + irandom_range(-shake_mag, shake_mag));
 			break;
+		
 		case states.camera_followtarget:
 			cam_width = camera_get_view_width(view_camera[0]);
 			cam_height = camera_get_view_height(view_camera[0]);

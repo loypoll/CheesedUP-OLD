@@ -1,7 +1,7 @@
 targetRoom = industrial_1;
 level = "industrial";
 sprite_index = spr_gate_industrial;
-bgsprite = spr_halloweencollectibles3;
+bgsprite = spr_gate_industrialBG;
 title_index = 6;
 title_sprite = spr_titlecards_title2;
 titlecard_index = 16;

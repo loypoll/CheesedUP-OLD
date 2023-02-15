@@ -1,4 +1,4 @@
-if (state != 55 && x == xstart && y == ystart)
+if (state != states.grabbing && x == xstart && y == ystart)
 {
 	with (other)
 	{

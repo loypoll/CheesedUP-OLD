@@ -28,23 +28,25 @@ switch (state)
 				else
 				{
 					fmod_event_instance_set_parameter(snd, "state", 1, true);
-					substate = 0;
+					substate = states.normal;
 					cutscenebuffer = 100;
 					sprite_index = spr_pizzafaceshower3;
 				}
 				break;
-			case 0:
+			
+			case states.normal:
 				if (cutscenebuffer > 0)
 					cutscenebuffer--;
 				else
 				{
 					fmod_event_instance_set_parameter(snd, "state", 2, true);
-					substate = 8;
+					substate = states.transition;
 					cutscenebuffer = 100;
 					sprite_index = spr_pizzafaceshower2;
 				}
 				break;
-			case 8:
+			
+			case states.transition:
 				if (cutscenebuffer > 0)
 					cutscenebuffer--;
 				else if (sprite_index == spr_pizzafaceshower2)
@@ -60,12 +62,13 @@ switch (state)
 					x += 13;
 					y += 16;
 					sprite_index = spr_pizzafaceshower4;
-					substate = 92;
+					substate = states.jump;
 					movespeed = 15;
 					vsp = -4;
 					depth = 5;
 				}
 				break;
+			
 			case states.jump:
 				movespeed = Approach(movespeed, 0, 0.2);
 				vsp = Approach(vsp, -15, 0.1);
@@ -73,7 +76,7 @@ switch (state)
 				y += vsp;
 				if (!bbox_in_camera(view_camera[0], 50))
 				{
-					substate = 89;
+					substate = states.gameover;
 					with (obj_player)
 					{
 						state = states.normal;
@@ -81,7 +84,8 @@ switch (state)
 					}
 				}
 				break;
-			case 89:
+			
+			case states.gameover:
 				y -= 20;
 				if (y < -200)
 				{

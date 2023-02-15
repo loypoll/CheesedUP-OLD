@@ -1,3 +1,3 @@
 spawnbuffer = 0;
 attack = -4;
-state = states.normal;
+state = 0; // not an enum

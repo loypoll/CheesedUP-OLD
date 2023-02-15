@@ -1,4 +1,4 @@
-function scr_do_command()
+function scr_do_command(command)
 {
 	with (obj_editor)
 	{
@@ -9,8 +9,8 @@ function scr_do_command()
 			ds_list_find_value(commandlist, t).OnDelete();
 			ds_list_delete(commandlist, t);
 		}
-		argument0.Do();
-		ds_list_add(commandlist, argument0);
+		command.Do();
+		ds_list_add(commandlist, command);
 	}
 }
 function scr_undo_command()
@@ -21,7 +21,7 @@ function scr_undo_command()
 		if (b.state == 1)
 		{
 			b.Undo();
-			b.state = states.normal;
+			b.state = 0; // not an enum
 		}
 		if (undo < ds_list_size(commandlist))
 			undo++;

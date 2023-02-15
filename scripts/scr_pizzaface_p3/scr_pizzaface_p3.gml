@@ -206,7 +206,7 @@ function scr_pizzaface_p3_walk()
 				currentattack = 0;
 			switch (attack)
 			{
-				case states.grabbed:
+				case 4:
 					laugh = cooldown;
 					fmod_event_one_shot("event:/sfx/voice/pizzahead");
 					vulnerable_buffer = laugh;

@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 0:
+	case states.normal:
 		if (place_meeting(x, y, obj_player))
 		{
 			var num = instance_place_list(x, y, obj_player, global.instancelist, false);
@@ -39,6 +39,7 @@ switch (state)
 			}
 		}
 		break;
+	
 	case states.hit:
 		x = hitX + irandom_range(-1, 1);
 		y = hitY + irandom_range(-1, 1);

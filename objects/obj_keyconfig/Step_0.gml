@@ -9,7 +9,7 @@ var horizpress_dz = global.gamepad_deadzone_press;
 var _dvc = obj_inputAssigner.player_input_device[0];
 gamepad_set_axis_deadzone(_dvc, 0.4);
 
-key_back = (keyboard_check_pressed(global.key_slap) || keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(_dvc, gp_face2));
+key_back = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(_dvc, gp_face2))
 key_up2 = (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W")) || (gamepad_axis_value(_dvc, gp_axislv) < -vertpress_dz && stickpressed_vertical == 0) || gamepad_button_check_pressed(_dvc, gp_padu));
 key_down2 = (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S")) || (gamepad_axis_value(_dvc, gp_axislv) > vertpress_dz && stickpressed_vertical == 0) || gamepad_button_check_pressed(_dvc, gp_padd));
 key_left2 = (keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A")) || (gamepad_axis_value(_dvc, gp_axislh) < -horizpress_dz && stickpressed_horizontal == 0) || gamepad_button_check_pressed(_dvc, gp_padl));

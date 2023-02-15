@@ -1,15 +1,17 @@
 fmod_event_instance_set_3d_attributes(snd, x, y);
 switch (state)
 {
-	case 0:
+	case states.normal:
 		break;
-	case 8:
+	
+	case states.transition:
 		if (floor(image_index) == (image_number - 1))
 		{
 			state = states.fall;
 			sprite_index = spr_grabbiehand_fall;
 		}
 		break;
+	
 	case states.fall:
 		var spd = 12;
 		shootdir = angle_rotate(shootdir, point_direction(x, y, targetplayer.x, targetplayer.y), turnspeed);
@@ -27,6 +29,7 @@ switch (state)
 		}
 		scr_collide();
 		break;
+	
 	case states.stun:
 		if (stunned > 0)
 			stunned--;
@@ -40,7 +43,8 @@ switch (state)
 			hsp = 0;
 		scr_collide();
 		break;
-	case 7:
+	
+	case states.ejected:
 		var _dir = point_direction(x, y, xstart, ystart);
 		x = Approach(x, xstart, abs(lengthdir_x(8, _dir)));
 		y = Approach(y, ystart, abs(lengthdir_y(8, _dir)));
@@ -52,7 +56,8 @@ switch (state)
 			fmod_event_instance_stop(snd, true);
 		}
 		break;
-	case 55:
+	
+	case states.grabbing:
 		sprite_index = spr_grabbiehand_catch;
 		if (!reverse)
 			vsp = -14;
@@ -73,7 +78,7 @@ switch (state)
 					sprite_index = spr_player_catched;
 				else
 					sprite_index = spr_boxxedpep_air;
-				if (tauntstoredstate == 104)
+				if (tauntstoredstate == states.mach2)
 					sprite_index = spr_mach;
 				else if (tauntstoredstate == states.mach3)
 					sprite_index = spr_mach4;

@@ -13,3 +13,5 @@ hand_index = 0;
 hand_xscale = 1;
 launch_hsp = 0;
 launch_vsp = 0;
+previousx = x;
+previousy = y;

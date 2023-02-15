@@ -8,14 +8,16 @@ switch (state)
 			y += 20;
 		}
 		break;
-	case 8:
+	
+	case states.transition:
 		y = Approach(y, SCREEN_HEIGHT - 100, 6);
 		if (y == (SCREEN_HEIGHT - 100))
 		{
-			state = 293;
+			state = states.animation;
 			buffer = 1;
 		}
 		break;
+	
 	case states.animation:
 		if (global.pigtotal_add > 0)
 			global.pigtotal_add--;

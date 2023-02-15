@@ -7,7 +7,7 @@ switch (state)
 	case 17:
 		switch (substate)
 		{
-			case 0:
+			case states.normal:
 				var moveH = playerid.key_left + playerid.key_right;
 				var moveV = playerid.key_down - playerid.key_up;
 				if (moveH != 0 || moveV != 0)
@@ -21,8 +21,9 @@ switch (state)
 				if (launch_buffer > 0)
 					launch_buffer--;
 				else
-					substate = 92;
+					substate = states.jump;
 				break;
+			
 			case states.jump:
 				var spd = 24;
 				hsp = moveX * spd;

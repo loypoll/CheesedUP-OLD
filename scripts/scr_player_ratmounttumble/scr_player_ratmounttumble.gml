@@ -39,7 +39,7 @@ function scr_player_ratmounttumble()
 	if (input_buffer_jump > 0 && can_jump)
 	{
 		input_buffer_jump = 0;
-		particle_set_scale(4, xscale, 1);
+		particle_set_scale(particle.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particle.highjumpcloud2, 0);
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		vsp = -11;

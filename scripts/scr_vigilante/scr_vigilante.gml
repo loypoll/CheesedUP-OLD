@@ -1,17 +1,17 @@
-function vigilante_start_attack()
+function vigilante_start_attack(phase, wastedhits)
 {
-	attack_list[argument0][argument1] = array_create(0);
+	attack_list[phase][wastedhits] = array_create(0);
 }
-function vigilante_add_attack(argument0, argument1, argument2, argument3 = 0)
+function vigilante_add_attack(phase, wastedhits, attack, cooldown = 0)
 {
-	array_push(attack_list[argument0][argument1], [argument2, argument3]);
+	array_push(attack_list[phase][wastedhits], [attack, cooldown]);
 }
-function vigilante_end_attack()
+function vigilante_end_attack(phase, wastedhits)
 {
 	var found = false;
-	for (var i = 0; i < array_length(attack_list[argument0][argument1]); i++)
+	for (var i = 0; i < array_length(attack_list[phase][wastedhits]); i++)
 	{
-		var b = attack_list[argument0][argument1][i];
+		var b = attack_list[phase][wastedhits][i];
 		if (b[0] == 10 || b[0] == 7)
 		{
 			found = true;
@@ -20,6 +20,7 @@ function vigilante_end_attack()
 	}
 	if (!found)
 	{
+		
 	}
 }
 function scr_vigilante_init_sounds()
@@ -369,7 +370,7 @@ function scr_vigilante_walk()
 				if (sprite_index != spr_playerV_revolverend)
 					sprite_index = spr_playerV_idle;
 				break;
-			case states.grabbed:
+			case 4:
 				state = states.boss_flamethrower;
 				if (targetplayer.x != x)
 					image_xscale = sign(targetplayer.x - x);

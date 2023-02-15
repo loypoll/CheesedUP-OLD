@@ -1,4 +1,4 @@
-if (state != 55 && other.state != states.bombgrab && x == xstart && y == ystart)
+if (state != states.grabbing && other.state != states.bombgrab && x == xstart && y == ystart)
 {
 	with (other)
 	{
@@ -24,14 +24,14 @@ if (state != 55 && other.state != states.bombgrab && x == xstart && y == ystart)
 			sprite_index = spr_boxxedpep_air;
 		other.playerid = id;
 		other.state = states.grabbing;
-		if (tauntstoredstate != 104 && tauntstoredstate != 121)
+		if (tauntstoredstate != states.mach2 && tauntstoredstate != states.mach3)
 		{
-			tauntstoredstate = 92;
+			tauntstoredstate = states.jump;
 			tauntstoredsprite = spr_jump;
 			tauntstoredmovespeed = 0;
 			tauntstoredvsp = 0;
 		}
-		else if (tauntstoredstate == 104)
+		else if (tauntstoredstate == states.mach2)
 			sprite_index = spr_mach;
 		else if (tauntstoredstate == states.mach3)
 			sprite_index = spr_mach4;

@@ -1,7 +1,7 @@
 targetRoom = war_1;
 level = "war";
 sprite_index = spr_gate_war;
-bgsprite = spr_robot_slap;
+bgsprite = spr_gate_warBG;
 title_index = 4;
 title_sprite = spr_titlecards_title2;
 titlecard_index = 14;

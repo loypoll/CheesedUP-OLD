@@ -1,9 +1,10 @@
 var ww = window_get_width();
 var wh = window_get_height();
+var cr = cr_beam;
 if ((device_mouse_x_to_gui(0) != mouse_xprevious || device_mouse_y_to_gui(0) != mouse_yprevious) && gameframe_mouse_in_window())
 {
 	if (window_get_cursor() == -1)
-		window_set_cursor(cr_default);
+		cr = cr_default;
 	disappearbuffer = 100;
 	mouse_xprevious = device_mouse_x_to_gui(0);
 	mouse_yprevious = device_mouse_y_to_gui(0);
@@ -16,15 +17,24 @@ if (disappearbuffer > 0)
 else
 {
 	captionalpha = Approach(captionalpha, 0, 0.1);
-	if (window_get_cursor() != -1 && window_has_focus())
-		window_set_cursor(cr_none);
+	if (window_get_cursor() != -1 && window_has_focus() && room != Mainmenu)
+		cr = cr_none;
 }
 if (gameframe_get_fullscreen() > 0)
-	window_set_cursor(cr_none);
+	cr = cr_none;
 if (room == Mainmenu && window_get_cursor() == -1)
-	window_set_cursor(cr_default);
+	cr = cr_default;
 if (instance_exists(obj_inputAssigner) && obj_inputAssigner.player_input_device[0] >= 0)
-	window_set_cursor(cr_none);
+	cr = cr_none;
+if (cr != cr_beam)
+{
+    window_set_cursor(cr);
+    global.gameframe_current_cursor = cr;
+    if (cr == cr_none)
+        global.gameframe_set_cursor = false;
+    else
+        global.gameframe_set_cursor = true;
+}
 global.gameframe_alpha = captionalpha;
 if window_has_focus()
 {

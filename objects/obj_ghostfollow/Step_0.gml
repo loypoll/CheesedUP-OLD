@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 0:
+	case states.normal:
 		targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 		var _g = distance_to_point(targetplayer.x, targetplayer.y);
 		if (_g < 150)
@@ -26,7 +26,8 @@ switch (state)
 				playerid = other.id;
 		}
 		break;
-	case 291:
+	
+	case states.johnghost:
 		var acc = 0.05;
 		if (!fadein)
 		{
