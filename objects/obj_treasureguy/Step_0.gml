@@ -35,7 +35,7 @@ switch (state)
 				vsp = 0;
 			sprite_index = spr_minijohn_underground;
 			visible = false;
-			if (player.x > (x - 80) && player.x < (x + 80) && y <= (player.y + 60) && y >= (player.y - 60) && (player.state == 111 || player.sprite_index == player.spr_piledriverland))
+			if (player.x > (x - 80) && player.x < (x + 80) && y <= (player.y + 60) && y >= (player.y - 60) && (player.state == states.freefallland || player.sprite_index == player.spr_piledriverland))
 			{
 				fmod_event_one_shot_3d("event:/sfx/enemies/treasureguy", x, y);
 				notification_push(notifs.treasureguy_unbury, [room, object_index, id]);
@@ -89,7 +89,7 @@ if (state == states.idle)
 	if (sprite_index == scaredspr)
 	{
 		if (image_index > (image_number - 1))
-			state = 141;
+			state = states.chase;
 	}
 	else
 	{
@@ -97,7 +97,7 @@ if (state == states.idle)
 		image_speed = 0.35;
 	}
 }
-if (state != states.idle && state != 189 && state != states.grabbed && state != states.hit && state != states.stun && state != 141 && !running)
+if (state != states.idle && state != 189 && state != states.grabbed && state != states.hit && state != states.stun && state != states.chase && !running)
 {
 	if ((x < (targetplayer.x + threshold_x) && x > (targetplayer.x - threshold_x)) && (y < (targetplayer.y + threshold_y) && y > (targetplayer.y - threshold_y)))
 	{

@@ -1,7 +1,7 @@
 if (grounded && grabbed == 0 && !ratgrabbed)
 	thrown = false;
 if (!ratgrabbed)
-	state = 0;
+	state = states.normal;
 if (ratgrabbed && ratplayerid.ratgrabbedID != id)
 	ratgrabbed = false;
 if (grabbed == 1 && !ratgrabbed)
@@ -9,7 +9,7 @@ if (grabbed == 1 && !ratgrabbed)
 	image_xscale = -playerid.xscale;
 	grav = 0;
 	playerid.baddiegrabbedID = id;
-	if (playerid.state == states.finishingblow || playerid.state == states.grabbing || playerid.state == states.grab || playerid.state == 74 || playerid.state == 75 || playerid.state == 20)
+	if (playerid.state == states.finishingblow || playerid.state == states.grabbing || playerid.state == states.grab || playerid.state == states.throwing || playerid.state == states.slam || playerid.state == states.tacklecharge)
 	{
 		grav = 0;
 		grounded = false;
@@ -29,7 +29,7 @@ if (grabbed == 1 && !ratgrabbed)
 	with (playerid)
 	{
 		move = key_left2 + key_right2;
-		if (!(state == states.finishingblow || state == states.grab || state == states.grabbing || state == 74 || state == 75 || state == 20 || state == 80 || state == states.superslam || state == 81 || state == 82 || state == 83))
+		if (!(state == states.finishingblow || state == states.grab || state == states.grabbing || state == states.throwing || state == states.slam || state == states.tacklecharge || state == states.punch || state == states.superslam || state == states.backkick || state == states.uppunch || state == states.shoulder))
 		{
 			other.grav = 0.5;
 			other.x = x;
@@ -94,7 +94,7 @@ if (grabbed == 1 && !ratgrabbed)
 			y = playerid.y;
 		}
 	}
-	if (playerid.state == 83)
+	if (playerid.state == states.shoulder)
 	{
 		grav = 0.5;
 		instance_create(x, y + 20, obj_bumpeffect);
@@ -122,7 +122,7 @@ if (grabbed == 1 && !ratgrabbed)
 			shake_mag_acc = 3 / room_speed;
 		}
 	}
-	if (playerid.state == 74)
+	if (playerid.state == states.throwing)
 	{
 		grav = 0.5;
 		grabbed = false;
@@ -132,7 +132,7 @@ if (grabbed == 1 && !ratgrabbed)
 		hsp = -image_xscale * 10;
 		vsp = -10;
 	}
-	if (playerid.state == 82)
+	if (playerid.state == states.uppunch)
 	{
 		instance_create(x + (-playerid.xscale * 15), y - 50, obj_bumpeffect);
 		grav = 0.5;
@@ -149,7 +149,7 @@ if (grabbed == 1 && !ratgrabbed)
 			shake_mag_acc = 3 / room_speed;
 		}
 	}
-	if (playerid.state == 20)
+	if (playerid.state == states.tacklecharge)
 	{
 		x = playerid.x + (playerid.xscale * 15);
 		y = playerid.y;
@@ -246,7 +246,7 @@ if (place_meeting(x, y, obj_swordhitbox) && thrown == 0)
 		shake_mag = 3;
 		shake_mag_acc = 3 / room_speed;
 	}
-	state = 107;
+	state = states.hurt;
 	if (scr_solid(x, y))
 	{
 		x = playerid.x;

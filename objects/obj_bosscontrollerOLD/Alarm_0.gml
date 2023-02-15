@@ -1,6 +1,6 @@
-if (state == 8)
+if (state == states.transition)
 	exit;
-if (state == 98)
+if (state == states.victory)
 	exit;
 if (obj_player.state != 252)
 {
@@ -36,7 +36,7 @@ if (obj_player.state != 252)
 			if (b_hp <= p_hp)
 			{
 				depth = obj_player1.depth + 1;
-				state = 8;
+				state = states.transition;
 				with (bossID)
 				{
 					with (lastplayerid)
@@ -66,5 +66,5 @@ if (obj_player.state != 252)
 		}
 	}
 }
-if (state != 145 && state != 98 && state != 8)
+if (state != 145 && state != states.victory && state != states.transition)
 	alarm[0] = 1;

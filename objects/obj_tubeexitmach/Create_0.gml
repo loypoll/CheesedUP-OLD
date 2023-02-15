@@ -1,7 +1,7 @@
 hsp = 1;
 approach_spd = 14;
 playerid = -1;
-state = 0;
+state = states.normal;
 stored_spd = 1;
 movespeed = 0;
 tube_spr = spr_pipe_exit;

@@ -91,7 +91,7 @@ if (state == states.walk && point_in_camera(x, y, view_camera[0]))
 	var p = false;
 	with (obj_player)
 	{
-		if (state == 84 && sprite_index == spr_taunt)
+		if (state == states.backbreaker && sprite_index == spr_taunt)
 			p = true;
 	}
 	if (p)
@@ -100,7 +100,7 @@ if (state == states.walk && point_in_camera(x, y, view_camera[0]))
 		alarm[5] = 1;
 	}
 }
-if (state == 80)
+if (state == states.punch)
 {
 	hsp = 0;
 	if (floor(image_index) == (image_number - 1))

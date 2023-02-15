@@ -1,6 +1,6 @@
 monsterid = 0;
 yy = SCREEN_HEIGHT;
-state = 0;
+state = states.normal;
 event_perform(2, 0);
 depth = -600;
 oktoberfest = false;

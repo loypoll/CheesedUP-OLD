@@ -24,14 +24,14 @@ else if (hooked)
 	y -= movespeed;
 	with (obj_player)
 	{
-		if (state == 93 && place_meeting(x, y, other))
+		if (state == states.ladder && place_meeting(x, y, other))
 			y -= 5;
 	}
 	if (y < -50)
 		instance_destroy();
 	with (obj_player1)
 	{
-		if (hooked && state == 93 && place_meeting(x, y, other))
+		if (hooked && state == states.ladder && place_meeting(x, y, other))
 		{
 			x = other.x + 16;
 			y = other.y + 40;

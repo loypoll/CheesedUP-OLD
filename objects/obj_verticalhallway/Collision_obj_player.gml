@@ -46,7 +46,7 @@ with (other)
 			group_arr = hall.group_arr;
 		}
 	}
-	if (state == 37)
+	if (state == states.climbwall)
 	{
 		trace("climbwall verticalhallway");
 		verticalbuffer = 10;

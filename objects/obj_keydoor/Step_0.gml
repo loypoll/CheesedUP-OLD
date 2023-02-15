@@ -1,16 +1,16 @@
-if (!global.horse && !instance_exists(obj_jumpscare) && (obj_player1.state == 0 || obj_player1.state == states.mach1 || obj_player1.state == states.pogo || obj_player1.state == states.mach2 || obj_player1.state == 121 || obj_player1.state == 99) && sprite_index == spr_doorkey && obj_player1.key_up && obj_player1.grounded && global.key_inv == 1 && place_meeting(x, y, obj_player1))
+if (!global.horse && !instance_exists(obj_jumpscare) && (obj_player1.state == states.normal || obj_player1.state == states.mach1 || obj_player1.state == states.pogo || obj_player1.state == states.mach2 || obj_player1.state == states.mach3 || obj_player1.state == states.Sjumpprep) && sprite_index == spr_doorkey && obj_player1.key_up && obj_player1.grounded && global.key_inv == 1 && place_meeting(x, y, obj_player1))
 {
 	ds_list_add(global.saveroom, id);
 	fmod_event_one_shot_3d("event:/sfx/misc/keyunlock", x, y);
 	fmod_event_one_shot("event:/sfx/misc/cheers");
 	fmod_event_one_shot_3d("event:/sfx/voice/ok");
-	obj_player1.state = 98;
+	obj_player1.state = states.victory;
 	obj_player1.image_index = 0;
 	if (instance_exists(obj_player2) && global.coop == 1)
 	{
 		obj_player2.x = obj_player1.x;
 		obj_player2.y = obj_player1.y;
-		obj_player2.state = 98;
+		obj_player2.state = states.victory;
 		obj_player2.image_index = 0;
 	}
 	image_index = 0;
@@ -21,14 +21,14 @@ if (!global.horse && !instance_exists(obj_jumpscare) && (obj_player1.state == 0 
 }
 if (instance_exists(obj_player2))
 {
-	if (!global.horse && !instance_exists(obj_jumpscare) && obj_player2.state == 0 && obj_player2.grounded && obj_player2.key_up && global.key_inv == 1 && place_meeting(x, y, obj_player2))
+	if (!global.horse && !instance_exists(obj_jumpscare) && obj_player2.state == states.normal && obj_player2.grounded && obj_player2.key_up && global.key_inv == 1 && place_meeting(x, y, obj_player2))
 	{
 		ds_list_add(global.saveroom, id);
-		obj_player2.state = 98;
+		obj_player2.state = states.victory;
 		obj_player2.image_index = 0;
 		obj_player1.x = obj_player2.x;
 		obj_player1.y = obj_player2.y;
-		obj_player1.state = 98;
+		obj_player1.state = states.victory;
 		obj_player1.image_index = 0;
 		image_index = 0;
 		sprite_index = spr_doorkeyopen;
@@ -39,7 +39,7 @@ if (instance_exists(obj_player2))
 }
 if (floor(image_index) == 2)
 	image_speed = 0;
-if (place_meeting(x, y, obj_player1) && !instance_exists(obj_jumpscare) && floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_player1.state == 98)
+if (place_meeting(x, y, obj_player1) && !instance_exists(obj_jumpscare) && floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_player1.state == states.victory)
 {
 	with (obj_player1)
 	{

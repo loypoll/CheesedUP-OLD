@@ -7,7 +7,7 @@ switch (state)
 		if (gerome_x == tx)
 		{
 			alarm[0] = 1;
-			state = 92;
+			state = states.jump;
 			gerome_spr = spr_geromelever;
 			gerome_index = 0;
 		}

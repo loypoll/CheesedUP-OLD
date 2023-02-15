@@ -75,7 +75,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 					image_index = 0;
 				}
 			}
-			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) || state != 5) && ((state == states.handstandjump && global.attackstyle == 1) || instakillmove == 1) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
+			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) || state != states.tumble) && ((state == states.handstandjump && global.attackstyle == 1) || instakillmove == 1) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
 				Instakill();
 			else if (instance_exists(other.baddieID) && state == states.handstandjump && global.attackstyle == 0 && other.baddieID.invtime <= 0 && !other.baddieID.invincible)
 			{
@@ -217,7 +217,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 				other.baddieID.grabbedby = _playerindex;
 				pepp_grab = true;
 			}
-			if (instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && state != states.chainsaw && (state == states.tumble || state == states.mach2 || state == states.machslide || sprite_index == spr_player_ratmountattack || sprite_index == spr_lonegustavo_dash) && other.baddieID.state != 80 && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == 0 && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
+			if (instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && state != states.chainsaw && (state == states.tumble || state == states.mach2 || state == states.machslide || sprite_index == spr_player_ratmountattack || sprite_index == spr_lonegustavo_dash) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == 0 && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
 			{
 				var lag = 0;
 				other.baddieID.stuntouchbuffer = 15;

@@ -6,7 +6,7 @@ if (state == 1)
 	instance_destroy(obj_kidspartybg);
 	instance_destroy(obj_bazooka);
 	with (obj_player1)
-		state = 146;
+		state = states.actor;
 	scr_monster_deactivate(false);
 }
 else if (state == 2)

@@ -5,7 +5,7 @@ attack_list = -4;
 currentattack = 0;
 skipintro = false;
 
-enum attack
+enum vigi_attack
 {
 	revolver,
 	dynamite,

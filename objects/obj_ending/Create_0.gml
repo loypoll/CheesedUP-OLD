@@ -1,4 +1,4 @@
-state = 0;
+state = states.normal;
 snd = fmod_event_create_instance("event:/sfx/ending/towercollapse");
 credits = [
 	[-4, lang_get_value_newline("credits_game")],

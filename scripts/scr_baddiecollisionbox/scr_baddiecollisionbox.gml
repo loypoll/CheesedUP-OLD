@@ -1,6 +1,6 @@
 function baddiecollisionbox_update(player)
 {
-	if (player.cutscene == 0 && player.state != 10)
+	if (player.cutscene == 0 && player.state != states.firemouth)
 	{
 		with (player)
 		{

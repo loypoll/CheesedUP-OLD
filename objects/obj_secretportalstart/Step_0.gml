@@ -35,14 +35,14 @@ switch (sprite_index)
 						cutscene = false;
 						sprite_index = spr_bodyslamstart;
 						image_index = 0;
-						state = 122;
+						state = states.freefallprep;
 						vsp = (character == "P") ? -5 : -7;
 					}
 					else if (isgustavo)
-						state = 191;
+						state = states.ratmount;
 					else
 					{
-						if (state == 47)
+						if (state == states.knightpep)
 							hsp = 0;
 						sprite_index = tauntstoredsprite;
 					}
@@ -78,19 +78,19 @@ switch (sprite_index)
 							movespeed = tauntstoredmovespeed;
 							hsp = tauntstoredhsp;
 							sprite_index = tauntstoredsprite;
-							if (state == 47)
+							if (state == states.knightpep)
 							{
 								hsp = 0;
 								movespeed = 0;
 							}
-							else if (state == 38)
+							else if (state == states.knightpepslopes)
 							{
 								movespeed = 0;
 								hsp = 0;
-								state = 47;
+								state = states.knightpep;
 								sprite_index = spr_knightpepfall;
 							}
-							else if (state == 10)
+							else if (state == states.firemouth)
 							{
 								if (sprite_index == spr_player_firemouthdash)
 								{

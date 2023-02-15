@@ -22,7 +22,7 @@ switch (state)
 			x = Approach(x, xto, abs(lengthdir_x(32, dir)));
 			y = Approach(y, yto, abs(lengthdir_y(32, dir)));
 			if (x == xto && y == yto)
-				state = 141;
+				state = states.chase;
 		}
 		break;
 	case 141:
@@ -57,17 +57,17 @@ switch (state)
 				{
 					case obj_anchortrap:
 						sprite_index = spr_kingghost_anchor2
-						if (state != 135 && state != states.jump && obj_player1.x > x - 100 && obj_player1.x < x + 100 && obj_player1.y > y && obj_player1.y < y + 500)
+						if (state != states.fall && state != states.jump && obj_player1.x > x - 100 && obj_player1.x < x + 100 && obj_player1.y > y && obj_player1.y < y + 500)
 						{
 							fmod_event_one_shot_3d("event:/sfx/enemies/presentfall", x, y)
-							state = 135
+							state = states.fall
 							vsp = 10
 						}
 						break
 					case obj_knighttrap:
-						if (cooldown == 0 && state != 80 && obj_player1.x > x - 200 && obj_player1.x < x + 200 && obj_player1.y > y - 100 && obj_player1.y < y + 100)
+						if (cooldown == 0 && state != states.punch && obj_player1.x > x - 200 && obj_player1.x < x + 200 && obj_player1.y > y - 100 && obj_player1.y < y + 100)
 						{
-							state = 80
+							state = states.punch
 							sprite_index = spr_kingghost_spike3
 							fmod_event_one_shot_3d("event:/sfx/enemies/pizzardelectricity", x, y)
 							image_index = 0
@@ -89,7 +89,7 @@ switch (state)
 			break
 		}
 }
-visible = state != 141;
+visible = state != states.chase;
 if (distance_to_object(obj_player1) <= 200)
 	alpha = true;
 if (alpha)

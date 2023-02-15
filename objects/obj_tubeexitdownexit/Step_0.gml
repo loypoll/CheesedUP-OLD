@@ -5,7 +5,7 @@ if (state == states.tube)
 		with (playerid)
 		{
 			visible = true;
-			state = 108;
+			state = states.freefall;
 			vsp = 10;
 			sprite_index = spr_player_rockethitwall;
 			if (place_meeting(x, y, obj_solid))
@@ -25,7 +25,7 @@ if (state == states.tube)
 			{
 				GamepadSetVibration(0, 1, 1, 0.65);
 				playerid = -1;
-				state = 0;
+				state = states.normal;
 			}
 		}
 	}

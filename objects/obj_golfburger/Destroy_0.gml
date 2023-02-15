@@ -1,4 +1,4 @@
-if (state == 74)
+if (state == states.throwing)
 {
 	with (golfid)
 	{

@@ -1,7 +1,7 @@
 if (playerid != -4)
 {
 	visible = false;
-	if (playerid.state != 184 && playerid.state != 185 && playerid.state != states.chainsaw)
+	if (playerid.state != states.rocket && playerid.state != states.rocketslide && playerid.state != states.chainsaw)
 	{
 		visible = true;
 		create_particle(x, y, particle.genericpoofeffect);

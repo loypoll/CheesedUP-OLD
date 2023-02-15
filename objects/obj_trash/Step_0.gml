@@ -6,7 +6,7 @@ switch (state)
 	case 0:
 		with (obj_player)
 		{
-			if (other.state == 0 && state != 209 && other.trashbuffer <= 0 && place_meeting(x, y, other))
+			if (other.state == states.normal && state != 209 && other.trashbuffer <= 0 && place_meeting(x, y, other))
 			{
 				scr_fmod_soundeffect(global.snd_trashjump1, other.x, other.y);
 				state = 209;
@@ -78,7 +78,7 @@ switch (state)
 		if (floor(image_index) == (image_number - 1))
 		{
 			sprite_index = spr_trash;
-			state = 0;
+			state = states.normal;
 			trashbuffer = 30;
 		}
 		break;

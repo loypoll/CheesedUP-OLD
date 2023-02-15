@@ -70,7 +70,7 @@ switch (state)
 				instance_destroy();
 			if (floor(image_index) == (image_number - 1))
 			{
-				state = 141;
+				state = states.chase;
 				ragecooldown = 100;
 				sprite_index = spr_minijohn_charge;
 			}
@@ -106,7 +106,7 @@ switch (state)
 		}
 		else if (grounded)
 		{
-			state = 141;
+			state = states.chase;
 			sprite_index = spr_minijohn_charge;
 		}
 		break;
@@ -145,7 +145,7 @@ if (state == 141 && ragecooldown <= 0)
 			sprite_index = spr_minijohn_punchstart;
 			image_index = 0;
 			ragecooldown = 100;
-			state = 80;
+			state = states.punch;
 		}
 	}
 }
@@ -155,7 +155,7 @@ if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 141)
+if (state != states.chase)
 	momentum = 0;
 if (state == states.walk || state == states.idle)
 {
@@ -165,13 +165,13 @@ if (state == states.walk || state == states.idle)
 	movespeed = 4;
 	if (targetplayer.x != x)
 		image_xscale = -sign(x - targetplayer.x);
-	state = 141;
+	state = states.chase;
 }
 if (instance_exists(obj_player2))
 {
 	if ((obj_player2.x > (x - 400) && obj_player2.x < (x + 400)) && (y <= (obj_player2.y + 60) && y >= (obj_player2.y - 60)))
 	{
-		if (state != states.idle && obj_player2.state == 121)
+		if (state != states.idle && obj_player2.state == states.mach3)
 		{
 			state = states.idle;
 			sprite_index = scaredspr;

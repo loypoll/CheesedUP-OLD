@@ -62,20 +62,20 @@ if (state != states.grabbed)
 			other.stunned = 200;
 			other.state = states.stun;
 			machpunchAnim = true;
-			if (!scr_solid(x, y + 1) && state != 108)
+			if (!scr_solid(x, y + 1) && state != states.freefall)
 				vsp = -10;
 		}
 		if (attacking == 1 && state != states.mach2)
 		{
-			if (state == 121)
+			if (state == states.mach3)
 				other.shot = true;
 			image_index = 0;
 			instance_destroy(other);
 			machpunchAnim = true;
-			if (!scr_solid(x, y + 1) && state != 108)
+			if (!scr_solid(x, y + 1) && state != states.freefall)
 				vsp = -10;
 		}
-		if (attacking == 0 && (state != 91 && state != 107) && !(y < other.y) && grabbing == 0 && other.state != states.stun)
+		if (attacking == 0 && (state != 91 && state != states.hurt) && !(y < other.y) && grabbing == 0 && other.state != states.stun)
 		{
 			if (x != other.x)
 			{
@@ -87,11 +87,11 @@ if (state != states.grabbed)
 			other.image_xscale = -xscale;
 			other.hsp = -other.image_xscale * 4;
 			other.vsp = -4;
-			if (other.state == states.walk || other.state == 130)
+			if (other.state == states.walk || other.state == states.turn)
 				other.state = states.idle;
 			image_index = 0;
-			state = 106;
-			if (other.state == 136)
+			state = states.bump;
+			if (other.state == states.land)
 				other.state = states.idle;
 		}
 	}

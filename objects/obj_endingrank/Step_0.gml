@@ -66,7 +66,7 @@ switch (state)
 			state++;
 		}
 		break;
-	case states.grabbed:
+	case 4:
 		brownfade = Approach(brownfade, 1, 0.06);
 		if (introbuffer > 0)
 			introbuffer--;

@@ -1,10 +1,10 @@
-if (other.cutscene == 0 && other.state != 146 && state != 146 && other.state != states.gotoplayer && state != states.gotoplayer)
+if (other.cutscene == 0 && other.state != states.actor && state != states.actor && other.state != states.gotoplayer && state != states.gotoplayer)
 {
-	if (hurted == 0 && other.hurted == 0 && fightballadvantage == 1 && (state == states.handstandjump || state == 80) && (other.state == states.handstandjump || other.state == 80))
+	if (hurted == 0 && other.hurted == 0 && fightballadvantage == 1 && (state == states.handstandjump || state == states.punch) && (other.state == states.handstandjump || other.state == states.punch))
 	{
 		if (object_index == obj_player1)
 		{
-			obj_player1.state = 121;
+			obj_player1.state = states.mach3;
 			obj_player2.state = states.grabbed;
 			obj_player2.xscale = xscale;
 			obj_player1.depth = -7;
@@ -12,7 +12,7 @@ if (other.cutscene == 0 && other.state != 146 && state != 146 && other.state != 
 		}
 		if (object_index == obj_player2)
 		{
-			obj_player2.state = 121;
+			obj_player2.state = states.mach3;
 			obj_player1.state = states.grabbed;
 			obj_player1.xscale = xscale;
 			obj_player1.depth = -6;
@@ -27,7 +27,7 @@ if (other.cutscene == 0 && other.state != 146 && state != 146 && other.state != 
 	}
 	with (obj_player1)
 	{
-		if (state == states.handstandjump && other.hurted == 0 && other.state != 107 && other.state != 38 && other.state != 47 && other.state != 5 && other.state != 9 && other.state != 51 && other.cutscene == 0 && other.hurted == 0 && hurted == 0 && !(other.state == states.handstandjump || other.state == 80))
+		if (state == states.handstandjump && other.hurted == 0 && other.state != states.hurt && other.state != states.knightpepslopes && other.state != states.knightpep && other.state != states.tumble && other.state != states.fireass && other.state != states.bombpep && other.cutscene == 0 && other.hurted == 0 && hurted == 0 && !(other.state == states.handstandjump || other.state == states.punch))
 		{
 			movespeed = 0;
 			image_index = 0;
@@ -38,15 +38,15 @@ if (other.cutscene == 0 && other.state != 146 && state != 146 && other.state != 
 			obj_player1.depth = -7;
 			obj_player2.depth = -6;
 		}
-		if (state == 108 && other.hurted == 0 && other.state != 59 && other.state != 107 && hurted == 0)
+		if (state == states.freefall && other.hurted == 0 && other.state != states.stunned && other.state != states.hurt && hurted == 0)
 		{
 			obj_player1.depth = -7;
 			obj_player2.depth = -6;
-			obj_player2.state = 59;
+			obj_player2.state = states.stunned;
 			obj_player2.sprite_index = obj_player2.spr_squished;
 			obj_player2.image_index = 0;
 		}
-		if (other.state == 80 && hurted == 0 && other.hurted == 0 && !(state == states.handstandjump || state == 80))
+		if (other.state == states.punch && hurted == 0 && other.hurted == 0 && !(state == states.handstandjump || state == states.punch))
 		{
 			with (other)
 				scr_pummel();
@@ -65,7 +65,7 @@ if (other.cutscene == 0 && other.state != 146 && state != 146 && other.state != 
 				shake_mag = 3;
 				shake_mag_acc = 3 / room_speed;
 			}
-			state = 107;
+			state = states.hurt;
 			x = obj_player2.x;
 			y = obj_player2.y;
 			alarm[8] = 60;

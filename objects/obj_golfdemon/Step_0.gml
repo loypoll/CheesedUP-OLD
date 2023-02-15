@@ -55,7 +55,7 @@ if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state != 141)
+if (state != states.chase)
 	momentum = 0;
 if (state == states.walk || state == states.idle)
 {
@@ -73,7 +73,7 @@ if (state == states.walk || state == states.idle)
 		if (targetplayer.x != x)
 			image_xscale = -sign(x - targetplayer.x);
 		alarm[5] = 30;
-		state = 141;
+		state = states.chase;
 		sprite_index = spr_golfdemon_charge;
 	}
 }
@@ -107,7 +107,7 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
-if (state != 141 && state != states.hit)
+if (state != states.chase && state != states.hit)
 	invincible = false;
 if (state == 141)
 	invincible = true;

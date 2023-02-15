@@ -14,7 +14,7 @@ switch (state)
 		}
 		if (global.panic && distance_to_pos(xstart, ystart, obj_player1.x, obj_player1.y, dx, dy))
 		{
-			state = 135;
+			state = states.fall;
 			vsp = 20;
 			sprite_index = spr_lonegustavo_groundpound;
 			if (room == space_11b)
@@ -42,7 +42,7 @@ switch (state)
 		{
 			y = ystart;
 			create_particle(x, y, particle.landcloud);
-			state = 0;
+			state = states.normal;
 			if (sprite_index == spr_gustavo_exitshuttle)
 			{
 				with (instance_create(x, y, obj_shuttleparts))
@@ -86,7 +86,7 @@ switch (state)
 			sprite_index = spr_gustavo_exitsign;
 			if (stick)
 				sprite_index = spr_stick_exit;
-			state = 0;
+			state = states.normal;
 		}
 		break;
 }

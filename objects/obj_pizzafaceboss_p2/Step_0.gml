@@ -49,7 +49,7 @@ switch (state)
 		scr_enemy_staggered();
 		break;
 }
-if (obj_player1.state != 146 && obj_player1.y >= (y - 20) && obj_player1.state != states.animation && state != states.hit && state != states.stun && state != states.boss_phase1hurt && hsp == 0 && state != states.fall)
+if (obj_player1.state != states.actor && obj_player1.y >= (y - 20) && obj_player1.state != states.animation && state != states.hit && state != states.stun && state != states.boss_phase1hurt && hsp == 0 && state != states.fall)
 {
 	if ((x > (room_width / 2) && obj_player1.x >= (x - 60)) || (x <= (room_width / 2) && obj_player1.x <= (x + 60)))
 	{

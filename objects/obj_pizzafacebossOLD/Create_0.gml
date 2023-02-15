@@ -34,7 +34,7 @@ function player_hurt()
 	var _prevstate = state;
 	if (phase < 2)
 		SUPER_player_hurt(argument0, argument1);
-	else if ((argument1.state != 84 || argument1.parry_inst == -4) && argument1.state != 147 && ds_list_find_index(hitlist, argument1) == -1)
+	else if ((argument1.state != states.backbreaker || argument1.parry_inst == -4) && argument1.state != states.parry && ds_list_find_index(hitlist, argument1) == -1)
 	{
 		ds_list_add(hitlist, argument1);
 		SUPER_player_hurt(argument0, argument1);
@@ -51,18 +51,18 @@ function boss_hurt()
 		var _removehp = true;
 		with (argument1)
 		{
-			if (state != 43 && state != 47)
+			if (state != states.lungeattack && state != states.knightpep)
 				scr_pummel();
-			else if (state == 47 && vsp > 0 && y < (other.y - 30))
+			else if (state == states.knightpep && vsp > 0 && y < (other.y - 30))
 			{
 				sprite_index = spr_knightpep_doublejump;
 				image_index = 0;
 				vsp = -11;
 				movespeed = 6;
 			}
-			else if (state != 43 && state != 147)
+			else if (state != states.lungeattack && state != states.parry)
 				_removehp = false;
-			if (state == 43)
+			if (state == states.lungeattack)
 				movespeed = 4;
 		}
 		if (_removehp)

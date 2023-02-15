@@ -82,7 +82,7 @@ switch (state)
 			if (t && place_meeting(x + sign(hsp), y, obj_monstersolid) && !place_meeting(x + sign(hsp), y, obj_monsterslope))
 			{
 				grav *= -1;
-				state = 135;
+				state = states.fall;
 				hsp = 0;
 				sprite_index = spr_monstercheese_jump;
 				image_index = 0;
@@ -90,7 +90,7 @@ switch (state)
 			else if (t && ys < 0 && point_in_camera(x, y, view_camera[0]) && targetplayer.x > (x - 200) && targetplayer.x < (x + 200))
 			{
 				grav *= -1;
-				state = 135;
+				state = states.fall;
 				sprite_index = spr_monstercheese_jump;
 				image_index = 0;
 			}

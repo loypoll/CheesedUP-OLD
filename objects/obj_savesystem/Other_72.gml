@@ -9,7 +9,7 @@ switch (state)
 		{
 			buffer_delete(savebuff);
 			trace("Save status: ", status, ", error: ", error);
-			state = 0;
+			state = states.normal;
 		}
 		break;
 	case 2:
@@ -66,7 +66,7 @@ switch (state)
 			buffer_delete(loadbuff);
 			trace("inistr: ", ini_str);
 			trace("buffstring: ", buffstring);
-			state = 0;
+			state = states.normal;
 		}
 		break;
 }

@@ -1,11 +1,11 @@
 if (player == 1)
 {
-	if (got && obj_player1.state != 46)
+	if (got && obj_player1.state != states.gottreasure)
 		instance_destroy();
 }
 if (player == 2)
 {
-	if (got && obj_player2.state != 46)
+	if (got && obj_player2.state != states.gottreasure)
 		instance_destroy();
 }
 if (player == 0)
@@ -30,7 +30,7 @@ if (player == 0 && place_meeting(x, y, obj_player))
 				if (!other.got)
 				{
 					other.alarm[0] = 150;
-					state = 46;
+					state = states.gottreasure;
 					fmod_event_one_shot("event:/sfx/misc/foundtreasure");
 				}
 				other.got = true;

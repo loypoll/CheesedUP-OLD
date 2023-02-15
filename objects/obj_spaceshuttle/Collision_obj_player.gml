@@ -1,6 +1,6 @@
 with (other)
 {
-	if (other.state == 0 && state != 292 && key_up && grounded && ((state == 191 && brick) || state == 0 || state == states.mach1 || state == 121 || state == states.pogo || state == 121 || state == 99))
+	if (other.state == states.normal && state != 292 && key_up && grounded && ((state == states.ratmount && brick) || state == states.normal || state == states.mach1 || state == states.mach3 || state == states.pogo || state == states.mach3 || state == states.Sjumpprep))
 	{
 		instance_create(x, y, obj_genericpoofeffect);
 		other.state = states.hit;

@@ -8,7 +8,7 @@ if (sprite_index != spr_haystackburning && sprite_index != spr_haystackburningup
 	}
 	with (obj_player)
 	{
-		if ((state == 10 && (place_meeting(x + hsp, y, other) || place_meeting(x, y + 1, other))) || (state == 9 && place_meeting(x, y + 1, other)))
+		if ((state == states.firemouth && (place_meeting(x + hsp, y, other) || place_meeting(x, y + 1, other))) || (state == states.fireass && place_meeting(x, y + 1, other)))
 			other.sprite_index = spr_haystackburningup;
 	}
 }
@@ -56,18 +56,18 @@ else if (sprite_index == spr_haystackburning)
 	playerid = instance_place(x, y - 1, obj_player);
 	with (playerid)
 	{
-		if (state != 9 && state != 47)
+		if (state != states.fireass && state != states.knightpep)
 		{
 			if (character == "V")
 				scr_hurtplayer(id);
 			else if (scr_transformationcheck())
 			{
 				scr_losepoints();
-				if (state != 9)
+				if (state != states.fireass)
 				{
 					
 				}
-				state = 9;
+				state = states.fireass;
 				image_index = 0;
 				vsp = -5;
 				sprite_index = spr_fireass;

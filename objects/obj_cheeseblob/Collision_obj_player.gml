@@ -8,10 +8,10 @@ if (other.state != states.chainsaw)
 			hsp = random_range(-3, 3);
 		}
 	}
-	if (other.state != 24)
+	if (other.state != states.cheesepep)
 	{
 	}
-	other.state = 24;
+	other.state = states.cheesepep;
 	other.movespeed = 0;
 	other.sprite_index = other.spr_cheesepepintro;
 	instance_destroy();

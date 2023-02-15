@@ -7,7 +7,7 @@ if (!active)
 		{
 			with (instance_create(x, y, obj_piraneapple))
 			{
-				state = 8;
+				state = states.transition;
 				sign_id = _sign_id;
 			}
 		}

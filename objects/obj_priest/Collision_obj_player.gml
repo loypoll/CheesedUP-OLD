@@ -4,16 +4,16 @@ with (other)
 {
 	if (!scr_transformationcheck() && state != states.comingoutdoor && state != states.door)
 	{
-		if (state == 16)
+		if (state == states.ghost)
 			notification_push(notifs.priest_ghost, [ghosttimer, room]);
-		if (state == 11 || state == 12 || state == 14 || state == 13 || state == 12 || state == 33 || state == 35 || state == 34 || state == 16 || state == 116 || state == 113 || state == 114)
+		if (state == states.mort || state == states.mortjump || state == states.morthook || state == states.mortattack || state == states.mortjump || state == states.boxxedpep || state == states.boxxedpepjump || state == states.boxxedpepspin || state == states.ghost || state == states.barrelslide || state == states.barrel || state == states.barreljump)
 		{
 			if (hsp != 0)
 				xscale = sign(hsp);
 			movespeed = abs(hsp);
 		}
 		transformationsnd = false;
-		state = 0;
+		state = states.normal;
 		sprite_index = spr_idle;
 		dir = xscale;
 		ghostdash = false;
@@ -33,7 +33,7 @@ if (_transfo)
 	}
 	with (other)
 	{
-		if (state == 11 || state == 14 || state == 12 || state == 13)
+		if (state == states.mort || state == states.morthook || state == states.mortjump || state == states.mortattack)
 			create_debris(x, y - 40, spr_mortdead);
 	}
 	if (sprite_index != spr_angelpriest)

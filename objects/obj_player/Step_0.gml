@@ -1218,7 +1218,7 @@ if ((state == states.normal || state == states.ratmount) && obj_player1.spotligh
 			playerid = other.object_index;
 	}
 }
-if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != 165 && !instance_exists(speedlineseffectid) && !cutscene && (collision_flags & 1) <= 0)
+if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.slipbanan && !instance_exists(speedlineseffectid) && !cutscene && (collision_flags & 1) <= 0)
 {
 	with (instance_create(x, y, obj_speedlines))
 	{
@@ -1229,7 +1229,7 @@ if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != 165 && 
 with (obj_ratblock)
 	scr_ratblock_destroy();
 scr_collide_destructibles();
-if (state != states.backtohub && state != states.ghostpossess && state != states.gotoplayer && state != states.gotoplayer && state != states.titlescreen && state != states.tube && state != states.grabbed && state != states.door && state != 97 && state != 7 && state != states.comingoutdoor && state != 118 && state != 90 && state != 98 && state != 39 && state != 64 && state != 46 && state != 89)
+if (state != states.backtohub && state != states.ghostpossess && state != states.gotoplayer && state != states.gotoplayer && state != states.titlescreen && state != states.tube && state != states.grabbed && state != states.door && state != states.Sjump && state != states.ejected && state != states.comingoutdoor && state != states.boulder && state != states.keyget && state != states.victory && state != states.portal && state != states.timesup && state != states.gottreasure && state != states.gameover)
 	scr_collide_player();
 if (state == states.tube || state ==states.gotoplayer || state == states.debugstate)
 {

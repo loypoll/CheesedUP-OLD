@@ -6,5 +6,5 @@ vsp = 1;
 approach_spd = 15;
 movespeed = 15;
 playerid = -1;
-state = 0;
+state = states.normal;
 stored_spd = 1;

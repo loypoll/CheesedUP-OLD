@@ -1,11 +1,11 @@
-if (other.cutscene || other.state == 10)
+if (other.cutscene || other.state == states.firemouth)
 	exit;
 with (other)
 {
 	vsp = -18;
 	sprite_index = spr_machfreefall;
 	jumpstop = true;
-	state = 92;
+	state = states.jump;
 }
 sprite_index = spr_clownmato_bounce;
 image_index = 0;

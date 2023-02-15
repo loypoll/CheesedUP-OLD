@@ -271,7 +271,7 @@ if (pizzahead && state == states.stun && !thrown && alarm[5] == -1 && !flash)
 if (state == states.crouchslide && alarm[4] < 0)
 {
 	alarm[4] = 10;
-	if (state == 108)
+	if (state == states.freefall)
 		alarm[4] = 5;
 }
 mask_index = spr_player_mask;

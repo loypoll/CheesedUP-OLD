@@ -3,13 +3,13 @@ with (obj_secretportal)
 	if (touched)
 		exit;
 }
-if (!instance_exists(obj_fadeout) && state != 217 && other.state != 146 && other.state != states.chainsaw && other.state != states.hit && !other.cutscene && other.state != states.door && !instance_exists(obj_jumpscare))
+if (!instance_exists(obj_fadeout) && state != 217 && other.state != states.actor && other.state != states.chainsaw && other.state != states.hit && !other.cutscene && other.state != states.door && !instance_exists(obj_jumpscare))
 {
 	if (!global.panic)
 	{
 		with (obj_player)
 		{
-			state = 146;
+			state = states.actor;
 			hsp = 0;
 			vsp = 0;
 		}

@@ -1,4 +1,4 @@
-if (place_meeting(x, y, obj_player) && instance_place(x, y, obj_player).state == 100)
+if (place_meeting(x, y, obj_player) && instance_place(x, y, obj_player).state == states.crouch)
 	standbuffer++;
 else
 	standbuffer = 0;

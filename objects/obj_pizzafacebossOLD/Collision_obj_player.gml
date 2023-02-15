@@ -2,14 +2,14 @@ if (phase == 0 && attacking)
 {
 	if (state == 230)
 	{
-		if (other.state == 84 && other.parry_inst != -4)
+		if (other.state == states.backbreaker && other.parry_inst != -4)
 		{
 			state = states.normal;
 			boss_hurt(10, other.id);
 			stunned = 50;
 			with (other)
 			{
-				state = 147;
+				state = states.parry;
 				sprite_index = choose(spr_parry1, spr_parry2, spr_parry3);
 				image_index = 0;
 				image_speed = 0.35;

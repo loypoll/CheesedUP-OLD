@@ -5,10 +5,10 @@ with (other)
 		if (key_jump2)
 		{
 			vsp = -20;
-			if (state == 0 || state == states.jump || hsp == 0)
+			if (state == states.normal || state == states.jump || hsp == 0)
 			{
 				sprite_index = spr_playerV_superjump;
-				state = 92;
+				state = states.jump;
 			}
 			image_index = 0;
 			jumpAnim = true;

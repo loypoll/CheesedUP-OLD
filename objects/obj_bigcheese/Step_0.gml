@@ -30,7 +30,7 @@ switch (state)
 }
 if (state == states.walk)
 	hsp = 0;
-else if (state == 74)
+else if (state == states.throwing)
 {
 	hsp = 0;
 	if (floor(image_index) == (image_number - 1))
@@ -103,7 +103,7 @@ else if (state == 74)
 				movespeed = 0;
 				hsp = 0;
 				vsp = 0;
-				state = 146;
+				state = states.actor;
 				jumpstop = true;
 				x = lerp(x, tx, 0.2);
 				y = lerp(y, ty, 0.2);
@@ -137,7 +137,7 @@ else if (state == 74)
 				y = other.y;
 				xscale = other.image_xscale;
 				movespeed = 12;
-				state = 5;
+				state = states.tumble;
 				vsp = -14;
 				jumpstop = true;
 			}
@@ -167,7 +167,7 @@ if (state == states.stun && stunned > 40 && birdcreated == 0)
 }
 if (state != states.stun)
 	birdcreated = false;
-if (state == 74)
+if (state == states.throwing)
 	image_speed = throwspeed;
 else
 	image_speed = 0.35;

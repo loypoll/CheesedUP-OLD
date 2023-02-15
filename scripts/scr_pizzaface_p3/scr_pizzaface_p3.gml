@@ -69,7 +69,7 @@ function scr_pizzaface_p3_arenaintro()
 				{
 					if (x != other.x)
 						xscale = sign(other.x - x);
-					state = 146;
+					state = states.actor;
 					sprite_index = spr_player_levelcomplete;
 					image_index = 0;
 				}
@@ -214,7 +214,7 @@ function scr_pizzaface_p3_walk()
 				case 0:
 					laugh = 0;
 					vulnerable_buffer = 0;
-					state = 92;
+					state = states.jump;
 					fmod_event_instance_play(snd_jump);
 					sprite_index = spr_pizzahead_phase3jumpstart;
 					image_index = 0;
@@ -231,7 +231,7 @@ function scr_pizzaface_p3_walk()
 					attackspeed = 0;
 					break;
 				case 2:
-					state = 80;
+					state = states.punch;
 					fmod_event_one_shot_3d("event:/sfx/pizzahead/bigpunchstart", x, y);
 					sprite_index = spr_pizzahead_bigpunch;
 					image_index = 0;
@@ -323,13 +323,13 @@ function scr_pizzaface_p3_stomp()
 			}
 			else if (grounded && vsp > 0)
 			{
-				state = 165;
+				state = states.slipbanan;
 				vsp = -17;
 				movespeed = 0;
 				xscale = -other.image_xscale;
 				sprite_index = spr_rockethitwall;
 				image_index = 0;
-				state = 165;
+				state = states.slipbanan;
 				instance_create(x, y + 43, obj_bangeffect);
 			}
 		}

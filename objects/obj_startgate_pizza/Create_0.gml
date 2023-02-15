@@ -1,5 +1,5 @@
 image_speed = 0.35;
-state = 0;
+state = states.normal;
 vsp = 0;
 grav = 0.5;
 rank_scale = 0;

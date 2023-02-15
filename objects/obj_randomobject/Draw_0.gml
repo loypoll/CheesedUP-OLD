@@ -1,5 +1,5 @@
 event_inherited();
-if (state == 17 && substate == 0)
+if (state == states.ghostpossess && substate == 0)
 {
 	var _angle = point_direction(0, 0, moveX, moveY);
 	var t = 32;

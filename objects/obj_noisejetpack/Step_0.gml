@@ -5,7 +5,7 @@ switch (state)
 			cutscenebuffer--;
 		else
 		{
-			state = 135;
+			state = states.fall;
 			instance_destroy(effectid);
 		}
 		break;
@@ -18,7 +18,7 @@ switch (state)
 		{
 			create_particle(x, y, particle.genericpoofeffect);
 			scr_sound_multiple("event:/sfx/misc/collect", x, y);
-			state = 8;
+			state = states.transition;
 			cutscenebuffer = 70;
 			flamebuffer = 0;
 			orangealpha = 1.5;
@@ -48,7 +48,7 @@ switch (state)
 			global.combotime = 60;
 			with (playerid)
 			{
-				state = 146;
+				state = states.actor;
 				sprite_index = spr_player_poweredup;
 				image_index = 0;
 				image_speed = 0.35;
@@ -62,7 +62,7 @@ switch (state)
 				}
 			}
 			cutscenebuffer = 100;
-			state = 146;
+			state = states.actor;
 		}
 		break;
 	case 146:
@@ -89,7 +89,7 @@ switch (state)
 				if (music != -4)
 					fmod_event_instance_set_parameter(music.event, "state", 1, true);
 			}
-			playerid.state = 0;
+			playerid.state = states.normal;
 			playerid.landAnim = false;
 			playerid.flash = true;
 			instance_destroy();

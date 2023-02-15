@@ -24,7 +24,7 @@ if (state == states.walk)
 	}
 	else
 	{
-		state = 141;
+		state = states.chase;
 		sprite_index = walkspr;
 		image_index = 0;
 	}
@@ -99,12 +99,12 @@ if (state == states.charge)
 	}
 	else
 	{
-		state = 80;
+		state = states.punch;
 		attackspeed = attackspeed_max;
 		hsp = image_xscale * attackspeed;
 	}
 }
-if (state == 80)
+if (state == states.punch)
 {
 	if (!instance_exists(punchinst))
 	{

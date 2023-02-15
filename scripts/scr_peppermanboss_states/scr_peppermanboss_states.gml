@@ -260,7 +260,7 @@ function boss_pepperman_freefallprep()
 	{
 		if (image_index > (image_number - 1))
 		{
-			state = 108;
+			state = states.freefall;
 			vsp = 20;
 			hsp = 0;
 			image_index = 0;
@@ -282,7 +282,7 @@ function boss_pepperman_freefallprep()
 			}
 			else if (groundpound_readjust <= 0)
 			{
-				state = 108;
+				state = states.freefall;
 				vsp = 20;
 				hsp = 0;
 				image_index = 0;
@@ -385,7 +385,7 @@ function boss_pepperman_charge()
 	hsp = 0;
 	if (image_index > (image_number - 1))
 	{
-		state = 157;
+		state = states.boss_supershoulderbash;
 		sprite_index = spr_pepperman_shoulderloop;
 		image_index = 0;
 		hsp = image_xscale * (shoulder_spd * 2);

@@ -15,7 +15,7 @@ with (obj_music)
 if (room == rm_testing4)
 {
 	with (obj_player)
-		state = 146;
+		state = states.actor;
 }
 instance_destroy(obj_superattackeffect);
 instance_destroy(obj_blackoutline);

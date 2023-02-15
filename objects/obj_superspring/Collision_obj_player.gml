@@ -1,9 +1,9 @@
 var v = id;
 with (other)
 {
-	if (state != 97 && state != states.gotoplayer && state != 146)
+	if (state != states.Sjump && state != states.gotoplayer && state != states.actor)
 	{
-		if (state == 47 || state == 48 || state == 38)
+		if (state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes)
 		{
 			with (instance_create(x, y, obj_knightdebris))
 				image_index = 0;
@@ -18,7 +18,7 @@ with (other)
 			with (instance_create(x, y, obj_knightdebris))
 				image_index = 5;
 		}
-		if (state == 51)
+		if (state == states.bombpep)
 			instance_create(x, y, obj_bombexplosion);
 		x = other.x;
 		if (other.image_yscale == 1)
@@ -26,12 +26,12 @@ with (other)
 		if (other.image_yscale == 1)
 		{
 			sprite_index = spr_superspringplayer;
-			state = 97;
+			state = states.Sjump;
 			vsp = -10;
 		}
 		else
 		{
-			state = 108;
+			state = states.freefall;
 			vsp = 10;
 			sprite_index = spr_player_rockethitwall;
 		}

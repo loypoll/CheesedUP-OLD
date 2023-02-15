@@ -1,6 +1,6 @@
 with (other)
 {
-	if (state == states.handstandjump || state == 43 || state == 80)
+	if (state == states.handstandjump || state == states.lungeattack || state == states.punch)
 	{
 		image_index = 0;
 		sprite_index = spr_shotgunpullout;
@@ -8,7 +8,7 @@ with (other)
 		fmod_event_one_shot_3d("event:/sfx/misc/breakblock", x, y);
 		instance_destroy(other);
 		shotgunAnim = true;
-		state = 66;
+		state = states.shotgun;
 		create_transformation_tip(lang_get_value("shotguntip"), "shotgun");
 		if (room == war_1)
 		{

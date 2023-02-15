@@ -12,7 +12,7 @@ switch (state)
 			sprite_index = spr_sirnose_idle;
 			with (obj_pizzaball)
 			{
-				if (state != 148 && distance_to_pos(x, y, other.x, other.y, 200, 150))
+				if (state != states.golf && distance_to_pos(x, y, other.x, other.y, 200, 150))
 				{
 					state = 264;
 					other.state = 264;
@@ -31,7 +31,7 @@ switch (state)
 			sit = false;
 			x = Approach(x, other.x, 8);
 			y = Approach(y, other.y, 8);
-			if (state != 148)
+			if (state != states.golf)
 			{
 				other.hsp = Approach(hsp, 0, 1);
 				other.vsp = Approach(vsp, 0, 1);
@@ -40,9 +40,9 @@ switch (state)
 				sprite_index = spr_pizzaball_stun;
 			hsp = other.hsp;
 			vsp = other.vsp;
-			if (state != 264 && state != 148)
+			if (state != 264 && state != states.golf)
 			{
-				other.state = 0;
+				other.state = states.normal;
 				other.cooldown = 200;
 			}
 			if (x != other.x || y != other.y)

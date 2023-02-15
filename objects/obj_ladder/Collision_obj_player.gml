@@ -1,15 +1,15 @@
 with (other)
 {
-	if (key_up && ladderbuffer == 0 && (state == 0 || state == states.pogo || state == states.mach2 || state == 121 || state == states.mach1 || state == 80 || state == 57 || state == states.jump || state == 60) && state != 107 && state != states.machslide && state != 108 && state != 111)
+	if (key_up && ladderbuffer == 0 && (state == states.normal || state == states.pogo || state == states.mach2 || state == states.mach3 || state == states.mach1 || state == states.punch || state == states.shotgunjump || state == states.jump || state == states.highjump) && state != states.hurt && state != states.machslide && state != states.freefall && state != states.freefallland)
 	{
 		input_buffer_jump = 0;
-		state = 93;
+		state = states.ladder;
 		x = other.x + 16;
 		y = floor(y);
 		if ((y % 2) == 1)
 			y -= 1;
 	}
-	if (key_up && ladderbuffer == 0 && (state == states.ratmountjump || state == 198 || state == 191))
+	if (key_up && ladderbuffer == 0 && (state == states.ratmountjump || state == states.ratmountbounce || state == states.ratmount))
 	{
 		input_buffer_jump = 0;
 		state = 261;

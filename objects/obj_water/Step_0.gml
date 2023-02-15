@@ -2,7 +2,7 @@ if (place_meeting(x, y - 1, obj_player))
 {
 	with (obj_player)
 	{
-		if (state != states.gotoplayer && state != 210 && state != 209 && state != 121 && state != 147 && sprite_index != spr_mach3boost)
+		if (state != states.gotoplayer && state != 210 && state != 209 && state != states.mach3 && state != states.parry && sprite_index != spr_mach3boost)
 		{
 			if (place_meeting(x, y + 1, other))
 			{
@@ -13,7 +13,7 @@ if (place_meeting(x, y - 1, obj_player))
 					sprite_index = spr_scaredjump1;
 					image_index = 0;
 					image_speed = 0.35;
-					state = 9;
+					state = states.fireass;
 					movespeed = hsp;
 					vsp = -14;
 					instance_create(x, y + 20, obj_piranneapplewater);

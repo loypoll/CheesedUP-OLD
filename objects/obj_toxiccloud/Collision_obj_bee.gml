@@ -1,9 +1,9 @@
-if (other.inv_timer <= 0 && (other.state == 0 || other.state == states.idle || other.state == 141))
+if (other.inv_timer <= 0 && (other.state == states.normal || other.state == states.idle || other.state == 141))
 {
 	with (other)
 	{
 		inv_timer = 120;
-		state = 107;
+		state = states.hurt;
 		hitX = x;
 		hitY = y;
 		hp--;

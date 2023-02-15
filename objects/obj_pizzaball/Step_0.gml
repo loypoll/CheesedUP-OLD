@@ -1,6 +1,6 @@
 if (room == rm_editor)
 	exit;
-if (state == states.walk && grounded && vsp > 0 && obj_player.state == 111 && bbox_in_camera(view_camera[0], 32))
+if (state == states.walk && grounded && vsp > 0 && obj_player.state == states.freefallland && bbox_in_camera(view_camera[0], 32))
 	scr_pizzaball_go_to_thrown(0, -10);
 arrowindex += 0.35;
 switch (state)
@@ -50,7 +50,7 @@ switch (state)
 		scr_enemy_ghostpossess();
 		break;
 }
-if (state != 148)
+if (state != states.golf)
 {
 	shootup = false;
 	arrow = false;
@@ -91,7 +91,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (bigcheeseID != -4)
 {
-	if (!instance_exists(bigcheeseID) || bigcheeseID.state != 74 || bigcheeseID.shot)
+	if (!instance_exists(bigcheeseID) || bigcheeseID.state != states.throwing || bigcheeseID.shot)
 	{
 		if (instance_exists(bigcheeseID) && bigcheeseID.object_index == obj_golfburger && sprite_index == stunfallspr)
 			sprite_index = walkspr;

@@ -6,7 +6,7 @@ function scr_player_slap()
 		if (fallinganimation >= 40 && fallinganimation < 80)
 		{
 			sprite_index = spr_player_facestomp;
-			state = 92;
+			state = states.jump;
 		}
 	}
 	move = key_left + key_right;

@@ -4,7 +4,7 @@ if (state != states.boxxedpepspin)
 {
 	if (state == states.handstandjump || state == states.lungeattack || state == states.punch)
 	{
-		if (other.state == 0 && scr_transformationcheck() && !cutscene && state != states.bombgrab && (state == states.handstandjump || state == states.punch || state == states.lungeattack))
+		if (other.state == states.normal && scr_transformationcheck() && !cutscene && state != states.bombgrab && (state == states.handstandjump || state == states.punch || state == states.lungeattack))
 		{
 			state = states.bombgrab;
 			image_index = 0;

@@ -1,4 +1,4 @@
-if (state == 0 || state == 1)
+if (state == states.normal || state == 1)
 	instance_deactivate_object(baddieID);
 switch (state)
 {

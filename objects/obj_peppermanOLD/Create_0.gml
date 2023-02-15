@@ -119,7 +119,7 @@ function boss_hurt_noplayer()
 }
 function player_hurt()
 {
-	if (argument1.state != 84 || argument1.parry_inst == -4)
+	if (argument1.state != states.backbreaker || argument1.parry_inst == -4)
 	{
 		var _prevstate = state;
 		SUPER_player_hurt(argument0, argument1);

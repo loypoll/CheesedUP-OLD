@@ -52,7 +52,7 @@ if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;
-if (state != 141 && image_alpha >= 1)
+if (state != states.chase && image_alpha >= 1)
 	scr_scareenemy();
 if (bombreset > 0)
 	bombreset--;
@@ -69,7 +69,7 @@ if (bombreset == 0 && state == states.walk)
 	{
 		attacking = true;
 		pos = sign(x - targetplayer.x);
-		state = 141;
+		state = states.chase;
 		fade = true;
 	}
 }

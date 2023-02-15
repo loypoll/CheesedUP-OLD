@@ -10,7 +10,7 @@ saveoptions = false;
 fadeoutcreate = false;
 showicon = false;
 ini_str = "";
-state = 0;
+state = states.normal;
 icon_index = 0;
 icon_max = sprite_get_number(spr_pizzaslice);
 ini_open("saveData.ini");

@@ -1,6 +1,6 @@
 if (other.tube_id == id)
 	exit;
-if (other.state == 107)
+if (other.state == states.hurt)
 	exit;
 if (other.state == states.gotoplayer)
 	exit;

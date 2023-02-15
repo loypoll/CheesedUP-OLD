@@ -50,7 +50,7 @@ if (bombreset > 0)
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (sprite_index == spr_archergoblin_shoot && x != targetplayer.x)
 	image_xscale = -sign(x - targetplayer.x);
-if (x != targetplayer.x && targetplayer.state != 51 && state != states.pizzagoblinthrow && bombreset == 0 && grounded)
+if (x != targetplayer.x && targetplayer.state != states.bombpep && state != states.pizzagoblinthrow && bombreset == 0 && grounded)
 {
 	if ((targetplayer.x > (x - 200) && targetplayer.x < (x + 200)) && (y <= (targetplayer.y + 200) && y >= (targetplayer.y - 200)))
 	{

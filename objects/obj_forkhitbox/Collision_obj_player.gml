@@ -1,4 +1,4 @@
-if (instance_exists(ID) && ID.object_index == obj_badrat && other.state == 5)
+if (instance_exists(ID) && ID.object_index == obj_badrat && other.state == states.tumble)
 	exit;
 var s = other.state;
 if (instance_exists(ID) && ID.object_index == obj_golfdemon && other.flash)

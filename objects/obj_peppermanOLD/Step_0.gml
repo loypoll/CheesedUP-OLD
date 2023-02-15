@@ -1,5 +1,5 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-if (obj_bosscontroller.state == 144)
+if (obj_bosscontroller.state == states.arenaintro)
 	exit;
 if (hp <= 0 && state != 145 && state != 162)
 {
@@ -124,4 +124,4 @@ switch (state)
 		break;
 }
 xscale = image_xscale;
-colliding = !(state == states.superslam || state == 162 || state == 158 || state == 159);
+colliding = !(state == states.superslam || state == 162 || state == states.boss_superattackstart || state == 159);

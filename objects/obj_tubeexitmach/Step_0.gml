@@ -20,7 +20,7 @@ if (state == states.tube)
 					x += sign(other.image_xscale);
 			}
 			machhitAnim = false;
-			state = 121;
+			state = states.mach3;
 			if (movespeed < 14)
 				movespeed = 14;
 			var p = (object_index == obj_player1) ? 0 : 1;
@@ -36,7 +36,7 @@ if (state == states.tube)
 			with (other)
 			{
 				playerid = -1;
-				state = 0;
+				state = states.normal;
 			}
 		}
 	}

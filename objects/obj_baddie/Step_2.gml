@@ -1,6 +1,6 @@
 if (state == states.grabbed && (object_index != obj_pepperman && object_index != obj_pizzafaceboss && object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 && object_index != obj_noiseboss && object_index != obj_pf_fakepep))
 	scr_enemy_grabbed();
-else if (state == 43)
+else if (state == states.lungeattack)
 	scr_enemy_lungeattack();
 else if (state == 266)
 	scr_enemy_secret();
@@ -25,9 +25,9 @@ if (stompbuffer > 0)
 	stompbuffer--;
 if (!thrown && killbyenemybuffer > 0)
 	killbyenemybuffer--;
-if (sprite_index == walkspr && state != 141 && floor(image_index) != (image_number - 1))
+if (sprite_index == walkspr && state != states.chase && floor(image_index) != (image_number - 1))
 	steppy = false;
-if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && grounded && vsp > 0 && floor(image_index) == (image_number - 1) && !steppy && object_index != obj_ghoul && state != 141)
+if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && grounded && vsp > 0 && floor(image_index) == (image_number - 1) && !steppy && object_index != obj_ghoul && state != states.chase)
 {
 	steppy = true;
 	var _yy = y + 43;
@@ -50,7 +50,7 @@ if (object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 &&
 	{
 		with (instance_nearest(x, y, obj_player))
 		{
-			if (state == 84)
+			if (state == states.backbreaker)
 			{
 				other.stunned = 0;
 				if (other.state != states.pizzagoblinthrow && !other.provoked && other.bombreset > 0)

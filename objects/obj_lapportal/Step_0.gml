@@ -11,7 +11,7 @@ if (global.panic || instance_exists(obj_wartimer))
 				fmod_event_one_shot_3d("event:/sfx/misc/secretenter", x, y);
 				with (obj_camera)
 					lock = true;
-				state = 146;
+				state = states.actor;
 				visible = false;
 				other.sprite_index = spr_pizzaportalend;
 				other.image_index = 0;

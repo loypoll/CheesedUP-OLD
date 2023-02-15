@@ -1,12 +1,12 @@
 with (obj_player)
 {
-	if (state == 47 || state == 38)
+	if (state == states.knightpep || state == states.knightpepslopes)
 	{
 		global.combotime = 60;
 		instance_destroy(other);
 	}
 }
-if (other.state != 16)
+if (other.state != states.ghost)
 {
 	sprite_index = spr_grandpa_punch;
 	image_index = 0;

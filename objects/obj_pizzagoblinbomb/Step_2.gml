@@ -42,8 +42,8 @@ switch (state)
 		x = playerid.x + (-playerid.xscale * 6);
 		y = playerid.y - 55;
 		image_xscale = playerid.xscale;
-		if (playerid.state != 52 && playerid.state != states.superslam)
-			state = 0;
+		if (playerid.state != states.bombgrab && playerid.state != states.superslam)
+			state = states.normal;
 		if (state == states.grabbed && _destroyed)
 			scr_hurtplayer(playerid);
 		if (playerid.state == states.superslam)
@@ -53,7 +53,7 @@ switch (state)
 		}
 		break;
 	default:
-		state = 0;
+		state = states.normal;
 		break;
 }
 if (sprite_index == bomblit_spr)

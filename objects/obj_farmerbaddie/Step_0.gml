@@ -59,7 +59,7 @@ if (state == states.walk)
 		cooldown--;
 	else if (t && collision_line(x, y, playerid.x, playerid.y, obj_solid, false, true) == -4)
 	{
-		state = 92;
+		state = states.jump;
 		sprite_index = ragespr;
 		vsp = -5;
 		hsp = 0;

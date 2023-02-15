@@ -2,7 +2,7 @@ if (state != states.stun)
 {
 	if (!other.isgustavo)
 	{
-		if (other.state != 121 || !other.launched)
+		if (other.state != states.mach3 || !other.launched)
 		{
 			if (state != 206)
 			{
@@ -25,7 +25,7 @@ if (state != states.stun)
 		state = 206;
 		with (other)
 		{
-			state = 196;
+			state = states.ratmounthurt;
 			xscale = -other.image_xscale;
 			movespeed = 6;
 			vsp = -10;

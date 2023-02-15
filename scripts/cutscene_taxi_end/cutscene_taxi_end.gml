@@ -6,8 +6,8 @@ function cutscene_taxi_end()
 	{
 		var handler = other;
 		cutscene = true;
-		state = 146;
-		if (grounded && state != 107)
+		state = states.actor;
+		if (grounded && state != states.hurt)
 		{
 			hsp = 0;
 			vsp = 0;

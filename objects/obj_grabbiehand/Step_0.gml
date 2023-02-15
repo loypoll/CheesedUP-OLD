@@ -35,7 +35,7 @@ switch (state)
 			stunned--;
 		else if (grounded)
 		{
-			state = 7;
+			state = states.ejected;
 			sprite_index = spr_grabbiehand_idle;
 			grounded = false;
 		}

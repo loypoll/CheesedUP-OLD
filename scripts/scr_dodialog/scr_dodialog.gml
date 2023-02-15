@@ -10,7 +10,7 @@ function do_dialog()
 	}
 	with (obj_player)
 	{
-		if (state == 17)
+		if (state == states.ghostpossess)
 		{
 			visible = true;
 			with (possessID)
@@ -21,7 +21,7 @@ function do_dialog()
 		}
 		sprite_index = spr_idle;
 		image_speed = 0.35;
-		state = 146;
+		state = states.actor;
 		hsp = 0;
 		vsp = 0;
 		movespeed = 0;

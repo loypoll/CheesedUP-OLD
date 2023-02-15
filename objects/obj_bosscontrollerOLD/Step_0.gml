@@ -1,23 +1,23 @@
-if (!instance_exists(bossID) && bossID != -4 && state != 98 && !fakedeath)
+if (!instance_exists(bossID) && bossID != -4 && state != states.victory && !fakedeath)
 {
-	state = 98;
+	state = states.victory;
 	alarm[1] = room_speed * 4;
 }
 if (player_hp <= 0)
 {
 	fakedeath = false;
-	if (state != 8 && state != 89)
+	if (state != states.transition && state != states.gameover)
 	{
 		if (endroundfunc != -4)
 			endroundfunc();
 		depth = obj_player1.depth + 1;
-		state = 8;
+		state = states.transition;
 		with (bossID)
 			player_destroy(lastplayerid);
 	}
-	else if (bossID.state != states.chainsaw && state != 89)
+	else if (bossID.state != states.chainsaw && state != states.gameover)
 	{
-		state = 89;
+		state = states.gameover;
 		alarm[1] = room_speed * 4;
 	}
 }
@@ -26,7 +26,7 @@ if (instance_exists(bossID))
 	if (bossID.destroyed && !fakedeath)
 	{
 		depth = bossID.depth + 1;
-		state = 8;
+		state = states.transition;
 	}
 }
 switch (state)
@@ -34,13 +34,13 @@ switch (state)
 	case states.arenaintro:
 		with (obj_player)
 		{
-			state = 146;
+			state = states.actor;
 			xscale = (x > (room_width / 2)) ? -1 : 1;
 			image_blend = make_colour_hsv(0, 0, 255);
 		}
 		with (par_boss)
 		{
-			state = 146;
+			state = states.actor;
 			x = xstart;
 		}
 		if (playerx != 0)
@@ -94,7 +94,7 @@ switch (state)
 			instance_destroy(obj_noisebossbomb);
 			with (obj_player)
 			{
-				if (state != 146 && state != states.comingoutdoor && state != states.hit && !instance_exists(obj_fadeout))
+				if (state != states.actor && state != states.comingoutdoor && state != states.hit && !instance_exists(obj_fadeout))
 				{
 					if (state == states.hit || state == states.chainsaw)
 					{
@@ -109,11 +109,11 @@ switch (state)
 					image_speed = 0.35;
 					xscale = (x > (room_width / 2)) ? -1 : 1;
 					image_blend = make_colour_hsv(0, 0, 255);
-					state = 146;
+					state = states.actor;
 					visible = true;
 					image_alpha = 1;
 				}
-				if (state == 146)
+				if (state == states.actor)
 					state_player_arenaround();
 			}
 			with (par_boss)
@@ -241,7 +241,7 @@ switch (state)
 bell_index += 0.35;
 portrait1_index += 0.35;
 portrait2_index += 0.35;
-if (state == 0 && instance_exists(bossID))
+if (state == states.normal && instance_exists(bossID))
 {
 	if (obj_player1.state == states.hit || obj_player1.state == 156)
 		portrait1_sprite = portrait1_hurt;

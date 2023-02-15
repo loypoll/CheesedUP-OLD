@@ -17,7 +17,7 @@ if (!noise_grabbed)
 	event_inherited();
 	with (obj_noiseboss)
 	{
-		if (state == 148 && ((other.x < (x - 16) && other.y > (y - 50)) || place_meeting(x, y - other.hsp, other) || place_meeting(x, y, other)))
+		if (state == states.golf && ((other.x < (x - 16) && other.y > (y - 50)) || place_meeting(x, y - other.hsp, other) || place_meeting(x, y, other)))
 		{
 			if (!other.noise)
 			{

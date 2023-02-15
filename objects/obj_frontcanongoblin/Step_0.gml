@@ -1,4 +1,4 @@
-if (state != 89)
+if (state != states.gameover)
 {
 	captain_y = SCREEN_HEIGHT;
 	canon_y = SCREEN_HEIGHT;
@@ -11,7 +11,7 @@ switch (state)
 		if (floor(canon_index) == (sprite_get_number(canon_sprite) - 1))
 		{
 			canon_sprite = spr_captaingoblin_canon;
-			state = 0;
+			state = states.normal;
 			fmod_event_instance_play(global.snd_captaingoblinshoot);
 			GamepadSetVibration(0, 1, 1, 0.8);
 			with (instance_create(crosshair_x, camera_get_view_y(view_camera[0]) - 32, obj_frontcanonbomb))

@@ -1,4 +1,4 @@
-if (state == 0)
+if (state == states.normal)
 {
 	if (dirty)
 	{

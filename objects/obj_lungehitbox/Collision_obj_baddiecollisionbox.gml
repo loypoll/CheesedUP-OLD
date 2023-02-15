@@ -5,7 +5,7 @@ if (_baddieID.state != states.grabbed && !_baddieID.invincible && _baddieID.hitt
 {
 	with (playerid)
 	{
-		if ((floor(image_index) < 4 || (global.attackstyle == 3 && image_index < 6)) && (state == 43 || state == states.handstandjump) && state != states.chainsaw && _baddieID.state != states.hit)
+		if ((floor(image_index) < 4 || (global.attackstyle == 3 && image_index < 6)) && (state == states.lungeattack || state == states.handstandjump) && state != states.chainsaw && _baddieID.state != states.hit)
 		{
 			var lag = 5;
 			var baddie_id = _baddieID.id;
@@ -40,7 +40,7 @@ if (_baddieID.state != states.grabbed && !_baddieID.invincible && _baddieID.hitt
 				lunge_hit_buffer = 100;
 				if (state == states.handstandjump)
 				{
-					state = 43;
+					state = states.lungeattack;
 					randomize_animations([spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_player_suplexmash5, spr_player_suplexmash6, spr_player_suplexmash7, spr_punch]);
 					image_index = 0;
 				}

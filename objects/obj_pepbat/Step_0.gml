@@ -25,7 +25,7 @@ switch (state)
 				if (!distance_to_pos(x, y, xstart, ystart, 32, 32))
 				{
 					sprite_index = spr_pepbat_move;
-					state = 130;
+					state = states.turn;
 					hit = false;
 				}
 				else
@@ -68,7 +68,7 @@ switch (state)
 		if (hit || distance_to_point(xstart, ystart) > 800)
 		{
 			hit = false;
-			state = 130;
+			state = states.turn;
 		}
 		break;
 	case states.land:
@@ -119,7 +119,7 @@ scr_scareenemy();
 if (bombreset > 0)
 	bombreset--;
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-if (x != targetplayer.x && state == states.walk && state != states.pizzagoblinthrow && obj_player.state != 5 && bombreset <= 0 && grounded)
+if (x != targetplayer.x && state == states.walk && state != states.pizzagoblinthrow && obj_player.state != states.tumble && bombreset <= 0 && grounded)
 {
 	if ((targetplayer.x > (x - 80) && targetplayer.x < (x + 80)) && (y <= (targetplayer.y + 30) && y >= (targetplayer.y - 30)))
 	{

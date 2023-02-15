@@ -1,4 +1,4 @@
-if (buffer <= 0 && other.state != 16)
+if (buffer <= 0 && other.state != states.ghost)
 {
 	buffer = 50;
 	image_alpha = 0;

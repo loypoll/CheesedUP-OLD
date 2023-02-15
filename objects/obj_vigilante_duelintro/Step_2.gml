@@ -1,6 +1,6 @@
 if (fadein)
 {
-	if (state == 0)
+	if (state == states.normal)
 		fade = Approach(fade, 1, 0.2);
 	else
 		fade = Approach(fade, 1, 0.08);

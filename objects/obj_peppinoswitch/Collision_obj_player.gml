@@ -5,7 +5,7 @@ if (global.switchbuffer == 0 && global.panic == escape)
 		hsp = 0;
 		vsp = 0;
 		visible = false;
-		state = 146;
+		state = states.actor;
 	}
 	fmod_event_one_shot("event:/sfx/misc/pepgusswitch");
 	create_particle(x, y, particle.genericpoofeffect);

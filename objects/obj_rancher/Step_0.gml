@@ -48,7 +48,7 @@ if (state != states.stun)
 if (bombreset > 0)
 	bombreset--;
 var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-if (sprite_index != scaredspr && x != targetplayer.x && state != states.pizzagoblinthrow && bombreset <= 0 && grounded && targetplayer.state != 16 && targetplayer.state != states.ghostpossess)
+if (sprite_index != scaredspr && x != targetplayer.x && state != states.pizzagoblinthrow && bombreset <= 0 && grounded && targetplayer.state != states.ghost && targetplayer.state != states.ghostpossess)
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 100) && y >= (targetplayer.y - 100)))
 	{

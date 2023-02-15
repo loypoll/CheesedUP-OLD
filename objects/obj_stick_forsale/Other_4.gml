@@ -6,7 +6,7 @@ if (first && !unlocked)
 {
 	with (instance_create(obj_stick_target.x, obj_stick_target.y, obj_stick))
 	{
-		state = 0;
+		state = states.normal;
 		maxscore = other.maxscore;
 		save = other.save;
 	}

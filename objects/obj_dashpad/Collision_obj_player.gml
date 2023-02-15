@@ -1,7 +1,7 @@
 var t = id;
 with (other)
 {
-	if (state != states.gotoplayer && state != 16 && state != 146)
+	if (state != states.gotoplayer && state != states.ghost && state != states.actor)
 	{
 		if (boxxed == 0 && isgustavo == 0 && other.buffer == 0 && other.sprite_index == spr_dashpad)
 		{
@@ -42,7 +42,7 @@ with (other)
 			}
 			scr_fmod_soundeffect(snd_dashpad, x, y);
 			machhitAnim = false;
-			state = 121;
+			state = states.mach3;
 			xscale = sign(other.image_xscale);
 			dir = xscale;
 			if (movespeed < 14)
@@ -78,7 +78,7 @@ with (other)
 					movespeed += (xscale * 0.5);
 				sprite_index = spr_boxxedpepwalk;
 				boxxeddashbuffer = 40;
-				state = 33;
+				state = states.boxxedpep;
 				other.buffer = 30;
 			}
 			if (isgustavo && other.buffer == 0 && gusdashpadbuffer == 0)
@@ -100,7 +100,7 @@ with (other)
 				other.buffer = 30;
 				ratmount_movespeed = 14;
 				gustavodash = 51;
-				state = 191;
+				state = states.ratmount;
 				if (abs(movespeed) < 14)
 					movespeed = other.image_xscale * 14;
 				gusdashpadbuffer = 25;

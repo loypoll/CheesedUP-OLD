@@ -3,7 +3,7 @@ targetplayer = instance_nearest(x, y, obj_player);
 mask_index = spr_pizzahead_giddy;
 with (obj_player)
 {
-	if (state == 121 || state == 121)
+	if (state == states.mach3 || state == states.mach3)
 		movespeed = 16;
 }
 switch (state)

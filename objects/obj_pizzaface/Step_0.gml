@@ -9,7 +9,7 @@ if (!instance_exists(playerid))
 var _move = true;
 with (obj_player)
 {
-	if (state == 119 || state == 98 || state == 90 || state == 46 || state == states.door || state == 292)
+	if (state == states.taxi || state == states.victory || state == states.keyget || state == states.gottreasure || state == states.door || state == 292)
 		_move = false;
 }
 if (!treasure)
@@ -36,7 +36,7 @@ else
 }
 if (!_move)
 	image_alpha = Approach(image_alpha, 0, 0.1);
-if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.state != 146 && !instance_exists(obj_fadeout) && !instance_exists(obj_endlevelfade) && image_alpha == 1)
+if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.state != states.actor && !instance_exists(obj_fadeout) && !instance_exists(obj_endlevelfade) && image_alpha == 1)
 {
 	fmod_event_instance_stop(snd, true);
 	
@@ -68,7 +68,7 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
 		instance_destroy(obj_fadeout);
 		targetDoor = "A";
 		room = timesuproom;
-		state = 64;
+		state = states.timesup;
 		sprite_index = spr_Timesup;
 		image_index = 0;
 		if (isgustavo)

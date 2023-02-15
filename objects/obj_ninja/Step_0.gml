@@ -77,7 +77,7 @@ if (state == states.walk)
 			dir = sign(hsp);
 	}
 }
-else if (state == 80)
+else if (state == states.punch)
 {
 	image_speed = 0.35;
 	hsp = 0;
@@ -141,7 +141,7 @@ if (sprite_index == spr_pizzaboy)
 else if (state == states.walk && attack_buffer <= 0)
 {
 	attack_buffer = attack_max + irandom_range(-attack_random, attack_random);
-	state = 80;
+	state = states.punch;
 	hsp = 0;
 	hitboxcreate = false;
 	if (!elite)

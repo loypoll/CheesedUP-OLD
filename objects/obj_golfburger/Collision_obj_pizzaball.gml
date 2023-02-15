@@ -1,8 +1,8 @@
-if (golfcooldown <= 0 && state != 74 && state != states.stun && state != states.grabbed && other.state != 148 && other.state != states.grabbed && other.bigcheeseID == -4)
+if (golfcooldown <= 0 && state != states.throwing && state != states.stun && state != states.grabbed && other.state != states.golf && other.state != states.grabbed && other.bigcheeseID == -4)
 {
 	golfid = other.id;
 	shot = false;
-	state = 74;
+	state = states.throwing;
 	sprite_index = spr_golfburger_golf;
 	image_index = 0;
 	other.bigcheeseID = id;

@@ -3,12 +3,12 @@ switch (state)
 	case states.idle:
 		if (start && distance_to_object(obj_player) <= 150)
 		{
-			state = 146;
+			state = states.actor;
 			substate = states.idle;
 			cutscenebuffer = 120;
 			with (obj_player)
 			{
-				state = 146;
+				state = states.actor;
 				sprite_index = spr_idle;
 				movespeed = 0;
 				image_speed = 0.35;

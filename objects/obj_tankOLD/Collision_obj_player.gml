@@ -1,5 +1,5 @@
 var baddie = id;
-if (state != 141)
+if (state != states.chase)
 {
 	with (other)
 	{
@@ -23,15 +23,15 @@ if (state != 141)
 					sprite_index = spr_stompprep;
 			}
 		}
-		if (y >= other.y && other.thrown == 0 && other.stuntouchbuffer == 0 && other.vsp > 0 && state != 106 && other.state != 141)
+		if (y >= other.y && other.thrown == 0 && other.stuntouchbuffer == 0 && other.vsp > 0 && state != states.bump && other.state != states.chase)
 		{
-			if (state != 51 && state != states.mach1 && state != 102)
+			if (state != states.bombpep && state != states.mach1 && state != 102)
 				movespeed = 0;
 			var _xs = sign(x - baddie.x);
 			if (floor(_xs) == 0)
 				_xs = xscale;
 			hsp = 3 * _xs;
-			state = 106;
+			state = states.bump;
 			xscale = -_xs;
 			sprite_index = spr_bump;
 			vsp = -4;
@@ -42,9 +42,9 @@ else
 {
 	with (other)
 	{
-		if (state != 59)
+		if (state != states.stunned)
 		{
-			state = 59;
+			state = states.stunned;
 			sprite_index = spr_squished;
 			image_index = 0;
 			scr_losepoints();

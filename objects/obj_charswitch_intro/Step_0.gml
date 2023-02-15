@@ -3,7 +3,7 @@ switch (state)
 	case 8:
 		if (floor(image_index) == (image_number - 1))
 		{
-			state = 0;
+			state = states.normal;
 			introbuffer = 50;
 		}
 		break;
@@ -14,7 +14,7 @@ switch (state)
 		{
 			image_speed = 0;
 			image_index = image_number - 1;
-			state = 135;
+			state = states.fall;
 			obj_camera.lock = false;
 			with (obj_player1)
 			{

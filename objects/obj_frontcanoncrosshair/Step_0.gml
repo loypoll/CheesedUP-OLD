@@ -13,7 +13,7 @@ switch (state)
 			cooldown--;
 		else if (distance_to_pos(x, y, player.x, player.y, threshold_x, threshold_y) && instance_exists(obj_frontcanongoblin))
 		{
-			state = 8;
+			state = states.transition;
 			attackbuffer = 20;
 		}
 		break;
@@ -28,12 +28,12 @@ switch (state)
 		{
 			with (obj_frontcanongoblin)
 			{
-				if (state != 8 && state != 89)
+				if (state != states.transition && state != states.gameover)
 				{
 					crosshair_x = other.x;
 					crosshair_y = other.y;
 					event_perform(2, 0);
-					other.state = 0;
+					other.state = states.normal;
 					other.collisioned = false;
 					other.cooldown = 150;
 				}
