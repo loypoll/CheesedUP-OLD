@@ -1,4 +1,4 @@
-if ((other.state == states.handstandjump || other.state == 43) && state != states.golf)
+if ((other.state == states.handstandjump || other.state == states.lungeattack) && state != states.golf)
 {
 	var _player = other.id;
 	var _pizzaball = id;

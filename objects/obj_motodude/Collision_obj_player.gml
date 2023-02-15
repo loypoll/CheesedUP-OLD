@@ -3,7 +3,7 @@ if (other.instakillmove)
 else if (other.state == states.freefall)
 {
 	other.xscale = sign(image_xscale);
-	other.state = 32;
+	other.state = states.motorcycle;
 	other.movespeed = abs(hsp);
 	other.sprite_index = spr_player_pizzacar;
 	explode = false;

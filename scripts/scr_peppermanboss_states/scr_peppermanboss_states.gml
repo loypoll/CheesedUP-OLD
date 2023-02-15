@@ -17,7 +17,7 @@ function pepperman_decide_attack_phase6()
 		attack_cooldown = attack_max[phase - 1];
 		readjusting = false;
 		if (hp <= superattack_hpthreshold)
-			state == states.boss_superattackstart;
+			state = states.boss_superattackstart;
 		if (state != states.boss_superattackstart)
 		{
 			var fakephase = irandom(100);

@@ -51,7 +51,7 @@ function boss_hurt()
 		var _removehp = true;
 		with (argument1)
 		{
-			if (state != 43 && state != 47)
+			if (state != states.lungeattack && state != states.knightpep)
 				scr_pummel();
 			else if (state == states.knightpep && vsp > 0 && y < (other.y - 30))
 			{
@@ -60,9 +60,9 @@ function boss_hurt()
 				vsp = -11;
 				movespeed = 6;
 			}
-			else if (state != 43 && state != states.parry)
+			else if (state != states.lungeattack && state != states.parry)
 				_removehp = false;
-			if (state == 43)
+			if (state == states.lungeattack)
 				movespeed = 4;
 		}
 		if (_removehp)

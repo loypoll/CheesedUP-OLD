@@ -72,7 +72,7 @@ switch state
 						if (state == states.mach3 && movespeed > 15)
 							movespeed = 15
 						freefallsmash = 0
-						if (state == 78 || state == 37 || state == 99 || state == 97 || state == states.Sjumpland || y < other.y - 400)
+						if (state == states.grind || state == states.climbwall || state == 99 || state == 97 || state == states.Sjumpland || y < other.y - 400)
 						{
 							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
 							vsp = -4

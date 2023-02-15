@@ -30,7 +30,7 @@ switch (state)
 			playerid = instance_place(handx, handy, obj_player);
 			with (playerid)
 			{
-				if (state == 21)
+				if (state == states.cheeseball)
 				{
 					repeat (3)
 						create_debris(x + (xscale * 30), y + random_range(-8, 8), spr_cheesechunk);
@@ -78,7 +78,7 @@ switch (state)
 				if (state == 214)
 				{
 					if (tauntstoredstate == 26)
-						state = 26;
+						state = states.cheesepepjump;
 					else
 					{
 						sprite_index = spr_machfreefall;

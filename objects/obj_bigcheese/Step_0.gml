@@ -30,7 +30,7 @@ switch (state)
 }
 if (state == states.walk)
 	hsp = 0;
-else if (state == 74)
+else if (state == states.throwing)
 {
 	hsp = 0;
 	if (floor(image_index) == (image_number - 1))
@@ -167,7 +167,7 @@ if (state == states.stun && stunned > 40 && birdcreated == 0)
 }
 if (state != states.stun)
 	birdcreated = false;
-if (state == 74)
+if (state == states.throwing)
 	image_speed = throwspeed;
 else
 	image_speed = 0.35;

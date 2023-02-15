@@ -12,7 +12,7 @@ if ((other.state == states.handstandjump || other.state == states.punch) && othe
 	playerid = other.object_index;
 	grabbed = true;
 }
-if (other.state == states.mach2 || other.state == states.mach3 || (other.state == 65 && grounded))
+if (other.state == states.mach2 || other.state == states.mach3 || (other.state == states.machroll && grounded))
 {
 	create_particle(x, y, particle.genericpoofeffect, 0);
 	with (other)

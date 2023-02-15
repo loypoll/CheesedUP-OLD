@@ -42,7 +42,7 @@ if (active && sprite_index != spr_secretportal_open && !instance_exists(obj_jump
 	if (!touched)
 	{
 		other.superchargedeffectid = -4;
-		if (other.state != 47 && other.state != states.knightpepslopes && other.state != states.knightpepbump && other.state != states.firemouth)
+		if (other.state != states.knightpep && other.state != states.knightpepslopes && other.state != states.knightpepbump && other.state != states.firemouth)
 		{
 			if (!other.isgustavo)
 				other.sprite_index = other.spr_hurt;

@@ -27,7 +27,7 @@ if (other.cutscene == 0 && other.state != states.actor && state != states.actor 
 	}
 	with (obj_player2)
 	{
-		if (state == states.handstandjump && other.hurted == 0 && other.state != states.hurt && other.state != states.knightpepslopes && other.state != 47 && other.state != states.tumble && other.state != states.fireass && other.state != 51 && other.cutscene == 0 && other.hurted == 0 && hurted == 0 && !(other.state == states.handstandjump || other.state == states.punch))
+		if (state == states.handstandjump && other.hurted == 0 && other.state != states.hurt && other.state != states.knightpepslopes && other.state != states.knightpep && other.state != states.tumble && other.state != states.fireass && other.state != states.bombpep && other.cutscene == 0 && other.hurted == 0 && hurted == 0 && !(other.state == states.handstandjump || other.state == states.punch))
 		{
 			movespeed = 0;
 			image_index = 0;
@@ -38,12 +38,12 @@ if (other.cutscene == 0 && other.state != states.actor && state != states.actor 
 			obj_player1.depth = -6;
 			obj_player2.depth = -7;
 		}
-		if (state == states.freefall && other.hurted == 0 && other.state != 59 && other.state != states.hurt && hurted == 0)
+		if (state == states.freefall && other.hurted == 0 && other.state != states.stunned && other.state != states.hurt && hurted == 0)
 		{
 			scr_changetoppings();
 			obj_player1.depth = -6;
 			obj_player2.depth = -7;
-			obj_player1.state = 59;
+			obj_player1.state = states.stunned;
 			obj_player1.sprite_index = obj_player1.spr_squished;
 			obj_player1.image_index = 0;
 		}

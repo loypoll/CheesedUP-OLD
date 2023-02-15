@@ -1,2 +1,2 @@
-if (state == states.normal && other.state != 47)
+if (state == states.normal && other.state != states.knightpep)
 	scr_hurtplayer(other);

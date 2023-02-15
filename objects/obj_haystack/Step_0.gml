@@ -56,7 +56,7 @@ else if (sprite_index == spr_haystackburning)
 	playerid = instance_place(x, y - 1, obj_player);
 	with (playerid)
 	{
-		if (state != states.fireass && state != 47)
+		if (state != states.fireass && state != states.knightpep)
 		{
 			if (character == "V")
 				scr_hurtplayer(id);

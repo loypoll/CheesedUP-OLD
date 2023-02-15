@@ -51,7 +51,7 @@ if (state != states.stun)
 	birdcreated = false;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (state == 74)
+if (state == states.throwing)
 {
 	hsp = 0;
 	if (floor(image_index) == (image_number - 1))
@@ -90,7 +90,7 @@ if (state == 74)
 		golfid = -4;
 	}
 }
-if (state != 74)
+if (state != states.throwing)
 	scr_scareenemy();
 if (state != states.grabbed)
 	depth = 0;

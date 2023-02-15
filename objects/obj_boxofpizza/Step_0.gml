@@ -4,7 +4,7 @@ with (obj_player)
 {
 	if (other.image_yscale == 1)
 	{
-		if (((key_down && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other) && ((state == states.crouch || character == "S" || character == "M") || state == 65 || (state == states.tumble && sprite_index == spr_dive))) || ((state == 102 || (state == states.tumble && key_down) || state == states.freefall || state == states.freefallland) && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
+		if (((key_down && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other) && ((state == states.crouch || character == "S" || character == "M") || state == states.machroll || (state == states.tumble && sprite_index == spr_dive))) || ((state == 102 || (state == states.tumble && key_down) || state == states.freefall || state == states.freefallland) && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
 		{
 			obj_player1.lastroom = room;
 			obj_player2.lastroom = room;

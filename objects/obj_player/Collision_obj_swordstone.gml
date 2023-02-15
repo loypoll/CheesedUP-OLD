@@ -1,4 +1,4 @@
-if (grounded && other.sprite_index == spr_swordstone && (state == states.handstandjump || state == states.punch || state == 43))
+if (grounded && other.sprite_index == spr_swordstone && (state == states.handstandjump || state == states.punch || state == states.lungeattack))
 {
 	transformationlives = 3;
 	fmod_event_one_shot_3d("event:/sfx/knight/start", x, y);

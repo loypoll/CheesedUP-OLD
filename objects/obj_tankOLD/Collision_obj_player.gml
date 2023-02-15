@@ -25,7 +25,7 @@ if (state != states.chase)
 		}
 		if (y >= other.y && other.thrown == 0 && other.stuntouchbuffer == 0 && other.vsp > 0 && state != states.bump && other.state != states.chase)
 		{
-			if (state != 51 && state != states.mach1 && state != 102)
+			if (state != states.bombpep && state != states.mach1 && state != 102)
 				movespeed = 0;
 			var _xs = sign(x - baddie.x);
 			if (floor(_xs) == 0)
@@ -42,9 +42,9 @@ else
 {
 	with (other)
 	{
-		if (state != 59)
+		if (state != states.stunned)
 		{
-			state = 59;
+			state = states.stunned;
 			sprite_index = spr_squished;
 			image_index = 0;
 			scr_losepoints();

@@ -2,7 +2,7 @@ with (other)
 {
 	if (state != states.gotoplayer)
 	{
-		if (state == 53 || state == 32 || state == states.slipnslide || state == states.rocket || state == states.grind || state == states.tumble || state == states.cheeseball || state == states.knightpepslopes || state == 65 || state == states.mach3 || state == states.mach2)
+		if (state == states.bombpepside || state == states.motorcycle || state == states.slipnslide || state == states.rocket || state == states.grind || state == states.tumble || state == states.cheeseball || state == states.knightpepslopes || state == states.machroll || state == states.mach3 || state == states.mach2)
 		{
 			other.sprite_index = spr_sidespringblock_bounce;
 			other.image_index = 0;

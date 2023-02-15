@@ -1,6 +1,6 @@
 with (obj_player)
 {
-	if ((state == states.knightpep || state == 48 || state == states.knightpepslopes) && cutscene == 0)
+	if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes) && cutscene == 0)
 	{
 		with (instance_create(x, y, obj_knightdebris))
 			image_index = 0;
@@ -24,7 +24,7 @@ with (obj_player)
 		obj_player.flash = true;
 		state = states.bump;
 	}
-	else if (state == 51 && hurted == 0)
+	else if (state == states.bombpep && hurted == 0)
 		instance_create(x, y, obj_bombexplosion);
 	else if (state == states.boxxedpep)
 	{

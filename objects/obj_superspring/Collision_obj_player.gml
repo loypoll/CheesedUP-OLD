@@ -3,7 +3,7 @@ with (other)
 {
 	if (state != states.Sjump && state != states.gotoplayer && state != states.actor)
 	{
-		if (state == states.knightpep || state == 48 || state == states.knightpepslopes)
+		if (state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes)
 		{
 			with (instance_create(x, y, obj_knightdebris))
 				image_index = 0;
@@ -18,7 +18,7 @@ with (other)
 			with (instance_create(x, y, obj_knightdebris))
 				image_index = 5;
 		}
-		if (state == 51)
+		if (state == states.bombpep)
 			instance_create(x, y, obj_bombexplosion);
 		x = other.x;
 		if (other.image_yscale == 1)

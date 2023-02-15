@@ -35,7 +35,7 @@ function scr_ratblock_destroy()
 						vsp = -4;
 						image_index = 0;
 						sprite_index = spr_bombpepend;
-						state = 51;
+						state = states.bombpep;
 						bombpeptimer = 0;
 					}
 					break;

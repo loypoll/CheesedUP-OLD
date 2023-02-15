@@ -91,7 +91,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (bigcheeseID != -4)
 {
-	if (!instance_exists(bigcheeseID) || bigcheeseID.state != 74 || bigcheeseID.shot)
+	if (!instance_exists(bigcheeseID) || bigcheeseID.state != states.throwing || bigcheeseID.shot)
 	{
 		if (instance_exists(bigcheeseID) && bigcheeseID.object_index == obj_golfburger && sprite_index == stunfallspr)
 			sprite_index = walkspr;

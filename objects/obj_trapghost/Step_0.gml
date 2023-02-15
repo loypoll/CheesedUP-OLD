@@ -65,9 +65,9 @@ switch (state)
 						}
 						break
 					case obj_knighttrap:
-						if (cooldown == 0 && state != 80 && obj_player1.x > x - 200 && obj_player1.x < x + 200 && obj_player1.y > y - 100 && obj_player1.y < y + 100)
+						if (cooldown == 0 && state != states.punch && obj_player1.x > x - 200 && obj_player1.x < x + 200 && obj_player1.y > y - 100 && obj_player1.y < y + 100)
 						{
-							state = 80
+							state = states.punch
 							sprite_index = spr_kingghost_spike3
 							fmod_event_one_shot_3d("event:/sfx/enemies/pizzardelectricity", x, y)
 							image_index = 0

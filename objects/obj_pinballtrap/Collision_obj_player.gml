@@ -11,7 +11,7 @@ if (_used)
 	{
 		if (scr_transformationcheck() || state == states.tumble)
 		{
-			if ((state != states.bump || sprite_index != spr_player_catched) && (state != states.tumble || xscale != _obj.image_xscale) && state != 47 && state != states.knightpepslopes && state != states.backbreaker && state != states.gotoplayer)
+			if ((state != states.bump || sprite_index != spr_player_catched) && (state != states.tumble || xscale != _obj.image_xscale) && state != states.knightpep && state != states.knightpepslopes && state != states.backbreaker && state != states.gotoplayer)
 			{
 				state = states.tumble;
 				fmod_event_one_shot_3d("event:/sfx/misc/pepbotkick", x, y);
