@@ -4,6 +4,22 @@ scr_vigilante_init_sounds();
 attack_list = -4;
 currentattack = 0;
 skipintro = false;
+
+enum attack
+{
+	revolver,
+	dynamite,
+	cow,
+	estampede,
+	flamethrower,
+	machinegun,
+	bazooka,
+	crate,
+	mach,
+	wait,
+	reload
+}
+
 vigilante_start_attack(0, 0);
 vigilante_add_attack(0, 0, 0, 25);
 vigilante_add_attack(0, 0, 0, 25);
@@ -13,6 +29,7 @@ vigilante_add_attack(0, 0, 0, 25);
 vigilante_add_attack(0, 0, 0, 15);
 vigilante_add_attack(0, 0, 8, 45);
 vigilante_end_attack(0, 0);
+
 vigilante_start_attack(0, 1);
 vigilante_add_attack(0, 1, 1);
 vigilante_add_attack(0, 1, 1);
@@ -35,11 +52,13 @@ vigilante_add_attack(0, 1, 8, 5);
 vigilante_add_attack(0, 1, 9, 85);
 vigilante_add_attack(0, 1, 0, 10);
 vigilante_end_attack(0, 1);
+
 vigilante_start_attack(0, 2);
 vigilante_add_attack(0, 2, 5);
 vigilante_add_attack(0, 2, 1);
 vigilante_add_attack(0, 2, 1);
 vigilante_end_attack(0, 2);
+
 vigilante_start_attack(0, 3);
 vigilante_add_attack(0, 3, 5);
 vigilante_add_attack(0, 3, 0, 10);
@@ -47,10 +66,12 @@ vigilante_add_attack(0, 3, 0, 10);
 vigilante_add_attack(0, 3, 0, 10);
 vigilante_add_attack(0, 3, 0, 10);
 vigilante_end_attack(0, 3);
+
 vigilante_start_attack(0, 4);
 vigilante_add_attack(0, 4, 8, 45);
 vigilante_add_attack(0, 4, 9, 5);
 vigilante_end_attack(0, 4);
+
 vigilante_start_attack(0, 5);
 vigilante_add_attack(0, 5, 6);
 vigilante_add_attack(0, 5, 8, 20);
@@ -65,15 +86,18 @@ vigilante_add_attack(0, 5, 1);
 vigilante_add_attack(0, 5, 0, 5);
 vigilante_add_attack(0, 5, 0, 5);
 vigilante_end_attack(0, 5);
+
 vigilante_start_attack(0, 6);
 vigilante_add_attack(0, 6, 1);
 vigilante_add_attack(0, 6, 1);
 vigilante_add_attack(0, 6, 4, 200);
 vigilante_end_attack(0, 6);
+
 vigilante_start_attack(0, 7);
 vigilante_add_attack(0, 7, 4, 200);
 vigilante_add_attack(0, 7, 9, 45);
 vigilante_end_attack(0, 7);
+
 vigilante_start_attack(0, 8);
 vigilante_add_attack(0, 8, 7);
 vigilante_add_attack(0, 8, 9, 300);
@@ -93,15 +117,19 @@ vigilante_add_attack(0, 8, 0, 5);
 vigilante_add_attack(0, 8, 1);
 vigilante_add_attack(0, 8, 1);
 vigilante_end_attack(0, 8);
+
 vigilante_start_attack(1, 0);
 vigilante_add_attack(1, 0, 1);
 vigilante_end_attack(1, 0);
+
 vigilante_start_attack(1, 1);
 vigilante_add_attack(1, 1, 8, 25);
 vigilante_end_attack(1, 1);
+
 vigilante_start_attack(1, 2);
 vigilante_add_attack(1, 2, 0, 25);
 vigilante_end_attack(1, 2);
+
 vigilante_start_attack(1, 3);
 vigilante_add_attack(1, 3, 1);
 vigilante_add_attack(1, 3, 1);
@@ -110,10 +138,12 @@ vigilante_add_attack(1, 3, 1);
 vigilante_add_attack(1, 3, 1);
 vigilante_add_attack(1, 3, 6);
 vigilante_end_attack(1, 3);
+
 vigilante_start_attack(1, 4);
 vigilante_add_attack(1, 4, 7);
 vigilante_add_attack(1, 4, 4, 1900);
 vigilante_end_attack(1, 4);
+
 vigilante_start_attack(1, 5);
 vigilante_add_attack(1, 5, 7);
 vigilante_add_attack(1, 5, 5);
@@ -126,6 +156,7 @@ vigilante_add_attack(1, 5, 5);
 vigilante_add_attack(1, 5, 5);
 vigilante_add_attack(1, 5, 5);
 vigilante_end_attack(1, 5);
+
 vigilante_start_attack(1, 6);
 vigilante_add_attack(1, 6, 7);
 vigilante_add_attack(1, 6, 8, 45);
@@ -142,9 +173,11 @@ vigilante_add_attack(1, 6, 8, 45);
 vigilante_add_attack(1, 6, 8, 45);
 vigilante_add_attack(1, 6, 8, 45);
 vigilante_end_attack(1, 6);
+
 vigilante_start_attack(1, 7);
 vigilante_add_attack(1, 7, 8, 45);
 vigilante_end_attack(1, 7);
+
 vigilante_start_attack(1, 8);
 vigilante_add_attack(1, 8, 0, 25);
 vigilante_add_attack(1, 8, 0, 24);
@@ -167,6 +200,7 @@ vigilante_add_attack(1, 8, 0, 8);
 vigilante_add_attack(1, 8, 0, 7);
 vigilante_add_attack(1, 8, 9, 200);
 vigilante_end_attack(1, 8);
+
 bossvulnerableID = -4;
 targetguy_max = 1000;
 alarm[8] = targetguy_max;
@@ -210,7 +244,7 @@ attackspeed = 0;
 hitboxID = -4;
 marbleblockID = -4;
 destroyable = false;
-ministate = states.normal
+ministate = states.normal;
 minibuffer = 0;
 revolverbuffer = 0;
 ammo = 6;
