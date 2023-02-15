@@ -54,7 +54,7 @@ function scr_player_handstandjump()
 	{
 		fmod_event_instance_play(rollgetupsnd);
 		input_buffer_jump = 0;
-		particle_set_scale(5, xscale, 1);
+		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		jumpstop = false;
 		image_index = 0;

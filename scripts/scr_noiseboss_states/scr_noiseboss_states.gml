@@ -115,7 +115,7 @@ function noise_do_attack_normal()
 			vsp = -15;
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
-			particle_set_scale(5, image_xscale, 1);
+			particle_set_scale(particle.jumpdust, image_xscale, 1);
 			create_particle(x, y, particle.jumpdust, 0);
 			break;
 	}
@@ -217,7 +217,7 @@ function noise_do_attack_angry()
 			vsp = -15;
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
-			particle_set_scale(5, image_xscale, 1);
+			particle_set_scale(particle.jumpdust, image_xscale, 1);
 			create_particle(x, y, particle.jumpdust, 0);
 			break;
 	}
@@ -649,7 +649,7 @@ function boss_noise_jetpack()
 			vsp = -15;
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
-			particle_set_scale(5, image_xscale, 1);
+			particle_set_scale(particle.jumpdust, image_xscale, 1);
 			create_particle(x, y, particle.jumpdust, 0);
 		}
 	}
@@ -685,7 +685,7 @@ function boss_noise_jetpackspin()
 			vsp = -15;
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
-			particle_set_scale(5, image_xscale, 1);
+			particle_set_scale(particle.jumpdust, image_xscale, 1);
 			create_particle(x, y, particle.jumpdust, 0);
 		}
 	}
