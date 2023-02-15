@@ -36,7 +36,7 @@ function scr_player_handstandjump()
 		}
 	}
 	if (shoot == 1)
-		var attackdash = 2059;
+		var attackdash = spr_player_pistolshot;
 	else
 		attackdash = spr_suplexdash;
 	if (sprite_index == spr_player_lungestart && floor(image_index) == (image_number - 1))

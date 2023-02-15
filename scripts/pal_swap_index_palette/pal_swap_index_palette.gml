@@ -15,6 +15,7 @@ function pal_swap_index_palette()
 		}
 		for (var i = 0; i < _num; i++)
 		{
+			var _pal = ds_list_create();
 			for (var ii = 0; ii < _colors; ii++)
 				ds_list_add(_pal, surface_getpixel(_surface, i, ii));
 			ds_list_add(_palettes, _pal);

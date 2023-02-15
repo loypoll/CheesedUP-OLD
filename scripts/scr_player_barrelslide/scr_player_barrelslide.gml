@@ -70,7 +70,7 @@ function scr_player_barrelslide()
 		}
 		else
 		{
-			GamepadSetVibration(0, 0.6, 0.3);
+			GamepadSetVibration(0, 0.6, 0.6, 0.3);
 			scr_fmod_soundeffect(barrelbumpsnd, x, y);
 			xscale *= -1;
 			movespeed = xscale * 8;

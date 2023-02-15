@@ -37,7 +37,7 @@ function scr_player_climbwall()
 				grabclimbbuffer--;
 			if (!key_attack && !skateboarding && grabclimbbuffer == 0)
 			{
-				state =		
+				state =	states.normal;
 				movespeed = 0;
 				railmovespeed = 6;
 				raildir = -xscale;

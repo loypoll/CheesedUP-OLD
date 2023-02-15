@@ -692,4 +692,5 @@ function boss_pizzahead_p2_phase1hurt()
 		with (obj_player)
 			state = states.normal;
 	}
+	obj_screensizer.camzoom = camzoom;
 }

@@ -16,7 +16,7 @@ function scr_player_antigrav()
 	}
 	if (scr_solid(x, y - 1))
 	{
-		GamepadSetVibration(0, 0.6, 0.2);
+		GamepadSetVibration(0, 0.6, 0.6, 0.2);
 		fmod_event_one_shot_3d("event:/sfx/antigrav/bump", x, y);
 		vsp = 8;
 		with (obj_antigravbubble)
@@ -32,7 +32,7 @@ function scr_player_antigrav()
 	}
 	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope) && !place_meeting(x + hsp, y, obj_ratblock) && !place_meeting(x + hsp, y, obj_destructibles))
 	{
-		GamepadSetVibration(0, 0.6, 0.2);
+		GamepadSetVibration(0, 0.6, 0.6, 0.2);
 		fmod_event_one_shot_3d("event:/sfx/antigrav/bump", x, y);
 		hsp = -hsp * 0.8;
 		repeat (3)

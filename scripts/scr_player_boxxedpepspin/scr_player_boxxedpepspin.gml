@@ -19,7 +19,7 @@ function scr_player_boxxedpepspin()
 		fmod_event_one_shot_3d("event:/sfx/boxxed/step", x, y);
 		instance_create(x + hsp, y, obj_bangeffect);
 		movespeed = -(sign(hsp) * 6);
-		GamepadSetVibration(0, 0.4, 0.65);
+		GamepadSetVibration(0, 0.4, 0.4, 0.65);
 	}
 	if ((!key_slap || abs(movespeed) <= 3) && boxxedspinbuffer == 0)
 	{

@@ -39,7 +39,7 @@ with (other)
 }
 if (floor(other.x) == (xstart + _offset_x) && floor(other.y) == (ystart + _offset_y))
 {
-	GamepadSetVibration(0, 0.8, 0.65);
+	GamepadSetVibration(0, 0.8, 0.8, 0.65);
 	other.x = xstart + _offset_x;
 	other.y = ystart + _offset_y;
 	image_index = 0;

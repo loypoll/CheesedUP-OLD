@@ -19,7 +19,7 @@ function scr_player_grabbed()
 		else if (floor(_obj_player.image_index) == 1)
 			y = _obj_player.y - 10;
 		else if (floor(_obj_player.image_index) == 2)
-			y = _obj_player.y - states.tacklecharge;
+			y = _obj_player.y - 20;
 		else if (floor(_obj_player.image_index) == 3)
 			y = _obj_player.y - 30;
 		xscale = -_obj_player.xscale;
@@ -62,7 +62,7 @@ function scr_player_grabbed()
 	}
 	if (_obj_player.state == states.tacklecharge)
 	{
-		x = _obj_player.x + (_obj_player.xscale * states.tacklecharge);
+		x = _obj_player.x + (_obj_player.xscale * 20);
 		y = _obj_player.y;
 	}
 	if (_obj_player.state == states.finishingblow && _obj_player.image_index < 5)

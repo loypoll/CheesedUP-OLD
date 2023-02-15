@@ -144,7 +144,7 @@ function scr_player_firemouth()
 	}
 	if (input_buffer_jump > 0 && can_jump && sprite_index != spr_firemouthintro && sprite_index != spr_firemouthend)
 	{
-		GamepadSetVibration(0, 0.2, 0.4);
+		GamepadSetVibration(0, 0.2, 0.2, 0.4);
 		input_buffer_jump = 0;
 		fmod_event_one_shot_3d("event:/sfx/firemouth/jump", x, y);
 		with (instance_create(x, y, obj_highjumpcloud2))

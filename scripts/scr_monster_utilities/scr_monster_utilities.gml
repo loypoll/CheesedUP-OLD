@@ -218,7 +218,7 @@ function scr_monsterinvestigate()
 			break;
 	}
 	if (scr_monster_detect(300, room_height, targetplayer))
-		state = states.chase;
+		state = states.robotchase;
 }
 function scr_monster_detect_audio()
 {
@@ -239,7 +239,7 @@ function scr_monster_detect_audio()
 				chase = false;
 			}
 			else
-				state = states.chase;
+				state = states.robotchase;
 		}
 	}
 }

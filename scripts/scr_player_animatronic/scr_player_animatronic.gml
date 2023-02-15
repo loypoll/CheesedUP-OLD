@@ -36,7 +36,7 @@ function scr_player_animatronic()
 		animatronic_collect_buffer = 30;
 		if (global.collect > 0)
 		{
-			GamepadSetVibration(0, 0.4, 0.65);
+			GamepadSetVibration(0, 0.4, 0.4, 0.65);
 			global.collect -= 10;
 			fmod_event_one_shot_3d("event:/sfx/pep/hurt", x, y);
 			with (instance_create(121, 60, obj_negativenumber))

@@ -10,6 +10,7 @@ with (other)
 {
 	if (other.stored_spd == 0)
 	{
+		
 	}
 	hsp = 0;
 	vsp = 0;
@@ -21,7 +22,7 @@ with (other)
 }
 if (floor(other.x) == (x + _offset_x) && floor(other.y) == (y + _offset_y))
 {
-	GamepadSetVibration(0, 0.8, 0.65);
+	GamepadSetVibration(0, 0.8, 0.8, 0.65);
 	other.state = states.tube;
 	other.tube_id = id;
 	other.hsp = hsp * movespeed;

@@ -1,7 +1,7 @@
 function scr_player_cheeseball()
 {
 	image_speed = 0.35;
-	GamepadSetVibration(0, 0.4, 0.65);
+	GamepadSetVibration(0, 0.4, 0.4, 0.65);
 	if ((x + hsp) == xprevious)
 		stop_buffer--;
 	else

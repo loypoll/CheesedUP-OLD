@@ -3,7 +3,7 @@ with (other)
 	if ((state == 16 || (state == states.chainsaw && tauntstoredstate == 16)) && other.visible == 1)
 	{
 		ghostdash = true;
-		GamepadSetVibration(0, 0.6, 0.2);
+		GamepadSetVibration(0, 0.6, 0.6, 0.2);
 		if (xscale > 0)
 			ghostangle = 0;
 		else

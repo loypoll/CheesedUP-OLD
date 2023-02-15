@@ -38,7 +38,7 @@ function scr_player_boxxedpep()
 		boxxeddashbuffer--;
 	if ((can_jump && input_buffer_jump > 0 && vsp > 0) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 	{
-		GamepadSetVibration(0, 0.4, 0.65);
+		GamepadSetVibration(0, 0.4, 0.4, 0.65);
 		fmod_event_one_shot_3d("event:/sfx/boxxed/flap", x, y);
 		instance_create(x, y, obj_highjumpcloud2);
 		vsp = -boxxedpepjump;
@@ -103,7 +103,7 @@ function scr_player_boxxedpep()
 	}
 	if (input_buffer_slap > 0)
 	{
-		GamepadSetVibration(0, 0.8, 0.65);
+		GamepadSetVibration(0, 0.8, 0.8, 0.65);
 		input_buffer_slap = 0;
 		state = states.boxxedpepspin;
 		sprite_index = spr_boxxedpep_spin;

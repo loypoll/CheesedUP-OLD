@@ -223,7 +223,7 @@ function boss_pepperman_jump()
 	var col = collision_line(x, y, x, y + 96, obj_solid, false, true);
 	if (!jumping_pepper && !groundpound_fakeout && col == -4 && ((x > (target_x - 24) && x < (target_x + 24)) || (x > (targetplayer.x - 24) && x < (targetplayer.x + 24)) || vsp > 3))
 	{
-		state = states.Sjumpland;
+		state = states.freefallprep;
 		vsp = 10;
 		hsp = 0;
 		image_index = 0;
@@ -237,7 +237,7 @@ function boss_pepperman_jump()
 			groundpound_readjust_buffer = groundpound_readjust_max;
 			readjusting = true;
 			target_x = targetplayer.x;
-			state = states.Sjumpland;
+			state = states.freefallprep;
 			vsp = 10;
 			hsp = 0;
 			image_index = 0;

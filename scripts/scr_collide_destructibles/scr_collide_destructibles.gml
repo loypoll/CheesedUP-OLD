@@ -18,7 +18,7 @@ function scr_collide_destructibles()
 						{
 							with (inst)
 							{
-								GamepadSetVibration(0, 0.8, 0.5);
+								GamepadSetVibration(0, 0.8, 0.8, 0.5);
 								instance_destroy();
 							}
 						}
@@ -35,7 +35,7 @@ function scr_collide_destructibles()
 				{
 					with (instance_place(x + hsp, y, obj_destructibles))
 					{
-						GamepadSetVibration(0, 0.8, 0.5);
+						GamepadSetVibration(0, 0.8, 0.8, 0.5);
 						instance_destroy();
 					}
 					if (state == states.mach2)
@@ -49,7 +49,7 @@ function scr_collide_destructibles()
 			{
 				with (instance_place(x - hsp, y, obj_destructibles))
 				{
-					GamepadSetVibration(0, 0.8, 0.5);
+					GamepadSetVibration(0, 0.8, 0.8, 0.5);
 					instance_destroy();
 				}
 			}
@@ -66,7 +66,7 @@ function scr_collide_destructibles()
 				{
 					with (ds_list_find_value(global.instancelist, i))
 					{
-						GamepadSetVibration(0, 0.8, 0.5);
+						GamepadSetVibration(0, 0.8, 0.8, 0.5);
 						instance_destroy();
 					}
 				}
@@ -75,7 +75,7 @@ function scr_collide_destructibles()
 				{
 					with (instance_place(x, y + vy, obj_tntblock))
 					{
-						GamepadSetVibration(0, 0.8, 0.5);
+						GamepadSetVibration(0, 0.8, 0.8, 0.5);
 						instance_destroy();
 					}
 					if (vsp > -11)
@@ -139,7 +139,7 @@ function scr_collide_destructibles()
 			{
 				with (instance_place(x, y + vy, obj_destructibles))
 				{
-					GamepadSetVibration(0, 0.6, 0.5);
+					GamepadSetVibration(0, 0.6, 0.6, 0.5);
 					instance_destroy();
 					with (other)
 					{

@@ -315,7 +315,7 @@ function scr_boss_phase1hurt(func = noone)
 			player.hitX = player.x;
 			player.hitY = player.y;
 			instance_create(x, y, obj_parryeffect);
-			GamepadSetVibration((player.object_index == obj_player1) ? 0 : 1, 0.8, 0.65);
+			GamepadSetVibration((player.object_index == obj_player1) ? 0 : 1, 0.8, 0.8, 0.65);
 			fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
 			fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
 			state = states.stun;

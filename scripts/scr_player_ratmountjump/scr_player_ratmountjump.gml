@@ -174,7 +174,7 @@ function scr_player_ratmountjump()
 	}
 	if (key_jump && brick && bounce)
 	{
-		GamepadSetVibration(0, 0.8, 0.65);
+		GamepadSetVibration(0, 0.8, 0.8, 0.65);
 		state = states.ratmountbounce;
 		instance_create(x, y, obj_highjumpcloud2);
 		sprite_index = spr_player_ratmountwalljump;

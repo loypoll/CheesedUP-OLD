@@ -38,7 +38,7 @@ function scr_pistolshoot(required_state)
 				x += 25;
 			}
 			else
-				GamepadSetVibration(0, 0.3, 0.6);
+				GamepadSetVibration(0, 0.3, 0.3, 0.6);
 		}
 	}
 }

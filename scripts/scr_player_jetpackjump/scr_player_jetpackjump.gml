@@ -41,7 +41,7 @@ function scr_player_jetpackjump()
 		if (place_meeting(x - other.hsp, y, other) || place_meeting(x - other.xscale, y, other) || place_meeting(x, y - other.vsp, other))
 		{
 			instance_destroy();
-			GamepadSetVibration(0, 0.5, 0.8);
+			GamepadSetVibration(0, 0.5, 0.5, 0.8);
 			if (other.vsp < 0)
 				other.vsp = -14;
 			else if (other.vsp > -11)
@@ -54,7 +54,7 @@ function scr_player_jetpackjump()
 		if (place_meeting(x, y + 1, other))
 		{
 			instance_destroy();
-			GamepadSetVibration(0, 0.5, 0.8);
+			GamepadSetVibration(0, 0.5, 0.5, 0.8);
 			if (other.vsp < 0)
 				other.vsp = -14;
 			else if (other.vsp > -11)
@@ -67,7 +67,7 @@ function scr_player_jetpackjump()
 		if (place_meeting(x - other.hsp, y, other) || place_meeting(x - other.xscale, y, other) || place_meeting(x, y - other.vsp, other))
 		{
 			instance_destroy();
-			GamepadSetVibration(0, 0.4, 0.8);
+			GamepadSetVibration(0, 0.4, 0.4, 0.8);
 			if (other.vsp < 0)
 				other.vsp = -14;
 			else if (other.vsp > -11)
@@ -97,7 +97,7 @@ function scr_player_jetpackjump()
 		dir = xscale;
 		if (key_jump2 && sprite_index == spr_player_jetpackstart2)
 		{
-			GamepadSetVibration(0, 0.3, 0.65);
+			GamepadSetVibration(0, 0.3, 0.3, 0.65);
 			if (!key_down)
 				vsp = Approach(vsp, -11, 0.8);
 			else
