@@ -157,7 +157,7 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
 				var _tspeed = 0.3;
 				chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
 			}
-			else if (target.ratmount_movespeed > 2 && target.key_attack && (target.state == 191 || target.state == states.ratmountjump))
+			else if (target.ratmount_movespeed > 2 && target.key_attack && (target.state == states.ratmount || target.state == states.ratmountjump))
 			{
 				_targetcharge = target.xscale * ((abs(target.hsp) / 4) * 70);
 				_tspeed = 0.3;

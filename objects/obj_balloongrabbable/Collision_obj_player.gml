@@ -3,7 +3,7 @@ if (active)
 	if (other.isgustavo && other.brick)
 	{
 		fmod_event_one_shot_3d("event:/sfx/rat/grabeat", x, y);
-		other.state = 200;
+		other.state = states.ratmountballoon;
 		active = false;
 		cooldown = 100;
 		other.balloonbuffer = 250;

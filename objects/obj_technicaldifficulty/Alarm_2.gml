@@ -4,7 +4,7 @@ with (playerid)
 	if (!isgustavo)
 		state = states.normal;
 	else
-		state = 191;
+		state = states.ratmount;
 	visible = true;
 }
 with (obj_ghostfollow)

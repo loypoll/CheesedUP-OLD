@@ -27,7 +27,7 @@ if (place_meeting(x, y + 1, obj_player1) || place_meeting(x, y - 1, obj_player1)
 		playerindex = 0;
 		instance_destroy();
 	}
-	if (place_meeting(x, y - 1, obj_player1) && ((obj_player1.state == 198 && obj_player1.vsp > 0) || obj_player1.state == states.knightpep || obj_player1.state == states.hookshot))
+	if (place_meeting(x, y - 1, obj_player1) && ((obj_player1.state == states.ratmountbounce && obj_player1.vsp > 0) || obj_player1.state == states.knightpep || obj_player1.state == states.hookshot))
 	{
 		playerindex = 0;
 		instance_destroy();

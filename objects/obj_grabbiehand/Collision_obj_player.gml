@@ -33,7 +33,7 @@ if (state != 55 && other.state != states.bombgrab && x == xstart && y == ystart)
 		}
 		else if (tauntstoredstate == 104)
 			sprite_index = spr_mach;
-		else if (tauntstoredstate == 121)
+		else if (tauntstoredstate == states.mach3)
 			sprite_index = spr_mach4;
 	}
 }

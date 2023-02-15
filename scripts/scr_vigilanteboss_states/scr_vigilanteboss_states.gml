@@ -108,7 +108,7 @@ function boss_vigilante_decide_attack()
 		{
 			if (hitstate != states.boss_superattack)
 			{
-				state = 158;
+				state = states.boss_superattackstart;
 				duelintro_buffer = duelintro_max;
 				movespeed = 0;
 				with (obj_bosshitbox)
@@ -117,7 +117,7 @@ function boss_vigilante_decide_attack()
 				{
 					if (object_index == obj_player1 || global.coop)
 					{
-						state = 158;
+						state = states.boss_superattackstart;
 						movespeed = 0;
 					}
 				}
@@ -131,7 +131,7 @@ function boss_vigilante_decide_attack()
 			else if (grounded)
 			{
 				sprite_index = idlespr;
-				state = 158;
+				state = states.boss_superattackstart;
 			}
 		}
 	}

@@ -1,9 +1,9 @@
 if (!trapped)
 {
-	if (comeback == 1 && obj_player1.state != 259 && obj_player1.sprite_index != spr_lonegustavo_hurt && obj_player1.state != 197)
+	if (comeback == 1 && obj_player1.state != 259 && obj_player1.sprite_index != spr_lonegustavo_hurt && obj_player1.state != states.ratmountgroundpound)
 	{
 		other.brick = true;
-		if (other.state != 260 && other.state != states.backbreaker && other.state != states.bump && other.state != 196)
+		if (other.state != 260 && other.state != states.backbreaker && other.state != states.bump && other.state != states.ratmounthurt)
 		{
 			if (!other.grounded)
 				other.sprite_index = spr_player_ratmountfall;

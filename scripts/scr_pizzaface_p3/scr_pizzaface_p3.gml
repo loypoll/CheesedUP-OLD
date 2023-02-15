@@ -323,13 +323,13 @@ function scr_pizzaface_p3_stomp()
 			}
 			else if (grounded && vsp > 0)
 			{
-				state = 165;
+				state = states.slipbanan;
 				vsp = -17;
 				movespeed = 0;
 				xscale = -other.image_xscale;
 				sprite_index = spr_rockethitwall;
 				image_index = 0;
-				state = 165;
+				state = states.slipbanan;
 				instance_create(x, y + 43, obj_bangeffect);
 			}
 		}

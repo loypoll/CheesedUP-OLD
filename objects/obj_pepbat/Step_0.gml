@@ -25,7 +25,7 @@ switch (state)
 				if (!distance_to_pos(x, y, xstart, ystart, 32, 32))
 				{
 					sprite_index = spr_pepbat_move;
-					state = 130;
+					state = states.turn;
 					hit = false;
 				}
 				else
@@ -68,7 +68,7 @@ switch (state)
 		if (hit || distance_to_point(xstart, ystart) > 800)
 		{
 			hit = false;
-			state = 130;
+			state = states.turn;
 		}
 		break;
 	case states.land:

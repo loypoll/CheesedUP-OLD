@@ -72,7 +72,7 @@ if (cigar == 0)
 	stompedspr = spr_sausagemannocigar_stomped;
 	grabbedspr = spr_sausagemannocigar_grabbed;
 }
-if (cigar == 1 && cigarcreate == 0 && (state == states.idle || state == states.walk || state == 130 || state == 136))
+if (cigar == 1 && cigarcreate == 0 && (state == states.idle || state == states.walk || state == states.turn || state == states.land))
 {
 	cigarcreate = true;
 	with (instance_create(x, y, obj_sausagemancigar))

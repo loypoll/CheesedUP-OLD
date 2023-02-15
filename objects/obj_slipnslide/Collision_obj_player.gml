@@ -11,7 +11,7 @@ with (other)
 			movespeed = 14;
 		hsp = movespeed * xscale;
 		image_index = 0;
-		state = 165;
+		state = states.slipbanan;
 	}
 	instance_destroy(other);
 }

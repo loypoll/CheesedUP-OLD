@@ -25,9 +25,9 @@ if (stompbuffer > 0)
 	stompbuffer--;
 if (!thrown && killbyenemybuffer > 0)
 	killbyenemybuffer--;
-if (sprite_index == walkspr && state != 141 && floor(image_index) != (image_number - 1))
+if (sprite_index == walkspr && state != states.chase && floor(image_index) != (image_number - 1))
 	steppy = false;
-if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && grounded && vsp > 0 && floor(image_index) == (image_number - 1) && !steppy && object_index != obj_ghoul && state != 141)
+if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && grounded && vsp > 0 && floor(image_index) == (image_number - 1) && !steppy && object_index != obj_ghoul && state != states.chase)
 {
 	steppy = true;
 	var _yy = y + 43;

@@ -1218,7 +1218,7 @@ if ((state == states.normal || state == states.ratmount) && obj_player1.spotligh
 			playerid = other.object_index;
 	}
 }
-if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != 165 && !instance_exists(speedlineseffectid) && !cutscene && (collision_flags & 1) <= 0)
+if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.slipbanan && !instance_exists(speedlineseffectid) && !cutscene && (collision_flags & 1) <= 0)
 {
 	with (instance_create(x, y, obj_speedlines))
 	{

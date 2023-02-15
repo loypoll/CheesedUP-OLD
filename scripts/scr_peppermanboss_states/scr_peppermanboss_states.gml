@@ -17,7 +17,7 @@ function pepperman_decide_attack_phase6()
 		attack_cooldown = attack_max[phase - 1];
 		readjusting = false;
 		if (hp <= superattack_hpthreshold)
-			state = states.boss_superattackstart;
+			state == states.boss_superattackstart;
 		if (state != states.boss_superattackstart)
 		{
 			var fakephase = irandom(100);
@@ -385,7 +385,7 @@ function boss_pepperman_charge()
 	hsp = 0;
 	if (image_index > (image_number - 1))
 	{
-		state = 157;
+		state = states.boss_supershoulderbash;
 		sprite_index = spr_pepperman_shoulderloop;
 		image_index = 0;
 		hsp = image_xscale * (shoulder_spd * 2);

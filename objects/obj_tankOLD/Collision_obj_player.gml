@@ -1,5 +1,5 @@
 var baddie = id;
-if (state != 141)
+if (state != states.chase)
 {
 	with (other)
 	{
@@ -23,7 +23,7 @@ if (state != 141)
 					sprite_index = spr_stompprep;
 			}
 		}
-		if (y >= other.y && other.thrown == 0 && other.stuntouchbuffer == 0 && other.vsp > 0 && state != states.bump && other.state != 141)
+		if (y >= other.y && other.thrown == 0 && other.stuntouchbuffer == 0 && other.vsp > 0 && state != states.bump && other.state != states.chase)
 		{
 			if (state != 51 && state != states.mach1 && state != 102)
 				movespeed = 0;

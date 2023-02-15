@@ -170,4 +170,4 @@ if (hitstate == 160 || state == 160)
 		}
 	}
 }
-attacking = state == 1 || state == states.mach1 || state == states.charge || state == states.punch || state == 164 || state == 166 || state == states.freefall || state == 82 || state == states.handstandjump || state == 160 || state == 158 || state == 102;
+attacking = state == 1 || state == states.mach1 || state == states.charge || state == states.punch || state == 164 || state == 166 || state == states.freefall || state == 82 || state == states.handstandjump || state == 160 || state == states.boss_superattackstart || state == 102;

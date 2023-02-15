@@ -250,7 +250,7 @@ switch (state)
 				}
 				break;
 			case spr_tv_hurtG:
-				if (obj_player1.state != 196)
+				if (obj_player1.state != states.ratmounthurt)
 				{
 					if (expressionbuffer > 0)
 						expressionbuffer--;

@@ -36,7 +36,7 @@ switch (state)
 						create_debris(x + (xscale * 30), y + random_range(-8, 8), spr_cheesechunk);
 				}
 			}
-			if (playerid.state != 15)
+			if (playerid.state != states.hook)
 			{
 				launch_hsp = sign(playerid.hsp) * 3;
 				launch_vsp = -20;
@@ -57,7 +57,7 @@ switch (state)
 					else
 						movespeeddeccel = 0.5;
 				}
-				state = 15;
+				state = states.hook;
 			}
 		}
 		break;
@@ -108,7 +108,7 @@ switch (state)
 					{
 						if (y > other.y + (other.maxhandlen / 2) && vsp > 0 && y > other.y)
 						{
-							other.state = 19;
+							other.state = states.hookshot;
 							other.shootbuffer = 60;
 							other.launch_dir = point_direction(0, 0, other.launch_hsp, other.launch_vsp);
 							stringid = other.id;
@@ -171,7 +171,7 @@ switch (state)
 				state = 92;
 				with (other)
 				{
-					state = 8;
+					state = states.transition;
 					shootbuffer = 80;
 				}
 				notification_push(notifs.mrpinch_launch, [room, other.id, id]);

@@ -6,7 +6,7 @@ if (playerid.visible == 0)
 	{
 		fmod_event_one_shot("event:/sfx/misc/taxibeep");
 		if (isgustavo)
-			state = 191;
+			state = states.ratmount;
 		else
 			state = states.normal;
 		instance_create(x, y, obj_genericpoofeffect);

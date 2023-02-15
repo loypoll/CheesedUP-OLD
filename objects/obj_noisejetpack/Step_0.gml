@@ -5,7 +5,7 @@ switch (state)
 			cutscenebuffer--;
 		else
 		{
-			state = 135;
+			state = states.fall;
 			instance_destroy(effectid);
 		}
 		break;

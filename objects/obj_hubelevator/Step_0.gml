@@ -22,7 +22,7 @@ switch (state)
 						{
 							state = states.normal;
 							if (other.isgustavo)
-								state = 191;
+								state = states.ratmount;
 							movespeed = 0;
 						}
 					}

@@ -65,14 +65,14 @@ switch state
 							flash = true;
 							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
 						}
-						if (state == 121 || (state == states.machslide && sprite_index == spr_mach3boost))
+						if (state == states.mach3 || (state == states.machslide && sprite_index == spr_mach3boost))
 							launch = 1
 						if (state == states.machslide && sprite_index == spr_mach3boost && launch)
 							movespeed -= 0.6
-						if (state == 121 && movespeed > 15)
+						if (state == states.mach3 && movespeed > 15)
 							movespeed = 15
 						freefallsmash = 0
-						if (state == 78 || state == 37 || state == 99 || state == 97 || state == 123 || y < other.y - 400)
+						if (state == 78 || state == 37 || state == 99 || state == 97 || state == states.Sjumpland || y < other.y - 400)
 						{
 							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
 							vsp = -4
@@ -220,7 +220,7 @@ if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && ob
 		fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
 		brick = 0
 		sprite_index = spr_lonegustavo_idle
-		state = 191
+		state = states.ratmount
 	}
 }
 if (state != states.stun)

@@ -6,7 +6,7 @@ switch (state)
 	case 8:
 		if (floor(image_index) == (image_number - 1))
 		{
-			state = 135;
+			state = states.fall;
 			sprite_index = spr_grabbiehand_fall;
 		}
 		break;
@@ -75,7 +75,7 @@ switch (state)
 					sprite_index = spr_boxxedpep_air;
 				if (tauntstoredstate == 104)
 					sprite_index = spr_mach;
-				else if (tauntstoredstate == 121)
+				else if (tauntstoredstate == states.mach3)
 					sprite_index = spr_mach4;
 			}
 		}

@@ -25,7 +25,7 @@ if (state != states.stun)
 		state = 206;
 		with (other)
 		{
-			state = 196;
+			state = states.ratmounthurt;
 			xscale = -other.image_xscale;
 			movespeed = 6;
 			vsp = -10;

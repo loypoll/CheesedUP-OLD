@@ -5,7 +5,7 @@ if (obj_player.isgustavo == 0)
 }
 if (!trapped)
 {
-	if (obj_player1.state == 202 || obj_player1.state == 261 || obj_player1.state == 260)
+	if (obj_player1.state == states.ratmountgrind || obj_player1.state == 261 || obj_player1.state == 260)
 	{
 		wait = true;
 		sprite_index = spr_lonebrick_wait;

@@ -9,7 +9,7 @@ with (other)
 		if ((y % 2) == 1)
 			y -= 1;
 	}
-	if (key_up && ladderbuffer == 0 && (state == states.ratmountjump || state == 198 || state == 191))
+	if (key_up && ladderbuffer == 0 && (state == states.ratmountjump || state == states.ratmountbounce || state == states.ratmount))
 	{
 		input_buffer_jump = 0;
 		state = 261;

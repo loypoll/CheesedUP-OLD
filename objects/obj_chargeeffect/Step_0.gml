@@ -5,7 +5,7 @@ x = playerid.x + (((playerid.sprite_index == spr_player_Sjumpcancel) ? 20 : 0) *
 y = playerid.y - (playerid.character == "M" ? 10 : 0);
 if (playerid.state == states.rocket)
 	x = playerid.x + (playerid.xscale * 18);
-if (playerid.state == 191)
+if (playerid.state == states.ratmount)
 	x = playerid.x + (playerid.xscale * 18);
 visible = !(room == rank_room);
 if (place_meeting(x, y, obj_secretportal) || place_meeting(x, y, obj_secretportalstart))

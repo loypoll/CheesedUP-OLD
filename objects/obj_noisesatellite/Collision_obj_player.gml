@@ -87,11 +87,11 @@ if (state != states.grabbed)
 			other.image_xscale = -xscale;
 			other.hsp = -other.image_xscale * 4;
 			other.vsp = -4;
-			if (other.state == states.walk || other.state == 130)
+			if (other.state == states.walk || other.state == states.turn)
 				other.state = states.idle;
 			image_index = 0;
 			state = states.bump;
-			if (other.state == 136)
+			if (other.state == states.land)
 				other.state = states.idle;
 		}
 	}

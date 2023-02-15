@@ -1,6 +1,6 @@
 if (global.switchbuffer > 0)
 	global.switchbuffer--;
-if (sprite_index == spr_peppinoswitch2 && instance_exists(obj_charswitch_intro) && obj_charswitch_intro.state != 135)
+if (sprite_index == spr_peppinoswitch2 && instance_exists(obj_charswitch_intro) && obj_charswitch_intro.state != states.fall)
 	image_index = 0;
 if (sprite_index == spr_peppinoswitch2 && floor(image_index) == (image_number - 1))
 {

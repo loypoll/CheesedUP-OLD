@@ -7,7 +7,7 @@ if ((other.state != states.tumble || (other.sprite_index != other.spr_tumble && 
 		other.y = y - 49;
 		other.state = states.grind;
 	}
-	else if (other.state != 202)
+	else if (other.state != states.ratmountgrind)
 	{
 		with (other)
 		{
@@ -30,6 +30,6 @@ if ((other.state != states.tumble || (other.sprite_index != other.spr_tumble && 
 			}
 		}
 		other.y = y + 8;
-		other.state = 202;
+		other.state = states.ratmountgrind;
 	}
 }

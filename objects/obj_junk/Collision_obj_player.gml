@@ -12,11 +12,11 @@ if (!grabbed && (other.state == states.handstandjump || other.state == states.pu
 	playerid = other.object_index;
 	grabbed = true;
 }
-if (!grabbed && unpickable == 0 && !ratgrabbed && other.state == 193)
+if (!grabbed && unpickable == 0 && !ratgrabbed && other.state == states.ratmountattack)
 {
 	ratplayerid = other.id;
 	ratgrabbed = true;
 	state = 205;
 	other.ratgrabbedID = id;
-	other.state = 191;
+	other.state = states.ratmount;
 }

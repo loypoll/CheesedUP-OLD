@@ -21,7 +21,7 @@ if (state == states.walk)
 	}
 	else
 	{
-		state = 141;
+		state = states.chase;
 		sprite_index = walkspr;
 		image_index = 0;
 	}

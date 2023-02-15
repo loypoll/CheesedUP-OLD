@@ -8,7 +8,7 @@ if (!first)
 		obj_savesystem.ini_str = ini_close();
 		with (instance_create(obj_stick_target.x, camera_get_view_y(view_camera[0]) - 100, obj_stick))
 		{
-			state = 135;
+			state = states.fall;
 			sprite_index = spr_stick_helicopter;
 			maxscore = other.maxscore;
 			save = other.save;

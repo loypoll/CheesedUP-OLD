@@ -30,7 +30,7 @@ if (state == states.charge)
 		ram_spd = 0;
 		sprite_index = spr_tank_charge;
 		image_index = 0;
-		state = 141;
+		state = states.chase;
 	}
 }
 if (state == states.idle)

@@ -10,7 +10,7 @@ if (state == states.transition)
 		state = states.normal;
 	}
 }
-else if (state == 135)
+else if (state == states.fall)
 {
 	y += movespeed;
 	movespeed = Approach(movespeed, 8, 2);
@@ -24,6 +24,6 @@ else if (collect > 0)
 }
 else
 {
-	state = 135;
+	state = states.fall;
 	movespeed = -2;
 }

@@ -89,7 +89,7 @@ if (state == states.idle)
 	if (sprite_index == scaredspr)
 	{
 		if (image_index > (image_number - 1))
-			state = 141;
+			state = states.chase;
 	}
 	else
 	{
@@ -97,7 +97,7 @@ if (state == states.idle)
 		image_speed = 0.35;
 	}
 }
-if (state != states.idle && state != 189 && state != states.grabbed && state != states.hit && state != states.stun && state != 141 && !running)
+if (state != states.idle && state != 189 && state != states.grabbed && state != states.hit && state != states.stun && state != states.chase && !running)
 {
 	if ((x < (targetplayer.x + threshold_x) && x > (targetplayer.x - threshold_x)) && (y < (targetplayer.y + threshold_y) && y > (targetplayer.y - threshold_y)))
 	{

@@ -39,7 +39,7 @@ switch (sprite_index)
 						vsp = (character == "P") ? -5 : -7;
 					}
 					else if (isgustavo)
-						state = 191;
+						state = states.ratmount;
 					else
 					{
 						if (state == states.knightpep)

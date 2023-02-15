@@ -100,7 +100,7 @@ with (other)
 				other.buffer = 30;
 				ratmount_movespeed = 14;
 				gustavodash = 51;
-				state = 191;
+				state = states.ratmount;
 				if (abs(movespeed) < 14)
 					movespeed = other.image_xscale * 14;
 				gusdashpadbuffer = 25;

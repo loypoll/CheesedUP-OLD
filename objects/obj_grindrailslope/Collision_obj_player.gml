@@ -16,6 +16,6 @@ if ((other.y > other.yprevious || (other.xscale == sign(image_xscale) && other.y
 	else
 	{
 		other.y = y + 8;
-		other.state = 202;
+		other.state = states.ratmountgrind;
 	}
 }
