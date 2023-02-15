@@ -3,7 +3,7 @@
   "resourceVersion": "1.1",
   "name": "Windows",
   "option_windows_display_name": "Pizza Tower",
-  "option_windows_executable_name": "${project_name}.exe",
+  "option_windows_executable_name": "PizzaTower.exe",
   "option_windows_version": "1.0.0.0",
   "option_windows_company_info": "",
   "option_windows_product_info": "Pizza Tower",

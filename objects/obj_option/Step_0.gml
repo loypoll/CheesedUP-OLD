@@ -42,14 +42,14 @@ var option = m.options[optionselected];
 var move2 = key_left2 + key_right2;
 switch (option.type)
 {
-	case 2:
+	case (2 << 0):
 		if (key_jump && option.func != -4)
 		{
 			fmod_event_one_shot("event:/sfx/ui/select");
 			option.func();
 		}
 		break;
-	case 0:
+	case (0 << 0):
 		if (key_jump || -key_left2 || key_right2)
 		{
 			fmod_event_one_shot("event:/sfx/ui/select");
@@ -58,7 +58,7 @@ switch (option.type)
 				option.on_changed(option.value);
 		}
 		break;
-	case 1:
+	case (1 << 0):
 		if (move2 != 0)
 		{
 			fmod_event_one_shot("event:/sfx/ui/step");
@@ -71,7 +71,7 @@ switch (option.type)
 				option.on_changed(option.values[option.value].value);
 		}
 		break;
-	case 3:
+	case (3 << 0):
 		move2 = key_left + key_right;
 		if (move2 != 0 && slidebuffer <= 0)
 		{

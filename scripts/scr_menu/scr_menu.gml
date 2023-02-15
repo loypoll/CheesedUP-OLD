@@ -42,7 +42,7 @@ function add_option_toggle(_menu, _optionid, _name, _onchanged = noone)
 	var b = 
 	{
 		option_id: _optionid,
-		type: (2 << 0),
+		type: (0 << 0),
 		value: false,
 		name: _name,
 		on_changed: _onchanged
