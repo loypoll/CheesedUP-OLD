@@ -25,7 +25,7 @@ if (state != states.chase)
 		}
 		if (y >= other.y && other.thrown == 0 && other.stuntouchbuffer == 0 && other.vsp > 0 && state != states.bump && other.state != states.chase)
 		{
-			if (state != states.bombpep && state != states.mach1 && state != 102)
+			if (state != states.bombpep && state != states.mach1 && state != states.crouchslide)
 				movespeed = 0;
 			var _xs = sign(x - baddie.x);
 			if (floor(_xs) == 0)

@@ -18,7 +18,7 @@ else if (state == 2)
 	{
 		if (check_player_coop())
 		{
-			state = 225;
+			state = states.animatronic;
 			x = roomstartx;
 			y = roomstarty;
 		}

@@ -2,11 +2,11 @@ if (place_meeting(x, y - 1, obj_player))
 {
 	with (obj_player)
 	{
-		if (state != states.gotoplayer && state != 210 && state != 209 && state != states.mach3 && state != states.parry && sprite_index != spr_mach3boost)
+		if (state != states.gotoplayer && state != states.trashjump && state != states.trashjumpprep && state != states.mach3 && state != states.parry && sprite_index != spr_mach3boost)
 		{
 			if (place_meeting(x, y + 1, other))
 			{
-				if (state != 211)
+				if (state != states.trashroll)
 				{
 					fmod_event_one_shot("event:/sfx/misc/watersplash");
 					scr_losepoints();

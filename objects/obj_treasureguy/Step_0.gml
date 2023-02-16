@@ -56,7 +56,7 @@ switch (state)
 		}
 		break;
 }
-if (state == 189)
+if (state == states.underground)
 {
 	parryable = false;
 	supertauntable = false;
@@ -97,7 +97,7 @@ if (state == states.idle)
 		image_speed = 0.35;
 	}
 }
-if (state != states.idle && state != 189 && state != states.grabbed && state != states.hit && state != states.stun && state != states.chase && !running)
+if (state != states.idle && state != states.underground && state != states.grabbed && state != states.hit && state != states.stun && state != states.chase && !running)
 {
 	if ((x < (targetplayer.x + threshold_x) && x > (targetplayer.x - threshold_x)) && (y < (targetplayer.y + threshold_y) && y > (targetplayer.y - threshold_y)))
 	{
@@ -157,7 +157,7 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
-if (state == 189)
+if (state == states.underground)
 {
 	invincible = true;
 	if (sprite_index != spr_minijohn_underground && sprite_index != spr_minijohn_undergroundout)

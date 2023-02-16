@@ -698,7 +698,7 @@ function scr_vigilante_mach2()
 		{
 			fmod_event_instance_play(snd_slide);
 			image_alpha = 1;
-			state = states.mach2;
+			state = states.crouchslide;
 			kick = false;
 			attackspeed = 12;
 			sprite_index = spr_playerV_divekickstart;

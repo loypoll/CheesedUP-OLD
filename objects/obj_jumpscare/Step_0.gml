@@ -16,7 +16,7 @@ if (sprite_index == spr_tvstatic)
 		with (obj_player)
 		{
 			if (state == states.actor)
-				state = 225;
+				state = states.animatronic;
 		}
 		fmod_event_one_shot("event:/sfx/ui/tvswitchback");
 		instance_destroy();

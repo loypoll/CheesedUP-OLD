@@ -6,17 +6,17 @@ switch (state)
 	case 0:
 		with (obj_player)
 		{
-			if (other.state == states.normal && state != 209 && other.trashbuffer <= 0 && place_meeting(x, y, other))
+			if (other.state == states.normal && state != states.trashjumpprep && other.trashbuffer <= 0 && place_meeting(x, y, other))
 			{
 				scr_fmod_soundeffect(global.snd_trashjump1, other.x, other.y);
-				state = 209;
+				state = states.trashjumpprep;
 				sprite_index = spr_player_trashstart;
 				gravesurfingjumpbuffer = 0;
 				image_index = 0;
 				xscale = other.image_xscale;
 				other.shot = false;
 				other.playerid = id;
-				other.state = 209;
+				other.state = states.trashjumpprep;
 				other.sprite_index = spr_trash_flingstart;
 				other.image_index = 0;
 			}
@@ -68,7 +68,7 @@ switch (state)
 					sprite_index = spr_player_trashjump;
 					image_index = 0;
 					movespeed = 0;
-					state = 210;
+					state = states.trashjump;
 					vsp = -25;
 					fmod_event_one_shot_3d("event:/sfx/misc/trashjump2", x, y + vsp);
 					instance_create(x, y, obj_speedlinesup);

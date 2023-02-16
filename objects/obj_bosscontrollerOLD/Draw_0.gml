@@ -11,7 +11,7 @@ if (state == states.transition || state == states.victory || state == states.gam
 var _super_bg = false;
 with (obj_player)
 {
-	if (state == 252 && superattackstate == 80)
+	if (state == states.playersuperattack && superattackstate == 80)
 		_super_bg = true;
 }
 if (_super_bg)

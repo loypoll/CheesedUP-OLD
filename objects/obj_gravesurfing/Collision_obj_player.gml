@@ -26,7 +26,7 @@ if (buffer <= 0 && other.state != states.ghost)
 		}
 		with (instance_create(x, y, obj_gravecorpse))
 			playerid = other.id;
-		state = 211;
+		state = states.trashroll;
 		repeat (5)
 		{
 			with (create_debris(x, y, spr_graveyarddebris2, false))

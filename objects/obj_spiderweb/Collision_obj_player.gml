@@ -1,5 +1,5 @@
-if (active && other.state != 216)
+if (active && other.state != states.spiderweb)
 {
-	other.state = 216;
+	other.state = states.spiderweb;
 	other.webID = id;
 }

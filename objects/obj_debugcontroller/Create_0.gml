@@ -96,7 +96,7 @@ if (DEBUG)
 	NOCLIP = new DebugCommand("noclip", "", "", function()
 	{
 		with (obj_player1)
-			state = 208;
+			state = states.debugstate;
 	});
 	GIVEKEY = new DebugCommand("givekey", "", "", function()
 	{

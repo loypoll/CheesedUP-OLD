@@ -11,7 +11,7 @@ if (!instance_exists(obj_noisey))
 		}
 		sprite_index = spr_player_ratmountgroundpound;
 		image_index = 0;
-		state = 294;
+		state = states.pizzaheadjump;
 		hsp = 0;
 		vsp = -20;
 		var b = -4;

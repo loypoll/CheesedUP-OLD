@@ -12,7 +12,7 @@ switch (state)
 			image_index = 0;
 		}
 		if (floor(image_index) == (image_number - 1))
-			state = 220;
+			state = states.robotchase;
 		break;
 	case 219:
 		sprite_index = spr_monstertomato_idle;
@@ -46,7 +46,7 @@ switch (state)
 						monster_pos[other.monsterid].x = last_puppet_pos.x;
 						monster_pos[other.monsterid].y = last_puppet_pos.y;
 					}
-					state = 217;
+					state = states.robotidle;
 				}
 				break;
 			case 141:
@@ -69,9 +69,9 @@ switch (state)
 			image_xscale = sign(playerid.x - x);
 		break;
 }
-if (state != 217)
+if (state != states.robotidle)
 	inactivebuffer = 900;
-if (state == 220)
+if (state == states.robotchase)
 {
 	if (!fmod_event_instance_is_playing(snd))
 		fmod_event_instance_play(snd);
@@ -79,5 +79,5 @@ if (state == 220)
 }
 else
 	fmod_event_instance_stop(snd, true);
-if (state == 220)
+if (state == states.robotchase)
 	depth = -100;

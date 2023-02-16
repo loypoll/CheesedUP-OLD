@@ -189,15 +189,15 @@ if (state == states.mach2)
 		fmod_event_instance_play(mach2snd);
 	snd = true;
 }
-if (state == 91 && image_index > 8)
+if (state == states.tackle && image_index > 8)
 {
 	if (snd == 0)
 		fmod_event_instance_play(tacklesnd);
 	snd = true;
 }
-if (state != states.slap && state != states.mach2 && state != 91)
+if (state != states.slap && state != states.mach2 && state != states.tackle)
 	snd = false;
-if (state == states.mach2 || (state == states.slap && image_index > 11) || (state == 91 && image_index > 8))
+if (state == states.mach2 || (state == states.slap && image_index > 11) || (state == states.tackle && image_index > 8))
 {
 	if (!hitboxcreate)
 	{
@@ -206,7 +206,7 @@ if (state == states.mach2 || (state == states.slap && image_index > 11) || (stat
 		{
 			if (other.state == states.slap)
 				sprite_index = spr_swordhitbox;
-			else if (other.state == states.mach2 || other.state == 91)
+			else if (other.state == states.mach2 || other.state == states.tackle)
 				sprite_index = spr_bighitbox;
 			ID = other.id;
 		}

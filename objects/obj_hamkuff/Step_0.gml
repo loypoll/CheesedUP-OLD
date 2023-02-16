@@ -41,9 +41,9 @@ switch state
 							hsp_carry = _xs * abs(m)
 						else
 							hsp_carry = -hsp
-						if (state != 106 && state != 121 && state != states.mach2 && state != states.machslide && abs(x - other.x) > dis + abs(movespeed) + 1)
+						if (state != states.bump && state != 121 && state != states.mach2 && state != states.machslide && abs(x - other.x) > dis + abs(movespeed) + 1)
 						{
-							state = 106
+							state = states.bump
 							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
 							sprite_index = spr_bump
 							if (x != other.x)
@@ -72,12 +72,12 @@ switch state
 						if (state == states.mach3 && movespeed > 15)
 							movespeed = 15
 						freefallsmash = 0
-						if (state == states.grind || state == states.climbwall || state == 99 || state == 97 || state == states.Sjumpland || y < other.y - 400)
+						if (state == states.grind || state == states.climbwall || state == states.Sjumpprep || state == states.Sjump || state == states.Sjumpland || y < other.y - 400)
 						{
 							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
 							vsp = -4
 							hsp = -3 * xscale
-							state = 106
+							state = states.bump
 							sprite_index = spr_bump
 							image_index = 0
 						}
@@ -105,7 +105,7 @@ switch state
 							{
 								x = tx
 								y = ty
-								state = 92
+								state = states.jump
 								other.attract_player = 0
 							}
 						}
@@ -178,12 +178,12 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id
 }
-if (state != states.walk && state != 206)
+if (state != states.walk && state != states.blockstance)
 	attract_player = 0
 var _dis = 300
-if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != 292 && obj_player1.state != 119 && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
+if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != states.spaceshuttle && obj_player1.state != states.taxi && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
 {
-	state = 206
+	state = states.blockstance
 	sprite_index = spr_hamkuff_chain1
 	var x1 = obj_player1.x
 	var y1 = obj_player1.y

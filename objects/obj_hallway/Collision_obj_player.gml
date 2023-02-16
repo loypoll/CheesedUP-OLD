@@ -1,4 +1,4 @@
-if (obj_player1.state == 208)
+if (obj_player1.state == states.debugstate)
 	exit;
 if (obj_player1.state == states.backtohub)
 	exit;

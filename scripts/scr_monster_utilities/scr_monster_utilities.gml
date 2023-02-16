@@ -8,7 +8,7 @@ function scr_monster_deactivate(stopmusic = true)
 		yscale = 1;
 		if (grav < 0)
 			grav *= -1;
-		state = 217;
+		state = states.robotidle;
 		event_perform(ev_other, ev_room_start);
 	}
 	with (obj_objecticontracker)

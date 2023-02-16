@@ -44,12 +44,12 @@ switch (state)
 				vsp = 10;
 				with (playerid)
 				{
-					if (state == 210 || state == 209)
+					if (state == states.trashjump || state == states.trashjumpprep)
 						create_debris(x, y, spr_player_trashlid);
 					tauntstoredstate = state;
 					tauntstoredmovespeed = movespeed;
 					tauntstoredsprite = sprite_index;
-					state = 214;
+					state = states.stringfall;
 					stringid = other.id;
 					movespeed = hsp;
 					other.previousx = x;
@@ -75,14 +75,14 @@ switch (state)
 			state = 0;
 			with (playerid)
 			{
-				if (state == 214)
+				if (state == states.stringfall)
 				{
 					if (tauntstoredstate == 26)
 						state = states.cheesepepjump;
 					else
 					{
 						sprite_index = spr_machfreefall;
-						state = 92;
+						state = states.jump;
 					}
 				}
 			}
@@ -99,7 +99,7 @@ switch (state)
 				{
 					sprite_index = spr_player_mrpinch;
 					stringid = other.id;
-					state = 214;
+					state = states.stringfall;
 					if (grounded && vsp > 0)
 					{
 						hsp_carry = sign(other.x - x) * 4;
@@ -169,7 +169,7 @@ switch (state)
 				momemtum = true;
 				jumpstop = true;
 				sprite_index = spr_machfreefall;
-				state = 92;
+				state = states.jump;
 				with (other)
 				{
 					state = states.transition;

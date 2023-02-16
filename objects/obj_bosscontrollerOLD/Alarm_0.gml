@@ -2,7 +2,7 @@ if (state == states.transition)
 	exit;
 if (state == states.victory)
 	exit;
-if (obj_player.state != 252)
+if (obj_player.state != states.playersuperattack)
 {
 	round_timer--;
 	if (round_timer <= 0)
@@ -16,7 +16,7 @@ if (obj_player.state != 252)
 			round_count++;
 			minutes = maxminutes;
 			seconds = maxseconds;
-			state = 145;
+			state = states.arenaround;
 			timer_buffer = timer_max;
 			bell_sprite = spr_bosstimer_hitbell;
 			bell_index = 0;
@@ -26,7 +26,7 @@ if (obj_player.state != 252)
 				phase++;
 				phase = clamp(phase, 0, max_phase);
 				if (colliding && state != 180 && state != 181)
-					state = 145;
+					state = states.arenaround;
 			}
 		}
 		else if (instance_exists(bossID))
@@ -66,5 +66,5 @@ if (obj_player.state != 252)
 		}
 	}
 }
-if (state != 145 && state != states.victory && state != states.transition)
+if (state != states.arenaround && state != states.victory && state != states.transition)
 	alarm[0] = 1;

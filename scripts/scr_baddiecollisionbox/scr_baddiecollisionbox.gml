@@ -122,7 +122,7 @@ function baddiecollisionbox_update(player)
 			}
 			if (instance_exists(other.baddieID) && !pepp_grab && !_stagger && !_destroy && other.baddieID.thrown == 0 && other.baddieID.stuntouchbuffer == 0 && other.baddieID.vsp > 0 && state != states.faceplant && state != states.punch && state != states.tackle && state != states.superslam && state != states.pogo && state != states.machslide && state != states.pummel && other.baddieID.state != states.grabbed && other.baddieID.state != states.pummel && state != states.freefall && state != states.grab && state != states.mach2 && state != states.handstandjump && state != states.hurt && other.baddieID.state != states.chase && state != states.mach3 && state != states.machroll && state != states.climbwall && other.baddieID.bumpable && !other.baddieID.invincible)
 			{
-				if (state != states.bombpep && state != states.mach1 && state != 102 && character != "M")
+				if (state != states.bombpep && state != states.mach1 && state != states.crouchslide && character != "M")
 					movespeed = 0;
 				other.baddieID.stuntouchbuffer = 50;
 				if (other.baddieID.object_index == obj_pizzaball)

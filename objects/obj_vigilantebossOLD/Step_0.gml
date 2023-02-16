@@ -1,10 +1,10 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-if (hp <= 0 && state != 145 && state != 162)
+if (hp <= 0 && state != states.arenaround && state != 162)
 {
 	if (!thrown && !destroyable)
 		boss_destroy(lastplayerid);
 }
-if ((state == states.mach1 || state == states.machslide || state == 102 || state == states.uppunch || state == states.punch || state == 166 || state == states.handstandjump) && alarm[0] <= 0)
+if ((state == states.mach1 || state == states.machslide || state == states.crouchslide || state == states.uppunch || state == states.punch || state == 166 || state == states.handstandjump) && alarm[0] <= 0)
 	alarm[0] = 6;
 if (chooseparry_buffer > 0)
 	chooseparry_buffer--;
@@ -161,7 +161,7 @@ if (hitstate == 160 || state == 160)
 {
 	with (lastplayerid)
 	{
-		if (state != states.hit && state != 156)
+		if (state != states.hit && state != states.thrown)
 		{
 			if (sprite_index == spr_player_pistolshot && image_index > (image_number - 1))
 				sprite_index = spr_player_pistolidle;
@@ -170,4 +170,4 @@ if (hitstate == 160 || state == 160)
 		}
 	}
 }
-attacking = state == 1 || state == states.mach1 || state == states.charge || state == states.punch || state == 164 || state == 166 || state == states.freefall || state == states.uppunch || state == states.handstandjump || state == 160 || state == states.boss_superattackstart || state == 102;
+attacking = state == 1 || state == states.mach1 || state == states.charge || state == states.punch || state == 164 || state == 166 || state == states.freefall || state == states.uppunch || state == states.handstandjump || state == 160 || state == states.boss_superattackstart || state == states.crouchslide;

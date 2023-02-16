@@ -2,7 +2,7 @@ if (player < 0)
 {
 	if (start == 1)
 	{
-		if (other.state != 297 && other.state != states.backbreaker && other.state != states.chainsaw && other.state != states.hit && other.state != states.gotoplayer)
+		if (other.state != states.teleport && other.state != states.backbreaker && other.state != states.chainsaw && other.state != states.hit && other.state != states.gotoplayer)
 		{
 			fmod_event_one_shot_3d("event:/sfx/misc/teleporterstart", x, y);
 			player = other.id;
@@ -25,7 +25,7 @@ if (player < 0)
 			player.alarm[7] = 50;
 			player.alarm[5] = 2;
 			player.hurted = true;
-			player.state = 297;
+			player.state = states.teleport;
 			with (instance_create(player.x, player.y, obj_parryeffect))
 				sprite_index = spr_peppinoteleporteffect;
 		}

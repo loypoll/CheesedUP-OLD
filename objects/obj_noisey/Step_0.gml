@@ -65,7 +65,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 }
 if (state != states.stun)
 	birdcreated = false;
-if (state != 149)
+if (state != states.float)
 	scr_scareenemy();
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;

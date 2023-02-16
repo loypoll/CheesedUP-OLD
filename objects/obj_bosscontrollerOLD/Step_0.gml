@@ -59,7 +59,7 @@ switch (state)
 		if (intro_buffer > 0)
 			intro_buffer--;
 		else if (use_countdown)
-			state = 145;
+			state = states.arenaround;
 		else
 		{
 			state = states.normal;
@@ -126,7 +126,7 @@ switch (state)
 				}
 				if (colliding && state != 180 && state != 181)
 				{
-					state = 145;
+					state = states.arenaround;
 					attack_cooldown = attack_max[phase - 1];
 				}
 			}
@@ -153,7 +153,7 @@ switch (state)
 	case 0:
 		bell_sprite = spr_bosstimer_bell;
 		round_y = Approach(round_y, round_ystart, 4);
-		if (super >= supermax && obj_player.state != 252)
+		if (super >= supermax && obj_player.state != states.playersuperattack)
 		{
 			var p = false;
 			with (obj_player)
@@ -162,7 +162,7 @@ switch (state)
 				{
 					other.super = 0;
 					p = true;
-					state = 252;
+					state = states.playersuperattack;
 					superattackstate = 8;
 					var lag = 60;
 					hitX = x;
@@ -177,7 +177,7 @@ switch (state)
 						hitX = x;
 						hitY = y;
 						hitLag = lag;
-						state = 252;
+						state = states.playersuperattack;
 						sprite_index = stunfallspr;
 					}
 				}
@@ -201,7 +201,7 @@ switch (state)
 			case 2:
 				super_portrait_index += 0.35;
 				super_portrait_x += 1;
-				if (obj_player.state != 252 || obj_player.superattackstate != 8)
+				if (obj_player.state != states.playersuperattack || obj_player.superattackstate != 8)
 					super_portrait_state = 0;
 				break;
 		}
@@ -243,7 +243,7 @@ portrait1_index += 0.35;
 portrait2_index += 0.35;
 if (state == states.normal && instance_exists(bossID))
 {
-	if (obj_player1.state == states.hit || obj_player1.state == 156)
+	if (obj_player1.state == states.hit || obj_player1.state == states.thrown)
 		portrait1_sprite = portrait1_hurt;
 	else
 		portrait1_sprite = portrait1_idle;

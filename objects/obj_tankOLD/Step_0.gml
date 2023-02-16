@@ -104,7 +104,7 @@ if (state != states.stun)
 	birdcreated = false;
 if (bombreset > 0)
 	bombreset--;
-if (state == 142)
+if (state == states.spawnenemy)
 {
 	if (floor(image_index) == 5 && bombreset == 0)
 	{
@@ -162,7 +162,7 @@ if (state == states.walk && bombreset == 0 && forcespawn == 1)
 	image_index = 0;
 	if (x != targetplayer.x)
 		image_xscale = -sign(x - targetplayer.x);
-	state = 142;
+	state = states.spawnenemy;
 	forcespawn = false;
 }
 if (state == states.stun)

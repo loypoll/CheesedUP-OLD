@@ -5,7 +5,7 @@ parried = false;
 team = 1;
 function SUPER_player_hurt()
 {
-	if (!collisioned && argument1.state != 145)
+	if (!collisioned && argument1.state != states.arenaround)
 	{
 		if (instance_exists(obj_bosscontroller))
 			obj_bosscontroller.player_hp -= argument0;

@@ -21,7 +21,7 @@ function scr_deactivate_escape()
 	}
 	with (obj_arenaspawn)
 	{
-		if (state == 142 || state == 143)
+		if (state == states.spawnenemy || state == states.arena)
 		{
 			if (!ds_list_empty(baddielist))
 			{

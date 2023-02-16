@@ -1,5 +1,5 @@
 event_inherited();
-state = 145;
+state = states.arenaround;
 ds_map_set(player_hurtstates, 42, 30);
 ds_map_set(player_hurtstates, 41, 50);
 ds_map_set(player_hurtstates, 104, 20);

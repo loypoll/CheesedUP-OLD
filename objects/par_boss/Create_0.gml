@@ -139,7 +139,7 @@ function SUPER_boss_hurt()
 {
 	if (important)
 		hp -= argument0;
-	if (argument1.state != 252)
+	if (argument1.state != states.playersuperattack)
 	{
 		with (obj_bosscontroller)
 			super += 30;
@@ -206,7 +206,7 @@ function SUPER_boss_hurt_noplayer()
 {
 	if (important)
 		hp -= argument0;
-	if (obj_player.state != 252)
+	if (obj_player.state != states.playersuperattack)
 	{
 		with (obj_bosscontroller)
 			super += 30;

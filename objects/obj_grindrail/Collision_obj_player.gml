@@ -26,7 +26,7 @@ if ((other.state != states.tumble || (other.sprite_index != other.spr_tumble && 
 			with (obj_camera)
 			{
 				followtarget = other.id;
-				state = 299;
+				state = states.camera_followtarget;
 			}
 		}
 		other.y = y + 8;

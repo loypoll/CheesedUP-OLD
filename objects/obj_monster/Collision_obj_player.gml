@@ -3,7 +3,7 @@ with (obj_secretportal)
 	if (touched)
 		exit;
 }
-if (!instance_exists(obj_fadeout) && state != 217 && other.state != states.actor && other.state != states.chainsaw && other.state != states.hit && !other.cutscene && other.state != states.door && !instance_exists(obj_jumpscare))
+if (!instance_exists(obj_fadeout) && state != states.robotidle && other.state != states.actor && other.state != states.chainsaw && other.state != states.hit && !other.cutscene && other.state != states.door && !instance_exists(obj_jumpscare))
 {
 	if (!global.panic)
 	{
@@ -18,7 +18,7 @@ if (!instance_exists(obj_fadeout) && state != 217 && other.state != states.actor
 	{
 		with (obj_monster)
 		{
-			state = 217;
+			state = states.robotidle;
 			x = xstart;
 			y = ystart;
 		}

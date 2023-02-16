@@ -8,7 +8,7 @@ grounded = false;
 movespeed = 8;
 step_sound = false;
 event_inherited();
-state = 217;
+state = states.robotidle;
 use_hallway = true;
 idlespr = spr_monstershroom_idle;
 walkspr = spr_monstershroom_walk;

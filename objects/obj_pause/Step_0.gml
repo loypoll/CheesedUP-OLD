@@ -8,7 +8,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	}
 	with (obj_player)
 	{
-		if ((state == 98 && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
+		if ((state == states.victory && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
 			_cutscenehandler = true;
 	}
 	with (obj_charswitch_intro)

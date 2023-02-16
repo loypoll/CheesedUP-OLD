@@ -6,7 +6,7 @@ boss_array[3] = [480, 1];
 boss_array[4] = [80, 6];
 boss_array[5] = [474, 6];
 boss_array[6] = [480, 6];
-state = 145;
+state = states.arenaround;
 attack_pool = [174, 175, 176, 92, 177, 179, 180];
 ds_map_set(player_hurtstates, 42, 30);
 ds_map_set(player_hurtstates, 41, 50);

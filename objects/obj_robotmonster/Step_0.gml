@@ -22,7 +22,7 @@ switch (state)
 		}
 		if (floor(image_index) == (image_number - 1))
 		{
-			state = 220;
+			state = states.robotchase;
 			sprite_index = chasespr;
 		}
 		break;
@@ -35,7 +35,7 @@ switch (state)
 			image_xscale *= -1;
 		scr_monster_detect_audio();
 		if (scr_monster_detect(300, room_height, targetplayer))
-			state = 220;
+			state = states.robotchase;
 		break;
 	case 220:
 		if (sprite_index != spr_monstercheese_jump)
@@ -123,16 +123,16 @@ switch (state)
 		if (scr_monster_solid(x, y + (grav * 2)))
 		{
 			ys *= -1;
-			state = 220;
+			state = states.robotchase;
 		}
 		break;
 	case 222:
 		targetplayer = instance_nearest(x, y, obj_player);
 		hsp = image_xscale * 6;
 		if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
-			state = 219;
+			state = states.robotroaming;
 		if (scr_monster_detect(300, room_height, targetplayer))
-			state = 220;
+			state = states.robotchase;
 		break;
 	case 221:
 		scr_monsterinvestigate(10, 4129, 49);
@@ -140,7 +140,7 @@ switch (state)
 }
 if (object_index == obj_robotmonster || object_index == obj_hillbillymonster)
 {
-	if (state == 220 || state == 222 || state == 221)
+	if (state == states.robotchase || state == states.robotseeking || state == states.robotinvestigate)
 	{
 		instance_destroy(instance_place(x + hsp, y, obj_wirewall));
 		instance_destroy(instance_place(x + hsp, y, obj_destructibles));

@@ -6,11 +6,11 @@ if (other.state == states.hurt)
 	exit;
 if (other.state == states.gotoplayer)
 	exit;
-if (other.state == 214)
+if (other.state == states.stringfall)
 	exit;
-if (other.state == 213)
+if (other.state == states.stringjump)
 	exit;
-if (other.state == 212)
+if (other.state == states.stringfling)
 	exit;
 if (object_index != obj_tubeenter && other.state != states.tube)
 	exit;

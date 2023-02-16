@@ -3,7 +3,7 @@ switch (state)
 	case 0:
 		if (obj_player1.x <= x)
 		{
-			state = 145;
+			state = states.arenaround;
 			round_count = 10;
 			with (obj_arenagate)
 			{
@@ -31,7 +31,7 @@ switch (state)
 				state = states.normal;
 				image_index = 0;
 			}
-			state = 145;
+			state = states.arenaround;
 			round_count = 10;
 		}
 		break;
@@ -39,7 +39,7 @@ switch (state)
 		if (round_count > 0)
 			round_count--;
 		else
-			state = 142;
+			state = states.spawnenemy;
 		break;
 	case 142:
 		if (!ds_list_empty(baddielist))
@@ -67,7 +67,7 @@ switch (state)
 		wave_minutes = minutes;
 		wave_seconds = seconds;
 		round_count = round_max;
-		state = 143;
+		state = states.arena;
 		with (obj_arenadoor)
 		{
 			wave = other.wave;
@@ -109,7 +109,7 @@ switch (state)
 			}
 			else
 			{
-				state = 142;
+				state = states.spawnenemy;
 				round_count = round_max;
 			}
 		}

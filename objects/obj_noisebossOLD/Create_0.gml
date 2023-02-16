@@ -21,7 +21,7 @@ attack_type[172] = [3, 3];
 attack_type[173] = [1, 1];
 current_behaviour = 0;
 current_attack = 42;
-state = 145;
+state = states.arenaround;
 ds_map_set(player_hurtstates, 42, 30000);
 ds_map_set(player_hurtstates, 41, 50);
 ds_map_set(player_hurtstates, 104, 20);

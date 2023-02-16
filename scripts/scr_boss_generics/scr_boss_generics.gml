@@ -143,7 +143,7 @@ function boss_hurt_gustavo()
 }
 function boss_do_pizzaheadKO()
 {
-	if (pizzahead && pizzaheadKO && state != 294 && elitehit <= 3)
+	if (pizzahead && pizzaheadKO && state != states.pizzaheadjump && elitehit <= 3)
 	{
 		pizzaheadKO_buffer = 5;
 		state = states.boss_KO;
@@ -352,7 +352,7 @@ function scr_boss_phase1hurt(func = noone)
 				vsp = -6;
 				hsp = -xscale * 4;
 				movespeed = 4;
-				state = 91;
+				state = states.tackle;
 			}
 			check_grabbed_solid(player);
 			check_grabbed_solid(player);

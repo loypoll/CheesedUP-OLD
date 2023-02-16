@@ -16,7 +16,7 @@ if (!grabbed && unpickable == 0 && !ratgrabbed && other.state == states.ratmount
 {
 	ratplayerid = other.id;
 	ratgrabbed = true;
-	state = 205;
+	state = states.ratgrabbed;
 	other.ratgrabbedID = id;
 	other.state = states.ratmount;
 }

@@ -11,7 +11,7 @@ if (visible == 1)
 	}
 	with (other)
 	{
-		if (state == 254)
+		if (state == states.jetpackjump)
 		{
 			if (sprite_index != spr_player_jetpackstart2)
 			{
@@ -20,7 +20,7 @@ if (visible == 1)
 			}
 		}
 		else
-			state = 254;
+			state = states.jetpackjump;
 		vsp = -14;
 		sprite_index = spr_player_jetpackstart;
 		doublejump = false;

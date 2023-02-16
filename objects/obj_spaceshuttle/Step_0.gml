@@ -8,11 +8,11 @@ if (state == states.hit)
 	{
 		x = hitX;
 		y = hitY;
-		state = 292;
+		state = states.spaceshuttle;
 		movespeed = 1;
 	}
 }
-else if (state == 292)
+else if (state == states.spaceshuttle)
 {
 	x = hitX + irandom_range(-2, 2);
 	depth = -100;

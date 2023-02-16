@@ -194,7 +194,7 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
-if (state == 189)
+if (state == states.underground)
 {
 	invincible = true;
 	if (sprite_index != spr_minijohn_underground && sprite_index != spr_minijohn_undergroundout)

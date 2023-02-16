@@ -11,7 +11,7 @@ if (active)
 	else if (other.isgustavo == 0)
 	{
 		fmod_event_one_shot_3d("event:/sfx/rat/grab", x, y);
-		other.state = 207;
+		other.state = states.balloon;
 		other.movespeed = other.hsp;
 		active = false;
 		with (other)

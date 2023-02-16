@@ -1,4 +1,4 @@
-if (state != 145)
+if (state != states.arenaround)
 {
 	wave_seconds--;
 	if (wave_seconds < 0)
@@ -23,5 +23,5 @@ if (state != 145)
 		}
 	}
 }
-if (state == 143 || state == 142)
+if (state == states.arena || state == states.spawnenemy)
 	alarm[0] = 60;
