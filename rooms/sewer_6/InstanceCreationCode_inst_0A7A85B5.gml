@@ -1,1 +1,1 @@
-particlespr = bg_towershotmeteor;
+particlespr = spr_sewerdebris1

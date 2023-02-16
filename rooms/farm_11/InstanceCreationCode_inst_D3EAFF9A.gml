@@ -1,1 +1,1 @@
-particlespr = spr_gnome4_idle;
+particlespr = spr_farmdebris2;

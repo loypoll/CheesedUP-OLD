@@ -1,1 +1,1 @@
-particlespr = spr_towerblocksmall;
+particlespr = spr_pumpkindebris;

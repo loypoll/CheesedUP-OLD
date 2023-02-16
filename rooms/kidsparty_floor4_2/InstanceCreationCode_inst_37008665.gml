@@ -1,1 +1,1 @@
-particlespr = spr_playerN_minigunidle;
+particlespr = spr_complexdebris;

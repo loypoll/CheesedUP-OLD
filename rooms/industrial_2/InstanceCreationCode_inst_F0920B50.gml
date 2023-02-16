@@ -1,1 +1,1 @@
-particlespr = spr_policecar;
+particlespr = spr_eyedebris;

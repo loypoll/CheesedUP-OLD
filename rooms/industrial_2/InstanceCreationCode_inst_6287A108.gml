@@ -1,1 +1,1 @@
-particlespr = spr_pigbot;
+particlespr = spr_industrialdebris;

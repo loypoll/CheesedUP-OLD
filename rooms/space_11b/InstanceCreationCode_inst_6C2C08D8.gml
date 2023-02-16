@@ -1,1 +1,1 @@
-particlespr = spr_electricpotato;
+particlespr = spr_space3debris;

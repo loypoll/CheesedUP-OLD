@@ -1,1 +1,1 @@
-particlespr = spr_johnresurrected_pillar1;
+particlespr = spr_dungeondebris1;

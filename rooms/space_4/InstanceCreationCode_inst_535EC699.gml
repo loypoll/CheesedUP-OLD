@@ -1,2 +1,2 @@
-particlespr = spr_teeth_dead;
+particlespr = spr_spacedebris;
 targettiles = "Tiles_1";

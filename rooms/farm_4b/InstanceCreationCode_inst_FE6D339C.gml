@@ -1,1 +1,1 @@
-particlespr = spr_titleeggplant;
+particlespr = spr_farmdebris1;

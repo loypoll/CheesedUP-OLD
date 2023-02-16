@@ -1,1 +1,1 @@
-particlespr = spr_gustavokitchen1;
+particlespr = spr_chocolatedebris;
