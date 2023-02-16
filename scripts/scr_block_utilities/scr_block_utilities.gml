@@ -54,9 +54,11 @@ function scr_cutoff()
 		var d = dirs[i];
 		if (!place_meeting(x + d[0], y + d[1], obj_cutoff))
 		{
+			
 		}
 		else
 		{
+			var num = instance_place_list(x + d[0], y + d[1], obj_cutoff, list, false);
 			for (var j = 0; j < ds_list_size(list); j++)
 			{
 				var b = ds_list_find_value(list, j);
