@@ -1,20 +1,20 @@
 image_speed = 0.35;
 switch (state)
 {
-	case 217:
+	case states.robotidle:
 		sprite_index = spr_introidle;
 		image_speed = 0.35;
 		break;
-	case 218:
+	case states.robotintro:
 		if (sprite_index != spr_intro)
 		{
 			sprite_index = spr_intro;
 			image_index = 0;
 		}
 		if (floor(image_index) == (image_number - 1))
-			state = 220;
+			state = states.robotchase;
 		break;
-	case 219:
+	case states.robotroaming:
 		sprite_index = spr_monstertomato_idle;
 		x = camera_get_view_x(view_camera[0]) + (SCREEN_WIDTH / 2);
 		y = camera_get_view_y(view_camera[0]) + yy;
@@ -29,10 +29,10 @@ switch (state)
 					if (pid != -4)
 					{
 						playerid = pid;
-						substate = 141;
+						substate = states.chase;
 					}
 					else
-						substate = 92;
+						substate = states.jump;
 				}
 				break;
 			case states.jump:
@@ -46,10 +46,10 @@ switch (state)
 						monster_pos[other.monsterid].x = last_puppet_pos.x;
 						monster_pos[other.monsterid].y = last_puppet_pos.y;
 					}
-					state = 217;
+					state = states.robotidle;
 				}
 				break;
-			case 141:
+			case states.chase:
 				yy -= 10;
 				if (yy < -100)
 					scr_puppet_appear(playerid);
@@ -69,9 +69,9 @@ switch (state)
 			image_xscale = sign(playerid.x - x);
 		break;
 }
-if (state != 217)
+if (state != states.robotidle)
 	inactivebuffer = 900;
-if (state == 220)
+if (state == states.robotchase)
 {
 	if (!fmod_event_instance_is_playing(snd))
 		fmod_event_instance_play(snd);
@@ -79,5 +79,5 @@ if (state == 220)
 }
 else
 	fmod_event_instance_stop(snd, true);
-if (state == 220)
+if (state == states.robotchase)
 	depth = -100;

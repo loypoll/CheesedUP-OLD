@@ -1,4 +1,4 @@
-if (obj_player1.state == 208)
+if (obj_player1.state == states.debugstate)
 	exit;
 if (obj_player1.state == states.backtohub)
 	exit;
@@ -50,7 +50,7 @@ with (other)
 	{
 		trace("climbwall verticalhallway");
 		verticalbuffer = 10;
-		verticalstate = 37;
+		verticalstate = states.climbwall;
 		var i = 0;
 		x = floor(x);
 		while (!scr_solid(x + xscale, y))

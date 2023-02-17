@@ -25,7 +25,7 @@ switch (state)
 	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 141:
+	case states.chase:
 		scr_enemy_chase();
 		break;
 	case states.pummel:
@@ -76,7 +76,7 @@ switch (state)
 			}
 		}
 		break;
-	case 189:
+	case states.underground:
 		hsp = 0;
 		if (underground)
 		{
@@ -117,7 +117,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state == 141 && ragecooldown <= 0)
+if (state == states.chase && ragecooldown <= 0)
 {
 	if (player.x > (x - 400) && player.x < (x + 400) && y <= (player.y + 60) && y >= (player.y - 60))
 	{
@@ -194,7 +194,7 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
-if (state == 189)
+if (state == states.underground)
 {
 	invincible = true;
 	if (sprite_index != spr_minijohn_underground && sprite_index != spr_minijohn_undergroundout)

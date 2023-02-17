@@ -1,7 +1,7 @@
 var p = other.id;
 with (other)
 {
-	if (state != 265 && state != states.backbreaker && state != states.chainsaw && other.cooldown == 0)
+	if (state != states.antigrav && state != states.backbreaker && state != states.chainsaw && other.cooldown == 0)
 	{
 		create_transformation_tip(lang_get_value("antigravtip"), "antigrav");
 		if (state == states.rocket || state == states.rocketslide)
@@ -13,7 +13,7 @@ with (other)
 				image_xscale = sign(hsp);
 			}
 		}
-		state = 265;
+		state = states.antigrav;
 		vsp = 0;
 		fmod_event_one_shot("event:/sfx/antigrav/start");
 		fmod_event_one_shot_3d("event:/sfx/misc/bubblestation", x, y);

@@ -1,7 +1,7 @@
 image_speed = 0.35;
 switch (state)
 {
-	case 0:
+	case states.normal:
 		if (sprite_index == spr_arenagate_opened)
 		{
 			if (blockinst != -4 && instance_exists(blockinst))
@@ -13,7 +13,7 @@ switch (state)
 		else if (sprite_index == spr_arenagate_close)
 			image_index = image_number - 1;
 		break;
-	case 8:
+	case states.transition:
 		if (sprite_index == spr_arenagate_open && floor(image_index) == (image_number - 1))
 		{
 			state = states.normal;

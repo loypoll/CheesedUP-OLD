@@ -108,7 +108,7 @@ switch (state)
 			movespeed = taunt_storedmovespeed;
 		}
 		break;
-	case 147:
+	case states.parry:
 		image_speed = 0.35;
 		if (trail_count > 0)
 			trail_count--;

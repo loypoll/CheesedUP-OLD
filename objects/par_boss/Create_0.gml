@@ -30,7 +30,7 @@ hitX = x;
 hitY = y;
 hithsp = 0;
 hitvsp = 0;
-hitstate = 0;
+hitstate = states.normal;
 stunfallspr = sprite_index;
 walkspr = sprite_index;
 spr_dead = sprite_index;
@@ -57,7 +57,7 @@ function SUPER_player_destroy()
 		other.x = other.hitX;
 		other.y = other.hitY;
 		other.state = states.chainsaw;
-		other.hitstate = 145;
+		other.hitstate = states.arenaround;
 		other.hitvsp = -4;
 		other.hithsp = -other.image_xscale * 8;
 		hitLag = lag;
@@ -89,7 +89,7 @@ function SUPER_boss_destroy()
 	with (argument0)
 	{
 		camera_zoom(1, 0.1);
-		if (state == 162 || state == 160 || state == states.parry || state == states.backbreaker)
+		if (state == states.boss_fistmatch || state == states.boss_superattack || state == states.parry || state == states.backbreaker)
 		{
 			sprite_index = spr_player_attackdash;
 			image_index = 6;
@@ -139,7 +139,7 @@ function SUPER_boss_hurt()
 {
 	if (important)
 		hp -= argument0;
-	if (argument1.state != 252)
+	if (argument1.state != states.playersuperattack)
 	{
 		with (obj_bosscontroller)
 			super += 30;
@@ -206,7 +206,7 @@ function SUPER_boss_hurt_noplayer()
 {
 	if (important)
 		hp -= argument0;
-	if (obj_player.state != 252)
+	if (obj_player.state != states.playersuperattack)
 	{
 		with (obj_bosscontroller)
 			super += 30;

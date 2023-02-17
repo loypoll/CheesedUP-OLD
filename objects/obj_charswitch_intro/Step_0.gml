@@ -1,13 +1,13 @@
 switch (state)
 {
-	case 8:
+	case states.transition:
 		if (floor(image_index) == (image_number - 1))
 		{
 			state = states.normal;
 			introbuffer = 50;
 		}
 		break;
-	case 0:
+	case states.normal:
 		if (introbuffer > 0)
 			introbuffer--;
 		else

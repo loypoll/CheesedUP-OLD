@@ -15,7 +15,7 @@ if (kickbuffer > 0)
 }
 switch (state)
 {
-	case 0:
+	case states.normal:
 		hsp = movespeed * image_xscale;
 		if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_ratblock))
 			image_xscale *= -1;

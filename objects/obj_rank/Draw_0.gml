@@ -46,7 +46,7 @@ if (toppinvisible)
 				case 3:
 					cash_y = -52;
 					break;
-				case states.grabbed:
+				case 4:
 					cash_y = -46;
 					break;
 			}

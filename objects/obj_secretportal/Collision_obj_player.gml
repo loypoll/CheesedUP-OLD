@@ -62,7 +62,7 @@ if (active && sprite_index != spr_secretportal_open && !instance_exists(obj_jump
 		other.tauntstoredhsp = other.hsp;
 		other.tauntstoredvsp = other.vsp;
 		other.tauntstoredsprite = other.sprite_index;
-		other.state = 296;
+		other.state = states.secretenter;
 	}
 	touched = true;
 	with (obj_heatafterimage)

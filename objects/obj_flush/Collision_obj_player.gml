@@ -1,7 +1,7 @@
-if (state == 223)
+if (state == states.flushidle)
 {
 	scr_fmod_soundeffect(global.snd_cardflip, x, y);
-	state = 224;
+	state = states.flushtransition;
 	image_index = 0;
 	switch (type)
 	{
@@ -18,7 +18,7 @@ if (state == 223)
 	var _found = false;
 	with (obj_flush)
 	{
-		if (state == 223 && trigger == other.trigger)
+		if (state == states.flushidle && trigger == other.trigger)
 			_found = true;
 	}
 	if (!_found)

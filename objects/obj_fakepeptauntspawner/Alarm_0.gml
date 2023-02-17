@@ -14,7 +14,7 @@ switch (dir)
 	case 3:
 		angle = point_direction(0, 0, 1, 1);
 		break;
-	case states.grabbed:
+	case 4:
 		angle = point_direction(0, 0, 1, 0);
 		break;
 	case 5:

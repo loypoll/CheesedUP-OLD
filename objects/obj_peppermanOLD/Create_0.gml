@@ -1,5 +1,5 @@
 event_inherited();
-state = 145;
+state = states.arenaround;
 ds_map_set(player_hurtstates, 42, 30);
 ds_map_set(player_hurtstates, 41, 50);
 ds_map_set(player_hurtstates, 104, 20);
@@ -81,7 +81,7 @@ function player_destroy()
 }
 function boss_destroy()
 {
-	hitstate = 0;
+	hitstate = states.normal;
 	SUPER_boss_destroy(argument0);
 	with (obj_peppermanbrick)
 		instance_destroy();
@@ -144,7 +144,7 @@ function player_hurt()
 			}
 			sprite_index = spr_pepperman_throw;
 			image_index = 0;
-			hitstate = 147;
+			hitstate = states.parry;
 			hitvsp = 0;
 			hithsp = 0;
 			movespeed = 8;
@@ -153,7 +153,7 @@ function player_hurt()
 		{
 			hithsp = 0;
 			hitvsp = -4;
-			hitstate = 0;
+			hitstate = states.normal;
 		}
 	}
 	else if (state == states.superslam)
@@ -171,14 +171,14 @@ function player_hurt()
 				other.y = hitY;
 			}
 			sprite_index = spr_idle;
-			state = 162;
+			state = states.boss_fistmatch;
 			hitX = x;
 			hitY = y;
 			hsp = 0;
 			vsp = 0;
 			movespeed = 0;
 			other.sprite_index = other.idlespr;
-			other.state = 162;
+			other.state = states.boss_fistmatch;
 			other.image_xscale = -xscale;
 			other.hitX = x + (xscale * 16);
 			other.hitY = y;

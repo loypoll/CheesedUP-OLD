@@ -34,7 +34,7 @@ switch (state)
 		image_alpha = 1;
 		scr_enemy_grabbed();
 		break;
-	case 141:
+	case states.chase:
 		scr_enemy_chase();
 		break;
 }
@@ -73,7 +73,7 @@ if (bombreset == 0 && state == states.walk)
 		fade = true;
 	}
 }
-if (state == 141)
+if (state == states.chase)
 {
 	if (fade)
 	{

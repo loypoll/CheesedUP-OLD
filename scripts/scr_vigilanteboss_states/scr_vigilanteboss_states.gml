@@ -60,7 +60,7 @@ function vigilante_cancel_attack()
 				with (instance_create(x, y, obj_millionpunchhitbox))
 					baddieID = other.id;
 				break;
-			case 2:
+			case states.dynamite:
 				dynamite_shot = true;
 				sprite_index = spr_playerV_dynamitethrow;
 				image_index = 0;

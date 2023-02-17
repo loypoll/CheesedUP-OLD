@@ -124,7 +124,7 @@ if ((!invincible || (state == states.stun && savedthrown == thrown && !savedthro
 	alarm[5] = 0.15 * room_speed;
 else if (invincible && (state != states.stun || (savedthrown != thrown && savedthrown) || elitehit > 1))
 	flash = false;
-if ((state == states.pizzaface_ram && substate != 8) && alarm[4] < 0)
+if ((state == states.pizzaface_ram && substate != states.transition) && alarm[4] < 0)
 	alarm[4] = 6;
 if (state != states.stun)
 	birdcreated = false;

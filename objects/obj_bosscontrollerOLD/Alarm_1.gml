@@ -19,7 +19,7 @@ else
 	round_max = extrarounds_count;
 	fakedeath = false;
 	timer_buffer = timer_max;
-	state = 145;
+	state = states.arenaround;
 	fade = 1;
 	with (par_boss)
 	{
@@ -32,7 +32,7 @@ else
 		targetstunned = 0;
 		phase++;
 		phase = clamp(phase, 0, max_phase);
-		state = 145;
+		state = states.arenaround;
 		vsp = -11;
 	}
 }

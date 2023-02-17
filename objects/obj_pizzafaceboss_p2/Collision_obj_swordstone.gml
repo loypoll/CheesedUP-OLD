@@ -1,2 +1,2 @@
-if (!throwsword && state != 240)
+if (!throwsword && state != states.pizzahead_pullinglevel)
 	instance_destroy(other);

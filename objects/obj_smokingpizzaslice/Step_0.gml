@@ -16,12 +16,12 @@ switch (state)
 				substate_buffer = substate_max;
 				var old_substate = substate;
 				while (substate == old_substate)
-					substate = choose(134, 126, 130);
-				if (substate == 130 && state == states.pizzagoblinthrow)
+					substate = choose(states.walk, states.idle, states.turn);
+				if (substate == states.turn && state == states.pizzagoblinthrow)
 					substate = states.walk;
 				if (substate == states.walk)
 					image_xscale = choose(-1, 1);
-				else if (substate == 130)
+				else if (substate == states.turn)
 				{
 					sprite_index = spr_pizzaslug_turn;
 					image_index = 0;
@@ -110,7 +110,7 @@ if (state != states.stun)
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 var player = instance_nearest(x, y, obj_player);
-if (state == states.walk && substate != 130)
+if (state == states.walk && substate != states.turn)
 {
 	if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)) && ragecooldown == 0)
 	{

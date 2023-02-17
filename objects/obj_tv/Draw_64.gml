@@ -47,7 +47,7 @@ if (room != strongcold_endscreen)
 		draw_sprite_ext(sprite_index, image_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
 	}
 	reset_shader_fix();
-	if (state == 250)
+	if (state == states.tv_whitenoise)
 		draw_sprite(spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 }
 if (bubblespr != -4)

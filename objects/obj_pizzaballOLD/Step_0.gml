@@ -7,10 +7,10 @@ if (image_speed < 0.2)
 current = place_meeting(x, y + 1, obj_current);
 switch (state)
 {
-	case 0:
+	case states.normal:
 		scr_pizzaball_normal();
 		break;
-	case 5:
+	case states.tumble:
 		scr_pizzaball_roll();
 		break;
 	case states.golf:

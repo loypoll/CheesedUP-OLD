@@ -48,7 +48,7 @@ function __background_set_internal()
 			case 3:
 				layer_x(__layerid, __val);
 				break;
-			case states.grabbed:
+			case 4:
 				layer_y(__layerid, __val);
 				break;
 			case 7:

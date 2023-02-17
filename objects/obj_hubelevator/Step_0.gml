@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 18:
+	case states.titlescreen:
 		if (!instance_exists(obj_fadeout))
 		{
 			if (playerid.key_up2)

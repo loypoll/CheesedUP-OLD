@@ -41,5 +41,5 @@ if (obj_player.state == states.policetaxi)
 		state = states.normal;
 	}
 }
-if (obj_player.state == 292)
+if (obj_player.state == states.spaceshuttle)
 	instance_create(obj_spaceshuttlestop.x, camera_get_view_y(view_camera[0]) - 50, obj_spaceshuttletrans);

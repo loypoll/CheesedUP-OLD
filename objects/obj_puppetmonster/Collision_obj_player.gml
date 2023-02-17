@@ -1,2 +1,2 @@
-if (state == 220)
+if (state == states.robotchase)
 	event_inherited();

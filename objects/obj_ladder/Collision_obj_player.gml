@@ -12,7 +12,7 @@ with (other)
 	if (key_up && ladderbuffer == 0 && (state == states.ratmountjump || state == states.ratmountbounce || state == states.ratmount))
 	{
 		input_buffer_jump = 0;
-		state = 261;
+		state = states.ratmountladder;
 		if (brick == 1)
 		{
 			with (instance_create(x, y, obj_brickcomeback))

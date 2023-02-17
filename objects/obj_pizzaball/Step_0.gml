@@ -23,7 +23,7 @@ switch (state)
 	case states.golf:
 		scr_pizzaball_golf();
 		break;
-	case 156:
+	case states.thrown:
 		scr_pizzaball_thrown();
 		break;
 	case states.stun:
@@ -46,7 +46,7 @@ switch (state)
 	case states.rage:
 		scr_enemy_rage();
 		break;
-	case 17:
+	case states.ghostpossess:
 		scr_enemy_ghostpossess();
 		break;
 }
@@ -55,7 +55,7 @@ if (state != states.golf)
 	shootup = false;
 	arrow = false;
 }
-if (state == 156)
+if (state == states.thrown)
 {
 	if (blur_effect > 0)
 		blur_effect--;
@@ -79,7 +79,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state == 156 && !instance_exists(pointerID))
+if (state == states.thrown && !instance_exists(pointerID))
 {
 	pointerID = instance_create(x, y, obj_objecticontracker);
 	pointerID.sprite_index = spr_icon_pizzaball;
@@ -121,7 +121,7 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
-if (state == 156)
+if (state == states.thrown)
 {
 	with (instance_place(x + xscale, y, obj_destructibles))
 		instance_destroy();

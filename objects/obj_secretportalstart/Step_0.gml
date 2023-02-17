@@ -29,7 +29,7 @@ switch (sprite_index)
 			{
 				if (object_index != obj_player2 || global.coop)
 				{
-					if (!isgustavo && tauntstoredstate != 47 && tauntstoredstate != 38 && tauntstoredstate != 49 && tauntstoredstate != 10)
+					if (!isgustavo && tauntstoredstate != states.knightpep && tauntstoredstate != states.knightpepslopes && tauntstoredstate != states.knightpepbump && tauntstoredstate != states.firemouth)
 					{
 						visible = true;
 						cutscene = false;
@@ -72,7 +72,7 @@ switch (sprite_index)
 						other.drop = true;
 					if (other.drop)
 					{
-						if (!isgustavo && (tauntstoredstate == 47 || tauntstoredstate == 38 || tauntstoredstate == 49 || tauntstoredstate == 10))
+						if (!isgustavo && (tauntstoredstate == states.knightpep || tauntstoredstate == states.knightpepslopes || tauntstoredstate == states.knightpepbump || tauntstoredstate == states.firemouth))
 						{
 							state = tauntstoredstate;
 							movespeed = tauntstoredmovespeed;

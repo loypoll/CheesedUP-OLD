@@ -1,12 +1,12 @@
-if (state != 257 && other.state != 257)
+if (state != states.bee && other.state != states.bee)
 {
 	with (other)
 	{
-		state = 257;
+		state = states.bee;
 		bee_buffer = 150;
 	}
-	state = 257;
-	substate = 257;
+	state = states.bee;
+	substate = states.bee;
 	bee_buffer = other.bee_buffer;
 	playerid = other.id;
 }

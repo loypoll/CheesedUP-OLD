@@ -26,7 +26,7 @@ if (state == states.walk)
 		image_index = 0;
 	}
 }
-else if (state == 141)
+else if (state == states.chase)
 {
 	if (abs(x - targetplayer.x) < 78)
 	{

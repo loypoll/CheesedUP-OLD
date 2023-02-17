@@ -184,7 +184,7 @@ switch (state)
 			state = states.jump;
 		}
 		break;
-	case 76:
+	case states.superslam:
 		layer_vspeed(beatdown1_lay, Approach(layer_get_vspeed(beatdown1_lay), -8, 0.1));
 		layer_vspeed(beatdown2_lay, Approach(layer_get_vspeed(beatdown2_lay), -9, 0.1));
 		layer_vspeed(beatdown3_lay, Approach(layer_get_vspeed(beatdown3_lay), -10, 0.1));
@@ -204,7 +204,7 @@ switch (state)
 			case 3:
 				pizzahead_x = -5;
 				break;
-			case states.grabbed:
+			case 4:
 				pizzahead_x = -10;
 				break;
 			case 5:

@@ -2,7 +2,7 @@ var player = instance_nearest(x, y, obj_player);
 image_speed = 0.35;
 switch (state)
 {
-	case 0:
+	case states.normal:
 		if (collisioned && fmod_event_instance_is_playing(snd))
 			fmod_event_instance_stop(snd, true);
 		if (collisioned)
@@ -17,7 +17,7 @@ switch (state)
 			attackbuffer = 20;
 		}
 		break;
-	case 8:
+	case states.transition:
 		if (!fmod_event_instance_is_playing(snd))
 			fmod_event_instance_play(snd);
 		fmod_event_instance_set_3d_attributes(snd, x, y);

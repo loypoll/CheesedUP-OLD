@@ -212,7 +212,7 @@ switch (state)
 		{
 			if (expressionsprite != -4)
 			{
-				state = 251;
+				state = states.tv_expression;
 				sprite_index = expressionsprite;
 			}
 			else
@@ -244,7 +244,7 @@ switch (state)
 						expressionbuffer--;
 					else
 					{
-						state = 250;
+						state = states.tv_whitenoise;
 						expressionsprite = -4;
 					}
 				}
@@ -256,7 +256,7 @@ switch (state)
 						expressionbuffer--;
 					else
 					{
-						state = 250;
+						state = states.tv_whitenoise;
 						expressionsprite = -4;
 					}
 				}
@@ -264,7 +264,7 @@ switch (state)
 			case spr_tv_exprcombo:
 				if (global.combo < 3 || _transfospr != -4 || obj_player1.isgustavo || obj_player1.mach4mode || obj_player1.state == states.hurt || obj_player1.state == states.mach3 || obj_player1.sprite_index == obj_player1.spr_mach3boost || global.stylethreshold >= 3)
 				{
-					state = 250;
+					state = states.tv_whitenoise;
 					expressionsprite = -4;
 					if (obj_player1.state == states.hurt)
 						tv_do_expression(spr_tv_exprhurt);
@@ -276,16 +276,16 @@ switch (state)
 					expressionbuffer--;
 				else
 				{
-					state = 250;
+					state = states.tv_whitenoise;
 					expressionsprite = -4;
 				}
 				break;
 			case spr_tv_exprmach3:
 				with (obj_player1)
 				{
-					if (state != states.mach3 && state != states.climbwall && (state != states.chainsaw || (tauntstoredstate != 121 && tauntstoredstate != 37)) && sprite_index != spr_mach3boost && mach4mode == 0)
+					if (state != states.mach3 && state != states.climbwall && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)) && sprite_index != spr_mach3boost && mach4mode == 0)
 					{
-						other.state = 250;
+						other.state = states.tv_whitenoise;
 						other.expressionsprite = -4;
 					}
 					if (mach4mode)
@@ -295,9 +295,9 @@ switch (state)
 			case spr_tv_exprmach4:
 				with (obj_player1)
 				{
-					if (mach4mode == 0 && (state != states.chainsaw || (tauntstoredstate != 121 && tauntstoredstate != 37)))
+					if (mach4mode == 0 && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)))
 					{
-						other.state = 250;
+						other.state = states.tv_whitenoise;
 						other.expressionsprite = -4;
 					}
 				}
@@ -313,7 +313,7 @@ switch (state)
 				}
 				if (global.stylethreshold < 3 || _transfo || obj_player1.mach4mode || obj_player1.state == states.hurt || obj_player1.state == states.mach3 || obj_player1.sprite_index == obj_player1.spr_mach3boost)
 				{
-					state = 250;
+					state = states.tv_whitenoise;
 					expressionsprite = noone;
 				}
 				break;
@@ -328,20 +328,20 @@ switch (state)
 				}
 				if (!global.panic || _transfo || obj_player1.mach4mode || obj_player1.state == states.hurt || obj_player1.state == states.mach3 || obj_player1.sprite_index == obj_player1.spr_mach3boost)
 				{
-					state = 250;
+					state = states.tv_whitenoise;
 					expressionsprite = noone;
 				}
 				break;
 		}
 		if (!ds_list_empty(tvprompts_list))
 		{
-			state = 250;
+			state = states.tv_whitenoise;
 			tv_trans = 0;
 			expressionsprite = -4;
 		}
 		break;
 }
-if (state != 250)
+if (state != states.tv_whitenoise)
 	tv_trans = 0;
 else
 	tv_trans += 0.35;

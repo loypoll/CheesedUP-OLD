@@ -54,7 +54,7 @@ switch (global.boxhp)
 		getoutspd = 80;
 		outtimespd = 80;
 		break;
-	case states.grabbed:
+	case 4:
 		getoutspd = 80;
 		outtimespd = 80;
 		break;
@@ -82,7 +82,7 @@ with (instance_place(x, y, obj_player))
 		{
 			sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_punch);
 			image_index = 0;
-			state = 91;
+			state = states.tackle;
 			movespeed = 3;
 			vsp = -3;
 		}

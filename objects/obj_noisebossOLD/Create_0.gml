@@ -21,7 +21,7 @@ attack_type[172] = [3, 3];
 attack_type[173] = [1, 1];
 current_behaviour = 0;
 current_attack = 42;
-state = 145;
+state = states.arenaround;
 ds_map_set(player_hurtstates, 42, 30000);
 ds_map_set(player_hurtstates, 41, 50);
 ds_map_set(player_hurtstates, 104, 20);
@@ -174,9 +174,9 @@ function player_hurt()
 			inv_frames = true;
 			alarm[1] = 15;
 		}
-		if (hitstate == 77 || hitstate == 171)
+		if (hitstate == states.skateboard || hitstate == states.boss_jetpack)
 		{
-			stunned = (hitstate == 77) ? 30 : 70;
+			stunned = (hitstate == states.skateboard) ? 30 : 70;
 			with (obj_camera)
 			{
 				shake_mag = 3;

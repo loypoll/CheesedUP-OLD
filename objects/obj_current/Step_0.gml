@@ -3,11 +3,11 @@ if (place_meeting(x, y - 1, obj_player))
 {
 	with (obj_player)
 	{
-		if (state != states.golf && state != 91 && state != states.gotoplayer && state != 214 && state != 213 && state != 212)
+		if (state != states.golf && state != states.tackle && state != states.gotoplayer && state != states.stringfall && state != states.stringjump && state != states.stringfling)
 		{
 			if (place_meeting(x, y + 1, other))
 			{
-				if (state != 210 && state != 211)
+				if (state != states.trashjump && state != states.trashroll)
 				{
 					if (state != states.barrel && state != states.barreljump && state != states.barrelslide && state != states.barrelclimbwall)
 					{
@@ -35,9 +35,9 @@ if (place_meeting(x, y - 1, obj_player))
 					}
 					vsp = -6;
 					image_index = 0;
-					if (state == 210)
+					if (state == states.trashjump)
 					{
-						state = 211;
+						state = states.trashroll;
 						movespeed = abs(movespeed);
 						dir = xscale;
 						movespeed += 3;

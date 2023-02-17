@@ -3,10 +3,10 @@ switch (state)
 	case states.arenaintro:
 		scr_bosscontroller_intro();
 		break;
-	case 0:
+	case states.normal:
 		scr_bosscontroller_normal();
 		break;
-	case 98:
+	case states.victory:
 		scr_bosscontroller_victory();
 		break;
 }
@@ -23,7 +23,7 @@ if (boss_index >= (sprite_get_number(boss_hpsprite) - 1))
 	boss_index = frac(boss_index);
 if (room == boss_vigilante)
 {
-	if ((instance_exists(obj_vigilanteboss) && obj_vigilanteboss.state == 274) || instance_exists(obj_vigilante_duelintro))
+	if ((instance_exists(obj_vigilanteboss) && obj_vigilanteboss.state == states.boss_duel) || instance_exists(obj_vigilante_duelintro))
 		image_alpha = 0;
 	else
 		image_alpha = Approach(image_alpha, 1, 0.1);

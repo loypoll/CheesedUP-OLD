@@ -22,7 +22,7 @@ if (use_dark)
 		}
 	}
 }
-if (obj_player1.finisher || obj_player2.finisher || (obj_player.state == 252 && obj_player.superattackstate == 8))
+if (obj_player1.finisher || obj_player2.finisher || (obj_player.state == states.playersuperattack && obj_player.superattackstate == 8))
 	finisher_alpha = Approach(finisher_alpha, 0.3, 0.1);
 else if (finisher_alpha > 0)
 	finisher_alpha = Approach(finisher_alpha, 0, 0.02);

@@ -1,10 +1,10 @@
 mask_index = spr_player_mask;
 switch (state)
 {
-	case 0:
+	case states.normal:
 		launch_buffer = 120;
 		break;
-	case 17:
+	case states.ghostpossess:
 		switch (substate)
 		{
 			case states.normal:

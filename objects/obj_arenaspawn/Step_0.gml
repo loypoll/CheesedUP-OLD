@@ -1,9 +1,9 @@
 switch (state)
 {
-	case 0:
+	case states.normal:
 		if (obj_player1.x <= x)
 		{
-			state = 145;
+			state = states.arenaround;
 			round_count = 10;
 			with (obj_arenagate)
 			{
@@ -31,17 +31,17 @@ switch (state)
 				state = states.normal;
 				image_index = 0;
 			}
-			state = 145;
+			state = states.arenaround;
 			round_count = 10;
 		}
 		break;
-	case 145:
+	case states.arenaround:
 		if (round_count > 0)
 			round_count--;
 		else
-			state = 142;
+			state = states.spawnenemy;
 		break;
-	case 142:
+	case states.spawnenemy:
 		if (!ds_list_empty(baddielist))
 		{
 			for (var i = 0; i < ds_list_size(baddielist); i++)
@@ -67,7 +67,7 @@ switch (state)
 		wave_minutes = minutes;
 		wave_seconds = seconds;
 		round_count = round_max;
-		state = 143;
+		state = states.arena;
 		with (obj_arenadoor)
 		{
 			wave = other.wave;
@@ -80,7 +80,7 @@ switch (state)
 			}
 		}
 		break;
-	case 143:
+	case states.arena:
 		var _doorfinish = true;
 		with (obj_arenadoor)
 		{
@@ -109,16 +109,16 @@ switch (state)
 			}
 			else
 			{
-				state = 142;
+				state = states.spawnenemy;
 				round_count = round_max;
 			}
 		}
 		break;
-	case 8:
+	case states.transition:
 		if (floor(image_index) == (image_number - 1))
 			state = states.victory;
 		break;
-	case 98:
+	case states.victory:
 		instance_destroy();
 		break;
 }

@@ -48,10 +48,10 @@ switch (state)
 	case states.rage:
 		scr_enemy_rage();
 		break;
-	case 17:
+	case states.ghostpossess:
 		scr_enemy_ghostpossess();
 		break;
-	case 5:
+	case states.tumble:
 		grav = 0.5;
 		sprite_index = spr_sausagemannocigar_rolling;
 		hsp = image_xscale * 7;

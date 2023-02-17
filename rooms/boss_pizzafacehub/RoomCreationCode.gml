@@ -7,9 +7,9 @@ obj_savesystem.ini_str = ini_close();
 gamesave_async_save();
 with (obj_player1)
 {
-	tauntstoredstate = 0;
+	tauntstoredstate = states.normal;
 	landAnim = true;
-	state = 293;
+	state = states.animation;
 	buffer = 100;
 	sprite_index = spr_slipbanan2;
 	image_index = sprite_get_number(spr_slipbanan2) - 1;

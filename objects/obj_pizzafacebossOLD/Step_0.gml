@@ -1,7 +1,7 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : 530;
 if (obj_bosscontroller.state == states.arenaintro)
 	exit;
-if (hp <= 0 && state != 145 && state != 162)
+if (hp <= 0 && state != states.arenaround && state != states.boss_fistmatch)
 {
 	if (!thrown && !destroyable)
 		boss_destroy(lastplayerid);
@@ -137,12 +137,12 @@ switch (state)
 		state_boss_stun();
 		break;
 }
-if (phase == 0 && state != 230)
+if (phase == 0 && state != states.pizzaface_ram)
 	invincible = true;
 else
 	invincible = false;
-attacking = state == 230 || state == 229 || state == 244 || state == 245 || state == 246 || state == 248 || state == 249;
-colliding = state != 230;
+attacking = state == states.pizzaface_ram || state == states.pizzaface_nose || state == states.pizzahead_spinningkick || state == states.pizzahead_spinningpunch || state == states.pizzahead_groundpunch || state == states.pizzahead_slamhead || state == states.pizzahead_slamhead2;
+colliding = state != states.pizzaface_ram;
 if (phase > 0)
 {
 	mask_index = spr_pizzahead_giddy;

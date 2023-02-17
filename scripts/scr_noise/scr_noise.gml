@@ -640,7 +640,7 @@ function scr_noise_pogo()
 			if (phase == 2)
 			{
 				fmod_event_one_shot_3d("event:/sfx/noise/noisecrusher", x, y);
-				state = 283;
+				state = states.boss_noisecrusher;
 				vsp = -17;
 				sprite_index = spr_noise_crusherjump;
 				create_particle(x, y, particle.genericpoofeffect);

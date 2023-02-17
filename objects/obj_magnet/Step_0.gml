@@ -1,7 +1,7 @@
 image_speed = 0.35;
 switch (state)
 {
-	case 0:
+	case states.normal:
 		if (cooldown > 0)
 		{
 			sprite_index = spr_sirnose_cooldown;
@@ -14,8 +14,8 @@ switch (state)
 			{
 				if (state != states.golf && distance_to_pos(x, y, other.x, other.y, 200, 150))
 				{
-					state = 264;
-					other.state = 264;
+					state = states.magnet;
+					other.state = states.magnet;
 					other.hsp = hsp;
 					other.vsp = vsp;
 					other.ballID = id;
@@ -23,7 +23,7 @@ switch (state)
 			}
 		}
 		break;
-	case 264:
+	case states.magnet:
 		with (ballID)
 		{
 			depth = 0;
@@ -40,7 +40,7 @@ switch (state)
 				sprite_index = spr_pizzaball_stun;
 			hsp = other.hsp;
 			vsp = other.vsp;
-			if (state != 264 && state != states.golf)
+			if (state != states.magnet && state != states.golf)
 			{
 				other.state = states.normal;
 				other.cooldown = 200;

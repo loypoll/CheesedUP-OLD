@@ -1,6 +1,6 @@
 with (obj_player)
 {
-	state = 208;
+	state = states.debugstate;
 	x = room_width / 2;
 	y = room_height / 2;
 }

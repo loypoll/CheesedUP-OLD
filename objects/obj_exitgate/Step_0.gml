@@ -14,7 +14,7 @@ else if (uparrow)
 }
 if (drop && global.panic)
 {
-	if (dropstate == 4)
+	if (dropstate == states.grabbed)
 	{
 		sprite_index = spr_exitgategrabbed;
 		if (snd == 0)
@@ -27,7 +27,7 @@ if (drop && global.panic)
 		sprite_index = spr_exitgate;
 	switch (dropstate)
 	{
-		case 0:
+		case states.normal:
 			if (distance_to_object(obj_player1) < 300)
 			{
 				dropstate = 15;
@@ -35,7 +35,7 @@ if (drop && global.panic)
 				hand_y = camera_get_view_y(view_camera[0]) - 100;
 			}
 			break;
-		case 15:
+		case states.hook:
 			if (hand_y < (y - 128))
 				hand_y += 6;
 			else

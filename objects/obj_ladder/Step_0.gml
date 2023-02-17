@@ -11,9 +11,9 @@ if (place_meeting(x, y - 1, obj_player1))
 			if ((y % 2) == 1)
 				y -= 1;
 		}
-		if (key_down && place_meeting(x, y + 1, obj_ladder) && !place_meeting(other.x + 16, y + 1, obj_solid) && state == 260 && place_meeting(x, y + 1, obj_platform))
+		if (key_down && place_meeting(x, y + 1, obj_ladder) && !place_meeting(other.x + 16, y + 1, obj_solid) && state == states.ratmountcrouch && place_meeting(x, y + 1, obj_platform))
 		{
-			state = 261;
+			state = states.ratmountladder;
 			if (brick == 1)
 			{
 				with (instance_create(x, y, obj_brickcomeback))

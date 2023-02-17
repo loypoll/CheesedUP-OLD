@@ -53,7 +53,7 @@ switch (state)
 	case states.rage:
 		scr_enemy_rage();
 		break;
-	case 17:
+	case states.ghostpossess:
 		scr_enemy_ghostpossess();
 		break;
 }
@@ -81,7 +81,7 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
-if (state == 294 && obj_player1.state != states.handstandjump && place_meeting(x, y, obj_solid))
+if (state == states.pizzaheadjump && obj_player1.state != states.handstandjump && place_meeting(x, y, obj_solid))
 	invincible = true;
 else
 	invincible = false;

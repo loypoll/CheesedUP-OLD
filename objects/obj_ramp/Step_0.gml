@@ -11,9 +11,9 @@ if (place_meeting(x, y - s, obj_player))
 		if (state == states.mach3)
 			by = 10;
 		var bx = 8;
-		if (state == states.mach3 || state == 201)
+		if (state == states.mach3 || state == states.ratmounttumble)
 			bx = 18;
-		if ((state == states.mach2 || state == 201 || state == 211 || state == states.tumble || state == states.mach3 || state == states.trickjump) && y <= (other.y + by) && xscale == sign(other.image_xscale) && place_meeting(x, y + s, other))
+		if ((state == states.mach2 || state == states.ratmounttumble || state == states.trashroll || state == states.tumble || state == states.mach3 || state == states.trickjump) && y <= (other.y + by) && xscale == sign(other.image_xscale) && place_meeting(x, y + s, other))
 		{
 			vsp = -12;
 			movespeed = 14;
@@ -26,7 +26,7 @@ if (place_meeting(x, y - s, obj_player))
 			if (isgustavo)
 			{
 				sprite_index = spr_player_ratmountwalljump;
-				state = 203;
+				state = states.ratmounttrickjump;
 			}
 			else
 				state = states.trickjump;

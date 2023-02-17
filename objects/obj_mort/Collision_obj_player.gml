@@ -2,7 +2,7 @@ if (sprite_index != spr_mortspawn)
 {
 	with (other)
 	{
-		if (state != states.mort && state != states.mortjump && state != states.mortattack && state != states.morthook && state != 190)
+		if (state != states.mort && state != states.mortjump && state != states.mortattack && state != states.morthook && state != states.ridecow)
 		{
 			repeat (6)
 				create_debris(x, y, spr_feather);

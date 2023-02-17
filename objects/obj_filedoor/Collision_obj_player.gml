@@ -44,7 +44,7 @@ with (other)
 			other.visited = true;
 			instance_create(x, y, obj_fadeout);
 		}
-		else if (state == 183)
+		else if (state == states.bombdelete)
 		{
 			instance_create(x, y, obj_bombexplosion);
 			var str = concat("saveData", other.file, ".ini");

@@ -2,9 +2,9 @@ if (state == states.grabbed && (object_index != obj_pepperman && object_index !=
 	scr_enemy_grabbed();
 else if (state == states.lungeattack)
 	scr_enemy_lungeattack();
-else if (state == 266)
+else if (state == states.secret)
 	scr_enemy_secret();
-if (room == boss_pizzaface && state != 294)
+if (room == boss_pizzaface && state != states.pizzaheadjump)
 	use_collision = true;
 scr_squash();
 if (state != states.stun && state != states.hit)
@@ -17,7 +17,7 @@ if (object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 &&
 		elitehit = 0;
 	instance_destroy();
 }
-if (state != states.grabbed && state != 154 && object_index != obj_pepbat && object_index != obj_fakesanta && use_collision)
+if (state != states.grabbed && state != states.pummel && object_index != obj_pepbat && object_index != obj_fakesanta && use_collision)
 	scr_collide();
 if (invtime > 0)
 	invtime--;
@@ -35,7 +35,7 @@ if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && gr
 		_yy = y + 78;
 	create_particle(x - (image_xscale * 20), _yy, particle.cloudeffect, 0);
 }
-if ((object_index != obj_pizzice || state != states.pizzagoblinthrow) && object_index != obj_pizzafaceboss_p3 && object_index != obj_fakepepboss && state != 273)
+if ((object_index != obj_pizzice || state != states.pizzagoblinthrow) && object_index != obj_pizzafaceboss_p3 && object_index != obj_fakepepboss && state != states.boss_phase1hurt)
 {
 	if (state == states.walk)
 		image_speed = 0.35;
@@ -65,7 +65,7 @@ if (object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 &&
 		}
 	}
 }
-if (state != 294 && object_index != obj_pepperman && object_index != obj_noiseboss && object_index != obj_pizzafaceboss && object_index != obj_pf_fakepep && object_index != obj_fakepepboss && object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p2 && object_index != obj_pizzafaceboss_p3 && object_index != obj_noisey && object_index != obj_gustavograbbable)
+if (state != states.pizzaheadjump && object_index != obj_pepperman && object_index != obj_noiseboss && object_index != obj_pizzafaceboss && object_index != obj_pf_fakepep && object_index != obj_fakepepboss && object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p2 && object_index != obj_pizzafaceboss_p3 && object_index != obj_noisey && object_index != obj_gustavograbbable)
 {
 	if (y > (room_height + 100))
 		instance_destroy();

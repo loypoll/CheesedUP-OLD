@@ -2,7 +2,7 @@ if (room == timesuproom)
 	instance_destroy();
 switch (state)
 {
-	case 0:
+	case states.normal:
 		sprite_index = spr_kingghost;
 		var dir = point_direction(x, y, obj_player1.x, obj_player1.y);
 		x = lerp(x, obj_player1.x - (100 * obj_player1.xscale), 0.05);
@@ -10,7 +10,7 @@ switch (state)
 		if (x != obj_player1.x)
 			image_xscale = -sign(x - obj_player1.x);
 		break;
-	case 8:
+	case states.transition:
 		sprite_index = spr_kingghost_dash;
 		if (!instance_exists(trapid) || (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap))
 			state = 0;
@@ -25,7 +25,7 @@ switch (state)
 				state = states.chase;
 		}
 		break;
-	case 141:
+	case states.chase:
 		if (!instance_exists(trapid) || (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap && (trapid.object_index != obj_pinballtrap || trapid.sprite_index != spr_kingghost_pinball3)))
 		{
 			state = 0;
@@ -74,7 +74,7 @@ switch (state)
 							attackbuffer = 30
 							cooldown = 50
 						}
-						if (state == 0)
+						if (state == states.normal)
 							sprite_index = spr_kingghost_spike2
 						break
 					case obj_tvtrap:
@@ -97,7 +97,7 @@ if (alpha)
 if (room == rank_room)
 	instance_destroy();
 fmod_event_instance_set_3d_attributes(snd_move, x, y);
-if (state == 0)
+if (state == states.normal)
 {
 	if (!fmod_event_instance_is_playing(snd_loop))
 		fmod_event_instance_play(snd_loop);

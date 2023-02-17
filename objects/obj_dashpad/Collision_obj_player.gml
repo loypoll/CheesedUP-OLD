@@ -5,9 +5,9 @@ with (other)
 	{
 		if (boxxed == 0 && isgustavo == 0 && other.buffer == 0 && other.sprite_index == spr_dashpad)
 		{
-			if (state == 210 || state == 209)
+			if (state == states.trashjump || state == states.trashjumpprep)
 				create_debris(x, y, spr_player_trashlid);
-			if (state == 225)
+			if (state == states.animatronic)
 			{
 				var i = 0;
 				repeat (3)

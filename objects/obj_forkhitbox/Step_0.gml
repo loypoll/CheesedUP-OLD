@@ -24,7 +24,7 @@ with (ID)
 				instance_destroy(other);
 			break;
 		case obj_pizzafaceboss_p3:
-			if ((state != states.punch && state != 287) || (state == states.punch && floor(image_index) >= 38))
+			if ((state != states.punch && state != states.boss_swinging) || (state == states.punch && floor(image_index) >= 38))
 				instance_destroy(other);
 			break;
 		case obj_fakepepclone:
@@ -57,7 +57,7 @@ with (ID)
 			other.x = x + (image_xscale * 32);
 			break;
 		case obj_robot:
-			if (state != states.mach2 && state != states.slap && state != 91)
+			if (state != states.mach2 && state != states.slap && state != states.tackle)
 			{
 				hitboxcreate = false;
 				instance_destroy(other);
@@ -68,7 +68,7 @@ with (ID)
 				if (floor(image_index) == (image_number - 2) || floor(image_index) < 8)
 					instance_destroy(other);
 			}
-			else if (state == states.mach2 || state == 91)
+			else if (state == states.mach2 || state == states.tackle)
 				other.x = x + (image_xscale * 20);
 			break;
 		case obj_soldier:

@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 0:
+	case states.normal:
 		sprite_index = spr_meatball_roll;
 		hsp = image_xscale * 5;
 		if (place_meeting(x + sign(hsp), y, obj_solid))

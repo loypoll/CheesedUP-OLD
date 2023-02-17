@@ -59,7 +59,7 @@ switch (state)
 		if (intro_buffer > 0)
 			intro_buffer--;
 		else if (use_countdown)
-			state = 145;
+			state = states.arenaround;
 		else
 		{
 			state = states.normal;
@@ -72,7 +72,7 @@ switch (state)
 				state = states.normal;
 		}
 		break;
-	case 145:
+	case states.arenaround:
 		var round_yto = 437;
 		round_y = Approach(round_y, round_yto, 7);
 		if (round_y != round_yto)
@@ -124,9 +124,9 @@ switch (state)
 					x = hitX;
 					y = hitY;
 				}
-				if (colliding && state != 180 && state != 181)
+				if (colliding && state != states.boss_cardboard && state != states.boss_cardboardend)
 				{
-					state = 145;
+					state = states.arenaround;
 					attack_cooldown = attack_max[phase - 1];
 				}
 			}
@@ -150,10 +150,10 @@ switch (state)
 				state = states.normal;
 		}
 		break;
-	case 0:
+	case states.normal:
 		bell_sprite = spr_bosstimer_bell;
 		round_y = Approach(round_y, round_ystart, 4);
-		if (super >= supermax && obj_player.state != 252)
+		if (super >= supermax && obj_player.state != states.playersuperattack)
 		{
 			var p = false;
 			with (obj_player)
@@ -162,7 +162,7 @@ switch (state)
 				{
 					other.super = 0;
 					p = true;
-					state = 252;
+					state = states.playersuperattack;
 					superattackstate = 8;
 					var lag = 60;
 					hitX = x;
@@ -177,7 +177,7 @@ switch (state)
 						hitX = x;
 						hitY = y;
 						hitLag = lag;
-						state = 252;
+						state = states.playersuperattack;
 						sprite_index = stunfallspr;
 					}
 				}
@@ -201,12 +201,12 @@ switch (state)
 			case 2:
 				super_portrait_index += 0.35;
 				super_portrait_x += 1;
-				if (obj_player.state != 252 || obj_player.superattackstate != 8)
+				if (obj_player.state != states.playersuperattack || obj_player.superattackstate != 8)
 					super_portrait_state = 0;
 				break;
 		}
 		break;
-	case 8:
+	case states.transition:
 		instance_destroy(obj_baddiespawner);
 		instance_destroy(obj_baddie);
 		if (player_hp > 0)
@@ -232,8 +232,8 @@ switch (state)
 			}
 		}
 		break;
-	case 98:
-	case 89:
+	case states.victory:
+	case states.gameover:
 		fade -= 0.05;
 		fade = clamp(fade, 0, 1);
 		break;
@@ -243,7 +243,7 @@ portrait1_index += 0.35;
 portrait2_index += 0.35;
 if (state == states.normal && instance_exists(bossID))
 {
-	if (obj_player1.state == states.hit || obj_player1.state == 156)
+	if (obj_player1.state == states.hit || obj_player1.state == states.thrown)
 		portrait1_sprite = portrait1_hurt;
 	else
 		portrait1_sprite = portrait1_idle;

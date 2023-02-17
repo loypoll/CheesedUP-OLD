@@ -49,7 +49,7 @@ if (state != states.grabbed)
 				other.image_xscale = -sign(other.x - x);
 			other.state = states.stun;
 			image_index = 0;
-			state = 91;
+			state = states.tackle;
 		}
 		if ((state == states.mach2 || state == states.grab) && other.grounded == 1)
 		{
@@ -76,7 +76,7 @@ if (state != states.grabbed)
 			if (!grounded && state != states.freefall)
 				vsp = -10;
 		}
-		if (attacking == 0 && (state != 91 && state != states.hurt) && !(y < other.y) && grabbing == 0 && other.state != states.stun)
+		if (attacking == 0 && (state != states.tackle && state != states.hurt) && !(y < other.y) && grabbing == 0 && other.state != states.stun)
 		{
 			if (x != other.x)
 			{

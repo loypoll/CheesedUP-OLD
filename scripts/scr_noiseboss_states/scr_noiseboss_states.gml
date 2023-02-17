@@ -611,7 +611,7 @@ function boss_noise_jetpackstart()
 	vsp = 0;
 	if (image_index > (image_number - 1))
 	{
-		state = 171;
+		state = states.boss_jetpack;
 		movespeed = !angry ? 15 : 20;
 		sprite_index = !angry ? spr_playerN_jetpackboost : spr_playerN_crazyrun;
 	}
