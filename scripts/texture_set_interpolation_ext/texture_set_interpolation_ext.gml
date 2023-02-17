@@ -1,4 +1,4 @@
-function texture_set_interpolation_ext()
+function texture_set_interpolation_ext(sampler_id, linear)
 {
-	gpu_set_texfilter_ext(argument0, argument1);
+	gpu_set_texfilter_ext(sampler_id, linear);
 }

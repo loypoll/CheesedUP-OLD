@@ -93,7 +93,7 @@ function scr_boss_pizzaheadjump()
 		}
 	}
 }
-function boss_update_pizzaheadKO()
+function boss_update_pizzaheadKO(hpsprite, palette)
 {
 	if (pizzahead && pizzaheadKO && !instance_exists(pizzaheadKO_ID))
 	{
@@ -102,8 +102,8 @@ function boss_update_pizzaheadKO()
 		prevhp = elitehit;
 		with (obj_bosscontroller)
 		{
-			boss_hpsprite = argument0;
-			boss_palette = argument1;
+			boss_hpsprite = hpsprite;
+			boss_palette = palette;
 		}
 		image_alpha = 1;
 		if (state == states.boss_KO)
@@ -177,11 +177,11 @@ function scr_boss_pizzaheadKO()
 			image_alpha = 1;
 	}
 }
-function scr_boss_genericintro()
+function scr_boss_genericintro(sprite)
 {
-	if (sprite_index != argument0)
+	if (sprite_index != sprite)
 	{
-		sprite_index = argument0;
+		sprite_index = sprite;
 		introbuffer = 30;
 	}
 	if (introbuffer > 30)

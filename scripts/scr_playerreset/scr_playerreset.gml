@@ -1,9 +1,9 @@
-function textures_offload()
+function textures_offload(texturegroup_array)
 {
 	var b = instance_create(0, 0, obj_loadingscreen);
 	with (b)
 	{
-		group_arr = argument0;
+		group_arr = texturegroup_array;
 		if (global.offload_tex != -4)
 		{
 			offload_arr = array_create(0);

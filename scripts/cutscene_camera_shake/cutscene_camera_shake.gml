@@ -1,9 +1,9 @@
-function cutscene_camera_shake()
+function cutscene_camera_shake(mag, mag_acc)
 {
 	with (obj_camera)
 	{
-		shake_mag = argument0;
-		shake_mag_acc = argument1;
+		shake_mag = mag;
+		shake_mag_acc = mag_acc;
 	}
 	cutscene_end_action();
 }

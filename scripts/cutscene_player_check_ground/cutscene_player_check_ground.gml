@@ -1,6 +1,6 @@
-function cutscene_player_check_ground()
+function cutscene_player_check_ground(_player)
 {
-	var player = argument0;
+	var player = _player;
 	var finish = false;
 	with (player)
 	{

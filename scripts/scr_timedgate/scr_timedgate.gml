@@ -1,9 +1,9 @@
-function scr_timedgate_object()
+function scr_timedgate_object(list)
 {
 	if (timedgate)
 	{
-		if (ds_list_find_index(argument0, id) == -1)
-			ds_list_add(argument0, id);
+		if (ds_list_find_index(list, id) == -1)
+			ds_list_add(list, id);
 		with (instance_create(x, y, obj_timedgatespawn))
 		{
 			content = other.object_index;
@@ -30,12 +30,12 @@ function timedgate_trigger()
 		}
 	}
 }
-function timedgate_add_objects()
+function timedgate_add_objects(object, list)
 {
-	with (argument0)
+	with (object)
 	{
 		if (!variable_instance_exists(id, "timedgate"))
 			timedgate = false;
-		scr_timedgate_object(argument1);
+		scr_timedgate_object(list);
 	}
 }

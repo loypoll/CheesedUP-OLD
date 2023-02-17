@@ -1,11 +1,11 @@
-function sprite_set_size()
+function sprite_set_size(width, height)
 {
-	image_xscale = argument0 / sprite_get_width(sprite_index);
-	image_yscale = argument1 / sprite_get_width(sprite_index);
+	image_xscale = width / sprite_get_width(sprite_index);
+	image_yscale = height / sprite_get_width(sprite_index);
 }
-function snap_tile()
+function snap_tile(value, snap)
 {
-	return floor(argument0 / argument1) * argument1;
+	return floor(value / snap) * snap;
 }
 function add_object(argument0, argument1, argument2, argument3, argument4 = 0, argument5 = 0)
 {
@@ -26,13 +26,13 @@ function add_object(argument0, argument1, argument2, argument3, argument4 = 0, a
 		layerdepth: 0
 	});
 }
-function set_object_place_offset()
+function set_object_place_offset(argument0, argument1)
 {
 	var b = ds_list_find_value(array_get(object_list, argument0), ds_list_size(objectlist) - 1);
 	b.place_xoffset = argument1;
 	b.place_yoffset = argument1;
 }
-function set_object_layerdepth()
+function set_object_layerdepth(argument0, argument1)
 {
 	var b = ds_list_find_value(array_get(object_list, argument0), ds_list_size(objectlist) - 1);
 	b.layerdepth = argument1;
@@ -54,7 +54,7 @@ function objectlist_calculate_scrollsize()
 	if (scroll_ymax < 0)
 		scroll_ymax = 0;
 }
-function create_buttons_array()
+function create_buttons_array(argument0, argument1, argument2, argument3, argument4)
 {
 	var xsize = 0;
 	draw_set_font(global.editorfont);

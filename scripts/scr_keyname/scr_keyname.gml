@@ -162,311 +162,211 @@ function scr_keyname(_key)
 			return "PRESS A KEY";
 			break;
 	}
+	
 	switch (_key)
 	{
-		case 8:
-			return "BACKSPACE";
-			break;
-		case 9:
-			return "TAB";
-			break;
-		case 13:
-			return "ENTER";
-			break;
-		case 19:
-			return "PAUSE";
-			break;
-		case 20:
-			return "CAPS LOCK";
-			break;
-		case 27:
-			return "ESC";
-			break;
-		case 32:
-			return "SPACE";
-			break;
-		case 33:
-			return "PAGEUP";
-			break;
-		case 34:
-			return "PAGEDOWN";
-			break;
-		case 35:
-			return "END";
-			break;
-		case 36:
-			return "HOME";
-			break;
-		case 37:
-			return "LEFT";
-			break;
-		case 38:
-			return "UP";
-			break;
-		case 39:
-			return "RIGHT";
-			break;
-		case 40:
-			return "DOWN";
-			break;
-		case 45:
-			return "INSERT";
-			break;
-		case 46:
-			return "DELETE";
-			break;
-		case 48:
-			return "0";
-			break;
-		case 49:
-			return "1";
-			break;
-		case 50:
-			return "2";
-			break;
-		case 51:
-			return "3";
-			break;
-		case 52:
-			return "4";
-			break;
-		case 53:
-			return "5";
-			break;
-		case 54:
-			return "6";
-			break;
-		case 55:
-			return "7";
-			break;
-		case 56:
-			return "8";
-			break;
-		case 57:
-			return "9";
-			break;
-		case 65:
-			return "A";
-			break;
-		case 66:
-			return "B";
-			break;
-		case 67:
-			return "C";
-			break;
-		case 68:
-			return "D";
-			break;
-		case 69:
-			return "E";
-			break;
-		case 70:
-			return "F";
-			break;
-		case 71:
-			return "G";
-			break;
-		case 72:
-			return "H";
-			break;
-		case 73:
-			return "I";
-			break;
-		case 74:
-			return "J";
-			break;
-		case 75:
-			return "K";
-			break;
-		case 76:
-			return "L";
-			break;
-		case 77:
-			return "M";
-			break;
-		case 78:
-			return "N";
-			break;
-		case 79:
-			return "O";
-			break;
-		case 80:
-			return "P";
-			break;
-		case 81:
-			return "Q";
-			break;
-		case 82:
-			return "R";
-			break;
-		case 83:
-			return "S";
-			break;
-		case 84:
-			return "T";
-			break;
-		case 85:
-			return "U";
-			break;
-		case 86:
-			return "V";
-			break;
-		case 87:
-			return "W";
-			break;
-		case 88:
-			return "X";
-			break;
-		case 89:
-			return "Y";
-			break;
-		case 90:
-			return "Z";
-			break;
-		case 91:
-			return "LEXPLR";
-			break;
-		case 92:
-			return "REXPLR";
-			break;
-		case 96:
-			return "NUMPAD 0";
-			break;
-		case 97:
-			return "NUMPAD 1";
-			break;
-		case 98:
-			return "NUMPAD 2";
-			break;
-		case 99:
-			return "NUMPAD 3";
-			break;
-		case 100:
-			return "NUMPAD 4";
-			break;
-		case 101:
-			return "NUMPAD 5";
-			break;
-		case 102:
-			return "NUMPAD 6";
-			break;
-		case 103:
-			return "NUMPAD 7";
-			break;
-		case 104:
-			return "NUMPAD 8";
-			break;
-		case 105:
-			return "NUMPAD 9";
-			break;
-		case 106:
-			return "ASTERISK";
-			break;
-		case 107:
-			return "ADD";
-			break;
-		case 109:
-			return "DIVIDE";
-			break;
-		case 110:
-			return "DOT";
-			break;
-		case 111:
-			return "SLASH";
-			break;
-		case 112:
-			return "F1";
-			break;
-		case 113:
-			return "F2";
-			break;
-		case 114:
-			return "F3";
-			break;
-		case 115:
-			return "F4";
-			break;
-		case 116:
-			return "F5";
-			break;
-		case 117:
-			return "F6";
-			break;
-		case 118:
-			return "F7";
-			break;
-		case 119:
-			return "F8";
-			break;
-		case 120:
-			return "F9";
-			break;
-		case 121:
-			return "F10";
-			break;
-		case 122:
-			return "F11";
-			break;
-		case 123:
-			return "F12";
-			break;
-		case 144:
-			return "NUMLCK";
-			break;
-		case 145:
-			return "SCROLLLCK";
-			break;
-		case 160:
-			return "LSHIFT";
-			break;
-		case 161:
-			return "RSHIFT";
-			break;
-		case 162:
-			return "LCTRL";
-			break;
-		case 163:
-			return "RCTRL";
-			break;
-		case 164:
-			return "LALT";
-			break;
-		case 165:
-			return "RALT";
-			break;
-		case 186:
-			return "SEMICOLON";
-			break;
-		case 187:
-			return "EQUAL";
-			break;
-		case 188:
-			return "COMMA";
-			break;
-		case 189:
-			return "UNDERSCR";
-			break;
-		case 190:
-			return "DOT";
-			break;
-		case 191:
-			return "SLASH";
-			break;
-		case 192:
-			return "TILDE";
-			break;
-		case 219:
-			return "LBRACKET";
-			break;
-		case 220:
-			return "VERTBAR";
-			break;
-		case 221:
-			return "RBRACKET";
-			break;
-		case 222:
-			return "APOSTRPH";
-			break;
-	}
+        case vk_backspace:
+            return "BACKSPACE";
+        case 9:
+            return "TAB";
+        case vk_enter:
+            return "ENTER";
+        case vk_pause:
+            return "PAUSE";
+        case 20:
+            return "CAPS LOCK";
+        case vk_escape:
+            return "ESC";
+        case vk_space:
+            return "SPACE";
+        case vk_pageup:
+            return "PAGEUP";
+        case vk_pagedown:
+            return "PAGEDOWN";
+        case vk_end:
+            return "END";
+        case vk_home:
+            return "HOME";
+        case vk_left:
+            return "LEFT";
+        case vk_up:
+            return "UP";
+        case vk_right:
+            return "RIGHT";
+        case vk_down:
+            return "DOWN";
+        case vk_insert:
+            return "INSERT";
+        case vk_delete:
+            return "DELETE";
+        case 48:
+            return "0";
+        case 49:
+            return "1";
+        case 50:
+            return "2";
+        case 51:
+            return "3";
+        case 52:
+            return "4";
+        case 53:
+            return "5";
+        case 54:
+            return "6";
+        case 55:
+            return "7";
+        case 56:
+            return "8";
+        case 57:
+            return "9";
+        case 65:
+            return "A";
+        case 66:
+            return "B";
+        case 67:
+            return "C";
+        case 68:
+            return "D";
+        case 69:
+            return "E";
+        case 70:
+            return "F";
+        case 71:
+            return "G";
+        case 72:
+            return "H";
+        case 73:
+            return "I";
+        case 74:
+            return "J";
+        case 75:
+            return "K";
+        case 76:
+            return "L";
+        case 77:
+            return "M";
+        case 78:
+            return "N";
+        case 79:
+            return "O";
+        case 80:
+            return "P";
+        case 81:
+            return "Q";
+        case 82:
+            return "R";
+        case 83:
+            return "S";
+        case 84:
+            return "T";
+        case 85:
+            return "U";
+        case 86:
+            return "V";
+        case 87:
+            return "W";
+        case 88:
+            return "X";
+        case 89:
+            return "Y";
+        case 90:
+            return "Z";
+        case 91:
+            return "LEXPLR";
+        case 92:
+            return "REXPLR";
+        case vk_numpad0:
+            return "NUMPAD 0";
+        case vk_numpad1:
+            return "NUMPAD 1";
+        case vk_numpad2:
+            return "NUMPAD 2";
+        case vk_numpad3:
+            return "NUMPAD 3";
+        case vk_numpad4:
+            return "NUMPAD 4";
+        case vk_numpad5:
+            return "NUMPAD 5";
+        case vk_numpad6:
+            return "NUMPAD 6";
+        case vk_numpad7:
+            return "NUMPAD 7";
+        case vk_numpad8:
+            return "NUMPAD 8";
+        case vk_numpad9:
+            return "NUMPAD 9";
+        case vk_multiply:
+            return "ASTERISK";
+        case vk_add:
+            return "ADD";
+        case vk_subtract:
+            return "DIVIDE";
+        case vk_decimal:
+            return "DOT";
+        case vk_divide:
+            return "SLASH";
+        case vk_f1:
+            return "F1";
+        case vk_f2:
+            return "F2";
+        case vk_f3:
+            return "F3";
+        case vk_f4:
+            return "F4";
+        case vk_f5:
+            return "F5";
+        case vk_f6:
+            return "F6";
+        case vk_f7:
+            return "F7";
+        case vk_f8:
+            return "F8";
+        case vk_f9:
+            return "F9";
+        case vk_f10:
+            return "F10";
+        case vk_f11:
+            return "F11";
+        case vk_f12:
+            return "F12";
+        case 144:
+            return "NUMLCK";
+        case 145:
+            return "SCROLLLCK";
+        case vk_lshift:
+            return "LSHIFT";
+        case vk_rshift:
+            return "RSHIFT";
+        case vk_lcontrol:
+            return "LCTRL";
+        case vk_rcontrol:
+            return "RCTRL";
+        case vk_lalt:
+            return "LALT";
+        case vk_ralt:
+            return "RALT";
+        case 186:
+            return "SEMICOLON";
+        case 187:
+            return "EQUAL";
+        case 188:
+            return "COMMA";
+        case 189:
+            return "UNDERSCR";
+        case 190:
+            return "DOT";
+        case 191:
+            return "SLASH";
+        case 192:
+            return "TILDE";
+        case 219:
+            return "LBRACKET";
+        case 220:
+            return "VERTBAR";
+        case 221:
+            return "RBRACKET";
+        case 222:
+            return "APOSTRPH";
+    }
 	return chr(_key);
 }

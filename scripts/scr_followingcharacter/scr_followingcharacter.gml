@@ -65,23 +65,23 @@ function farmer_rearrange()
 			following_add_to_front();
 	}
 }
-function following_has_follower()
+function following_has_follower(object)
 {
 	for (var i = 0; i < ds_list_size(global.followerlist); i++)
 	{
 		var b = ds_list_find_value(global.followerlist, i);
-		if (instance_exists(b) && b.object_index == argument0)
+		if (instance_exists(b) && b.object_index == object)
 			return true;
 	}
 	return false;
 }
-function following_count()
+function following_count(object)
 {
 	var n = 0;
 	for (var i = 0; i < ds_list_size(global.followerlist); i++)
 	{
 		var b = ds_list_find_value(global.followerlist, i);
-		if (instance_exists(b) && b.object_index == argument0)
+		if (instance_exists(b) && b.object_index == object)
 			n++;
 	}
 	return n;

@@ -1,7 +1,7 @@
-function cutscene_wait()
+function cutscene_wait(frames)
 {
 	timer++;
-	if (timer >= argument0)
+	if (timer >= frames)
 	{
 		timer = 0;
 		cutscene_end_action();

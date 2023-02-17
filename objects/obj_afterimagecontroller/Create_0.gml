@@ -1,6 +1,6 @@
 enum afterimage
 {
-	afterimage,
+	simple,
 	mach3effect,
 	heatattack,
 	firemouth,
@@ -8,9 +8,9 @@ enum afterimage
 	blur,
 	enemy,
 	fakepep,
-	enum_length,
+	
+	enum_length
 }
-
 
 depth = 1;
 global.afterimage_list = ds_list_create();

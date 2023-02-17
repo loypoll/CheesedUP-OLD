@@ -1,9 +1,9 @@
-function get_dark(argument0, argument1, argument2 = false, argument3 = 0, argument4 = 0)
+function get_dark(blend, use_dark, use_position = false, posX = 0, posY = 0)
 {
-	if (argument1)
+	if (use_dark)
 	{
 		if (room == boss_vigilante)
-			argument0 = make_color_rgb(247, 109, 22);
+			blend = make_color_rgb(247, 109, 22);
 		var d = room_width * room_height;
 		var b = d;
 		var bb = b;
@@ -11,10 +11,10 @@ function get_dark(argument0, argument1, argument2 = false, argument3 = 0, argume
 		{
 			if (object_index != obj_lightsource_attach || instance_exists(objectID))
 			{
-				if (!argument2)
+				if (!use_position)
 					var dis = distance_to_object(other);
 				else
-					dis = distance_between_points(x, y, argument3, argument4);
+					dis = distance_between_points(x, y, posX, posY);
 				if (dis < d)
 				{
 					bb = dis / distance;
@@ -31,9 +31,9 @@ function get_dark(argument0, argument1, argument2 = false, argument3 = 0, argume
 		a -= 102;
 		t = clamp(t, 0, 255);
 		a = clamp(a, 0, 255);
-		var r = (color_get_red(argument0) - t) + a;
-		var g = (color_get_green(argument0) - t) + a;
-		b = (color_get_blue(argument0) - t) + a;
+		var r = (color_get_red(blend) - t) + a;
+		var g = (color_get_green(blend) - t) + a;
+		b = (color_get_blue(blend) - t) + a;
 		if (r < 0)
 			r = 0;
 		if (g < 0)
@@ -82,9 +82,9 @@ function draw_enemy(healthbar, palette, color = c_white)
 	{
 		var c = image_blend;
 		if (elite)
-			c = 65535;
+			c = c_yellow;
 		if (elitegrab)
-			c = 32768;
+			c = c_green;
 		if (color != c_white)
 			c = color;
 		var b = get_dark(c, obj_drawcontroller.use_dark);

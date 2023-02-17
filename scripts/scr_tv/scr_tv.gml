@@ -231,9 +231,9 @@ function scr_tv_get_transfo_sprite()
 		case states.cheesepepstickup:
 			_spr = spr_tv_cheesepep;
 			break;
-		case 33:
-		case 35:
-		case 34:
+		case states.boxxedpep:
+		case states.boxxedpepspin:
+		case states.boxxedpepjump:
 			_spr = spr_tv_boxxedpep;
 			break;
 		case states.rideweenie:

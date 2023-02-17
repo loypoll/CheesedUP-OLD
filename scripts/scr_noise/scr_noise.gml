@@ -172,12 +172,12 @@ function scr_noise_arenaintro()
 	else
 		scr_boss_genericintro(spr_playerN_idle);
 }
-function scr_noise_do_hurt()
+function scr_noise_do_hurt(object)
 {
 	if (state != states.stun)
 	{
-		if (x != argument0.x)
-			image_xscale = sign(argument0.x - x);
+		if (x != object.x)
+			image_xscale = sign(object.x - x);
 		if (abs(hsp) > 7)
 			hsp = -image_xscale * abs(hsp);
 		else
@@ -188,7 +188,7 @@ function scr_noise_do_hurt()
 		stunned = 800;
 		vsp = -5;
 		inv_timer = 30;
-		instance_destroy(argument0);
+		instance_destroy(object);
 	}
 }
 function scr_noise_walk()

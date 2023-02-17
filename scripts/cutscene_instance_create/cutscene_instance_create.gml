@@ -1,9 +1,9 @@
-function cutscene_instance_create()
+function cutscene_instance_create(obj, x, y, xscale)
 {
-	var _obj = argument0;
-	var xx = argument1;
-	var yy = argument2;
-	var _xscale = argument3;
+	var _obj = obj;
+	var xx = x;
+	var yy = y;
+	var _xscale = xscale;
 	with (instance_create(xx, yy, _obj))
 	{
 		depth = other.depth;

@@ -56,12 +56,12 @@ function try_solid(xoffset, yoffset, object, iterations)
 	y = old_y;
 	return n;
 }
-function ledge_bump(argument0)
+function ledge_bump(iterations)
 {
 	var old_x = x;
 	var old_y = y;
 	x += (xscale * 4);
-	var ty = try_solid(0, -1, obj_solid, argument0);
+	var ty = try_solid(0, -1, obj_solid, iterations);
 	x = old_x;
 	if (ty != -1)
 	{
@@ -114,43 +114,43 @@ function concat()
 		_string += string(argument[i]);
 	return _string;
 }
-function embed_value_string()
+function embed_value_string(str, array)
 {
-	var str_copy = string_copy(argument0, 1, string_length(argument0));
-	for (var i = 0; i < array_length(argument1); i++)
+	var str_copy = string_copy(str, 1, string_length(str));
+	for (var i = 0; i < array_length(array); i++)
 	{
-		var b = string(argument1[i]);
+		var b = string(array[i]);
 		str_copy = string_replace(str_copy, "%", b);
 	}
 	return str_copy;
 }
-function ds_list_add_unique()
+function ds_list_add_unique(list)
 {
 	if (argument_count > 1)
 	{
 		for (var i = 1; i < argument_count; i++)
 		{
 			var b = argument[i];
-			if (ds_list_find_index(argument0, b) == -1)
-				ds_list_add(argument0, b);
+			if (ds_list_find_index(list, b) == -1)
+				ds_list_add(list, b);
 		}
 	}
 }
-function point_in_camera()
+function point_in_camera(x, y, cam)
 {
-	var cam_x = camera_get_view_x(argument2);
-	var cam_y = camera_get_view_y(argument2);
-	var cam_w = camera_get_view_width(argument2);
-	var cam_h = camera_get_view_height(argument2);
-	return point_in_rectangle(argument0, argument1, cam_x, cam_y, cam_x + cam_w, cam_y + cam_h);
+	var cam_x = camera_get_view_x(cam);
+	var cam_y = camera_get_view_y(cam);
+	var cam_w = camera_get_view_width(cam);
+	var cam_h = camera_get_view_height(cam);
+	return point_in_rectangle(x, y, cam_x, cam_y, cam_x + cam_w, cam_y + cam_h);
 }
-function point_in_camera_ext()
+function point_in_camera_ext(x, y, cam, extra_width, extra_height)
 {
-	var cam_x = camera_get_view_x(argument2);
-	var cam_y = camera_get_view_y(argument2);
-	var cam_w = camera_get_view_width(argument2);
-	var cam_h = camera_get_view_height(argument2);
-	return point_in_rectangle(argument0, argument1, cam_x - argument3, cam_y - argument4, cam_x + cam_w + argument3, cam_y + cam_h + argument4);
+	var cam_x = camera_get_view_x(cam);
+	var cam_y = camera_get_view_y(cam);
+	var cam_w = camera_get_view_width(cam);
+	var cam_h = camera_get_view_height(cam);
+	return point_in_rectangle(x, y, cam_x - extra_width, cam_y - extra_height, cam_x + cam_w + extra_width, cam_y + cam_h + extra_height);
 }
 function bbox_in_camera(camera, threshold = 0)
 {

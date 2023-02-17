@@ -3,11 +3,11 @@ function scr_pepperman_init_sounds()
 	snd_shoulderbash = fmod_event_create_instance("event:/sfx/pepperman/shoulderbash");
 	snd_groundpound = fmod_event_create_instance("event:/sfx/pepperman/groundpound");
 }
-function destroy_sounds()
+function destroy_sounds(soundinst_array)
 {
-	for (var i = 0; i < array_length(argument0); i++)
+	for (var i = 0; i < array_length(soundinst_array); i++)
 	{
-		var b = argument0[i];
+		var b = soundinst_array[i];
 		fmod_event_instance_stop(b, true);
 		fmod_event_instance_release(b);
 	}

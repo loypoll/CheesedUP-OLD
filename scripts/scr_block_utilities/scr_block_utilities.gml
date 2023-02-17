@@ -1,38 +1,38 @@
-function scr_destroy_tiles(argument0, argument1, argument2 = 0)
+function scr_destroy_tiles(_size, _layer, _spread = 0)
 {
-	var lay_id = layer_get_id(argument1);
+	var lay_id = layer_get_id(_layer);
 	if (lay_id != -1)
 	{
 		var map_id = layer_tilemap_get_id(lay_id);
-		var w = abs(sprite_width) / argument0;
-		var h = abs(sprite_height) / argument0;
+		var w = abs(sprite_width) / _size;
+		var h = abs(sprite_height) / _size;
 		var ix = sign(image_xscale);
 		var iy = sign(image_yscale);
 		if (ix < 0)
 			w++;
-		for (var yy = 0 - argument2; yy < (h + argument2); yy++)
+		for (var yy = 0 - _spread; yy < (h + _spread); yy++)
 		{
-			for (var xx = 0 - argument2; xx < (w + argument2); xx++)
-				scr_destroy_tile(x + (xx * argument0 * ix), y + (yy * argument0 * iy), map_id);
+			for (var xx = 0 - _spread; xx < (w + _spread); xx++)
+				scr_destroy_tile(x + (xx * _size * ix), y + (yy * _size * iy), map_id);
 		}
 	}
 }
-function scr_destroy_tile_arr(argument0, argument1, argument2 = 0)
+function scr_destroy_tile_arr(_size, _array, _spread = 0)
 {
-	for (var i = 0; i < array_length(argument1); i++)
-		scr_destroy_tiles(argument0, argument1[i], argument2);
+	for (var i = 0; i < array_length(_array); i++)
+		scr_destroy_tiles(_size, _array[i], _spread);
 }
-function scr_destroy_tile()
+function scr_destroy_tile(x, y, tilemap)
 {
-	var data = tilemap_get_at_pixel(argument2, argument0, argument1);
+	var data = tilemap_get_at_pixel(tilemap, x, y);
 	data = tile_set_empty(data);
-	tilemap_set_at_pixel(argument2, data, argument0, argument1);
+	tilemap_set_at_pixel(tilemap, data, x, y);
 }
-function scr_solid_line()
+function scr_solid_line(instance)
 {
-	if (collision_line(x, y, argument0.x, argument0.y, obj_solid, false, true) != -4)
+	if (collision_line(x, y, instance.x, instance.y, obj_solid, false, true) != -4)
 		return true;
-	if (collision_line(x, y, argument0.x, argument0.y, obj_slope, false, true) != -4)
+	if (collision_line(x, y, instance.x, instance.y, obj_slope, false, true) != -4)
 		return true;
 	return false;
 }
@@ -92,9 +92,9 @@ function scr_cutoff()
 	ds_list_clear(list);
 	ds_list_destroy(list);
 }
-function scr_cutoff_get_angle()
+function scr_cutoff_get_angle(cutoff_instance)
 {
-	var a = argument0.image_angle + 90;
-	var d = point_direction(0, 0, lengthdir_x(1, a) * argument0.image_yscale, lengthdir_y(1, a) * argument0.image_yscale);
+	var a = cutoff_instance.image_angle + 90;
+	var d = point_direction(0, 0, lengthdir_x(1, a) * cutoff_instance.image_yscale, lengthdir_y(1, a) * cutoff_instance.image_yscale);
 	return d;
 }

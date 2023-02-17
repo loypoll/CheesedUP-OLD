@@ -1,8 +1,8 @@
-function scr_pizzaface_p3_init_attack()
+function scr_pizzaface_p3_init_attack(argument0)
 {
 	attack_list[argument0] = array_create(0);
 }
-function scr_pizzaface_p3_add_attack()
+function scr_pizzaface_p3_add_attack(argument0, argument1, argument2)
 {
 	array_push(attack_list[argument0], [argument1, argument2]);
 }
@@ -29,9 +29,9 @@ function scr_pizzaface_p3_update_sounds()
 	else
 		fmod_event_instance_stop(snd_swinging, true);
 }
-function scr_pizzaface_p3_do_player_attack()
+function scr_pizzaface_p3_do_player_attack(player)
 {
-	with (argument0)
+	with (player)
 	{
 		state = states.supergrab;
 		substate = states.grab;
@@ -42,8 +42,8 @@ function scr_pizzaface_p3_do_player_attack()
 		punchcount = 20;
 	}
 	hsp = 0;
-	image_xscale = -argument0.xscale;
-	playerid = argument0;
+	image_xscale = -player.xscale;
+	playerid = player;
 	state = states.supergrab;
 	substate = states.grabbed;
 }

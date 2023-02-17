@@ -44,13 +44,13 @@ function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0)
 		shake_y: 0
 	});
 }
-function scr_pauseicons_update(argument0)
+function scr_pauseicons_update(selected)
 {
 	for (var i = 0; i < array_length(pause_icons); i++)
 	{
 		with (pause_icons[i])
 		{
-			if (i == argument0)
+			if (i == selected)
 			{
 				shake_x = random_range(-1, 1);
 				shake_y = random_range(-1, 1);

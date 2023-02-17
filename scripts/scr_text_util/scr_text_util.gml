@@ -18,17 +18,17 @@ function create_transformation_tip(str, save_entry = noone)
 	obj_savesystem.ini_str = ini_close();
 	return b;
 }
-function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
+function scr_compile_icon_text(text, pos = 1, return_array = false)
 {
 	var arr = [];
-	var len = string_length(argument0);
+	var len = string_length(text);
 	var newline = string_height("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 	var char_x = 0;
 	var char_y = 0;
-	for (var saved_pos = 1; argument1 <= len; argument1 += 1)
+	for (var saved_pos = 1; pos <= len; pos += 1)
 	{
-		var start = argument1;
-		var char = string_ord_at(argument0, argument1);
+		var start = pos;
+		var char = string_ord_at(text, pos);
 		switch char
 		{
 			case 10: // TODO
@@ -37,10 +37,10 @@ function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 				break;
 			
 			case 123:
-				var effect = string_copy(argument0, argument1, 3);
+				var effect = string_copy(text, pos, 3);
 				var te = 1;
-				argument1 += 3;
-				var n = scr_compile_icon_text(argument0, argument1, true);
+				pos += 3;
+				var n = scr_compile_icon_text(text, pos, true);
 				switch (effect)
 				{
 					case "{s}":
@@ -51,13 +51,13 @@ function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 						break;
 				}
 				array_push(arr, [char_x, char_y, 2, te, n[0]]);
-				argument1 = n[1];
+				pos = n[1];
 				char_x = n[2];
 				char_y = n[3];
 				break;
 			
 			case 91:
-				var button = string_copy(argument0, argument1, 3);
+				var button = string_copy(text, pos, 3);
 				var t = (1 << 0);
 				var b = 0;
 				switch (button)
@@ -104,44 +104,44 @@ function scr_compile_icon_text(argument0, argument1 = 1, argument2 = false)
 				}
 				array_push(arr, [char_x, char_y, t, b]);
 				char_x += 32;
-				argument1 += 2;
+				pos += 2;
 				break;
 			
 			case 47:
-				if (argument2)
+				if (return_array)
 				{
-					saved_pos = argument1;
-					argument1 = len + 1;
+					saved_pos = pos;
+					pos = len + 1;
 				}
 				break;
 			
 			default:
-				while ((argument1 + 1) <= len)
+				while ((pos + 1) <= len)
 				{
-					char = string_ord_at(argument0, argument1 + 1);
+					char = string_ord_at(text, pos + 1);
 					if (char != 91 && char != 10 && char != 123 && char != 47)
-						argument1 += 1;
+						pos += 1;
 					else
 						break;
 				}
-				n = string_copy(argument0, start, (argument1 - start) + 1);
+				n = string_copy(text, start, (pos - start) + 1);
 				array_push(arr, [char_x, char_y, (0 << 0), n]);
 				char_x += string_width(n);
 				break;
 		}
 	}
-	if (argument2)
+	if (return_array)
 		return [arr, saved_pos, char_x, char_y];
 	return arr;
 }
-function scr_text_arr_size(argument0)
+function scr_text_arr_size(array)
 {
 	var w = 0;
 	var newline = string_height("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 	var h = newline;
-	for (var i = 0; i < array_length(argument0); i++)
+	for (var i = 0; i < array_length(array); i++)
 	{
-		var b = argument0[i];
+		var b = array[i];
 		var cx = b[0];
 		var cy = b[1];
 		var t = b[2];

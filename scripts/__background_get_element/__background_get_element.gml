@@ -1,6 +1,6 @@
-function __background_get_element()
+function __background_get_element(bind)
 {
-	var __bind = argument0;
+	var __bind = bind;
 
 	var __result;
 	__result[0] = -1;

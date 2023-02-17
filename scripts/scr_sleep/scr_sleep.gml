@@ -1,7 +1,7 @@
-function scr_sleep()
+function scr_sleep(miliseconds)
 {
 	var time = current_time;
-	var ms = argument0;
+	var ms = miliseconds;
 	do
 	{
 	}

@@ -1,4 +1,4 @@
-function tile_layer_find()
+function tile_layer_find(depth, x, y)
 {
 	/// @description Returns the id of a tile at a given depth and position.
 	/// @param depth The depth of the tile to be found.
@@ -6,9 +6,9 @@ function tile_layer_find()
 	/// @param y The y position to check.
 	/// @returns 
 
-	var __depth = argument0;
-	var __x = argument1;
-	var __y = argument2;
+	var __depth = depth;
+	var __x = x;
+	var __y = y;
 
 	// Scan through all layers looking for tiles
 	// This is going to be slow

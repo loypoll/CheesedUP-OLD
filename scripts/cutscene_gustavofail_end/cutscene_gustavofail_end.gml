@@ -1,6 +1,6 @@
-function cutscene_gustavofail_end()
+function cutscene_gustavofail_end(frames)
 {
-	var time = argument0;
+	var time = frames;
 	timer++;
 	with (obj_gustavo)
 		visible = false;

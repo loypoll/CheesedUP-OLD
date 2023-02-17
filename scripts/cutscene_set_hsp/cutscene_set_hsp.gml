@@ -1,14 +1,14 @@
-function cutscene_set_hsp()
+function cutscene_set_hsp(obj, hsp)
 {
-	var _obj = argument0;
-	var _hsp = argument1;
+	var _obj = obj;
+	var _hsp = hsp;
 	with (_obj)
 		hsp = _hsp;
 	cutscene_end_action();
 }
-function cutscene_set_vsp()
+function cutscene_set_vsp(obj, vsp)
 {
-	with (argument0)
-		vsp = argument1;
+	with (obj)
+		vsp = vsp;
 	cutscene_end_action();
 }

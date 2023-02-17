@@ -70,12 +70,12 @@ function check_slope(slope_object)
 	}
 	return false;
 }
-function scr_solid_slope()
+function scr_solid_slope(_x, _y)
 {
 	var old_x = x;
 	var old_y = y;
-	x = argument0;
-	y = argument1;
+	x = _x;
+	y = _y;
 	if (check_slope(obj_slope))
 	{
 		var inst = instance_place(x, y, obj_slope);

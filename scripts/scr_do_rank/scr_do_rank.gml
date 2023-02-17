@@ -5,7 +5,7 @@ function scr_is_p_rank()
 	else
 		return !global.combodropped;
 }
-function scr_do_rank(argument0 = true, argument1 = false)
+function scr_do_rank(showtoppins = true, boss = false)
 {
 	fmod_event_instance_stop(global.snd_escaperumble, true);
 	var ex = x;
@@ -24,7 +24,7 @@ function scr_do_rank(argument0 = true, argument1 = false)
 	var namestring = string_letters(roomname);
 	if (!global.tutorial_room)
 	{
-		if (!argument1)
+		if (!boss)
 			scr_savescore(global.leveltosave);
 		else
 		{
@@ -86,7 +86,7 @@ function scr_do_rank(argument0 = true, argument1 = false)
 		with (instance_create(x, y, obj_endlevelfade))
 		{
 			do_rank = true;
-			toppinvisible = argument0;
+			toppinvisible = showtoppins;
 			if (room == tower_tutorial1)
 			{
 				do_rank = false;

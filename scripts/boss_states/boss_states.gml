@@ -26,7 +26,7 @@ function state_boss_walk(cooldown_end_script)
 		{
 			var b = ds_map_find_value(player_hurtstates, targetplayer.state);
 			if (!is_undefined(b))
-				boss_decide_taunt(130); // TODO: obj_fakepeptauntspawner?
+				boss_decide_taunt(130);
 		}
 		if (state != states.backbreaker)
 		{

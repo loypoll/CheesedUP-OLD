@@ -14,7 +14,7 @@ function Command() constructor
 	};
 	state = 1;
 }
-function PlaceCommand() : Command() constructor
+function PlaceCommand(_x, _y, _object) : Command() constructor
 {
 	static Do = function()
 	{
@@ -47,8 +47,8 @@ function PlaceCommand() : Command() constructor
 			instance_destroy(instance);
 		}
 	};
-	x = argument0;
-	y = argument1;
-	object = argument2;
-	instance = -4;
+	x = _x;
+	y = _y;
+	object = _object;
+	instance = noone;
 }

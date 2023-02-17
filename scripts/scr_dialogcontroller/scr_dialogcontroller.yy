@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Cutscene",
-    "path": "folders/Scripts/Cutscene.yy",
+    "name": "Systems",
+    "path": "folders/Scripts/Systems.yy",
   },
 }

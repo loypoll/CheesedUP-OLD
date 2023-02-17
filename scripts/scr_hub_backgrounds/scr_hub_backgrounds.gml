@@ -47,22 +47,22 @@ function scr_hub_bg_step()
 		}
 	}
 }
-function scr_hub_bg_draw(argument0, argument1, argument2, argument3, argument4 = false)
+function scr_hub_bg_draw(x, y, sprite, frame, reset_blend = false)
 {
 	if (bgalpha < 1)
 	{
-		var w = sprite_get_width(argument2);
-		var h = sprite_get_height(argument2);
-		var x1 = sprite_get_xoffset(argument2);
-		var y1 = sprite_get_yoffset(argument2);
+		var w = sprite_get_width(sprite);
+		var h = sprite_get_height(sprite);
+		var x1 = sprite_get_xoffset(sprite);
+		var y1 = sprite_get_yoffset(sprite);
 		if (!surface_exists(bgmask_surface))
 		{
 			bgmask_surface = surface_create(w, h);
 			surface_set_target(bgmask_surface);
 			draw_clear(0);
 			gpu_set_blendmode(3);
-			draw_sprite(argument2, argument3, x1, y1);
-			if (!argument4)
+			draw_sprite(sprite, frame, x1, y1);
+			if (!reset_blend)
 				gpu_set_blendmode(0);
 			else
 				reset_blendmode();
@@ -83,18 +83,18 @@ function scr_hub_bg_draw(argument0, argument1, argument2, argument3, argument4 =
 			{
 				var bx = bgspritepos[i][0];
 				var by = bgspritepos[i][1];
-				draw_sprite_tiled(bgsprite, i, bx - argument0, (by + h) - argument1);
+				draw_sprite_tiled(bgsprite, i, bx - x, (by + h) - y);
 			}
 		}
 		gpu_set_blendmode(3);
 		draw_surface(bgmask_surface, 0, 0);
-		if (!argument4)
+		if (!reset_blend)
 			gpu_set_blendmode(0);
 		else
 			reset_blendmode();
 		surface_reset_target();
-		draw_surface(bgclip_surface, argument0 - x1, argument1 - y1);
+		draw_surface(bgclip_surface, x - x1, y - y1);
 	}
 	if (bgalpha > 0)
-		draw_sprite_ext(argument2, argument3, argument0, argument1, image_xscale, image_yscale, image_angle, image_blend, bgalpha);
+		draw_sprite_ext(sprite, frame, x, y, image_xscale, image_yscale, image_angle, image_blend, bgalpha);
 }

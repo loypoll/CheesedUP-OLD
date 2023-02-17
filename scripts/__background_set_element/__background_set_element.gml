@@ -1,21 +1,21 @@
-function __background_set_element()
+function __background_set_element(bind, vis, fore, back, x, y, htiled, vtiled, xscale, yscale, stretch, hspeed, vspeed, blend, alpha)
 {
 	// NOTE: this script will only work properly if you're using the standard depth range (-16000 to 16000)
-	var __bind = argument0;
-	var __vis = argument1;
-	var __fore = argument2;
-	var __back = argument3;
-	var __x = argument4;
-	var __y = argument5;
-	var __htiled = argument6;
-	var __vtiled = argument7;
-	var __xscale = argument8;
-	var __yscale = argument9;
-	var __stretch = argument10;
-	var __hspeed = argument11;
-	var __vspeed = argument12;
-	var __blend = argument13;
-	var __alpha = argument14;
+	var __bind = bind;
+	var __vis = vis;
+	var __fore = fore;
+	var __back = back;
+	var __x = x;
+	var __y = y;
+	var __htiled = htiled;
+	var __vtiled = vtiled;
+	var __xscale = xscale;
+	var __yscale = yscale;
+	var __stretch = stretch;
+	var __hspeed = hspeed;
+	var __vspeed = vspeed;
+	var __blend = blend;
+	var __alpha = alpha;
 
 	//var __nearestdepth = -15000;
 	//var __farthestdepth = 15999;

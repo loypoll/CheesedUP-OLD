@@ -1,4 +1,4 @@
-function fakepep_set_attack()
+function fakepep_set_attack(argument0, argument1, argument2, argument3, argument4)
 {
 	if (argument3 != 0 && argument4 == 0)
 		argument4 = argument3;
@@ -9,23 +9,23 @@ function fakepep_set_attack()
 		deformed_timer: argument4
 	};
 }
-function fakepep_get_attack()
+function fakepep_get_attack(argument0, argument1)
 {
 	return attack_list[argument0][argument1];
 }
-function fakepep_start_projectiles()
+function fakepep_start_projectiles(argument0, argument1)
 {
 	projectile_list[argument0][argument1] = array_create(0);
 }
-function fakepep_add_projectile()
+function fakepep_add_projectile(argument0, argument1, argument2)
 {
 	array_push(projectile_list[argument0][argument1], argument2);
 }
-function fakepep_get_projectile()
+function fakepep_get_projectile(argument0, argument1, argument2)
 {
 	return projectile_list[argument0][argument1][argument2];
 }
-function fakepep_add_grabclone()
+function fakepep_add_grabclone(argument0, argument1, argument2, argument3)
 {
 	fakepep_add_projectile(argument0, argument1, 
 	{
@@ -34,7 +34,7 @@ function fakepep_add_grabclone()
 		direction: argument2
 	});
 }
-function fakepep_add_bodyslamclone()
+function fakepep_add_bodyslamclone(argument0, argument1, argument2, argument3)
 {
 	fakepep_add_projectile(argument0, argument1, 
 	{
@@ -43,7 +43,7 @@ function fakepep_add_bodyslamclone()
 		direction: argument2
 	});
 }
-function fakepep_add_machclone()
+function fakepep_add_machclone(argument0, argument1, argument2, argument3, argument4)
 {
 	fakepep_add_projectile(argument0, argument1, 
 	{
@@ -162,7 +162,7 @@ function scr_fakepep_update_sounds()
 	else
 		fmod_event_instance_stop(snd_flailing, false);
 }
-function scr_fakepepboss_do_projectiles()
+function scr_fakepepboss_do_projectiles(argument0, argument1)
 {
 	if (pizzahead)
 		exit;
@@ -228,7 +228,7 @@ function scr_fakepepboss_do_projectiles()
 				deformed_cooldown = 0;
 			}
 			break;
-		case states.grabbed:
+		case 4:
 			xx = _attack.x1;
 			if (_attack.direction == -1)
 				xx = _attack.x2;

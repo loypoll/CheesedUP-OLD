@@ -1,10 +1,11 @@
-function scr_add_wave()
+function scr_add_wave(wave, enemynumber, object, rand, spawnpoint)
 {
-	var _wave = argument0;
-	var _enemynumber = argument1;
-	var _obj = argument2;
-	var _random = argument3;
-	var _spawnpoint = argument4;
+	var _wave = wave;
+	var _enemynumber = enemynumber;
+	var _obj = object;
+	var _random = rand;
+	var _spawnpoint = spawnpoint;
+	
 	baddie_arr[_wave][_enemynumber] = _obj;
 	baddie_random[_wave][_enemynumber] = _random;
 	if (!_random)

@@ -36,12 +36,12 @@ function scr_monster_collide()
 		vsp += grav;
 	grounded = scr_monster_solid(x, y + 1);
 }
-function scr_monster_solid()
+function scr_monster_solid(_x, _y)
 {
 	var old_x = x;
 	var old_y = y;
-	x = argument0;
-	y = argument1;
+	x = _x;
+	y = _y;
 	if (place_meeting(x, y, obj_monstersolid))
 	{
 		x = old_x;

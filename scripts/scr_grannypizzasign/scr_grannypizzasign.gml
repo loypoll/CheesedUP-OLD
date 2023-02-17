@@ -1,8 +1,8 @@
-function scr_add_grannypizzaboss()
+function scr_add_grannypizzaboss(section, entry, icon)
 {
-	var q = scr_add_grannypizzalevel(argument1, argument2, false, false, false, true);
+	var q = scr_add_grannypizzalevel(entry, icon, false, false, false, true);
 	ini_open_from_string(obj_savesystem.ini_str);
-	if (ini_read_real(argument0, "unlocked", false) == 0)
+	if (ini_read_real(section, "unlocked", false) == 0)
 		array_pop(levelarray);
 	ini_close();
 }

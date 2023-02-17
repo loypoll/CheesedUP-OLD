@@ -14,13 +14,13 @@ function particle_set_scale(part, xscale, yscale)
 {
 	part_type_scale(ds_map_find_value(global.part_map, part), xscale, yscale);
 }
-function create_debris(_x, _y, sprite, _animated = false)
+function create_debris(_x, _y, _sprite, _animated = false)
 {
 	var q = 
 	{
 		x: _x,
 		y: _y,
-		sprite_index: sprite,
+		sprite_index: _sprite,
 		image_number: sprite_get_number(sprite),
 		image_index: irandom(image_number - 1),
 		image_angle: random_range(1, 270),
@@ -38,29 +38,29 @@ function create_debris(_x, _y, sprite, _animated = false)
 	ds_list_add(global.debris_list, q);
 	return q;
 }
-function create_heatpuff()
+function create_heatpuff(x, y)
 {
-	var q = create_debris(argument0, argument1, spr_heatpuff, true);
+	var q = create_debris(x, y, spr_heatpuff, true);
 	q.grav = 0;
 	q.hsp = 0;
 	q.vsp = irandom_range(-4, -1);
 	q.destroyonanimation = true;
 	return q;
 }
-function create_collect(argument0, argument1, argument2, argument3 = 0)
+function create_collect(_x, _y, _sprite, _value = 0)
 {
-	argument0 -= camera_get_view_x(view_camera[0]);
-	argument1 -= camera_get_view_y(view_camera[0]);
+	_x -= camera_get_view_x(view_camera[0]);
+	_y -= camera_get_view_y(view_camera[0]);
 	var q = 
 	{
-		x: argument0,
-		y: argument1,
-		sprite_index: argument2,
+		x: _x,
+		y: _y,
+		sprite_index: _sprite,
 		image_index: 0,
-		image_number: sprite_get_number(argument2),
+		image_number: sprite_get_number(_sprite),
 		hsp: 0,
 		vsp: 0,
-		value: argument3
+		value: _value
 	};
 	ds_list_add(global.collect_list, q);
 	return q;

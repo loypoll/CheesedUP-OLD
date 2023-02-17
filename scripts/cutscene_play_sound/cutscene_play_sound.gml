@@ -1,5 +1,5 @@
-function cutscene_soundeffect()
+function cutscene_soundeffect(sound)
 {
-	scr_soundeffect(argument0);
+	scr_soundeffect(sound);
 	cutscene_end_action();
 }

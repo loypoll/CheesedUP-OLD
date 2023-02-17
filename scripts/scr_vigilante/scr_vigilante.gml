@@ -200,9 +200,9 @@ function scr_vigilante_arenaintro()
 		}
 	}
 }
-function scr_vigilante_do_hurt_phase2()
+function scr_vigilante_do_hurt_phase2(object)
 {
-	scr_boss_do_hurt_phase2(argument0);
+	scr_boss_do_hurt_phase2(object);
 }
 function scr_vigilante_phase1hurt()
 {
@@ -481,9 +481,9 @@ function scr_vigilante_do_revolver(argument0, argument1, argument2 = false)
 		tauntstoredstate = states.revolver;
 	}
 }
-function scr_vigilante_do_dynamite()
+function scr_vigilante_do_dynamite(count)
 {
-	shot = argument0;
+	shot = count;
 	state = states.dynamite;
 	scr_vigilante_throw_dynamite();
 }

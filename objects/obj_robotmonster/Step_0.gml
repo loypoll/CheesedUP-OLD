@@ -135,7 +135,7 @@ switch (state)
 			state = states.robotchase;
 		break;
 	case states.robotinvestigate:
-		scr_monsterinvestigate(10, 4129, 49);
+		scr_monsterinvestigate(10, spr_monstershroom_chase, spr_monstershroom_idle);
 		break;
 }
 if (object_index == obj_robotmonster || object_index == obj_hillbillymonster)

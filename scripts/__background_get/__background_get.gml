@@ -1,7 +1,9 @@
-function __background_get()
+function __background_get(prop, bind)
 {
-	var __prop = argument0;
-	var __bind = argument1;
+	var __prop = prop;
+	var __bind = bind;
+
 	var __backinfo = __background_get_element(__bind);
+
 	return __background_get_internal(__prop, __bind, __backinfo);
 }

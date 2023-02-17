@@ -1,4 +1,4 @@
-function secret_add()
+function secret_add(argument0, argument1)
 {
 	with (obj_secretmanager)
 	{
@@ -7,12 +7,12 @@ function secret_add()
 			method(id, argument0)();
 	}
 }
-function secret_add_touchall()
+function secret_add_touchall(argument0, argument1, argument2)
 {
 	with (obj_secretmanager)
 		ds_list_add(touchall, [argument0, argument1, argument2]);
 }
-function secret_add_touchall_requirement()
+function secret_add_touchall_requirement(argument0, argument1)
 {
 	touchrequirement[argument0] = [argument1, false];
 }
@@ -45,7 +45,7 @@ function secret_check_touchall()
 	}
 	return false;
 }
-function secret_check_trigger()
+function secret_check_trigger(argument0)
 {
 	var _found = false;
 	with (obj_secrettrigger)
@@ -60,7 +60,7 @@ function secret_check_trigger()
 		});
 	return _found;
 }
-function secret_open_portal()
+function secret_open_portal(argument0)
 {
 	with (obj_secretportal)
 	{
@@ -83,7 +83,7 @@ function secret_close_portal(argument0, argument1 = false)
 		}
 	}
 }
-function secret_close_portalID()
+function secret_close_portalID(argument0)
 {
 	with (argument0)
 	{

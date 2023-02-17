@@ -1,4 +1,4 @@
-function dialog_create(argument0, argument1 = noone, argument2 = noone, argument3 = noone)
+function dialog_create(text, name_sprite = noone, end_func = noone, unknown = noone)
 {
-	return [argument0, argument1, argument2, argument3];
+	return [text, name_sprite, end_func, unknown];
 }
