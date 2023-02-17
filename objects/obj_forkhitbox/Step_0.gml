@@ -24,7 +24,7 @@ with (ID)
 				instance_destroy(other);
 			break;
 		case obj_pizzafaceboss_p3:
-			if ((state != states.punch && state != 287) || (state == states.punch && floor(image_index) >= 38))
+			if ((state != states.punch && state != states.boss_swinging) || (state == states.punch && floor(image_index) >= 38))
 				instance_destroy(other);
 			break;
 		case obj_fakepepclone:

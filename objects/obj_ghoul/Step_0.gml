@@ -47,7 +47,7 @@ switch (state)
 		else
 			image_xscale = sign(x - xstart);
 		break;
-	case 8:
+	case states.transition:
 		hsp = 0;
 		vsp = 0;
 		if (floor(image_index) == (image_number - 1))

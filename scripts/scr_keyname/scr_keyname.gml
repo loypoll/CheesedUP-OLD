@@ -248,7 +248,7 @@ function scr_keyname(_key)
 		case 65:
 			return "A";
 			break;
-		case states.shotgun:
+		case 66:
 			return "B";
 			break;
 		case 67:
@@ -272,7 +272,7 @@ function scr_keyname(_key)
 		case 73:
 			return "I";
 			break;
-		case states.throwing:
+		case 74:
 			return "J";
 			break;
 		case 75:
@@ -281,7 +281,7 @@ function scr_keyname(_key)
 		case 76:
 			return "L";
 			break;
-		case states.skateboard:
+		case 77:
 			return "M";
 			break;
 		case 78:
@@ -290,7 +290,7 @@ function scr_keyname(_key)
 		case 79:
 			return "O";
 			break;
-		case states.punch:
+		case 80:
 			return "P";
 			break;
 		case 81:
@@ -302,7 +302,7 @@ function scr_keyname(_key)
 		case 83:
 			return "S";
 			break;
-		case states.backbreaker:
+		case 84:
 			return "T";
 			break;
 		case 85:
@@ -326,7 +326,7 @@ function scr_keyname(_key)
 		case 91:
 			return "LEXPLR";
 			break;
-		case states.jump:
+		case 92:
 			return "REXPLR";
 			break;
 		case 96:

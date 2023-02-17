@@ -11,7 +11,7 @@ boss_func = function()
 	{
 		eh = elitehit;
 		p = phase;
-		if (((p == 1 && state == 295) || instance_exists(obj_noiseballooncrash)) && phase == 1)
+		if (((p == 1 && state == states.fightball) || instance_exists(obj_noiseballooncrash)) && phase == 1)
 			eh = 0;
 	}
 	if (p == 1)

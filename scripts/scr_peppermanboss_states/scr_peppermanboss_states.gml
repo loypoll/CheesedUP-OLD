@@ -425,7 +425,7 @@ function boss_pepperman_shoulder()
 		if (place_meeting(x + (sign(hsp) * 96), y, obj_solid))
 		{
 			shoulderturns--;
-			state = 161;
+			state = states.boss_shoulderturn;
 			sprite_index = spr_pepperman_shoulderstart;
 			image_index = 0;
 		}

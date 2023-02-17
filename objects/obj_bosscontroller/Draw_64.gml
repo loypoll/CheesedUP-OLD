@@ -71,8 +71,8 @@ switch (state)
 			draw_sprite(vstitle, -1, xx, yy);
 		}
 		break;
-	case 0:
-	case 98:
+	case states.normal:
+	case states.victory:
 		shader_set(global.Pal_Shader);
 		scr_bosscontroller_draw_health(spr_bossfight_playerhp, player_rowmax, player_columnmax, player_hp, player_maxhp, player_hp_x, player_hp_y, player_xpad, player_ypad, player_index, image_alpha, spr_peppalette, obj_player1.paletteselect, global.palettetexture);
 		var bpal = boss_palette;

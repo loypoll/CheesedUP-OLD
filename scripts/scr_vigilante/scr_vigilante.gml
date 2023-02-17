@@ -175,7 +175,7 @@ function scr_vigilante_arenaintro()
 				image_index = 0;
 				image_speed = 0.35;
 				landAnim = false;
-				tauntstoredstate = 0;
+				tauntstoredstate = states.normal;
 				state = states.animation;
 			}
 		}
@@ -337,19 +337,19 @@ function scr_vigilante_walk()
 		trace(attack);
 		switch (attack[0])
 		{
-			case 0:
+			case vigi_attack.revolver:
 				scr_vigilante_do_revolver(1, attack[1], false);
 				break;
-			case 10:
+			case vigi_attack.reload:
 				scr_vigilante_do_reload(attack[1]);
 				break;
-			case 1:
+			case vigi_attack.dynamite:
 				scr_vigilante_do_dynamite(1);
 				break;
-			case 2:
+			case vigi_attack.cow:
 				scr_vigilante_do_cow(1, attack[1]);
 				break;
-			case 3:
+			case vigi_attack.estampede:
 				estampedemax = attack[1];
 				state = states.estampede;
 				estampedecooldown = 30;
@@ -364,13 +364,13 @@ function scr_vigilante_walk()
 						spd = 5;
 				}
 				break;
-			case 9:
+			case vigi_attack.wait:
 				waitbuffer = attack[1];
 				state = states.boss_wait;
 				if (sprite_index != spr_playerV_revolverend)
 					sprite_index = spr_playerV_idle;
 				break;
-			case 4:
+			case vigi_attack.flamethrower:
 				state = states.boss_flamethrower;
 				if (targetplayer.x != x)
 					image_xscale = sign(targetplayer.x - x);
@@ -382,7 +382,7 @@ function scr_vigilante_walk()
 				image_index = 0;
 				image_speed = 0.35;
 				break;
-			case 5:
+			case vigi_attack.machinegun:
 				create_particle(x, y, particle.highjumpcloud2);
 				state = states.boss_machinegun;
 				sprite_index = spr_vigilante_uziprepare;
@@ -393,7 +393,7 @@ function scr_vigilante_walk()
 				if (targetplayer.x != x)
 					image_xscale = sign(targetplayer.x - x);
 				break;
-			case 6:
+			case vigi_attack.bazooka:
 				create_particle(x, y, particle.highjumpcloud2);
 				state = states.boss_bazooka;
 				hsp = 0;
@@ -402,7 +402,7 @@ function scr_vigilante_walk()
 				sprite_index = spr_playerV_jump;
 				image_index = 0;
 				break;
-			case 7:
+			case vigi_attack.crate:
 				state = states.boss_crate;
 				hsp = 0;
 				fmod_event_one_shot_3d("event:/sfx/vigilante/order", x, y);
@@ -415,7 +415,7 @@ function scr_vigilante_walk()
 				if (targetplayer.x != x)
 					image_xscale = sign(targetplayer.x - x);
 				break;
-			case 8:
+			case vigi_attack.mach:
 				state = states.mach2;
 				kickbuffer = attack[1];
 				kick = true;

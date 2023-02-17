@@ -10,7 +10,7 @@ switch state
 		break
 	case states.walk:
 		break
-	case 206:
+	case states.blockstance:
 		if (!instance_exists(playerid))
 		{
 			state = states.walk
@@ -167,7 +167,7 @@ switch state
 	case states.rage:
 		scr_enemy_rage()
 		break
-	case 17:
+	case states.ghostpossess:
 		scr_enemy_ghostpossess()
 		break
 }

@@ -28,7 +28,7 @@ switch (state)
 	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 103:
+	case states.mach1:
 		if (image_index > (image_number - 1))
 		{
 			hsp = image_xscale * startmachspeed;
@@ -63,7 +63,7 @@ switch (state)
 			sprite_index = stunfallspr;
 		}
 		break;
-	case 91:
+	case states.tackle:
 		if (image_index > 8)
 		{
 			hsp = image_xscale * tacklespeed;
@@ -92,7 +92,7 @@ switch (state)
 			sprite_index = stunfallspr;
 		}
 		break;
-	case 23:
+	case states.slap:
 		hsp = 0;
 		if (image_index > (image_number - 1))
 		{

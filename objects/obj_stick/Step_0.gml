@@ -34,7 +34,7 @@ switch (state)
 		else if (floor(image_index) == (image_number - 1))
 			state = states.normal;
 		break;
-	case 0:
+	case states.normal:
 		if (arrowID == -4)
 			arrowID = scr_create_uparrowhitbox();
 		if (sprite_index != spr_stick_idleanim1 && sprite_index != spr_stick_idleanim2 && sprite_index != spr_stick_idleanim3)

@@ -283,7 +283,7 @@ switch (state)
 			case spr_tv_exprmach3:
 				with (obj_player1)
 				{
-					if (state != states.mach3 && state != states.climbwall && (state != states.chainsaw || (tauntstoredstate != 121 && tauntstoredstate != 37)) && sprite_index != spr_mach3boost && mach4mode == 0)
+					if (state != states.mach3 && state != states.climbwall && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)) && sprite_index != spr_mach3boost && mach4mode == 0)
 					{
 						other.state = states.tv_whitenoise;
 						other.expressionsprite = -4;
@@ -295,7 +295,7 @@ switch (state)
 			case spr_tv_exprmach4:
 				with (obj_player1)
 				{
-					if (mach4mode == 0 && (state != states.chainsaw || (tauntstoredstate != 121 && tauntstoredstate != 37)))
+					if (mach4mode == 0 && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)))
 					{
 						other.state = states.tv_whitenoise;
 						other.expressionsprite = -4;

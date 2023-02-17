@@ -29,7 +29,7 @@ if (state == states.walk)
 		image_index = 0;
 	}
 }
-else if (state == 141)
+else if (state == states.chase)
 {
 	if (sprite_index == spr_shrimp_throw)
 		sprite_index = spr_shrimp_walk;

@@ -8,7 +8,7 @@ switch (state)
 			image_index = 0;
 		}
 		break;
-	case 8:
+	case states.transition:
 		if (floor(image_index) == (image_number - 1))
 		{
 			if (selected)
@@ -30,7 +30,7 @@ switch (state)
 			}
 		}
 		break;
-	case 0:
+	case states.normal:
 		if (sprite_index == transspr && floor(image_index) == (image_number - 1))
 			image_index = image_number - 3;
 		if (!selected)

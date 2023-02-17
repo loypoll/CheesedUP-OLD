@@ -17,15 +17,15 @@ function scr_ratblock_destroy()
 		{
 			switch (state)
 			{
-				case 113:
+				case states.barrel:
 					if (!place_meeting(x, y - 12, other))
 						instance_destroy(other);
 					break;
-				case 34:
+				case states.boxxedpepspin:
 					vsp = -6;
 					instance_destroy(other);
 					break;
-				case 51:
+				case states.bombpep:
 					if (sprite_index != spr_bombpepend && sprite_index != spr_bombpepintro)
 					{
 						instance_create(x, y, obj_bombexplosion);
@@ -39,18 +39,18 @@ function scr_ratblock_destroy()
 						bombpeptimer = 0;
 					}
 					break;
-				case 186:
-				case 150:
-				case 146:
-				case 33:
-				case 11:
-				case 14:
-				case 12:
-				case 35:
-				case 47:
-				case 49:
+				case states.gotoplayer:
+				case states.tube:
+				case states.actor:
+				case states.boxxedpep:
+				case states.mort:
+				case states.morthook:
+				case states.mortjump:
+				case states.boxxedpepjump:
+				case states.knightpep:
+				case states.knightpepbump:
 					break;
-				case 5:
+				case states.tumble:
 					if (other.sprite_index == spr_rattumbleblock || other.sprite_index == spr_rattumbleblock_big)
 						instance_destroy(other);
 					break;

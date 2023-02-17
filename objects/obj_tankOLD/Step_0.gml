@@ -49,7 +49,7 @@ if (state == states.idle)
 		}
 	}
 }
-else if (state == 141)
+else if (state == states.chase)
 {
 	invincible = true;
 	if (ram_spd < ram_spd_max)

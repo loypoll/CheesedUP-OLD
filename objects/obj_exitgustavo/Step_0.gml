@@ -2,7 +2,7 @@ image_speed = 0.35;
 depth = 20;
 switch (state)
 {
-	case 18:
+	case states.titlescreen:
 		x = camera_get_view_x(view_camera[0]) - 100;
 		y = camera_get_view_y(view_camera[0]) - 100;
 		var dx = 350;

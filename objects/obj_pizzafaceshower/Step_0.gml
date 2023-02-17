@@ -19,7 +19,7 @@ switch (state)
 			}
 		}
 		break;
-	case 146:
+	case states.actor:
 		switch (substate)
 		{
 			case states.idle:

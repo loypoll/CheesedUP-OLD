@@ -36,7 +36,7 @@ else
 text = [[false, concat(lang_get_value("rank_highscore"), global.collect)], [false, concat(lang_get_value("rank_time"), mins, ":", secs, ".", floor(frac(global.level_seconds) * 100))], [false, concat(lang_get_value("rank_damage"), global.player_damage)], [false, concat(lang_get_value("rank_combo"), global.highest_combo)]];
 text_pos = 0;
 toppin_index = 0;
-toppin_state = 92;
+toppin_state = states.jump;
 toppin_buffer = 0;
 brown = false;
 brownfade = 0;

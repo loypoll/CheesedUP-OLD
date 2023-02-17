@@ -6,30 +6,30 @@ if (hp <= 0 && state != states.arenaround)
 }
 if (chooseparry_buffer > 0)
 	chooseparry_buffer--;
-if ((state == states.handstandjump || state == states.crouchslide || state == 167 || state == 171 || state == 173 || (state == states.pogo && pogochargeactive) || state == states.skateboard) && alarm[0] <= 0)
+if ((state == states.handstandjump || state == states.crouchslide || state == states.boss_skateboardturn || state == states.boss_jetpack || state == states.boss_jetpackspin || (state == states.pogo && pogochargeactive) || state == states.skateboard) && alarm[0] <= 0)
 	alarm[0] = 6;
 switch (state)
 {
-	case 145:
+	case states.arenaround:
 		grav = 0.5;
 		state_boss_arenaround();
 		movespeed = 0;
 		inv_timer = 2;
 		invincible = true;
 		break;
-	case 0:
+	case states.normal:
 		grav = 0.5;
 		boss_noise_normal();
 		break;
-	case 106:
+	case states.bump:
 		grav = 0.5;
 		state_boss_bump();
 		break;
-	case 42:
+	case states.handstandjump:
 		grav = 0.5;
 		boss_noise_handstandjump();
 		break;
-	case 102:
+	case states.crouchslide:
 		grav = 0.5;
 		boss_noise_crouchslide();
 		break;
@@ -49,7 +49,7 @@ switch (state)
 		grav = 0.5;
 		boss_noise_throwing();
 		break;
-	case 58:
+	case states.pogo:
 		grav = 0.5;
 		boss_noise_pogo();
 		break;
@@ -61,7 +61,7 @@ switch (state)
 		grav = 0.5;
 		boss_noise_jetpack();
 		break;
-	case 173:
+	case states.boss_jetpackspin:
 		grav = 0.5;
 		boss_noise_jetpackspin();
 		break;
@@ -71,7 +71,7 @@ switch (state)
 		inv_timer = 2;
 		invincible = true;
 		break;
-	case 61:
+	case states.chainsaw:
 		grav = 0.5;
 		state_boss_chainsaw();
 		break;
@@ -81,7 +81,7 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 147:
+	case states.parry:
 		grav = 0.5;
 		state_boss_parry();
 		invincible = true;
@@ -98,4 +98,4 @@ switch (state)
 		break;
 }
 angry = phase > 6;
-attacking = state == states.handstandjump || state == states.crouchslide || state == states.skateboard || state == 167 || state == states.pogo || state == 170 || state == 171 || state == 173 || state == states.throwing;
+attacking = state == states.handstandjump || state == states.crouchslide || state == states.skateboard || state == states.boss_skateboardturn || state == states.pogo || state == states.boss_jetpackstart || state == states.boss_jetpack || state == states.boss_jetpackspin || state == states.throwing;

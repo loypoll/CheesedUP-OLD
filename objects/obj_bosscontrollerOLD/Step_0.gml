@@ -72,7 +72,7 @@ switch (state)
 				state = states.normal;
 		}
 		break;
-	case 145:
+	case states.arenaround:
 		var round_yto = 437;
 		round_y = Approach(round_y, round_yto, 7);
 		if (round_y != round_yto)
@@ -124,7 +124,7 @@ switch (state)
 					x = hitX;
 					y = hitY;
 				}
-				if (colliding && state != 180 && state != 181)
+				if (colliding && state != states.boss_cardboard && state != states.boss_cardboardend)
 				{
 					state = states.arenaround;
 					attack_cooldown = attack_max[phase - 1];
@@ -150,7 +150,7 @@ switch (state)
 				state = states.normal;
 		}
 		break;
-	case 0:
+	case states.normal:
 		bell_sprite = spr_bosstimer_bell;
 		round_y = Approach(round_y, round_ystart, 4);
 		if (super >= supermax && obj_player.state != states.playersuperattack)
@@ -206,7 +206,7 @@ switch (state)
 				break;
 		}
 		break;
-	case 8:
+	case states.transition:
 		instance_destroy(obj_baddiespawner);
 		instance_destroy(obj_baddie);
 		if (player_hp > 0)
@@ -232,8 +232,8 @@ switch (state)
 			}
 		}
 		break;
-	case 98:
-	case 89:
+	case states.victory:
+	case states.gameover:
 		fade -= 0.05;
 		fade = clamp(fade, 0, 1);
 		break;

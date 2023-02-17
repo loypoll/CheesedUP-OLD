@@ -1,7 +1,7 @@
 targetplayer = obj_player1.id;
 switch (state)
 {
-	case 217:
+	case states.robotidle:
 		hsp = 0;
 		sprite_index = spr_introidle;
 		image_speed = 0.35;
@@ -12,7 +12,7 @@ switch (state)
 			ys = 1;
 		}
 		break;
-	case 218:
+	case states.robotintro:
 		hsp = 0;
 		image_speed = 0.35;
 		if (sprite_index != spr_intro)
@@ -26,7 +26,7 @@ switch (state)
 			sprite_index = chasespr;
 		}
 		break;
-	case 219:
+	case states.robotroaming:
 		targetplayer = instance_nearest(x, y, obj_player);
 		image_speed = 0.35;
 		sprite_index = walkspr;
@@ -37,7 +37,7 @@ switch (state)
 		if (scr_monster_detect(300, room_height, targetplayer))
 			state = states.robotchase;
 		break;
-	case 220:
+	case states.robotchase:
 		if (sprite_index != spr_monstercheese_jump)
 			sprite_index = chasespr;
 		var t = grounded;
@@ -126,7 +126,7 @@ switch (state)
 			state = states.robotchase;
 		}
 		break;
-	case 222:
+	case states.robotseeking:
 		targetplayer = instance_nearest(x, y, obj_player);
 		hsp = image_xscale * 6;
 		if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
@@ -134,7 +134,7 @@ switch (state)
 		if (scr_monster_detect(300, room_height, targetplayer))
 			state = states.robotchase;
 		break;
-	case 221:
+	case states.robotinvestigate:
 		scr_monsterinvestigate(10, 4129, 49);
 		break;
 }

@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 46:
+	case states.gottreasure:
 		if (cutscenebuffer > 0)
 			cutscenebuffer--;
 		else
@@ -24,7 +24,7 @@ switch (state)
 			orangealpha = 1.5;
 		}
 		break;
-	case 8:
+	case states.transition:
 		if (orangealpha > 0)
 			orangealpha -= 0.08;
 		if (flamebuffer > 0)
@@ -65,7 +65,7 @@ switch (state)
 			state = states.actor;
 		}
 		break;
-	case 146:
+	case states.actor:
 		if (flamebuffer > 0)
 			flamebuffer--;
 		else

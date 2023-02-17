@@ -45,7 +45,7 @@ function scr_pizzaface_p3_do_player_attack()
 	image_xscale = -argument0.xscale;
 	playerid = argument0;
 	state = states.supergrab;
-	substate = 4;
+	substate = states.grabbed;
 }
 function scr_pizzaface_p3_arenaintro()
 {
@@ -224,7 +224,7 @@ function scr_pizzaface_p3_walk()
 					vsp = -(14 - floor(wastedhits * 0.5));
 					break;
 				case 1:
-					state = 287;
+					state = states.boss_swinging;
 					fmod_event_one_shot_3d("event:/sfx/pizzahead/swingstart", x, y);
 					sprite_index = spr_pizzahead_swingingstart;
 					image_index = 0;
@@ -239,7 +239,7 @@ function scr_pizzaface_p3_walk()
 					hitboxID = -4;
 					break;
 				case 3:
-					state = 288;
+					state = states.boss_stomp;
 					fmod_event_one_shot_3d("event:/sfx/pizzahead/giantstomp", x, y);
 					sprite_index = spr_pizzahead_stomp;
 					image_index = 0;

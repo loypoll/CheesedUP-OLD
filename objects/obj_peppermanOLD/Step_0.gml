@@ -1,7 +1,7 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (obj_bosscontroller.state == states.arenaintro)
 	exit;
-if (hp <= 0 && state != states.arenaround && state != 162)
+if (hp <= 0 && state != states.arenaround && state != states.boss_fistmatch)
 {
 	if (!thrown && !destroyable)
 		boss_destroy(lastplayerid);
@@ -15,7 +15,7 @@ switch (phase)
 		normal_func = boss_pepperman_normal;
 		break;
 	case 3:
-	case states.grabbed:
+	case 4:
 	case 5:
 	case 6:
 		normal_func = boss_pepperman_phase3normal;
@@ -23,11 +23,11 @@ switch (phase)
 }
 switch (state)
 {
-	case 145:
+	case states.arenaround:
 		grav = 0.5;
 		state_boss_arenaround();
 		break;
-	case 0:
+	case states.normal:
 		grav = 0.5;
 		normal_func();
 		break;
@@ -53,31 +53,31 @@ switch (state)
 		grav = 0.5;
 		boss_pepperman_shoulderbash();
 		break;
-	case 157:
+	case states.boss_supershoulderbash:
 		grav = 0.5;
 		boss_pepperman_supershoulderbash();
 		break;
-	case 158:
+	case states.boss_superattackstart:
 		grav = 0.5;
 		boss_pepperman_superattackstart();
 		break;
-	case 159:
+	case states.boss_superattackcharge:
 		grav = 0.5;
 		boss_pepperman_superattackcharge();
 		break;
-	case 76:
+	case states.superslam:
 		grav = 0.5;
 		boss_pepperman_superslam();
 		break;
-	case 162:
+	case states.boss_fistmatch:
 		grav = 0.5;
 		boss_pepperman_fistmatch();
 		break;
-	case 163:
+	case states.boss_fistmatchend:
 		grav = 0.5;
 		boss_pepperman_fistmatchend();
 		break;
-	case 83:
+	case states.shoulder:
 		grav = 0.5;
 		boss_pepperman_shoulder();
 		break;
@@ -97,7 +97,7 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 61:
+	case states.chainsaw:
 		grav = 0.5;
 		state_boss_chainsaw();
 		break;
@@ -107,7 +107,7 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 147:
+	case states.parry:
 		grav = 0.5;
 		state_boss_parry();
 		invincible = true;
@@ -124,4 +124,4 @@ switch (state)
 		break;
 }
 xscale = image_xscale;
-colliding = !(state == states.superslam || state == 162 || state == states.boss_superattackstart || state == states.boss_superattackcharge);
+colliding = !(state == states.superslam || state == states.boss_fistmatch || state == states.boss_superattackstart || state == states.boss_superattackcharge);

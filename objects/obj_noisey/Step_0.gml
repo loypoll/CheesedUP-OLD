@@ -38,7 +38,7 @@ switch (state)
 	case states.rage:
 		scr_enemy_rage();
 		break;
-	case 149:
+	case states.float:
 		scr_noisey_float();
 		break;
 	case states.pizzaheadjump:

@@ -54,7 +54,7 @@ switch (global.boxhp)
 		getoutspd = 80;
 		outtimespd = 80;
 		break;
-	case states.grabbed:
+	case 4:
 		getoutspd = 80;
 		outtimespd = 80;
 		break;

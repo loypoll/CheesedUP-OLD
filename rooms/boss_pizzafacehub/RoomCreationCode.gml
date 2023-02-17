@@ -7,7 +7,7 @@ obj_savesystem.ini_str = ini_close();
 gamesave_async_save();
 with (obj_player1)
 {
-	tauntstoredstate = 0;
+	tauntstoredstate = states.normal;
 	landAnim = true;
 	state = states.animation;
 	buffer = 100;

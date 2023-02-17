@@ -25,7 +25,7 @@ switch (state)
 	case states.grabbed:
 		scr_enemy_grabbed();
 		break;
-	case 141:
+	case states.chase:
 		scr_enemy_chase();
 		break;
 	case states.pummel:
@@ -77,7 +77,7 @@ if (state == states.walk || state == states.idle)
 		sprite_index = spr_golfdemon_charge;
 	}
 }
-if (state == 141)
+if (state == states.chase)
 {
 	if !fmod_event_instance_is_playing(snd)
 		fmod_event_instance_play(snd);
@@ -109,5 +109,5 @@ if (boundbox == 0)
 }
 if (state != states.chase && state != states.hit)
 	invincible = false;
-if (state == 141)
+if (state == states.chase)
 	invincible = true;

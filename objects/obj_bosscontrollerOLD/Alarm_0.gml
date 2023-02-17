@@ -25,7 +25,7 @@ if (obj_player.state != states.playersuperattack)
 			{
 				phase++;
 				phase = clamp(phase, 0, max_phase);
-				if (colliding && state != 180 && state != 181)
+				if (colliding && state != states.boss_cardboard && state != states.boss_cardboardend)
 					state = states.arenaround;
 			}
 		}

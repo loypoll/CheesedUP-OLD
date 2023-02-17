@@ -91,23 +91,23 @@ if (brown)
 					if toppinvisible
 						fmod_event_one_shot_3d("event:/sfx/misc/toppingot", (room_width / 2), (room_height / 2));
 					toppin_y[toppin_index] = yy;
-					toppin_state = 8;
+					toppin_state = states.transition;
 					brown = 1;
 				}
 				break;
 			}
-		case 8:
+		case states.transition:
 			toppin_yscale[toppin_index] = Approach(toppin_yscale[toppin_index], 1, 0.1);
 			if (toppin_yscale[toppin_index] == 1)
 			{
 				toppin_index++;
 				if (toppin_index >= array_length(toppin))
 				{
-					toppin_state = 0;
+					toppin_state = states.normal;
 					alarm[3] = 40;
 				}
 				else
-					toppin_state = 92;
+					toppin_state = states.jump;
 			}
 			break;
 	}

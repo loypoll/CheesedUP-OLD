@@ -6,23 +6,23 @@ if (hp <= 0 && state != states.arenaround)
 }
 switch (state)
 {
-	case 145:
+	case states.arenaround:
 		grav = 0.5;
 		state_boss_arenaround();
 		break;
-	case 0:
+	case states.normal:
 		grav = 0.5;
 		boss_mrstick_normal();
 		break;
-	case 174:
+	case states.boss_shield:
 		grav = 0.5;
 		boss_mrstick_shield();
 		break;
-	case 175:
+	case states.boss_helicopterhat:
 		grav = 0.5;
 		boss_mrstick_helicopterhat();
 		break;
-	case 176:
+	case states.boss_panicjump:
 		grav = 0.5;
 		boss_mrstick_panicjump();
 		break;
@@ -30,27 +30,27 @@ switch (state)
 		grav = 0.5;
 		boss_mrstick_jump();
 		break;
-	case 177:
+	case states.boss_smokebombstart:
 		grav = 0.5;
 		boss_mrstick_smokebombstart();
 		break;
-	case 178:
+	case states.boss_smokebombcrawl:
 		grav = 0.5;
 		boss_mrstick_smokebombcrawl();
 		break;
-	case 179:
+	case states.boss_springshoes:
 		grav = 0.5;
 		boss_mrstick_springshoes();
 		break;
-	case 180:
+	case states.boss_cardboard:
 		grav = 0.5;
 		boss_mrstick_cardboard();
 		break;
-	case 181:
+	case states.boss_cardboardend:
 		grav = 0.5;
 		boss_mrstick_cardboardend();
 		break;
-	case 182:
+	case states.boss_mockery:
 		grav = 0.5;
 		boss_mrstick_mockery();
 		break;
@@ -60,7 +60,7 @@ switch (state)
 		inv_timer = 2;
 		invincible = true;
 		break;
-	case 61:
+	case states.chainsaw:
 		grav = 0.5;
 		state_boss_chainsaw();
 		break;
@@ -70,7 +70,7 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 147:
+	case states.parry:
 		grav = 0.5;
 		state_boss_parry();
 		invincible = true;
@@ -86,4 +86,4 @@ switch (state)
 		state_boss_stun();
 		break;
 }
-colliding = !(state == states.jump || state == 180 || state == 181);
+colliding = !(state == states.jump || state == states.boss_cardboard || state == states.boss_cardboardend);

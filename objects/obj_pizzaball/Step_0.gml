@@ -23,7 +23,7 @@ switch (state)
 	case states.golf:
 		scr_pizzaball_golf();
 		break;
-	case 156:
+	case states.thrown:
 		scr_pizzaball_thrown();
 		break;
 	case states.stun:
@@ -46,7 +46,7 @@ switch (state)
 	case states.rage:
 		scr_enemy_rage();
 		break;
-	case 17:
+	case states.ghostpossess:
 		scr_enemy_ghostpossess();
 		break;
 }

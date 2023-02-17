@@ -15,5 +15,5 @@ inactivebuffer = 900;
 snd = fmod_event_create_instance("event:/sfx/monsters/puppetfly");
 xs = room_width / 2;
 yy = -100;
-substate = 135;
+substate = states.fall;
 backgroundID = -4;

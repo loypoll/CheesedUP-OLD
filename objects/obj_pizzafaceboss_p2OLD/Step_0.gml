@@ -6,7 +6,7 @@ switch (state)
 	case states.fall:
 		scr_pizzaface_p2_fall();
 		break;
-	case 0:
+	case states.normal:
 		scr_pizzaface_p2_normal();
 		break;
 	case states.pizzahead_look:
@@ -15,28 +15,28 @@ switch (state)
 	case states.pizzahead_fishing:
 		scr_pizzaface_p2_fishing();
 		break;
-	case 235:
+	case states.pizzahead_bombrun:
 		boss_pizzahead_bombrun();
 		break;
-	case 236:
+	case states.pizzahead_npcthrow:
 		boss_pizzahead_npcthrow();
 		break;
 	case states.pizzahead_portraitthrow:
 		boss_pizzahead_portraitthrow();
 		break;
-	case 238:
+	case states.pizzahead_enguarde:
 		boss_pizzahead_enguarde();
 		break;
-	case 239:
+	case states.pizzahead_sexypicture:
 		boss_pizzahead_sexypicture();
 		break;
 	case states.pizzahead_pullinglevel:
 		boss_pizzahead_pullinglevel();
 		break;
-	case 241:
+	case states.pizzahead_eat:
 		boss_pizzahead_eat();
 		break;
-	case 242:
+	case states.pizzahead_surprisebox:
 		boss_pizzahead_surprisebox();
 		break;
 }

@@ -336,7 +336,7 @@ function scr_fakepepboss_arenaintro()
 				image_index = 0;
 				image_speed = 0.35;
 				landAnim = false;
-				tauntstoredstate = 0;
+				tauntstoredstate = states.normal;
 				state = states.animation;
 			}
 		}

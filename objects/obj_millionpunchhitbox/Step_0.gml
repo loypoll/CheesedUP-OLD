@@ -13,5 +13,5 @@ else if (col_buffer == 0)
 	col_buffer = -1;
 	collisioned = false;
 }
-if (baddieID.state != 166 && baddieID.state != states.chainsaw)
+if (baddieID.state != states.boss_millionpunch && baddieID.state != states.chainsaw)
 	instance_destroy();

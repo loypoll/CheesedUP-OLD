@@ -50,7 +50,7 @@ with (other)
 	{
 		trace("climbwall verticalhallway");
 		verticalbuffer = 10;
-		verticalstate = 37;
+		verticalstate = states.climbwall;
 		var i = 0;
 		x = floor(x);
 		while (!scr_solid(x + xscale, y))

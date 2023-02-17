@@ -137,7 +137,7 @@ function player_hurt()
 				inv_frames = true;
 				alarm[1] = 15;
 			}
-			if (hitstate == 160)
+			if (hitstate == states.boss_superattack)
 			{
 				hithsp = 0;
 				hitvsp = 0;

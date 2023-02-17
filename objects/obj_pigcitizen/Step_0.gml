@@ -1,6 +1,6 @@
 switch (state)
 {
-	case 0:
+	case states.normal:
 		if (!global.panic)
 		{
 			image_speed = 0.15;

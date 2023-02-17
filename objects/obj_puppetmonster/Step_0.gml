@@ -1,11 +1,11 @@
 image_speed = 0.35;
 switch (state)
 {
-	case 217:
+	case states.robotidle:
 		sprite_index = spr_introidle;
 		image_speed = 0.35;
 		break;
-	case 218:
+	case states.robotintro:
 		if (sprite_index != spr_intro)
 		{
 			sprite_index = spr_intro;
@@ -14,7 +14,7 @@ switch (state)
 		if (floor(image_index) == (image_number - 1))
 			state = states.robotchase;
 		break;
-	case 219:
+	case states.robotroaming:
 		sprite_index = spr_monstertomato_idle;
 		x = camera_get_view_x(view_camera[0]) + (SCREEN_WIDTH / 2);
 		y = camera_get_view_y(view_camera[0]) + yy;
@@ -29,10 +29,10 @@ switch (state)
 					if (pid != -4)
 					{
 						playerid = pid;
-						substate = 141;
+						substate = states.chase;
 					}
 					else
-						substate = 92;
+						substate = states.jump;
 				}
 				break;
 			case states.jump:
@@ -49,7 +49,7 @@ switch (state)
 					state = states.robotidle;
 				}
 				break;
-			case 141:
+			case states.chase:
 				yy -= 10;
 				if (yy < -100)
 					scr_puppet_appear(playerid);

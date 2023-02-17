@@ -8,13 +8,13 @@ with (obj_player)
 }
 switch (state)
 {
-	case 0:
+	case states.normal:
 		scr_pizzaface_p3_normal();
 		break;
-	case 42:
+	case states.handstandjump:
 		scr_pizzaface_p3_handstandjump();
 		break;
-	case 262:
+	case states.supergrab:
 		scr_pizzaface_p3_supergrab();
 		break;
 	case states.jump:

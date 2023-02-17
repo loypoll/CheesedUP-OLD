@@ -10,7 +10,7 @@ if (obj_player1.state == states.backbreaker && state != states.backbreaker)
 }
 switch (state)
 {
-	case 0:
+	case states.normal:
 		sprite_index = movespr;
 		hsp = image_xscale * 2;
 		if (scr_solid(x + sign(hsp), y))

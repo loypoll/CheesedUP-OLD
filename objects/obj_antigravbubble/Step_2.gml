@@ -10,5 +10,5 @@ else
 	visible = playerid.visible;
 if (sprite_index == spr_antigrav_bubblesquish && floor(image_index) == (image_number - 1))
 	sprite_index = spr_antigrav_bubble;
-if (playerid.state != states.antigrav && playerid.state != states.chainsaw && (playerid.state != states.teleport || (playerid.tauntstoredstate != 265 && !visible)))
+if (playerid.state != states.antigrav && playerid.state != states.chainsaw && (playerid.state != states.teleport || (playerid.tauntstoredstate != states.antigrav && !visible)))
 	instance_destroy();

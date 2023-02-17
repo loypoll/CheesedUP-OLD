@@ -1,14 +1,14 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-if (hp <= 0 && state != states.arenaround && state != 162)
+if (hp <= 0 && state != states.arenaround && state != states.boss_fistmatch)
 {
 	if (!thrown && !destroyable)
 		boss_destroy(lastplayerid);
 }
-if ((state == states.mach1 || state == states.machslide || state == states.crouchslide || state == states.uppunch || state == states.punch || state == 166 || state == states.handstandjump) && alarm[0] <= 0)
+if ((state == states.mach1 || state == states.machslide || state == states.crouchslide || state == states.uppunch || state == states.punch || state == states.boss_millionpunch || state == states.handstandjump) && alarm[0] <= 0)
 	alarm[0] = 6;
 if (chooseparry_buffer > 0)
 	chooseparry_buffer--;
-if (important && honor && nexthonor && phase > 3 && state != 160)
+if (important && honor && nexthonor && phase > 3 && state != states.boss_superattack)
 {
 	var ch = false;
 	with (obj_player)
@@ -29,7 +29,7 @@ if (important && honor && nexthonor && phase > 3 && state != 160)
 }
 switch (phase)
 {
-	case states.grabbed:
+	case 4:
 	case 5:
 	case 6:
 		normal_func = boss_vigilante_normal_phase4;
@@ -39,36 +39,36 @@ switch (phase)
 }
 switch (state)
 {
-	case 145:
+	case states.arenaround:
 		grav = 0.5;
 		state_boss_arenaround();
 		honor = nexthonor;
 		break;
-	case 0:
+	case states.normal:
 		grav = 0.5;
 		normal_func();
 		break;
-	case 149:
+	case states.float:
 		grav = 0.5;
 		boss_vigilante_float();
 		break;
-	case 1:
+	case states.revolver:
 		grav = 0.5;
 		boss_vigilante_revolver();
 		break;
-	case 103:
+	case states.mach1:
 		grav = 0.5;
 		boss_vigilante_mach1();
 		break;
-	case 102:
+	case states.crouchslide:
 		grav = 0.5;
 		boss_vigilante_crouchslide();
 		break;
-	case 105:
+	case states.machslide:
 		grav = 0.5;
 		boss_vigilante_machslide();
 		break;
-	case 106:
+	case states.bump:
 		grav = 0.5;
 		state_boss_bump();
 		break;
@@ -76,7 +76,7 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_jump();
 		break;
-	case 2:
+	case states.dynamite:
 		grav = 0.5;
 		boss_vigilante_dynamite();
 		break;
@@ -88,7 +88,7 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_punch();
 		break;
-	case 164:
+	case states.boss_groundpunchstart:
 		grav = 0.5;
 		boss_vigilante_groundpunchstart();
 		break;
@@ -104,23 +104,23 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_freefallland();
 		break;
-	case 166:
+	case states.boss_millionpunch:
 		grav = 0.5;
 		boss_vigilante_millionpunch();
 		break;
-	case 82:
+	case states.uppunch:
 		grav = 0.5;
 		boss_vigilante_uppunch();
 		break;
-	case 42:
+	case states.handstandjump:
 		grav = 0.5;
 		boss_vigilante_handstandjump();
 		break;
-	case 158:
+	case states.boss_superattackstart:
 		grav = 0.5;
 		boss_vigilante_superattackstart();
 		break;
-	case 160:
+	case states.boss_superattack:
 		grav = 0.5;
 		boss_vigilante_superattack();
 		break;
@@ -130,7 +130,7 @@ switch (state)
 		inv_timer = 2;
 		invincible = true;
 		break;
-	case 61:
+	case states.chainsaw:
 		grav = 0.5;
 		state_boss_chainsaw();
 		break;
@@ -140,7 +140,7 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 147:
+	case states.parry:
 		grav = 0.5;
 		state_boss_parry();
 		invincible = true;
@@ -157,7 +157,7 @@ switch (state)
 		state_boss_stun();
 		break;
 }
-if (hitstate == 160 || state == 160)
+if (hitstate == states.boss_superattack || state == states.boss_superattack)
 {
 	with (lastplayerid)
 	{
@@ -165,9 +165,9 @@ if (hitstate == 160 || state == 160)
 		{
 			if (sprite_index == spr_player_pistolshot && image_index > (image_number - 1))
 				sprite_index = spr_player_pistolidle;
-			if (sprite_index != spr_player_pistolshot && sprite_index != spr_idle && other.state == 160 && other.duel_buffer > 0)
+			if (sprite_index != spr_player_pistolshot && sprite_index != spr_idle && other.state == states.boss_superattack && other.duel_buffer > 0)
 				sprite_index = spr_idle;
 		}
 	}
 }
-attacking = state == 1 || state == states.mach1 || state == states.charge || state == states.punch || state == 164 || state == 166 || state == states.freefall || state == states.uppunch || state == states.handstandjump || state == 160 || state == states.boss_superattackstart || state == states.crouchslide;
+attacking = state == 1 || state == states.mach1 || state == states.charge || state == states.punch || state == states.boss_groundpunchstart || state == states.boss_millionpunch || state == states.freefall || state == states.uppunch || state == states.handstandjump || state == states.boss_superattack || state == states.boss_superattackstart || state == states.crouchslide;

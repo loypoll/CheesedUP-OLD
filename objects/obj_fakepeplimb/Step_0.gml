@@ -42,7 +42,7 @@ switch (state)
 	case states.rage:
 		scr_enemy_rage();
 		break;
-	case 17:
+	case states.ghostpossess:
 		scr_enemy_ghostpossess();
 		break;
 	case states.punch:
@@ -68,7 +68,7 @@ switch (state)
 			sprite_index = spr_hidden;
 		}
 		break;
-	case 100:
+	case states.crouch:
 		if (hidden)
 		{
 			sprite_index = spr_hidden;

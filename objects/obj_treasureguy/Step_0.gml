@@ -26,7 +26,7 @@ switch (state)
 	case states.rage:
 		scr_enemy_rage();
 		break;
-	case 189:
+	case states.underground:
 		var player = instance_nearest(x, y, obj_player);
 		hsp = 0;
 		if (underground)
@@ -109,7 +109,7 @@ if (state != states.idle && state != states.underground && state != states.grabb
 			image_xscale = sign(x - targetplayer.x);
 	}
 }
-if (state == 141)
+if (state == states.chase)
 {
 	image_speed = 0.5;
 	if (hsp != 0)

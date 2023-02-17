@@ -1,2 +1,2 @@
-if (other.state == 230 && other.substate == 230 && !collisioned)
+if (other.state == states.pizzaface_ram && other.substate == states.pizzaface_ram && !collisioned)
 	event_user(0);

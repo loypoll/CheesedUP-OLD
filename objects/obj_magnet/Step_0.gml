@@ -1,7 +1,7 @@
 image_speed = 0.35;
 switch (state)
 {
-	case 0:
+	case states.normal:
 		if (cooldown > 0)
 		{
 			sprite_index = spr_sirnose_cooldown;
@@ -23,7 +23,7 @@ switch (state)
 			}
 		}
 		break;
-	case 264:
+	case states.magnet:
 		with (ballID)
 		{
 			depth = 0;
