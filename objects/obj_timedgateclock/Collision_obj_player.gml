@@ -1,4 +1,4 @@
-var notif = false;
+var _notif = false;
 if (sprite_index != spr_button_pressed && sprite_index != spr_button_goingpressed)
 {
 	timedgate_trigger();
