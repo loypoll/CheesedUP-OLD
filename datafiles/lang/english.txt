@@ -4,7 +4,7 @@
 lang = "en"
 display_name = "ENGLISH"
 custom_fonts = false
-game_version = "V1.0.211"
+game_version = "V1.0.212"
 
 # --------------------
 # CUSTOM FONT EXAMPLE

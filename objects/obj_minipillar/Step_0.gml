@@ -3,7 +3,7 @@ if (room == rm_editor)
 	mask_index = spr_minipillarwoke;
 	exit;
 }
-if (global.panic == false)
+if (global.panic == false || (place_meeting(xstart, ystart, obj_player1) && obj_player1.state != states.chainsaw))
 {
 	x = -100;
 	y = -100;

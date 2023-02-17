@@ -1,4 +1,4 @@
-if (global.panic == false)
+if (global.panic == false && (!place_meeting(xstart, ystart, obj_player1) || obj_player1.state == states.chainsaw))
 {
 	x = xstart;
 	y = ystart;

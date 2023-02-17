@@ -129,6 +129,8 @@ function get_options()
 	global.option_unfocus_mute = ini_read_real("Option", "unfocus_mute", false);
 	global.option_texfilter = ini_read_real("Option", "texfilter", 1);
 	global.lang = global.option_lang;
+	if is_undefined(ds_map_find_value(global.lang_map, global.lang))
+		global.lang = "en";
 	ini_close();
 	screen_apply_fullscreen(global.option_fullscreen);
 	obj_screensizer.start_sound = false;

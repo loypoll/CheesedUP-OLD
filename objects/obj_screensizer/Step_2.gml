@@ -20,7 +20,7 @@ else
 	if (window_get_cursor() != -1 && window_has_focus() && room != Mainmenu)
 		cr = cr_none;
 }
-if (gameframe_get_fullscreen() > 0)
+if (room != Mainmenu && gameframe_get_fullscreen() > 0)
 	cr = cr_none;
 if (room == Mainmenu && window_get_cursor() == -1)
 	cr = cr_default;
