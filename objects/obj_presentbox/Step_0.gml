@@ -240,7 +240,7 @@ switch (character)
 		downspr = spr_slimepresentdown;
 		deadspr = spr_slimepresentdead;
 		break;
-	case states.grabbed:
+	case 4:
 		upspr = spr_stickpresentup;
 		spr = spr_stickpresent;
 		downspr = spr_stickpresentdown;

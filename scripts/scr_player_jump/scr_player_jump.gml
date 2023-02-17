@@ -300,7 +300,7 @@ function state_player_jump()
 		if (shotgunAnim)
 			scr_shotgunshoot();
 		else if (global.pistol)
-			scr_pistolshoot(92);
+			scr_pistolshoot(states.jump);
 	}
 	if (key_slap2 && shoot)
 	{
@@ -509,7 +509,7 @@ function state_pepperman_jump()
 		state = states.normal;
 		instance_create(x, y - 5, obj_landcloud);
 	}
-	if (key_down2 && !grounded)
+	if (scr_check_groundpound() && !grounded)
 	{
 		state = states.freefall;
 		freefallsmash = 12;

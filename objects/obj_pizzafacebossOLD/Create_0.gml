@@ -27,9 +27,10 @@ bombtimer = 0;
 hasbomb = false;
 bombgrabID = -4;
 knightbuffer = 0;
-spawnpool = [681, 646];
+spawnpool = [obj_forknight, obj_cheeseslime];
 hitplayer = false;
-function player_hurt()
+
+function player_hurt(argument0, argument1)
 {
 	var _prevstate = state;
 	if (phase < 2)
@@ -42,7 +43,7 @@ function player_hurt()
 		hitplayer = true;
 	}
 }
-function boss_hurt()
+function boss_hurt(argument0, argument1)
 {
 	if (phase == 0)
 		SUPER_boss_hurt(argument0, argument1);
@@ -69,7 +70,7 @@ function boss_hurt()
 			hp -= argument0;
 	}
 }
-function boss_hurt_noplayer()
+function boss_hurt_noplayer(argument0)
 {
 	if (inv_timer <= 0)
 	{

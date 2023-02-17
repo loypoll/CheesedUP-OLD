@@ -20,7 +20,7 @@ function player_hurt()
 		}
 	}
 }
-function parry()
+function parry(argument0, argument1)
 {
 	var prevparried = parried;
 	SUPER_parry();

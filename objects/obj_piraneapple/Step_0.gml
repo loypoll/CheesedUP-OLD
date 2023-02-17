@@ -43,7 +43,8 @@ switch (state)
 		}
 		scr_collide();
 		break;
-	case 8:
+	
+	case states.transition:
 		flash = false;
 		sprite_index = spr_piraneapplewater;
 		if (place_meeting(x, y, obj_solid))

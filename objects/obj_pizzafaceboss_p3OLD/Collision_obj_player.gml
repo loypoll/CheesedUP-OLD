@@ -45,6 +45,6 @@ else if (state == states.handstandjump)
 	attackcooldown = 0;
 	playerid = other.id;
 	other.state = states.supergrab;
-	other.substate = states.grab;
+	other.substate = states.grabbed;
 	other.sprite_index = other.spr_hurt;
 }

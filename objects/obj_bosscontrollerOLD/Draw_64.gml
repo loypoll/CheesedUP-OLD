@@ -55,7 +55,7 @@ if (_barfillpos > 0)
 	draw_surface(bar_surface, clip_x, clip_y);
 }
 draw_sprite(spr_bosstimer_bar, -1, bosstimer_x, bosstimer_y);
-if (bell_sprite != 1917)
+if (bell_sprite != spr_bosstimer_hitbell)
 	draw_sprite(spr_bosstimer_hammer, -1, bosstimer_x + 11 + _barpos, bosstimer_y + 12);
 draw_sprite(bell_sprite, bell_index, bosstimer_x + 440, bosstimer_y + 21);
 var sp = (super / supermax) * 100;

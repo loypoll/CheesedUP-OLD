@@ -134,7 +134,7 @@ if (shake_mag > 0)
 detachedby = -1;
 detach = false;
 follow_golf = false;
-if (instance_exists(player) && !lock && player.state != states.timesup && player.state != states.gameover)
+if (instance_exists(player) && !lock && player.state != states.timesup && player.state != states.dead)
 {
 	switch (state)
 	{
@@ -144,7 +144,7 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
 			var ty = target.y;
 			if (target.state == states.backtohub)
 				ty = target.backtohubstarty;
-			if (target.cutscene || (target.collision_flags & 1) > 0)
+			if (target.cutscene || (target.collision_flags & colflag.secret) > 0)
 			{
 				if (player.state == states.actor && room == tower_pizzafacehall)
 					chargecamera = Approach(chargecamera, 150, 8);

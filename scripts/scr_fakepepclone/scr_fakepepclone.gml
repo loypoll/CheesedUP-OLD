@@ -16,9 +16,9 @@ function scr_fakepepclone_transitioncutscene()
 			attacked = false;
 			state = states.walk;
 			cooldown = 15;
-			if (attack.attack == 2 || attack.attack == 4 || attack.attack == 5)
+			if (attack.attack == (2 << 0) || attack.attack == (4 << 0) || attack.attack == (5 << 0))
 				cooldown = 0;
-			if (attack.attack == 3)
+			if (attack.attack == (3 << 0))
 			{
 				state = states.Sjumpprep;
 				hsp = 0;
@@ -26,7 +26,7 @@ function scr_fakepepclone_transitioncutscene()
 				image_index = 0;
 				image_speed = 0;
 			}
-			else if (attack.attack == 5)
+			else if (attack.attack == (5 << 0))
 			{
 				fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
 				create_particle(x, y, particle.highjumpcloud2);
@@ -66,7 +66,7 @@ function scr_fakepepclone_walk()
 		{
 			switch (attack.attack)
 			{
-				case 0:
+				case (0 << 0):
 					if (abs(x - targetplayer.x) <= 150)
 					{
 						fmod_event_instance_play(snd_grab);
@@ -80,7 +80,7 @@ function scr_fakepepclone_walk()
 						attackspeed = 12;
 					}
 					break;
-				case 1:
+				case (1 << 0):
 					attacked = true;
 					if (x != targetplayer.x)
 						image_xscale = sign(targetplayer.x - x);
@@ -88,7 +88,7 @@ function scr_fakepepclone_walk()
 					image_index = 0;
 					state = states.jump;
 					break;
-				case 2:
+				case (2 << 0):
 					attacked = true;
 					image_xscale = (x > (room_width / 2)) ? 1 : -1;
 					attackspeed = 4;
@@ -101,7 +101,7 @@ function scr_fakepepclone_walk()
 						machcooldown = 330;
 					cooldown = attack.cooldown;
 					break;
-				case 4:
+				case (4 << 0):
 					state = states.throwing;
 					hsp = 0;
 					if (!throwing)
@@ -123,7 +123,7 @@ function scr_fakepepclone_walk()
 		state = states.transition;
 		sprite_index = spr_fakepeppino_deform;
 		image_index = 0;
-		if (attack.attack == 3)
+		if (attack.attack == (3 << 0))
 			sprite_index = spr_fakepeppino_deformdown;
 	}
 }

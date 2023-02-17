@@ -1,8 +1,8 @@
-function cutscene_move_actor(obj, x, y, amount)
+function cutscene_move_actor(obj, xto, yto, amount)
 {
 	var _obj = obj;
-	var xx = x;
-	var yy = y;
+	var xx = xto;
+	var yy = yto;
 	var interp = amount;
 	var finish = false;
 	with (_obj)

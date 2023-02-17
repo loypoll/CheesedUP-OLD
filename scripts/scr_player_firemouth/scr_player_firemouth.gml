@@ -122,7 +122,7 @@ function scr_player_firemouth()
 			movespeed = 0;
 		if (firemouth_afterimage > 0)
 			firemouth_afterimage--;
-		else if ((collision_flags & 1) == 0)
+		else if ((collision_flags & colflag.secret) == 0)
 		{
 			firemouth_afterimage = 8;
 			with (create_firemouth_afterimage(x, y, sprite_index, image_index - 1, xscale))

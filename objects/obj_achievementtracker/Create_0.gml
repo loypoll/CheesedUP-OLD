@@ -1270,7 +1270,7 @@ add_achievement_notify("war2", function(data)
 			}
 		}
 	}
-	if (type == notifs.end_level && arr[0] == "war" && achievement_get_variable("war2_missed").value < 3)
+	if (type == notifs.end_level && arr[0] == "war" && achievement_get_variable("war2_missed").value <= 3)
 		achievement_unlock(name, "Sharpshooter", spr_achievement_war, 1);
 });
 add_achievement_notify("war3", function(data)

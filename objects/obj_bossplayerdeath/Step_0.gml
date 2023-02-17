@@ -25,7 +25,8 @@ with (obj_player1)
 				other.alarm[2] = 150;
 			}
 			break;
-		case 0:
+		
+		case states.normal:
 			if (sprite_index == spr_player_outofpizza3 && floor(image_index) == (image_number - 1))
 				sprite_index = spr_player_outofpizza4;
 			hsp = deathspeed * -xscale;

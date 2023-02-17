@@ -26,14 +26,14 @@ for (var i = 0; i < gamepad_get_device_count(); i++)
 	}
 }
 
-setVibration = function()
+setVibration = function(argument0, argument1, argument2, argument3)
 {
 	vibration[argument0][0] = argument1;
 	vibration[argument0][1] = argument2;
 	if (argument3 != undefined)
 		vibration[argument0][2] = argument3;
 };
-function CheckUsedIndex()
+function CheckUsedIndex(argument0)
 {
 	for (var _x = 0; _x < 2; _x++)
 	{

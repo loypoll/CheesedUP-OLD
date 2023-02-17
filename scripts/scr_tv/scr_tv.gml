@@ -27,16 +27,17 @@ function tv_push_prompt(text, type, sprite, textspeed)
 		var play = false;
 		switch (type)
 		{
-			case 0:
+			case tvprompt.normal:
 				play = true;
 				ds_list_insert(tvprompts_list, 0, b);
 				break;
-			case 1:
+			
+			case tvprompt.trigger:
 				var placed = false;
 				for (var i = 0; i < ds_list_size(tvprompts_list); i++)
 				{
 					var b2 = ds_list_find_value(tvprompts_list, i);
-					if (b2[1] == 2)
+					if (b2[1] == tvprompt.trigger)
 					{
 						if (i == 0)
 							play = true;
@@ -48,7 +49,8 @@ function tv_push_prompt(text, type, sprite, textspeed)
 				if (!placed)
 					ds_list_add(tvprompts_list, b);
 				break;
-			case 2:
+			
+			case tvprompt.transfo:
 				ds_list_add(tvprompts_list, b);
 				break;
 		}
@@ -232,8 +234,8 @@ function scr_tv_get_transfo_sprite()
 			_spr = spr_tv_cheesepep;
 			break;
 		case states.boxxedpep:
-		case states.boxxedpepspin:
 		case states.boxxedpepjump:
+		case states.boxxedpepspin:
 			_spr = spr_tv_boxxedpep;
 			break;
 		case states.rideweenie:

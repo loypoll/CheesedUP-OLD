@@ -89,7 +89,7 @@ enum states
 	bossdefeat,
 	pizzathrow,
 	bossintro,
-	gameover, // or just "dead", it's used in obj_pizzafaceshower
+	dead, // originally "gameover"
 	keyget,
 	tackle,
 	jump,
@@ -289,7 +289,7 @@ enum states
 	boss_noiseballooncrash,
 	boss_swinging,
 	boss_stomp,
-	boss_finale, // reused by obj_mainmenu, suggests it could be called just "exit"
+	boss_finale, // reused by obj_mainmenu
 	backtohub,
 	johnghost,
 	spaceshuttle,

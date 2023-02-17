@@ -6,8 +6,11 @@ for (var i = 0; i < ds_grid_width(room_grid); i++)
 	{
 		for (var xx = 0; xx < array_length(monster_room); xx++)
 		{
+			var _room = ds_grid_get(room_grid, i, j);
+			var _drawNum = 0;
 			if (xx == 4)
 			{
+				
 			}
 			else if (monster_pos[xx].x == i && monster_pos[xx].y == j && monster_active[xx])
 				_drawNum += 1;

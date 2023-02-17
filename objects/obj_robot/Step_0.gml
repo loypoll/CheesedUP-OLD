@@ -133,12 +133,13 @@ if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset == 0)
 			bombreset = 100;
 			switch (state)
 			{
-				case 103:
+				case states.mach1:
 					sprite_index = spr_robot_machstart;
 					image_index = 0;
 					image_speed = 0.6;
 					hsp = 0;
 					break;
+				
 				case states.pizzagoblinthrow:
 					bombreset = 0;
 					sprite_index = spr_robot_attack;
@@ -146,13 +147,15 @@ if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset == 0)
 					image_speed = 0.35;
 					hsp = 0;
 					break;
-				case 91:
+				
+				case states.tackle:
 					sprite_index = spr_robot_tackle;
 					image_index = 0;
 					image_speed = 0.6;
 					hsp = 0;
 					break;
-				case 23:
+				
+				case states.slap:
 					sprite_index = spr_robot_slap;
 					image_index = 0;
 					image_speed = 0.6;

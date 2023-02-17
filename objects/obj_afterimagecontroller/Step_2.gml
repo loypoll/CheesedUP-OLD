@@ -60,7 +60,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 		if (alarm[2] == 0)
 		{
 			other.alpha[identifier] = 1;
-			if (identifier == 1)
+			if (identifier == afterimage.mach3effect)
 				other.alpha[identifier] = alpha;
 			alarm[2] = 3;
 		}

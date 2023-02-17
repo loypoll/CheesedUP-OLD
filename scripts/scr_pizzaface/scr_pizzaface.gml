@@ -57,7 +57,7 @@ function scr_pizzaface_arenaintro()
 			visible = false;
 		switch (introstate)
 		{
-			case 0:
+			case 0: // not an enum
 				y = ystart;
 				sprite_index = spr_pizzaface;
 				with (obj_player1)
@@ -127,7 +127,7 @@ function scr_pizzaface_arenaintro()
 					}
 				}
 				break;
-			case states.grabbed:
+			case 4:
 				with (obj_player1)
 				{
 					if (floor(image_index) == (image_number - 1))

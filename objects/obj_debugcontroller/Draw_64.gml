@@ -23,17 +23,17 @@ if (DEBUG)
 		var c = c_white;
 		switch (t)
 		{
-			case 3:
+			case debug_text_type.error:
 				str = concat("[ERROR] ", txt);
-				c = 255;
+				c = c_red;
 				break;
-			case 2:
+			case debug_text_type.traced:
 				str = concat("[DEBUG] ", txt);
 				c = c_gray;
 				break;
-			case 1:
+			case debug_text_type.command:
 				str = concat("[COMMAND] ", txt);
-				c = 32768;
+				c = c_green;
 				break;
 		}
 		draw_text_color(8, ys + (16 * i), str, c, c, c, c, 1);

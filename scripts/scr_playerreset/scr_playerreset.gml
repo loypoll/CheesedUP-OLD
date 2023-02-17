@@ -216,8 +216,7 @@ function scr_playerreset()
 			destroy_sounds([snd])
 		instance_destroy(obj_pizzaface, false)
 		
-		if (instance_exists(obj_pizzashield))
-			instance_destroy(obj_pizzashield);
+		instance_destroy(obj_pizzashield);
 		instance_destroy(obj_pepanimatronicfollow);
 		
 		if (instance_exists(obj_coopflag))
@@ -261,7 +260,7 @@ function scr_playerreset()
 			var destroy = true;
 			with (obj_player)
 			{
-				if (state == states.gameover || state == states.timesup)
+				if (state == states.dead || state == states.timesup)
 					destroy = false;
 			}
 			if (destroy)

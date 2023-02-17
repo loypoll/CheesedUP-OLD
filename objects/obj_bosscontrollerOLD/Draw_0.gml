@@ -1,4 +1,4 @@
-if (state == states.transition || state == states.victory || state == states.gameover)
+if (state == states.transition || state == states.victory || state == states.dead)
 {
 	draw_set_alpha(fade);
 	var cx = camera_get_view_x(view_camera[0]);
@@ -11,7 +11,7 @@ if (state == states.transition || state == states.victory || state == states.gam
 var _super_bg = false;
 with (obj_player)
 {
-	if (state == states.playersuperattack && superattackstate == 80)
+	if (state == states.playersuperattack && superattackstate == states.punch)
 		_super_bg = true;
 }
 if (_super_bg)

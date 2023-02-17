@@ -23,7 +23,7 @@ function scr_player_freefall()
 					playerid = other.id;
 					maxmovespeed = 6;
 					vertical = true;
-					fadeoutstate = 108;
+					fadeoutstate = states.freefall;
 				}
 			}
 			if (piledrivereffect > 0)

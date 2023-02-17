@@ -42,6 +42,7 @@ switch (state)
 			whitefadein = true;
 		}
 		break;
+	
 	case 1:
 		if (whitefadein)
 		{
@@ -50,6 +51,7 @@ switch (state)
 				room = Johnresurrectionroom;
 		}
 		break;
+	
 	case 2:
 		if (!instance_exists(obj_endingcard))
 		{
@@ -103,6 +105,7 @@ switch (state)
 			}
 		}
 		break;
+	
 	case 3:
 		var _continue = false;
 		with (obj_music)
@@ -136,7 +139,8 @@ switch (state)
 			}
 		}
 		break;
-	case states.grabbed:
+	
+	case 4:
 		fade = Approach(fade, 2, 0.05);
 		if (fade >= 2)
 		{
@@ -149,6 +153,7 @@ switch (state)
 			buffer = 100;
 		}
 		break;
+	
 	case 5:
 		fade = Approach(fade, 0, 0.05);
 		if (buffer > 0)
@@ -156,6 +161,7 @@ switch (state)
 		else if (fade <= 0 && (keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4))
 			state++;
 		break;
+	
 	case 6:
 		fade = Approach(fade, 2, 0.05);
 		if (fade >= 2)
@@ -166,8 +172,10 @@ switch (state)
 			instance_destroy(obj_introprop);
 		}
 		break;
+	
 	case 7:
 		break;
+	
 	case 8:
 		if (obj_player1.key_jump)
 		{

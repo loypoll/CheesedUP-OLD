@@ -12,7 +12,7 @@ function vigilante_end_attack(phase, wastedhits)
 	for (var i = 0; i < array_length(attack_list[phase][wastedhits]); i++)
 	{
 		var b = attack_list[phase][wastedhits][i];
-		if (b[0] == 10 || b[0] == 7)
+		if (b[0] == vigi_attack.reload || b[0] == vigi_attack.crate)
 		{
 			found = true;
 			break;

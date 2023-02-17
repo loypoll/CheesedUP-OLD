@@ -106,7 +106,7 @@ function scr_player_ratmountjump()
 				break;
 		}
 	}
-	if (key_down2)
+	if (scr_check_groundpound())
 	{
 		if (brick)
 		{

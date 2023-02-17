@@ -1,5 +1,6 @@
-if (state == states.normal || state == 1)
+if (state == 0 || state == 1)
 	instance_deactivate_object(baddieID);
+
 switch (state)
 {
 	case 0:
@@ -8,6 +9,7 @@ switch (state)
 		else
 			state = 1;
 		break;
+	
 	case 1:
 		var p = instance_nearest(x, y, obj_player);
 		visible = false;
@@ -18,6 +20,7 @@ switch (state)
 			visible = true;
 		}
 		break;
+	
 	case 2:
 		if (floor(image_index) > 5)
 		{
@@ -41,6 +44,7 @@ switch (state)
 			state = 3;
 		}
 		break;
+	
 	case 3:
 		if (floor(image_index) == (image_number - 1))
 			visible = false;

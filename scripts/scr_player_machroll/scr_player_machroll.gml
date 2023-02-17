@@ -19,7 +19,7 @@ function scr_player_machroll()
 				image_speed = 0.35;
 				flash = false;
 				combo = 0;
-				state = states.machslide;
+				state = states.bump;
 				hsp = -2.5;
 				vsp = -3;
 				mach2 = 0;
@@ -81,7 +81,7 @@ function scr_player_machroll()
 				image_speed = 0.35;
 				flash = false;
 				combo = 0;
-				state = states.machslide;
+				state = states.bump;
 				hsp = -2.5;
 				vsp = -3;
 				mach2 = 0;
@@ -94,7 +94,7 @@ function scr_player_machroll()
 				image_speed = 0.35;
 				flash = false;
 				combo = 0;
-				state = states.machslide;
+				state = states.bump;
 				hsp = 2.5;
 				vsp = -3;
 				mach2 = 0;
@@ -131,7 +131,7 @@ function scr_player_machroll()
 				image_speed = 0.35;
 				flash = false;
 				combo = 0;
-				state = states.machslide;
+				state = states.bump;
 				hsp = -2.5;
 				vsp = -3;
 				mach2 = 0;
@@ -144,7 +144,7 @@ function scr_player_machroll()
 				image_speed = 0.35;
 				flash = false;
 				combo = 0;
-				state = states.machslide;
+				state = states.bump;
 				hsp = 2.5;
 				vsp = -3;
 				mach2 = 0;

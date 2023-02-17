@@ -130,7 +130,7 @@ if (state == states.stun)
 			fmod_event_one_shot_3d("event:/sfx/pepperman/shrink", x, y);
 			fmod_event_one_shot_3d("event:/sfx/voice/peppermanscared", x, y);
 			state = states.boss_mini;
-			ministate = 8;
+			ministate = states.transition;
 			minibuffer = 480;
 			sprite_index = spr_pepperman_ministart;
 			image_index = 0;
@@ -203,9 +203,9 @@ if (landbuffer2 > 0)
 		invincible = true;
 	}
 }
-if ((!invincible || (state == states.boss_mini && ministate != 8) || (wastedhits == 9 && phase == 1 && state == states.boss_contemplate)) && !flash && alarm[5] < 0)
+if ((!invincible || (state == states.boss_mini && ministate != states.transition) || (wastedhits == 9 && phase == 1 && state == states.boss_contemplate)) && !flash && alarm[5] < 0)
 	alarm[5] = 0.15 * room_speed;
-else if (invincible && (state != states.boss_mini || ministate == 8) && (wastedhits != 9 || phase != 1 || state != states.boss_contemplate))
+else if (invincible && (state != states.boss_mini || ministate == states.transition) && (wastedhits != 9 || phase != 1 || state != states.boss_contemplate))
 	flash = false;
 if ((state == states.shoulderbash || state == states.freefall) && alarm[4] < 0)
 {

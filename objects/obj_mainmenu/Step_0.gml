@@ -4,12 +4,12 @@ key_jump = (key_jump || (scr_check_menu_key(vk_enter) && keyboard_check_pressed(
 key_jump2 = (key_jump2 || (scr_check_menu_key(vk_enter) && keyboard_check(vk_return)) || (scr_check_menu_key(vk_space) && keyboard_check(vk_space)))
 switch state
 {
-	case (18 << 0):
+	case states.titlescreen:
 		jumpscarecount++
 		currentselect = -1
 		if ((keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4 || scr_checkanystick(obj_inputAssigner.player_input_device[0])) && (!instance_exists(obj_mainmenu_jumpscare)))
 		{
-			state = (8 << 0)
+			state = states.transition
 			currentselect = -1
 			visualselect = -1
 			darkcount = 7
@@ -26,7 +26,8 @@ switch state
 			fmod_event_one_shot("event:/sfx/enemies/jumpscare")
 		}
 		break
-	case (8 << 0):
+	
+	case states.transition:
 		if (darkbuffer > 0)
 			darkbuffer--
 		else
@@ -50,13 +51,14 @@ switch state
 				currentselect = 0
 				visualselect = 0
 				dark = 0
-				state = (0 << 0)
+				state = states.normal
 				sprite_index = spr_titlepep_forwardtoleft
 				image_index = 0
 			}
 		}
 		break
-	case (0 << 0):
+	
+	case states.normal:
 		if (key_start && (!instance_exists(obj_option)))
 		{
 			with (instance_create(0, 0, obj_option))
@@ -146,7 +148,7 @@ switch state
 			}
 			if key_jump
 			{
-				state = (98 << 0)
+				state = states.victory
 				with (obj_menutv)
 				{
 					if (trigger == other.currentselect)
@@ -175,7 +177,7 @@ switch state
 			}
 			else if key_slap2
 			{
-				state = (289 << 0)
+				state = states.boss_finale
 				exitselect = 1
 				switch currentselect
 				{
@@ -194,7 +196,7 @@ switch state
 			else if (key_taunt2 && global.game_started[currentselect])
 			{
 				deletebuffer = 0
-				state = (183 << 0)
+				state = states.bombdelete
 				deleteselect = 1
 				fmod_event_one_shot_3d("event:/sfx/voice/pig", 480, 270)
 				switch currentselect
@@ -213,7 +215,8 @@ switch state
 			}
 			break
 		}
-	case (183 << 0):
+	
+	case states.bombdelete:
 		deleteselect += (key_left2 + key_right2)
 		deleteselect = clamp(deleteselect, 0, 1)
 		if key_jump2
@@ -252,10 +255,11 @@ switch state
 					shake_mag_acc = (5 / room_speed)
 				}
 			}
-			state = (0 << 0)
+			state = states.normal
 		}
 		break
-	case (289 << 0):
+	
+	case states.boss_finale:
 		exitselect += (key_left2 + key_right2)
 		exitselect = clamp(exitselect, 0, 1)
 		if key_jump
@@ -263,12 +267,12 @@ switch state
 			if (exitselect == 0)
 				game_end()
 			else
-				state = (0 << 0)
+				state = states.normal
 		}
 		break
 }
 
-if (state != (18 << 0) && state != (8 << 0))
+if (state != states.titlescreen && state != states.transition)
 	extrauialpha = Approach(extrauialpha, 1, 0.1)
 if (currentselect == 0)
 	percentage = global.percentage_1
@@ -283,7 +287,7 @@ if (currentselect != -1)
 	judgement = global.game_judgement[currentselect]
 }
 perstatus_icon = floor((percentage / 14.285714285714286))
-if (state != (18 << 0) && state != (8 << 0))
+if (state != states.titlescreen && state != states.transition)
 {
 	var a = (floor((abs((percvisual - percentage)) / 10)) + 1)
 	percvisual = Approach(percvisual, percentage, a)

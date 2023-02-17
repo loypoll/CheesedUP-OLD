@@ -106,7 +106,8 @@ targetstunnedminus[5] = 30;
 targetstunnedminus[6] = 30;
 targetstunnedminus[7] = 30;
 targetstunnedminus[8] = 30;
-function boss_destroy()
+
+function boss_destroy(argument0)
 {
 	SUPER_boss_destroy(argument0);
 	targetstunned = 1000;
@@ -130,7 +131,7 @@ function boss_destroy()
 		quick_ini_write_real(get_savefile_ini(), "cutscene", "noise2", true);
 	}
 }
-function boss_hurt()
+function boss_hurt(argument0, argument1)
 {
 	if (targetstunned > 0)
 	{
@@ -148,7 +149,7 @@ function boss_hurt()
 		movespeed = 0;
 	targetxscale = -argument1.xscale;
 }
-function boss_hurt_noplayer()
+function boss_hurt_noplayer(argument0)
 {
 	if (targetstunned > 0)
 	{
@@ -161,7 +162,7 @@ function boss_hurt_noplayer()
 		targetstunned = 150;
 	SUPER_boss_hurt_noplayer(argument0);
 }
-function player_hurt()
+function player_hurt(argument0, argument1)
 {
 	if (!argument1.inv_frames && (argument1.state != states.backbreaker || argument1.parry_inst == -4))
 	{

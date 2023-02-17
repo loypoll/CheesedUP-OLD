@@ -1,10 +1,18 @@
-function tile_meeting(argument0, argument1, argument2, argument3 = 2)
+// ????????
+enum tile_flag
+{
+	solid = 2,
+	wall = 4,
+	slope = 8
+}
+
+function tile_meeting(argument0, argument1, argument2, argument3 = (2 << 0))
 {
 	var _tm = layer_tilemap_get_id(argument2);
 	var move_x = argument0 - x;
 	var move_y = argument1 - y;
-	var solid_flag = (argument3 & 2) > 0 || (argument3 & 4) > 0;
-	var slope_flag = (argument3 & 2) > 0 || (argument3 & 8) > 0;
+	var solid_flag = (argument3 & tile_flag.solid) > 0 || (argument3 & tile_flag.wall) > 0;
+	var slope_flag = (argument3 & tile_flag.solid) > 0 || (argument3 & tile_flag.slope) > 0;
 	var _x1 = tilemap_get_cell_x_at_pixel(_tm, bbox_left + move_x, bbox_top + move_y);
 	var _y1 = tilemap_get_cell_y_at_pixel(_tm, bbox_left + move_x, bbox_top + move_y);
 	var _x2 = tilemap_get_cell_x_at_pixel(_tm, (bbox_right - 1) + move_x, (bbox_bottom - 1) + move_y);

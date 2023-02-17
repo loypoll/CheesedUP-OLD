@@ -3,7 +3,7 @@ function add_secrets_achievement(secret, levelarray)
 	var b = add_achievement_notify(concat("secrets", secret), -4, function(achievement)
 	{
 		var type = achievement[0];
-		if (type == 5)
+		if (type == notifs.end_level)
 		{
 			var n = levelarray;
 			var _unfinished = false;
@@ -28,7 +28,7 @@ function add_rank_achievements(world, rank, sprite, index, levelarray)
 	var b = add_achievement_notify(concat(rank, "ranks", world), -4, function(achievement)
 	{
 		var type = achievement[0];
-		if (type == 5)
+		if (type == notifs.end_level)
 		{
 			var n = levelarray;
 			var _finished = true;
@@ -65,7 +65,7 @@ function add_boss_achievements(boss, bossroom, sprite, index)
 	{
 		var type = achievement[0];
 		var arr = achievement[1];
-		if (type == 49 && arr[0] == bossroom && !global.bossplayerhurt)
+		if (type == notifs.boss_dead && arr[0] == bossroom && !global.bossplayerhurt)
 			achievement_unlock(name, "", sprite, index);
 	});
 	

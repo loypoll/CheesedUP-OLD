@@ -87,3 +87,4 @@ switch (state)
 		break;
 }
 colliding = !(state == states.jump || state == states.boss_cardboard || state == states.boss_cardboardend);
+attacking = (state == (174 << 0) || state == (92 << 0) || state == (180 << 0) || state == (181 << 0) || state == (177 << 0));

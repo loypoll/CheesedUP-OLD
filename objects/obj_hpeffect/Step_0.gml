@@ -8,7 +8,7 @@ if (!finish)
 	if (abs(x - x_to) <= 18 && abs(y - y_to) <= 18)
 	{
 		instance_destroy();
-		scr_bosscontroller_particle_anim(1618, 0, x, y, 0.5);
+		scr_bosscontroller_particle_anim(spr_genericpoofeffect, 0, x, y, 0.5);
 		with (obj_bosscontroller)
 			player_hp++;
 	}

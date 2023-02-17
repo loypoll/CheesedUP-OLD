@@ -5,7 +5,7 @@ function scr_player_jetpackjump()
 	landAnim = false;
 	if (firemouth_afterimage > 0)
 		firemouth_afterimage--;
-	else if ((collision_flags & 1) == 0)
+	else if ((collision_flags & colflag.secret) == 0)
 	{
 		firemouth_afterimage = 8;
 		with (create_firemouth_afterimage(x, y, sprite_index, image_index - 1, xscale))
@@ -168,7 +168,7 @@ function scr_player_jetpackjump()
 	hsp = xscale * movespeed;
 	if (firemouth_afterimage > 0)
 		firemouth_afterimage--;
-	else if ((collision_flags & 1) == 0)
+	else if ((collision_flags & colflag.secret) == 0)
 	{
 		firemouth_afterimage = 8;
 		with (create_firemouth_afterimage(x, y, sprite_index, image_index - 1, xscale))

@@ -18,7 +18,7 @@ function scr_player_machfreefall()
 	if (scr_solid(x + 1, y) && image_xscale == 1)
 	{
 		machhitAnim = false;
-		state = states.machslide;
+		state = states.bump;
 		hsp = -2.5;
 		vsp = -2.5;
 		mach2 = 0;
@@ -28,7 +28,7 @@ function scr_player_machfreefall()
 	else if (scr_solid(x - 1, y) && image_xscale == -1)
 	{
 		machhitAnim = false;
-		state = states.machslide;
+		state = states.bump;
 		hsp = 2.5;
 		vsp = -2.5;
 		mach2 = 0;

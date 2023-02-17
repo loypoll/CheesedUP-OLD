@@ -1,6 +1,6 @@
 monsterid = 0;
 yy = SCREEN_HEIGHT;
-state = states.normal;
+state = 0; // not an enum
 event_perform(2, 0);
 depth = -600;
 oktoberfest = false;

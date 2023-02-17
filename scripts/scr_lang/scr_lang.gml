@@ -54,7 +54,7 @@ function lang_parse(langstring) // langstring being the entire file in a single 
 	ds_list_destroy(list);
 }
 
-enum lang
+enum lexer
 {
 	set,
 	name,
@@ -92,7 +92,7 @@ function lang_lexer(list, str)
 				break;
 			
 			case ord("="):
-				ds_list_add(list, [lang.set, start]);
+				ds_list_add(list, [lexer.set, start]);
 				break;
 			
 			case ord("\""):
@@ -109,7 +109,7 @@ function lang_lexer(list, str)
 				{
 					var val = string_copy(str, start + 1, pos - start - 1);
 					string_replace_all(val, "\\\"", "\"");
-					ds_list_add(list, [lang.value, start, val]);
+					ds_list_add(list, [lexer.value, start, val]);
 					pos += 1;
 				}
 				else
@@ -133,22 +133,22 @@ function lang_lexer(list, str)
 					switch name
 					{
 						case "false":
-							ds_list_add(list, [lang.keyword, start, false]);
+							ds_list_add(list, [lexer.keyword, start, false]);
 							break;
 						case "noone":
-							ds_list_add(list, [lang.keyword, start, noone]);
+							ds_list_add(list, [lexer.keyword, start, noone]);
 							break
 						case "true":
-							ds_list_add(list, [lang.keyword, start, true]);
+							ds_list_add(list, [lexer.keyword, start, true]);
 							break;
 						default:
-							ds_list_add(list, [lang.name, start, name]);
+							ds_list_add(list, [lexer.name, start, name]);
 					}
 				}
 				break;
 		}
 	}
-	ds_list_add(list, [lang.eof, len + 1]);
+	ds_list_add(list, [lexer.eof, len + 1]);
 }
 
 function lang_get_identifier(keycode, allow_numbers)
@@ -170,7 +170,7 @@ function lang_exec(token_list) // HAHAHA
 		var q = ds_list_find_value(token_list, pos++);
 		switch q[0]
 		{
-			case lang.set: // 0 is enum
+			case lexer.set: // 0 is enum
 				var ident = array_get(ds_list_find_value(token_list, pos - 2), 2);
 				var val = array_get(ds_list_find_value(token_list, pos++), 2);
 				ds_map_set(map, ident, val);

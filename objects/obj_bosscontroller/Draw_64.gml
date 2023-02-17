@@ -71,6 +71,7 @@ switch (state)
 			draw_sprite(vstitle, -1, xx, yy);
 		}
 		break;
+	
 	case states.normal:
 	case states.victory:
 		shader_set(global.Pal_Shader);
@@ -107,6 +108,17 @@ switch (state)
 						continue;
 					}
 				}
+				else if (type == 1)
+                {
+                    if (image_index > sprite_get_number(sprite_index) - 1)
+                        ds_list_delete(other.particlelist, i--);
+                    else
+                    {
+                        image_index += image_speed;
+                        pal_swap_set(spr_palette, paletteselect, 0);
+                        draw_sprite(sprite_index, image_index, x, y);
+                    }
+                }
 			}
 		}
 		reset_shader_fix();

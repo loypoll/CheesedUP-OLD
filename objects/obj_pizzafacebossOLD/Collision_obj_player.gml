@@ -38,13 +38,13 @@ if (phase == 0 && attacking)
 						hsp = choose(-5, 5);
 						switch (choseattack)
 						{
-							case 227:
+							case states.pizzaface_mouth:
 								sprite_index = spr_pizzafaceword;
 								break;
-							case 228:
+							case states.pizzaface_eyes:
 								sprite_index = spr_sausageman_idle;
 								break;
-							case 229:
+							case states.pizzaface_eyes:
 								sprite_index = spr_shroomcollect;
 								break;
 						}

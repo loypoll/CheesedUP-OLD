@@ -1,4 +1,4 @@
-function create_baddiegibsticks()
+function create_baddiegibsticks(x, y)
 {
 	
 }

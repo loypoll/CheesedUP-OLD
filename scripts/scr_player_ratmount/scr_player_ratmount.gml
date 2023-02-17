@@ -301,7 +301,7 @@ function ratmount_kickbrick()
 	fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x + (image_xscale * _pad), y);
 	with (instance_create(x + (image_xscale * _pad), y, obj_brickball))
 	{
-		if (other.state == states.ratmountjump || other.state == states.bounce)
+		if (other.state == states.ratmountjump || other.state == states.ratmountbounce)
 			up = true;
 		image_xscale = other.xscale;
 		xoffset = _pad;

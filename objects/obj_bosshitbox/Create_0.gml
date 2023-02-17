@@ -3,7 +3,7 @@ dmg = 30;
 parryable = false;
 parried = false;
 team = 1;
-function SUPER_player_hurt()
+function SUPER_player_hurt(argument0, argument1)
 {
 	if (!collisioned && argument1.state != states.arenaround)
 	{
@@ -49,7 +49,7 @@ function SUPER_parry()
 		parried = true;
 	}
 }
-function SUPER_boss_hurt()
+function SUPER_boss_hurt(argument0)
 {
 	if (!collisioned && team != argument0.team)
 	{
@@ -58,7 +58,7 @@ function SUPER_boss_hurt()
 		collisioned = true;
 	}
 }
-function boss_hurt()
+function boss_hurt(argument0)
 {
 	SUPER_boss_hurt(argument0);
 }
@@ -66,7 +66,7 @@ function parry()
 {
 	SUPER_parry();
 }
-function player_hurt()
+function player_hurt(argument0, argument1)
 {
 	SUPER_player_hurt(argument0, argument1);
 }

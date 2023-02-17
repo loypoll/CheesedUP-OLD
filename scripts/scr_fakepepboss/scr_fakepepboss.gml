@@ -29,7 +29,7 @@ function fakepep_add_grabclone(argument0, argument1, argument2, argument3)
 {
 	fakepep_add_projectile(argument0, argument1, 
 	{
-		attack: 0,
+		attack: (0 << 0),
 		cooldown: argument3,
 		direction: argument2
 	});
@@ -38,7 +38,7 @@ function fakepep_add_bodyslamclone(argument0, argument1, argument2, argument3)
 {
 	fakepep_add_projectile(argument0, argument1, 
 	{
-		attack: 1,
+		attack: (1 << 0),
 		cooldown: argument3,
 		direction: argument2
 	});
@@ -47,7 +47,7 @@ function fakepep_add_machclone(argument0, argument1, argument2, argument3, argum
 {
 	fakepep_add_projectile(argument0, argument1, 
 	{
-		attack: 2,
+		attack: (2 << 0),
 		cooldown: argument3,
 		direction: argument2,
 		bodyslam: argument4
@@ -59,7 +59,7 @@ function fakepep_add_superjumpclones(argument0, argument1, argument2, argument3,
 		argument5 = argument4 - argument5;
 	fakepep_add_projectile(argument0, argument1, 
 	{
-		attack: 3,
+		attack: (3 << 0),
 		cooldown: argument6,
 		direction: argument2,
 		timer: argument3,
@@ -74,7 +74,7 @@ function fakepep_add_flailingclone(argument0, argument1, argument2, argument3, a
 {
 	fakepep_add_projectile(argument0, argument1, 
 	{
-		attack: 4,
+		attack: (4 << 0),
 		cooldown: argument3,
 		direction: argument2,
 		x1: argument4,
@@ -86,7 +86,7 @@ function fakepep_add_tauntclones(argument0, argument1, argument2, argument3, arg
 {
 	fakepep_add_projectile(argument0, argument1, 
 	{
-		attack: 5,
+		attack: (5 << 0),
 		cooldown: argument4,
 		vsp1: argument2,
 		vsp2: argument3,
@@ -175,8 +175,8 @@ function scr_fakepepboss_do_projectiles(argument0, argument1)
 	deformed_cooldown = _attack.cooldown;
 	switch (_attack.attack)
 	{
-		case 0:
-		case 1:
+		case (0 << 0):
+		case (1 << 0):
 			with (instance_create(x, y, obj_fakepepclone))
 			{
 				attack = _attack;
@@ -198,7 +198,7 @@ function scr_fakepepboss_do_projectiles(argument0, argument1)
 				}
 			}
 			break;
-		case 2:
+		case (2 << 0):
 			var yy = 402;
 			var xx = x;
 			if (_attack.direction == 1)
@@ -211,7 +211,7 @@ function scr_fakepepboss_do_projectiles(argument0, argument1)
 				image_xscale = _attack.direction;
 			}
 			break;
-		case 3:
+		case (3 << 0):
 			if (!instance_exists(obj_fakepepspawner))
 			{
 				with (instance_create(0, 0, obj_fakepepspawner))
@@ -228,7 +228,7 @@ function scr_fakepepboss_do_projectiles(argument0, argument1)
 				deformed_cooldown = 0;
 			}
 			break;
-		case 4:
+		case (4 << 0):
 			xx = _attack.x1;
 			if (_attack.direction == -1)
 				xx = _attack.x2;
@@ -247,7 +247,7 @@ function scr_fakepepboss_do_projectiles(argument0, argument1)
 				}
 			}
 			break;
-		case 5:
+		case (5 << 0):
 			with (instance_create(_attack.x1, _attack.y, obj_fakepepclone))
 			{
 				attack = _attack;

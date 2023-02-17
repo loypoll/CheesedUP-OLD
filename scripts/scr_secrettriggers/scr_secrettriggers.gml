@@ -22,6 +22,7 @@ function secret_check_touchall()
 	{
 		for (var xx = 0; xx < array_length(touchrequirement); xx++)
 		{
+			var t = 0;
 			for (var i = 0; i < ds_list_size(touchall); i++)
 			{
 				var b = ds_list_find_value(touchall, i);

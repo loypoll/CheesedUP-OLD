@@ -28,7 +28,7 @@ function get_percentage()
 			if (ini_read_real("Toppin", concat(level, j + 1), false))
 				count++;
 		}
-		var r = ini_read_string("Ranks", level, "d");
+		var r = ini_read_string("Ranks", boss, "d");
 		if (r == "p")
 			extracount++;
 		count += ds_map_find_value(_rank_map, r);
@@ -65,7 +65,7 @@ function get_percentage()
 	if (per > 100)
 		per = 100;
 	var extraper = extracount >= _extramax;
-	trace("Percentage: ", per, " and ", extraper);
+	trace("Base count: ", count, " out of ", _basemax);
 	trace("Extra count: ", extracount, " out of ", _extramax);
 	trace("Percentage: ", per, " and ", extraper);
 	return per + extraper;

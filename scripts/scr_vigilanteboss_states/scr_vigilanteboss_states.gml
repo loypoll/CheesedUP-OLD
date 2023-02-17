@@ -333,7 +333,7 @@ function boss_vigilante_normal_phase4()
 		move = sign(targetplayer.hsp);
 	else
 		move = 0;
-	if (distance_to_object(targetplayer) < states.charge)
+	if (distance_to_object(targetplayer) < 128)
 		move = -sign(targetplayer.x - x);
 	hsp = move * movespeed;
 	if (x != targetplayer.x)
@@ -425,7 +425,7 @@ function boss_vigilante_float()
 	sprite_index = spr_playerV_crouchmove;
 	hsp = image_xscale * changeside_spd;
 	movespeed = 0;
-	if (changeside_skid && place_meeting(x + (sign(hsp) * states.charge), y, obj_solid))
+	if (changeside_skid && place_meeting(x + (sign(hsp) * 128), y, obj_solid))
 	{
 		state = states.machslide;
 		movespeed = 12;
@@ -484,7 +484,7 @@ function boss_vigilante_revolver()
 		}
 	}
 	if (phase > 4)
-		vigilante_cancel_attack(2, states.charge);
+		vigilante_cancel_attack(states.dynamite, states.charge);
 }
 function boss_vigilante_mach1()
 {
@@ -535,7 +535,7 @@ function boss_vigilante_mach1()
 		}
 	}
 	if (phase > 4)
-		vigilante_cancel_attack(!honor ? 1 : states.handstandjump, states.charge);
+		vigilante_cancel_attack(!honor ? states.revolver : states.handstandjump, states.charge);
 }
 function boss_vigilante_crouchslide()
 {
@@ -592,7 +592,7 @@ function boss_vigilante_jump()
 		dynamite_buffer--;
 	else if (dynamite_count > 0)
 	{
-		state = 2;
+		state = states.dynamite;
 		sprite_index = spr_playerV_dynamitethrow;
 		image_index = 0;
 		repeat (dynamite_count)
@@ -630,7 +630,7 @@ function boss_vigilante_dynamite()
 		sprite_index = spr_playerV_fall;
 		if (dynamite_shot)
 		{
-			state = 1;
+			state = states.revolver;
 			sprite_index = spr_playerV_revolverstart;
 			image_index = 0;
 			revolver_count = 1;
@@ -758,7 +758,7 @@ function boss_vigilante_freefallland()
 	if (image_index > (image_number - 1))
 		state = states.normal;
 	if (phase > 4)
-		vigilante_cancel_attack(!honor ? 1 : states.handstandjump, states.uppunch);
+		vigilante_cancel_attack(!honor ? states.revolver : states.handstandjump, states.uppunch);
 }
 function boss_vigilante_millionpunch()
 {

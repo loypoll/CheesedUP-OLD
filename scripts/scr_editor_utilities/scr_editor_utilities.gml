@@ -26,7 +26,7 @@ function add_object(argument0, argument1, argument2, argument3, argument4 = 0, a
 		layerdepth: 0
 	});
 }
-function set_object_place_offset(argument0, argument1)
+function set_object_place_offset(argument0, argument1, argument2)
 {
 	var b = ds_list_find_value(array_get(object_list, argument0), ds_list_size(objectlist) - 1);
 	b.place_xoffset = argument1;

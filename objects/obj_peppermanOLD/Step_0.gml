@@ -125,3 +125,4 @@ switch (state)
 }
 xscale = image_xscale;
 colliding = !(state == states.superslam || state == states.boss_fistmatch || state == states.boss_superattackstart || state == states.boss_superattackcharge);
+attacking = (state == (153 << 0) || state == (108 << 0) || state == (122 << 0) || state == (157 << 0) || state == (83 << 0) || state == (76 << 0) || state == (162 << 0) || state == (158 << 0) || state == (159 << 0) || state == (134 << 0));

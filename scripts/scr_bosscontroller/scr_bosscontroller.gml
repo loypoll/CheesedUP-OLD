@@ -148,7 +148,7 @@ function scr_bosscontroller_normal()
 			boss_prevhp++;
 			pos = scr_bosscontroller_get_health_pos(boss_prevhp, boss_rowmax, boss_columnmax, boss_maxhp, boss_hp_x, boss_hp_y, boss_xpad, boss_ypad, true);
 			if (!is_undefined(pos) && is_array(pos))
-				scr_bosscontroller_particle_anim(1618, 0, pos[0] - 30, pos[1] - 30, 0.5);
+				scr_bosscontroller_particle_anim(spr_genericpoofeffect, 0, pos[0] - 30, pos[1] - 30, 0.5);
 		}
 	}
 	if (!instance_exists(bossID) && !bossdead && instance_exists(obj_player1) && obj_player1.state != states.tackle && obj_player1.state != states.comingoutdoor && room != boss_fakepephallway && room != boss_pizzaface && room != rank_room)

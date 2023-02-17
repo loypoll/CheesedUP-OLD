@@ -28,7 +28,7 @@ switch (state)
 		{
 			with (obj_frontcanongoblin)
 			{
-				if (state != states.transition && state != states.gameover)
+				if (state != states.transition && state != states.dead)
 				{
 					crosshair_x = other.x;
 					crosshair_y = other.y;

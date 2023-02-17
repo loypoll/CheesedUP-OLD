@@ -5,6 +5,7 @@ switch (state)
 		sprite_index = spr_introidle;
 		image_speed = 0.35;
 		break;
+	
 	case states.robotintro:
 		if (sprite_index != spr_intro)
 		{
@@ -14,6 +15,7 @@ switch (state)
 		if (floor(image_index) == (image_number - 1))
 			state = states.robotchase;
 		break;
+	
 	case states.robotroaming:
 		sprite_index = spr_monstertomato_idle;
 		x = camera_get_view_x(view_camera[0]) + (SCREEN_WIDTH / 2);
@@ -35,6 +37,7 @@ switch (state)
 						substate = states.jump;
 				}
 				break;
+			
 			case states.jump:
 				yy -= 3;
 				if (yy < -100)
@@ -49,6 +52,7 @@ switch (state)
 					state = states.robotidle;
 				}
 				break;
+			
 			case states.chase:
 				yy -= 10;
 				if (yy < -100)
@@ -56,7 +60,8 @@ switch (state)
 				break;
 		}
 		break;
-	case 220:
+	
+	case states.robotchase:
 		playerid = obj_player1.id;
 		sprite_index = spr_monstertomato_chase;
 		var dir = point_direction(x, y, playerid.x, playerid.y);

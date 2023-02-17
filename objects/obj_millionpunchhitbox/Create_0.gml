@@ -2,7 +2,7 @@ event_inherited();
 dmg = 10;
 col_buffer = 0;
 col_max = 10;
-function player_hurt()
+function player_hurt(argument0, argument1)
 {
 	if (!collisioned && argument1.state != states.arenaround)
 	{

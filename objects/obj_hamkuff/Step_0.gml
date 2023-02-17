@@ -25,7 +25,7 @@ switch state
 			{
 				with (playerid)
 				{
-					if (state == 152)
+					if (state == states.policetaxi)
 						other.state = states.walk
 					else if (!launched)
 					{
@@ -41,14 +41,14 @@ switch state
 							hsp_carry = _xs * abs(m)
 						else
 							hsp_carry = -hsp
-						if (state != states.bump && state != 121 && state != states.mach2 && state != states.machslide && abs(x - other.x) > dis + abs(movespeed) + 1)
+						if (state != states.bump && state != states.mach3 && state != states.mach2 && state != states.machslide && abs(x - other.x) > dis + abs(movespeed) + 1)
 						{
 							state = states.bump
 							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y)
 							sprite_index = spr_bump
 							if (x != other.x)
 							{
-								hsp = ((-(sign((x - other.x)))) * 3)
+								hsp = -sign(x - other.x) * 3
 								if ((!other.attract_player) && place_meeting((x + sign(hsp)), y, obj_solid) && (!(place_meeting((x + sign(hsp)), y, obj_slope))))
 								{
 									other.attract_player = 1
@@ -91,7 +91,7 @@ switch state
 						if other.attract_player
 						{
 							launched = 0
-							state = 146
+							state = states.actor
 							hsp = 0
 							vsp = 0
 							movespeed = 0

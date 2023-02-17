@@ -43,7 +43,8 @@ attacking = false;
 destroyed = false;
 playerdestroyed = false;
 colliding = true;
-function SUPER_player_destroy()
+
+function SUPER_player_destroy(argument0)
 {
 	depth = argument0.depth;
 	playerdestroyed = true;
@@ -80,7 +81,7 @@ function SUPER_player_destroy()
 		}
 	}
 }
-function SUPER_boss_destroy()
+function SUPER_boss_destroy(argument0)
 {
 	destroyed = true;
 	depth = argument0.depth;
@@ -135,7 +136,7 @@ function SUPER_boss_destroy()
 		}
 	}
 }
-function SUPER_boss_hurt()
+function SUPER_boss_hurt(argument0, argument1)
 {
 	if (important)
 		hp -= argument0;
@@ -202,7 +203,7 @@ function SUPER_boss_hurt()
 		}
 	}
 }
-function SUPER_boss_hurt_noplayer()
+function SUPER_boss_hurt_noplayer(argument0)
 {
 	if (important)
 		hp -= argument0;
@@ -237,7 +238,7 @@ function SUPER_boss_hurt_noplayer()
 		shake_mag_acc = 3 / room_speed;
 	}
 }
-function SUPER_player_hurt()
+function SUPER_player_hurt(argument0, argument1)
 {
 	if (instance_exists(obj_bosscontroller))
 		obj_bosscontroller.player_hp -= argument0;
@@ -289,23 +290,23 @@ function SUPER_player_hurt()
 		}
 	}
 }
-function player_destroy()
+function player_destroy(argument0)
 {
 	SUPER_player_destroy(argument0);
 }
-function boss_destroy()
+function boss_destroy(argument0)
 {
 	SUPER_boss_destroy(argument0);
 }
-function player_hurt()
+function player_hurt(argument0, argument1)
 {
 	SUPER_player_hurt(argument0, argument1);
 }
-function boss_hurt()
+function boss_hurt(argument0, argument1)
 {
 	SUPER_boss_hurt(argument0, argument1);
 }
-function boss_hurt_noplayer()
+function boss_hurt_noplayer(argument0)
 {
 	SUPER_boss_hurt_noplayer(argument0);
 }

@@ -1,5 +1,15 @@
-global.resolutions[0] = [[480, 270], [960, 540], [1024, 576], [1280, 720], [1600, 900], [1920, 1080]];
-global.resolutions[1] = [[640, 480], [800, 600], [1024, 768], [1152, 864], [1440, 1080]];
+enum aspectratio
+{
+	normal,
+	undertale
+}
+global.resolutions[aspectratio.normal] = [
+	[480, 270], [960, 540], [1024, 576], [1280, 720], [1600, 900], [1920, 1080]
+];
+global.resolutions[aspectratio.undertale] = [
+	[640, 480], [800, 600], [1024, 768], [1152, 864], [1440, 1080]
+];
+
 gameframe_init();
 global.gameframe_caption_font = fnt_caption;
 global.gameframe_caption_icon = spr_ico;
@@ -16,7 +26,7 @@ normal_size_fix_y = 0;
 app_scale = 1;
 display_width = display_get_width();
 display_height = display_get_height();
-aspect_ratio = 0; // enumerator
+aspect_ratio = aspectratio.normal; // enumerator
 camzoom = 1;
 savedwidth = window_get_width();
 savedheight = window_get_height();

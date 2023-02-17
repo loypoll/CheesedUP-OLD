@@ -22,6 +22,7 @@ if (!fadein)
 				}
 			}
 			break;
+		
 		case 1:
 			if (cutscenebuffer > 0)
 				cutscenebuffer--;
@@ -56,6 +57,7 @@ if (!fadein)
 				}
 			}
 			break;
+		
 		case 2:
 			with (obj_johnresurrection_peppino)
 			{
@@ -67,6 +69,7 @@ if (!fadein)
 			else
 				state++;
 			break;
+		
 		case 3:
 			with (obj_johnresurrection_peppino)
 			{
@@ -78,7 +81,8 @@ if (!fadein)
 					other.fadein = true;
 			}
 			break;
-		case states.grabbed:
+		
+		case 4:
 			with (obj_johnresurrection_peppino)
 			{
 				if (!fmod_event_instance_is_playing(other.snd))
@@ -109,6 +113,7 @@ if (!fadein)
 				treasure_dir *= -1;
 			}
 			break;
+		
 		case 5:
 			if (cutscenebuffer > 0)
 				cutscenebuffer--;
@@ -129,6 +134,7 @@ if (!fadein)
 					sprite_index = spr_player_idle;
 			}
 			break;
+		
 		case 6:
 			if (pizzaheadbuffer > 0)
 				pizzaheadbuffer--;
@@ -158,6 +164,7 @@ if (!fadein)
 				shot = false;
 			}
 			break;
+		
 		case 7:
 			with (obj_johnresurrection_pillar)
 			{
@@ -180,6 +187,7 @@ if (!fadein)
 					other.shot = false;
 			}
 			break;
+		
 		case 8:
 			with (obj_johnresurrection_pillar)
 			{
@@ -215,6 +223,7 @@ if (!fadein)
 				}
 			}
 			break;
+		
 		case 9:
 			with (obj_johnresurrection_pizzahead)
 			{
@@ -229,6 +238,7 @@ if (!fadein)
 				}
 			}
 			break;
+		
 		case 10:
 			with (obj_johnresurrection_pizzahead)
 			{
@@ -255,6 +265,7 @@ if (!fadein)
 				}
 			}
 			break;
+		
 		case 11:
 			with (obj_johnresurrection_pizzahead)
 			{
@@ -266,6 +277,7 @@ if (!fadein)
 				}
 			}
 			break;
+		
 		case 12:
 			if (cutscenebuffer > 0)
 				cutscenebuffer--;
@@ -285,6 +297,7 @@ if (!fadein)
 					sprite_index = spr_player_smirk;
 			}
 			break;
+		
 		case 13:
 			if (cutscenebuffer > 0)
 				cutscenebuffer--;

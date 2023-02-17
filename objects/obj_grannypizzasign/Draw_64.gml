@@ -1,4 +1,4 @@
-if (text_state == 18 && text_y <= -(text_sprite_height * text_yscale))
+if (text_state == states.titlescreen && text_y <= -(text_sprite_height * text_yscale))
 	exit;
 draw_sprite(spr_tutorialbubble_rope, 0, 64 + text_wave_x, text_y + text_wave_y);
 draw_sprite(spr_tutorialbubble_rope, 0, (SCREEN_WIDTH - 64) + text_wave_x, text_y + text_wave_y);
@@ -48,6 +48,7 @@ for (var i = 0; i < array_length(levelarray); i++)
 		var w = sprite_get_width(spr_list1);
 		var x2 = (array_length(b.toppinarr) * w) / 2;
 		x2 *= -1;
+		x2 += w / 2;
 		for (var j = 0; j < array_length(b.toppinarr); j++)
 		{
 			draw_sprite(spr_list1, b.toppinarr[j] ? 0 : 1, xx + x2, y1);
@@ -60,6 +61,7 @@ for (var i = 0; i < array_length(levelarray); i++)
 		w = sprite_get_width(spr_list2);
 		x2 = (3 * w) / 2;
 		x2 *= -1;
+		x2 += w / 2;
 		for (j = 0; j < 3; j++)
 		{
 			draw_sprite(spr_list2, ((j + 1) <= b.secretcount) ? 0 : 1, xx + x2, y1);

@@ -15,7 +15,7 @@ global.johnresurrection = treasure;
 if (treasure)
 	notification_push(notifs.johnresurrection, []);
 depth = -600;
-state = states.normal;
+state = 0; // not an enum
 fadein = false;
 fade = 0;
 treasure_dir = -1;

@@ -32,10 +32,10 @@ function camera_zoom(zoom, speed)
 			zoomspd = abs(speed);
 	}
 }
-function camera_set_zoom()
+function camera_set_zoom(target_zoom)
 {
 	with (obj_camera)
-		zoom = argument0;
+		zoom = target_zoom;
 }
 function try_solid(xoffset, yoffset, object, iterations)
 {
@@ -152,8 +152,11 @@ function point_in_camera_ext(x, y, cam, extra_width, extra_height)
 	var cam_h = camera_get_view_height(cam);
 	return point_in_rectangle(x, y, cam_x - extra_width, cam_y - extra_height, cam_x + cam_w + extra_width, cam_y + cam_h + extra_height);
 }
-function bbox_in_camera(camera, threshold = 0)
+function bbox_in_camera(camera, threshold)
 {
+	if is_undefined(threshold)
+		threshold = 0;
+	
 	var cam_x = camera_get_view_x(camera);
 	var cam_y = camera_get_view_y(camera);
 	var cam_w = camera_get_view_width(camera);

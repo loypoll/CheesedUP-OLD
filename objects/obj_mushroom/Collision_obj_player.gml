@@ -22,7 +22,7 @@ if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state
 	image_index = 0;
 	other.vsp = -14;
 	other.jumpstop = true;
-	if (other.isgustavo && other.state != 204)
+	if (other.isgustavo && other.state != states.ratmountskid)
 	{
 		if (other.ratmount_movespeed < 12)
 		{

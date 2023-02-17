@@ -1,13 +1,14 @@
-if (state != states.gameover)
+if (state != states.dead)
 {
 	captain_y = SCREEN_HEIGHT;
 	canon_y = SCREEN_HEIGHT;
 }
 switch (state)
 {
-	case 0:
+	case states.normal:
 		break;
-	case 8:
+	
+	case states.transition:
 		if (floor(canon_index) == (sprite_get_number(canon_sprite) - 1))
 		{
 			canon_sprite = spr_captaingoblin_canon;
@@ -18,7 +19,8 @@ switch (state)
 				y_to = other.crosshair_y;
 		}
 		break;
-	case 89:
+	
+	case states.dead:
 		if (!destroyed)
 		{
 			if (destroybuffer > 0)

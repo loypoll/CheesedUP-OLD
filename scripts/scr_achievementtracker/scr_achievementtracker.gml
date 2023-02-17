@@ -214,11 +214,11 @@ function palette_unlock(_achievement, _palettename, _paletteselect, _texture = n
 		texture = _texture;
 	}
 }
-function achievement_reset_variables()
+function achievement_reset_variables(achievement_array)
 {
-	for (var i = 0; i < array_length(argument0); i++)
+	for (var i = 0; i < array_length(achievement_array); i++)
 	{
-		var b = argument0[i];
+		var b = achievement_array[i];
 		with (b)
 		{
 			var size = ds_map_size(variables);
@@ -233,11 +233,11 @@ function achievement_reset_variables()
 		}
 	}
 }
-function achievement_save_variables()
+function achievement_save_variables(achievement_array)
 {
-	for (var i = 0; i < array_length(argument0); i++)
+	for (var i = 0; i < array_length(achievement_array); i++)
 	{
-		var b = argument0[i];
+		var b = achievement_array[i];
 		ini_open_from_string(obj_savesystem.ini_str);
 		with (b)
 		{
@@ -254,25 +254,25 @@ function achievement_save_variables()
 		obj_savesystem.ini_str = ini_close();
 	}
 }
-function achievement_get_steam_achievements(argument0)
+function achievement_get_steam_achievements(achievement_array)
 {
-	for (i = 0; i < array_length(argument0); i++)
+	for (i = 0; i < array_length(achievement_array); i++)
 	{
-		b = argument0[i]
-		ini_open_from_string(obj_savesystem.ini_str)
+		b = achievement_array[i];
+		ini_open_from_string(obj_savesystem.ini_str);
 		with (b)
 		{
 			if ini_read_real("achievements", name, 0)
-				scr_steam_unlock_achievement(name)
+				scr_steam_unlock_achievement(name);
 		}
-		obj_savesystem.ini_str = ini_close()
+		obj_savesystem.ini_str = ini_close();
 	}
 }
-function achievements_load()
+function achievements_load(achievement_array)
 {
-	for (var i = 0; i < array_length(argument0); i++)
+	for (var i = 0; i < array_length(achievement_array); i++)
 	{
-		var b = argument0[i];
+		var b = achievement_array[i];
 		with (b)
 		{
 			unlocked = ini_read_real("achievements", name, false);

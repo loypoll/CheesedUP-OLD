@@ -94,58 +94,58 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 				_state = tauntstoredstate;
 			switch (_state)
 			{
-				case 47:
-				case 38:
-				case 49:
+				case states.knightpep:
+				case states.knightpepslopes:
+				case states.knightpepbump:
 					_txt = lang_get_value("knighttip");
 					break;
-				case 10:
+				case states.firemouth:
 					_txt = lang_get_value("firemouthtip");
 					break;
-				case 33:
-				case 35:
-				case 34:
+				case states.boxxedpep:
+				case states.boxxedpepjump:
+				case states.boxxedpepspin:
 					_txt = lang_get_value("boxxedtip");
 					break;
-				case 11:
-				case 13:
-				case 14:
-				case 12:
+				case states.mort:
+				case states.mortattack:
+				case states.morthook:
+				case states.mortjump:
 					_txt = lang_get_value("morttip");
 					break;
-				case 16:
+				case states.ghost:
 					_txt = lang_get_value("ghosttip");
 					break;
-				case 184:
-				case 185:
+				case states.rocket:
+				case states.rocketslide:
 					_txt = lang_get_value("rockettip");
 					break;
-				case 113:
-				case 115:
-				case 114:
-				case 116:
+				case states.barrel:
+				case states.barrelclimbwall:
+				case states.barreljump:
+				case states.barrelslide:
 					_txt = lang_get_value("barreltip");
 					break;
-				case 211:
+				case states.trashroll:
 					if (sprite_index == spr_player_corpsesurf || sprite_index == spr_player_corpsestart)
 						_txt = lang_get_value("gravesurftip");
 					else
 						_txt = lang_get_value("trashrolltip");
 					break;
-				case 265:
+				case states.antigrav:
 					_txt = lang_get_value("antigravtip");
 					break;
-				case 24:
-				case 29:
-				case 25:
-				case 26:
-				case 30:
+				case states.cheesepep:
+				case states.cheesepepstickside:
+				case states.cheesepepstick:
+				case states.cheesepepjump:
+				case states.cheesepepstickup:
 					_txt = lang_get_value("cheesedtip");
 					break;
 				case states.golf:
 					_txt = lang_get_value("golftip");
 					break;
-				case 31:
+				case states.rideweenie:
 					_txt = lang_get_value("weenietip");
 					break;
 			}

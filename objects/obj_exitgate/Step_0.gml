@@ -25,16 +25,18 @@ if (drop && global.panic)
 	}
 	else
 		sprite_index = spr_exitgate;
+	
 	switch (dropstate)
 	{
 		case states.normal:
 			if (distance_to_object(obj_player1) < 300)
 			{
-				dropstate = 15;
+				dropstate = states.hook;
 				handsprite = spr_grabbiehand_fall;
 				hand_y = camera_get_view_y(view_camera[0]) - 100;
 			}
 			break;
+		
 		case states.hook:
 			if (hand_y < (y - 128))
 				hand_y += 6;
@@ -42,9 +44,10 @@ if (drop && global.panic)
 			{
 				handsprite = spr_grabbiehand_catch;
 				handindex = 0;
-				dropstate = 4;
+				dropstate = states.grabbed;
 			}
 			break;
+		
 		case states.grabbed:
 			depth = 150;
 			var _ty = drop_y - 100;
@@ -52,12 +55,13 @@ if (drop && global.panic)
 			hand_y = y - 128;
 			if (y == _ty && distance_to_object(obj_player1) < 200)
 			{
-				dropstate = 135;
+				dropstate = states.fall;
 				handindex = 0;
 				handsprite = spr_grabbiehand_release;
 				vsp = 0;
 			}
 			break;
+		
 		case states.fall:
 			if (vsp < 20)
 				vsp += grav;
@@ -76,6 +80,7 @@ if (drop && global.panic)
 				}
 			}
 			break;
+		
 		case states.idle:
 			hand_y -= 6;
 			break;

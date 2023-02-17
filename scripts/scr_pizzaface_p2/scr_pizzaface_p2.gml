@@ -267,7 +267,7 @@ function scr_pizzaface_p2_fishing()
 	else if (floor(image_index) == (image_number - 1))
 	{
 		saveddir = -image_xscale;
-		if (throwsword && lastattack != 0)
+		if (throwsword && lastattack != (0 << 0))
 			leveldown = true;
 		if (miniguncount > 0)
 		{
@@ -295,9 +295,9 @@ function scr_pizzaface_p2_fishing()
 			idle_buffer = 0;
 			switch (t)
 			{
-				case 0:
+				case (0 << 0):
 					state = states.pizzahead_pullinglevel;
-					substate = states.normal
+					substate = 0;
 					sprite_index = spr_pizzahead_pullinglevel1;
 					image_index = 0;
 					shot = false;
@@ -308,20 +308,20 @@ function scr_pizzaface_p2_fishing()
 						shake_mag_acc = 1 / room_speed;
 					}
 					break;
-				case 3:
+				case (3 << 0):
 					brick = true;
 					state = states.throwing;
 					brickcount = 1;
 					sprite_index = spr_pizzahead_ratballstart;
 					image_index = 0;
 					break;
-				case 1:
+				case (1 << 0):
 					state = states.pizzahead_portraitthrow;
 					shot = false;
 					sprite_index = spr_pizzahead_grabTV;
 					image_index = 0;
 					break;
-				case 2:
+				case (2 << 0):
 					sprite_index = spr_pizzahead_grabgun;
 					image_index = 0;
 					state = states.shotgun;
@@ -339,7 +339,7 @@ function scr_pizzaface_p2_fishing()
 					substate = states.boss_mini;
 					attackbuffer = 1;
 					break;
-				case 4:
+				case (4 << 0):
 					sprite_index = spr_pizzahead_pinup;
 					image_index = 0;
 					state = states.animation;

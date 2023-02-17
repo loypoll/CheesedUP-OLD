@@ -15,7 +15,7 @@ enum afterimage
 depth = 1;
 global.afterimage_list = ds_list_create();
 alpha = array_create(afterimage.enum_length, 1);
-alpha[2] = 0.5;
+alpha[afterimage.heatattack] = 0.5;
 shd_alpha = shader_get_uniform(shd_firemouth_afterimage, "newAlpha");
 shd_color_red = shader_get_uniform(shd_color_afterimage, "red");
 shd_color_green = shader_get_uniform(shd_color_afterimage, "green");

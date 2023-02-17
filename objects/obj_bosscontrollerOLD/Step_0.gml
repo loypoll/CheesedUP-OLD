@@ -6,7 +6,7 @@ if (!instance_exists(bossID) && bossID != -4 && state != states.victory && !fake
 if (player_hp <= 0)
 {
 	fakedeath = false;
-	if (state != states.transition && state != states.gameover)
+	if (state != states.transition && state != states.dead)
 	{
 		if (endroundfunc != -4)
 			endroundfunc();
@@ -15,9 +15,9 @@ if (player_hp <= 0)
 		with (bossID)
 			player_destroy(lastplayerid);
 	}
-	else if (bossID.state != states.chainsaw && state != states.gameover)
+	else if (bossID.state != states.chainsaw && state != states.dead)
 	{
-		state = states.gameover;
+		state = states.dead;
 		alarm[1] = room_speed * 4;
 	}
 }
@@ -163,7 +163,7 @@ switch (state)
 					other.super = 0;
 					p = true;
 					state = states.playersuperattack;
-					superattackstate = 8;
+					superattackstate = states.transition;
 					var lag = 60;
 					hitX = x;
 					hitY = y;
@@ -201,7 +201,7 @@ switch (state)
 			case 2:
 				super_portrait_index += 0.35;
 				super_portrait_x += 1;
-				if (obj_player.state != states.playersuperattack || obj_player.superattackstate != 8)
+				if (obj_player.state != states.playersuperattack || obj_player.superattackstate != states.transition)
 					super_portrait_state = 0;
 				break;
 		}
@@ -233,7 +233,7 @@ switch (state)
 		}
 		break;
 	case states.victory:
-	case states.gameover:
+	case states.dead:
 		fade -= 0.05;
 		fade = clamp(fade, 0, 1);
 		break;

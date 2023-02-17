@@ -143,7 +143,7 @@ function scr_player_rocket()
 		image_speed = 0.4;
 	if (steppybuffer > 0)
 		steppybuffer--;
-	else if ((collision_flags & 1) <= 0)
+	else if ((collision_flags & colflag.secret) <= 0)
 	{
 		create_particle(x, y + random_range(10, 20), particle.cloudeffect, 0);
 		steppybuffer = 8;

@@ -26,7 +26,7 @@ switch (state)
 	case 145:
 		grav = 0.5;
 		break;
-	case 0:
+	case states.normal:
 		grav = 0.5;
 		normal_func();
 		break;

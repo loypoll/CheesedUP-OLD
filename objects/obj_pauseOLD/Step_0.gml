@@ -13,7 +13,7 @@ if (!pause && obj_player1.key_start)
 	}
 	with (obj_secretportalstart)
 		_cutscenehandler = true;
-	if (obj_savesystem.state == states.normal && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom) && !instance_exists(obj_jumpscare) && !instance_exists(obj_fadeout) && !instance_exists(obj_technicaldifficulty))
+	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom) && !instance_exists(obj_jumpscare) && !instance_exists(obj_fadeout) && !instance_exists(obj_technicaldifficulty))
 	{
 		selected = 0;
 		if (!instance_exists(obj_pausefadeout))
