@@ -1,4 +1,4 @@
-function scr_farmerpeasanto_projectile(haystack, argument2)
+function scr_farmerpeasanto_projectile(haystack, unknown)
 {
 	with (haystack)
 	{

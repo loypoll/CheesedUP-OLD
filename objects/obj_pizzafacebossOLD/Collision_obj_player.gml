@@ -44,7 +44,7 @@ if (phase == 0 && attacking)
 							case states.pizzaface_eyes:
 								sprite_index = spr_sausageman_idle;
 								break;
-							case states.pizzaface_eyes:
+							case states.pizzaface_nose:
 								sprite_index = spr_shroomcollect;
 								break;
 						}
