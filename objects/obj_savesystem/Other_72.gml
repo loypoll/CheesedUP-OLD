@@ -1,6 +1,7 @@
 var ident = ds_map_find_value(async_load, "id");
 var status = ds_map_find_value(async_load, "status");
 var error = ds_map_find_value(async_load, "error");
+
 switch (state)
 {
 	case 1:
@@ -12,6 +13,7 @@ switch (state)
 			state = states.normal;
 		}
 		break;
+	
 	case 2:
 		if (ident == loadid)
 		{
