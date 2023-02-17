@@ -1,0 +1,9 @@
+{
+  "resourceType": "GMExtensionConfigSet",
+  "configurables": null,
+  "extensionId": {
+    "name": "gameframe_native",
+    "path": "extensions/gameframe_native/gameframe_native.yy"
+  },
+  "resourceVersion": "1.0"
+}

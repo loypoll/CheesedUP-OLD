@@ -2,8 +2,8 @@
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
   "name": "tile_layer_hide",
-  "isDnD": false,
   "isCompatibility": false,
+  "isDnD": false,
   "parent": {
     "name": "Tile",
     "path": "folders/Scripts/Compatibility/Tile.yy",
