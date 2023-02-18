@@ -18,7 +18,7 @@ if (state == states.bombdelete)
 	draw_text_color((SCREEN_WIDTH / 2) - 100, (SCREEN_HEIGHT / 2) + 30, lang_get_value("option_yes"), c1, c1, c1, c1, 1);
 	draw_text_color((SCREEN_WIDTH / 2) + 100, (SCREEN_HEIGHT / 2) + 30, lang_get_value("option_no"), c2, c2, c2, c2, 1);
 }
-else if (state == states.boss_finale)
+else if (state == states.finale)
 {
 	draw_set_alpha(0.5);
 	draw_rectangle_color(0, 0, room_width, room_height, 0, 0, 0, 0, false);

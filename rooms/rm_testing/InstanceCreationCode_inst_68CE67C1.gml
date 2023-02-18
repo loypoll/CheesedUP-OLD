@@ -1,4 +1,4 @@
-func = function()
+func = function(argument0)
 {
 	if (!active && argument0.state == states.handstandjump)
 	{

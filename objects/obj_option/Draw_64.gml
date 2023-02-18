@@ -38,7 +38,7 @@ switch (m.anchor)
 				c = c_white;
 			var t = lang_get_value(o.name);
 			draw_text_color(xx, yy + (m.ypad * i), t, c, c, c, c, a);
-			if (menu == 0)
+			if (menu == menus.options)
 				scr_pauseicon_draw(i, xx + (string_width(t) / 2) + 50, yy + (m.ypad * i));
 		}
 		break;

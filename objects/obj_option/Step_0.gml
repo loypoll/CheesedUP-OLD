@@ -1,7 +1,7 @@
 var j = menu;
 if (instance_exists(obj_keyconfig) || menu == menus.controller || menu == menus.deadzone)
 	j = 4;
-if (menu >= menus.controller && menu <= menus.deadzone)
+if (menu >= menus.controls && menu <= menus.deadzone)
 	j = 4;
 
 for (var i = 0; i < array_length(bg_alpha); i++)
@@ -127,7 +127,7 @@ for (i = 0; i < array_length(m.options); i++)
 	}
 }
 
-if (menu == 0)
+if (menu == menus.options)
 	scr_pauseicons_update(optionselected);
 else
 	scr_pauseicons_update(-1);
@@ -138,7 +138,7 @@ if (slidebuffer > 0)
 if ((key_back || key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_exists(obj_keyconfig) && !instance_exists(obj_audioconfig))
 {
 	fmod_event_one_shot("event:/sfx/ui/back");
-	if (menu == 0)
+	if (menu == menus.options)
 	{
 		if (instance_exists(obj_mainmenuselect))
 			obj_mainmenuselect.selected = false;

@@ -22,9 +22,9 @@ if (state == states.shoulderbash && hsp != 0)
 			create_debris(x, y, spr_slapstar);
 	}
 }
-else if (wastedhits == 9 && phase == 1 && !pizzahead && (other.instakillmove || other.state == states.handstandjump) && state == states.boss_contemplate)
+else if (wastedhits == 9 && phase == 1 && !pizzahead && (other.instakillmove || other.state == states.handstandjump) && state == states.contemplate)
 	scr_boss_do_hurt_phase2(other);
-else if (state == states.boss_mini && ministate != states.transition && (other.instakillmove || other.state == states.handstandjump))
+else if (state == states.mini && ministate != states.transition && (other.instakillmove || other.state == states.handstandjump))
 {
 	with (other)
 		scr_pummel();

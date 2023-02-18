@@ -1,4 +1,4 @@
-if (text_state == 18 && text_y <= -(text_sprite_height * text_yscale))
+if (text_state == states.titlescreen && text_y <= -(text_sprite_height * text_yscale))
 	exit;
 reset_blendmode();
 if (showgranny)

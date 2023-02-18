@@ -35,7 +35,7 @@ if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && gr
 		_yy = y + 78;
 	create_particle(x - (image_xscale * 20), _yy, particle.cloudeffect, 0);
 }
-if ((object_index != obj_pizzice || state != states.pizzagoblinthrow) && object_index != obj_pizzafaceboss_p3 && object_index != obj_fakepepboss && state != states.boss_phase1hurt)
+if ((object_index != obj_pizzice || state != states.pizzagoblinthrow) && object_index != obj_pizzafaceboss_p3 && object_index != obj_fakepepboss && state != states.phase1hurt)
 {
 	if (state == states.walk)
 		image_speed = 0.35;

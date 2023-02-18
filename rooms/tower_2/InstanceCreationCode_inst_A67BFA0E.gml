@@ -3,4 +3,4 @@ bgsprite = spr_gate_vigilanteBG;
 targetRoom = boss_vigilante;
 save = "w2stick";
 group_arr = ["bossgroup", "vigilantegroup"];
-maxscore = 150;
+maxscore = global.stickreq[1];

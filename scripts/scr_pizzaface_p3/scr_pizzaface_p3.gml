@@ -238,7 +238,7 @@ function scr_pizzaface_p3_walk()
 					break;
 				
 				case pizzaface_p3_attacks.swing:
-					state = states.boss_swinging;
+					state = states.swinging;
 					fmod_event_one_shot_3d("event:/sfx/pizzahead/swingstart", x, y);
 					sprite_index = spr_pizzahead_swingingstart;
 					image_index = 0;
@@ -255,7 +255,7 @@ function scr_pizzaface_p3_walk()
 					break;
 				
 				case pizzaface_p3_attacks.stomp:
-					state = states.boss_stomp;
+					state = states.stomp;
 					fmod_event_one_shot_3d("event:/sfx/pizzahead/giantstomp", x, y);
 					sprite_index = spr_pizzahead_stomp;
 					image_index = 0;
@@ -457,8 +457,8 @@ function scr_pizzaface_p3_supergrab()
 						}
 						else
 						{
-							other.state = states.boss_finale;
-							state = states.boss_finale;
+							other.state = states.finale;
+							state = states.finale;
 							other.finale_x = x + ((other.x - x) / 2);
 						}
 					}

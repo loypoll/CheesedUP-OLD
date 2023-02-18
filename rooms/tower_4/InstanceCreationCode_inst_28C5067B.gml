@@ -3,4 +3,4 @@ bgsprite = spr_gate_fakepepBG;
 targetRoom = boss_fakepep;
 save = "w4stick";
 group_arr = ["bossgroup"];
-maxscore = 220;
+maxscore = global.stickreq[3];

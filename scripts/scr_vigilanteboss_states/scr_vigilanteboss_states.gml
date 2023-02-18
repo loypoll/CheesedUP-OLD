@@ -43,7 +43,7 @@ function vigilante_cancel_attack()
 				image_index = 0;
 				movespeed = 0;
 				break;
-			case states.boss_groundpunchstart:
+			case states.groundpunchstart:
 				vsp = -14;
 				image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : ((x < (room_width / 2)) ? 1 : -1);
 				sprite_index = spr_playerV_jump;
@@ -51,7 +51,7 @@ function vigilante_cancel_attack()
 				movespeed = 0;
 				instance_create(x, y, obj_highjumpcloud2);
 				break;
-			case states.boss_millionpunch:
+			case states.millionpunch:
 				sprite_index = spr_playerV_crazyrun;
 				image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : ((x < (room_width / 2)) ? 1 : -1);
 				image_index = 0;
@@ -106,9 +106,9 @@ function boss_vigilante_decide_attack()
 		combo_count = irandom(2);
 		if (important && (hp < duelhp_threshold || obj_bosscontroller.seconds < duelseconds_threshold))
 		{
-			if (hitstate != states.boss_superattack)
+			if (hitstate != states.superattack)
 			{
-				state = states.boss_superattackstart;
+				state = states.superattackstart;
 				duelintro_buffer = duelintro_max;
 				movespeed = 0;
 				with (obj_bosshitbox)
@@ -117,7 +117,7 @@ function boss_vigilante_decide_attack()
 				{
 					if (object_index == obj_player1 || global.coop)
 					{
-						state = states.boss_superattackstart;
+						state = states.superattackstart;
 						movespeed = 0;
 					}
 				}
@@ -131,7 +131,7 @@ function boss_vigilante_decide_attack()
 			else if (grounded)
 			{
 				sprite_index = idlespr;
-				state = states.boss_superattackstart;
+				state = states.superattackstart;
 			}
 		}
 	}
@@ -189,14 +189,14 @@ function vigilante_decide_attack_phase4()
 		var att_max = attack_max[phase - 1];
 		attack_cooldown = att_max + irandom_range(-att_max, att_max + 20);
 		attack_cooldown = (phase > 4) ? attack_max[phase - 1] : attack_cooldown;
-		state = choose(states.boss_groundpunchstart, states.charge, states.boss_millionpunch);
+		state = choose(states.groundpunchstart, states.charge, states.millionpunch);
 		if (state == states.charge)
 		{
 			sprite_index = spr_playerV_divekickstart;
 			image_index = 0;
 			movespeed = 0;
 		}
-		else if (state == states.boss_groundpunchstart)
+		else if (state == states.groundpunchstart)
 		{
 			vsp = -14;
 			image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : ((x < (room_width / 2)) ? 1 : -1);
@@ -205,7 +205,7 @@ function vigilante_decide_attack_phase4()
 			movespeed = 0;
 			instance_create(x, y, obj_highjumpcloud2);
 		}
-		else if (state == states.boss_millionpunch)
+		else if (state == states.millionpunch)
 		{
 			sprite_index = spr_playerV_crazyrun;
 			image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : ((x < (room_width / 2)) ? 1 : -1);
@@ -562,7 +562,7 @@ function boss_vigilante_crouchslide()
 		vsp = -4;
 	}
 	if (phase > 4)
-		vigilante_cancel_attack(states.boss_groundpunchstart, states.charge, states.uppunch);
+		vigilante_cancel_attack(states.groundpunchstart, states.charge, states.uppunch);
 }
 function boss_vigilante_machslide()
 {
@@ -667,7 +667,7 @@ function boss_vigilante_punch()
 		state = states.normal;
 	}
 	if (phase > 4)
-		vigilante_cancel_attack(states.boss_groundpunchstart, states.uppunch);
+		vigilante_cancel_attack(states.groundpunchstart, states.uppunch);
 }
 function boss_vigilante_groundpunchstart()
 {
@@ -776,7 +776,7 @@ function boss_vigilante_millionpunch()
 	else
 		state = states.normal;
 	if (phase > 4)
-		vigilante_cancel_attack(states.boss_groundpunchstart, states.uppunch);
+		vigilante_cancel_attack(states.groundpunchstart, states.uppunch);
 }
 function boss_vigilante_uppunch()
 {
@@ -849,11 +849,11 @@ function boss_vigilante_superattackstart()
 	}
 	if (x == tx && obj_player1.x == tx2)
 	{
-		state = states.boss_superattack;
+		state = states.superattack;
 		with (lastplayerid)
 		{
 			if (object_index == obj_player1 || global.coop)
-				state = states.boss_superattack;
+				state = states.superattack;
 		}
 		duel_buffer = duel_max + irandom(duel_random);
 	}
@@ -901,9 +901,9 @@ function boss_vigilante_superattack()
 	}
 	with (lastplayerid)
 	{
-		if (state != states.boss_superattack && state != states.hit && state != states.thrown && state != states.chainsaw)
+		if (state != states.superattack && state != states.hit && state != states.thrown && state != states.chainsaw)
 		{
-			state = states.boss_superattack;
+			state = states.superattack;
 			x = room_width / 3;
 		}
 		xscale = 1;

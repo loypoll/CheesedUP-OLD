@@ -10,10 +10,12 @@ switch (state)
 		if (x != obj_player1.x)
 			image_xscale = -sign(x - obj_player1.x);
 		break;
+	
 	case states.transition:
 		sprite_index = spr_kingghost_dash;
 		if (!instance_exists(trapid) || (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap))
-			state = 0;
+			state = states.normal;
+		
 		if (instance_exists(trapid))
 		{
 			var xto = trapid.x + trapid.xoffset;
@@ -25,10 +27,11 @@ switch (state)
 				state = states.chase;
 		}
 		break;
+	
 	case states.chase:
 		if (!instance_exists(trapid) || (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap && (trapid.object_index != obj_pinballtrap || trapid.sprite_index != spr_kingghost_pinball3)))
 		{
-			state = 0;
+			state = states.normal;
 			with (trapid)
 			{
 				switch (object_index)
@@ -64,6 +67,7 @@ switch (state)
 							vsp = 10
 						}
 						break
+					
 					case obj_knighttrap:
 						if (cooldown == 0 && state != states.punch && obj_player1.x > x - 200 && obj_player1.x < x + 200 && obj_player1.y > y - 100 && obj_player1.y < y + 100)
 						{
@@ -77,9 +81,11 @@ switch (state)
 						if (state == states.normal)
 							sprite_index = spr_kingghost_spike2
 						break
+					
 					case obj_tvtrap:
 						sprite_index = spr_kingghost_tv2
 						break
+					
 					case obj_pinballtrap:
 						if (sprite_index != spr_kingghost_pinball3)
 							sprite_index = spr_kingghost_pinball2

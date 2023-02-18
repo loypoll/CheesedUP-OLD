@@ -10,7 +10,7 @@ if (sprite_index == spr_grabbiehand_fall && player == -4)
 			var p = id;
 			repeat (4)
 			{
-				with (create_debris(x, y, 689))
+				with (create_debris(x, y, spr_slimedebris))
 				{
 					image_index = i;
 					vsp = random_range(-10, -5);

@@ -7,7 +7,7 @@ if (global.levelcomplete && !global.freezercutscene)
 		other.backy = backtohubstarty;
 	}
 	currentroom = room;
-	dragonactor = 151554;
+	dragonactor = inst_593BA4BB;
 	scene_info = [[cutscene_medieval_start], [cutscene_waitfor_sprite, obj_player1], [function()
 	{
 		with (obj_actor)
@@ -40,7 +40,7 @@ if (global.levelcomplete && !global.freezercutscene)
 					cutscene_end_action();
 			}
 		}
-	}], [cutscene_change_room, 637], [cutscene_set_player_visible, false], [cutscene_set_player_pos, 1407, 415], [cutscene_wait, 20], [function()
+	}], [cutscene_change_room, hub_grandpizzardtower], [cutscene_set_player_visible, false], [cutscene_set_player_pos, 1407, 415], [cutscene_wait, 20], [function()
 	{
 		dragonactor = instance_create(1407, -125, obj_actor);
 		dragonactor.sprite_index = spr_cheesedragon_idle;
@@ -88,7 +88,7 @@ if (global.levelcomplete && !global.freezercutscene)
 		with (obj_freezerblock)
 			instance_destroy();
 		cutscene_end_action();
-	}], [cutscene_wait, 50], [cutscene_change_room, 635], [cutscene_set_player_visible, false], [cutscene_set_player_pos, 190, 600], [cutscene_soundeffect, sfx_groundpound], [cutscene_camera_shake, 5, 3 / room_speed], [cutscene_wait, 50], [function()
+	}], [cutscene_wait, 50], [cutscene_change_room, hub_plains], [cutscene_set_player_visible, false], [cutscene_set_player_pos, 190, 600], [cutscene_soundeffect, sfx_groundpound], [cutscene_camera_shake, 5, 3 / room_speed], [cutscene_wait, 50], [function()
 	{
 		with (obj_freezerblock)
 			instance_destroy();

@@ -1,19 +1,22 @@
 event_inherited();
 state = states.arenaround;
-ds_map_set(player_hurtstates, 42, 30);
-ds_map_set(player_hurtstates, 41, 50);
-ds_map_set(player_hurtstates, 104, 20);
-ds_map_set(player_hurtstates, 121, 30);
-ds_map_set(player_hurtstates, 108, 20);
-ds_map_set(player_hurtstates, 80, 20);
-ds_map_set(player_hurtstates, 5, 20);
-ds_map_set(player_hurtstates, 97, 20);
-ds_map_set(boss_hurtstates, 83, 60);
-ds_map_set(boss_hurtstates, 153, 60);
-ds_map_set(boss_hurtstates, 157, 90);
-ds_map_set(boss_hurtstates, 76, 200);
-ds_map_set(boss_hurtstates, 80, 30);
-ds_map_set(boss_hurtstates, 108, 70);
+
+ds_map_set(player_hurtstates, states.handstandjump, 30);
+ds_map_set(player_hurtstates, states.chainsawbump, 50);
+ds_map_set(player_hurtstates, states.mach2, 20);
+ds_map_set(player_hurtstates, states.mach3, 30);
+ds_map_set(player_hurtstates, states.freefall, 20);
+ds_map_set(player_hurtstates, states.punch, 20);
+ds_map_set(player_hurtstates, states.tumble, 20);
+ds_map_set(player_hurtstates, states.Sjump, 20);
+
+ds_map_set(boss_hurtstates, states.shoulder, 60);
+ds_map_set(boss_hurtstates, states.shoulderbash, 60);
+ds_map_set(boss_hurtstates, states.supershoulderbash, 90);
+ds_map_set(boss_hurtstates, states.superslam, 200);
+ds_map_set(boss_hurtstates, states.punch, 30);
+ds_map_set(boss_hurtstates, states.freefall, 70);
+
 stunfallspr = spr_pepperman_hurtplayer;
 walkspr = spr_pepperman_move;
 idlespr = spr_pepperman_idle;
@@ -75,11 +78,12 @@ fist_dmg_player = 20;
 superattack_hpthreshold = 500;
 superattack_buffer = 0;
 superattack_max = 360;
-function player_destroy()
+
+function player_destroy(argument0)
 {
 	SUPER_player_destroy(argument0);
 }
-function boss_destroy()
+function boss_destroy(argument0)
 {
 	hitstate = states.normal;
 	SUPER_boss_destroy(argument0);
@@ -90,7 +94,7 @@ function boss_destroy()
 	targetstunned = 1000;
 	stunned = 1000;
 }
-function boss_hurt()
+function boss_hurt(argument0, argument1)
 {
 	if (targetstunned > 0)
 	{
@@ -104,7 +108,7 @@ function boss_hurt()
 	SUPER_boss_hurt(argument0, argument1);
 	targetxscale = -argument1.xscale;
 }
-function boss_hurt_noplayer()
+function boss_hurt_noplayer(argument0)
 {
 	if (targetstunned > 0)
 	{
@@ -117,13 +121,13 @@ function boss_hurt_noplayer()
 		targetstunned = 150;
 	SUPER_boss_hurt_noplayer(argument0);
 }
-function player_hurt()
+function player_hurt(argument0, argument1)
 {
 	if (argument1.state != states.backbreaker || argument1.parry_inst == -4)
 	{
 		var _prevstate = state;
 		SUPER_player_hurt(argument0, argument1);
-		if (_prevstate == 153 || _prevstate == 157 || _prevstate == 83 || _prevstate == 76)
+		if (_prevstate == states.shoulderbash || _prevstate == states.supershoulderbash || _prevstate == states.shoulder || _prevstate == states.superslam)
 		{
 			with (obj_camera)
 			{
@@ -135,7 +139,7 @@ function player_hurt()
 			hitvsp = -4;
 			hithsp = -image_xscale * 8;
 		}
-		else if (_prevstate == 84)
+		else if (_prevstate == states.backbreaker)
 		{
 			with (obj_camera)
 			{
@@ -171,14 +175,14 @@ function player_hurt()
 				other.y = hitY;
 			}
 			sprite_index = spr_idle;
-			state = states.boss_fistmatch;
+			state = states.fistmatch;
 			hitX = x;
 			hitY = y;
 			hsp = 0;
 			vsp = 0;
 			movespeed = 0;
 			other.sprite_index = other.idlespr;
-			other.state = states.boss_fistmatch;
+			other.state = states.fistmatch;
 			other.image_xscale = -xscale;
 			other.hitX = x + (xscale * 16);
 			other.hitY = y;

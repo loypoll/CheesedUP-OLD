@@ -176,7 +176,7 @@ switch (room)
 		global.srank = 5;
 		break;
 	case boss_fakepep:
-		global.srank = 3;
+		global.srank = 4;
 		break;
 }
 global.arank = floor(global.srank / 2);

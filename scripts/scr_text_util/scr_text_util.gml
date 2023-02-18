@@ -91,7 +91,8 @@ function scr_compile_icon_text(text, pos = 1, return_array = false)
 			case ord("["):
 				var button = string_copy(text, pos, 3);
 				var t = texttype.icon;
-				var b = 0;
+				
+				var b = textkey.up;
 				switch (button)
 				{
 					case "[D]":

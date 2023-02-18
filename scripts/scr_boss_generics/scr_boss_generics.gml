@@ -106,7 +106,7 @@ function boss_update_pizzaheadKO(hpsprite, palette)
 			boss_palette = palette;
 		}
 		image_alpha = 1;
-		if (state == states.boss_KO)
+		if (state == states.KO)
 			state = states.walk;
 	}
 }
@@ -117,7 +117,7 @@ function boss_hurt_gustavo()
 		with (obj_gustavograbbable)
 		{
 			var _slam = enemy_is_superslam(id) || enemy_is_swingding(id);
-			if ((thrown || _slam) && other.state != states.boss_KO && (place_meeting(x + hsp, y, other) || place_meeting(x - image_xscale, y, other) || place_meeting(x - (32 * image_xscale), y, other) || place_meeting(x + (32 * image_xscale), y, other)))
+			if ((thrown || _slam) && other.state != states.KO && (place_meeting(x + hsp, y, other) || place_meeting(x - image_xscale, y, other) || place_meeting(x - (32 * image_xscale), y, other) || place_meeting(x + (32 * image_xscale), y, other)))
 			{
 				with (other)
 				{
@@ -146,7 +146,7 @@ function boss_do_pizzaheadKO()
 	if (pizzahead && pizzaheadKO && state != states.pizzaheadjump && elitehit <= 3)
 	{
 		pizzaheadKO_buffer = 5;
-		state = states.boss_KO;
+		state = states.KO;
 		image_alpha = 1;
 	}
 }
@@ -217,7 +217,7 @@ function scr_boss_do_hurt_phase2(object, inv_time = 100)
 {
 	with (object)
 	{
-		state = states.boss_phase1hurt;
+		state = states.phase1hurt;
 		invtime = inv_time + 40;
 		hurted = false;
 		image_alpha = 1;
@@ -231,7 +231,7 @@ function scr_boss_do_hurt_phase2(object, inv_time = 100)
 		hitY = y;
 	}
 	pulse = 0;
-	state = states.boss_phase1hurt;
+	state = states.phase1hurt;
 	buildup = inv_time;
 	buildup_playerID = object;
 	camzoom = 1;

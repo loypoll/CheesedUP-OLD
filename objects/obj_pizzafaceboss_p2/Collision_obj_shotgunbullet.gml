@@ -5,7 +5,7 @@ if (state != states.stun)
 	thrown = false;
 	hsp = -image_xscale * 8;
 	vsp = -4;
-	lastattack = 2;
+	lastattack = pizzaface_p2_attacks.gun;
 	with (obj_player)
 		shotgunAnim = false;
 }

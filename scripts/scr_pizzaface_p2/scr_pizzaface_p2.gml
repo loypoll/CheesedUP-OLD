@@ -279,7 +279,7 @@ function scr_pizzaface_p2_fishing()
 	else if (floor(image_index) == (image_number - 1))
 	{
 		saveddir = -image_xscale;
-		if (throwsword && lastattack != (0 << 0))
+		if (throwsword && lastattack != pizzaface_p2_attacks.pullinglevel)
 			leveldown = true;
 		if (miniguncount > 0)
 		{
@@ -300,9 +300,9 @@ function scr_pizzaface_p2_fishing()
 				if (movecount[i] < 2)
 					array_push(availablemoves, i);
 			}
-			do
-				var t = availablemoves[irandom(array_length(availablemoves) - 1)];
+			do var t = availablemoves[irandom(array_length(availablemoves) - 1)];
 			until (lastattack != t || array_length(availablemoves) <= 1)
+			
 			lastattack = t;
 			idle_buffer = 0;
 			
@@ -352,7 +352,7 @@ function scr_pizzaface_p2_fishing()
 						minigun_angle = 315;
 						minigun_dir = 1;
 					}
-					substate = states.boss_mini;
+					substate = states.mini;
 					attackbuffer = 1;
 					break;
 				
@@ -567,7 +567,7 @@ function boss_pizzahead_shotgun()
 {
 	switch (substate)
 	{
-		case states.boss_mini:
+		case states.mini:
 			if (sprite_index == spr_pizzahead_grabgun)
 			{
 				if (floor(image_index) == (image_number - 1))

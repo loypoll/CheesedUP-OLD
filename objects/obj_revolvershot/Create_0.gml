@@ -2,7 +2,8 @@ event_inherited();
 dmg = 30;
 spd = 25;
 parryable = true;
-function player_hurt()
+
+function player_hurt(argument0, argument1)
 {
 	if (!collisioned)
 	{
@@ -10,17 +11,17 @@ function player_hurt()
 		SUPER_player_hurt(argument0, argument1);
 		argument1.xscale = -image_xscale;
 		argument1.hitxscale = -image_xscale;
-		if (prevstate == states.boss_superattack)
+		if (prevstate == states.superattack)
 		{
 			argument1.hithsp = 0;
 			argument1.hitvsp = 0;
-			argument1.hitstate = states.boss_superattack;
+			argument1.hitstate = states.superattack;
 			with (obj_vigilanteboss)
 				duel_buffer = duel_max + irandom(duel_random);
 		}
 	}
 }
-function parry(argument0, argument1)
+function parry()
 {
 	var prevparried = parried;
 	SUPER_parry();

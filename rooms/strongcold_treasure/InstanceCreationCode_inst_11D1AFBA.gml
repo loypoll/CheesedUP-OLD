@@ -1,2 +1,2 @@
-sprgot = 2040;
-spridle = 2036;
+sprgot = spr_caketreasuregot;
+spridle = spr_caketreasure;

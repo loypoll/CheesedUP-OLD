@@ -15,7 +15,7 @@ switch (state)
 	case states.transition:
 		scr_pizzaface_transitioncutscene();
 		break;
-	case states.boss_phase1hurt:
+	case states.phase1hurt:
 		scr_boss_phase1hurt();
 		break;
 	case states.hit:

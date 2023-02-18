@@ -124,7 +124,7 @@ switch (state)
 					x = hitX;
 					y = hitY;
 				}
-				if (colliding && state != states.boss_cardboard && state != states.boss_cardboardend)
+				if (colliding && state != states.cardboard && state != states.cardboardend)
 				{
 					state = states.arenaround;
 					attack_cooldown = attack_max[phase - 1];

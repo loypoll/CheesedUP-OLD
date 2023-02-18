@@ -29,7 +29,7 @@ if (!ds_list_empty(global.debris_list))
 				}
 				var outofx = x > (room_width + sprw) || x < -sprw;
 				var outofy = y > (room_height + sprh) || y < -sprh;
-				if (outofx || outofy || (type == 1 && alpha <= 0))
+				if (outofx || outofy || (type == part_type.fadeout && alpha <= 0))
 					_destroy = true;
 				if (_destroy)
 				{

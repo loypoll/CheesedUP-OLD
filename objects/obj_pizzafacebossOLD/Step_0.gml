@@ -1,7 +1,7 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : 530;
 if (obj_bosscontroller.state == states.arenaintro)
 	exit;
-if (hp <= 0 && state != states.arenaround && state != states.boss_fistmatch)
+if (hp <= 0 && state != states.arenaround && state != states.fistmatch)
 {
 	if (!thrown && !destroyable)
 		boss_destroy(lastplayerid);
@@ -23,7 +23,7 @@ switch (phase)
 }
 switch (state)
 {
-	case 145:
+	case states.arenaround:
 		grav = 0.5;
 		break;
 	case states.normal:
@@ -34,23 +34,23 @@ switch (state)
 		grav = 0.5;
 		boss_pizzaface_ram();
 		break;
-	case 226:
+	case states.pizzaface_moustache:
 		grav = 0.5;
 		boss_pizzaface_moustache();
 		break;
-	case 228:
+	case states.pizzaface_eyes:
 		grav = 0.5;
 		boss_pizzaface_eyes();
 		break;
-	case 227:
+	case states.pizzaface_mouth:
 		grav = 0.5;
 		boss_pizzaface_mouth();
 		break;
-	case 229:
+	case states.pizzaface_nose:
 		grav = 0.5;
 		boss_pizzaface_nose();
 		break;
-	case 231:
+	case states.pizzaface_phase2transition:
 		boss_pizzaface_phase2transition();
 		break;
 	case states.pizzahead_look:
@@ -59,49 +59,49 @@ switch (state)
 	case states.pizzahead_fishing:
 		boss_pizzahead_fishing();
 		break;
-	case 235:
+	case states.pizzahead_bombrun:
 		boss_pizzahead_bombrun();
 		break;
-	case 236:
+	case states.pizzahead_npcthrow:
 		boss_pizzahead_npcthrow();
 		break;
 	case states.pizzahead_portraitthrow:
 		boss_pizzahead_portraitthrow();
 		break;
-	case 238:
+	case states.pizzahead_enguarde:
 		boss_pizzahead_enguarde();
 		break;
-	case 239:
+	case states.pizzahead_sexypicture:
 		boss_pizzahead_sexypicture();
 		break;
 	case states.pizzahead_pullinglevel:
 		boss_pizzahead_pullinglevel();
 		break;
-	case 241:
+	case states.pizzahead_eat:
 		boss_pizzahead_eat();
 		break;
-	case 242:
+	case states.pizzahead_surprisebox:
 		boss_pizzahead_surprisebox();
 		break;
-	case 243:
+	case states.pizzahead_spinningrun:
 		boss_pizzahead_spinningrun();
 		break;
 	case states.pizzahead_spinningkick:
 		boss_pizzahead_spinningkick();
 		break;
-	case 245:
+	case states.pizzahead_spinningpunch:
 		boss_pizzahead_spinningpunch();
 		break;
-	case 246:
+	case states.pizzahead_groundpunch:
 		boss_pizzahead_groundpunch();
 		break;
-	case 247:
+	case states.pizzahead_bigkick:
 		boss_pizzahead_bigkick();
 		break;
-	case 248:
+	case states.pizzahead_slamhead:
 		boss_pizzahead_slamhead();
 		break;
-	case 249:
+	case states.pizzahead_slamhead2:
 		boss_pizzahead_slamhead2();
 		break;
 	case states.walk:
@@ -111,7 +111,7 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 61:
+	case states.chainsaw:
 		grav = 0.5;
 		state_boss_chainsaw();
 		break;
@@ -121,7 +121,7 @@ switch (state)
 		invincible = true;
 		inv_timer = 2;
 		break;
-	case 147:
+	case states.parry:
 		grav = 0.5;
 		state_boss_parry();
 		invincible = true;

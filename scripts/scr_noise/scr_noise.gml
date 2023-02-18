@@ -33,7 +33,7 @@ function scr_noise_update_sounds()
 	}
 	else
 		fmod_event_instance_stop(snd_skateloop, true);
-	if (state == states.boss_jetpack)
+	if (state == states.jetpack)
 	{
 		if (!fmod_event_instance_is_playing(snd_jetpackloop))
 			fmod_event_instance_play(snd_jetpackloop);
@@ -49,7 +49,7 @@ function scr_noise_update_sounds()
 	}
 	else
 		fmod_event_instance_stop(snd_jetpackspin, true);
-	if (state == states.boss_drop)
+	if (state == states.drop)
 	{
 		if (!fmod_event_instance_is_playing(snd_balloon))
 			fmod_event_instance_play(snd_balloon);
@@ -57,7 +57,7 @@ function scr_noise_update_sounds()
 	}
 	else
 		fmod_event_instance_stop(snd_balloon, true);
-	if (state == states.boss_droptrap)
+	if (state == states.droptrap)
 	{
 		if (!fmod_event_instance_is_playing(snd_droptrap))
 			fmod_event_instance_play(snd_droptrap);
@@ -266,7 +266,7 @@ function scr_noise_walk()
 				create_particle(x, y, particle.genericpoofeffect);
 			}
 			instance_create(0, 0, obj_noiseballooncrash);
-			state = states.boss_noiseballooncrash;
+			state = states.noiseballooncrash;
 			image_xscale = (x > (room_width / 2)) ? -1 : 1;
 			sprite_index = spr_noise_phasetrans1;
 			image_index = 0;
@@ -472,7 +472,7 @@ function scr_noise_spin()
 		{
 			buttslamcooldown = 200;
 			fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
-			state = states.boss_dropstart;
+			state = states.dropstart;
 			sprite_index = spr_playerN_doublejump;
 			image_index = 0;
 			vsp = -30;
@@ -494,7 +494,7 @@ function scr_noise_jump()
 	if (vsp >= 0)
 	{
 		fmod_event_one_shot_3d("event:/sfx/noise/jetpackstart", x, y);
-		state = states.boss_jetpackstart;
+		state = states.jetpackstart;
 		sprite_index = spr_playerN_jetpackstart;
 		image_index = 0;
 	}
@@ -505,7 +505,7 @@ function scr_noise_jetpackstart()
 	vsp = 0;
 	if (floor(image_index) == (image_number - 1))
 	{
-		state = states.boss_jetpack;
+		state = states.jetpack;
 		sprite_index = spr_playerN_jetpackboost;
 		attackspeed = 14;
 		var tx = targetplayer.x;
@@ -640,7 +640,7 @@ function scr_noise_pogo()
 			if (phase == 2)
 			{
 				fmod_event_one_shot_3d("event:/sfx/noise/noisecrusher", x, y);
-				state = states.boss_noisecrusher;
+				state = states.noisecrusher;
 				vsp = -17;
 				sprite_index = spr_noise_crusherjump;
 				create_particle(x, y, particle.genericpoofeffect);
@@ -674,7 +674,7 @@ function scr_noise_dropstart()
 	if (y < -50)
 	{
 		sprite_index = spr_noisehotair;
-		state = states.boss_drop;
+		state = states.drop;
 		jetpack_ystart = 90;
 		jetpack_ydir = 1;
 	}
@@ -1046,13 +1046,13 @@ function scr_noise_finale()
 			if (obj_noisettefinale.x <= x)
 			{
 				create_debris(x, y, spr_minigunfall);
-				substate = states.boss_finale;
+				substate = states.finale;
 				sprite_index = spr_playerN_bump;
 				with (obj_player1)
 					sprite_index = spr_idle;
 			}
 			break;
-		case states.boss_finale:
+		case states.finale:
 			x = obj_noisettefinale.x + 20;
 			if (x < (room_width / 5) && sprite_index != spr_playerN_bossintro)
 			{

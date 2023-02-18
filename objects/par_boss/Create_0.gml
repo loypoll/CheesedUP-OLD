@@ -90,7 +90,7 @@ function SUPER_boss_destroy(argument0)
 	with (argument0)
 	{
 		camera_zoom(1, 0.1);
-		if (state == states.boss_fistmatch || state == states.boss_superattack || state == states.parry || state == states.backbreaker)
+		if (state == states.fistmatch || state == states.superattack || state == states.parry || state == states.backbreaker)
 		{
 			sprite_index = spr_player_attackdash;
 			image_index = 6;
@@ -182,7 +182,7 @@ function SUPER_boss_hurt(argument0, argument1)
 		other.jugglecount++;
 		other.hitvsp = -9;
 		other.movespeed = 7 + (other.jugglecount * 2);
-		if (atstate == 147)
+		if (atstate == states.parry)
 		{
 			other.hitvsp = -14;
 			other.movespeed = 0;

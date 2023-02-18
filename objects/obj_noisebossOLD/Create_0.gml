@@ -1,38 +1,44 @@
 event_inherited();
-attack_pool[0] = [42, 92];
-attack_pool[1] = [77, 167];
-attack_pool[2] = [42, 74, 168];
-attack_pool[3] = [58, 169];
-attack_pool[4] = [170, 172, 173];
-attack_pool[5] = [42, 92, 77, 167, 74, 168, 58, 169, 170, 172, 173];
-attack_pool[6] = [42, 92, 77, 167];
-attack_pool[7] = [42, 74, 168, 58, 169];
-attack_pool[8] = [170, 172, 173];
-attack_type[42] = [1, 1];
-attack_type[92] = [3, 1];
-attack_type[77] = [2, 2];
-attack_type[167] = [3, 3];
-attack_type[74] = [3, 3];
-attack_type[168] = [2, 2];
-attack_type[58] = [3, 3];
-attack_type[169] = [3, 3];
-attack_type[170] = [3, 3];
-attack_type[172] = [3, 3];
-attack_type[173] = [1, 1];
-current_behaviour = 0;
-current_attack = 42;
+
+attack_pool[0] = [states.handstandjump, states.jump];
+attack_pool[1] = [states.skateboard, states.skateboardturn];
+attack_pool[2] = [states.handstandjump, states.throwing, states.bombkick];
+attack_pool[3] = [states.pogo, states.bombpogo];
+attack_pool[4] = [states.jetpackstart, states.jetpackcancel, states.jetpackspin];
+attack_pool[5] = [states.handstandjump, states.jump, states.skateboard, states.skateboardturn, states.throwing, states.bombkick, states.pogo, states.bombpogo, states.jetpackstart, states.jetpackcancel, states.jetpackspin];
+attack_pool[6] = [states.handstandjump, states.jump, states.skateboard, states.skateboardturn];
+attack_pool[7] = [states.handstandjump, states.throwing, states.bombkick, states.pogo, states.bombpogo];
+attack_pool[8] = [states.jetpackstart, states.jetpackcancel, states.jetpackspin];
+
+attack_type[states.handstandjump] = [noisedis.close, noisedis.close];
+attack_type[states.jump] = [noisedis.anywhere, noisedis.close];
+attack_type[states.skateboard] = [noisedis.far, noisedis.far];
+attack_type[states.skateboardturn] = [noisedis.anywhere, noisedis.anywhere];
+attack_type[states.throwing] = [noisedis.anywhere, noisedis.anywhere];
+attack_type[states.bombkick] = [noisedis.far, noisedis.far];
+attack_type[states.pogo] = [noisedis.anywhere, noisedis.anywhere];
+attack_type[states.bombpogo] = [noisedis.anywhere, noisedis.anywhere];
+attack_type[states.jetpackstart] = [noisedis.anywhere, noisedis.anywhere];
+attack_type[states.jetpackcancel] = [noisedis.anywhere, noisedis.anywhere];
+attack_type[states.jetpackspin] = [noisedis.close, noisedis.close];
+
+current_behaviour = noisedis.none;
+current_attack = states.handstandjump;
 state = states.arenaround;
-ds_map_set(player_hurtstates, 42, 30000);
-ds_map_set(player_hurtstates, 41, 50);
-ds_map_set(player_hurtstates, 104, 20);
-ds_map_set(player_hurtstates, 121, 30);
-ds_map_set(boss_hurtstates, 80, 30);
-ds_map_set(boss_hurtstates, 42, 30);
-ds_map_set(boss_hurtstates, 102, 30);
-ds_map_set(boss_hurtstates, 77, 60);
-ds_map_set(boss_hurtstates, 58, 30);
-ds_map_set(boss_hurtstates, 171, 80);
-ds_map_set(boss_hurtstates, 173, 80);
+
+ds_map_set(player_hurtstates, states.handstandjump, 30000);
+ds_map_set(player_hurtstates, states.chainsawbump, 50);
+ds_map_set(player_hurtstates, states.mach2, 20);
+ds_map_set(player_hurtstates, states.mach3, 30);
+
+ds_map_set(boss_hurtstates, states.punch, 30);
+ds_map_set(boss_hurtstates, states.handstandjump, 30);
+ds_map_set(boss_hurtstates, states.crouchslide, 30);
+ds_map_set(boss_hurtstates, states.skateboard, 60);
+ds_map_set(boss_hurtstates, states.pogo, 30);
+ds_map_set(boss_hurtstates, states.jetpack, 80);
+ds_map_set(boss_hurtstates, states.jetpackspin, 80);
+
 phase = 1;
 max_phase = 9;
 max_hp = 500 * max_phase;
@@ -145,7 +151,7 @@ function boss_hurt(argument0, argument1)
 		targetstunned = 150;
 	var ps = state;
 	SUPER_boss_hurt(argument0, argument1);
-	if (ps == 58)
+	if (ps == states.pogo)
 		movespeed = 0;
 	targetxscale = -argument1.xscale;
 }
@@ -175,7 +181,7 @@ function player_hurt(argument0, argument1)
 			inv_frames = true;
 			alarm[1] = 15;
 		}
-		if (hitstate == states.skateboard || hitstate == states.boss_jetpack)
+		if (hitstate == states.skateboard || hitstate == states.jetpack)
 		{
 			stunned = (hitstate == states.skateboard) ? 30 : 70;
 			with (obj_camera)

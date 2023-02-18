@@ -45,7 +45,7 @@ function scr_player_supergrab()
 				}
 				if (punchcount > 0)
 				{
-					GamepadSetVibration(0, 0.8, 0.65);
+					GamepadSetVibration(0, 0.8, 0.8, 0.65);
 					if ((xscale > 0 && x > (room_width - 100)) || (xscale < 0 && x < 100))
 						reposition = true;
 					if (reposition)
@@ -136,8 +136,8 @@ function scr_player_supergrab()
 					}
 					else
 					{
-						baddiegrabbedID.state = states.boss_finale;
-						state = states.boss_finale;
+						baddiegrabbedID.state = states.finale;
+						state = states.finale;
 						instance_create(room_width / 2, room_height / 2, obj_pizzahead_finalecutscene);
 						instance_create(0, 0, obj_pizzahead_whitefade);
 						camzoom = 1;
@@ -181,7 +181,7 @@ function scr_player_supergrab()
 			{
 				fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
 				fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
-				GamepadSetVibration((object_index == obj_player1) ? 0 : 1, 0.8, 0.65);
+				GamepadSetVibration((object_index == obj_player1) ? 0 : 1, 0.8, 0.8, 0.65);
 				shot = true;
 				movespeed = -xscale * 8;
 				hsp = movespeed;

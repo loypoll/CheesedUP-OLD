@@ -7,14 +7,14 @@ function boss_mrstick_decide_attack()
 		state = attack_pool[irandom(array_length(attack_pool) - 1)];
 		switch (state)
 		{
-			case states.boss_shield:
+			case states.shield:
 				movespeed = 0;
 				hsp = 0;
 				shield_buffer = shield_max;
 				image_index = 0;
 				sprite_index = spr_mrstick_shield;
 				break;
-			case states.boss_helicopterhat:
+			case states.helicopterhat:
 				sprite_index = spr_mrstick_helicopterhat;
 				image_index = 0;
 				vsp = -14;
@@ -24,7 +24,7 @@ function boss_mrstick_decide_attack()
 				movespeed = 0;
 				helicopterstate = 0;
 				break;
-			case states.boss_panicjump:
+			case states.panicjump:
 				sprite_index = spr_mrstick_jump;
 				vsp = -11;
 				image_xscale = (x > (room_width / 2)) ? -1 : 1;
@@ -37,18 +37,18 @@ function boss_mrstick_decide_attack()
 				vsp = -11;
 				warped = false;
 				break;
-			case states.boss_smokebombstart:
+			case states.smokebombstart:
 				image_xscale = (x > (room_width / 2)) ? -1 : 1;
 				sprite_index = spr_mrstick_idle;
 				image_index = 0;
 				break;
-			case states.boss_springshoes:
+			case states.springshoes:
 				sprite_index = spr_mrstick_jump;
 				vsp = -20;
 				image_xscale = (x > (room_width / 2)) ? -1 : 1;
 				movespeed = 4;
 				break;
-			case states.boss_cardboard:
+			case states.cardboard:
 				with (instance_create(x, y, obj_mrstickcardboard))
 				{
 					image_index = other.image_index;
@@ -114,7 +114,7 @@ function boss_mrstick_normal()
 	{
 		do_mockery_buffer = do_mockery_max;
 		mockery_buffer = mockery_max;
-		state = states.boss_mockery;
+		state = states.mockery;
 		sprite_index = spr_mrstick_tauntanim;
 	}
 }
@@ -226,7 +226,7 @@ function boss_mrstick_smokebombstart()
 		sprite_index = spr_mrstick_run;
 		image_index = 0;
 		target_x = (x > (room_width / 2)) ? (room_width / 7) : (room_width - (room_width / 7));
-		state = states.boss_smokebombcrawl;
+		state = states.smokebombcrawl;
 		with (instance_create(x, y, obj_chainsawpuff))
 		{
 			image_speed = 0.1;
@@ -284,7 +284,7 @@ function boss_mrstick_cardboard()
 	{
 		instance_destroy(obj_mrstickcardboard);
 		cardboard_buffer = 0;
-		state = states.boss_cardboardend;
+		state = states.cardboardend;
 		movespeed = 8;
 		x = target_x;
 		image_xscale = (x < (room_width / 2)) ? 1 : -1;

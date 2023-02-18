@@ -1,5 +1,5 @@
 trigger = 1;
-func = function()
+func = function(argument0)
 {
 	if (!active)
 	{

@@ -1,2 +1,2 @@
-sprgot = 2038;
-spridle = 2035;
+sprgot = spr_foodtreasuregot;
+spridle = spr_foodtreasure;

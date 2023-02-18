@@ -1,4 +1,4 @@
-enum vigi_attack
+enum vigi_attacks
 {
 	revolver,
 	dynamite,
@@ -78,7 +78,7 @@ function scr_vigilante_update_sounds()
 	}
 	else
 		fmod_event_instance_stop(snd_uziprep, false);
-	if (state == states.boss_duel)
+	if (state == states.duel)
 		songstate = Approach(songstate, 1, 0.05);
 	else
 		songstate = Approach(songstate, 0, 0.05);
@@ -382,12 +382,12 @@ function scr_vigilante_walk()
 				break;
 			case vigi_attack.wait:
 				waitbuffer = attack[1];
-				state = states.boss_wait;
+				state = states.wait;
 				if (sprite_index != spr_playerV_revolverend)
 					sprite_index = spr_playerV_idle;
 				break;
 			case vigi_attack.flamethrower:
-				state = states.boss_flamethrower;
+				state = states.flamethrower;
 				if (targetplayer.x != x)
 					image_xscale = sign(targetplayer.x - x);
 				flamebuffer = attack[1];
@@ -400,7 +400,7 @@ function scr_vigilante_walk()
 				break;
 			case vigi_attack.machinegun:
 				create_particle(x, y, particle.highjumpcloud2);
-				state = states.boss_machinegun;
+				state = states.machinegun;
 				sprite_index = spr_vigilante_uziprepare;
 				image_index = 0;
 				uzi_speed = 0.75;
@@ -411,7 +411,7 @@ function scr_vigilante_walk()
 				break;
 			case vigi_attack.bazooka:
 				create_particle(x, y, particle.highjumpcloud2);
-				state = states.boss_bazooka;
+				state = states.bazooka;
 				hsp = 0;
 				vsp = -16;
 				image_xscale = (x > (room_width / 2)) ? -1 : 1;
@@ -419,7 +419,7 @@ function scr_vigilante_walk()
 				image_index = 0;
 				break;
 			case vigi_attack.crate:
-				state = states.boss_crate;
+				state = states.crate;
 				hsp = 0;
 				fmod_event_one_shot_3d("event:/sfx/vigilante/order", x, y);
 				sprite_index = spr_vigilante_order;
@@ -635,7 +635,7 @@ function scr_vigilante_revolver()
 }
 function scr_vigilante_do_reload(buffer = 360)
 {
-	state = states.boss_reloading;
+	state = states.reloading;
 	reloadbuffer = buffer;
 	sprite_index = spr_vigilante_vulnerable;
 	image_index = 0;

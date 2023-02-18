@@ -5,6 +5,7 @@ if (visible)
 	var y1 = 96;
 	for (var yy = 0; yy < 2; yy++)
 	{
+		var y2 = yy * 64;
 		for (var xx = 0; xx < floor(array_length(treasure_arr) / 2); xx++)
 		{
 			var b = treasure_arr[n];

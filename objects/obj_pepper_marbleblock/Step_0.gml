@@ -29,9 +29,9 @@ if (contemplated)
 {
 	with (obj_pepperman)
 	{
-		if (thrown || state == states.boss_phase1hurt)
+		if (thrown || state == states.phase1hurt)
 			instance_destroy(other);
-		else if (state != states.boss_contemplate && state != states.hit && state != states.stun)
+		else if (state != states.contemplate && state != states.hit && state != states.stun)
 		{
 			other.contemplated = false;
 			marbleblockID = -4;

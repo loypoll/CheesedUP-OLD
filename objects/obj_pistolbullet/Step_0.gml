@@ -66,7 +66,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 							fmod_event_one_shot("event:/sfx/misc/blackoutpunch");
 							instance_create_unique(0, 0, obj_blackoutline);
 							instance_create_unique(0, 0, obj_superattackeffect);
-							state = states.boss_phase1hurt;
+							state = states.phase1hurt;
 							sprite_index = spr_playerV_hurt;
 							hsp = 0;
 							vsp = 0;
@@ -115,7 +115,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 							fmod_event_one_shot("event:/sfx/misc/blackoutpunch");
 							instance_create_unique(0, 0, obj_superattackeffect);
 							instance_create_unique(0, 0, obj_blackoutline);
-							state = states.boss_phase1hurt;
+							state = states.phase1hurt;
 							sprite_index = spr_pizzahead_hurt;
 							hsp = 0;
 							vsp = 0;

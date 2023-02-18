@@ -1,7 +1,7 @@
 event_inherited();
 dmg = 30;
 parryable = true;
-boss_parry_hitbox = function()
+boss_parry_hitbox = function(argument0, argument1)
 {
 	if (!argument1.collisioned)
 	{

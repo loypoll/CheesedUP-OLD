@@ -17,8 +17,8 @@ function pepperman_decide_attack_phase6()
 		attack_cooldown = attack_max[phase - 1];
 		readjusting = false;
 		if (hp <= superattack_hpthreshold)
-			state = states.boss_superattackstart;
-		if (state != states.boss_superattackstart)
+			state = states.superattackstart;
+		if (state != states.superattackstart)
 		{
 			var fakephase = irandom(100);
 			if (fakephase > 60)
@@ -385,7 +385,7 @@ function boss_pepperman_charge()
 	hsp = 0;
 	if (image_index > (image_number - 1))
 	{
-		state = states.boss_supershoulderbash;
+		state = states.supershoulderbash;
 		sprite_index = spr_pepperman_shoulderloop;
 		image_index = 0;
 		hsp = image_xscale * (shoulder_spd * 2);
@@ -425,7 +425,7 @@ function boss_pepperman_shoulder()
 		if (place_meeting(x + (sign(hsp) * 96), y, obj_solid))
 		{
 			shoulderturns--;
-			state = states.boss_shoulderturn;
+			state = states.shoulderturn;
 			sprite_index = spr_pepperman_shoulderstart;
 			image_index = 0;
 		}
@@ -474,7 +474,7 @@ function boss_pepperman_superattackstart()
 	image_xscale = (x > (room_width / 2)) ? 1 : -1;
 	if (x == tx)
 	{
-		state = states.boss_superattackcharge;
+		state = states.superattackcharge;
 		sprite_index = spr_pepperman_shoulderloop;
 		image_xscale = (x > (room_width / 2)) ? -1 : 1;
 	}
@@ -576,7 +576,7 @@ function boss_pepperman_fistmatch()
 		with (lastplayerid)
 		{
 			sprite_index = spr_idle;
-			state = states.boss_fistmatchend;
+			state = states.fistmatchend;
 			x = hitX;
 			y = hitY;
 			hithsp = other.image_xscale * 8;
@@ -584,7 +584,7 @@ function boss_pepperman_fistmatch()
 			hitLag = lag;
 		}
 		sprite_index = idlespr;
-		state = states.boss_fistmatchend;
+		state = states.fistmatchend;
 		x = hitX;
 		y = hitY;
 		hithsp = -image_xscale * 8;

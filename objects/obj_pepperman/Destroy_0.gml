@@ -20,37 +20,42 @@ if (elitehit <= 0 && pizzahead && destroyable)
 		elitehit = 4;
 		prevhp = elitehit;
 		destroyable = true;
+		
 		vigilante_start_attack(0, 5);
-		vigilante_add_attack(0, 5, 1);
-		vigilante_add_attack(0, 5, 1);
-		vigilante_add_attack(0, 5, 9, 25);
-		vigilante_add_attack(0, 5, 0, 5);
-		vigilante_add_attack(0, 5, 0, 5);
-		vigilante_add_attack(0, 5, 8, 20);
+		vigilante_add_attack(0, 5, vigi_attacks.dynamite);
+		vigilante_add_attack(0, 5, vigi_attacks.dynamite);
+		vigilante_add_attack(0, 5, vigi_attacks.wait, 25);
+		vigilante_add_attack(0, 5, vigi_attacks.revolver, 5);
+		vigilante_add_attack(0, 5, vigi_attacks.revolver, 5);
+		vigilante_add_attack(0, 5, vigi_attacks.mach, 20);
+		
 		vigilante_start_attack(0, 6);
-		vigilante_add_attack(0, 6, 1);
-		vigilante_add_attack(0, 6, 1);
-		vigilante_add_attack(0, 6, 9, 25);
-		vigilante_add_attack(0, 6, 0, 5);
-		vigilante_add_attack(0, 6, 0, 5);
-		vigilante_add_attack(0, 6, 8, 20);
+		vigilante_add_attack(0, 6, vigi_attacks.dynamite);
+		vigilante_add_attack(0, 6, vigi_attacks.dynamite);
+		vigilante_add_attack(0, 6, vigi_attacks.wait, 25);
+		vigilante_add_attack(0, 6, vigi_attacks.revolver, 5);
+		vigilante_add_attack(0, 6, vigi_attacks.revolver, 5);
+		vigilante_add_attack(0, 6, vigi_attacks.mach, 20);
+		
 		vigilante_start_attack(0, 7);
-		vigilante_add_attack(0, 7, 6);
-		vigilante_add_attack(0, 7, 8, 20);
-		vigilante_add_attack(0, 7, 5);
-		vigilante_add_attack(0, 7, 4, 200);
-		vigilante_add_attack(0, 7, 9, 25);
+		vigilante_add_attack(0, 7, vigi_attacks.bazooka);
+		vigilante_add_attack(0, 7, vigi_attacks.mach, 20);
+		vigilante_add_attack(0, 7, vigi_attacks.machinegun);
+		vigilante_add_attack(0, 7, vigi_attacks.flamethrower, 200);
+		vigilante_add_attack(0, 7, vigi_attacks.wait, 25);
+		
 		vigilante_start_attack(0, 8);
-		vigilante_add_attack(0, 8, 1);
-		vigilante_add_attack(0, 8, 1);
-		vigilante_add_attack(0, 8, 9, 25);
-		vigilante_add_attack(0, 8, 1);
-		vigilante_add_attack(0, 8, 1);
-		vigilante_add_attack(0, 8, 8, 20);
+		vigilante_add_attack(0, 8, vigi_attacks.dynamite);
+		vigilante_add_attack(0, 8, vigi_attacks.dynamite);
+		vigilante_add_attack(0, 8, vigi_attacks.wait, 25);
+		vigilante_add_attack(0, 8, vigi_attacks.dynamite);
+		vigilante_add_attack(0, 8, vigi_attacks.dynamite);
+		vigilante_add_attack(0, 8, vigi_attacks.mach, 20);
+		
 		vigilante_start_attack(0, 9);
-		vigilante_add_attack(0, 9, 5);
-		vigilante_add_attack(0, 9, 8);
-		vigilante_add_attack(0, 9, 9, 25);
+		vigilante_add_attack(0, 9, vigi_attacks.machinegun);
+		vigilante_add_attack(0, 9, vigi_attacks.mach);
+		vigilante_add_attack(0, 9, vigi_attacks.wait, 25);
 	}
 }
 if (destroyable && elitehit <= 0)

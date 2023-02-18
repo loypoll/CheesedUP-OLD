@@ -30,7 +30,7 @@ switch (state)
 	case states.animation:
 		boss_pizzahead_pinup();
 		break;
-	case states.boss_phase1hurt:
+	case states.phase1hurt:
 		boss_pizzahead_p2_phase1hurt();
 		break;
 	case states.hit:
@@ -49,7 +49,7 @@ switch (state)
 		scr_enemy_staggered();
 		break;
 }
-if (obj_player1.state != states.actor && obj_player1.y >= (y - 20) && obj_player1.state != states.animation && state != states.hit && state != states.stun && state != states.boss_phase1hurt && hsp == 0 && state != states.fall)
+if (obj_player1.state != states.actor && obj_player1.y >= (y - 20) && obj_player1.state != states.animation && state != states.hit && state != states.stun && state != states.phase1hurt && hsp == 0 && state != states.fall)
 {
 	if ((x > (room_width / 2) && obj_player1.x >= (x - 60)) || (x <= (room_width / 2) && obj_player1.x <= (x + 60)))
 	{
@@ -76,7 +76,7 @@ if (prevhp != elitehit)
 	if (elitehit < prevhp)
 	{
 		instance_destroy(obj_pizzaheadswordstone);
-		if (lastattack != -1 && lastattack != 4)
+		if (lastattack != -1 && lastattack != pizzaface_p2_attacks.pinup)
 			movecount[lastattack] += 1;
 		bullethit = 0;
 		if (elitehit <= 0)

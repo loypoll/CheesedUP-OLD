@@ -37,7 +37,7 @@ function tv_push_prompt(text, type, sprite, textspeed)
 				for (var i = 0; i < ds_list_size(tvprompts_list); i++)
 				{
 					var b2 = ds_list_find_value(tvprompts_list, i);
-					if (b2[1] == tvprompt.trigger)
+					if (b2[1] == tvprompt.transfo)
 					{
 						if (i == 0)
 							play = true;

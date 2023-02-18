@@ -9,7 +9,7 @@ if (global.levelcomplete && !global.warcutscene)
 	};
 	bombactor = -4;
 	planeactor = -4;
-	scene_info = [[cutscene_entrance_start], [cutscene_waitfor_sprite, obj_player1], [cutscene_player_idleanim], [cutscene_change_room, 663], [cutscene_set_player_visible, false], [cutscene_player_float, true], [cutscene_set_player_pos, 100, 100], [cutscene_wait, 20], [function()
+	scene_info = [[cutscene_entrance_start], [cutscene_waitfor_sprite, obj_player1], [cutscene_player_idleanim], [cutscene_change_room, hub_sky], [cutscene_set_player_visible, false], [cutscene_player_float, true], [cutscene_set_player_pos, 100, 100], [cutscene_wait, 20], [function()
 	{
 		planeactor = instance_create(1056, 128, obj_actor);
 		planeactor.image_speed = 0.35;
@@ -50,7 +50,7 @@ if (global.levelcomplete && !global.warcutscene)
 				}
 			}
 		}
-	}], [cutscene_change_room, 651], [cutscene_set_player_pos, 1350, 200], [function()
+	}], [cutscene_change_room, hub_topentrance], [cutscene_set_player_pos, 1350, 200], [function()
 	{
 		bombactor = instance_create(1344, -60, obj_actor);
 		bombactor.sprite_index = spr_bomb;
@@ -64,7 +64,7 @@ if (global.levelcomplete && !global.warcutscene)
 			instance_destroy(bombactor);
 			cutscene_end_action();
 		}
-	}], [explosion_func, 1342, 385], [cutscene_wait, 3], [explosion_func, 1342, 477], [cutscene_wait, 3], [explosion_func, 1342, 531], [cutscene_wait, 40], [cutscene_change_room, 650], [cutscene_set_player_pos, 300, 300], [cutscene_wait, 50], [explosion_func, 267, 4], [cutscene_wait, 3], [explosion_func, 267, 63], [cutscene_wait, 3], [explosion_func, 267, 125], [cutscene_wait, 3], [cutscene_wait, 100], [cutscene_change_room, currentroom], [cutscene_set_player_visible, true], [function()
+	}], [explosion_func, 1342, 385], [cutscene_wait, 3], [explosion_func, 1342, 477], [cutscene_wait, 3], [explosion_func, 1342, 531], [cutscene_wait, 40], [cutscene_change_room, hub_laundryroom], [cutscene_set_player_pos, 300, 300], [cutscene_wait, 50], [explosion_func, 267, 4], [cutscene_wait, 3], [explosion_func, 267, 63], [cutscene_wait, 3], [explosion_func, 267, 125], [cutscene_wait, 3], [cutscene_wait, 100], [cutscene_change_room, currentroom], [cutscene_set_player_visible, true], [function()
 	{
 		with (obj_player)
 		{

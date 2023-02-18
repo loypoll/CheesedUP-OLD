@@ -17,7 +17,7 @@ switch (state)
 	case states.walk:
 		scr_pizzaface_p3_walk();
 		break;
-	case states.boss_stomp:
+	case states.stomp:
 		scr_pizzaface_p3_stomp();
 		break;
 	case states.punch:
@@ -29,10 +29,10 @@ switch (state)
 	case states.throwing:
 		scr_pizzaface_p3_throwing();
 		break;
-	case states.boss_swinging:
+	case states.swinging:
 		scr_pizzaface_p3_swinging();
 		break;
-	case states.boss_finale:
+	case states.finale:
 		scr_pizzaface_p3_finale();
 		break;
 	case states.pizzaheadjump:
@@ -53,7 +53,7 @@ switch (state)
 }
 if (state != states.pizzaheadjump)
 {
-	if ((state == states.fall && vsp < 0) || state == states.boss_finale)
+	if ((state == states.fall && vsp < 0) || state == states.finale)
 	{
 		use_collision = false;
 		if (state == states.fall)
@@ -107,7 +107,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if ((state == states.punch || state == states.boss_stomp || state == states.boss_swinging || state == states.jump) && alarm[4] == -1)
+if ((state == states.punch || state == states.stomp || state == states.swinging || state == states.jump) && alarm[4] == -1)
 	alarm[4] = 5;
 invincible = true;
 if (vulnerable_buffer > 0 && state == states.walk && flickertime <= 0)
@@ -119,7 +119,7 @@ if (state == states.stun && !savedthrown)
 	invincible = false;
 if (!invincible && alarm[5] < 0 && !flash)
 	alarm[5] = 0.15 * room_speed;
-if ((state == states.boss_grabdash || (state == states.mach2 && attackspeed >= 10) || (state == states.throwing && sprite_index == spr_fakepeppino_flailing)) && alarm[4] < 0)
+if ((state == states.grabdash || (state == states.mach2 && attackspeed >= 10) || (state == states.throwing && sprite_index == spr_fakepeppino_flailing)) && alarm[4] < 0)
 {
 	alarm[4] = 10;
 	if (state == states.freefall)

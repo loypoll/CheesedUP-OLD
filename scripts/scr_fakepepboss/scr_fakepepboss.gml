@@ -403,7 +403,7 @@ function scr_fakepepboss_walk()
 					if (abs(x - targetplayer.x) <= 330)
 					{
 						fmod_event_instance_play(snd_grab);
-						state = states.boss_grabdash;
+						state = states.grabdash;
 						if (ix != 0)
 							image_xscale = ix;
 						sprite_index = spr_fakepeppino_grabdashstart;
@@ -483,7 +483,7 @@ function scr_fakepepboss_walk()
 	else if (!formed && grounded)
 	{
 		fmod_event_one_shot_3d("event:/sfx/fakepep/deform", x, y);
-		state = states.boss_deformed;
+		state = states.deformed;
 		sprite_index = spr_fakepeppino_deform;
 		image_index = 0;
 	}
@@ -568,14 +568,14 @@ function scr_fakepepboss_grabdash()
 			state = states.walk;
 		with (instance_place(x, y, obj_player))
 		{
-			if (!hurted && state != states.boss_grabthrow && state != states.tackle && state != states.actor && state != states.supergrab)
+			if (!hurted && state != states.grabthrow && state != states.tackle && state != states.actor && state != states.supergrab)
 			{
-				other.state = states.boss_grabthrow;
+				other.state = states.grabthrow;
 				other.playerID = id;
 				other.sprite_index = spr_fakepeppino_grabattack;
 				other.image_index = 0;
 				invtime = 0;
-				state = states.boss_grabthrow;
+				state = states.grabthrow;
 				sprite_index = spr_hurt;
 			}
 		}

@@ -16,9 +16,9 @@ function scr_fakepepclone_transitioncutscene()
 			attacked = false;
 			state = states.walk;
 			cooldown = 15;
-			if (attack.attack == (2 << 0) || attack.attack == (4 << 0) || attack.attack == (5 << 0))
+			if (attack.attack == fakepep_attacks.machclone || attack.attack == fakepep_attacks.flailingclone || attack.attack == fakepep_attacks.tauntclone)
 				cooldown = 0;
-			if (attack.attack == (3 << 0))
+			if (attack.attack == fakepep_attacks.superjumpclone)
 			{
 				state = states.Sjumpprep;
 				hsp = 0;
@@ -26,7 +26,7 @@ function scr_fakepepclone_transitioncutscene()
 				image_index = 0;
 				image_speed = 0;
 			}
-			else if (attack.attack == (5 << 0))
+			else if (attack.attack == fakepep_attacks.tauntclone)
 			{
 				fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
 				create_particle(x, y, particle.highjumpcloud2);
@@ -66,12 +66,12 @@ function scr_fakepepclone_walk()
 		{
 			switch (attack.attack)
 			{
-				case (0 << 0):
+				case fakepep_attacks.grabclone:
 					if (abs(x - targetplayer.x) <= 150)
 					{
 						fmod_event_instance_play(snd_grab);
 						attacked = true;
-						state = states.boss_grabdash;
+						state = states.grabdash;
 						grabstart = 10;
 						if (ix != 0)
 							image_xscale = ix;
@@ -80,7 +80,8 @@ function scr_fakepepclone_walk()
 						attackspeed = 12;
 					}
 					break;
-				case (1 << 0):
+				
+				case fakepep_attacks.bodyslamclone:
 					attacked = true;
 					if (x != targetplayer.x)
 						image_xscale = sign(targetplayer.x - x);
@@ -88,7 +89,8 @@ function scr_fakepepclone_walk()
 					image_index = 0;
 					state = states.jump;
 					break;
-				case (2 << 0):
+				
+				case fakepep_attacks.machclone:
 					attacked = true;
 					image_xscale = (x > (room_width / 2)) ? 1 : -1;
 					attackspeed = 4;
@@ -101,7 +103,8 @@ function scr_fakepepclone_walk()
 						machcooldown = 330;
 					cooldown = attack.cooldown;
 					break;
-				case (4 << 0):
+				
+				case fakepep_attacks.flailingclone:
 					state = states.throwing;
 					hsp = 0;
 					if (!throwing)
@@ -123,7 +126,7 @@ function scr_fakepepclone_walk()
 		state = states.transition;
 		sprite_index = spr_fakepeppino_deform;
 		image_index = 0;
-		if (attack.attack == (3 << 0))
+		if (attack.attack == fakepep_attacks.superjumpclone)
 			sprite_index = spr_fakepeppino_deformdown;
 	}
 }

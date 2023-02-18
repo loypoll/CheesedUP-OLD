@@ -1,14 +1,17 @@
 event_inherited();
-ds_map_set(player_hurtstates, 42, 30);
-ds_map_set(player_hurtstates, 41, 50);
-ds_map_set(player_hurtstates, 104, 20);
-ds_map_set(player_hurtstates, 121, 30);
-ds_map_set(player_hurtstates, 47, 60);
-ds_map_set(boss_hurtstates, 244, 60);
-ds_map_set(boss_hurtstates, 245, 50);
-ds_map_set(boss_hurtstates, 246, 50);
-ds_map_set(boss_hurtstates, 248, 50);
-ds_map_set(boss_hurtstates, 249, 50);
+
+ds_map_set(player_hurtstates, states.handstandjump, 30);
+ds_map_set(player_hurtstates, states.chainsawbump, 50);
+ds_map_set(player_hurtstates, states.mach2, 20);
+ds_map_set(player_hurtstates, states.mach3, 30);
+ds_map_set(player_hurtstates, states.knightpep, 60);
+
+ds_map_set(boss_hurtstates, states.pizzahead_spinningkick, 60);
+ds_map_set(boss_hurtstates, states.pizzahead_spinningpunch, 50);
+ds_map_set(boss_hurtstates, states.pizzahead_groundpunch, 50);
+ds_map_set(boss_hurtstates, states.pizzahead_slamhead, 50);
+ds_map_set(boss_hurtstates, states.pizzahead_slamhead2, 50);
+
 hitlist = ds_list_create();
 image_speed = 0.35;
 max_hp = 3600;
@@ -19,7 +22,7 @@ has_attacked = false;
 floatdir = 1;
 attackbuffermax = 180;
 attackbuffer = attackbuffermax;
-phase1attacks = [226, 228, 227, 229];
+phase1attacks = [states.pizzaface_moustache, states.pizzaface_eyes, states.pizzaface_mouth, states.pizzaface_nose];
 lostattacks = array_length(phase1attacks);
 parrycount = 0;
 transitionstate = 0;

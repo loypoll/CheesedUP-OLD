@@ -21,10 +21,10 @@ switch (state)
 	case states.jump:
 		scr_noise_jump();
 		break;
-	case states.boss_jetpackstart:
+	case states.jetpackstart:
 		scr_noise_jetpackstart();
 		break;
-	case states.boss_jetpack:
+	case states.jetpack:
 		scr_noise_jetpack();
 		break;
 	case states.bounce:
@@ -33,13 +33,13 @@ switch (state)
 	case states.pogo:
 		scr_noise_pogo();
 		break;
-	case states.boss_dropstart:
+	case states.dropstart:
 		scr_noise_dropstart();
 		break;
-	case states.boss_drop:
+	case states.drop:
 		scr_noise_drop();
 		break;
-	case states.boss_droptrap:
+	case states.droptrap:
 		scr_noise_droptrap();
 		break;
 	case states.golf:
@@ -48,16 +48,16 @@ switch (state)
 	case states.freefall:
 		scr_noise_freefall();
 		break;
-	case states.boss_noisecrusher:
+	case states.noisecrusher:
 		scr_noise_noisecrusher();
 		break;
 	case states.pizzahead_spinningkick:
 		scr_noise_spin();
 		break;
-	case states.boss_noiseballooncrash:
+	case states.noiseballooncrash:
 		scr_noise_noiseballooncrash();
 		break;
-	case states.boss_phase1hurt:
+	case states.phase1hurt:
 		scr_noise_phase1hurt();
 		break;
 	case states.fightball:
@@ -66,10 +66,10 @@ switch (state)
 	case states.punch:
 		scr_vigilante_punch();
 		break;
-	case states.boss_finale:
+	case states.finale:
 		scr_noise_finale();
 		break;
-	case states.boss_KO:
+	case states.KO:
 		scr_boss_pizzaheadKO();
 		break;
 	case states.hit:
@@ -128,7 +128,7 @@ if (droptrap && (state == states.walk || state == states.stun))
 	if (abs(x - targetplayer.x) <= 200)
 	{
 		droptrap = false;
-		state = states.boss_droptrap;
+		state = states.droptrap;
 		sprite_index = spr_noise_copyexplode;
 		image_index = 0;
 	}
@@ -207,7 +207,7 @@ else
 	invincible = true;
 if (instance_exists(obj_noiseballooncrash))
 	invincible = true;
-if (state == states.boss_KO)
+if (state == states.KO)
 	invincible = true;
 if (pizzahead)
 {
@@ -221,7 +221,7 @@ if ((!invincible || ((state == states.walk && flickertime <= 0) || (state == sta
 	alarm[5] = 0.15 * room_speed;
 else if (invincible && (state != states.walk || flickertime > 0) && (state != states.stun || savedthrown))
 	flash = false;
-if ((state == states.mach2 || state == states.machslide || state == states.boss_jetpack || state == states.bounce || state == states.pogo) && alarm[4] < 0)
+if ((state == states.mach2 || state == states.machslide || state == states.jetpack || state == states.bounce || state == states.pogo) && alarm[4] < 0)
 	alarm[4] = 5;
 mask_index = spr_player_mask;
 if (state != states.stun)

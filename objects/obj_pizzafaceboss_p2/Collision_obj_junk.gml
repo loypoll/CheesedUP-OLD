@@ -6,8 +6,8 @@ if (other.thrown && state != states.stun)
 	hsp = -image_xscale * 8;
 	vsp = -4;
 	if (other.object_index == obj_pizzaheadportrait)
-		lastattack = 1;
+		lastattack = pizzaface_p2_attacks.tv;
 	else if (other.object_index == obj_pizzafacebrick)
-		lastattack = 3;
+		lastattack = pizzaface_p2_attacks.ratball;
 	instance_destroy(obj_junk);
 }

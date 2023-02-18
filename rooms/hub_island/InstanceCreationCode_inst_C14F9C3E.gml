@@ -4,7 +4,7 @@ if (global.levelcompletename == "FOREST")
 	{
 		currentroom = room;
 		global.forestcutscene = true;
-		scene_info = [[cutscene_entrance_start], [cutscene_waitfor_sprite, obj_player1], [cutscene_player_idleanim], [cutscene_change_room, 628], [cutscene_set_player_visible, false], [cutscene_player_float, true], [cutscene_set_player_pos, 836, 434], [cutscene_wait, 150], [cutscene_change_room, currentroom], [cutscene_player_float, false], [cutscene_set_player_visible, true], [cutscene_forest_end]];
+		scene_info = [[cutscene_entrance_start], [cutscene_waitfor_sprite, obj_player1], [cutscene_player_idleanim], [cutscene_change_room, hub_camp], [cutscene_set_player_visible, false], [cutscene_player_float, true], [cutscene_set_player_pos, 836, 434], [cutscene_wait, 150], [cutscene_change_room, currentroom], [cutscene_player_float, false], [cutscene_set_player_visible, true], [cutscene_forest_end]];
 	}
 	else
 		scene_info = [[cutscene_wait, 20]];
@@ -14,7 +14,7 @@ else if (global.levelcomplete && !global.beachcutscene && global.levelcompletena
 	currentroom = room;
 	peppermanactorID = -4;
 	boatactorID = -4;
-	scene_info = [[cutscene_entrance_start], [cutscene_waitfor_sprite, obj_player1], [cutscene_player_idleanim], [cutscene_change_room, 662], [cutscene_set_player_visible, false], [cutscene_player_float, true], [cutscene_set_player_pos, 923, 281], [cutscene_wait, 60], [function()
+	scene_info = [[cutscene_entrance_start], [cutscene_waitfor_sprite, obj_player1], [cutscene_player_idleanim], [cutscene_change_room, hub_sewer], [cutscene_set_player_visible, false], [cutscene_player_float, true], [cutscene_set_player_pos, 923, 281], [cutscene_wait, 60], [function()
 	{
 		boatactorID = instance_create(632, 32, obj_actor);
 		boatactorID.sprite_index = spr_cheeseboat;

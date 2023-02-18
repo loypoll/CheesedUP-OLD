@@ -19,16 +19,16 @@ switch (state)
 	case states.walk:
 		scr_fakepepboss_walk();
 		break;
-	case states.boss_deformed:
+	case states.deformed:
 		scr_fakepepboss_deformed();
 		break;
 	case states.staggered:
 		scr_fakepepboss_staggered();
 		break;
-	case states.boss_grabdash:
+	case states.grabdash:
 		scr_fakepepboss_grabdash();
 		break;
-	case states.boss_grabthrow:
+	case states.grabthrow:
 		scr_fakepepboss_grabthrow();
 		break;
 	case states.jump:
@@ -55,7 +55,7 @@ switch (state)
 	case states.pizzaheadjump:
 		scr_boss_pizzaheadjump();
 		break;
-	case states.boss_KO:
+	case states.KO:
 		scr_boss_pizzaheadKO();
 		break;
 	case states.hit:
@@ -72,7 +72,7 @@ switch (state)
 		break;
 }
 boss_update_pizzaheadKO(spr_bossfight_fakepephp, spr_bossfight_fakepeppalette);
-if (phase == 2 && state != states.stun && state != states.boss_deformed)
+if (phase == 2 && state != states.stun && state != states.deformed)
 {
 	if (deformed_cooldown > 0)
 		deformed_cooldown--;
@@ -213,7 +213,7 @@ else
 	invincible = true;
 if (!visible)
 	invincible = true;
-if (state == states.boss_KO)
+if (state == states.KO)
 	invincible = true;
 if pizzahead
 {
@@ -227,7 +227,7 @@ if (!invincible && !flash && alarm[5] < 0)
 	alarm[5] = 0.15 * room_speed;
 else if (invincible && state != states.staggered && flashbuffer <= 0)
 	flash = false;
-if ((state == states.boss_grabdash || (state == states.mach2 && attackspeed >= 10) || (state == states.throwing && sprite_index == spr_fakepeppino_flailing && attackspeed > 4) || state == states.freefall) && alarm[4] < 0)
+if ((state == states.grabdash || (state == states.mach2 && attackspeed >= 10) || (state == states.throwing && sprite_index == spr_fakepeppino_flailing && attackspeed > 4) || state == states.freefall) && alarm[4] < 0)
 	alarm[4] = 10;
 mask_index = spr_player_mask;
 if (state != states.stun)

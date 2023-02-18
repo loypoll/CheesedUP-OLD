@@ -33,7 +33,7 @@ else if (state == 4)
 	fadein = true;
 	alarm[0] = 30;
 }
-else if (state == states.tumble)
+else if (state == 5)
 {
 	obj_camera.lock = false;
 	fadein = false;

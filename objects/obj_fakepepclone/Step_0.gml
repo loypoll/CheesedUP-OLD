@@ -8,10 +8,10 @@ switch (state)
 	case states.walk:
 		scr_fakepepclone_walk();
 		break;
-	case states.boss_grabdash:
+	case states.grabdash:
 		scr_fakepepboss_grabdash();
 		break;
-	case states.boss_grabthrow:
+	case states.grabthrow:
 		scr_fakepepboss_grabthrow();
 		break;
 	case states.jump:
@@ -48,7 +48,7 @@ if (state == states.Sjump)
 		}
 	}
 }
-if ((state == states.boss_grabdash || (state == states.mach2 && attackspeed >= 10) || (state == states.throwing && sprite_index == spr_fakepeppino_flailing) || state == states.freefall) && alarm[0] == -1)
+if ((state == states.grabdash || (state == states.mach2 && attackspeed >= 10) || (state == states.throwing && sprite_index == spr_fakepeppino_flailing) || state == states.freefall) && alarm[0] == -1)
 {
 	alarm[0] = 10;
 	if (state == states.freefall)

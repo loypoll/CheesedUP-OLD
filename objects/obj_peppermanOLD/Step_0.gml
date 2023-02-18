@@ -1,7 +1,7 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
 if (obj_bosscontroller.state == states.arenaintro)
 	exit;
-if (hp <= 0 && state != states.arenaround && state != states.boss_fistmatch)
+if (hp <= 0 && state != states.arenaround && state != states.fistmatch)
 {
 	if (!thrown && !destroyable)
 		boss_destroy(lastplayerid);
@@ -53,15 +53,15 @@ switch (state)
 		grav = 0.5;
 		boss_pepperman_shoulderbash();
 		break;
-	case states.boss_supershoulderbash:
+	case states.supershoulderbash:
 		grav = 0.5;
 		boss_pepperman_supershoulderbash();
 		break;
-	case states.boss_superattackstart:
+	case states.superattackstart:
 		grav = 0.5;
 		boss_pepperman_superattackstart();
 		break;
-	case states.boss_superattackcharge:
+	case states.superattackcharge:
 		grav = 0.5;
 		boss_pepperman_superattackcharge();
 		break;
@@ -69,11 +69,11 @@ switch (state)
 		grav = 0.5;
 		boss_pepperman_superslam();
 		break;
-	case states.boss_fistmatch:
+	case states.fistmatch:
 		grav = 0.5;
 		boss_pepperman_fistmatch();
 		break;
-	case states.boss_fistmatchend:
+	case states.fistmatchend:
 		grav = 0.5;
 		boss_pepperman_fistmatchend();
 		break;
@@ -81,7 +81,7 @@ switch (state)
 		grav = 0.5;
 		boss_pepperman_shoulder();
 		break;
-	case states.boss_shoulderturn:
+	case states.shoulderturn:
 		grav = 0.5;
 		boss_pepperman_shoulderturn();
 		break;
@@ -124,5 +124,5 @@ switch (state)
 		break;
 }
 xscale = image_xscale;
-colliding = !(state == states.superslam || state == states.boss_fistmatch || state == states.boss_superattackstart || state == states.boss_superattackcharge);
-attacking = (state == states.shoulderbash || state == states.freefall || state == states.freefallprep || state == states.boss_supershoulderbash || state == states.shoulder || state == states.superslam || state == states.boss_fistmatch || state == states.boss_superattackstart || state == states.boss_superattackcharge || state == states.walk);
+colliding = !(state == states.superslam || state == states.fistmatch || state == states.superattackstart || state == states.superattackcharge);
+attacking = (state == states.shoulderbash || state == states.freefall || state == states.freefallprep || state == states.supershoulderbash || state == states.shoulder || state == states.superslam || state == states.fistmatch || state == states.superattackstart || state == states.superattackcharge || state == states.walk);

@@ -23,7 +23,7 @@ if (boss_index >= (sprite_get_number(boss_hpsprite) - 1))
 	boss_index = frac(boss_index);
 if (room == boss_vigilante)
 {
-	if ((instance_exists(obj_vigilanteboss) && obj_vigilanteboss.state == states.boss_duel) || instance_exists(obj_vigilante_duelintro))
+	if ((instance_exists(obj_vigilanteboss) && obj_vigilanteboss.state == states.duel) || instance_exists(obj_vigilante_duelintro))
 		image_alpha = 0;
 	else
 		image_alpha = Approach(image_alpha, 1, 0.1);

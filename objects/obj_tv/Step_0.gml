@@ -62,7 +62,7 @@ switch (state)
 				idlespr = spr_tv_escapeG;
 		}
 		var _state = obj_player1.state;
-		if (_state == 84 || _state == 61)
+		if (_state == states.backbreaker || _state == states.chainsaw)
 			_state = obj_player1.tauntstoredstate;
 		var _transfo = true;
 		var _transfospr = scr_tv_get_transfo_sprite();
@@ -158,7 +158,7 @@ switch (state)
 					promptx = promptxstart;
 					prompt = -4;
 				}
-				if (b[1] == 0)
+				if (b[1] == tvprompt.normal)
 				{
 					sprite_index = spr_tv_open;
 					image_index = 0;

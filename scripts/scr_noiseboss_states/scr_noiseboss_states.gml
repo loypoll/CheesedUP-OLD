@@ -1,3 +1,12 @@
+enum noisedis // noise_behaviour
+{
+	none,
+	close,
+	far,
+	anywhere
+}
+
+// functions
 function boss_noise_decide_attack()
 {
 	if (attack_cooldown > 0)
@@ -13,7 +22,7 @@ function boss_noise_decide_attack()
 function get_attack()
 {
 	var chance = irandom(100) > 40;
-	var c = 0;
+	var c = noisedis.none;
 	if (chance)
 		c = attack_pool[phase - 1][irandom(array_length(attack_pool[phase - 1]) - 1)];
 	else
@@ -30,7 +39,7 @@ function boss_noise_do_attack()
 	targetstunned = 0;
 	state = current_attack;
 	attack_cooldown = attack_max[phase - 1];
-	current_behaviour = 0;
+	current_behaviour = noisedis.none;
 	image_xscale = (targetplayer.x != x) ? sign(targetplayer.x - x) : image_xscale;
 	if (!angry)
 		noise_do_attack_normal();
@@ -47,6 +56,7 @@ function noise_do_attack_normal()
 			sprite_index = spr_playerN_spin;
 			image_index = 0;
 			break;
+		
 		case states.jump:
 			slidejump = 1;
 			movespeed = 6;
@@ -54,24 +64,28 @@ function noise_do_attack_normal()
 			sprite_index = spr_playerN_jump;
 			image_index = 0;
 			break;
+		
 		case states.skateboard:
 			skateboard_turns = 0;
 			movespeed = 0;
 			sprite_index = spr_playerN_mach1;
 			image_index = 0;
 			break;
-		case states.boss_skateboardturn:
+		
+		case states.skateboardturn:
 			state = states.skateboard;
 			skateboard_turns = 1;
 			movespeed = 0;
 			sprite_index = spr_playerN_mach1;
 			image_index = 0;
 			break;
-		case states.boss_bombkick:
+		
+		case states.bombkick:
 			state = states.throwing;
 			sprite_index = spr_playerN_noisebombkick;
 			image_index = 0;
 			break;
+		
 		case states.throwing:
 			sprite_index = spr_playerN_noisebombthrow;
 			image_index = 0;
@@ -81,7 +95,8 @@ function noise_do_attack_normal()
 				image_xscale = other.image_xscale;
 			}
 			break;
-		case states.boss_bombpogo:
+		
+		case states.bombpogo:
 			state = states.pogo;
 			bombpogo = true;
 			pogospeed = 0;
@@ -89,6 +104,7 @@ function noise_do_attack_normal()
 			pogochargeactive = false;
 			pogo_buffer = pogo_max + (room_speed * irandom(pogo_random));
 			break;
+		
 		case states.pogo:
 			bombpogo = false;
 			pogospeed = 0;
@@ -96,22 +112,25 @@ function noise_do_attack_normal()
 			pogochargeactive = false;
 			pogo_buffer = pogo_max + (room_speed * irandom(pogo_random));
 			break;
-		case states.boss_jetpackcancel:
-			state = states.boss_jetpackstart;
+		
+		case states.jetpackcancel:
+			state = states.jetpackstart;
 			jetpackcancel = true;
 			sprite_index = spr_playerN_jetpackstart;
 			image_index = 0;
 			movespeed = 0;
 			break;
-		case states.boss_jetpackstart:
+		
+		case states.jetpackstart:
 			jetpackcancel = false;
 			sprite_index = spr_playerN_jetpackstart;
 			image_index = 0;
 			movespeed = 0;
 			break;
-		case states.boss_jetpackspin:
+		
+		case states.jetpackspin:
 			movespeed = 10;
-			state = states.boss_jetpackspin;
+			state = states.jetpackspin;
 			vsp = -15;
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
@@ -143,7 +162,7 @@ function noise_do_attack_angry()
 			sprite_index = spr_playerN_jump;
 			image_index = 0;
 			break;
-		case states.boss_skateboardturn:
+		case states.skateboardturn:
 			state = states.handstandjump;
 			slide = false;
 			skateboard_turns = 1;
@@ -165,7 +184,7 @@ function noise_do_attack_angry()
 			sprite_index = spr_playerN_spin;
 			image_index = 0;
 			break;
-		case states.boss_bombkick:
+		case states.bombkick:
 			bombcount = 1;
 			state = states.throwing;
 			sprite_index = spr_playerN_noisebombkick;
@@ -181,7 +200,7 @@ function noise_do_attack_angry()
 				image_xscale = other.image_xscale;
 			}
 			break;
-		case states.boss_bombpogo:
+		case states.bombpogo:
 			state = states.pogo;
 			bombpogo = true;
 			pogospeed = 0;
@@ -196,24 +215,24 @@ function noise_do_attack_angry()
 			pogochargeactive = false;
 			pogo_buffer = pogo_max + (room_speed * irandom(pogo_random));
 			break;
-		case states.boss_jetpackcancel:
+		case states.jetpackcancel:
 			jumpcount = 1;
-			state = states.boss_jetpackstart;
+			state = states.jetpackstart;
 			jetpackcancel = true;
 			sprite_index = spr_playerN_jetpackstart;
 			image_index = 0;
 			movespeed = 0;
 			break;
-		case states.boss_jetpackstart:
+		case states.jetpackstart:
 			jetpackcancel = false;
 			sprite_index = spr_playerN_jetpackstart;
 			image_index = 0;
 			movespeed = 0;
 			break;
-		case states.boss_jetpackspin:
+		case states.jetpackspin:
 			jumpcount = 1;
 			movespeed = 10;
-			state = states.boss_jetpackspin;
+			state = states.jetpackspin;
 			vsp = -15;
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
@@ -303,7 +322,7 @@ function noise_behaviour_far()
 	if (dx < 200)
 	{
 		var i = 0;
-		while (current_behaviour == 2)
+		while (current_behaviour == noisedis.far)
 		{
 			attack_cooldown = 0;
 			boss_noise_decide_attack();
@@ -320,16 +339,16 @@ function boss_noise_normal()
 	boss_noise_decide_attack();
 	switch (current_behaviour)
 	{
-		case 0:
+		case noisedis.none:
 			noise_behaviour_none();
 			break;
-		case 1:
+		case noisedis.close:
 			noise_behaviour_close();
 			break;
-		case 3:
+		case noisedis.anywhere:
 			noise_behaviour_anywhere();
 			break;
-		case 2:
+		case noisedis.far:
 			noise_behaviour_far();
 			break;
 	}
@@ -410,7 +429,7 @@ function boss_noise_crouchslide()
 	}
 	if (slideskateboard && place_meeting(x + (sign(hsp) * 116), y, obj_solid))
 	{
-		state = states.boss_skateboardturn;
+		state = states.skateboardturn;
 		skateboard_turns = 1;
 		movespeed = 12;
 		sprite_index = spr_playerN_machslideboost;
@@ -463,7 +482,7 @@ function boss_noise_skateboard()
 		movespeed += 0.5;
 	if (skateboard_turns > 0 && place_meeting(x + (sign(hsp) * 116), y, obj_solid))
 	{
-		state = states.boss_skateboardturn;
+		state = states.skateboardturn;
 		movespeed = 12;
 		sprite_index = spr_playerN_machslideboost;
 		image_index = 0;
@@ -611,7 +630,7 @@ function boss_noise_jetpackstart()
 	vsp = 0;
 	if (image_index > (image_number - 1))
 	{
-		state = states.boss_jetpack;
+		state = states.jetpack;
 		movespeed = !angry ? 15 : 20;
 		sprite_index = !angry ? spr_playerN_jetpackboost : spr_playerN_crazyrun;
 	}
@@ -645,7 +664,7 @@ function boss_noise_jetpack()
 		var dx = abs(targetplayer.x - x);
 		if (dx < 200)
 		{
-			state = states.boss_jetpackspin;
+			state = states.jetpackspin;
 			vsp = -15;
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;
@@ -681,7 +700,7 @@ function boss_noise_jetpackspin()
 		{
 			jumpcount--;
 			movespeed = 10;
-			state = states.boss_jetpackspin;
+			state = states.jetpackspin;
 			vsp = -15;
 			sprite_index = spr_playerN_noisebombspinjump;
 			image_index = 0;

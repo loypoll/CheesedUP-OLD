@@ -14,15 +14,15 @@ switch (state)
 		grav = 0.5;
 		boss_mrstick_normal();
 		break;
-	case states.boss_shield:
+	case states.shield:
 		grav = 0.5;
 		boss_mrstick_shield();
 		break;
-	case states.boss_helicopterhat:
+	case states.helicopterhat:
 		grav = 0.5;
 		boss_mrstick_helicopterhat();
 		break;
-	case states.boss_panicjump:
+	case states.panicjump:
 		grav = 0.5;
 		boss_mrstick_panicjump();
 		break;
@@ -30,27 +30,27 @@ switch (state)
 		grav = 0.5;
 		boss_mrstick_jump();
 		break;
-	case states.boss_smokebombstart:
+	case states.smokebombstart:
 		grav = 0.5;
 		boss_mrstick_smokebombstart();
 		break;
-	case states.boss_smokebombcrawl:
+	case states.smokebombcrawl:
 		grav = 0.5;
 		boss_mrstick_smokebombcrawl();
 		break;
-	case states.boss_springshoes:
+	case states.springshoes:
 		grav = 0.5;
 		boss_mrstick_springshoes();
 		break;
-	case states.boss_cardboard:
+	case states.cardboard:
 		grav = 0.5;
 		boss_mrstick_cardboard();
 		break;
-	case states.boss_cardboardend:
+	case states.cardboardend:
 		grav = 0.5;
 		boss_mrstick_cardboardend();
 		break;
-	case states.boss_mockery:
+	case states.mockery:
 		grav = 0.5;
 		boss_mrstick_mockery();
 		break;
@@ -86,5 +86,5 @@ switch (state)
 		state_boss_stun();
 		break;
 }
-colliding = !(state == states.jump || state == states.boss_cardboard || state == states.boss_cardboardend);
-attacking = (state == states.boss_shield || state == states.jump || state == states.boss_cardboard || state == states.boss_cardboardend || state == states.boss_smokebombstart);
+colliding = !(state == states.jump || state == states.cardboard || state == states.cardboardend);
+attacking = (state == states.shield || state == states.jump || state == states.cardboard || state == states.cardboardend || state == states.smokebombstart);

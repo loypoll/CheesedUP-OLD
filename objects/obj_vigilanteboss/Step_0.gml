@@ -15,7 +15,7 @@ switch (state)
 	case states.revolver:
 		scr_vigilante_revolver();
 		break;
-	case states.boss_reloading:
+	case states.reloading:
 		scr_vigilante_reloading();
 		break;
 	case states.mach2:
@@ -33,10 +33,10 @@ switch (state)
 	case states.estampede:
 		scr_vigilante_estampede();
 		break;
-	case states.boss_phase1hurt:
+	case states.phase1hurt:
 		scr_vigilante_phase1hurt();
 		break;
-	case states.boss_duel:
+	case states.duel:
 		scr_vigilante_duel();
 		break;
 	case states.punch:
@@ -45,25 +45,25 @@ switch (state)
 	case states.jump:
 		scr_vigilante_jump();
 		break;
-	case states.boss_wait:
+	case states.wait:
 		scr_vigilante_wait();
 		break;
-	case states.boss_flamethrower:
+	case states.flamethrower:
 		scr_vigilante_flamethrower();
 		break;
-	case states.boss_machinegun:
+	case states.machinegun:
 		scr_vigilante_machinegun();
 		break;
-	case states.boss_bazooka:
+	case states.bazooka:
 		scr_vigilante_bazooka();
 		break;
-	case states.boss_crate:
+	case states.crate:
 		scr_vigilante_crate();
 		break;
 	case states.pizzaheadjump:
 		scr_boss_pizzaheadjump();
 		break;
-	case states.boss_KO:
+	case states.KO:
 		scr_boss_pizzaheadKO();
 		break;
 	case states.hit:
@@ -87,18 +87,18 @@ switch (state)
 		break;
 }
 boss_update_pizzaheadKO(spr_bossfight_vigiHP, spr_bossfight_vigipalette);
-if (state != states.boss_flamethrower && flameID != -4)
+if (state != states.flamethrower && flameID != -4)
 {
 	instance_destroy(obj_flamethrowerhurtbox);
 	flameID = -4;
 }
-if (state == states.revolver || state == states.boss_wait || state == states.dynamite || state == states.throwing || state == states.estampede)
+if (state == states.revolver || state == states.wait || state == states.dynamite || state == states.throwing || state == states.estampede)
 {
 	if (targetplayer.x != x)
 		image_xscale = -sign(x - targetplayer.x);
 }
 boss_hurt_gustavo();
-if (!pizzahead && obj_player1.state != states.actor && obj_player1.state != states.chainsaw && obj_player1.state != states.supergrab && !obj_player1.instakillmove && obj_player1.y >= (y - 20) && obj_player1.state != states.animation && state != states.hit && state != states.stun && state != states.boss_phase1hurt && state != states.supergrab && hsp == 0)
+if (!pizzahead && obj_player1.state != states.actor && obj_player1.state != states.chainsaw && obj_player1.state != states.supergrab && !obj_player1.instakillmove && obj_player1.y >= (y - 20) && obj_player1.state != states.animation && state != states.hit && state != states.stun && state != states.phase1hurt && state != states.supergrab && hsp == 0)
 {
 	if (place_meeting(x, y, obj_player1))
 	{
@@ -182,14 +182,14 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
 			dark_alpha = 1;
 		}
 	}
-	else if (phase == 2 && state != states.boss_duel && state != states.hit && !thrown)
+	else if (phase == 2 && state != states.duel && state != states.hit && !thrown)
 	{
 		instance_destroy(obj_johnecheese);
 		instance_destroy(obj_johnecheese_spawner);
 		fmod_event_one_shot_3d("event:/sfx/voice/vigiduel", x, y);
 		if (!destroyable)
 		{
-			state = states.boss_duel;
+			state = states.duel;
 			hsp = 0;
 			vsp = 0;
 			sprite_index = spr_playerV_idle;
@@ -222,7 +222,7 @@ if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahe
 			with (obj_player1)
 			{
 				pistolanim = -4;
-				state = states.boss_duel;
+				state = states.duel;
 				hsp = 0;
 				vsp = 0;
 				xscale = 1;
@@ -250,7 +250,7 @@ if (state == states.stun)
 }
 else
 	savedthrown = false;
-if (state != states.boss_duel)
+if (state != states.duel)
 	signy = Approach(signy, -sprite_get_height(signspr), 20);
 if (state == states.stun && stunned > 100 && birdcreated == 0)
 {
@@ -258,13 +258,13 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state == states.boss_reloading || (state == states.stun && savedthrown == thrown && !savedthrown))
+if (state == states.reloading || (state == states.stun && savedthrown == thrown && !savedthrown))
 	invincible = false;
 else
 	invincible = true;
 if (wastedhits == 4 && phase == 1)
 	invincible = true;
-if (state == states.boss_KO)
+if (state == states.KO)
 	invincible = true;
 if (pizzahead && state == states.stun && !thrown && alarm[5] == -1 && !flash)
 	alarm[5] = 0.15 * room_speed;

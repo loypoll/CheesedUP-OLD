@@ -1,14 +1,14 @@
 targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-if (hp <= 0 && state != states.arenaround && state != states.boss_fistmatch)
+if (hp <= 0 && state != states.arenaround && state != states.fistmatch)
 {
 	if (!thrown && !destroyable)
 		boss_destroy(lastplayerid);
 }
-if ((state == states.mach1 || state == states.machslide || state == states.crouchslide || state == states.uppunch || state == states.punch || state == states.boss_millionpunch || state == states.handstandjump) && alarm[0] <= 0)
+if ((state == states.mach1 || state == states.machslide || state == states.crouchslide || state == states.uppunch || state == states.punch || state == states.millionpunch || state == states.handstandjump) && alarm[0] <= 0)
 	alarm[0] = 6;
 if (chooseparry_buffer > 0)
 	chooseparry_buffer--;
-if (important && honor && nexthonor && phase > 3 && state != states.boss_superattack)
+if (important && honor && nexthonor && phase > 3 && state != states.superattack)
 {
 	var ch = false;
 	with (obj_player)
@@ -88,7 +88,7 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_punch();
 		break;
-	case states.boss_groundpunchstart:
+	case states.groundpunchstart:
 		grav = 0.5;
 		boss_vigilante_groundpunchstart();
 		break;
@@ -104,7 +104,7 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_freefallland();
 		break;
-	case states.boss_millionpunch:
+	case states.millionpunch:
 		grav = 0.5;
 		boss_vigilante_millionpunch();
 		break;
@@ -116,11 +116,11 @@ switch (state)
 		grav = 0.5;
 		boss_vigilante_handstandjump();
 		break;
-	case states.boss_superattackstart:
+	case states.superattackstart:
 		grav = 0.5;
 		boss_vigilante_superattackstart();
 		break;
-	case states.boss_superattack:
+	case states.superattack:
 		grav = 0.5;
 		boss_vigilante_superattack();
 		break;
@@ -157,7 +157,7 @@ switch (state)
 		state_boss_stun();
 		break;
 }
-if (hitstate == states.boss_superattack || state == states.boss_superattack)
+if (hitstate == states.superattack || state == states.superattack)
 {
 	with (lastplayerid)
 	{
@@ -165,9 +165,9 @@ if (hitstate == states.boss_superattack || state == states.boss_superattack)
 		{
 			if (sprite_index == spr_player_pistolshot && image_index > (image_number - 1))
 				sprite_index = spr_player_pistolidle;
-			if (sprite_index != spr_player_pistolshot && sprite_index != spr_idle && other.state == states.boss_superattack && other.duel_buffer > 0)
+			if (sprite_index != spr_player_pistolshot && sprite_index != spr_idle && other.state == states.superattack && other.duel_buffer > 0)
 				sprite_index = spr_idle;
 		}
 	}
 }
-attacking = state == 1 || state == states.mach1 || state == states.charge || state == states.punch || state == states.boss_groundpunchstart || state == states.boss_millionpunch || state == states.freefall || state == states.uppunch || state == states.handstandjump || state == states.boss_superattack || state == states.boss_superattackstart || state == states.crouchslide;
+attacking = state == states.revolver || state == states.mach1 || state == states.charge || state == states.punch || state == states.groundpunchstart || state == states.millionpunch || state == states.freefall || state == states.uppunch || state == states.handstandjump || state == states.superattack || state == states.superattackstart || state == states.crouchslide;

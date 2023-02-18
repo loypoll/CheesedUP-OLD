@@ -16,20 +16,25 @@ if (pizzahead && elitehit <= 0 && destroyable)
 		vsp = -18;
 		elitehit = 4;
 		prevhp = elitehit;
-		fakepep_set_attack(1, 0, 0, 80, 0);
-		fakepep_set_attack(1, 1, 1, 80, 0);
-		fakepep_set_attack(1, 2, 4, 120, 0);
-		fakepep_set_attack(1, 3, 5, 120, 0);
-		fakepep_set_attack(1, 4, 5, 120, 0);
+		
+		fakepep_set_attack(1, 0, fakepep_attacks.grabclone, 80, 0);
+		fakepep_set_attack(1, 1, fakepep_attacks.bodyslamclone, 80, 0);
+		fakepep_set_attack(1, 2, fakepep_attacks.flailingclone, 120, 0);
+		fakepep_set_attack(1, 3, fakepep_attacks.tauntclone, 120, 0);
+		fakepep_set_attack(1, 4, fakepep_attacks.tauntclone, 120, 0);
+		
 		fakepep_start_projectiles(1, 0);
 		fakepep_add_grabclone(1, 0, 1, 180);
 		fakepep_add_grabclone(1, 0, -1, 180);
+		
 		fakepep_start_projectiles(1, 1);
 		fakepep_add_bodyslamclone(1, 1, 1, 180);
 		fakepep_add_bodyslamclone(1, 1, -1, 180);
+		
 		fakepep_start_projectiles(1, 2);
 		fakepep_add_flailingclone(1, 2, 1, 100);
 		fakepep_add_flailingclone(1, 2, -1, 100);
+		
 		fakepep_start_projectiles(1, 3);
 		fakepep_add_tauntclones(1, 3, -12, -15, 120);
 		fakepep_add_tauntclones(1, 3, -15, -12, 120);

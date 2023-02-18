@@ -34,7 +34,7 @@ function scr_pepperman_sounds()
 	}
 	else if (state != states.freefall && state != states.freefallprep)
 		fmod_event_instance_stop(snd_groundpound, true);
-	if (state == states.boss_mini)
+	if (state == states.mini)
 		shrinkstate = Approach(shrinkstate, 1, 0.05);
 	else
 		shrinkstate = Approach(shrinkstate, 0, 0.05);
@@ -432,7 +432,7 @@ function scr_pepperman_shoulderbash()
 		if (ix != image_xscale)
 		{
 			fmod_event_one_shot_3d("event:/sfx/pepperman/turn", x, y);
-			state = states.boss_shoulderturn;
+			state = states.shoulderturn;
 			sprite_index = spr_pepperman_shoulderturn;
 			image_index = 0;
 			image_speed = 0.35;
@@ -520,9 +520,9 @@ function scr_pepperman_do_contemplate()
 		}
 		if (b)
 		{
-			if (state != states.boss_contemplate)
+			if (state != states.contemplate)
 				fmod_event_one_shot_3d("event:/sfx/voice/peppermansnicker", x, y);
-			state = states.boss_contemplate;
+			state = states.contemplate;
 			animbuffer = 80;
 			hsp = 0;
 			vsp = 0;

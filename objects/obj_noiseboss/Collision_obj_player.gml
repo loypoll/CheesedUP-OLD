@@ -3,7 +3,7 @@
 
 
 
-if ((state == states.mach2 && hsp != 0) || (state == states.pizzahead_spinningkick && image_index > 3) || (state == states.freefall && !grounded) || state == states.machslide || state == states.pogo || state == states.boss_jetpack || state == states.bounce)
+if ((state == states.mach2 && hsp != 0) || (state == states.pizzahead_spinningkick && image_index > 3) || (state == states.freefall && !grounded) || state == states.machslide || state == states.pogo || state == states.jetpack || state == states.bounce)
 {
 	if (other.flash)
 		other.flash = false;
@@ -20,7 +20,7 @@ else if (((state == states.walk || (state == states.stun && !savedthrown)) && fl
 		instance_destroy(obj_noiseyspawner2);
 		fightballcount = 0;
 		substate = states.fightball;
-		state = states.boss_finale;
+		state = states.finale;
 		sprite_index = spr_playerN_fightball;
 		image_index = 0;
 		image_speed = 0.35;

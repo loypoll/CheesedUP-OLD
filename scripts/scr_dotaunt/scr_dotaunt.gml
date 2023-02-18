@@ -26,7 +26,6 @@ function scr_dotaunt()
 				tauntstoredstate = state;
 			}
 			state = states.backbreaker;
-			scr_create_parryhitbox();
 			if (supercharged && key_up)
 			{
 				ini_open_from_string(obj_savesystem.ini_str);

@@ -3,7 +3,7 @@ if (trashbuffer > 0)
 	trashbuffer--;
 switch (state)
 {
-	case 0:
+	case states.normal:
 		with (obj_player)
 		{
 			if (other.state == states.normal && state != states.trashjumpprep && other.trashbuffer <= 0 && place_meeting(x, y, other))
@@ -22,7 +22,8 @@ switch (state)
 			}
 		}
 		break;
-	case 209:
+	
+	case states.trashjumpprep:
 		with (playerid)
 		{
 			if (floor(image_index) == (image_number - 1))
@@ -47,7 +48,7 @@ switch (state)
 				case 3:
 					playerid.y = y - 44;
 					break;
-				case states.grabbed:
+				case 4:
 					playerid.y = y - 44;
 					break;
 				case 5:

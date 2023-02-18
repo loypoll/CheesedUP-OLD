@@ -1,19 +1,24 @@
 event_inherited();
+
 boss_array[0] = -4;
-boss_array[1] = [80, 1];
-boss_array[2] = [474, 1];
-boss_array[3] = [480, 1];
-boss_array[4] = [80, 6];
-boss_array[5] = [474, 6];
-boss_array[6] = [480, 6];
+boss_array[1] = [obj_pepperman, 1];
+boss_array[2] = [obj_vigilanteboss, 1];
+boss_array[3] = [obj_noiseboss, 1];
+boss_array[4] = [obj_pepperman, 6];
+boss_array[5] = [obj_vigilanteboss, 6];
+boss_array[6] = [obj_noiseboss, 6];
+
 state = states.arenaround;
-attack_pool = [174, 175, 176, 92, 177, 179, 180];
-ds_map_set(player_hurtstates, 42, 30);
-ds_map_set(player_hurtstates, 41, 50);
-ds_map_set(player_hurtstates, 104, 20);
-ds_map_set(player_hurtstates, 121, 30);
-ds_map_set(boss_hurtstates, 80, 30);
-ds_map_set(boss_hurtstates, 174, 30);
+attack_pool = [states.shield, states.helicopterhat, states.panicjump, states.jump, states.smokebombstart, states.springshoes, states.cardboard];
+
+ds_map_set(player_hurtstates, states.handstandjump, 30);
+ds_map_set(player_hurtstates, states.chainsawbump, 50);
+ds_map_set(player_hurtstates, states.mach2, 20);
+ds_map_set(player_hurtstates, states.mach3, 30);
+
+ds_map_set(boss_hurtstates, states.punch, 30);
+ds_map_set(boss_hurtstates, states.shield, 30);
+
 phase = 1;
 max_phase = 7;
 max_hp = 500 * max_phase;
@@ -58,7 +63,8 @@ targetstunnedminus[3] = 30;
 targetstunnedminus[4] = 30;
 targetstunnedminus[5] = 30;
 targetstunnedminus[6] = 30;
-function boss_destroy()
+
+function boss_destroy(argument0)
 {
 	SUPER_boss_destroy(argument0);
 	targetstunned = 1000;
@@ -66,7 +72,7 @@ function boss_destroy()
 	global.mrstickcutscene3 = true;
 	quick_ini_write_real(get_savefile_ini(), "cutscene", "mrstick3", true);
 }
-function boss_hurt()
+function boss_hurt(argument0, argument1)
 {
 	if (targetstunned > 0)
 	{
@@ -80,7 +86,7 @@ function boss_hurt()
 	SUPER_boss_hurt(argument0, argument1);
 	targetxscale = -argument1.xscale;
 }
-function boss_hurt_noplayer()
+function boss_hurt_noplayer(argument0)
 {
 	if (targetstunned > 0)
 	{
@@ -93,7 +99,7 @@ function boss_hurt_noplayer()
 		targetstunned = 150;
 	SUPER_boss_hurt_noplayer(argument0);
 }
-function player_hurt()
+function player_hurt(argument0, argument1)
 {
 	if (!argument1.inv_frames && (argument1.state != states.backbreaker || argument1.parry_inst == -4))
 	{

@@ -49,7 +49,7 @@ if window_has_focus() && (window_width_current != ww || window_height_current !=
 {
 	if (global.option_scale_mode == 0)
 	{
-		camera_set_view_size(view_camera[0], CAMERA_WIDTH, CAMERA_HEIGHT);
+		camera_set_view_size(view_camera[0], CAMERA_WIDTH * camzoom, CAMERA_HEIGHT * camzoom);
 		app_scale = min(ww / CAMERA_WIDTH, wh / CAMERA_HEIGHT);
 		trace(app_scale);
 		
@@ -64,7 +64,7 @@ if window_has_focus() && (window_width_current != ww || window_height_current !=
 	}
 	else if (global.option_scale_mode == 1)
 	{
-		camera_set_view_size(view_camera[0], CAMERA_WIDTH, CAMERA_HEIGHT);
+		camera_set_view_size(view_camera[0], CAMERA_WIDTH * camzoom, CAMERA_HEIGHT * camzoom);
 		app_scale = min(ww div CAMERA_WIDTH, wh div CAMERA_HEIGHT);
 		
 		SCREEN_WIDTH = CAMERA_WIDTH;
@@ -79,7 +79,7 @@ if window_has_focus() && (window_width_current != ww || window_height_current !=
 	else if (global.option_scale_mode == 2)
 	{
 		app_scale = 1;
-		camera_set_view_size(view_camera[0], ww, wh);
+		camera_set_view_size(view_camera[0], ww * camzoom, wh * camzoom);
 		
 		SCREEN_WIDTH = ww;
 		SCREEN_HEIGHT = wh;

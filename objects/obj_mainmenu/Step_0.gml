@@ -177,7 +177,7 @@ switch state
 			}
 			else if key_slap2
 			{
-				state = states.boss_finale
+				state = states.finale
 				exitselect = 1
 				switch currentselect
 				{
@@ -259,7 +259,7 @@ switch state
 		}
 		break
 	
-	case states.boss_finale:
+	case states.finale:
 		exitselect += (key_left2 + key_right2)
 		exitselect = clamp(exitselect, 0, 1)
 		if key_jump

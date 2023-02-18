@@ -1,12 +1,12 @@
 event_inherited();
-if (state == states.boss_superattack)
+if (state == states.superattack)
 {
 	boss_hurt_noplayer(350);
 	targetstunned = 100;
 	hithsp = 0;
 	hitvsp = 0;
 	hitLag = 20;
-	hitstate = states.boss_superattack;
+	hitstate = states.superattack;
 	if (hp <= 0)
 	{
 		hitstate = states.normal;
