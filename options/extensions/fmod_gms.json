@@ -1,9 +1,6 @@
 {
   "resourceType": "GMExtensionConfigSet",
   "configurables": null,
-  "extensionId": {
-    "name": "fmod_gms",
-    "path": "extensions/fmod_gms/fmod_gms.yy"
-  },
+  "extensionId": null,
   "resourceVersion": "1.0"
 }

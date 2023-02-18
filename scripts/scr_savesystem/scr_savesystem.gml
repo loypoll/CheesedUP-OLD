@@ -28,7 +28,7 @@ function get_percentage()
 			if (ini_read_real("Toppin", concat(level, j + 1), false))
 				count++;
 		}
-		var r = ini_read_string("Ranks", boss, "d");
+		var r = ini_read_string("Ranks", level, "d");
 		if (r == "p")
 			extracount++;
 		count += ds_map_find_value(_rank_map, r);
