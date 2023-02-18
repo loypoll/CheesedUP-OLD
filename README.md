@@ -1,6 +1,9 @@
 # Pizza Tower Decompilation
 Pain is all but guaranteed
 
+Note that when building the project, you'll have to remove the Steam related stuff before or afterwards,
+or else it'll just run the unmodded game. This is not the case for testing inside GameMaker though.
+
 # Dependencies
 - The `.bank` files from the game. They hold all sounds and music for usage with FMOD.
 Simply copy the `sounds` folder from the game into the `datafiles` folder in the project,
