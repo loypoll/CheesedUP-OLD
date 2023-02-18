@@ -5,33 +5,33 @@ function scr_get_tutorial_key(char)
 	var txt = -4;
 	switch (char)
 	{
-		case 37: // TODO
+		case vk_left:
 			spr = spr_tutorialgamepad;
 			ix = 16;
 			break;
-		case 39:
+		case vk_right:
 			spr = spr_tutorialgamepad;
 			ix = 17;
 			break;
-		case 38:
+		case vk_up:
 			spr = spr_tutorialgamepad;
 			ix = 4;
 			break;
-		case 40:
+		case vk_down:
 			spr = spr_tutorialgamepad;
 			ix = 5;
 			break;
-		case 16:
-		case 160:
+		case vk_shift:
+		case vk_lshift:
 			spr = spr_tutorialkeyspecial;
 			ix = 0;
 			break;
-		case 17:
-		case 162:
+		case vk_control:
+		case vk_lcontrol:
 			spr = spr_tutorialkeyspecial;
 			ix = 1;
 			break;
-		case 32:
+		case vk_space:
 			spr = spr_tutorialkeyspecial;
 			ix = 2;
 			break;
@@ -99,7 +99,7 @@ function scr_calculate_text(str)
 	{
 		pos++;
 		str2 = string_insert(string_char_at(str, pos), str2, string_length(str2) + 1);
-		str2 = scr_separate_text(str2)
+		str2 = scr_separate_text(str2);
 	}
 	return str2;
 }

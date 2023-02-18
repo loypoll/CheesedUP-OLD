@@ -1,3 +1,33 @@
+enum textkey
+{
+	up,
+	left,
+	right,
+	down,
+	forwards,
+	backwards,
+	grab,
+	mach,
+	jump,
+	shoot,
+	taunt,
+	groundpound, // gamepad only
+	superjump // gamepad only
+}
+enum texteffect
+{
+	normal,
+	shake,
+	updown
+}
+enum texttype
+{
+	normal, // just draws the text
+	icon, // draws tutorial keys
+	array // does scr_draw_text_arr within itself
+}
+
+// functions
 function create_transformation_tip(str, save_entry = noone)
 {
 	ini_open_from_string(obj_savesystem.ini_str);
@@ -18,6 +48,7 @@ function create_transformation_tip(str, save_entry = noone)
 	obj_savesystem.ini_str = ini_close();
 	return b;
 }
+
 function scr_compile_icon_text(text, pos = 1, return_array = false)
 {
 	var arr = [];
@@ -25,81 +56,82 @@ function scr_compile_icon_text(text, pos = 1, return_array = false)
 	var newline = string_height("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 	var char_x = 0;
 	var char_y = 0;
+	
 	for (var saved_pos = 1; pos <= len; pos += 1)
 	{
 		var start = pos;
 		var char = string_ord_at(text, pos);
 		switch char
 		{
-			case 10: // TODO
+			case ord("\n"):
 				char_y += newline;
 				char_x = 0;
 				break;
 			
-			case 123:
+			case ord("{"):
 				var effect = string_copy(text, pos, 3);
-				var te = 1;
+				var te = texteffect.shake;
 				pos += 3;
 				var n = scr_compile_icon_text(text, pos, true);
 				switch (effect)
 				{
 					case "{s}":
-						te = (1 << 0);
+						te = texteffect.shake;
 						break;
 					case "{u}":
-						te = (2 << 0);
+						te = texteffect.updown;
 						break;
 				}
-				array_push(arr, [char_x, char_y, 2, te, n[0]]);
+				array_push(arr, [char_x, char_y, texttype.array, te, n[0]]); // probably. originally 2
 				pos = n[1];
 				char_x = n[2];
 				char_y = n[3];
 				break;
 			
-			case 91:
+			case ord("["):
 				var button = string_copy(text, pos, 3);
-				var t = (1 << 0);
+				var t = texttype.icon;
 				var b = 0;
 				switch (button)
 				{
 					case "[D]":
-						b = (3 << 0); // TODO
+						b = textkey.down;
 						break;
 					case "[U]":
-						b = (0 << 0);
+						b = textkey.up;
 						break;
 					case "[M]":
-						b = (7 << 0);
+						b = textkey.mach;
 						break;
 					case "[J]":
-						b = (8 << 0);
+						b = textkey.jump;
 						break;
 					case "[G]":
-						b = (6 << 0);
+						b = textkey.grab;
 						break;
 					case "[F]":
-						b = (4 << 0);
+						b = textkey.forwards;
 						break;
 					case "[B]":
-						b = (5 << 0);
+						b = textkey.backwards;
 						break;
 					case "[L]":
-						b = (1 << 0);
+						b = textkey.left;
 						break;
 					case "[R]":
-						b = (2 << 0);
+						b = textkey.right;
 						break;
 					case "[S]":
-						b = (9 << 0);
+						b = textkey.shoot;
 						break;
 					case "[T]":
-						b = (10 << 0);
+						b = textkey.taunt;
 						break;
 					case "[g]":
-						b = (11 << 0);
+						b = textkey.groundpound;
 						break;
 					case "[s]":
-						b = (12 << 0);
+						b = textkey.superjump;
 						break;
 				}
 				array_push(arr, [char_x, char_y, t, b]);
@@ -107,7 +139,7 @@ function scr_compile_icon_text(text, pos = 1, return_array = false)
 				pos += 2;
 				break;
 			
-			case 47:
+			case ord("/"):
 				if (return_array)
 				{
 					saved_pos = pos;
@@ -119,13 +151,13 @@ function scr_compile_icon_text(text, pos = 1, return_array = false)
 				while ((pos + 1) <= len)
 				{
 					char = string_ord_at(text, pos + 1);
-					if (char != 91 && char != 10 && char != 123 && char != 47)
+					if (char != ord("[") && char != ord("\n") && char != ord("{") && char != ord("/"))
 						pos += 1;
 					else
 						break;
 				}
 				n = string_copy(text, start, (pos - start) + 1);
-				array_push(arr, [char_x, char_y, (0 << 0), n]);
+				array_push(arr, [char_x, char_y, texttype.normal, n]); // probably. originally 0
 				char_x += string_width(n);
 				break;
 		}
@@ -134,6 +166,7 @@ function scr_compile_icon_text(text, pos = 1, return_array = false)
 		return [arr, saved_pos, char_x, char_y];
 	return arr;
 }
+
 function scr_text_arr_size(array)
 {
 	var w = 0;
@@ -146,14 +179,15 @@ function scr_text_arr_size(array)
 		var cy = b[1];
 		var t = b[2];
 		var val = b[3];
+		
 		switch (t)
 		{
-			case (1 << 0): // TODO
+			case texttype.icon:
 				if ((cx + 32) > w)
 					w += 32;
 				break;
 			
-			case (2 << 0):
+			case texttype.array:
 				var val2 = b[4];
 				var q = scr_text_arr_size(val2);
 				if ((cy + q[1]) > h)
@@ -162,7 +196,7 @@ function scr_text_arr_size(array)
 					w += q[0];
 				break;
 			
-			case (0 << 0):
+			case texttype.normal:
 				if (cy > h)
 					h += newline;
 				else
@@ -176,45 +210,53 @@ function scr_text_arr_size(array)
 	}
 	return [w, h];
 }
-function scr_draw_granny_texture(argument0, argument1, argument2, argument3, argument4, argument5, argument6 = spr_pizzagrannytexture, argument7 = spr_tutorialbubble)
+function scr_draw_granny_texture(x, y, xscale, yscale, tex_x, tex_y, sprite = spr_pizzagrannytexture, bubble_sprite = spr_tutorialbubble)
 {
-	var w = sprite_get_width(argument7) * argument2;
-	var h = sprite_get_height(argument7) * argument3;
+	var w = sprite_get_width(bubble_sprite) * xscale;
+	var h = sprite_get_height(bubble_sprite) * yscale;
+	
 	if (!surface_exists(surfclip))
 		surfclip = surface_create(w, h);
 	if (!surface_exists(surffinal))
 		surffinal = surface_create(w, h);
+	
+	// draw dialog box
 	surface_set_target(surfclip);
 	draw_clear_alpha(0, 0);
 	draw_rectangle_color(0, 0, w, h, c_white, c_white, c_white, c_white, false);
-	gpu_set_blendmode(3);
-	draw_sprite_ext(argument7, 0, 0, 0, argument2, argument3, 0, c_white, 1);
+	gpu_set_blendmode(bm_subtract);
+	draw_sprite_ext(bubble_sprite, 0, 0, 0, xscale, yscale, 0, c_white, 1);
 	reset_blendmode();
 	surface_reset_target();
+	
+	// draw the looping texture
 	surface_set_target(surffinal);
-	draw_sprite_tiled(argument6, 0, argument4, argument5);
+	draw_sprite_tiled(sprite, 0, tex_x, tex_y);
 	gpu_set_blendmode(3);
 	draw_surface(surfclip, 0, 0);
 	reset_blendmode();
 	surface_reset_target();
-	draw_surface(surffinal, argument0, argument1);
+	
+	// draw everything
+	draw_surface(surffinal, x, y);
 }
-function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white, argument4 = 1, argument5 = 0, argument6 = noone)
+
+function scr_draw_text_arr(x, y, text_arr, color = c_white, alpha = 1, effect = texteffect.normal, option_struct = noone)
 {
-	if argument2 == noone
+	if text_arr == noone
 		exit;
 	
-	for (var i = 0; i < array_length(argument2); i++)
+	for (var i = 0; i < array_length(text_arr); i++)
 	{
-		var b = argument2[i];
-		var cx = argument0 + b[0];
-		var cy = argument1 + b[1];
+		var b = text_arr[i];
+		var cx = x + b[0];
+		var cy = y + b[1];
 		var t = b[2];
 		var val = b[3];
 		
 		switch t
 		{
-			case (1 << 0):
+			case texttype.icon:
 				var spr = -4;
 				var ix = 0;
 				var txt = -4;
@@ -224,52 +266,52 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 					spr = spr_tutorialgamepad;
 					switch val
 					{
-						case (3 << 0): // TODO
+						case textkey.down:
 							ix = scr_get_gamepadicon(global.key_downC);
 							break;
-						case (0 << 0):
+						case textkey.up:
 							ix = scr_get_gamepadicon(global.key_upC);
 							break;
-						case (7 << 0):
+						case textkey.mach:
 							ix = scr_get_gamepadicon(global.key_attackC);
 							break;
-						case (8 << 0):
+						case textkey.jump:
 							ix = scr_get_gamepadicon(global.key_jumpC);
 							break;
-						case (6 << 0):
+						case textkey.grab:
 							ix = scr_get_gamepadicon(global.key_slapC);
 							break;
-						case (4 << 0):
+						case textkey.forwards:
 							if (instance_exists(obj_player1) && obj_player1.xscale > 0)
 								ix = scr_get_gamepadicon(global.key_rightC);
 							else
 								ix = scr_get_gamepadicon(global.key_leftC);
 							break;
-						case (5 << 0):
+						case textkey.backwards:
 							if (instance_exists(obj_player1) && obj_player1.xscale > 0)
 								ix = scr_get_gamepadicon(global.key_leftC);
 							else
 								ix = scr_get_gamepadicon(global.key_rightC);
 							break;
-						case (1 << 0):
+						case textkey.left:
 							ix = scr_get_gamepadicon(global.key_leftC);
 							break;
-						case (2 << 0):
+						case textkey.right:
 							ix = scr_get_gamepadicon(global.key_rightC);
 							break;
-						case (9 << 0):
+						case textkey.shoot:
 							ix = scr_get_gamepadicon(global.key_shootC);
 							break;
-						case (10 << 0):
+						case textkey.taunt:
 							ix = scr_get_gamepadicon(global.key_tauntC);
 							break;
-						case (11 << 0):
+						case textkey.groundpound:
 							if global.gamepad_groundpound
 								ix = scr_get_gamepadicon(global.key_downC);
 							else
 								ix = scr_get_gamepadicon(global.key_groundpoundC);
 							break;
-						case (12 << 0):
+						case textkey.superjump:
 							if global.gamepad_superjump
 								ix = scr_get_gamepadicon(global.key_upC);
 							else
@@ -285,49 +327,49 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 					var arr = noone;
 					switch val
 					{
-						case (3 << 0): // TODO
+						case textkey.down:
 							arr = scr_get_tutorial_key(global.key_down);
 							break;
-						case (0 << 0):
+						case textkey.up:
 							arr = scr_get_tutorial_key(global.key_up);
 							break;
-						case (7 << 0):
+						case textkey.mach:
 							arr = scr_get_tutorial_key(global.key_attack);
 							break;
-						case (8 << 0):
+						case textkey.jump:
 							arr = scr_get_tutorial_key(global.key_jump);
 							break;
-						case (6 << 0):
+						case textkey.grab:
 							arr = scr_get_tutorial_key(global.key_slap);
 							break;
-						case (4 << 0):
+						case textkey.forwards:
 							if (instance_exists(obj_player1) && obj_player1.xscale > 0)
 								arr = scr_get_tutorial_key(global.key_right);
 							else
 								arr = scr_get_tutorial_key(global.key_left);
 							break;
-						case (5 << 0):
+						case textkey.backwards:
 							if (instance_exists(obj_player1) && obj_player1.xscale > 0)
 								arr = scr_get_tutorial_key(global.key_left);
 							else
 								arr = scr_get_tutorial_key(global.key_right);
 							break;
-						case (1 << 0):
+						case textkey.left:
 							arr = scr_get_tutorial_key(global.key_left);
 							break;
-						case (2 << 0):
+						case textkey.right:
 							arr = scr_get_tutorial_key(global.key_right);
 							break;
-						case (9 << 0):
+						case textkey.shoot:
 							arr = scr_get_tutorial_key(global.key_shoot);
 							break;
-						case (10 << 0):
+						case textkey.taunt:
 							arr = scr_get_tutorial_key(global.key_taunt);
 							break;
-						case (11 << 0):
+						case textkey.groundpound:
                             arr = scr_get_tutorial_key(global.key_down);
                             break;
-                        case (12 << 0):
+                        case textkey.superjump:
                             arr = scr_get_tutorial_key(global.key_up);
                             break;
 					}
@@ -339,18 +381,19 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 					}
 				}
 				
-				if argument5 != (0 << 0)
+				if effect != texteffect.normal
 				{
-					switch argument5
+					switch effect
 					{
-						case (1 << 0):
+						case texteffect.shake:
 							cx += irandom_range(-2, 2);
 							cy += irandom_range(-2, 2);
 							break;
-						case (2 << 0):
+						
+						case texteffect.updown:
 							var o = 1;
-							if (argument6 != -4)
-								o = argument6.offset;
+							if (option_struct != -4)
+								o = option_struct.offset;
 							var d = ((i % 2) == 0) ? -1 : 1;
 							var _dir = floor(Wave(-1, 1, 0.1, 0));
 							cy += (_dir * d * o);
@@ -368,7 +411,7 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 						draw_set_halign(1);
 						draw_set_valign(1);
 						draw_set_font(global.tutorialfont);
-						draw_text_color(cx + 16, cy + 14, txt, c_black, c_black, c_black, c_black, argument4);
+						draw_text_color(cx + 16, cy + 14, txt, c_black, c_black, c_black, c_black, alpha);
 						draw_set_font(f);
 						draw_set_halign(0);
 						draw_set_valign(0);
@@ -376,42 +419,42 @@ function scr_draw_text_arr(argument0, argument1, argument2, argument3 = c_white,
 				}
 				break;
 			
-			case (2 << 0):
+			case texttype.array:
 				var val2 = b[4];
-				scr_draw_text_arr(cx, cy, val2, argument3, argument4, val);
+				scr_draw_text_arr(cx, cy, val2, color, alpha, val);
 				break;
 			
-			case (0 << 0):
-				if argument5 == 0
-					draw_text_color(cx, cy, val, argument3, argument3, argument3, argument3, argument4);
+			case texttype.normal:
+				if effect == texteffect.normal
+					draw_text_color(cx, cy, val, color, color, color, color, alpha);
 				else
 				{
 					var x2 = 0;
-					switch argument5
+					switch effect
 					{
-						case (1 << 0): // TODO
+						case texteffect.shake:
 							for (var j = 1; j <= string_length(val); j++)
 							{
 								var q = string_char_at(val, j);
 								var s1 = irandom_range(-1, 1);
 								var s2 = irandom_range(-1, 1);
-								draw_text_color(cx + x2 + s1, cy + s2, q, argument3, argument3, argument3, argument3, argument4);
+								draw_text_color(cx + x2 + s1, cy + s2, q, color, color, color, color, alpha);
 								x2 += string_width(q);
 							}
 							break;
 						
-						case (2 << 0):
+						case texteffect.updown:
 							for (j = 1; j <= string_length(val); j++)
 							{
 								q = string_char_at(val, j);
 								var s = 0;
 								o = 1;
-								if (argument6 != -4)
-									o = argument6.offset;
+								if (option_struct != -4)
+									o = option_struct.offset;
 								d = ((j % 2) == 0) ? -1 : 1;
 								_dir = floor(Wave(-1, 1, 0.1, 0));
 								s += (_dir * d * o);
-								draw_text_color(cx + x2, cy + s, q, argument3, argument3, argument3, argument3, argument4);
+								draw_text_color(cx + x2, cy + s, q, color, color, color, color, alpha);
 								x2 += string_width(q);
 							}
 							break;

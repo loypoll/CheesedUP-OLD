@@ -15,7 +15,7 @@ draw_set_halign(0);
 draw_set_valign(0);
 draw_set_font(font);
 draw_set_color(text_color);
-scr_draw_text_arr(xx + text_contentpad, yy + text_contentpad, text_arr, text_color, 1, 2, 
+scr_draw_text_arr(xx + text_contentpad, yy + text_contentpad, text_arr, text_color, 1, texteffect.updown, 
 {
 	offset: 1
 });
