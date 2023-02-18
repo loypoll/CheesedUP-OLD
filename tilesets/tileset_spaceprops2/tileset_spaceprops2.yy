@@ -16,10 +16,10 @@
     "path": "folders/Tile Sets/Space.yy",
   },
   "spriteId": {
-    "name": "spr_spaceprops2",
-    "path": "sprites/spr_spaceprops2/spr_spaceprops2.yy",
+    "name": "tile_spaceprops2",
+    "path": "sprites/tile_spaceprops2/tile_spaceprops2.yy",
   },
-  "spriteNoExport": false,
+  "spriteNoExport": true,
   "textureGroupId": {
     "name": "spacegroup",
     "path": "texturegroups/spacegroup",

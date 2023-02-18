@@ -14,8 +14,10 @@ layer_depth("Assets_BG2", 202);
 layer_depth("Assets_FG", -350);
 layer_depth("Assets_FG1", -350);
 layer_depth("Assets_FG2", -351);
+
 var asset_layers = ["Assets_BG", "Assets_BG1", "Assets_BG2", "Assets_stillBG1", "Assets_FG", "Assets_FG1", "Assets_FG2"];
 var asset_parallax = [[0.1, 0.1], [0.05, 0.05], [0.1, 0.1], [0.05, 0], [-0.1, -0.1], [-0.05, -0.05], [-0.1, -0.1]];
+
 for (var i = 0; i < array_length(asset_layers); i++)
 {
 	var b = asset_layers[i];
@@ -37,6 +39,7 @@ for (var i = 0; i < array_length(asset_layers); i++)
 		}
 	}
 }
+
 if (global.hidetiles)
 {
 	layer_set_visible("Tiles_BG", false);
@@ -50,6 +53,7 @@ if (global.hidetiles)
 	layer_set_visible("Tiles_Foreground2", false);
 	layer_set_visible("Tiles_Foreground3", false);
 }
+
 bg_scrollx = 0;
 bg_scrolly = 0;
 bg_scrollxoffset = layer_get_x("Backgrounds_scroll");
@@ -113,6 +117,7 @@ fg_1yoffset = layer_get_y("Foreground_1");
 fg_2xoffset = layer_get_x("Foreground_2");
 fg_2yoffset = layer_get_y("Foreground_2");
 fg_speed = layer_get_vspeed("Foreground_1");
+
 layer_depth("Foreground_1", -400);
 layer_depth("Foreground_Ground1", -401);
 layer_depth("Backgrounds_Ground1", 250);
