@@ -9,6 +9,8 @@ no strings attached.
 - The [Steamworks SDK](https://partner.steamgames.com/downloads/steamworks_sdk.zip).
 Download it somewhere in your computer and change the Steamworks extension's config to match the path. Pizza Tower's Steam App ID is `2231450`, but it's not really necessary to change. It'll default to Spacewar.
 
-# Whoooooooooops!
+# Inaccuracies
 - The `string_split` function had to be renamed to `_string_split` because of a new built-in
 function conflicting with the original name.
+
+- `tower_finalhallwaytitlecard`'s Creation Code had to be changed slightly to prevent a crash.
