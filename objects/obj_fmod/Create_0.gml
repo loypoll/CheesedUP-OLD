@@ -32,7 +32,7 @@ global.steam_api = false;
 // returns sound instance (number)
 #macro sound_instance_destroy fmod_event_instance_release // sound instance
 #macro sound_instance_play fmod_event_instance_play // sound instance
-#macro sound_instance_stop fmod_event_instance_stop // sound instance
+#macro sound_instance_stop fmod_event_instance_stop // sound instance, force (bool)
 #macro sound_instance_move fmod_event_instance_set_3d_attributes // sound instance, x, y
 #macro sound_instance_set_parameter fmod_event_instance_set_parameter // sound instance, parameter, value, instant
 #macro sound_instance_get_parameter fmod_event_instance_get_parameter // sound instance, parameter
@@ -60,6 +60,7 @@ global.steam_api = false;
 #macro sfx_tvswitchback "event:/sfx/ui/tvswitchback"
 #macro sfx_lightswitch "event:/sfx/ui/lightswitch"
 #macro sfx_fileselect "event:/sfx/ui/fileselect"
+#macro sfx_percentagemove "event:/sfx/ui/percentagemove"
 
 #macro sfx_voice_peppinoangryscream "event:/sfx/voice/peppinoangryscream"
 #macro sfx_voice_peppinoangryscream2 "event:/sfx/voice/peppinoangryscream2"
