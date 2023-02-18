@@ -51,7 +51,7 @@ function get_percentage()
 	for (i = 0; i < array_length(bossranks); i++)
 	{
 		boss = bossranks[i];
-		r = ini_read_string("Ranks", level, "d");
+		r = ini_read_string("Ranks", boss, "d");
 		if (r == "p")
 			extracount++;
 		count += ds_map_find_value(_rank_map, r);
