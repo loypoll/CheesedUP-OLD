@@ -8,6 +8,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 			b = image_blend;
 			var a = other.alpha[identifier];
 			var shd = false;
+			
 			if (identifier == afterimage.firemouth)
 			{
 				a = alpha;
@@ -31,8 +32,8 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				a = alpha;
 				shd = true;
 				shader_set(shd_color_afterimage);
-				shader_set_uniform_f(other.shd_color_red, 0.8745098039215686);
-				shader_set_uniform_f(other.shd_color_green, 0.1843137254901961);
+				shader_set_uniform_f(other.shd_color_red, (223 / 255));
+				shader_set_uniform_f(other.shd_color_green, (47 / 255));
 				shader_set_uniform_f(other.shd_color_blue, 0);
 			}
 			else if (identifier == afterimage.fakepep)

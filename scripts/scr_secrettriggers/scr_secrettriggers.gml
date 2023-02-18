@@ -1,20 +1,20 @@
-function secret_add(argument0, argument1)
+function secret_add(create_func, func)
 {
 	with (obj_secretmanager)
 	{
-		ds_list_add(secrettriggers, [argument1]);
-		if (argument0 != -4)
-			method(id, argument0)();
+		ds_list_add(secrettriggers, [func]);
+		if (create_func != -4)
+			method(id, create_func)();
 	}
 }
-function secret_add_touchall(argument0, argument1, argument2)
+function secret_add_touchall(room, trigger, touchallID)
 {
 	with (obj_secretmanager)
-		ds_list_add(touchall, [argument0, argument1, argument2]);
+		ds_list_add(touchall, [room, trigger, touchallID]);
 }
-function secret_add_touchall_requirement(argument0, argument1)
+function secret_add_touchall_requirement(idx, trigger)
 {
-	touchrequirement[argument0] = [argument1, false];
+	touchrequirement[idx] = [trigger, false];
 }
 function secret_check_touchall()
 {
@@ -46,37 +46,34 @@ function secret_check_touchall()
 	}
 	return false;
 }
-function secret_check_trigger(argument0)
+function secret_check_trigger(secret_trigger)
 {
 	var _found = false;
 	with (obj_secrettrigger)
 	{
-		if (trigger == argument0 && active)
+		if (trigger == secret_trigger && active)
 			_found = true;
 	}
 	if (_found)
-		trace(
-		{
-			found: _found
-		});
+		trace({found: _found});
 	return _found;
 }
-function secret_open_portal(argument0)
+function secret_open_portal(secret_trigger)
 {
 	with (obj_secretportal)
 	{
-		if (trigger == argument0 && ds_list_find_index(global.saveroom, id) == -1 && !place_meeting(x, y, obj_marbleblock) && !place_meeting(x, y, obj_secretblock) && !place_meeting(x, y, obj_secretbigblock) && !place_meeting(x, y, obj_secretmetalblock) && !place_meeting(x, y, obj_secretdestroyable))
+		if (trigger == secret_trigger && ds_list_find_index(global.saveroom, id) == -1 && !place_meeting(x, y, obj_marbleblock) && !place_meeting(x, y, obj_secretblock) && !place_meeting(x, y, obj_secretbigblock) && !place_meeting(x, y, obj_secretmetalblock) && !place_meeting(x, y, obj_secretdestroyable))
 			active = true;
 	}
 }
-function secret_close_portal(argument0, argument1 = false)
+function secret_close_portal(secret_trigger, fast = false)
 {
 	with (obj_secretportal)
 	{
-		if (trigger == argument0 && sprite_index != spr_secretportal_close)
+		if (trigger == secret_trigger && sprite_index != spr_secretportal_close)
 		{
 			sprite_index = spr_secretportal_close;
-			if (!argument1)
+			if (!fast)
 				image_index = 0;
 			else
 				image_index = 14;
@@ -84,9 +81,9 @@ function secret_close_portal(argument0, argument1 = false)
 		}
 	}
 }
-function secret_close_portalID(argument0)
+function secret_close_portalID(portalID)
 {
-	with (argument0)
+	with (portalID)
 	{
 		sprite_index = spr_secretportal_close;
 		image_index = 14;

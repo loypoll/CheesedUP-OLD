@@ -28,10 +28,12 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 						other.visible = false;
 				}
 				break;
+			
 			case afterimage.heatattack:
 				x += hsp;
 				y += vsp;
 				break;
+			
 			case afterimage.firemouth:
 			case afterimage.blue:
 			case afterimage.fakepep:
@@ -40,6 +42,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				if (alpha <= 0 && alarm[0] != 0)
 					alarm[0] = 0;
 				break;
+			
 			case afterimage.blur:
 				alpha -= spd;
 				x += hsp;

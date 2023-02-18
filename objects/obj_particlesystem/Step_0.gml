@@ -9,7 +9,7 @@ if (!ds_list_empty(global.debris_list))
 			{
 				if (vsp < 20)
 					vsp += grav;
-				if (type == 1)
+				if (type == part_type.fadeout)
 				{
 					vsp = 0;
 					alpha -= 0.05;
@@ -19,7 +19,7 @@ if (!ds_list_empty(global.debris_list))
 				var _destroy = false;
 				if (animated)
 				{
-					if (image_index > (image_number - 1))
+					if (image_index > image_number - 1)
 					{
 						image_index = frac(image_index);
 						if (destroyonanimation)
@@ -56,7 +56,7 @@ if (!ds_list_empty(global.collect_list))
 				x += hsp;
 				y += vsp;
 				image_index += 0.35;
-				if (image_index > (image_number - 1))
+				if (image_index > image_number - 1)
 					image_index = frac(image_index);
 				outofx = x < 140;
 				outofy = y < 120;

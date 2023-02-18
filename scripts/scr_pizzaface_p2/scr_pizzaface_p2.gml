@@ -1,3 +1,13 @@
+enum pizzaface_p2_attacks
+{
+	pullinglevel,
+	tv,
+	gun,
+	ratball,
+	pinup
+}
+
+// functions
 function scr_pizzaface_p2_init_sounds()
 {
 	snd_haywire = fmod_event_create_instance("event:/sfx/pizzahead/haywire");
@@ -103,6 +113,7 @@ function scr_pizzaface_p2_fall()
 			if (y < -600)
 				substate = states.fall;
 			break;
+		
 		case states.fall:
 			sprite_index = spr_pizzahead_piledriver;
 			if (y < 200)
@@ -146,6 +157,7 @@ function scr_pizzaface_p2_fall()
 				}
 			}
 			break;
+		
 		case states.transition:
 			instance_create_unique(x, y, obj_pizzaheadTVspawner);
 			if (x != targetplayer.x && floor(image_index) >= 31)
@@ -293,9 +305,10 @@ function scr_pizzaface_p2_fishing()
 			until (lastattack != t || array_length(availablemoves) <= 1)
 			lastattack = t;
 			idle_buffer = 0;
+			
 			switch (t)
 			{
-				case (0 << 0):
+				case pizzaface_p2_attacks.pullinglevel:
 					state = states.pizzahead_pullinglevel;
 					substate = 0;
 					sprite_index = spr_pizzahead_pullinglevel1;
@@ -308,20 +321,23 @@ function scr_pizzaface_p2_fishing()
 						shake_mag_acc = 1 / room_speed;
 					}
 					break;
-				case (3 << 0):
+				
+				case pizzaface_p2_attacks.ratball:
 					brick = true;
 					state = states.throwing;
 					brickcount = 1;
 					sprite_index = spr_pizzahead_ratballstart;
 					image_index = 0;
 					break;
-				case (1 << 0):
+				
+				case pizzaface_p2_attacks.tv:
 					state = states.pizzahead_portraitthrow;
 					shot = false;
 					sprite_index = spr_pizzahead_grabTV;
 					image_index = 0;
 					break;
-				case (2 << 0):
+				
+				case pizzaface_p2_attacks.gun:
 					sprite_index = spr_pizzahead_grabgun;
 					image_index = 0;
 					state = states.shotgun;
@@ -339,7 +355,8 @@ function scr_pizzaface_p2_fishing()
 					substate = states.boss_mini;
 					attackbuffer = 1;
 					break;
-				case (4 << 0):
+				
+				case pizzaface_p2_attacks.pinup:
 					sprite_index = spr_pizzahead_pinup;
 					image_index = 0;
 					state = states.animation;

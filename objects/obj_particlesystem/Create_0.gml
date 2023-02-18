@@ -20,6 +20,11 @@ enum particle
 	
 	enum_length // not to be used
 }
+enum part_type
+{
+	normal,
+	fadeout
+}
 
 if (instance_number(obj_particlesystem) > 1)
 {

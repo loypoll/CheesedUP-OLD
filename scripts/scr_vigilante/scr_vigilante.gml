@@ -1,3 +1,19 @@
+enum vigi_attack
+{
+	revolver,
+	dynamite,
+	cow,
+	estampede,
+	flamethrower,
+	machinegun,
+	bazooka,
+	crate,
+	mach,
+	wait,
+	reload
+}
+
+// functions
 function vigilante_start_attack(phase, wastedhits)
 {
 	attack_list[phase][wastedhits] = array_create(0);

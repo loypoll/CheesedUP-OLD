@@ -155,7 +155,7 @@ switch state
 					{
 						fmod_event_instance_stop(obj_music.music.event, 1)
 						fmod_event_one_shot("event:/sfx/ui/fileselect")
-						state = (98 << 0)
+						state = states.victory
 						sprite_index = confirmspr
 					}
 				}

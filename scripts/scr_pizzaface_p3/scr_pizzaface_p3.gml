@@ -1,10 +1,20 @@
-function scr_pizzaface_p3_init_attack(argument0)
+enum pizzaface_p3_attacks
 {
-	attack_list[argument0] = array_create(0);
+	jump,
+	swing,
+	punch,
+	stomp,
+	laugh
 }
-function scr_pizzaface_p3_add_attack(argument0, argument1, argument2)
+
+// functions
+function scr_pizzaface_p3_init_attack(wastedhits)
 {
-	array_push(attack_list[argument0], [argument1, argument2]);
+	attack_list[wastedhits] = array_create(0);
+}
+function scr_pizzaface_p3_add_attack(wastedhits, attack, cooldown)
+{
+	array_push(attack_list[wastedhits], [attack, cooldown]);
 }
 function scr_pizzaface_p3_init_sounds()
 {
@@ -75,6 +85,7 @@ function scr_pizzaface_p3_arenaintro()
 				}
 			}
 			break;
+		
 		case states.idle:
 			image_index = image_number - 1;
 			if (obj_player1.sprite_index != obj_player1.spr_victory)
@@ -95,6 +106,7 @@ function scr_pizzaface_p3_arenaintro()
 				}
 			}
 			break;
+		
 		case states.jump:
 			if (floor(image_index) >= 50)
 			{
@@ -206,12 +218,13 @@ function scr_pizzaface_p3_walk()
 				currentattack = 0;
 			switch (attack)
 			{
-				case 4:
+				case pizzaface_p3_attacks.laugh:
 					laugh = cooldown;
 					fmod_event_one_shot("event:/sfx/voice/pizzahead");
 					vulnerable_buffer = laugh;
 					break;
-				case 0:
+				
+				case pizzaface_p3_attacks.jump:
 					laugh = 0;
 					vulnerable_buffer = 0;
 					state = states.jump;
@@ -223,14 +236,16 @@ function scr_pizzaface_p3_walk()
 					walkspeed = abs(hsp);
 					vsp = -(14 - floor(wastedhits * 0.5));
 					break;
-				case 1:
+				
+				case pizzaface_p3_attacks.swing:
 					state = states.boss_swinging;
 					fmod_event_one_shot_3d("event:/sfx/pizzahead/swingstart", x, y);
 					sprite_index = spr_pizzahead_swingingstart;
 					image_index = 0;
 					attackspeed = 0;
 					break;
-				case 2:
+				
+				case pizzaface_p3_attacks.punch:
 					state = states.punch;
 					fmod_event_one_shot_3d("event:/sfx/pizzahead/bigpunchstart", x, y);
 					sprite_index = spr_pizzahead_bigpunch;
@@ -238,7 +253,8 @@ function scr_pizzaface_p3_walk()
 					instance_destroy(hitboxID);
 					hitboxID = -4;
 					break;
-				case 3:
+				
+				case pizzaface_p3_attacks.stomp:
 					state = states.boss_stomp;
 					fmod_event_one_shot_3d("event:/sfx/pizzahead/giantstomp", x, y);
 					sprite_index = spr_pizzahead_stomp;
@@ -447,6 +463,7 @@ function scr_pizzaface_p3_supergrab()
 						}
 					}
 					break;
+				
 				case states.finishingblow:
 					if (floor(image_index) >= 3 && !shot)
 					{

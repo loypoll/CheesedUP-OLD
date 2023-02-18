@@ -11,6 +11,7 @@ switch (introstate)
 			introstate++;
 		}
 		break;
+	
 	case 1:
 		image_index = image_number - 1;
 		if (introbuffer > 0)
@@ -23,6 +24,7 @@ switch (introstate)
 			introstate++;
 		}
 		break;
+	
 	case 2:
 		if (floor(image_index) >= 21 && !keyshot)
 		{
@@ -51,6 +53,7 @@ switch (introstate)
 			image_xscale = 1;
 		}
 		break;
+	
 	case 3:
 		with (obj_player)
 		{
@@ -66,7 +69,8 @@ switch (introstate)
 			introstate++;
 		}
 		break;
-	case states.grabbed:
+	
+	case 4:
 		with (obj_player)
 		{
 			if (floor(image_index) == (image_number - 1) && sprite_index != spr_player_gnomecutscene1)
@@ -95,6 +99,7 @@ switch (introstate)
 			}
 		}
 		break;
+	
 	case 5:
 		with (obj_player)
 		{
@@ -156,6 +161,7 @@ switch (introstate)
 			}
 		}
 		break;
+	
 	case 6:
 		with (obj_player)
 		{
@@ -176,6 +182,7 @@ switch (introstate)
 			introbuffer = 50;
 		}
 		break;
+	
 	case 7:
 		with (obj_player)
 		{
@@ -197,6 +204,7 @@ switch (introstate)
 			}
 		}
 		break;
+	
 	case 8:
 		with (obj_player1)
 		{
@@ -220,6 +228,7 @@ switch (introstate)
 			introbuffer = 150;
 		}
 		break;
+	
 	case 9:
 		if (floor(image_index) == (image_number - 1))
 		{
@@ -265,6 +274,7 @@ switch (introstate)
 			introbuffer = 0;
 		}
 		break;
+	
 	case 10:
 		if (floor(image_index) == (image_number - 1))
 			image_index = image_number - 3;
@@ -285,6 +295,7 @@ switch (introstate)
 			}
 		}
 		break;
+	
 	case 11:
 		if (floor(image_index) == (image_number - 1))
 			image_index = image_number - 3;
@@ -305,6 +316,7 @@ switch (introstate)
 			instance_create(0, 0, obj_pizzahead_blackfade);
 		}
 		break;
+	
 	case 12:
 		if (floor(image_index) == (image_number - 1))
 			image_index = image_number - 3;
@@ -332,6 +344,7 @@ switch (introstate)
 			introstate++;
 		}
 		break;
+	
 	case 13:
 		if (floor(image_index) == (image_number - 1))
 			image_index = image_number - 3;

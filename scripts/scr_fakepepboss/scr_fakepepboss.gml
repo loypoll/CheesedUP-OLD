@@ -1,98 +1,112 @@
-function fakepep_set_attack(argument0, argument1, argument2, argument3, argument4)
+enum fakepep_attacks
 {
-	if (argument3 != 0 && argument4 == 0)
-		argument4 = argument3;
-	attack_list[argument0][argument1] = 
+	grabclone,
+	bodyslamclone,
+	machclone,
+	superjumpclone,
+	flailingclone,
+	tauntclone,
+	stunned
+}
+
+// attacks
+function fakepep_set_attack(phase, wastedhits, _attack, _cooldown, _deformed_timer)
+{
+	if (_cooldown != 0 && _deformed_timer == 0)
+		_deformed_timer = _cooldown;
+	
+	attack_list[phase][wastedhits] = 
 	{
-		attack: argument2,
-		cooldown: argument3,
-		deformed_timer: argument4
+		attack: _attack,
+		cooldown: _cooldown,
+		deformed_timer: _deformed_timer
 	};
 }
-function fakepep_get_attack(argument0, argument1)
+function fakepep_get_attack(phase, wastedhits)
 {
-	return attack_list[argument0][argument1];
+	return attack_list[phase][wastedhits];
 }
-function fakepep_start_projectiles(argument0, argument1)
+function fakepep_start_projectiles(phase, wastedhits)
 {
-	projectile_list[argument0][argument1] = array_create(0);
+	projectile_list[phase][wastedhits] = array_create(0);
 }
-function fakepep_add_projectile(argument0, argument1, argument2)
+function fakepep_add_projectile(phase, wastedhits, projectile_struct)
 {
-	array_push(projectile_list[argument0][argument1], argument2);
+	array_push(projectile_list[phase][wastedhits], projectile_struct);
 }
-function fakepep_get_projectile(argument0, argument1, argument2)
+function fakepep_get_projectile(phase, wastedhits, projectile)
 {
-	return projectile_list[argument0][argument1][argument2];
+	return projectile_list[phase][wastedhits][projectile];
 }
-function fakepep_add_grabclone(argument0, argument1, argument2, argument3)
+function fakepep_add_grabclone(phase, wastedhits, _direction, _cooldown)
 {
-	fakepep_add_projectile(argument0, argument1, 
+	fakepep_add_projectile(phase, wastedhits, 
 	{
-		attack: (0 << 0),
-		cooldown: argument3,
-		direction: argument2
+		attack: fakepep_attacks.grabclone,
+		cooldown: _cooldown,
+		direction: _direction
 	});
 }
-function fakepep_add_bodyslamclone(argument0, argument1, argument2, argument3)
+function fakepep_add_bodyslamclone(phase, wastedhits, _direction, _cooldown)
 {
-	fakepep_add_projectile(argument0, argument1, 
+	fakepep_add_projectile(phase, wastedhits, 
 	{
-		attack: (1 << 0),
-		cooldown: argument3,
-		direction: argument2
+		attack: fakepep_attacks.bodyslamclone,
+		cooldown: _cooldown,
+		direction: _direction
 	});
 }
-function fakepep_add_machclone(argument0, argument1, argument2, argument3, argument4)
+function fakepep_add_machclone(phase, wastedhits, _direction, _cooldown, _bodyslam)
 {
-	fakepep_add_projectile(argument0, argument1, 
+	fakepep_add_projectile(phase, wastedhits, 
 	{
-		attack: (2 << 0),
-		cooldown: argument3,
-		direction: argument2,
-		bodyslam: argument4
+		attack: fakepep_attacks.machclone,
+		cooldown: _cooldown,
+		direction: _direction,
+		bodyslam: _bodyslam
 	});
 }
-function fakepep_add_superjumpclones(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7 = 100, argument8 = 850, argument9 = 402)
+function fakepep_add_superjumpclones(phase, wastedhits, _direction, _timer, _size, _emptyspot, _cooldown, _x1 = 100, _x2 = 850, _y = 402)
 {
-	if (argument2 == -1)
-		argument5 = argument4 - argument5;
-	fakepep_add_projectile(argument0, argument1, 
+	if (_direction == -1)
+		_emptyspot = _size - _emptyspot;
+	
+	fakepep_add_projectile(phase, wastedhits, 
 	{
-		attack: (3 << 0),
-		cooldown: argument6,
-		direction: argument2,
-		timer: argument3,
-		size: argument4,
-		emptyspot: argument5,
-		x1: argument7,
-		x2: argument8,
-		y: argument9
+		attack: fakepep_attacks.superjumpclone,
+		cooldown: _cooldown,
+		direction: _direction,
+		timer: _timer,
+		size: _size,
+		emptyspot: _emptyspot,
+		x1: _x1,
+		x2: _x2,
+		y: _y
 	});
 }
-function fakepep_add_flailingclone(argument0, argument1, argument2, argument3, argument4 = 100, argument5 = 850, argument6 = 402)
+function fakepep_add_flailingclone(phase, wastedhits, _direction, _cooldown, _x1 = 100, _x2 = 850, _y = 402)
 {
-	fakepep_add_projectile(argument0, argument1, 
+	fakepep_add_projectile(phase, wastedhits, 
 	{
-		attack: (4 << 0),
-		cooldown: argument3,
-		direction: argument2,
-		x1: argument4,
-		x2: argument5,
-		y: argument6
+		attack: fakepep_attacks.flailingclone,
+		cooldown: _cooldown,
+		direction: _direction,
+		x1: _x1,
+		x2: _x2,
+		y: _y
 	});
 }
-function fakepep_add_tauntclones(argument0, argument1, argument2, argument3, argument4, argument5 = 125, argument6 = 825, argument7 = 402)
+function fakepep_add_tauntclones(phase, wastedhits, _vsp1, _vsp2, _cooldown, _x1 = 125, _x2 = 825, _y = 402)
 {
-	fakepep_add_projectile(argument0, argument1, 
+	fakepep_add_projectile(phase, wastedhits, 
 	{
-		attack: (5 << 0),
-		cooldown: argument4,
-		vsp1: argument2,
-		vsp2: argument3,
-		x1: argument5,
-		x2: argument6,
-		y: argument7
+		attack: fakepep_attacks.tauntclone,
+		cooldown: _cooldown,
+		vsp1: _vsp1,
+		vsp2: _vsp2,
+		x1: _x1,
+		x2: _x2,
+		y: _y
 	});
 }
 function scr_fakepep_init_sounds()
@@ -173,10 +187,11 @@ function scr_fakepepboss_do_projectiles(argument0, argument1)
 	var _attack = fakepep_get_projectile(argument0, argument1, currentprojectile);
 	currentprojectile += 1;
 	deformed_cooldown = _attack.cooldown;
+	
 	switch (_attack.attack)
 	{
-		case (0 << 0):
-		case (1 << 0):
+		case fakepep_attacks.grabclone:
+		case fakepep_attacks.bodyslamclone:
 			with (instance_create(x, y, obj_fakepepclone))
 			{
 				attack = _attack;
@@ -198,7 +213,8 @@ function scr_fakepepboss_do_projectiles(argument0, argument1)
 				}
 			}
 			break;
-		case (2 << 0):
+		
+		case fakepep_attacks.machclone:
 			var yy = 402;
 			var xx = x;
 			if (_attack.direction == 1)
@@ -211,7 +227,8 @@ function scr_fakepepboss_do_projectiles(argument0, argument1)
 				image_xscale = _attack.direction;
 			}
 			break;
-		case (3 << 0):
+		
+		case fakepep_attacks.superjumpclone:
 			if (!instance_exists(obj_fakepepspawner))
 			{
 				with (instance_create(0, 0, obj_fakepepspawner))
@@ -228,7 +245,8 @@ function scr_fakepepboss_do_projectiles(argument0, argument1)
 				deformed_cooldown = 0;
 			}
 			break;
-		case (4 << 0):
+		
+		case fakepep_attacks.flailingclone:
 			xx = _attack.x1;
 			if (_attack.direction == -1)
 				xx = _attack.x2;
@@ -247,7 +265,8 @@ function scr_fakepepboss_do_projectiles(argument0, argument1)
 				}
 			}
 			break;
-		case (5 << 0):
+		
+		case fakepep_attacks.tauntclone:
 			with (instance_create(_attack.x1, _attack.y, obj_fakepepclone))
 			{
 				attack = _attack;
@@ -380,7 +399,7 @@ function scr_fakepepboss_walk()
 			var attack = fakepep_get_attack(phase - 1, wastedhits);
 			switch (attack.attack)
 			{
-				case 0:
+				case fakepep_attacks.grabclone:
 					if (abs(x - targetplayer.x) <= 330)
 					{
 						fmod_event_instance_play(snd_grab);
@@ -395,7 +414,8 @@ function scr_fakepepboss_walk()
 						cooldown = attack.cooldown;
 					}
 					break;
-				case 1:
+				
+				case fakepep_attacks.bodyslamclone:
 					if (ix != 0)
 						image_xscale = ix;
 					sprite_index = spr_fakepeppino_bodyslamstart;
@@ -403,7 +423,8 @@ function scr_fakepepboss_walk()
 					state = states.jump;
 					cooldown = attack.cooldown;
 					break;
-				case 2:
+				
+				case fakepep_attacks.machclone:
 					if (ix != 0)
 						image_xscale = ix;
 					attackspeed = 0;
@@ -412,7 +433,8 @@ function scr_fakepepboss_walk()
 					machcooldown = 220;
 					cooldown = attack.cooldown;
 					break;
-				case 3:
+				
+				case fakepep_attacks.superjumpclone:
 					if (ix != 0)
 						image_xscale = ix;
 					attackspeed = 0;
@@ -424,7 +446,8 @@ function scr_fakepepboss_walk()
 					sprite_index = spr_fakepeppino_superjumpstart;
 					image_index = 0;
 					break;
-				case 4:
+				
+				case fakepep_attacks.flailingclone:
 					if (ix != 0)
 						image_xscale = ix;
 					attackspeed = 0;
@@ -434,7 +457,8 @@ function scr_fakepepboss_walk()
 					image_index = 0;
 					cooldown = attack.cooldown;
 					break;
-				case 5:
+				
+				case fakepep_attacks.tauntclone:
 					fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
 					create_particle(x, y, particle.highjumpcloud2);
 					state = states.backbreaker;
@@ -445,7 +469,8 @@ function scr_fakepepboss_walk()
 					cooldown = attack.cooldown;
 					hsp = 0;
 					break;
-				case 6:
+				
+				case fakepep_attacks.stunned:
 					sprite_index = spr_fakepeppino_vulnerable;
 					state = states.stun;
 					stunned = 5000;
@@ -676,6 +701,7 @@ function scr_fakepepboss_mach2()
 				sprite_index = spr_fakepeppino_machwall;
 			}
 			break;
+		
 		case 1:
 			sprite_index = spr_fakepeppino_machwall;
 			if (attackspeed < 6)
@@ -689,6 +715,7 @@ function scr_fakepepboss_mach2()
 				sprite_index = spr_fakepeppino_machceiling;
 			}
 			break;
+		
 		case 2:
 			sprite_index = spr_fakepeppino_machceiling;
 			hsp = image_xscale * attackspeed;
@@ -709,6 +736,7 @@ function scr_fakepepboss_mach2()
 				hsp = 0;
 			}
 			break;
+		
 		case 3:
 			sprite_index = spr_fakepeppino_machwalldown;
 			if (attackspeed < 6)
@@ -736,17 +764,20 @@ function scr_fakepepboss_Sjumpprep()
 		steppybuffer = 0;
 		piledrivereffect = 0;
 		sjumpbuffer = 0;
+		
 		switch (superjumpdir)
 		{
 			case 0:
 				hithsp = image_xscale * h;
 				hitvsp = -v;
 				break;
+			
 			case 1:
 				hithsp = image_xscale * h;
 				hitvsp = v;
 				break;
 		}
+		
 		if (hitvsp < 0)
 			sprite_index = spr_fakepeppino_superjump;
 		else if (hitvsp > 0)

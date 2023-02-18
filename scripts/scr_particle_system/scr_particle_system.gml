@@ -31,7 +31,7 @@ function create_debris(_x, _y, _sprite, _animated = false)
 		vsp: random_range(-5, -2),
 		alpha: 1,
 		grav: 0.4,
-		type: (0 << 0),
+		type: part_type.normal,
 		animated: _animated,
 		destroyonanimation: false
 	};

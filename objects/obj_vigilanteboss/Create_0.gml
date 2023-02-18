@@ -5,21 +5,6 @@ attack_list = -4;
 currentattack = 0;
 skipintro = false;
 
-enum vigi_attack
-{
-	revolver,
-	dynamite,
-	cow,
-	estampede,
-	flamethrower,
-	machinegun,
-	bazooka,
-	crate,
-	mach,
-	wait,
-	reload
-}
-
 vigilante_start_attack(0, 0);
 vigilante_add_attack(0, 0, vigi_attack.revolver, 25);
 vigilante_add_attack(0, 0, vigi_attack.revolver, 25);

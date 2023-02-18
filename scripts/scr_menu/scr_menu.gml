@@ -1,3 +1,12 @@
+enum menutype
+{
+	toggle,
+	multiple,
+	press,
+	slide
+}
+
+// functions
 function menu_goto(menu_id)
 {
 	menu = 0;
@@ -12,12 +21,12 @@ function menu_goto(menu_id)
 	}
 	optionselected = 0;
 }
-function create_menu_fixed(_menuid, _anchor, _xpad, _ypad, _backmenu = (0 << 0))
+function create_menu_fixed(_menuid, _anchor, _xpad, _ypad, _backmenu = menus.options)
 {
 	return 
 	{
 		menu_id: _menuid,
-		type: (0 << 0),
+		type: menutype.toggle,
 		anchor: _anchor,
 		xpad: _xpad,
 		ypad: _ypad,
@@ -30,7 +39,7 @@ function add_option_press(_menu, _optionid, _name, _func)
 	var b = 
 	{
 		option_id: _optionid,
-		type: (2 << 0),
+		type: menutype.press,
 		func: _func,
 		name: _name
 	};
@@ -42,7 +51,7 @@ function add_option_toggle(_menu, _optionid, _name, _onchanged = noone)
 	var b = 
 	{
 		option_id: _optionid,
-		type: (0 << 0),
+		type: menutype.toggle,
 		value: false,
 		name: _name,
 		on_changed: _onchanged
@@ -55,7 +64,7 @@ function add_option_multiple(_menu, _optionid, _name, _values, _onchanged = noon
 	var b = 
 	{
 		option_id: _optionid,
-		type: (1 << 0),
+		type: menutype.multiple,
 		values: _values,
 		value: 0,
 		name: _name,
@@ -78,7 +87,7 @@ function add_option_slide(_menu, _optionid, _name, _onmove = noone, _onchanged =
 	var b = 
 	{
 		option_id: _optionid,
-		type: (3 << 0),
+		type: menutype.slide,
 		value: 100,
 		moved: false,
 		name: _name,

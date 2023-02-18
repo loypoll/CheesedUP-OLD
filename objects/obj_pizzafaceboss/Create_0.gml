@@ -6,7 +6,18 @@ superslambuffer = 0;
 attackbuffer = 120;
 floatdir = 1;
 facepart_count = 4;
-baddie_arr = [[obj_cheeseslime, spr_slimestun], [obj_forknight, spr_forknight_stun], [obj_badrat, spr_badrat_stun], [obj_banditochicken, spr_banditochicken_stun], [obj_spitcheese, spr_spitcheese_stun], [obj_ninja, spr_ninja_stun], [obj_minijohn, spr_minijohn_stun], [obj_minijohn, spr_minijohn_stun], [obj_minijohn, spr_minijohn_stun], [obj_minijohn, spr_minijohn_stun]];
+baddie_arr = [
+	[obj_cheeseslime, spr_slimestun],
+	[obj_forknight, spr_forknight_stun],
+	[obj_badrat, spr_badrat_stun],
+	[obj_banditochicken, spr_banditochicken_stun],
+	[obj_spitcheese, spr_spitcheese_stun],
+	[obj_ninja, spr_ninja_stun],
+	[obj_minijohn, spr_minijohn_stun],
+	[obj_minijohn, spr_minijohn_stun],
+	[obj_minijohn, spr_minijohn_stun],
+	[obj_minijohn, spr_minijohn_stun]
+];
 nosespit = true;
 nosecount = 1;
 bighitbox = instance_create(x, y, obj_pizzafacehitbox);
@@ -29,7 +40,7 @@ prevhp = elitehit;
 turned = false;
 wastedhits = 0;
 sprite_index = spr_pizzaface;
-state = states.arenaintro
+state = states.arenaintro;
 introbuffer = 80;
 hitboxID = -4;
 attackspeed = 0;
