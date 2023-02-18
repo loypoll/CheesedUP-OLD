@@ -67,11 +67,11 @@ if (state == states.walk)
 		{
 			patroltimer = patroltimermax;
 			patrolfound = true;
-			alarm[5] = 30;
+			alarm[5] = 60;
 		}
 	}
 	else if (alarm[5] == -1)
-		alarm[5] = 30;
+		alarm[5] = 60;
 }
 if (state == states.walk && point_in_camera(x, y, view_camera[0]))
 {

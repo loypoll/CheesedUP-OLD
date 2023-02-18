@@ -281,7 +281,7 @@ function scr_hurtplayer(player)
 				var txt = lang_get_value("peppinohurt");
 				if (isgustavo)
 					txt = lang_get_value("gustavohurt");
-				txt = embed_value_string(txt, [global.player_damage]);
+				txt = embed_value_string(txt, [damage_n]);
 				create_transformation_tip(txt);
 			}
 			var loseamount = 50 * (global.stylethreshold + 1);

@@ -370,6 +370,7 @@ add_achievement_notify("pal_pp", -4, function(data)
 		var n = ini_read_real("Game", "beaten", 0);
 		n++;
 		ini_write_real("Game", "beaten", n);
+		gamesave_async_save_options();
 		obj_savesystem.ini_str_options = ini_close();
 		if (n >= 2)
 			palette_unlock(name, "pp", 12, spr_peppattern7);

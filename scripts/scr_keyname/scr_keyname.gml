@@ -159,7 +159,7 @@ function scr_keyname(_key)
 			return "DECIMAL";
 			break;
 		case -1:
-			return "PRESS A KEY";
+			return lang_get_value("option_press_key");
 			break;
 	}
 	

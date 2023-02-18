@@ -197,21 +197,27 @@ function scr_steam_unlock_achievement(_achievement)
 function palette_unlock(_achievement, _palettename, _paletteselect, _texture = noone)
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
+	var _unlocked = ini_read_real("Palettes", _palettename, false);
 	ini_write_real("Palettes", _palettename, true);
 	obj_savesystem.ini_str_options = ini_close();
 	gamesave_async_save_options();
+	
 	var b = achievement_get_struct(_achievement);
-	with (b)
+	with b
 	{
-		if (!unlocked)
+		if !unlocked && !_unlocked
+		{
 			unlocked = true;
-	}
-	with (instance_create(0, 0, obj_cheftask))
-	{
-		achievement_spr = noone;
-		sprite_index = spr_newclothes;
-		paletteselect = _paletteselect;
-		texture = _texture;
+			with instance_create(0, 0, obj_cheftask)
+			{
+				achievement_spr = noone;
+				sprite_index = spr_newclothes;
+				paletteselect = _paletteselect;
+				texture = _texture;
+			}
+		}
+		if _unlocked
+			unlocked = true;
 	}
 }
 function achievement_reset_variables(achievement_array)

@@ -275,9 +275,9 @@ function ratmount_dotaunt()
 		tauntstoredstate = state;
 		tauntstoredvsp = vsp;
 		state = states.backbreaker;
-		scr_create_parryhitbox();
 		if (!supercharged || !key_up)
 		{
+			scr_create_parryhitbox();
 			fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
 			sprite_index = spr_player_ratmounttaunt;
 			image_index = irandom(sprite_get_number(sprite_index) - 1);

@@ -21,7 +21,7 @@ function scr_dotaunt()
 			if (state != states.backbreaker && sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4 && sprite_index != spr_player_ratmountsupertaunt)
 			{
 				tauntstoredmovespeed = movespeed;
-				tauntstoredvsp = vsp;
+				tauntstoredvsp = vsp + grav;
 				tauntstoredsprite = sprite_index;
 				tauntstoredstate = state;
 			}
@@ -40,6 +40,7 @@ function scr_dotaunt()
 			}
 			else
 			{
+				scr_create_parryhitbox();
 				fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
 				taunttimer = 20;
 				sprite_index = spr_taunt;

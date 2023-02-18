@@ -4,7 +4,7 @@
 lang = "en"
 display_name = "ENGLISH"
 custom_fonts = false
-game_version = "V1.0.212"
+game_version = "V1.0.213"
 
 # --------------------
 # CUSTOM FONT EXAMPLE
@@ -180,6 +180,9 @@ option_on = "ON"
 option_off = "OFF"
 option_yes = "YES"
 option_no = "NO"
+option_none = "NONE"
+option_press = "PRESS A BUTTON"
+option_press_key = "PRESS A KEY"
 
 option_master = "MASTER"
 option_music = "MUSIC"
@@ -268,6 +271,7 @@ room_towerpizzaland = "PIZZALAND"
 room_towergraffiti = "MR CAR"
 room_towerravine = "RAVINE"
 room_towerruin = "OLD TOWER"
+room_towerfinalhallway = "CONTROL ROOM"
 room_soundtest = "SOUND TEST"
 room_outside = "OUTSIDE"
 # ---------------
