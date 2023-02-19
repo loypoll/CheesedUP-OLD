@@ -16,4 +16,4 @@ Download it somewhere in your computer and change the Steamworks extension's con
 - The `string_split` function had to be renamed to `_string_split` because of a new built-in
 function conflicting with the original name.
 
-- `tower_finalhallwaytitlecard`'s Creation Code had to be changed slightly to prevent a crash.
+- `tower_finalhallwaytitlecard`'s Creation Code had to be slightly changed to prevent a crash.
