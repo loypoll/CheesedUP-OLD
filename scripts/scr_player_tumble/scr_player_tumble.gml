@@ -90,7 +90,7 @@ function scr_player_tumble()
 		movespeed = 0;
 		if (sprite_index == spr_tumble || sprite_index == spr_tumblestart)
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+			sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 			state = states.bump;
 			landAnim = false;
 			sprite_index = spr_tumbleend;
@@ -101,7 +101,7 @@ function scr_player_tumble()
 		}
 		else
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/splat", x, y);
+			sound_play_3d("event:/sfx/pep/splat", x, y);
 			state = states.bump;
 			image_index = 0;
 			sprite_index = spr_player_wallsplat;

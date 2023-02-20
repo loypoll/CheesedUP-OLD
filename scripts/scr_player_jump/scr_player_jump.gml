@@ -64,7 +64,7 @@ function state_player_jump()
 		{
 			if (place_meeting(x + xscale, y, obj_solid))
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
+				sound_play_3d("event:/sfx/pep/step", x, y);
 				sprite_index = spr_playerN_wallclingstart;
 				image_index = 0;
 				state = states.hang;
@@ -136,7 +136,7 @@ function state_player_jump()
 	{
 		if (vsp > 0 && (!key_attack || sprite_index == spr_suplexbump))
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
+			sound_play_3d("event:/sfx/pep/step", x, y);
 			if (key_attack || sprite_index == spr_shotgunshoot)
 				landAnim = false;
 			if (sprite_index == spr_mortdoublejump || sprite_index == spr_mortdoublejumpstart)
@@ -231,7 +231,7 @@ function state_player_jump()
 		}
 		else
 		{
-			fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
+			sound_play_3d("event:/sfx/enemies/killingblow", x, y);
 			sprite_index = spr_shotgunjump1;
 			image_index = 0;
 			state = states.freefall;
@@ -253,7 +253,7 @@ function state_player_jump()
 		image_speed = 0.35;
 	if (grounded && (sprite_index == spr_facestomp || sprite_index == spr_freefall))
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_3d("event:/sfx/pep/groundpound", x, y);
 		image_index = 0;
 		sprite_index = spr_bodyslamland;
 		state = states.freefallland;
@@ -431,7 +431,7 @@ function state_player_jump()
 					is_solid = false;
 					image_xscale = other.xscale;
 				}
-				fmod_event_one_shot_3d("event:/sfx/enemies/killingblow", x, y);
+				sound_play_3d("event:/sfx/enemies/killingblow", x, y);
 			}
 			break;
 		case "N":
@@ -530,7 +530,7 @@ function state_pepperman_jump()
 		ladderbuffer--;
 	if (key_taunt2)
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/taunt", x, y);
+		sound_play_3d("event:/sfx/pep/taunt", x, y);
 		taunttimer = 20;
 		tauntstoredmovespeed = movespeed;
 		tauntstoredvsp = vsp;

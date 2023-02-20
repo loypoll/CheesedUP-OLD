@@ -31,7 +31,7 @@ with (other)
 			obj_player2.hallwaydirection = other.image_xscale;
 		}
 		other.visited = true;
-		fmod_event_one_shot("event:/sfx/misc/door");
+		sound_play("event:/sfx/misc/door");
 		with (instance_create(x, y, obj_fadeout))
 		{
 			offload_arr = hall.offload_arr;

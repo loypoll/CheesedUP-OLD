@@ -1,9 +1,9 @@
 if (!global.horse && !instance_exists(obj_jumpscare) && (obj_player1.state == states.normal || obj_player1.state == states.mach1 || obj_player1.state == states.pogo || obj_player1.state == states.mach2 || obj_player1.state == states.mach3 || obj_player1.state == states.Sjumpprep) && sprite_index == spr_doorkey && obj_player1.key_up && obj_player1.grounded && global.key_inv == 1 && place_meeting(x, y, obj_player1))
 {
 	ds_list_add(global.saveroom, id);
-	fmod_event_one_shot_3d("event:/sfx/misc/keyunlock", x, y);
-	fmod_event_one_shot("event:/sfx/misc/cheers");
-	fmod_event_one_shot_3d("event:/sfx/voice/ok");
+	sound_play_3d("event:/sfx/misc/keyunlock", x, y);
+	sound_play("event:/sfx/misc/cheers");
+	sound_play_3d("event:/sfx/voice/ok");
 	obj_player1.state = states.victory;
 	obj_player1.image_index = 0;
 	if (instance_exists(obj_player2) && global.coop == 1)

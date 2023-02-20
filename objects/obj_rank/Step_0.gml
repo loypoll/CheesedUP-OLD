@@ -86,10 +86,10 @@ if (brown)
 					{
 						createmoney[toppin_index] = 1;
 						if toppinvisible
-							fmod_event_one_shot_3d("event:/sfx/misc/kashing", (room_width / 2), (room_height / 2));
+							sound_play_3d("event:/sfx/misc/kashing", (room_width / 2), (room_height / 2));
 					}
 					if toppinvisible
-						fmod_event_one_shot_3d("event:/sfx/misc/toppingot", (room_width / 2), (room_height / 2));
+						sound_play_3d("event:/sfx/misc/toppingot", (room_width / 2), (room_height / 2));
 					toppin_y[toppin_index] = yy;
 					toppin_state = states.transition;
 					brown = 1;

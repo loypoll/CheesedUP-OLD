@@ -77,7 +77,7 @@ if (_move && place_meeting(x, y, playerid) && !playerid.cutscene && playerid.sta
 		image_blend = c_white;
 		//audio_stop_all();
 		stop_music();
-		fmod_event_one_shot("event:/music/timesup");
+		sound_play("event:/music/timesup");
 	}
 	instance_destroy();
 }

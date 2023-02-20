@@ -5,7 +5,7 @@ if (other.state != states.gotoplayer)
 	global.heattime = 60;
 	with (obj_camera)
 		healthshaketime = 60;
-	fmod_event_one_shot("event:/sfx/misc/collectpizza");
+	sound_play("event:/sfx/misc/collectpizza");
 	instance_destroy();
 	var _number = 0;
 	if (global.fill <= 2500)

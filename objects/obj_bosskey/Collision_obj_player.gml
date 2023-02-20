@@ -2,7 +2,7 @@ if (state == states.normal)
 {
 	with (other)
 	{
-		fmod_event_one_shot("event:/sfx/misc/bosskey");
+		sound_play("event:/sfx/misc/bosskey");
 		state = states.gottreasure;
 		sprite_index = spr_gottreasure;
 	}

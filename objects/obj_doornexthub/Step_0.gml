@@ -14,8 +14,8 @@ if (key && (obj_player1.state == states.normal || obj_player1.state == states.ma
 	}
 	image_index = 0;
 	sprite_index = spr_elevatoropening;
-	fmod_event_one_shot_3d("event:/sfx/misc/elevatorstart", x, y);
-	fmod_event_one_shot_3d("event:/sfx/misc/keyunlock", x, y);
+	sound_play_3d("event:/sfx/misc/elevatorstart", x, y);
+	sound_play_3d("event:/sfx/misc/keyunlock", x, y);
 	image_speed = 0.35;
 	obj_player1.sprite_index = obj_player1.spr_victory;
 	obj_player2.sprite_index = obj_player2.spr_victory;

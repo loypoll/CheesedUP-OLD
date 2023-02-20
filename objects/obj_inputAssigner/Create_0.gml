@@ -16,13 +16,23 @@ vibration[1][0] = 0;
 vibration[1][1] = 0;
 vibration[1][2] = 0;
 
-for (var i = 0; i < gamepad_get_device_count(); i++)
+var steamdeck = steam_deck().gamepad_index;
+if steamdeck > -1
 {
-	if gamepad_is_connected(i)
+	device_selected[0] = true;
+	player_input_device[0] = steamdeck;
+	press_start = false;
+}
+else
+{
+	for (var i = 0; i < gamepad_get_device_count(); i++)
 	{
-		device_selected[0] = true;
-		player_input_device[0] = i;
-		press_start = false;
+		if gamepad_is_connected(i)
+		{
+			device_selected[0] = true;
+			player_input_device[0] = i;
+			press_start = false;
+		}
 	}
 }
 

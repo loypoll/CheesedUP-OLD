@@ -66,7 +66,7 @@ function scr_player_climbwall()
 				wallspeed = 0;
 			if (input_buffer_jump > 8)
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/jump", x, y);
+				sound_play_3d("event:/sfx/pep/jump", x, y);
 				input_buffer_jump = 0;
 				key_jump = false;
 				movespeed = 10;
@@ -87,7 +87,7 @@ function scr_player_climbwall()
 				if (!skateboarding)
 				{
 					sprite_index = spr_superjumpland;
-					fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+					sound_play_3d("event:/sfx/pep/groundpound", x, y);
 					image_index = 0;
 					state = states.Sjumpland;
 					machhitAnim = false;
@@ -130,7 +130,7 @@ function scr_player_climbwall()
 			if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
 			{
 				sprite_index = spr_superjumpland;
-				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_3d("event:/sfx/pep/groundpound", x, y);
 				image_index = 0;
 				state = states.Sjumpland;
 				machhitAnim = false;

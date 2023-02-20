@@ -162,14 +162,14 @@ function scr_player_mach2()
 	{
 		image_index = 0;
 		state = states.machslide;
-		fmod_event_one_shot_3d("event:/sfx/pep/break", x, y);
+		sound_play_3d("event:/sfx/pep/break", x, y);
 		sprite_index = spr_machslidestart;
 	}
 	else if (!key_attack && movespeed < 8 && grounded && vsp > 0 && skateboarding == 0)
 		state = states.normal;
 	if (move == -xscale && movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0)
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/machslideboost", x, y);
+		sound_play_3d("event:/sfx/pep/machslideboost", x, y);
 		image_index = 0;
 		state = states.machslide;
 		sprite_index = spr_machslideboost;
@@ -198,7 +198,7 @@ function scr_player_mach2()
 			is_solid = false;
 			image_xscale = other.xscale;
 		}
-		fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+		sound_play_3d("event:/sfx/enemies/kill", x, y);
 	}
 	if (key_shoot2 && character == "V" && !instance_exists(dynamite_inst))
 	{
@@ -233,7 +233,7 @@ function scr_player_mach2()
 			var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 			if (_bump)
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/splat", x, y);
+				sound_play_3d("event:/sfx/pep/splat", x, y);
 				state = states.bump;
 				image_index = 0;
 				sprite_index = spr_player_wallsplat;

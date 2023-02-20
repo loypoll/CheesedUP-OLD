@@ -60,10 +60,10 @@ for (var i = 0; i < array_length(collision_list); i++)
 						hithsp = other.image_xscale * 20;
 						hitvsp = -7;
 						image_xscale = -other.image_xscale;
-						fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+						sound_play_3d("event:/sfx/enemies/kill", x, y);
 						if (elitehit <= 1 && phase == 1)
 						{
-							fmod_event_one_shot("event:/sfx/misc/blackoutpunch");
+							sound_play("event:/sfx/misc/blackoutpunch");
 							instance_create_unique(0, 0, obj_blackoutline);
 							instance_create_unique(0, 0, obj_superattackeffect);
 							state = states.phase1hurt;
@@ -109,10 +109,10 @@ for (var i = 0; i < array_length(collision_list); i++)
 							create_debris(other.x, other.y, spr_slimedebris);
 						instance_create(other.x, other.y, obj_parryeffect);
 						scr_sleep(30);
-						fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+						sound_play_3d("event:/sfx/enemies/kill", x, y);
 						if (elitehit <= 1)
 						{
-							fmod_event_one_shot("event:/sfx/misc/blackoutpunch");
+							sound_play("event:/sfx/misc/blackoutpunch");
 							instance_create_unique(0, 0, obj_superattackeffect);
 							instance_create_unique(0, 0, obj_blackoutline);
 							state = states.phase1hurt;
@@ -158,7 +158,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 				{
 					instance_create(other.x, other.y, obj_parryeffect);
 					scr_sleep(30);
-					fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+					sound_play_3d("event:/sfx/enemies/kill", x, y);
 					instance_destroy();
 				}
 				instance_destroy(other);

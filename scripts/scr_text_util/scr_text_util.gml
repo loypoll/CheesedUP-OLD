@@ -38,12 +38,12 @@ function create_transformation_tip(str, save_entry = noone)
 	}
 	instance_destroy(obj_transfotip);
 	var b = -4;
-	with (instance_create(0, 0, obj_transfotip))
+	with instance_create(0, 0, obj_transfotip)
 	{
 		text = str;
 		b = id;
 	}
-	if (save_entry != -4)
+	if save_entry != -4
 		ini_write_real("Tip", save_entry, true);
 	obj_savesystem.ini_str = ini_close();
 	return b;

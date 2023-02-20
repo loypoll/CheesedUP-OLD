@@ -7,7 +7,7 @@ function screen_apply_size()
 {
 	with (obj_screensizer)
 	{
-		if steam_utils_is_steam_running_on_steam_deck()
+		if steam_deck().is_steamdeck
 			screen_apply_fullscreen(true);
 		else
 		{
@@ -17,8 +17,6 @@ function screen_apply_size()
 				gameframe_restore();
 		
 			window_set_size(get_resolution_width(global.option_resolution, aspect_ratio), get_resolution_height(global.option_resolution, aspect_ratio));
-			if steam_utils_is_steam_running_on_steam_deck() // redundant - but go off, paid dev.
-				screen_apply_fullscreen(true);
 			alarm[0] = 2;
 		}
 	}
@@ -68,7 +66,7 @@ function reset_blendmode()
 }
 function reset_shader_fix()
 {
-	if (shader_current() != -1)
+	if shader_current() != -1
 		shader_reset();
 	shader_set(shd_alphafix);
 }

@@ -13,13 +13,11 @@ for (var i = 0; i < array_length(banks); i++)
 		trace("Could not load sample data: ", b);
 }
 global.sound_map = ds_map_create();
-global.steam_api = false;
+sound_cache = ds_map_create();
 
 #region macros
 
 // function aliases
-#macro sound_play fmod_event_one_shot // event (string)
-#macro sound_play_3d fmod_event_one_shot_3d // event (string), x, y
 #macro sound_get_length fmod_event_get_length // event (string)
 #macro sound_pause_all fmod_event_instance_set_paused_all // enabled (bool)
 // pauses ALL sounds.
@@ -61,6 +59,7 @@ global.steam_api = false;
 #macro sfx_lightswitch "event:/sfx/ui/lightswitch"
 #macro sfx_fileselect "event:/sfx/ui/fileselect"
 #macro sfx_percentagemove "event:/sfx/ui/percentagemove"
+#macro sfx_back "event:/sfx/ui/back"
 
 #macro sfx_voice_peppinoangryscream "event:/sfx/voice/peppinoangryscream"
 #macro sfx_voice_peppinoangryscream2 "event:/sfx/voice/peppinoangryscream2"

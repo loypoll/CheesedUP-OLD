@@ -5,7 +5,7 @@ if (image_alpha == 1 && !place_meeting(x, y, obj_metalblock))
 	global.heattime = 60;
 	with (obj_camera)
 		healthshaketime = 60;
-	fmod_event_one_shot("event:/sfx/misc/collectpizza");
+	sound_play("event:/sfx/misc/collectpizza");
 	instance_destroy();
 	global.combotime = 60;
 	var val = heat_calculate(value);

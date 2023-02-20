@@ -1,7 +1,7 @@
 function scr_shotgunshoot()
 {
 	input_buffer_shoot = 0;
-	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	with (instance_create(x, y, obj_pistoleffect))
 		image_xscale = other.xscale;
 	sprite_index = spr_shotgunshoot;

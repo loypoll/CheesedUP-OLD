@@ -11,4 +11,4 @@ y = 290;
 ystart = y;
 very = false;
 afterimages = array_create(0);
-fmod_event_one_shot("event:/sfx/ui/comboup");
+sound_play("event:/sfx/ui/comboup");

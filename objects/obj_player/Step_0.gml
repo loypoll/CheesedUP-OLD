@@ -598,8 +598,8 @@ if (sprite_index == spr_noise_phasetrans1P && image_index > 24)
 {
 	if (!noisebossscream)
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/screamboss", x, y);
-		fmod_event_one_shot_3d("event:/sfx/voice/noisescream", obj_noiseboss.x, obj_noiseboss.y);
+		sound_play_3d("event:/sfx/pep/screamboss", x, y);
+		sound_play_3d("event:/sfx/voice/noisescream", obj_noiseboss.x, obj_noiseboss.y);
 		noisebossscream = true;
 	}
 }
@@ -626,7 +626,7 @@ if (global.pistol && state != states.animation && state != states.actor && state
 		if (_sound && !pistolchargesound)
 		{
 			pistolchargesound = true;
-			fmod_event_one_shot_3d("event:/sfx/pep/revolvercharge", x, y);
+			sound_play_3d("event:/sfx/pep/revolvercharge", x, y);
 		}
 		else if (!_sound)
 			pistolchargesound = false;
@@ -858,7 +858,7 @@ if (supercharge > 9 && state != states.backbreaker)
 		if (ini_read_real("Game", "supertaunt", false) == 0)
 			create_transformation_tip(lang_get_value("supertaunttip"));
 		ini_close();
-		fmod_event_one_shot("event:/sfx/pep/gotsupertaunt");
+		sound_play("event:/sfx/pep/gotsupertaunt");
 	}
 	supercharged = true;
 }
@@ -1038,7 +1038,7 @@ if (object_index == obj_player1)
 	if (global.combotime <= 0 && global.combo >= 1)
 	{
 		if (global.combo >= 1)
-			fmod_event_one_shot("event:/sfx/misc/kashingcombo");
+			sound_play("event:/sfx/misc/kashingcombo");
 		global.savedcombo = global.combo;
 		global.combotime = 0;
 		global.combo = 0;
@@ -1186,7 +1186,7 @@ if ((y > (room_height + 300) || y < -800) && !place_meeting(x, y, obj_verticalha
 		visible = false;
 		hsp = 0;
 		vsp = 0;
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, room_height - 100);
+		sound_play_3d("event:/sfx/pep/groundpound", x, room_height - 100);
 		with (instance_create(x, y + 540, obj_technicaldifficulty))
 		{
 			playerid = other.id;

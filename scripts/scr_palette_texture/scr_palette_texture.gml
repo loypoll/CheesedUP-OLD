@@ -48,54 +48,54 @@ function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col 
 	else
 		gui = false;
 	
-	if shader_current() == global.Pal_Shader
-		pal_swap_set(spr_peppalette, 1, false);
+	var palshader = shader_current();
+	reset_shader_fix();
 	
-	if !surface_exists(global.palettesurface)
-		global.palettesurface = surface_create(960, 540);
-	if !surface_exists(global.palettesurfaceclip)
-		global.palettesurfaceclip = surface_create(960, 540);
+	var surfw = sprite_get_width(sprite) * abs(xscale), surfh = sprite_get_height(sprite) * abs(yscale);
 	
-	var cx = camera_get_view_x(view_camera[0]);
-	var cy = camera_get_view_y(view_camera[0]);
-	if gui
-	{
-		cx = 0;
-		cy = 0;
-	}
+	surface_free(global.palettesurface);
+	surface_free(global.palettesurfaceclip);
+	global.palettesurface = surface_create(surfw, surfh);
+	global.palettesurfaceclip = surface_create(surfw, surfh);
 	
 	surface_set_target(global.palettesurfaceclip);
-	draw_clear_alpha(0, 0);
-	draw_rectangle_color(0, 0, 960, 540, c_white, c_white, c_white, c_white, false);
-	gpu_set_blendmode(3);
-	draw_sprite_ext(sprite, subimg, x - cx, y - cy, xscale, yscale, rot, c_white, 1);
-	if (gui)
-		reset_blendmode();
-	else
-		gpu_set_blendmode(0);
+	draw_clear(c_white);
+	gpu_set_blendmode(bm_subtract);
+	
+	var xo = sprite_get_xoffset(sprite);
+	var yo = sprite_get_yoffset(sprite);
+	
+	draw_set_flash(true, c_white);
+	draw_sprite_ext(sprite, subimg, xo * abs(xscale), yo * abs(yscale), xscale, yscale, rot, c_white, 1);
+	draw_set_flash(false);
+	
+	gpu_set_blendmode(bm_normal);
+	
 	surface_reset_target();
 	surface_set_target(global.palettesurface);
+	draw_clear_alpha(c_black, 0);
+	
 	var sw = sprite_get_width(sprite);
 	var sh = sprite_get_height(sprite);
 	var xs = sw / sprite_get_width(texture);
 	var ys = sh / sprite_get_height(texture);
-	var xo = sprite_get_xoffset(sprite);
-	var yo = sprite_get_yoffset(sprite);
-	var xx = x - cx - xo;
-	var yy = y - cy - yo;
 	
-	if (xscale < 0)
-		xx = ((x - cx) + xo) - sw;
-	if (yscale < 0)
-		yy = ((y - cy) + yo) - sh;
+	var xx = -xo;
+	var yy = -yo;
 	
-	draw_sprite_ext(texture, 0, xx, yy, xs + 4, ys + 4, 0, col, 1);
-	gpu_set_blendmode(3);
+	if xscale < 0
+		xx = xo - sw;
+	if yscale < 0
+		yy = yo - sh;
+	
+	draw_sprite_ext(texture, 0, xx, yy, (xs + 4) * abs(xscale), (ys + 4) * abs(yscale), 0, col, 1);
+	gpu_set_blendmode(bm_subtract);
 	draw_surface(global.palettesurfaceclip, 0, 0);
-	if (gui)
-		reset_blendmode();
-	else
-		gpu_set_blendmode(0);
+	
+	gpu_set_blendmode(bm_normal);
+	
 	surface_reset_target();
-	draw_surface_ext(global.palettesurface, cx, cy, 1, 1, 0, c_white, alpha);
+	draw_surface_ext(global.palettesurface, x - xo * abs(xscale), y - yo * abs(yscale), 1, 1, 0, c_white, alpha);
+	
+	shader_set(palshader);
 }

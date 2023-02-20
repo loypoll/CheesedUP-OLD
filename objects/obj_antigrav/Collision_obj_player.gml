@@ -15,8 +15,8 @@ with (other)
 		}
 		state = states.antigrav;
 		vsp = 0;
-		fmod_event_one_shot("event:/sfx/antigrav/start");
-		fmod_event_one_shot_3d("event:/sfx/misc/bubblestation", x, y);
+		sound_play("event:/sfx/antigrav/start");
+		sound_play_3d("event:/sfx/misc/bubblestation", x, y);
 		with (obj_antigravbubble)
 		{
 			if (playerid == other.id)

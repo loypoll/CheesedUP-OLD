@@ -102,7 +102,7 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
 			global.comboscore += combototal;
 		}
 	}
-	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	repeat (3)
 	{
 		with (create_debris(x, y, spr_slapstar))
@@ -132,7 +132,7 @@ else if (ds_list_find_index(global.baddieroom, id) == -1 && important == 1)
 	instance_create(x, y, obj_baddiegibs);
 	instance_create(x, y, obj_baddiegibs);
 	instance_create(x, y, obj_baddiegibs);
-	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	with (obj_camera)
 	{
 		shake_mag = 3;

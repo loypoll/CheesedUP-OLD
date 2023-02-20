@@ -4,7 +4,7 @@ if (active && sprite_index != spr_secretportal_open && !instance_exists(obj_jump
 	{
 		sprite_index = spr_secretportal_close;
 		image_index = 0;
-		fmod_event_one_shot_3d("event:/sfx/misc/secretenter", x, y);
+		sound_play_3d("event:/sfx/misc/secretenter", x, y);
 	}
 	if (!touched)
 	{

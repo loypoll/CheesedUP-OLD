@@ -53,6 +53,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 			treasurefound = ini_read_real("Treasure", global.leveltosave, false);
 			secretcount = ini_read_real("Secret", global.leveltosave, 0);
 			ini_close();
+			
 			if (!treasurefound)
 			{
 				treasurefound = global.treasure;

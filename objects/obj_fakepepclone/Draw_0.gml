@@ -5,11 +5,11 @@ if (!flash)
 	pal_swap_set(spr_peppalette, obj_player1.paletteselect, false);
 }
 else
-	shader_set(shd_hit);
+	draw_set_flash(true);
 draw_self();
 if (!flash)
 {
 	pal_swap_set(spr_peppalette, 13, false);
 	draw_self();
 }
-shader_reset();
+draw_set_flash(false);

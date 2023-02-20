@@ -66,7 +66,7 @@ function scr_player_Sjump()
 					vsp = -7;
 			}
 		}
-		fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+		sound_play_3d("event:/sfx/pep/groundpound", x, y);
 		image_index = 0;
 		state = states.Sjumpland;
 		machhitAnim = false;
@@ -76,7 +76,7 @@ function scr_player_Sjump()
 		input_buffer_slap = 0;
 		image_index = 0;
 		sprite_index = spr_player_Sjumpcancelstart;
-		fmod_event_one_shot_3d("event:/sfx/pep/superjumpcancel", x, y);
+		sound_play_3d("event:/sfx/pep/superjumpcancel", x, y);
 	}
 	if (sprite_index == spr_player_Sjumpcancelstart)
 	{

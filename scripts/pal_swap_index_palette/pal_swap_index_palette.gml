@@ -24,6 +24,4 @@ function pal_swap_index_palette()
 		surface_reset_target();
 		surface_free(_surface);
 	}
-	else
-		show_debug_message("That palette has already been indexed.");
 }

@@ -1,5 +1,13 @@
+/// @description restart
 var rm = roomtorestart;
+
 scr_pause_stop_sounds();
+if REMIX
+{
+	clear_particles();
+	sound_stop_all(true);
+}
+
 global.levelattempts++;
 ds_list_clear(global.saveroom);
 ds_list_clear(global.baddieroom);

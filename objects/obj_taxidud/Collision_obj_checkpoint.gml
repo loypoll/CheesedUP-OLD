@@ -4,7 +4,7 @@ if (playerid.visible == 0)
 	global.failcutscene = false;
 	with (obj_player1)
 	{
-		fmod_event_one_shot("event:/sfx/misc/taxibeep");
+		sound_play("event:/sfx/misc/taxibeep");
 		state = states.normal;
 		instance_create(x, y, obj_genericpoofeffect);
 		cutscene = false;

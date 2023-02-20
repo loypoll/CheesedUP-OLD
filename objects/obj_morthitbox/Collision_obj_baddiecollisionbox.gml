@@ -2,8 +2,8 @@ if (!other.baddieID.invincible && other.baddieID.destroyable && playerid.state !
 {
 	with (other)
 	{
-		fmod_event_one_shot_3d("event:/sfx/pep/punch", x, y);
-		fmod_event_one_shot_3d("event:/sfx/mort/mortslap", x, y);
+		sound_play_3d("event:/sfx/pep/punch", x, y);
+		sound_play_3d("event:/sfx/mort/mortslap", x, y);
 		var lag = 5;
 		baddieID.hitLag = lag;
 		baddieID.hitX = baddieID.x;

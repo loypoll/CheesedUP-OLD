@@ -109,9 +109,9 @@ function state_player_normal()
 				create_particle(x, y + 43, particle.cloudeffect, 0);
 				steppybuffer = 12;
 				if (place_meeting(x, y, obj_poodebris))
-					fmod_event_one_shot_3d("event:/sfx/pep/stepinshit", x, y);
+					sound_play_3d("event:/sfx/pep/stepinshit", x, y);
 				else
-					fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
+					sound_play_3d("event:/sfx/pep/step", x, y);
 			}
 		}
 	}
@@ -138,7 +138,7 @@ function state_player_normal()
 				{
 					idleanim = random_range(0, 100);
 					if (irandom(100) <= 25)
-						fmod_event_one_shot_3d("event:/sfx/voice/myea", x, y);
+						sound_play_3d("event:/sfx/voice/myea", x, y);
 					image_index = 0;
 					if (idleanim <= 16)
 						sprite_index = spr_idle1;

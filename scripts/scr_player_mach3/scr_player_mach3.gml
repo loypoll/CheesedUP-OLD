@@ -118,14 +118,14 @@ function scr_player_mach3()
 			if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0 && (character == "P" || character == "N")) || ((character == "S" && (move == 0 || move != xscale) && grounded) && fightball == 0))
 			{
 				sprite_index = spr_machslidestart;
-				fmod_event_one_shot_3d("event:/sfx/pep/break", x, y);
+				sound_play_3d("event:/sfx/pep/break", x, y);
 				state = states.machslide;
 				image_index = 0;
 				launched = false;
 			}
 			if (move == -xscale && grounded && vsp > 0 && !launched && (character == "P" || character == "N") && fightball == 0 && sprite_index != spr_dashpadmach)
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/machslideboost", x, y);
+				sound_play_3d("event:/sfx/pep/machslideboost", x, y);
 				sprite_index = spr_mach3boost;
 				state = states.machslide;
 				image_index = 0;
@@ -217,8 +217,8 @@ function scr_player_mach3()
 					if (!fightball)
 					{
 						sprite_index = spr_hitwall;
-						fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-						fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+						sound_play_3d("event:/sfx/pep/groundpound", x, y);
+						sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 						hsp = 0;
 						flash = false;
 						state = states.bump;
@@ -234,8 +234,8 @@ function scr_player_mach3()
 						with (obj_player)
 						{
 							sprite_index = spr_hitwall;
-							fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-							fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+							sound_play_3d("event:/sfx/pep/groundpound", x, y);
+							sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 							hsp = 0;
 							flash = false;
 							state = states.bump;
@@ -368,13 +368,13 @@ function scr_player_mach3()
 			if (((!key_attack && fightball == 0) && grounded && vsp > 0) || ((character == "S" && (move == 0 || move != xscale) && grounded) && fightball == 0))
 			{
 				sprite_index = spr_machslidestart;
-				fmod_event_one_shot_3d("event:/sfx/pep/break", x, y);
+				sound_play_3d("event:/sfx/pep/break", x, y);
 				state = states.machslide;
 				image_index = 0;
 			}
 			if (move == -xscale && grounded && vsp > 0 && fightball == 0)
 			{
-				fmod_event_one_shot_3d("event:/sfx/pep/machslideboost", x, y);
+				sound_play_3d("event:/sfx/pep/machslideboost", x, y);
 				sprite_index = spr_mach3boost;
 				state = states.machslide;
 				image_index = 0;
@@ -397,8 +397,8 @@ function scr_player_mach3()
 				if (fightball == 0)
 				{
 					sprite_index = spr_hitwall;
-					fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-					fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+					sound_play_3d("event:/sfx/pep/groundpound", x, y);
+					sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 					with (obj_camera)
 					{
 						shake_mag = 20;
@@ -430,8 +430,8 @@ function scr_player_mach3()
 					with (obj_player)
 					{
 						sprite_index = spr_hitwall;
-						fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-						fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+						sound_play_3d("event:/sfx/pep/groundpound", x, y);
+						sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 						with (obj_camera)
 						{
 							shake_mag = 20;
@@ -466,8 +466,8 @@ function scr_player_mach3()
 				if (fightball == 0)
 				{
 					sprite_index = spr_hitwall;
-					fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-					fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+					sound_play_3d("event:/sfx/pep/groundpound", x, y);
+					sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 					with (obj_camera)
 					{
 						shake_mag = 20;
@@ -499,8 +499,8 @@ function scr_player_mach3()
 					with (obj_player)
 					{
 						sprite_index = spr_hitwall;
-						fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-						fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+						sound_play_3d("event:/sfx/pep/groundpound", x, y);
+						sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 						with (obj_camera)
 						{
 							shake_mag = 20;
@@ -542,7 +542,7 @@ function scr_player_mach3()
 					is_solid = false;
 					image_xscale = other.xscale;
 				}
-				fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+				sound_play_3d("event:/sfx/enemies/kill", x, y);
 			}
 			if (key_shoot2 && character == "V" && !instance_exists(dynamite_inst))
 			{
@@ -651,8 +651,8 @@ function scr_player_mach3()
 			{
 				pizzapepper = 0;
 				sprite_index = spr_hitwall;
-				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
-				fmod_event_one_shot_3d("event:/sfx/pep/bumpwall", x, y);
+				sound_play_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 				with (obj_camera)
 				{
 					shake_mag = 20;

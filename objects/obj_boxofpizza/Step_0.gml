@@ -9,7 +9,7 @@ with (obj_player)
 			obj_player1.lastroom = room;
 			obj_player2.lastroom = room;
 			other.depth = -10;
-			fmod_event_one_shot_3d("event:/sfx/pep/box", x, y);
+			sound_play_3d("event:/sfx/pep/box", x, y);
 			obj_player1.box = true;
 			obj_player2.box = true;
 			mach2 = 0;
@@ -49,7 +49,7 @@ with (obj_player)
 		{
 			obj_player1.lastroom = room;
 			obj_player2.lastroom = room;
-			fmod_event_one_shot_3d("event:/sfx/pep/box", x, y);
+			sound_play_3d("event:/sfx/pep/box", x, y);
 			other.depth = -10;
 			obj_player1.box = true;
 			obj_player2.box = true;

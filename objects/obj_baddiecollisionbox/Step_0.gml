@@ -19,7 +19,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 			var _playerindex = (object_index == obj_player1) ? 1 : 2;
 			if (instance_exists(other.baddieID) && y < other.baddieID.y && other.baddieID.stompbuffer <= 0 && attacking == 0 && !global.kungfu && sprite_index != spr_player_mach2jump && ((state == states.boots && vsp > 0) || state == states.jump || (isgustavo && ratmount_movespeed < 12 && state == states.ratmountjump) || state == states.mach1 || state == states.grab) && vsp > 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
 			{
-				fmod_event_one_shot_3d("event:/sfx/enemies/stomp", x, y);
+				sound_play_3d("event:/sfx/enemies/stomp", x, y);
 				image_index = 0;
 				other.baddieID.stompbuffer = 15;
 				if (other.baddieID.object_index != obj_tank)
@@ -191,7 +191,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 					case 0:
 						pogospeedprev = false;
 						other.baddieID.vsp = -3;
-						fmod_event_one_shot_3d("event:/sfx/enemies/stomp", x, y);
+						sound_play_3d("event:/sfx/enemies/stomp", x, y);
 						other.baddieID.state = states.stun;
 						if (other.baddieID.stunned < 100)
 							other.baddieID.stunned = 100;
@@ -223,7 +223,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 				other.baddieID.stuntouchbuffer = 15;
 				with (other.baddieID)
 				{
-					fmod_event_one_shot_3d("event:/sfx/pep/mach2bump", x, y);
+					sound_play_3d("event:/sfx/pep/mach2bump", x, y);
 					xscale = 0.8;
 					yscale = 1.3;
 					instance_create(x, y, obj_bangeffect);
@@ -256,7 +256,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 			{
 				if (instance_exists(other.baddieID) && y < (other.baddieID.y - 50) && attacking == 0 && state != states.handstandjump && other.baddieID.state != states.grabbed && sprite_index != spr_player_mach2jump && (state == states.jump || state == states.mach1 || (state == states.grab && sprite_index != spr_swingding)) && vsp > 0 && (other.baddieID.vsp >= 0 || other.baddieID.object_index == obj_farmerbaddie || other.baddieID.object_index == obj_farmerbaddie2 || other.baddieID.object_index == obj_farmerbaddie3) && sprite_index != spr_stompprep && !other.baddieID.invincible)
 				{
-					fmod_event_one_shot_3d("event:/sfx/enemies/stomp", x, y);
+					sound_play_3d("event:/sfx/enemies/stomp", x, y);
 					if (x != other.baddieID.x)
 						other.baddieID.image_xscale = -sign(other.baddieID.x - x);
 					image_index = 0;

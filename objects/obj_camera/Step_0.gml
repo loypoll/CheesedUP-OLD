@@ -144,6 +144,7 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
 			var ty = target.y;
 			if (target.state == states.backtohub)
 				ty = target.backtohubstarty;
+			
 			if (target.cutscene || (target.collision_flags & colflag.secret) > 0)
 			{
 				if (player.state == states.actor && room == tower_pizzafacehall)
@@ -175,6 +176,7 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
 				chargecamera = Approach(chargecamera, 0, 10);
 			else
 				chargecamera = Approach(chargecamera, 0, 6);
+			
 			var cam_width = camera_get_view_width(view_camera[0]);
 			var cam_height = camera_get_view_height(view_camera[0]);
 			if (targetgolf != -4 && !instance_exists(targetgolf))
@@ -185,8 +187,11 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
 				{
 					var cam_x = (tx - (cam_width / 2)) + chargecamera + p2pdistancex;
 					var cam_y = ty - (cam_height / 2) - 50;
-					cam_x = clamp(cam_x, 0, room_width - cam_width);
-					cam_y = clamp(cam_y, 0, room_height - cam_height);
+					if !safe_get(obj_shell, "WC_oobcam")
+					{
+						cam_x = clamp(cam_x, 0, room_width - cam_width);
+						cam_y = clamp(cam_y, 0, room_height - cam_height);
+					}
 					camera_zoom(1, 0.035);
 				}
 				else if (obj_player2.state != states.titlescreen)
@@ -224,10 +229,15 @@ if (instance_exists(player) && !lock && player.state != states.timesup && player
 			}
 			cx = cam_x + (cam_width / 2);
 			cy = cam_y + (cam_height / 2);
-			if (cam_width > room_width)
-				cam_x += ((cam_width - room_width) / 2);
-			if (cam_height > room_height)
-				cam_y += ((cam_height - room_height) / 2);
+			
+			if !safe_get(obj_shell, "WC_oobcam")
+			{
+				if (cam_width > room_width)
+					cam_x += ((cam_width - room_width) / 2);
+				if (cam_height > room_height)
+					cam_y += ((cam_height - room_height) / 2);
+			}
+			
 			camera_set_view_pos(view_camera[0], cam_x, cam_y + irandom_range(-shake_mag, shake_mag));
 			break;
 		

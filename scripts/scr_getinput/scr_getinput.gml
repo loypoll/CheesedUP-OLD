@@ -51,10 +51,16 @@ function scr_check_groundpound2()
 	return ((gp && key_down) || key_groundpound2);
 }
 
-function scr_getinput()
+function scr_getinput(is_menu = false)
 {
 	if instance_exists(obj_debugcontroller) && obj_debugcontroller.active
 		exit;
+	if safe_get(obj_shell, "isOpen")
+	or (global.in_menu && !is_menu)
+	{
+		scr_init_input();
+		exit;
+	}
 	
 	var _dvc = obj_inputAssigner.player_input_device[0];
 	gamepad_set_axis_deadzone(_dvc, global.gamepad_deadzone);

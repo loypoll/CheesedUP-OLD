@@ -6,7 +6,7 @@ if (noshake == 0)
 	instance_create(x, y, obj_baddiegibs);
 	instance_create(x, y, obj_baddiegibs);
 	instance_create(x, y, obj_baddiegibs);
-	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	with (obj_camera)
 	{
 		shake_mag = 3;

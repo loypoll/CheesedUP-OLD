@@ -1,7 +1,7 @@
 if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
 {
 	notification_push(notifs.pizzaboy_dead, [room]);
-	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	instance_create(x, y, obj_slapstar);
 	instance_create(x, y, obj_slapstar);
 	instance_create(x, y, obj_slapstar);

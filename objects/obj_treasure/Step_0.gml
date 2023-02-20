@@ -31,7 +31,7 @@ if (player == 0 && place_meeting(x, y, obj_player))
 				{
 					other.alarm[0] = 150;
 					state = states.gottreasure;
-					fmod_event_one_shot("event:/sfx/misc/foundtreasure");
+					sound_play("event:/sfx/misc/foundtreasure");
 				}
 				other.got = true;
 				other.x = x - 18;

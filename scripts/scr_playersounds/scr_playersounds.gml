@@ -28,7 +28,7 @@ function scr_playersounds()
 					transformationsnd = true;
 					if (irandom(100) <= 70)
 						fmod_event_instance_play(snd_voicetransfo);
-					fmod_event_one_shot_3d("event:/sfx/misc/transfo", x, y);
+					sound_play_3d("event:/sfx/misc/transfo", x, y);
 				}
 			}
 			else if (transformationsnd)
@@ -36,7 +36,7 @@ function scr_playersounds()
 				transformationsnd = false;
 				if (irandom(100) <= 70)
 					fmod_event_instance_play(snd_voiceouttransfo);
-				fmod_event_one_shot_3d("event:/sfx/misc/detransfo", x, y);
+				sound_play_3d("event:/sfx/misc/detransfo", x, y);
 			}
 		}
 		fmod_event_instance_set_3d_attributes(snd_voiceouttransfo, x, y);

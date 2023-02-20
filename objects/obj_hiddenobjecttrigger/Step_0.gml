@@ -11,4 +11,4 @@ if (place_meeting(x, y, obj_player))
 	}
 }
 if (_sound)
-	fmod_event_one_shot("event:/sfx/misc/collectgiantpizza");
+	sound_play("event:/sfx/misc/collectgiantpizza");

@@ -54,7 +54,7 @@ switch (state)
 			else
 			{
 				if (other.sprite_index == spr_sirnose_suck)
-					fmod_event_one_shot_3d("event:/sfx/misc/sniffbump", other.x, other.y);
+					sound_play_3d("event:/sfx/misc/sniffbump", other.x, other.y);
 				other.sprite_index = spr_sirnose_idle;
 			}
 		}

@@ -56,7 +56,7 @@ function scr_player_barrel()
 		if (key_attack)
 		{
 			movespeed = xscale * 7;
-			fmod_event_one_shot_3d("event:/sfx/barrel/start", x, y);
+			sound_play_3d("event:/sfx/barrel/start", x, y);
 			with (instance_create(x, y, obj_jumpdust))
 				image_xscale = other.xscale;
 			state = states.barrelslide;
@@ -86,7 +86,7 @@ function scr_player_barrel()
 		{
 			create_particle(x, y + 43, particle.cloudeffect, 0);
 			steppybuffer = 14;
-			fmod_event_one_shot_3d("event:/sfx/pep/step", x, y);
+			sound_play_3d("event:/sfx/pep/step", x, y);
 		}
 	}
 }

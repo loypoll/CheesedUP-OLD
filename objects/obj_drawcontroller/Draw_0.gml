@@ -48,7 +48,7 @@ with (obj_heatafterimage)
 		draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.xscale, obj_player1.yscale, obj_player1.angle, c_white, alpha);
 	}
 }
-shader_set(shd_hit);
+draw_set_flash(true);
 with (obj_baddie)
 {
 	var _stun = 0;
@@ -79,6 +79,7 @@ for (i = 0; i < array_length(flash_arr); i++)
 			event_perform(8, 0);
 	}
 }
+draw_set_flash(false);
 shader_set(global.Pal_Shader);
 pal_swap_set(spr_peppalette, 0, false);
 with (obj_pizzagoblinbomb)
@@ -108,10 +109,10 @@ with (obj_sausageman_dead)
 		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha);
 	}
 }
-shader_set(shd_hit);
+draw_set_flash(true);
 with (obj_player)
 {
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
 		draw_sprite_ext(sprite_index, image_index, x, y, xscale, yscale, image_angle, image_blend, image_alpha);
 }
-shader_reset();
+draw_set_flash(false);

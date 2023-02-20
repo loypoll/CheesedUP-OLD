@@ -4,7 +4,7 @@ if (image_index == 1 && global.panic == false && room != war_13)
 	{
 		if (state == states.comingoutdoor && floor(image_index) == (image_number - 2))
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+			sound_play_3d("event:/sfx/pep/groundpound", x, y);
 			GamepadSetVibration(0, 1, 1, 0.9);
 			GamepadSetVibration(1, 1, 1, 0.9);
 			with (obj_player1)

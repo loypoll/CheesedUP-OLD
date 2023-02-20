@@ -7,7 +7,7 @@ if (myplayer.state != states.hurt)
 	{
 		parry_lethal = other.lethal;
 		if (state != states.parry)
-			fmod_event_one_shot_3d("event:/sfx/pep/parry", x, y);
+			sound_play_3d("event:/sfx/pep/parry", x, y);
 		state = states.parry;
 		if (!isgustavo)
 			sprite_index = choose(spr_parry1, spr_parry2, spr_parry3);

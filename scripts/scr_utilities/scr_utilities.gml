@@ -1,7 +1,3 @@
-// macros
-#macro debug true
-
-// functions
 function Approach(a, b, amount)
 {
 	if (a < b)
@@ -106,6 +102,11 @@ function trace()
 	for (var i = 0; i < argument_count; i++)
 		_string += string(argument[i]);
 	show_debug_message(_string);
+	
+	/*
+	if instance_exists(obj_shell) && variable_instance_exists(obj_shell, "history")
+		array_push(obj_shell.output, string("[DEBUG] {0}", _string));
+	*/
 }
 function concat()
 {

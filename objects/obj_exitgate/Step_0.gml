@@ -19,7 +19,7 @@ if (drop && global.panic)
 		sprite_index = spr_exitgategrabbed;
 		if (snd == 0)
 		{
-			fmod_event_one_shot_3d("event:/sfx/pep/hitwall", x, y);
+			sound_play_3d("event:/sfx/pep/hitwall", x, y);
 			snd = true;
 		}
 	}
@@ -69,7 +69,7 @@ if (drop && global.panic)
 			if (y >= drop_y)
 			{
 				depth = 50;
-				fmod_event_one_shot_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_3d("event:/sfx/pep/groundpound", x, y);
 				y = drop_y;
 				dropstate = states.idle;
 				handsprite = spr_grabbiehand_idle;

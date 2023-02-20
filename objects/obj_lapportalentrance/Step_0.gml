@@ -13,7 +13,7 @@ if (floor(image_index) == (image_number - 1))
 	switch (sprite_index)
 	{
 		case spr_pizzaportal_appear:
-			fmod_event_one_shot_3d("event:/sfx/misc/secretexit", x, y);
+			sound_play_3d("event:/sfx/misc/secretexit", x, y);
 			sprite_index = spr_pizzaportalentrancestart;
 			break;
 		case spr_pizzaportalentrancestart:

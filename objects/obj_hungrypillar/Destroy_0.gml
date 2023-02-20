@@ -129,7 +129,7 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 		if (room == tower_finalhallway)
 			sprite_index = spr_protojohn;
 	}
-	fmod_event_one_shot_3d("event:/sfx/enemies/kill", x, y);
+	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	instance_create(x, y + 600, obj_itspizzatime);
 	global.panic = true;
 	

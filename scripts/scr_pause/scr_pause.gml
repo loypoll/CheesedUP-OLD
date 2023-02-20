@@ -99,6 +99,7 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 	instance_activate_object(obj_screensizer);
 	instance_activate_object(obj_music);
 	instance_activate_object(obj_fmod);
+	instance_activate_object(obj_shell);
 }
 function pause_spawn_priests()
 {
