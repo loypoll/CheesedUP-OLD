@@ -1533,6 +1533,7 @@
     {"id":{"name":"obj_version","path":"objects/obj_version/obj_version.yy",},"order":6,},
     {"id":{"name":"obj_pepper_marblespot","path":"objects/obj_pepper_marblespot/obj_pepper_marblespot.yy",},"order":953,},
     {"id":{"name":"obj_dialognpc","path":"objects/obj_dialognpc/obj_dialognpc.yy",},"order":450,},
+    {"id":{"name":"obj_screenconfirm","path":"objects/obj_screenconfirm/obj_screenconfirm.yy",},"order":12,},
     {"id":{"name":"obj_keyfollow","path":"objects/obj_keyfollow/obj_keyfollow.yy",},"order":11,},
     {"id":{"name":"obj_spaceshuttletrans","path":"objects/obj_spaceshuttletrans/obj_spaceshuttletrans.yy",},"order":956,},
     {"id":{"name":"obj_pizzahead_attackhitbox","path":"objects/obj_pizzahead_attackhitbox/obj_pizzahead_attackhitbox.yy",},"order":451,},

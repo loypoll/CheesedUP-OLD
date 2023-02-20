@@ -41,7 +41,8 @@ function add_option_press(_menu, _optionid, _name, _func)
 		option_id: _optionid,
 		type: menutype.press,
 		func: _func,
-		name: _name
+		name: _name,
+		localization: true
 	};
 	array_push(_menu.options, b);
 	return b;

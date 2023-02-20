@@ -1,8 +1,16 @@
-var j = menu;
-if (instance_exists(obj_keyconfig) || menu == menus.controller || menu == menus.deadzone)
+var j = 0;
+var m = menus[menu];
+
+if instance_exists(obj_keyconfig)
 	j = 4;
-if (menu >= menus.controls && menu <= menus.deadzone)
-	j = 4;
+if (m.menu_id >= menus.controls && m.menu_id <= menus.unused_3)
+    j = 4;
+else if (m.menu_id >= menus.video && m.menu_id <= menus.unused_1)
+    j = 2;
+else if (m.menu_id == menus.audio)
+    j = 1;
+else if (m.menu_id == menus.game)
+    j = 3;
 
 for (var i = 0; i < array_length(bg_alpha); i++)
 {
@@ -15,7 +23,7 @@ for (var i = 0; i < array_length(bg_alpha); i++)
 bg_x -= 1;
 bg_y -= 1;
 
-if (instance_exists(obj_keyconfig))
+if (instance_exists(obj_keyconfig) || instance_exists(obj_screenconfirm))
 	exit;
 scr_getinput();
 
@@ -31,7 +39,6 @@ if (backbuffer > 0)
 	key_back = false;
 }
 
-var m = menus[menu];
 var move = key_down2 - key_up2;
 if (move != 0)
 {

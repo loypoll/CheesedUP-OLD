@@ -25,6 +25,10 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 		if (!start)
 			_cutscenehandler = true;
 	}
+	with (obj_pizzafaceboss_p3intro)
+        _cutscenehandler = true;
+    with (obj_pizzahead_finalecutscene)
+        _cutscenehandler = true;
 	if (obj_savesystem.state == 0 && !_cutscenehandler && (room != rank_room && room != Realtitlescreen && room != timesuproom) && !instance_exists(obj_jumpscare) && !instance_exists(obj_technicaldifficulty))
 	{
 		selected = 0;
@@ -258,6 +262,8 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 			case 0:
 				scr_pause_activate_objects();
 				pause_unpause_music();
+				instance_destroy(obj_option);
+                instance_destroy(obj_keyconfig);
 				break;
 			
 			case 2:
@@ -276,6 +282,8 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 							stop_music();
 							scr_pause_activate_objects();
 							scr_pause_stop_sounds();
+							instance_destroy(obj_option);
+							instance_destroy(obj_keyconfig);
 							pause = false;
 						}
 						else
@@ -298,6 +306,8 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 					pause_unpause_music();
 					stop_music();
 					scr_pause_stop_sounds();
+					instance_destroy(obj_option);
+					instance_destroy(obj_keyconfig);
 					fmod_event_instance_stop(global.snd_bossbeaten, 1);
 					fmod_event_instance_stop(pausemusicID, 1);
 					obj_music.music = noone;

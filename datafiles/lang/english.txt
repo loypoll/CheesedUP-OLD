@@ -4,7 +4,7 @@
 lang = "en"
 display_name = "ENGLISH"
 custom_fonts = false
-game_version = "V1.0.213"
+game_version = "V1.0.215"
 
 # --------------------
 # CUSTOM FONT EXAMPLE
@@ -189,8 +189,10 @@ option_music = "MUSIC"
 option_sfx = "SFX"
 option_unfocus = "UNFOCUSED MUTE"
 
+option_window_mode = "WINDOW MODE"
 option_fullscreen = "FULLSCREEN"
 option_exclusive = "EXCLUSIVE"
+option_windowed = "WINDOWED"
 option_borderless = "BORDERLESS"
 option_resolution = "RESOLUTION"
 option_scaling = "SCALING"
@@ -199,6 +201,9 @@ option_scaling_pp = "PIXEL PERFECT"
 option_scaling_expand = "EXPAND"
 option_texfilter = "TEXTURE FILTERING"
 option_hud = "SHOW HUD"
+
+option_confirm = "CONFIRM SETTINGS"
+option_revert = "REVERTING IN %..."
 
 option_lang = "LANGUAGE"
 option_vibration = "RUMBLE"

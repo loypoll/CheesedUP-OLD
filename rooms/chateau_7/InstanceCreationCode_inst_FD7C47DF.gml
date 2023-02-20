@@ -1,1 +1,1 @@
-particlespr = spr_bonedebris;
+particlespr = spr_bonedebris

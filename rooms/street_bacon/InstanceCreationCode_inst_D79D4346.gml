@@ -1,1 +1,1 @@
-particlespr = spr_bacondebris;
+sprite_index = spr_baconcollect

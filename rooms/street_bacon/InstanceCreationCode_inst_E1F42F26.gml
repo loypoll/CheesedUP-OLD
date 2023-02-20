@@ -1,1 +1,1 @@
-sprite_index = spr_baconcollect;
+sprite_index = spr_baconcollect

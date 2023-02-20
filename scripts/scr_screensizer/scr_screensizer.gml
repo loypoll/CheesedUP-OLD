@@ -23,6 +23,20 @@ function screen_apply_size()
 		}
 	}
 }
+function screen_option_apply_fullscreen(fullscreen)
+{
+    var opt = global.option_fullscreen;
+    global.option_fullscreen = fullscreen;
+    screen_apply_fullscreen(fullscreen);
+    with instance_create(0, 0, obj_screenconfirm)
+    {
+        savedoption = opt;
+        section = "Option";
+        key = "fullscreen";
+        varname = "option_fullscreen";
+        depth = obj_option.depth - 1;
+    }
+}
 function screen_apply_fullscreen(fullscreen)
 {
 	if (fullscreen == 0)

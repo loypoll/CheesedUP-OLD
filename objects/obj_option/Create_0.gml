@@ -3,11 +3,15 @@ enum menus
 	options, // categories.
 	audio,
 	video,
+	window,
+	resolution,
+	unused_1, // 5, related to video.
 	game,
 	controls,
 	controller,
-	unused_1, // 6
-	deadzone
+	unused_2, // 9, related to controls.
+	deadzone,
+	unused_3, // 11, related to controls.
 }
 enum anchor
 {
@@ -118,20 +122,10 @@ add_option_press(video_menu, 0, "option_back", function()
 {
 	menu_goto(menus.options);
 });
-
-var modes = [
-	create_option_value("option_off", 0, true), 
-	create_option_value("option_exclusive", 1, true), 
-	create_option_value("option_borderless", 2, true)
-];
-add_option_multiple(video_menu, 1, "option_fullscreen", modes, function(val)
+add_option_press(video_menu, 1, "option_window_mode", function()
 {
-	screen_apply_fullscreen(val);
-	ini_open_from_string(obj_savesystem.ini_str_options);
-	global.option_fullscreen = val;
-	ini_write_real("Option", "fullscreen", val);
-	obj_savesystem.ini_str_options = ini_close();
-}).value = global.option_fullscreen;
+	menu_goto(menus.window);
+});
 
 var res = [];
 for (var i = 0; i < array_length(global.resolutions[obj_screensizer.aspect_ratio]); i++)
@@ -167,6 +161,54 @@ add_option_toggle(video_menu, 4, "option_hud", function(val)
 }).value = global.option_hud;
 
 array_push(menus, video_menu);
+
+#endregion
+#region window menu
+
+var window_menu = create_menu_fixed(menus.window, anchor.left, 150, 40, menus.video);
+add_option_press(window_menu, 0, "option_back", function() {
+    menu_goto(menus.video);
+});
+add_option_press(window_menu, 1, "option_windowed", function() {
+    screen_option_apply_fullscreen(0);
+});
+add_option_press(window_menu, 2, "option_fullscreen", function() {
+    screen_option_apply_fullscreen(1);
+});
+add_option_press(window_menu, 3, "option_borderless", function() {
+    screen_option_apply_fullscreen(2);
+});
+array_push(menus, window_menu);
+
+#endregion
+#region resolutions menu
+
+var resolution_menu = create_menu_fixed(menus.resolution, anchor.left, 150, 40, menus.video);
+add_option_press(resolution_menu, 0, "option_back", function()
+{
+    menu_goto(menus.video)
+});
+
+for (i = 0; i < array_length(global.resolutions[obj_screensizer.aspect_ratio]); i++)
+{
+    b = global.resolutions[obj_screensizer.aspect_ratio][i];
+    add_option_press(resolution_menu, i + 1, concat(b[0], "X", b[1]), function()
+    {
+        var opt = global.option_resolution;
+        global.option_resolution = menus[menu].options[optionselected].option_id - 1;
+        screen_apply_size();
+		
+        with instance_create(0, 0, obj_screenconfirm)
+        {
+            savedoption = opt;
+            section = "Option";
+            key = "resolution";
+            varname = "option_resolution";
+            depth = obj_option.depth - 1;
+        }
+    }).localization = false;
+}
+array_push(menus, resolution_menu)
 
 #endregion
 #region game menu
