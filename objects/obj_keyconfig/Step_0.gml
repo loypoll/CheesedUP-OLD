@@ -53,7 +53,11 @@ if !selecting
 	if (key_select != -1 && key_left2)
 		key_select = -1;
 	else if (key_select == -1 && key_right2)
-		key_select = 0
+	{
+		key_select = 0;
+		if controller
+            key_select = 4;
+	}
 	key_select = clamp(key_select, -1, (array_length(input) - 1))
 	if (((key_jump || key_back) && key_select <= -1) || (key_select > -1 && key_back))
 	{

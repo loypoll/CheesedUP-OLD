@@ -28,7 +28,7 @@ function vigilante_end_attack(phase, wastedhits)
 	for (var i = 0; i < array_length(attack_list[phase][wastedhits]); i++)
 	{
 		var b = attack_list[phase][wastedhits][i];
-		if (b[0] == vigi_attack.reload || b[0] == vigi_attack.crate)
+		if (b[0] == vigi_attacks.reload || b[0] == vigi_attacks.crate)
 		{
 			found = true;
 			break;
@@ -353,19 +353,19 @@ function scr_vigilante_walk()
 		trace(attack);
 		switch (attack[0])
 		{
-			case vigi_attack.revolver:
+			case vigi_attacks.revolver:
 				scr_vigilante_do_revolver(1, attack[1], false);
 				break;
-			case vigi_attack.reload:
+			case vigi_attacks.reload:
 				scr_vigilante_do_reload(attack[1]);
 				break;
-			case vigi_attack.dynamite:
+			case vigi_attacks.dynamite:
 				scr_vigilante_do_dynamite(1);
 				break;
-			case vigi_attack.cow:
+			case vigi_attacks.cow:
 				scr_vigilante_do_cow(1, attack[1]);
 				break;
-			case vigi_attack.estampede:
+			case vigi_attacks.estampede:
 				estampedemax = attack[1];
 				state = states.estampede;
 				estampedecooldown = 30;
@@ -380,13 +380,13 @@ function scr_vigilante_walk()
 						spd = 5;
 				}
 				break;
-			case vigi_attack.wait:
+			case vigi_attacks.wait:
 				waitbuffer = attack[1];
 				state = states.wait;
 				if (sprite_index != spr_playerV_revolverend)
 					sprite_index = spr_playerV_idle;
 				break;
-			case vigi_attack.flamethrower:
+			case vigi_attacks.flamethrower:
 				state = states.flamethrower;
 				if (targetplayer.x != x)
 					image_xscale = sign(targetplayer.x - x);
@@ -398,7 +398,7 @@ function scr_vigilante_walk()
 				image_index = 0;
 				image_speed = 0.35;
 				break;
-			case vigi_attack.machinegun:
+			case vigi_attacks.machinegun:
 				create_particle(x, y, particle.highjumpcloud2);
 				state = states.machinegun;
 				sprite_index = spr_vigilante_uziprepare;
@@ -409,7 +409,7 @@ function scr_vigilante_walk()
 				if (targetplayer.x != x)
 					image_xscale = sign(targetplayer.x - x);
 				break;
-			case vigi_attack.bazooka:
+			case vigi_attacks.bazooka:
 				create_particle(x, y, particle.highjumpcloud2);
 				state = states.bazooka;
 				hsp = 0;
@@ -418,7 +418,7 @@ function scr_vigilante_walk()
 				sprite_index = spr_playerV_jump;
 				image_index = 0;
 				break;
-			case vigi_attack.crate:
+			case vigi_attacks.crate:
 				state = states.crate;
 				hsp = 0;
 				sound_play_3d("event:/sfx/vigilante/order", x, y);
@@ -431,7 +431,7 @@ function scr_vigilante_walk()
 				if (targetplayer.x != x)
 					image_xscale = sign(targetplayer.x - x);
 				break;
-			case vigi_attack.mach:
+			case vigi_attacks.mach:
 				state = states.mach2;
 				kickbuffer = attack[1];
 				kick = true;

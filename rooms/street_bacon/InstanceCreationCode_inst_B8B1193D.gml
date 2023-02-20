@@ -1,1 +1,1 @@
-targetRoom = street_house3;
+sprite_index = spr_baconcollect

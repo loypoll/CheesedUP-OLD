@@ -7,7 +7,7 @@ if (room != Mainmenu)
 	with (obj_keyconfig)
 		event_perform(ev_draw, ev_gui);
 }
-if (instance_exists(obj_keyconfig))
+if (instance_exists(obj_keyconfig) || instance_exists(obj_screenconfirm))
 	exit;
 
 draw_set_font(lang_get_font("bigfont"));
@@ -57,7 +57,12 @@ switch (m.anchor)
 			c = c_gray;
 			if (i == _os)
 				c = c_white;
-			draw_text_color(xx, yy + (m.ypad * i), lang_get_value(o.name), c, c, c, c, a);
+			
+			if (o.type == menutype.press && !o.localization)
+                var txt = o.name;
+            else
+                var txt = lang_get_value(o.name);
+            draw_text_color(xx, yy + (m.ypad * i), txt, c, c, c, c, a);
 			
 			draw_set_halign(fa_right);
 			switch (o.type)

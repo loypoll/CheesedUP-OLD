@@ -1454,6 +1454,7 @@
     {"name":"obj_version","order":6,"path":"objects/obj_version/obj_version.yy",},
     {"name":"obj_pepper_marblespot","order":953,"path":"objects/obj_pepper_marblespot/obj_pepper_marblespot.yy",},
     {"name":"obj_dialognpc","order":450,"path":"objects/obj_dialognpc/obj_dialognpc.yy",},
+    {"name":"obj_screenconfirm","order":12,"path":"objects/obj_screenconfirm/obj_screenconfirm.yy",},
     {"name":"obj_keyfollow","order":11,"path":"objects/obj_keyfollow/obj_keyfollow.yy",},
     {"name":"obj_spaceshuttletrans","order":956,"path":"objects/obj_spaceshuttletrans/obj_spaceshuttletrans.yy",},
     {"name":"obj_pizzahead_attackhitbox","order":451,"path":"objects/obj_pizzahead_attackhitbox/obj_pizzahead_attackhitbox.yy",},
