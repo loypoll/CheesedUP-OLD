@@ -1,3 +1,6 @@
+instance_change(obj_dresser, true);
+exit;
+
 depth = 100;
 palettes = [["classic", 1, 1], ["unfunny", 0, 3], ["money", 0, 4], ["sage", 0, 5], ["blood", 0, 6], ["tv", 0, 7], ["dark", 0, 8], ["shitty", 0, 9], ["golden", 0, 10], ["garish", 0, 11], ["mooney", 0, 15], ["funny", 0, 12, spr_peppattern1], ["itchy", 0, 12, spr_peppattern2], ["pizza", 0, 12, spr_peppattern3], ["stripes", 0, 12, spr_peppattern4], ["goldemanne", 0, 12, spr_peppattern5], ["bones", 0, 12, spr_peppattern6], ["pp", 0, 12, spr_peppattern7], ["war", 0, 12, spr_peppattern8], ["john", 0, 12, spr_peppattern9]]
 ini_open_from_string(obj_savesystem.ini_str_options);

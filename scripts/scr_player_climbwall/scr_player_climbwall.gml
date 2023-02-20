@@ -101,6 +101,19 @@ function scr_player_climbwall()
 					image_index = 0;
 				}
 			}
+			if REMIX && state == states.climbwall
+			{
+				if (place_meeting(x + xscale, y, obj_destructibles) && input_buffer_slap > 0 && shotgunAnim == false && !global.pistol)
+				{
+					input_buffer_slap = 0;
+					sprite_index = spr_suplexdash;
+					suplexmove = true;
+					fmod_event_instance_play(suplexdashsnd);
+					state = states.handstandjump;
+					movespeed = max(wallspeed, 5);
+					image_index = 0;
+				}
+			}
 			image_speed = 0.6;
 			if (steppybuffer > 0)
 				steppybuffer--;

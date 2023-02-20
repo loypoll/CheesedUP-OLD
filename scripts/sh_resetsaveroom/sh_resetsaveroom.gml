@@ -20,9 +20,9 @@ function sh_resetsaveroom()
 	room_restart();
 				
 	if !isOpen
-		create_transformation_tip("{s}Resetted level data/");
+		create_transformation_tip("{s}Reset level data/");
 	else
-		return "Resetted all level data, and restarted current room";
+		return "Reset all level data, and restarted current room";
 }
 function meta_resetsaveroom()
 {

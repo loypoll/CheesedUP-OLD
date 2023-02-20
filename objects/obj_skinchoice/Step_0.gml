@@ -54,72 +54,108 @@ if key_slap && anim_con == 0
 	sound_play(sfx_back);
 	anim_con = 1;
 }
-if anim_con == 1 && anim_t <= 0
+if anim_con != 0 && anim_t <= 0
 	instance_destroy();
 
 // select
-if key_jump && is_method(select)
+if key_jump && is_method(select) && anim_t >= 1
 	select();
 
 // functions
 select = function()
 {
+	with obj_player1
+	{
+		xscale = 1;
+		create_particle(x, y, particle.genericpoofeffect);
+		visible = false;
+		
+		character = other.characters[other.sel.char][0];
+		scr_characterspr();
+		paletteselect = other.palettes[other.sel.pal].palette;
+		global.palettetexture = other.palettes[other.sel.pal].texture;
+		
+		ini_open_from_string(obj_savesystem.ini_str);
+		ini_write_string("Game", "character", character);
+		ini_write_real("Game", "palette", paletteselect);
+		ini_write_string("Game", "palettetexture", other.palettes[other.sel.pal].entry);
+		obj_savesystem.ini_str = ini_close();
+	}
 	anim_con = 2;
 	sound_play_centered(sfx_collecttoppin);
 }
 postdraw = function(curve)
 {
-	
+	if anim_con == 2
+	{
+		var curve2 = animcurve_channel_evaluate(jumpcurve, 1 - anim_t);
+		
+		var pal = palettes[sel.pal];
+		var charx = 960 / 2 + charshift[0] * 100, chary = 540 / 2 - 16 + charshift[1] * 100, scale = clamp(lerp(1, 2, curve), 1, 2);
+		
+		charx = lerp(charx, obj_player1.x - camera_get_view_x(view_camera[0]), 1 - anim_t);
+		chary = lerp(chary, obj_player1.y - camera_get_view_y(view_camera[0]), curve2);
+		
+		if pal.texture != noone
+			scr_palette_texture(characters[sel.char][1], -1, charx, chary, scale, scale, 0, c_white, 1, true, pal.texture);
+		
+		shader_set(global.Pal_Shader);
+		pal_swap_set(characters[sel.char][2], pal.palette, false);
+		draw_sprite_ext(characters[sel.char][1], -1, charx, chary, scale, scale, 0, c_white, 1);
+	}
 }
 draw = function(curve)
 {
 	var curve2 = anim_t;
 	
 	var pal = palettes[sel.pal];
-	if anim_con == 1
+	if anim_con != 0
 	{
 		curve = 1; // actual animated curve
 		curve2 = 1; // the timer
 	}
 	
-	// character
-	var charx = 960 / 2 + charshift[0] * 100, chary = 540 / 2 - 16 + charshift[1] * 100;
-	if pal.texture != noone
-		scr_palette_texture(characters[sel.char][1], -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2], true, pal.texture);
-	
-	shader_set(global.Pal_Shader);
-	pal_swap_set(characters[sel.char][2], pal.palette, false);
-	draw_sprite_ext(characters[sel.char][1], -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2]);
-	reset_shader_fix();
-	
-	// arrows
-	if sel.pal > 0
+	if anim_con != 2
 	{
-		var xx = 960 / 2 - 120 - sin(current_time / 200) * 4, yy = 540 / 2 + 16;
-		if charshift[1] < 0
-			xx += charshift[1];
-		
-		if palettes[sel.pal - 1].texture != noone
+		// character
+		var charx = 960 / 2 + charshift[0] * 100, chary = 540 / 2 - 16 + charshift[1] * 100;
+		if pal.texture != noone
+			scr_palette_texture(characters[sel.char][1], -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2], true, pal.texture);
+	
+		shader_set(global.Pal_Shader);
+		pal_swap_set(characters[sel.char][2], pal.palette, false);
+		draw_sprite_ext(characters[sel.char][1], -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2]);
+		reset_shader_fix();
+	
+		// arrows
+		if sel.pal > 0
 		{
-			scr_palette_texture(spr_palettearrow, 0, xx, yy, 1, 1, 90, c_white, 1, true, palettes[sel.pal - 1].texture);
-			draw_sprite_ext(spr_palettearrow, 1, xx, yy, 1, 1, 90, c_white, 1);
-		}
-		else
-			draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 90, pal_swap_get_pal_color(characters[sel.char][2], palettes[sel.pal - 1].palette, 1), 1);
-	}
-	if sel.pal < array_length(palettes) - 1
-	{
-		var xx = 960 / 2 + 120 + sin(current_time / 200) * 4, yy = 540 / 2 + 16;
-		if charshift[1] > 0
-			xx += charshift[1];
+			var xx = 960 / 2 - 120 - sin(current_time / 200) * 4, yy = 540 / 2 + 16;
+			if charshift[0] < 0
+				xx += charshift[0] * 100;
 		
-		if palettes[sel.pal + 1].texture != noone
-		{
-			scr_palette_texture(spr_palettearrow, 0, xx, yy, 1, 1, 270, c_white, 1, true, palettes[sel.pal + 1].texture);
-			draw_sprite_ext(spr_palettearrow, 1, xx, yy, 1, 1, 270, c_white, 1);
+			if palettes[sel.pal - 1].texture != noone
+			{
+				scr_palette_texture(spr_palettearrow, 0, xx, yy, 1, 1, 90, c_white, 1, true, palettes[sel.pal - 1].texture);
+				draw_sprite_ext(spr_palettearrow, 1, xx, yy, 1, 1, 90, c_white, 1);
+			}
+			else
+				draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 90, pal_swap_get_pal_color(characters[sel.char][2], palettes[sel.pal - 1].palette, 1), 1);
 		}
-		else
-			draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 270, pal_swap_get_pal_color(characters[sel.char][2], palettes[sel.pal + 1].palette, 1), 1);
+		if sel.pal < array_length(palettes) - 1
+		{
+			var xx = 960 / 2 + 120 + sin(current_time / 200) * 4, yy = 540 / 2 + 16;
+			if charshift[0] > 0
+				xx += charshift[0] * 100;
+		
+			if palettes[sel.pal + 1].texture != noone
+			{
+				scr_palette_texture(spr_palettearrow, 0, xx, yy, 1, 1, 270, c_white, 1, true, palettes[sel.pal + 1].texture);
+				draw_sprite_ext(spr_palettearrow, 1, xx, yy, 1, 1, 270, c_white, 1);
+			}
+			else
+				draw_sprite_ext(spr_palettearrow, 0, xx, yy, 1, 1, 270, pal_swap_get_pal_color(characters[sel.char][2], palettes[sel.pal + 1].palette, 1), 1);
+		}
 	}
 	
 	// text

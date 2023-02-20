@@ -6,6 +6,7 @@ anim_con = 0;
 anim_t = 0;
 outback = animcurve_get_channel(curve_menu, "outback");
 incubic = animcurve_get_channel(curve_menu, "incubic");
+jumpcurve = animcurve_get_channel(curve_jump, "curve1");
 
 surface = -1;
 clip_surface = -1;

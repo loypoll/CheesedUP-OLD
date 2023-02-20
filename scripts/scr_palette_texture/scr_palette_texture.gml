@@ -48,10 +48,12 @@ function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col 
 	else
 		gui = false;
 	
+	var surfw = sprite_get_width(sprite) * abs(xscale), surfh = sprite_get_height(sprite) * abs(yscale);
+	if surfw == 0 or surfh == 0
+		exit;
+	
 	var palshader = shader_current();
 	reset_shader_fix();
-	
-	var surfw = sprite_get_width(sprite) * abs(xscale), surfh = sprite_get_height(sprite) * abs(yscale);
 	
 	surface_free(global.palettesurface);
 	surface_free(global.palettesurfaceclip);
@@ -98,4 +100,6 @@ function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col 
 	draw_surface_ext(global.palettesurface, x - xo * abs(xscale), y - yo * abs(yscale), 1, 1, 0, c_white, alpha);
 	
 	shader_set(palshader);
+	if gui
+		reset_blendmode();
 }

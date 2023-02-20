@@ -62,3 +62,6 @@ healthshake = 0;
 healthold = 8;
 healthshaketime = 0;
 playerhealthup = false;
+
+crouchcamera = 0;
+crouchcamera_goingback = false;

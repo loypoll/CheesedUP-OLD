@@ -1259,3 +1259,6 @@ if (state != states.comingoutdoor)
 	image_blend = c_white;
 prevstate = state;
 prevsprite = sprite_index;
+
+// smooth x
+smoothx = Approach(smoothx, 0, 3);

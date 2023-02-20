@@ -1,5 +1,7 @@
 if (!unlocked)
 	exit;
+
+var door = id;
 var _actor = false;
 with (obj_player)
 {
@@ -10,6 +12,7 @@ if (_actor)
 	exit;
 if (global.horse)
 	exit;
+
 if (!place_meeting(x, y, obj_doorblocked))
 {
 	with (other)
@@ -47,6 +50,12 @@ if (!place_meeting(x, y, obj_doorblocked))
 			}
 			other.visited = true;
 			instance_create(x, y, obj_fadeout);
+			
+			if REMIX
+			{
+				smoothx = x - (door.x + 50);
+				x = door.x + 50;
+			}
 		}
 	}
 }

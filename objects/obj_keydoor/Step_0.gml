@@ -18,6 +18,15 @@ if (!global.horse && !instance_exists(obj_jumpscare) && (obj_player1.state == st
 	image_speed = 0.35;
 	instance_create(x + 50, y + 50, obj_lock);
 	global.key_inv = false;
+	
+	with obj_player1
+	{
+		if REMIX
+		{
+			smoothx = x - (other.x + 50);
+			x = other.x + 50;
+		}
+	}
 }
 if (instance_exists(obj_player2))
 {

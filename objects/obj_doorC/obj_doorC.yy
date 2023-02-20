@@ -4,12 +4,17 @@
   "name": "obj_doorC",
   "eventList": [],
   "managed": true,
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_doorX","path":"objects/obj_doorX/obj_doorX.yy",},"propertyId":{"name":"door","path":"objects/obj_doorX/obj_doorX.yy",},"value":"C",},
+  ],
   "parent": {
     "name": "Exits",
     "path": "folders/Objects/Room Structure/Doors/Exits.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_doorX",
+    "path": "objects/obj_doorX/obj_doorX.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -26,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite1023",
-    "path": "sprites/sprite1023/sprite1023.yy",
+    "name": "spr_doorC",
+    "path": "sprites/spr_doorC/spr_doorC.yy",
   },
   "spriteMaskId": null,
   "visible": false,

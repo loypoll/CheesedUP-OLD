@@ -1,3 +1,4 @@
+draw_set_alpha(1);
 if (start)
 {
 	shader_set(global.Pal_Shader);

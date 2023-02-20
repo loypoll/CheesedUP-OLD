@@ -217,7 +217,7 @@ option_controller = "CONTROLLER"
 option_keyboard = "KEYBOARD"
 option_reset_config = "RESET CONFIG"
 option_controls_saved = "{u}Controls saved!/"
-option_controls_resetted = "{u}Configuration resetted!/"
+option_controls_resetted = "{u}Configuration reset!/"
 
 option_deadzone = "GENERAL DEADZONE"
 option_deadzone_title = "DEADZONES"

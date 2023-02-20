@@ -2,10 +2,12 @@ scr_getinput()
 index += 0.1
 key_jump = (key_jump || (scr_check_menu_key(vk_enter) && keyboard_check_pressed(vk_return)) || (scr_check_menu_key(vk_space) && keyboard_check_pressed(vk_space)))
 key_jump2 = (key_jump2 || (scr_check_menu_key(vk_enter) && keyboard_check(vk_return)) || (scr_check_menu_key(vk_space) && keyboard_check(vk_space)))
+
 switch state
 {
 	case states.titlescreen:
-		jumpscarecount++
+		if !debug
+			jumpscarecount++
 		currentselect = -1
 		if ((keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4 || scr_checkanystick(obj_inputAssigner.player_input_device[0])) && (!instance_exists(obj_mainmenu_jumpscare)))
 		{

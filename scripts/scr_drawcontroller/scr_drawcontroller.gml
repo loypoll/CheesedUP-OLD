@@ -152,33 +152,40 @@ function draw_enemy(healthbar, palette, color = c_white)
 }
 function draw_superslam_enemy()
 {
-	if (state == states.superslam && floor(image_index) >= 5 && floor(image_index) <= 7 && instance_exists(baddiegrabbedID))
+	if state == states.superslam && floor(image_index) >= 5 && floor(image_index) <= 7 && instance_exists(baddiegrabbedID)
 	{
-		with (baddiegrabbedID)
+		with baddiegrabbedID
 			draw_enemy(global.kungfu, true);
 	}
 }
 function draw_player()
 {
+	var xx = x;
+	if REMIX
+		xx += smoothx;
+	
 	var b = get_dark(image_blend, other.use_dark);
-	if (object_index == obj_player1)
-		scr_palette_texture(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	if object_index == obj_player1
+		scr_palette_texture(sprite_index, image_index, xx, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	
 	var ps = paletteselect;
 	var spr = spr_palette;
-	if (isgustavo)
+	if isgustavo
 		spr = spr_ratmountpalette;
+	
 	pal_swap_set(spr, ps, false);
-	draw_sprite_ext(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
-	if (global.noisejetpack)
+	draw_sprite_ext(sprite_index, image_index, xx, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	if global.noisejetpack
 	{
 		pal_swap_set(spr_peppalette, 2, false);
-		draw_sprite_ext(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+		draw_sprite_ext(sprite_index, image_index, xx, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
 	}
+	
 	draw_superslam_enemy();
-	if (global.pistol)
+	if global.pistol
 	{
 		pal_swap_set(spr_peppalette, 0, false);
-		if (pistolcharge >= 4)
-			draw_sprite(spr_revolvercharge, pistolcharge, x, y - 70);
+		if pistolcharge >= 4
+			draw_sprite(spr_revolvercharge, pistolcharge, xx, y - 70);
 	}
 }

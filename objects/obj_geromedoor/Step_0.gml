@@ -33,6 +33,16 @@ if (!global.horse && (obj_player1.state == states.normal || obj_player1.state ==
 		}
 		obj_player1.state = states.victory;
 		obj_player1.image_index = 0;
+		
+		with obj_player1
+		{
+			if REMIX
+			{
+				smoothx = x - (other.x + 50);
+				x = other.x + 50;
+			}
+		}
+		
 		if (instance_exists(obj_player2) && global.coop == 1)
 		{
 			obj_player2.x = obj_player1.x;

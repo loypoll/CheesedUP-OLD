@@ -1,7 +1,6 @@
-if (obj_player1.key_up2)
+var player = other;
+if player.key_up2 && player.state == states.normal
 {
-	if (obj_player1.paletteselect < 6)
-		obj_player1.paletteselect += 1;
-	else
-		obj_player1.paletteselect = 1;
+	player.key_up2 = false;
+	instance_create_unique(0, 0, obj_skinchoice);
 }

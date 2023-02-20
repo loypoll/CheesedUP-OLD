@@ -333,6 +333,9 @@ snd_voicehurt = fmod_event_create_instance("event:/sfx/voice/hurt");
 snd_dashpad = fmod_event_create_instance("event:/sfx/misc/dashpad");
 animatronicsnd = fmod_event_create_instance("event:/sfx/pep/animatronic");
 burpsnd = fmod_event_create_instance("event:/sfx/enemies/burp");
+superjumpsnd = fmod_event_create_instance("event:/sfx/pep/superjump");
+suplexdashsnd = fmod_event_create_instance("event:/sfx/pep/suplexdash");
+gallopingsnd = fmod_event_create_instance("event:/sfx/misc/galloping");
 global.snd_escaperumble = fmod_event_create_instance("event:/sfx/misc/escaperumble");
 global.snd_johndead = fmod_event_create_instance("event:/sfx/enemies/johndead");
 global.snd_spaceship = fmod_event_create_instance("event:/sfx/misc/spaceship");
@@ -362,8 +365,6 @@ global.snd_slidermaster = fmod_event_create_instance("event:/sfx/ui/slidersfxmas
 global.snd_bossbeaten = fmod_event_create_instance("event:/sfx/misc/bossbeaten");
 superjumpholdsnd = -1;
 superjumpprepsnd = -1;
-superjumpsnd = fmod_event_create_instance("event:/sfx/pep/superjump");
-suplexdashsnd = fmod_event_create_instance("event:/sfx/pep/suplexdash");
 pogospeed = 2;
 pogocharge = 100;
 pogochargeactive = false;
@@ -382,6 +383,7 @@ used_supercharge = false;
 pizzashield = false;
 pizzashieldid = obj_null;
 pizzapepper = 0;
+
 transformation[0] = states.bombpep; // these are states
 transformation[1] = states.knightpep;
 transformation[2] = states.knightpepslopes;
@@ -423,6 +425,7 @@ transformation[37] = states.rocketslide;
 transformation[38] = states.cheesepepjump;
 transformation[39] = states.rideweenie;
 transformation[40] = states.barrelclimbwall;
+
 keysound = false;
 c = 0;
 stallblock = 0;
@@ -463,7 +466,8 @@ farmerpos = 0;
 clowntimer = 0;
 knightmiddairstop = 0;
 knightmove = -1;
-if (!variable_global_exists("saveroom"))
+
+if !variable_global_exists("saveroom")
 {
 	global.combodropped = false;
 	global.saveroom = ds_list_create();
@@ -699,4 +703,6 @@ gravesurfingjumpbuffer = 0;
 spinsndbuffer = 5;
 boxxedspinbuffer = 0;
 noisebossscream = false;
-gallopingsnd = fmod_event_create_instance("event:/sfx/misc/galloping");
+
+// pto extra
+smoothx = 0;
