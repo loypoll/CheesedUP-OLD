@@ -267,7 +267,6 @@ enum states
 	magnet,
 	antigrav,
 	secret,
-	
 	contemplate,
 	mini,
 	reloading,
