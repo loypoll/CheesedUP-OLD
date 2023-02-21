@@ -9,6 +9,9 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
+  "ConfigValues": {
+    "Debug": {"textureGroupId":"{\"name\":\"forestgroup\",\"path\":\"texturegroups/forestgroup\"}",},
+  },
   "DynamicTexturePage": false,
   "edgeFiltering": false,
   "For3D": false,

@@ -9,6 +9,9 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
+  "ConfigValues": {
+    "Debug": {"textureGroupId":"{\"name\":\"unusedgroup\",\"path\":\"texturegroups/unusedgroup\"}",},
+  },
   "DynamicTexturePage": false,
   "edgeFiltering": false,
   "For3D": false,
@@ -25,8 +28,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Boss",
-    "path": "folders/Sprites/Boss.yy",
+    "name": "Unused",
+    "path": "folders/Sprites/Unused.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -1,2 +1,2 @@
-if (surface_exists(surf))
+if surface_exists(surf)
 	surface_free(surf);

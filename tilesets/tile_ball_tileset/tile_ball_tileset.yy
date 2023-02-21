@@ -3,6 +3,9 @@
   "resourceVersion": "1.0",
   "name": "tile_ball_tileset",
   "autoTileSets": [],
+  "ConfigValues": {
+    "Debug": {"textureGroupId":"{\"name\":\"unusedgroup\",\"path\":\"texturegroups/unusedgroup\"}",},
+  },
   "macroPageTiles": {
     "SerialiseHeight": 0,
     "SerialiseWidth": 0,

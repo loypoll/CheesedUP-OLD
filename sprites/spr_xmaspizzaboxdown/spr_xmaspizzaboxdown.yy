@@ -9,6 +9,9 @@
   "bboxMode": 2,
   "collisionKind": 1,
   "collisionTolerance": 0,
+  "ConfigValues": {
+    "Debug": {"textureGroupId":"{\"name\":\"strongcoldgroup\",\"path\":\"texturegroups/strongcoldgroup\"}",},
+  },
   "DynamicTexturePage": false,
   "edgeFiltering": false,
   "For3D": false,

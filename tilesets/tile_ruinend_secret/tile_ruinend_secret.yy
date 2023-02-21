@@ -3,6 +3,9 @@
   "resourceVersion": "1.0",
   "name": "tile_ruinend_secret",
   "autoTileSets": [],
+  "ConfigValues": {
+    "Debug": {"textureGroupId":"{\"name\":\"ruingroup\",\"path\":\"texturegroups/ruingroup\"}",},
+  },
   "macroPageTiles": {
     "SerialiseHeight": 0,
     "SerialiseWidth": 0,

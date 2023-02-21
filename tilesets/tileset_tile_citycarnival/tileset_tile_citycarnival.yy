@@ -53,6 +53,9 @@
         16,
       ],},
   ],
+  "ConfigValues": {
+    "Debug": {"textureGroupId":"{\"name\":\"citygroup\",\"path\":\"texturegroups/citygroup\"}",},
+  },
   "macroPageTiles": {
     "SerialiseHeight": 0,
     "SerialiseWidth": 0,

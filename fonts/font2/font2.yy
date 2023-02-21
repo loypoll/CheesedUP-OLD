@@ -9,6 +9,9 @@
   "bold": false,
   "canGenerateBitmap": true,
   "charset": 0,
+  "ConfigValues": {
+    "Debug": {"textureGroupId":"{\"name\":\"unusedgroup\",\"path\":\"texturegroups/unusedgroup\"}",},
+  },
   "first": 32,
   "fontName": "Arial",
   "glyphOperations": 0,

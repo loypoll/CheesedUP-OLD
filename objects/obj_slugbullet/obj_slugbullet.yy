@@ -35,8 +35,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite1039",
-    "path": "sprites/sprite1039/sprite1039.yy",
+    "name": "spr_shotgunbullet",
+    "path": "sprites/spr_shotgunbullet/spr_shotgunbullet.yy",
   },
   "spriteMaskId": null,
   "visible": true,

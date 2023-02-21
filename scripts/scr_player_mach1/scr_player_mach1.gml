@@ -132,19 +132,19 @@ function scr_player_mach1()
 			vsp = -5;
 			with (instance_create(x + (xscale * 30), y + 60, obj_shotgunbullet))
 			{
-				sprite_index = sprite10391;
+				sprite_index = spr_shotgunbulletdown;
 				spdh = -10;
 				spd = 0;
 			}
 			with (instance_create(x + (xscale * 30), y + 60, obj_shotgunbullet))
 			{
-				sprite_index = sprite10391;
+				sprite_index = spr_shotgunbulletdown;
 				spdh = -10;
 				spd = 5;
 			}
 			with (instance_create(x + (xscale * 30), y + 60, obj_shotgunbullet))
 			{
-				sprite_index = sprite10391;
+				sprite_index = spr_shotgunbulletdown;
 				spdh = -10;
 				spd = -5;
 			}

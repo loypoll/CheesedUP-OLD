@@ -1,3 +1,4 @@
+scr_get_languages();
 pal_swap_init_system(shd_pal_swapper, true);
 global.in_menu = false;
 

@@ -53,6 +53,9 @@
         16,
       ],},
   ],
+  "ConfigValues": {
+    "Debug": {"textureGroupId":"{\"name\":\"spacegroup\",\"path\":\"texturegroups/spacegroup\"}",},
+  },
   "macroPageTiles": {
     "SerialiseHeight": 0,
     "SerialiseWidth": 0,

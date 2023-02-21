@@ -53,6 +53,9 @@
         16,
       ],},
   ],
+  "ConfigValues": {
+    "Debug": {"textureGroupId":"{\"name\":\"bossgroup\",\"path\":\"texturegroups/bossgroup\"}",},
+  },
   "macroPageTiles": {
     "SerialiseHeight": 0,
     "SerialiseWidth": 0,

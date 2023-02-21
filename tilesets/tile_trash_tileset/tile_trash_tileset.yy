@@ -3,6 +3,9 @@
   "resourceVersion": "1.0",
   "name": "tile_trash_tileset",
   "autoTileSets": [],
+  "ConfigValues": {
+    "Debug": {"textureGroupId":"{\"name\":\"sewergroup\",\"path\":\"texturegroups/sewergroup\"}",},
+  },
   "macroPageTiles": {
     "SerialiseHeight": 0,
     "SerialiseWidth": 0,

@@ -1,4 +1,4 @@
-if (sprite_index != sprite10391)
+if (sprite_index != spr_shotgunbulletdown)
 {
 	with (instance_create(x, y, obj_rancherbullet_debris))
 	{

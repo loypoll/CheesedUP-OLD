@@ -3,6 +3,9 @@
   "resourceVersion": "1.0",
   "name": "bg_trapscreen_tileset",
   "autoTileSets": [],
+  "ConfigValues": {
+    "Debug": {"textureGroupId":"{\"name\":\"unusedgroup\",\"path\":\"texturegroups/unusedgroup\"}",},
+  },
   "macroPageTiles": {
     "SerialiseHeight": 0,
     "SerialiseWidth": 0,

@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sprite10332571",
-    "path": "sprites/sprite10332571/sprite10332571.yy",
+    "name": "spr_placeholder2",
+    "path": "sprites/spr_placeholder2/spr_placeholder2.yy",
   },
   "spriteMaskId": null,
   "visible": false,

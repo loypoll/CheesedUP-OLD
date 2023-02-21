@@ -2,6 +2,9 @@ with (other)
 {
 	if (key_up && ladderbuffer == 0 && (state == states.normal || state == states.pogo || state == states.mach2 || state == states.mach3 || state == states.mach1 || state == states.punch || state == states.shotgunjump || state == states.jump || state == states.highjump) && state != states.hurt && state != states.machslide && state != states.freefall && state != states.freefallland)
 	{
+		if REMIX
+			smoothx = x - (other.x + 16);
+		
 		input_buffer_jump = 0;
 		state = states.ladder;
 		x = other.x + 16;
@@ -11,6 +14,9 @@ with (other)
 	}
 	if (key_up && ladderbuffer == 0 && (state == states.ratmountjump || state == states.ratmountbounce || state == states.ratmount))
 	{
+		if REMIX
+			smoothx = x - (other.x + 16);
+		
 		input_buffer_jump = 0;
 		state = states.ratmountladder;
 		if (brick == 1)
