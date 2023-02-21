@@ -3,9 +3,7 @@
   "resourceVersion": "1.0",
   "name": "tile_collision",
   "autoTileSets": [],
-  "ConfigValues": {
-    "Debug": {"textureGroupId":"{\"name\":\"unusedgroup\",\"path\":\"texturegroups/unusedgroup\"}",},
-  },
+  "ConfigValues": {},
   "macroPageTiles": {
     "SerialiseHeight": 0,
     "SerialiseWidth": 0,
@@ -24,8 +22,8 @@
   },
   "spriteNoExport": true,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "unusedgroup",
+    "path": "texturegroups/unusedgroup",
   },
   "tile_count": 195,
   "tileAnimation": {

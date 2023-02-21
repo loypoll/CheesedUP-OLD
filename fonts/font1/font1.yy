@@ -9,9 +9,7 @@
   "bold": false,
   "canGenerateBitmap": true,
   "charset": 0,
-  "ConfigValues": {
-    "Debug": {"textureGroupId":"{\"name\":\"hudgroup\",\"path\":\"texturegroups/hudgroup\"}",},
-  },
+  "ConfigValues": {},
   "first": 32,
   "fontName": "Arial",
   "glyphOperations": 0,
@@ -131,8 +129,8 @@
   "size": 14.0,
   "styleName": "Bold",
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "hudgroup",
+    "path": "texturegroups/hudgroup",
   },
   "TTFName": "",
 }

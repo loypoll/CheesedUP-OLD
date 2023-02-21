@@ -3624,7 +3624,6 @@
     {"name":"spr_player_taunt","order":196,"path":"sprites/spr_player_taunt/spr_player_taunt.yy",},
     {"name":"spr_cowboyhat1","order":15,"path":"sprites/spr_cowboyhat1/spr_cowboyhat1.yy",},
     {"name":"spr_player_slapup","order":197,"path":"sprites/spr_player_slapup/spr_player_slapup.yy",},
-    {"name":"Sprite4225","order":3,"path":"sprites/Sprite4225/Sprite4225.yy",},
     {"name":"spr_player_hitboxslapup","order":198,"path":"sprites/spr_player_hitboxslapup/spr_player_hitboxslapup.yy",},
     {"name":"spr_player_slapdash","order":199,"path":"sprites/spr_player_slapdash/spr_player_slapdash.yy",},
     {"name":"spr_player_knock","order":200,"path":"sprites/spr_player_knock/spr_player_knock.yy",},

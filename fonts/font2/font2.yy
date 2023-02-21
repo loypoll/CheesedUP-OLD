@@ -9,9 +9,7 @@
   "bold": false,
   "canGenerateBitmap": true,
   "charset": 0,
-  "ConfigValues": {
-    "Debug": {"textureGroupId":"{\"name\":\"unusedgroup\",\"path\":\"texturegroups/unusedgroup\"}",},
-  },
+  "ConfigValues": {},
   "first": 32,
   "fontName": "Arial",
   "glyphOperations": 0,
@@ -131,8 +129,8 @@
   "size": 24.0,
   "styleName": "Regular",
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "unusedgroup",
+    "path": "texturegroups/unusedgroup",
   },
   "TTFName": "",
 }

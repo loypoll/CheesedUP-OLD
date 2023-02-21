@@ -11,7 +11,6 @@
   "collisionTolerance": 0,
   "ConfigValues": {
     "debug": {"textureGroupId":"{\"name\":\"tg_leveleditor\",\"path\":\"texturegroups/tg_leveleditor\"}",},
-    "Debug": {"textureGroupId":"{\"name\":\"hudgroup\",\"path\":\"texturegroups/hudgroup\"}",},
   },
   "DynamicTexturePage": false,
   "edgeFiltering": false,
@@ -269,8 +268,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "backgroundgroup",
-    "path": "texturegroups/backgroundgroup",
+    "name": "hudgroup",
+    "path": "texturegroups/hudgroup",
   },
   "type": 0,
   "VTile": false,

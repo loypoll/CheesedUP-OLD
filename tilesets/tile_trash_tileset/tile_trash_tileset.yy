@@ -3,9 +3,7 @@
   "resourceVersion": "1.0",
   "name": "tile_trash_tileset",
   "autoTileSets": [],
-  "ConfigValues": {
-    "Debug": {"textureGroupId":"{\"name\":\"sewergroup\",\"path\":\"texturegroups/sewergroup\"}",},
-  },
+  "ConfigValues": {},
   "macroPageTiles": {
     "SerialiseHeight": 0,
     "SerialiseWidth": 0,
@@ -24,8 +22,8 @@
   },
   "spriteNoExport": false,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "unusedgroup",
+    "path": "texturegroups/unusedgroup",
   },
   "tile_count": 100,
   "tileAnimation": {

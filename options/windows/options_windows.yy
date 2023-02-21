@@ -2,9 +2,7 @@
   "resourceType": "GMWindowsOptions",
   "resourceVersion": "1.1",
   "name": "Windows",
-  "ConfigValues": {
-    "Debug": {"option_windows_use_splash":"false",},
-  },
+  "ConfigValues": {},
   "option_windows_allow_fullscreen_switching": false,
   "option_windows_borderless": true,
   "option_windows_company_info": "",

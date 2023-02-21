@@ -9,9 +9,7 @@
   "bboxMode": 1,
   "collisionKind": 0,
   "collisionTolerance": 0,
-  "ConfigValues": {
-    "Debug": {"textureGroupId":"{\"name\":\"unusedgroup\",\"path\":\"texturegroups/unusedgroup\"}",},
-  },
+  "ConfigValues": {},
   "DynamicTexturePage": false,
   "edgeFiltering": false,
   "For3D": false,

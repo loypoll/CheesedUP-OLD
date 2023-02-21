@@ -9,9 +9,7 @@
   "bboxMode": 2,
   "collisionKind": 1,
   "collisionTolerance": 0,
-  "ConfigValues": {
-    "Debug": {"textureGroupId":"{\"name\":\"unusedgroup\",\"path\":\"texturegroups/unusedgroup\"}",},
-  },
+  "ConfigValues": {},
   "DynamicTexturePage": false,
   "edgeFiltering": false,
   "For3D": false,
@@ -68,8 +66,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "bossgroup",
-    "path": "texturegroups/bossgroup",
+    "name": "unusedgroup",
+    "path": "texturegroups/unusedgroup",
   },
   "type": 0,
   "VTile": false,

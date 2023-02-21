@@ -1,6 +1,5 @@
 // macros
-#macro debug false
-#macro Debug:debug true
+#macro debug (GM_build_type == "run")
 
 #region states
 

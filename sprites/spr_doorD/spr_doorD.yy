@@ -9,9 +9,7 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
-  "ConfigValues": {
-    "Debug": {"textureGroupId":"{\"name\":\"levelstructuregroup\",\"path\":\"texturegroups/levelstructuregroup\"}",},
-  },
+  "ConfigValues": {},
   "DynamicTexturePage": false,
   "edgeFiltering": false,
   "For3D": false,
@@ -68,8 +66,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "levelstructuregroup",
+    "path": "texturegroups/levelstructuregroup",
   },
   "type": 0,
   "VTile": false,

@@ -53,9 +53,7 @@
         16,
       ],},
   ],
-  "ConfigValues": {
-    "Debug": {"textureGroupId":"{\"name\":\"bossgroup\",\"path\":\"texturegroups/bossgroup\"}",},
-  },
+  "ConfigValues": {},
   "macroPageTiles": {
     "SerialiseHeight": 0,
     "SerialiseWidth": 0,
@@ -74,8 +72,8 @@
   },
   "spriteNoExport": false,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "bossgroup",
+    "path": "texturegroups/bossgroup",
   },
   "tile_count": 48,
   "tileAnimation": {
