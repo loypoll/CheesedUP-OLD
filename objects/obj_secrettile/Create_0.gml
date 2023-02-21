@@ -1,5 +1,4 @@
 active = false;
-alpha = 1;
 depth = -7;
 desireddepth = -6;
 
@@ -8,7 +7,7 @@ surf = -1;
 
 array_foreach(room_get_tile_layers(), function(i)
 {
-	if string_starts_with(i.name, "Tiles_Secret")
+	if string_starts_with(i.layer_name, "Tiles_Secret")
 	{
 		var wd = tilemap_get_tile_width(i.tilemap);
 		var ht = tilemap_get_tile_height(i.tilemap);

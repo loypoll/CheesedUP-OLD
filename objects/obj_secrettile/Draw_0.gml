@@ -9,9 +9,9 @@ if !surface_exists(surf)
 	draw_clear_alpha(c_black, 0);
 	
 	array_foreach(tiles, function(i) {
-		draw_tile(tiles[3], tiles[2], 0, tiles[0] - x, tiles[1] - y);
+		draw_tile(i[3], i[2], 0, i[0] - x, i[1] - y);
 	});
 	
 	surface_reset_target();
 }
-draw_surface_ext(surf, x, y, 1, 1, 0, c_white, alpha);
+draw_surface_ext(surf, x, y, 1, 1, 0, c_white, image_alpha);

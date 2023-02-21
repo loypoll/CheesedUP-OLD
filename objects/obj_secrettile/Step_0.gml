@@ -1,7 +1,5 @@
 var player = instance_place(x, y, obj_player);
-active = player;
-
-if active
+if player or active
 {
 	with obj_secrettile
 	{
@@ -12,10 +10,11 @@ if active
 	depth = -8;
 	if depth < desireddepth
 		depth = desireddepth;
-	alpha = Approach(alpha, 0, 0.05);
+	image_alpha = Approach(image_alpha, 0, 0.05);
 }
 else
 {
 	depth = desireddepth;
-	alpha = Approach(alpha, 1, 0.05);
+	image_alpha = Approach(image_alpha, 1, 0.05);
 }
+active = false;

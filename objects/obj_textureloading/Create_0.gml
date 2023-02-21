@@ -10,4 +10,4 @@ for (var i = 0; i < array_length(group_arr); i++)
 		array_push(tex_list, _tex_array[j]);
 }
 tex_max = array_length(tex_list);
-alarm[0] = 30;
+alarm[0] = 60;

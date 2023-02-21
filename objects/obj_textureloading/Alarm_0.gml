@@ -11,7 +11,7 @@ if len > 0
 else
 {
 	image_alpha -= 0.1;
-	if image_alpha <= -0
+	if image_alpha <= -0.1
 		room_goto(Realtitlescreen);
 	
 	alarm[0] = 1;
