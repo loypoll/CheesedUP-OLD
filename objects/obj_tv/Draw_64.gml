@@ -62,7 +62,7 @@ draw_set_valign(1);
 if (bubblespr == spr_tv_bubble)
 {
 	promptx -= promptspd;
-	if (bubblespr != 578 && promptx < (350 - string_width(prompt)))
+	if (bubblespr != spr_tv_bubbleclose && promptx < (350 - string_width(prompt)))
 	{
 		bubblespr = spr_tv_bubbleclose;
 		bubbleindex = 0;
