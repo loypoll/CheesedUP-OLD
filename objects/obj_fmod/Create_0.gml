@@ -46,6 +46,7 @@ global.steam_api = false;
 // sounds
 #macro sfx_step "event:/sfx/ui/step"
 #macro sfx_select "event:/sfx/ui/select"
+#macro sfx_back "event:/sfx/ui/back"
 #macro sfx_slidersfxmaster "event:/sfx/ui/slidersfxmaster"
 #macro sfx_slidermusic "event:/sfx/ui/slidermusic"
 #macro sfx_slidersfx "event:/sfx/ui/slidersfx"
