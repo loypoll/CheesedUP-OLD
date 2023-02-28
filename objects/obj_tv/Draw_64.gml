@@ -1,13 +1,18 @@
-if (room == editor_room)
+if room == editor_room
 	exit;
+
 draw_set_font(lang_get_font("bigfont"));
 draw_set_halign(1);
 draw_set_color(c_white);
 draw_set_alpha(1);
-if (is_bossroom() || instance_exists(obj_tutorialbook))
+
+if is_bossroom() || instance_exists(obj_tutorialbook)
 	exit;
+
 var collect_x = irandom_range(-collect_shake, collect_shake);
 var collect_y = irandom_range(-collect_shake, collect_shake);
+
+// combo
 var _cx = tv_x + combo_posX;
 var _cy = tv_y + 117 + hud_posY + combo_posY;
 var _perc = global.combotime / 60;
@@ -31,25 +36,45 @@ for (var i = num; i > 0; i--)
 	_tx -= 22;
 	_ty -= 8;
 }
-if (room != strongcold_endscreen)
+
+if room != strongcold_endscreen
 {
-	draw_sprite_ext(spr_tv_bgfinal, tv_bg_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
+	// background
+	if REMIX
+	{
+		var bgindex = tv_bg_index, bgcol = c_white;
+		if instance_exists(obj_ghostcollectibles)
+			bgindex = 20;
+		if obj_player1.state == states.secretenter && instance_exists(obj_fadeout)
+			bgcol = merge_color(c_white, c_black, obj_fadeout.fadealpha);
+		
+		draw_sprite_ext(spr_tv_bgfinal_NEW, bgindex, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, bgcol, alpha);
+	}
+	else
+		draw_sprite_ext(spr_tv_bgfinal, tv_bg_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
+	
+	// player
 	scr_palette_texture(sprite_index, image_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha, true);
 	shader_set(global.Pal_Shader);
-	if (obj_player1.isgustavo)
+	if obj_player1.isgustavo
 		pal_swap_set(spr_ratmountpalette, obj_player1.paletteselect, false);
 	else
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 	draw_sprite_ext(sprite_index, image_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
-	if (global.noisejetpack)
+	
+	// noise jetpack
+	if global.noisejetpack
 	{
 		pal_swap_set(obj_player1.spr_palette, 2, false);
 		draw_sprite_ext(sprite_index, image_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
 	}
 	reset_shader_fix();
-	if (state == states.tv_whitenoise)
+	
+	if state == states.tv_whitenoise
 		draw_sprite(spr_tv_whitenoise, tv_trans, tv_x + collect_x, tv_y + collect_y + hud_posY);
 }
+
+/*
 if (bubblespr != -4)
 	draw_sprite_ext(bubblespr, bubbleindex, SCREEN_WIDTH - 448, 53, 1, 1, 1, c_white, alpha);
 if (!surface_exists(promptsurface))
@@ -74,6 +99,8 @@ surface_reset_target();
 draw_surface(promptsurface, SCREEN_WIDTH - 610, 0);
 draw_set_font(global.smallnumber_fnt);
 draw_set_halign(1);
+*/
+
 if (global.panic)
 {
 	var _fill = global.fill;
@@ -116,5 +143,6 @@ if (global.panic)
 }
 else if (surface_exists(bar_surface))
 	surface_free(bar_surface);
+
 draw_set_halign(0);
 draw_set_valign(0);

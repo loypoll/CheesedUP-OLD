@@ -811,6 +811,7 @@ function scr_wc_drawgui()
 	#endregion
 	#region windows
 	
+	gameframe_can_input = true;
 	for(var i = 0; i < ds_list_size(WC_win_list); i++)
 	{
 		var win = WC_win_list[|i];
@@ -849,10 +850,7 @@ function scr_wc_drawgui()
 				}
 			}
 			else
-			{
-				gameframe_can_input = true;
 				win_moving = false;
-			}
 		
 			// resize window
 			if (mousex < win_x + win_width + 4 && mousex >= win_x + win_width - 4

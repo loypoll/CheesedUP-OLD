@@ -1,7 +1,7 @@
 if (room == rm_editor)
 	exit;
 if (snotty)
-	paletteselect = 1;
+	paletteselect = 0;
 switch (state)
 {
 	case states.idle:

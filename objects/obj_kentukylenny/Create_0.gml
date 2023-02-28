@@ -32,6 +32,6 @@ spr_dead = spr_kentukykenny_dead;
 important = false;
 heavy = false;
 depth = 0;
-paletteselect = 1;
+paletteselect = 0;
 spr_palette = spr_kentukykenny_palette;
 usepalette = true;

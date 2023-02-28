@@ -37,6 +37,6 @@ important = false;
 heavy = false;
 depth = 0;
 grabbedby = 0;
-paletteselect = 1;
+paletteselect = 0;
 spr_palette = palette_pepgoblin;
 stuntouchbuffer = 0;

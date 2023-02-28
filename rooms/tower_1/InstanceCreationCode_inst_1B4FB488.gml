@@ -6,3 +6,4 @@ title_index = 1;
 titlecard_index = 1;
 title_music = "event:/music/w1/medievaltitle";
 group_arr = ["medievalgroup"];
+msg = "Pizzascape";

@@ -5,6 +5,7 @@ facehurt = false;
 if !REMIX
 	exit;
 if baddiegrabbedID != 0 && baddiegrabbedID != obj_null && instance_exists(baddiegrabbedID)
+&& baddiegrabbedID.state == states.grabbed
 {
 	with baddiegrabbedID
 		persistent = true;

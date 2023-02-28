@@ -25,6 +25,7 @@ global.ptofont = font_add_sprite_ext(spr_smallfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZa
 // gameplay settings
 #macro REMIX (global.gameplay == 2)
 global.gameplay = 2;
+global.panicbg = true;
 
 // crash handler
 exception_unhandled_handler

@@ -121,7 +121,7 @@ if global.timedgatetimer
 }
 
 // panic screen shake
-if !instance_exists(obj_ghostcollectibles)
+if !instance_exists(obj_ghostcollectibles) && !REMIX
 {
 	if ((global.panic == true && global.minutes < 1) || player.sprite_index == spr_player_timesup)
 	{
@@ -194,9 +194,10 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 			else
 				chargecamera = Approach(chargecamera, 0, 6);
 			
-			// crouch camera
+			// remix specific
 			if REMIX
 			{
+				// crouch camera
 				if ((player.state == states.crouch or (player.character == "S" && player.state == states.normal)) && player.hsp == 0)
 				&& !crouchcamera_goingback && player.key_down
 				{
@@ -225,8 +226,8 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 			{
 				if !global.coop || room == characterselect || room == rm_levelselect || room == Realtitlescreen
 				{
-					var cam_x = (tx - (cam_width / 2)) + chargecamera + p2pdistancex;
-					var cam_y = ty - (cam_height / 2) - 50 + crouchcamera;
+					var cam_x = tx - cam_width / 2 + chargecamera + p2pdistancex;
+					var cam_y = ty - cam_height / 2 - 50 + floor(crouchcamera);
 					
 					if !safe_get(obj_shell, "WC_oobcam")
 					{
@@ -250,11 +251,12 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 			{
 				var _px = 0;
 				var _py = 0;
-				if (global.coop)
+				if global.coop
 				{
 					_px = obj_player2.x;
 					_py = obj_player2.y;
 				}
+				
 				cam_x = ((obj_player1.x + targetgolf.x + _px) / 2) - (cam_width / 2);
 				cam_y = ((obj_player1.y + targetgolf.y + _py) / 2) - (cam_height / 2) - 50;
 				disx = abs(obj_player1.x - targetgolf.x - _px) / coop_zoom_width;
@@ -263,23 +265,31 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 				dis = max(1, dis);
 				camera_zoom(dis, 0.035);
 			}
-			if (shake_mag != 0)
+			if shake_mag != 0
 			{
 				cam_x += irandom_range(-shake_mag, shake_mag);
-				cam_y += irandom_range(-shake_mag, shake_mag);
+				repeat 2 cam_y += irandom_range(-shake_mag, shake_mag);
 			}
-			cx = cam_x + (cam_width / 2);
-			cy = cam_y + (cam_height / 2);
+			
+			// better panic shake
+			if REMIX && global.panic && !instance_exists(obj_ghostcollectibles)
+			{
+				cam_x += random_range(-1, 1);
+				repeat 2 cam_y += random_range(-1, 1);
+			}
+			
+			cx = cam_x + cam_width / 2;
+			cy = cam_y + cam_height / 2;
 			
 			if !safe_get(obj_shell, "WC_oobcam")
 			{
-				if (cam_width > room_width)
-					cam_x += ((cam_width - room_width) / 2);
-				if (cam_height > room_height)
-					cam_y += ((cam_height - room_height) / 2);
+				if cam_width > room_width
+					cam_x += (cam_width - room_width) / 2;
+				if cam_height > room_height
+					cam_y += (cam_height - room_height) / 2;
 			}
 			
-			camera_set_view_pos(view_camera[0], cam_x, cam_y + irandom_range(-shake_mag, shake_mag));
+			camera_set_view_pos(view_camera[0], cam_x, cam_y);
 			break;
 		
 		case states.camera_followtarget:

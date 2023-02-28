@@ -1,18 +1,9 @@
-bg = bg_desert;
-bg2 = bg_null;
-bg3 = bg_null;
-bg_scrollx = 0;
-bg_scrolly = 0;
-bg_scrollxoffset = 0;
-bg_scrollyoffset = 0;
-bg_scroll2x = 0;
-bg_scroll2y = 0;
-bg_scroll2xoffset = 0;
-bg_scroll2yoffset = 0;
-bg_1xoffset = 0;
-bg_1yoffset = 0;
-bg_2xoffset = 0;
-bg_2yoffset = 0;
-fg1_x = 0;
-fg1_y = 0;
-backgrounds = ["Backgrounds_still1", "Backgrounds_still2"];
+if instance_number(object_index) >= 2
+{
+	trace("Extra obj_parallax in " + room_get_name(room));
+	instance_destroy();
+}
+depth = 1000;
+
+asset_layers = ["Assets_BG", "Assets_BG1", "Assets_BG2", "Assets_stillBG1", "Assets_FG", "Assets_FG1", "Assets_FG2", "Assets_stillBG"];
+asset_parallax = [[0.1, 0.1], [0.05, 0.05], [0.1, 0.1], [0.05, 0], [-0.1, -0.1], [-0.05, -0.05], [-0.1, -0.1], [0.1, 0]];

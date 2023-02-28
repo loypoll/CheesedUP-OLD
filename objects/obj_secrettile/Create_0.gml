@@ -18,6 +18,7 @@ array_foreach(room_get_tile_layers(), function(i)
 			{
 				var data = tilemap_get_at_pixel(i.tilemap, xx, yy);
 				array_push(tiles, [xx, yy, data, i.tileset]);
+				tilemap_set_at_pixel(i.tilemap, tile_set_empty(data), xx, yy);
 			}
 		}
 	}

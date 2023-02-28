@@ -43,7 +43,6 @@ chargecamera = 0;
 alpha = 1;
 zoomh = SCREEN_HEIGHT;
 zoomw = SCREEN_WIDTH;
-global.panicbg = true;
 global.maxwave = 0;
 global.wave = 0;
 ded = false;

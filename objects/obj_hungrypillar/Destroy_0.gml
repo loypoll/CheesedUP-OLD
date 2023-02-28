@@ -101,6 +101,11 @@ if (ds_list_find_index(global.saveroom, id) == -1 && global.snickchallenge == 0)
 	with (obj_escapecollectbig)
 		image_alpha = 1;
 	
+	global.wave = 0;
+	global.maxwave = global.fill;
+	if global.panicbg
+		scr_panicbg_init();
+	
 	fmod_event_instance_play(global.snd_escaperumble);
 	obj_camera.alarm[1] = 60;
 	instance_create(x, y, obj_bangeffect);

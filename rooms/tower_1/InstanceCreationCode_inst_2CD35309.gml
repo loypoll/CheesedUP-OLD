@@ -6,3 +6,4 @@ title_index = 3;
 titlecard_index = 3;
 title_music = "event:/music/w1/dungeontitle";
 group_arr = ["dungeongroup"];
+msg = "Bloodsauce Dungeon";

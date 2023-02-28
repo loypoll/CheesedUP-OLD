@@ -6,3 +6,4 @@ title_index = 2;
 titlecard_index = 2;
 title_music = "event:/music/w1/ruintitle";
 group_arr = ["ruingroup"];
+msg = "Ancient Cheese";

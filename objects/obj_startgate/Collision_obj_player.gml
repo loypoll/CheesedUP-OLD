@@ -92,3 +92,16 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 		}
 	}
 }
+if REMIX && other.state != states.victory
+{
+	if !instance_exists(transfotip)
+	{
+		with instance_create(0, 0, obj_transfotip)
+		{
+			other.transfotip = id;
+			text = "{s}" + other.msg + "/";
+		}
+	}
+	else
+		transfotip.alarm[1] = 5;
+}
