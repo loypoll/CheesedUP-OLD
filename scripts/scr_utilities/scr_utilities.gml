@@ -75,7 +75,7 @@ function ledge_bump(iterations)
 }
 function instance_create_unique(x, y, object)
 {
-	if (instance_exists(object))
+	if instance_exists(object)
 		return -4;
 	var b = instance_create(x, y, object);
 	return b;

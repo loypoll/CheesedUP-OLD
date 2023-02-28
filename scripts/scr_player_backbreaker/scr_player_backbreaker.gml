@@ -65,6 +65,14 @@ function scr_player_backbreaker()
 			supercharge = 0;
 			supercharged = false;
 		}
+		
+		// change palette
+		if debug
+		{
+			if key_taunt2 && taunttimer != 20 && tauntstoredstate == states.normal
+				instance_create_unique(0, 0, obj_skinchoice);
+		}
+		
 		taunttimer--;
 		vsp = 0;
 	}

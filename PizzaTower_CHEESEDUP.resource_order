@@ -4803,7 +4803,7 @@
     {"name":"spr_phone","order":80,"path":"sprites/spr_phone/spr_phone.yy",},
     {"name":"spr_crosspriest_idle","order":121,"path":"sprites/spr_crosspriest_idle/spr_crosspriest_idle.yy",},
     {"name":"spr_exitgate","order":3,"path":"sprites/spr_exitgate/spr_exitgate.yy",},
-    {"name":"macros","order":1,"path":"scripts/macros/macros.yy",},
+    {"name":"states","order":1,"path":"scripts/states/states.yy",},
     {"name":"spr_entrancegate","order":7,"path":"sprites/spr_entrancegate/spr_entrancegate.yy",},
     {"name":"GMLive_token","order":7,"path":"scripts/GMLive_token/GMLive_token.yy",},
     {"name":"spr_pizzaball_primoburg","order":77,"path":"sprites/spr_pizzaball_primoburg/spr_pizzaball_primoburg.yy",},

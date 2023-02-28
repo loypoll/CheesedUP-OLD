@@ -1,6 +1,3 @@
-// macros
-#macro debug (GM_build_type == "run")
-
 #region states
 
 enum states
