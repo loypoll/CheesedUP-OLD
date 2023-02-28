@@ -7,3 +7,4 @@ title_sprite = spr_titlecards_title2;
 titlecard_index = 16;
 title_music = "event:/music/w4/industrialtitle";
 group_arr = ["factorygroup"];
+msg = "Peppibot Factory"

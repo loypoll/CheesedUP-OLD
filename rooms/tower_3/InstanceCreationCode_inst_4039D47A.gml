@@ -4,3 +4,4 @@ targetRoom = boss_noise;
 save = "w3stick";
 group_arr = ["bossgroup", "noisegroup"];
 maxscore = global.stickreq[2];
+msg = "The Noise"

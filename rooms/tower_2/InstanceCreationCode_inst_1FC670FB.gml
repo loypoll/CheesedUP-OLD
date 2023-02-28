@@ -6,3 +6,4 @@ title_index = 7;
 titlecard_index = 7;
 title_music = "event:/music/w2/saloontitle";
 group_arr = ["saloongroup"];
+msg = "Fastfood Saloon"

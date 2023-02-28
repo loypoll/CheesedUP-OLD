@@ -6,3 +6,4 @@ title_index = 4;
 titlecard_index = 4;
 title_music = "event:/music/w2/deserttitle";
 group_arr = ["desertgroup"];
+msg = "Oregano Desert"

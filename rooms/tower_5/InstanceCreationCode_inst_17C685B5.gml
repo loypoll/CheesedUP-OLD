@@ -7,3 +7,4 @@ title_sprite = spr_titlecards_title2;
 titlecard_index = 19;
 title_music = "event:/music/w5/kidspartytitle";
 group_arr = ["kidspartygroup"];
+msg = "Don't make a sound."

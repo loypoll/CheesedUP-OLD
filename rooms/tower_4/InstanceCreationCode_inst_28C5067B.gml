@@ -4,3 +4,4 @@ targetRoom = boss_fakepep;
 save = "w4stick";
 group_arr = ["bossgroup"];
 maxscore = global.stickreq[3];
+msg = "Peppino...?"

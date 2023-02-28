@@ -4,3 +4,4 @@ targetRoom = boss_vigilante;
 save = "w2stick";
 group_arr = ["bossgroup", "vigilantegroup"];
 maxscore = global.stickreq[1];
+msg = "The Vigilante"

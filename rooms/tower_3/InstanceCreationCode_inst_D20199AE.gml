@@ -7,3 +7,4 @@ title_sprite = spr_titlecards_title2;
 titlecard_index = 10;
 title_music = "event:/music/w3/spacetitle";
 group_arr = ["spacegroup"];
+msg = "Deep-Dish 9"

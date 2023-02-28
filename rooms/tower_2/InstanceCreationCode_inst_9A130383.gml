@@ -6,3 +6,4 @@ title_index = 6;
 titlecard_index = 6;
 title_music = "event:/music/w2/farmtitle";
 group_arr = ["farmgroup"];
+msg = "Fun Farm"

@@ -7,3 +7,4 @@ title_sprite = spr_titlecards_title2;
 titlecard_index = 14;
 title_music = "event:/music/w5/wartitle";
 group_arr = ["wargroup"];
+msg = "War"

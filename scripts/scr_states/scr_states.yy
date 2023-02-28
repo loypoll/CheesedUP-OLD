@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "states",
+  "name": "scr_states",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

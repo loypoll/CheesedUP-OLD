@@ -6,3 +6,4 @@ title_index = 5;
 titlecard_index = 5;
 title_music = "event:/music/w2/graveyardtitle";
 group_arr = ["graveyardgroup"];
+msg = "Wasteyard"

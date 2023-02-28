@@ -1,3 +1,5 @@
 
 *.bank
 options/extensions/Steamworks.json
+extensions/fmod_gms/fmod_gms.yy
+extensions/fmod_gms/fmod_gms.yy

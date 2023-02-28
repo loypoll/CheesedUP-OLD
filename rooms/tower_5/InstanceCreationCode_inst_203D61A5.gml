@@ -7,3 +7,4 @@ title_sprite = spr_titlecards_title2;
 titlecard_index = 18;
 title_music = "event:/music/w5/chateautitle";
 group_arr = ["chateaugroup"];
+msg = "Pizzascare"

@@ -7,3 +7,4 @@ title_sprite = spr_titlecards_title2;
 titlecard_index = 11;
 title_music = "event:/music/w3/golftitle";
 group_arr = ["minigolfgroup"];
+msg = "GOLF"

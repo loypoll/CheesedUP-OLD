@@ -6,3 +6,4 @@ title_index = 9;
 titlecard_index = 9;
 title_music = "event:/music/w3/foresttitle";
 group_arr = ["forestgroup"];
+msg = "Gnome Forest"
