@@ -29,7 +29,7 @@ switch character
 		add_palette(12, "pp", spr_peppattern7, "PP Shirt", "Get it? It's funny because");
 		add_palette(12, "war", spr_peppattern8, "War Camo", "drafted");
 		add_palette(12, "john", spr_peppattern9, "John Suit", "Finally, you can wear merch of dead people.");
-		add_palette(12, "mariosonic", spr_peppattern10, "Mario", "Well, ");
+		add_palette(12, "mario", spr_peppattern10, "Mario", "Well, ");
 		break;
 	
 	#endregion
