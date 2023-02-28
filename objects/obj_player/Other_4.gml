@@ -98,7 +98,7 @@ if verticalhallway
 	verticalbuffer = 2;
 	
 	var _vinst = -4;
-	with obj_verticalhallway+
+	with obj_verticalhallway
 	{
 		event_perform(3, 0);
 		if targetDoor == other.targetDoor
