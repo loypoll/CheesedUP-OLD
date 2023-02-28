@@ -13,7 +13,7 @@ switch (state)
 	case states.normal:
 		sprite_index = movespr;
 		hsp = image_xscale * 2;
-		if (scr_solid(x + sign(hsp), y))
+		if (scr_solid(x + sign(hsp), y) or place_meeting(x + sign(hsp), y, obj_toppinwall))
 		{
 			image_xscale *= -1;
 			hsp *= -1;
@@ -25,10 +25,12 @@ switch (state)
 		}
 		x += hsp;
 		break;
+	
 	case states.idle:
 		sprite_index = idlespr;
 		hsp = 0;
 		break;
+	
 	case states.backbreaker:
 		hsp = 0;
 		vsp = 0;

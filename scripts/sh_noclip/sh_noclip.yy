@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "sh_skin",
+  "name": "sh_noclip",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {

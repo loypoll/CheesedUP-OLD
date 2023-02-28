@@ -44,6 +44,7 @@ function scr_wc_create()
 	// etc
 	WC_showinvisible = 0; // 0: no, 1: yes, 2: show names of objects without sprites
 	WC_oobcam = false;
+	WC_showcollisions = false;
 	
 	// shortcuts
 	WC_binds = ds_map_create();
@@ -421,7 +422,7 @@ function scr_wc_step()
 				for(var i = 0; i < ds_list_size(WC_frozen); i++)
 				{
 					var frozen = WC_frozen[|i];
-					if instance_exists(frozen[0]) && frozen[0].id == WC_drag_inst.id
+					if frozen[0] != global && instance_exists(frozen[0]) && frozen[0].id == WC_drag_inst.id
 					{
 						if frozen[1] == "x"
 							WC_frozen[|i][2] = WC_drag_inst.x;

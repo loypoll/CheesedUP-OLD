@@ -1,15 +1,14 @@
-if (state != states.titlescreen && other.grounded && other.key_up2)
+if state == 0
 {
-	if (other.isgustavo)
-		isgustavo = true;
-	else
-		isgustavo = false;
-	state = states.titlescreen;
-	playerid = other.id;
-	other.state = states.actor;
-	other.key_up2 = false;
-	other.movespeed = 0;
-	other.hsp = 0;
-	other.sprite_index = other.spr_idle;
-	other.image_speed = 0.35;
+	with other
+	{
+		if key_up && grounded && state == states.normal
+		{
+			keyboard_clear(global.key_up);
+			
+			sound_play(sfx_step);
+			doorx = other.x + 50;
+			other.state = 1;
+		}
+	}
 }

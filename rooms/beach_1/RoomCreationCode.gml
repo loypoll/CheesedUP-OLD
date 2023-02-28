@@ -1,4 +1,5 @@
 global.roommessage = "PIZZA TOWER ISLAND";
+global.gameframe_caption_text = "Party time in the Pizza Tower";
 if (!obj_secretmanager.init)
 {
 	obj_secretmanager.init = true;

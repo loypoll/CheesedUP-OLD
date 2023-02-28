@@ -231,3 +231,6 @@ add_music(street_1, "event:/music/w4/street", "event:/music/w4/streetsecret", 0,
 add_music(chateau_1, "event:/music/w5/chateau", "event:/music/w1/medievalsecret", 0)
 add_music(kidsparty_1, "event:/music/w5/kidsparty", "event:/music/w5/kidspartysecret", 0)
 add_music(war_1, "event:/music/w5/war", "event:/music/w5/warsecret", 0)
+
+// cheesed up
+add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);

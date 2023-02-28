@@ -1,3 +1,5 @@
+instance_change(obj_hubelevator, true);
+
 event_inherited();
 targetRoom = -4;
 targetRoom2 = -4;

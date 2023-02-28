@@ -4,7 +4,7 @@
   "name": "spr_boatexterior",
   "bbox_bottom": 765,
   "bbox_left": 0,
-  "bbox_right": 671,
+  "bbox_right": 775,
   "bbox_top": 1,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"46504174-5248-430a-95cc-e02a31590c28",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"354a9a44-caa6-44a8-9031-be3406a375c8",},
   ],
   "gridX": 0,
   "gridY": 0,
   "height": 766,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5cd65c15-07db-4f71-876d-896993962de8","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4456f00a-f7e1-4e16-8a15-be855342e1a6","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"46504174-5248-430a-95cc-e02a31590c28","path":"sprites/spr_boatexterior/spr_boatexterior.yy",},},},"Disabled":false,"id":"73f73c6d-8945-43c6-b5b3-63411b91e05e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"354a9a44-caa6-44a8-9031-be3406a375c8","path":"sprites/spr_boatexterior/spr_boatexterior.yy",},},},"Disabled":false,"id":"661fc686-9951-43f2-94b0-275467d7365a","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 672,
+  "width": 801,
 }

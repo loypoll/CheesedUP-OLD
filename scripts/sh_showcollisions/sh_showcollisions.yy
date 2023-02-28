@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "startup",
+  "name": "sh_showcollisions",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "CheesyPizza",
-    "path": "folders/Scripts/CheesyPizza.yy",
+    "name": "Shell",
+    "path": "folders/Scripts/CheesyPizza/Shell.yy",
   },
 }

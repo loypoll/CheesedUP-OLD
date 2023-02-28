@@ -122,4 +122,8 @@ function scr_getinput(is_menu = false)
 				key_up = true;
 		}
 	}
+	
+	// live room
+	if debug && live_enabled && keyboard_check_pressed(vk_f1)
+		room_set_live(room, true);
 }

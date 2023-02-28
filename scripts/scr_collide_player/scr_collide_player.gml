@@ -129,7 +129,7 @@ function scr_collide_player()
 	}
 	
 	// on ground check
-	grounded |= scr_solid_player(x, y + 1);
+	grounded |= scr_solid_player(x, y + 1) && (vsp >= 0 or !REMIX);
 	grounded |= (vsp > 0 && !place_meeting(x, y, obj_platform) && place_meeting(x, y + 1, obj_platform));
 	grinding = !place_meeting(x, y, obj_grindrail) && place_meeting(x, y + 1, obj_grindrail);
 	grounded |= grinding;

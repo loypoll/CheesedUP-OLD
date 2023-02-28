@@ -1,7 +1,5 @@
 function sh_monitorvar(args)
 {
-	if !WC_debug
-		return "You do not have permission to use this command";
 	if array_length(args) < 2
 		return "Missing argument: instance";
 	

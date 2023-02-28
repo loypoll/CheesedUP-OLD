@@ -137,7 +137,7 @@ function ds_list_add_unique(list)
 		}
 	}
 }
-function point_in_camera(x, y, cam)
+function point_in_camera(x, y, cam = view_camera[0])
 {
 	var cam_x = camera_get_view_x(cam);
 	var cam_y = camera_get_view_y(cam);
@@ -145,7 +145,7 @@ function point_in_camera(x, y, cam)
 	var cam_h = camera_get_view_height(cam);
 	return point_in_rectangle(x, y, cam_x, cam_y, cam_x + cam_w, cam_y + cam_h);
 }
-function point_in_camera_ext(x, y, cam, extra_width, extra_height)
+function point_in_camera_ext(x, y, cam = view_camera[0], extra_width = 0, extra_height = 0)
 {
 	var cam_x = camera_get_view_x(cam);
 	var cam_y = camera_get_view_y(cam);
