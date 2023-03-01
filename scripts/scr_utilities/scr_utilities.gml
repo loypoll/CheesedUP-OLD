@@ -1,7 +1,3 @@
-// macros
-#macro debug (GM_build_type == "run")
-
-// functions
 function Approach(a, b, amount)
 {
 	if (a < b)
