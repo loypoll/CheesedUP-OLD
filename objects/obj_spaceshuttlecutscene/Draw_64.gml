@@ -6,9 +6,10 @@ if (start)
 	shader_set(global.Pal_Shader);
 	var cx = irandom_range(-shake_mag, shake_mag);
 	var cy = irandom_range(-shake_mag, shake_mag);
-	scr_palette_texture(sprite_index, image_index, cx, cy, 1, 1, 0, c_white, 1, true);
+	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, 1, 1, global.palettetexture);
 	pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 	draw_sprite(sprite_index, image_index, cx, cy);
+	pattern_reset();
 	reset_shader_fix();
 }
 draw_set_alpha(fade);

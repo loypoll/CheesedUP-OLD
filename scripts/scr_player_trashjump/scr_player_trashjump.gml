@@ -23,6 +23,7 @@ function scr_player_trashjump()
 		{
 			var slope = instance_place(x, y + 1, obj_slope);
 			xscale = -sign(slope.image_xscale);
+			scale_xs = 1;
 		}
 		movespeed = abs(movespeed);
 		dir = xscale;

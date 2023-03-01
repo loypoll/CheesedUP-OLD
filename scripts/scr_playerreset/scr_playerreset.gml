@@ -41,7 +41,10 @@ function scr_playerreset()
 	with (obj_screensizer)
 		camzoom = 1;
 	with (obj_camera)
+	{
 		lock = false;
+		state = states.normal;
+	}
 	
 	with (obj_achievementtracker)
 	{
@@ -55,6 +58,7 @@ function scr_playerreset()
 		secret = false;
 		exitmusic = false;
 	}
+	stop_music();
 	fmod_set_parameter("musicmuffle", 0, true);
 	fmod_set_parameter("pillarfade", 0, true);
 	
@@ -273,7 +277,6 @@ function scr_playerreset()
 		global.SAGEshotgunsnicknumber = 0;
 		obj_music.fadeoff = 0;
 		audio_stop_all();
-		stop_music();
 		global.seconds = 59;
 		global.minutes = 1;
 		obj_player1.prevstate = states.comingoutdoor;

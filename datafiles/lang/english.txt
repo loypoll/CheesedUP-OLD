@@ -4,8 +4,17 @@
 lang = "en"
 display_name = "ENGLISH"
 custom_fonts = false
-game_version = "V1.0.215"
+game_version = "V1.0.3"
 
+# ---------------
+# IMPORTANT NOTE
+# ---------------
+# Do NOT modify this file. 
+#
+# If you modify this file and the game receives an update, this file will not update, which
+# may result in a crash.
+#
+#
 # --------------------
 # CUSTOM FONT EXAMPLE
 # --------------------
@@ -201,6 +210,7 @@ option_scaling_pp = "PIXEL PERFECT"
 option_scaling_expand = "EXPAND"
 option_texfilter = "TEXTURE FILTERING"
 option_hud = "SHOW HUD"
+option_vsync = "VSYNC"
 
 option_confirm = "CONFIRM SETTINGS"
 option_revert = "REVERTING IN %..."
@@ -224,6 +234,7 @@ option_deadzone_title = "DEADZONES"
 option_deadzone_h = "HORIZ. DEADZONE"
 option_deadzone_v = "VERT. DEADZONE"
 option_deadzone_press = "PRESS DEADZONE"
+option_deadzone_crouch = "CROUCH WALK DZ"
 option_deadzone_superjump = "SUPERJUMP WALK DZ"
 option_controller_binds = "BINDINGS"
 option_controller_superjump = "JOYSTICK SUPERJUMP"
@@ -253,6 +264,10 @@ rank_totaltime = "TOTAL TIME: "
 rank_totaldamage = "TOTAL DAMAGE: "
 rank_totalscore = "TOTAL SCORE: "
 rank_totalenemies = "ENEMIES KILLED: "
+key_up = "UP"
+key_left = "LEFT"
+key_right = "RIGHT"
+key_down = "DOWN"
 # ---------------
 # ROOM NAMES
 # ---------------

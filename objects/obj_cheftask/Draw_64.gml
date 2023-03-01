@@ -7,8 +7,10 @@ else
 {
 	shader_set(global.Pal_Shader);
 	if (texture != -4)
-		scr_palette_texture(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, true, texture);
+		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, texture);
 	pal_swap_set(spr_peppalette, paletteselect, false);
 	draw_sprite(sprite_index, image_index, x, y);
+	if (texture != -4)
+        pattern_reset();
 	reset_shader_fix();
 }

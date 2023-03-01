@@ -1,9 +1,9 @@
 state = states.normal;
-hub_array[0] = [624, "RECEPTION"];
-hub_array[1] = [626, "PIZZA TOWER LOBBY"];
-hub_array[2] = [639, "FARMLAND"];
-hub_array[3] = [644, "PIZZALAND EXIT"];
-hub_array[4] = [649, "INDUSTRIAL COMPLEX"];
+hub_array[0] = [hub_reception, "RECEPTION"];
+hub_array[1] = [hub_pizzatowerlobby, "PIZZA TOWER LOBBY"];
+hub_array[2] = [hub_farmland, "FARMLAND"];
+hub_array[3] = [hub_pizzalandexit, "PIZZALAND EXIT"];
+hub_array[4] = [hub_industrialcomplex, "INDUSTRIAL COMPLEX"];
 isgustavo = false;
 playerid = -4;
 selected = 0;

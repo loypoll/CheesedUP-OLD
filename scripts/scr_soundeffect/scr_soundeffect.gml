@@ -34,6 +34,7 @@ function set_controller_config()
 	ini_write_real("ControllerConfig", "deadzone_horiz", global.gamepad_deadzone_horizontal);
 	ini_write_real("ControllerConfig", "deadzonepress", global.gamepad_deadzone_press);
 	ini_write_real("ControllerConfig", "deadzonesuperjump", global.gamepad_deadzone_superjump);
+	ini_write_real("ControllerConfig", "deadzonecrouch", global.gamepad_deadzone_crouch);
 	ini_write_real("ControllerConfig", "superjump", global.gamepad_superjump);
 	ini_write_real("ControllerConfig", "groundpound", global.gamepad_groundpound);
 	obj_savesystem.ini_str_options = ini_close();

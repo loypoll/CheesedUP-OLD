@@ -14,6 +14,7 @@ for (var i = 0; i < array_length(banks); i++)
 }
 global.sound_map = ds_map_create();
 global.steam_api = false;
+global.screenshotcount = 0;
 
 #region macros
 
@@ -288,14 +289,14 @@ global.steam_api = false;
 #macro sfx_boxxedflap "event:/sfx/boxxed/flap"
 #macro sfx_boxxedspin "event:/sfx/boxxed/spin"
 #macro sfx_mortdead "event:/sfx/mort/mortdead"
-#macro sfx_mortside "event:/sfx/mort/mortside"
-#macro sfx_mortup "event:/sfx/mort/mortup"
+#macro sfx_mortside "event:/sfx/mort/side"
+#macro sfx_mortup "event:/sfx/mort/up"
 #macro sfx_mortdown "event:/sfx/mort/down"
 #macro sfx_mortdoublejump "event:/sfx/mort/doublejump"
 #macro sfx_mortpickup "event:/sfx/mort/mortpickup"
 #macro sfx_morthook "event:/sfx/mort/hook"
 #macro sfx_mortslap "event:/sfx/mort/mortslap"
-#macro sfx_mortcube "event:/sfx/mort/mortcube"
+#macro sfx_mortcube "event:/sfx/mort/cube"
 #macro sfx_firemouth_start "event:/sfx/firemouth/start"
 #macro sfx_firemouth_dash "event:/sfx/firemouth/dash"
 #macro sfx_firemouth_jump "event:/sfx/firemouth/jump"

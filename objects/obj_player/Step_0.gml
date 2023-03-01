@@ -585,6 +585,10 @@ if (state != states.chainsaw)
 		notification_push(notifs.bodyslam_end, [room]);
 	}
 }
+if (state != states.crouchjump && state != states.crouch)
+    uncrouch = 0;
+else if (state == states.crouch && uncrouch > 0)
+    uncrouch--;
 if (state == states.Sjump || (state == states.chainsaw && tauntstoredstate == states.Sjump))
 	sjumptimer++;
 else if (sjumptimer > 0)
@@ -1030,7 +1034,7 @@ if (object_index == obj_player1)
 	}
 	if (!(state == states.door || state == states.teleport || state == states.shotgun || state == states.tube || state == states.spaceshuttle || state == states.taxi || state == states.gottreasure || state == states.victory || state == states.gottreasure || state == states.actor || state == states.comingoutdoor || (state == states.knightpep && (sprite_index == spr_knightpepstart || sprite_index == spr_knightpepthunder)) || instance_exists(obj_fadeout) || (collision_flags & colflag.secret) > 0))
 	{
-		if (global.combotime > 0 && global.combotimepause <= 0)
+		if (room != forest_G1b && global.combotime > 0 && global.combotimepause <= 0)
 			global.combotime -= 0.15;
 	}
 	if (global.heattime > 0)

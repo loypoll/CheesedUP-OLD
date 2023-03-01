@@ -98,7 +98,7 @@ function draw_enemy(healthbar, palette, color = c_white)
 			shader_set(global.Pal_Shader);
 			pal_swap_set(spr_peppalette, 0);
 			if (object_index == obj_fakepepboss || object_index == obj_gustavograbbable)
-				scr_palette_texture(sprite_index, image_index, x, y + _stun, image_xscale * xscale, image_yscale * yscale, angle, b, image_alpha);
+				pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale * xscale, image_yscale * yscale, global.palettetexture);
 			pal_swap_set(spr_palette, paletteselect, false);
 		}
 		var _ys = 1;
@@ -126,7 +126,10 @@ function draw_enemy(healthbar, palette, color = c_white)
 			}
 		}
 		if (object_index == obj_peppinoclone || (usepalette && palette))
+		{
+			pattern_reset();
 			shader_reset();
+		}
 		if (object_index == obj_hamkuff)
 		{
 			if (state == states.blockstance && instance_exists(playerid))
@@ -162,7 +165,7 @@ function draw_player()
 {
 	var b = get_dark(image_blend, other.use_dark);
 	if (object_index == obj_player1)
-		scr_palette_texture(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, (xscale * scale_xs), (yscale * scale_ys), global.palettetexture);
 	var ps = paletteselect;
 	var spr = spr_palette;
 	if (isgustavo)
@@ -181,4 +184,5 @@ function draw_player()
 		if (pistolcharge >= 4)
 			draw_sprite(spr_revolvercharge, pistolcharge, x, y - 70);
 	}
+	pattern_reset();
 }

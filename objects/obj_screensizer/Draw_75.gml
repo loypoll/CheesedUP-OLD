@@ -6,6 +6,7 @@ if (!surface_exists(gui_surf))
 	gpu_set_blendmode(bm_normal);
 	exit;
 }
+global.Pattern_Texture_Indexed = -4;
 if (frac(app_scale) > 0 && global.option_texfilter)
 	gpu_set_texfilter(true);
 else

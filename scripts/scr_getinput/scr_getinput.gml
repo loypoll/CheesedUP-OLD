@@ -101,19 +101,32 @@ function scr_getinput()
 	else
 		stickpressed_vertical = false;
 	
-	// gamepad superjump bullshit
-	if object_index == obj_player1 && state == states.Sjumpprep
-	{
-		var haxis = gamepad_axis_value(_dvc, gp_axislh);
-		var vaxis = gamepad_axis_value(_dvc, gp_axislv);
-		
-		if haxis != 0 || vaxis != 0
-		{
-			var _dir = point_direction(0, 0, haxis, vaxis);
-			var _deadzone = floor(global.gamepad_deadzone_superjump * 120);
-			trace(_dir, ":", _deadzone);
-			if (_dir <= 120 + _deadzone && _dir >= 60 - _deadzone) || _dir >= 420 - _deadzone
-				key_up = true;
-		}
-	}
+	// gamepad analog stick bullshit
+	if object_index == obj_player1
+    {
+        if state == states.Sjumpprep || state == states.crouch || state == states.ratmountcrouch
+        {
+            var haxis = gamepad_axis_value(_dvc, gp_axislh);
+            var vaxis = gamepad_axis_value(_dvc, gp_axislv);
+            if haxis != 0 || vaxis != 0
+            {
+                var _deadzone = floor(global.gamepad_deadzone_superjump * 120);
+                if state == states.crouch || state == states.ratmountcrouch
+                {
+                    vaxis *= -1;
+                    _deadzone = floor(global.gamepad_deadzone_crouch * 120);
+                }
+				
+                var _dir = point_direction(0, 0, haxis, vaxis);
+                trace(_dir, ":", _deadzone);
+                if (_dir <= 120 + _deadzone && _dir >= 60 - _deadzone) || _dir >= 420 - _deadzone
+                {
+                    if state == states.Sjumpprep
+                        key_up = true;
+                    else if (state == states.crouch && uncrouch <= 0) || state == states.ratmountcrouch
+                        key_down = true;
+                }
+            }
+        }
+    }
 }

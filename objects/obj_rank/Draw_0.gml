@@ -1,12 +1,13 @@
 if (brownfade < 1)
 {
 	shader_set(global.Pal_Shader);
-	scr_palette_texture(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 	if (global.collect >= global.collectN)
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 	if (global.collectN > global.collect)
 		pal_swap_set(obj_player2.spr_palette, obj_player2.paletteselect, false);
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+	pattern_reset();
 	shader_reset();
 }
 if (brown)

@@ -1,1 +1,2 @@
-particlespr = spr_industrialdebris;
+chosenstate = states.tackle;
+escape = true;

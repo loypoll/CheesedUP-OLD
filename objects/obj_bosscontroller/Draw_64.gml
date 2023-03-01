@@ -52,17 +52,18 @@ switch (state)
 			if (by < SCREEN_HEIGHT)
 				by = SCREEN_HEIGHT;
 			shader_set(global.Pal_Shader);
-			scr_palette_texture(playerspr, 0, px, py, 1, 1, 0, c_player, 1, true);
+			pattern_set(global.Base_Pattern_Color, playerspr, 0, 1, 1, global.palettetexture);
 			pal_swap_set(spr_peppalette, obj_player1.paletteselect, false);
 			draw_sprite_ext(playerspr, -1, px, py, 1, 1, 0, c_player, 1);
 			if (bossspr == spr_vsfakepep || bossspr == spr_vsfakepep2)
 			{
-				scr_palette_texture(bossspr, 0, bx, by, _xs, _ys, 0, c_player, 1, true);
+				pattern_set(global.Base_Pattern_Color, bossspr, 0, _xs, _ys, global.palettetexture);
 				pal_swap_set(spr_peppalette, obj_player1.paletteselect, false);
 			}
 			else
 				pal_swap_set(spr_peppalette, 0, false);
 			draw_sprite_ext(bossspr, 0, bx, by, _xs, _ys, 0, c_player, 1);
+			pattern_reset();
 			reset_shader_fix();
 			if (_index == 1)
 				draw_sprite_ext(bossspr, _index, bx, by, _xs, _ys, 0, c_player, glitchalpha);
@@ -102,7 +103,7 @@ switch (state)
 					else
 					{
 						if (palettetexture != -4)
-							scr_palette_texture(sprite_index, image_index, x, y, 1, 1, 0, c_white, 1, true, palettetexture);
+							pattern_set(global.Base_Pattern_Color, sprite_index, image_index, 1, 1, palettetexture);
 						pal_swap_set(spr_palette, paletteselect, false);
 						draw_sprite(sprite_index, image_index, x, y);
 						continue;
@@ -121,6 +122,7 @@ switch (state)
                 }
 			}
 		}
+		pattern_reset();
 		reset_shader_fix();
 		break;
 }

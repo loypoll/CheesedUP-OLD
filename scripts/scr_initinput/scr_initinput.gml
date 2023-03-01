@@ -33,7 +33,8 @@ function scr_initinput(open_savedata = true)
 	global.gamepad_deadzone_vertical = ini_read_real("ControllerConfig", "deadzone_vert", 0.65);
 	global.gamepad_deadzone_horizontal = ini_read_real("ControllerConfig", "deadzone_horiz", 0.5);
 	global.gamepad_deadzone_press = ini_read_real("ControllerConfig", "deadzonepress", 0.5);
-	global.gamepad_deadzone_superjump = ini_read_real("ControllerConfig", "deadzonesuperjump", 0.46);
+	global.gamepad_deadzone_superjump = ini_read_real("ControllerConfig", "deadzonesuperjump", 0.56);
+    global.gamepad_deadzone_crouch = ini_read_real("ControllerConfig", "deadzonecrouch", 0.46);
 	global.gamepad_superjump = ini_read_real("ControllerConfig", "superjump", 1);
 	global.gamepad_groundpound = ini_read_real("ControllerConfig", "groundpound", 1);
 	

@@ -43,10 +43,16 @@ if window_has_focus()
 	saved_guiwidth = display_get_gui_width();
 	saved_guiheight = display_get_gui_height();
 }
-else if global.option_fullscreen
-	alarm[2] = 5;
-if window_has_focus() && (window_width_current != ww || window_height_current != wh || global.option_scale_mode != last_scale_mode || global.option_fullscreen != gameframe_get_fullscreen())
+else
 {
+    dirty = true;
+    if global.option_fullscreen
+        alarm[2] = 5;
+}
+if window_has_focus() && (dirty || window_width_current != ww || window_height_current != wh || global.option_scale_mode != last_scale_mode || global.option_fullscreen != gameframe_get_fullscreen())
+{
+	if dirty
+        dirty = false;
 	if (global.option_scale_mode == 0)
 	{
 		camera_set_view_size(view_camera[0], CAMERA_WIDTH * camzoom, CAMERA_HEIGHT * camzoom);
