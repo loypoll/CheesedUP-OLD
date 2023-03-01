@@ -607,7 +607,8 @@ function scr_pepperman_mini()
 				{
 					ministate = states.jump;
 					vsp = -15;
-					image_xscale = sign(targetplayer.x - x);
+					if targetplayer.x != x
+						image_xscale = sign(targetplayer.x - x);
 					sprite_index = spr_pepperman_minijump;
 					image_index = 0;
 					sound_play_3d("event:/sfx/pep/jump", x, y);

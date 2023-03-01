@@ -1,1 +1,1 @@
-targetRoom = industrial_5;
+particlespr = spr_industrialdebris

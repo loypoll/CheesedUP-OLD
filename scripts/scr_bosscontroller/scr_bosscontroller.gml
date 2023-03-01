@@ -224,15 +224,12 @@ function scr_bosscontroller_draw_health(argument0, argument1, argument2, argumen
 	{
 		var c = c_white;
 		var zpad = _index * 3;
-		if (argument13 == -4)
+		if (argument11 != -4)
 		{
-			if (argument11 != -4)
-			{
-				if (argument12 == -4)
-					pal_swap_set(argument11, _index, false);
-				else
-					pal_swap_set(argument11, argument12, false);
-			}
+			if (argument12 == -4)
+				pal_swap_set(argument11, _index, false);
+			else
+				pal_swap_set(argument11, argument12, false);
 		}
 		var _x = 0;
 		var _y = 0;
@@ -245,16 +242,7 @@ function scr_bosscontroller_draw_health(argument0, argument1, argument2, argumen
 				var xf = (argument5 + (_x * argument7)) - zpad;
 				var yf = (argument6 + (_y * argument8)) - zpad;
 				if (argument13 != -4)
-				{
-					scr_palette_texture(argument0, argument9, xf, yf, 1, 1, 0, c, argument10, true, argument13);
-					if (argument11 != -4)
-					{
-						if (argument12 == -4)
-							pal_swap_set(argument11, _index, false);
-						else
-							pal_swap_set(argument11, argument12, false);
-					}
-				}
+					pattern_set(global.Base_Pattern_Color, argument0, argument9, 1, 1, argument13);
 				draw_sprite_ext(argument0, argument9, xf, yf, 1, 1, 0, c, argument10);
 			}
 			_x++;
@@ -266,6 +254,7 @@ function scr_bosscontroller_draw_health(argument0, argument1, argument2, argumen
 			hpp++;
 		}
 	}
+	pattern_reset();
 }
 function scr_bosscontroller_get_health_pos(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8 = false)
 {

@@ -16,6 +16,7 @@ global.gameframe_caption_icon = spr_ico;
 global.gameframe_caption_icon_margin = 6;
 global.gameframe_border_width = 2;
 captionalpha = 1;
+dirty = false;
 disappearbuffer = 100;
 mouse_xprevious = mouse_x;
 mouse_yprevious = mouse_y;

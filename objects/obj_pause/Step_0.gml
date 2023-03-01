@@ -13,6 +13,8 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	}
 	with (obj_charswitch_intro)
 		_cutscenehandler = true;
+	with (obj_bossplayerdeath)
+        _cutscenehandler = true;
 	with (obj_titlecard)
 		_cutscenehandler = true;
 	with (obj_taxi)

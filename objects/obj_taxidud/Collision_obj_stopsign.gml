@@ -6,7 +6,10 @@ if (playerid.visible == 0)
 	{
 		sound_play("event:/sfx/misc/taxibeep");
 		if (isgustavo)
+		{
 			state = states.ratmount;
+			sprite_index = spr_player_ratmountidle;
+		}
 		else
 			state = states.normal;
 		instance_create(x, y, obj_genericpoofeffect);

@@ -7,10 +7,11 @@ var cy = camera_get_view_y(view_camera[0]);
 shader_set(global.Pal_Shader);
 with (obj_player1)
 {
-	scr_palette_texture(sprite_index, image_index, x - cx, y - cy, xscale * scale_xs, yscale * scale_ys, angle, image_blend, 1);
+	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, xscale * scale_xs, yscale * scale_ys, global.palettetexture);
 	pal_swap_set(spr_palette, paletteselect, false);
 	draw_sprite_ext(sprite_index, image_index, x - cx, y - cy, xscale, yscale, image_angle, image_blend, 1);
 }
+pattern_reset();
 reset_shader_fix();
 draw_set_alpha(fade2);
 draw_set_color(c_black);

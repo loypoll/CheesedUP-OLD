@@ -1,1 +1,1 @@
-escape = 1
+escape = true;

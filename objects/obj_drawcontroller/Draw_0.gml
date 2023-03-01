@@ -43,10 +43,27 @@ with (obj_heatafterimage)
 {
 	if (visible)
 	{
-		scr_palette_texture(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.xscale, obj_player1.yscale, obj_player1.angle, c_white, 1);
+		pattern_set(global.Base_Pattern_Color, obj_player1.sprite_index, obj_player1.image_index, obj_player1.xscale, obj_player1.yscale, global.palettetexture);
 		pal_swap_set(obj_player1.spr_palette, obj_player1.paletteselect, false);
 		draw_sprite_ext(obj_player1.sprite_index, obj_player1.image_index, x, y, obj_player1.xscale, obj_player1.yscale, obj_player1.angle, c_white, alpha);
+		pattern_reset();
 	}
+}
+if (room == boss_fakepep)
+{
+    with (obj_fakepepclone)
+    {
+        if (visible && !flash)
+        {
+            pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
+            pal_swap_set(spr_peppalette, obj_player1.paletteselect, 0);
+            draw_self();
+            pal_swap_set(spr_peppalette, 13, 0);
+            draw_self();
+            pattern_reset();
+            draw_self();
+        }
+    }
 }
 draw_set_flash(true);
 with (obj_baddie)
@@ -56,6 +73,14 @@ with (obj_baddie)
 		_stun = 25;
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
 		draw_sprite_ext(sprite_index, image_index, x, y + _stun, xscale * image_xscale, yscale, angle, image_blend, image_alpha);
+}
+if (room == boss_fakepep)
+{
+    with (obj_fakepepclone)
+    {
+        if (visible && flash)
+            draw_self();
+    }
 }
 with (obj_deadjohnparent)
 {
@@ -104,9 +129,11 @@ with (obj_sausageman_dead)
 	{
 		b = get_dark(image_blend, other.use_dark);
 		if (oldpalettetexture != -4)
-			scr_palette_texture(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha, false, oldpalettetexture);
+			pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, oldpalettetexture);
 		pal_swap_set(spr_palette, paletteselect, false);
 		draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, angle, b, image_alpha);
+		if (oldpalettetexture != -4)
+            pattern_reset();
 	}
 }
 draw_set_flash(true);

@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Unused",
-    "path": "folders/Objects/Unused.yy",
+    "name": "Fake Peppino",
+    "path": "folders/Objects/Baddie/Boss/Fake Peppino.yy",
   },
   "parentObjectId": null,
   "persistent": false,

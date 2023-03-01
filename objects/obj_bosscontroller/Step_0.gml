@@ -17,10 +17,8 @@ if (!round_timer_init)
 }
 player_index += 0.35;
 boss_index += 0.35;
-if (player_index >= (sprite_get_number(spr_bossfight_playerhp) - 1))
-	player_index = frac(player_index);
-if (boss_index >= (sprite_get_number(boss_hpsprite) - 1))
-	boss_index = frac(boss_index);
+player_index = wrap(player_index, 0, sprite_get_number(spr_bossfight_playerhp));
+boss_index = wrap(boss_index, 0, sprite_get_number(boss_hpsprite));
 if (room == boss_vigilante)
 {
 	if ((instance_exists(obj_vigilanteboss) && obj_vigilanteboss.state == states.duel) || instance_exists(obj_vigilante_duelintro))

@@ -15,9 +15,11 @@ if (currentselect != -1)
 	tex = global.game_palettetexture[currentselect];
 }
 if (tex != -4)
-	scr_palette_texture(sprite_index, image_index, _x, _y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, false, tex);
+	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, tex);
 pal_swap_set(spr_peppalette, pal, false);
 draw_sprite_ext(sprite_index, image_index, _x, _y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+if (tex != -4)
+    pattern_reset();
 shader_reset();
 draw_set_font(lang_get_font("bigfont"));
 draw_set_halign(1);

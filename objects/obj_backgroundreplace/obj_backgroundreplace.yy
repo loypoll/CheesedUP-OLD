@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Unused",
-    "path": "folders/Objects/Unused.yy",
+    "name": "World 4",
+    "path": "folders/Objects/Level Specific/World 4.yy",
   },
   "parentObjectId": null,
   "persistent": false,

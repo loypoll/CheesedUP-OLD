@@ -7,7 +7,7 @@ enum debug_text_type
 }
 
 depth = -500;
-DEBUG = debug;
+DEBUG = (GM_build_type == "run");
 if (parameter_count() > 2)
 	DEBUG = true;
 if (!DEBUG)

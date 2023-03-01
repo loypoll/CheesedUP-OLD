@@ -20,6 +20,12 @@ function screen_apply_size()
 			alarm[0] = 2;
 		}
 	}
+	screen_apply_vsync();
+}
+function screen_apply_vsync()
+{
+    trace("Applying VSync: ", global.option_vsync);
+    display_reset(0, global.option_vsync);
 }
 function screen_option_apply_fullscreen(fullscreen)
 {
@@ -139,7 +145,8 @@ function get_options()
 	global.option_timer = ini_read_real("Option", "timer", false);
 	global.option_timer_type = ini_read_real("Option", "timer_type", 0);
 	global.option_unfocus_mute = ini_read_real("Option", "unfocus_mute", false);
-	global.option_texfilter = ini_read_real("Option", "texfilter", 1);
+	global.option_texfilter = ini_read_real("Option", "texfilter", true);
+	global.option_vsync = ini_read_real("Option", "vsync", false);
 	global.lang = global.option_lang;
 	if is_undefined(ds_map_find_value(global.lang_map, global.lang))
 		global.lang = "en";

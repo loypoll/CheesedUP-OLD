@@ -28,6 +28,7 @@ global.playerhit = 0;
 global.door_sprite = spr_door;
 global.door_index = 0;
 global.pistol = false;
+uncrouch = 0;
 parryID = -4;
 bodyslam_notif = false;
 swingdingthrow = false;

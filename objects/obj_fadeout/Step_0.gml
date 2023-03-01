@@ -80,6 +80,7 @@ if (instance_exists(obj_player))
 		if (other.fadein == 1 && obj_player1.state == states.door && (obj_player1.sprite_index == spr_downpizzabox || obj_player1.sprite_index == spr_uppizzabox))
 		{
 			state = states.crouchjump;
+			uncrouch = 20;
 			if (global.coop == 1)
 				obj_player2.state = states.crouchjump;
 		}
@@ -91,6 +92,7 @@ if (instance_exists(obj_player))
 			if (other.fadein == 1 && (obj_player2.state == states.door || obj_player2.state == states.victory) && (place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate)))
 			{
 				state = states.comingoutdoor;
+				uncrouch = 20;
 				image_index = 0;
 				if (global.coop == 1)
 				{

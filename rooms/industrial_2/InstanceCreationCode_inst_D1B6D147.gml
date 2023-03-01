@@ -1,2 +1,2 @@
-chosenstate = states.slap;
-escape = true;
+particlespr = spr_industrialdebris
+targettiles = "Tiles_1"

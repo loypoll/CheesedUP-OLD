@@ -8,9 +8,10 @@ if (!instance_exists(obj_rank))
 	with (obj_player)
 	{
 		if (object_index == obj_player1)
-			scr_palette_texture(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, image_blend, image_alpha);
+			pattern_set(global.Base_Pattern_Color, sprite_index, image_index, xscale, yscale, global.palettetexture);
 		pal_swap_set(spr_palette, paletteselect, false);
 		draw_sprite_ext(sprite_index, image_index, x, y, xscale, yscale, image_angle, image_blend, image_alpha);
 	}
+	pattern_reset();
 	shader_reset();
 }

@@ -3,16 +3,16 @@ function scr_keyname(_key)
 	switch (_key)
 	{
 		case vk_up:
-			return "UP";
+			return lang_get_value("key_up");
 			break;
 		case vk_right:
-			return "RIGHT";
+			return lang_get_value("key_right");
 			break;
 		case vk_left:
-			return "LEFT";
+			return lang_get_value("key_left");
 			break;
 		case vk_down:
-			return "DOWN";
+			return lang_get_value("key_down");
 			break;
 		case vk_enter:
 			return "ENTER";

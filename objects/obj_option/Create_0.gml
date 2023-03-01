@@ -143,6 +143,15 @@ add_option_multiple(video_menu, 2, "option_resolution", res, function(val)
 	screen_apply_size();
 }).value = global.option_resolution;
 
+add_option_toggle(video_menu, 3, "option_vsync", function(val)
+{
+    ini_open_from_string(obj_savesystem.ini_str_options);
+    ini_write_real("Option", "vsync", val);
+    obj_savesystem.ini_str_options = ini_close();
+    global.option_vsync = val;
+    screen_apply_vsync();
+}).value = global.option_vsync;
+
 add_option_toggle(video_menu, 4, "option_texfilter", function(val)
 {
 	ini_open_from_string(obj_savesystem.ini_str_options);
@@ -317,6 +326,8 @@ add_option_press(controls_menu, 3, "option_reset_config", function()
 						q.value = global.gamepad_deadzone_press * 100;
 					else if (q.name == "option_deadzone_superjump")
 						q.value = global.gamepad_deadzone_superjump * 100;
+					else if (q.name == "option_deadzone_crouch")
+                        q.value = global.gamepad_deadzone_crouch * 100;
 					else if (q.name == "option_controller_superjump")
 						q.value = global.gamepad_superjump;
 					else if (q.name == "option_controller_groundpound")
@@ -412,6 +423,12 @@ add_option_slide(deadzones_menu, 5, "option_deadzone_superjump", function(val)
 	global.gamepad_deadzone_superjump = (val / 100)
 	set_controller_config()
 }).value = (global.gamepad_deadzone_superjump * 100);
+
+add_option_slide(deadzones_menu, 5, "option_deadzone_crouch", function(val)
+{
+    global.gamepad_deadzone_crouch = (val / 100);
+    set_controller_config();
+}).value = (global.gamepad_deadzone_crouch * 100);
 
 array_push(menus, deadzones_menu);
 

@@ -10,7 +10,7 @@ for (var i = 0; i < array_length(hats_arr); i++)
 	if (i < hats)
 	{
 		var y2 = y1 + hats_arr[i][1];
-		scr_palette_texture(sprite_index, image_index, x1, y2, 1, 1, 0, c_white, image_alpha);
+		pattern_set(global.Base_Pattern_Color, sprite_index, image_index, 1, 1, global.palettetexture);
 		pal_swap_set(spr_peppalette, obj_player1.paletteselect);
 		draw_sprite_ext(sprite_index, image_index, x1, y2, 1, 1, 0, c_white, image_alpha);
 	}
@@ -21,6 +21,7 @@ for (var i = 0; i < array_length(hats_arr); i++)
 		yy++;
 	}
 }
+pattern_reset();
 shader_reset();
 if (state > 0)
 {
