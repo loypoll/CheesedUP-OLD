@@ -67,7 +67,7 @@ if (instance_exists(obj_player))
 {
 	with (obj_player1)
 	{
-		if (other.fadein == 1 && (obj_player1.state == states.door || obj_player1.state == states.victory)/* && (sprite_index == spr_victory || place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate))*/)
+		if (other.fadein == 1 && (obj_player1.state == states.door || obj_player1.state == states.victory) && !box/* && (sprite_index == spr_victory || place_meeting(x, y, obj_door) || place_meeting(x, y, obj_startgate))*/)
 		{
 			state = states.comingoutdoor;
 			image_index = 0;

@@ -1,6 +1,7 @@
 image_speed = 0.35;
 visited = false;
 depth = 103;
+targetRoom = room;
 targetDoor = "A";
 group_arr = -4;
 offload_arr = -4;

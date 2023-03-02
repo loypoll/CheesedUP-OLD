@@ -8,6 +8,8 @@ switch character
 	
 	case "P":
 		palettes = [];
+		unlockables = ["unfunny", "money", "sage", "blood", "tv", "dark", "shitty", "golden", "garish", "mooney", "funny", "itchy", "pizza", "stripes", "goldemanne", "bones", "pp", "war", "john"];
+		
 		add_palette(0, "yellow", noone, "Yellow", "Legends say he was pissed on...");
 		add_palette(1, "classic", noone, "Peppino", "A somewhat overweight Italian chef.");
 		add_palette(3, "unfunny", noone, "Unfunny", "Just like me, fr!");

@@ -2,11 +2,6 @@ if live_call() return live_result;
 if !init
 	exit;
 
-if keyboard_check_pressed(ord("R"))
-{
-	event_perform(ev_create, 0);
-}
-
 // get input
 if anim_con == 0
 	scr_getinput(true);
@@ -48,9 +43,7 @@ charshift[2] = lerp(charshift[2], 1, 0.25); // alpha
 // cancel
 if key_slap && anim_con == 0
 {
-	keyboard_clear(global.key_slap);
-	global.in_menu = false;
-	
+	close_menu();
 	sound_play(sfx_back);
 	anim_con = 1;
 }

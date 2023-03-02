@@ -1,8 +1,7 @@
 #macro debug (GM_build_type == "run")
 
 scr_get_languages();
-pal_swap_init_system(shd_pal_swapper, true);
-global.in_menu = false;
+pal_swap_init_system_fix(shd_pal_swapper, true);
 
 // fonts
 global.bigfont = font_add_sprite_ext(spr_font, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.1234567890:", true, 0);

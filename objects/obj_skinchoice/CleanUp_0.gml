@@ -1,3 +1,3 @@
-global.in_menu = false;
+close_menu();
 with obj_player1
 	visible = true;

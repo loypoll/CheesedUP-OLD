@@ -24,7 +24,7 @@ select = -1;
 arrowbuffer = -1;
 
 scr_init_input();
-global.in_menu = true;
+open_menu();
 
 sel = {
 	pal: 1,
@@ -34,9 +34,24 @@ characters = [
 	["P", spr_player_idle, spr_peppalette, 1], // character, idle, palette sprite, main color
 ];
 
+// set in user event 0
 palettes = [];
+unlockables = [];
+
 add_palette = function(palette, entry, texture = noone, name = "PALETTE", description = "loypoll please add details")
 {
+	// check if the palette was unlocked
+	if array_get_index(unlockables, entry) != -1
+	{
+		ini_open_from_string(obj_savesystem.ini_str_options);
+		if !ini_read_real("Palettes", entry, false)
+		{
+			ini_close();
+			exit;
+		}
+		ini_close();
+	}
+	
 	array_push(palettes, {
 		palette: palette,
 		entry: entry,
