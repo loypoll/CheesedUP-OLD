@@ -34,6 +34,31 @@ switch character
 		break;
 	
 	#endregion
+	#region Noise
+	
+	case "N":
+		palettes = [];
+		
+		add_palette(1, "N-classic", noone, "The Noise", "The mischievous gremlin.");
+		break;
+	
+	#endregion
 }
 pal_swap_index_palette(characters[sel.char][2]);
 init = true;
+
+// automatically select current palette
+sel.pal = (character == "P" ? 1 : 0);
+if instance_exists(obj_player1)
+{
+	for(var i = 0; i < array_length(palettes); i++)
+	{
+		if global.palettetexture != noone
+		{
+			if global.palettetexture == palettes[i].texture
+				sel.pal = i;
+		}
+		else if obj_player1.paletteselect == palettes[i].palette
+			sel.pal = i;
+	}
+}
