@@ -8,19 +8,20 @@ if anim_con == 0
 else
 	scr_init_input();
 
-// move
-var move = key_left2 + key_right2;
-if arrowbuffer == 0
-	move += key_left + key_right;
+#region change palette
 
-if move != 0
+var move_hor = key_left2 + key_right2;
+if arrowbuffer == 0
+	move_hor += key_left + key_right;
+
+if move_hor != 0
 {
 	var prevpal = sel.pal;
-	sel.pal = clamp(sel.pal + move, 0, array_length(palettes) - 1);
+	sel.pal = clamp(sel.pal + move_hor, 0, array_length(palettes) - 1);
 	
 	if sel.pal != prevpal
 	{
-		charshift[0] = move;
+		charshift[0] = move_hor;
 		charshift[2] = 0; // alpha
 		sound_play_multiple(sfx_angelmove);
 	}
@@ -34,6 +35,26 @@ if key_left == 0 && key_right == 0
 	arrowbuffer = -1;
 if arrowbuffer > 0
 	arrowbuffer--;
+
+#endregion
+#region change character
+
+var move_ver = key_down2 - key_up2;
+if move_ver != 0
+{
+	var prevpal = sel.char;
+	sel.char = clamp(sel.char + move_hor, 0, array_length(characters) - 1);
+	
+	if sel.char != prevpal
+	{
+		charshift[1] = move_ver;
+		charshift[2] = 0; // alpha
+		sound_play_multiple(sfx_angelmove);
+		event_user(0);
+	}
+}
+
+#endregion
 
 // charshifts
 charshift[0] = lerp(charshift[0], 0, 0.25); // horizontal

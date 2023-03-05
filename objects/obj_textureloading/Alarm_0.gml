@@ -12,7 +12,10 @@ else
 {
 	image_alpha -= 0.1;
 	if image_alpha <= -0.1
+	{
 		room_goto(Realtitlescreen);
+		screen_apply_vsync();
+	}
 	
 	alarm[0] = 1;
 }

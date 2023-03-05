@@ -16,7 +16,10 @@ proparr = [
 	[spr_fakepeppino_stun, spr_fakepeppino_intro3loop, spr_player_mask, -4]
 ];
 with (obj_music)
-	fmod_event_instance_set_parameter(music.event, "state", 2, false);
+{
+	if (music != noone)
+		fmod_event_instance_set_parameter(music.event, "state", 2, false);
+}
 if (room == rm_testing4)
 {
 	with (obj_player)

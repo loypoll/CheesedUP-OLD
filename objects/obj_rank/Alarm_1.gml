@@ -12,6 +12,7 @@ with (obj_player)
 	image_index = 0;
 	image_blend = c_white;
 }
+global.exitrank = false;
 global.leveltorestart = -4;
 global.leveltosave = -4;
 global.level_minutes = 0;

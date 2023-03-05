@@ -1,4 +1,4 @@
 @echo off
-git fetch upstream
-git merge upstream/main
+git fetch upstream --verbose
+git merge upstream/main --verbose
 pause

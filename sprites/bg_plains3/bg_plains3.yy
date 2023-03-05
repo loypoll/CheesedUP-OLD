@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "unusedgroup",
-    "path": "texturegroups/unusedgroup",
+    "name": "mansiongroup",
+    "path": "texturegroups/mansiongroup",
   },
   "type": 0,
   "VTile": false,

@@ -3,9 +3,14 @@
 #macro CAMERA_WIDTH obj_screensizer.ideal_width
 #macro CAMERA_HEIGHT obj_screensizer.ideal_height
 
+function screen_apply_size_delayed()
+{
+    with obj_screensizer
+        alarm[2] = 1;
+}
 function screen_apply_size()
 {
-	with (obj_screensizer)
+	with obj_screensizer
 	{
 		if steam_deck().is_steamdeck
 			screen_apply_fullscreen(true);
@@ -15,17 +20,23 @@ function screen_apply_size()
 				global.option_resolution = 1;
 			if gameframe_get_fullscreen() == false
 				gameframe_restore();
-		
-			window_set_size(get_resolution_width(global.option_resolution, aspect_ratio), get_resolution_height(global.option_resolution, aspect_ratio));
+			
+			var w = get_resolution_width(global.option_resolution, aspect_ratio);
+            var h = get_resolution_height(global.option_resolution, aspect_ratio);
+            trace("Setting Window Size: ", w, ", ", h);
+            window_set_size(w, h);
+			
 			alarm[0] = 2;
 		}
 	}
-	screen_apply_vsync();
 }
 function screen_apply_vsync()
 {
-    trace("Applying VSync: ", global.option_vsync);
-    display_reset(0, global.option_vsync);
+	if room != Loadiingroom
+    {
+	    trace("Applying VSync: ", global.option_vsync);
+	    display_reset(0, global.option_vsync);
+	}
 }
 function screen_option_apply_fullscreen(fullscreen)
 {

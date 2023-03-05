@@ -91,6 +91,8 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 				restarttimer = true;
 		}
 	}
+	if door_index > -1
+		global.door_index = door_index;
 }
 if REMIX && other.state != states.victory
 {

@@ -21,6 +21,8 @@ with (obj_player1)
 	sprite_index = spr_player_slipbanan1;
 	image_index = 10;
 }
+global.level_minutes = 0;
+global.level_seconds = 0;
 with (obj_screensizer)
 	camzoom = 1;
 with (instance_create(0, 0, obj_backtohub_fadeout))

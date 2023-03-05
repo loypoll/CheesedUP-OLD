@@ -9,6 +9,7 @@ locked = false;
 john = false;
 alarm[0] = 1;
 uparrowID = scr_create_uparrowhitbox();
+
 if (room == tower_5)
 {
 	if (global.panic)

@@ -180,12 +180,15 @@ add_option_press(window_menu, 0, "option_back", function() {
 });
 add_option_press(window_menu, 1, "option_windowed", function() {
     screen_option_apply_fullscreen(0);
+	screen_apply_size_delayed();
 });
 add_option_press(window_menu, 2, "option_fullscreen", function() {
     screen_option_apply_fullscreen(1);
+	screen_apply_size_delayed();
 });
 add_option_press(window_menu, 3, "option_borderless", function() {
     screen_option_apply_fullscreen(2);
+	screen_apply_size_delayed();
 });
 array_push(menus, window_menu);
 

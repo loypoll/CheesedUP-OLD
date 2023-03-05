@@ -22,8 +22,8 @@
   },
   "spriteNoExport": false,
   "textureGroupId": {
-    "name": "unusedgroup",
-    "path": "texturegroups/unusedgroup",
+    "name": "mansiongroup",
+    "path": "texturegroups/mansiongroup",
   },
   "tile_count": 64,
   "tileAnimation": {

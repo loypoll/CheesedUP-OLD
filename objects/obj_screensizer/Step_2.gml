@@ -46,9 +46,11 @@ if window_has_focus()
 else
 {
     dirty = true;
-    if global.option_fullscreen
+    if global.option_fullscreen > 0
         alarm[2] = 5;
 }
+if startbuffer > 0
+    startbuffer--;
 if window_has_focus() && (dirty || window_width_current != ww || window_height_current != wh || global.option_scale_mode != last_scale_mode || global.option_fullscreen != gameframe_get_fullscreen())
 {
 	if dirty

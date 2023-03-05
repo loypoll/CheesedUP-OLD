@@ -144,6 +144,9 @@ sound_cache = ds_map_create();
 #macro sfx_bombfuse "event:/sfx/pep/bombfuse"
 #macro sfx_pray "event:/sfx/pep/pray"
 #macro sfx_rampjump "event:/sfx/pep/rampjump"
+#macro sfx_crossloop "event:/sfx/pep/cross"
+#macro sfx_ghostintro "event:/sfx/pep/ghostintro"
+#macro sfx_shotgunshot "event:/sfx/pep/shotgunshot"
 
 #macro sfx_pepperman_shoulderbash "event:/sfx/pepperman/shoulderbash"
 #macro sfx_pepperman_groundpound "event:/sfx/pepperman/groundpound"
@@ -158,6 +161,7 @@ sound_cache = ds_map_create();
 #macro sfx_pepperman_shrink "event:/sfx/pepperman/shrink"
 
 #macro sfx_vigilante_throw "event:/sfx/vigilante/throw"
+#macro sfx_vigilante_flamestart "event:/sfx/vigilante/flamestart"
 #macro sfx_vigilante_flamethrower "event:/sfx/vigilante/flamethrower"
 #macro sfx_vigilante_mach1 "event:/sfx/vigilante/mach1"
 #macro sfx_vigilante_slide "event:/sfx/vigilante/slide"
@@ -430,8 +434,7 @@ sound_cache = ds_map_create();
 #macro sfx_towercollapse "event:/sfx/ending/towercollapse"
 #macro sfx_johnending "event:/sfx/ending/johnending"
 
-// music (not recommended)
-/*
+// music
 #macro mu_pizzatime "event:/music/pizzatime"
 #macro mu_finalescape "event:/music/finalescape"
 #macro mu_rank "event:/music/rank"
@@ -518,6 +521,5 @@ sound_cache = ds_map_create();
 #macro mu_kidspartytitle "event:/music/w5/kidspartytitle"
 #macro mu_wartitle "event:/music/w5/wartitle"
 #macro mu_chateautitle "event:/music/w5/chateautitle"
-*/
 
 #endregion

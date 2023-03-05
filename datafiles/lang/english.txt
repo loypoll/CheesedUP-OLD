@@ -4,7 +4,7 @@
 lang = "en"
 display_name = "ENGLISH"
 custom_fonts = false
-game_version = "V1.0.3"
+game_version = "V1.0.311"
 
 # ---------------
 # IMPORTANT NOTE
@@ -459,7 +459,7 @@ achievement_sewer3 = "Avoid getting grabbed by Mr Pinch\nduring the escape seque
 achievement_industrial1title = "Unflattening"
 achievement_industrial1 = "Remove the boxxed transformation from each priest\nat least once in Peppibot Factory"
 achievement_industrial2title = "Whoop This"
-achievement_industrial2 = "Avoid getting damaged in the first secret of\nPeppibot Factory"
+achievement_industrial2 = "Survive the first secret of Peppibot Factory\nwithout getting hurt"
 achievement_industrial3title = "There Can Be Only One"
 achievement_industrial3 = "Destroy every Peppino robot in Peppibot Factory"
 achievement_freezer1title = "Frozen Nuggets"
