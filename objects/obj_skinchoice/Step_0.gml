@@ -43,7 +43,7 @@ var move_ver = key_down2 - key_up2;
 if move_ver != 0
 {
 	var prevpal = sel.char;
-	sel.char = clamp(sel.char + move_hor, 0, array_length(characters) - 1);
+	sel.char = clamp(sel.char + move_ver, 0, array_length(characters) - 1);
 	
 	if sel.char != prevpal
 	{
