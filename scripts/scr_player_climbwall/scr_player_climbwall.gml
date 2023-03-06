@@ -22,7 +22,7 @@ function scr_player_climbwall()
 				}
 				
 				var mv = wallspeed / 16;
-				image_speed = lerp(0.35, 0.75, mv);
+				image_speed = lerp(0.35, 0.75, clamp(mv, 0, 1));
 			}
 			else
 			{
@@ -62,7 +62,7 @@ function scr_player_climbwall()
 				railmovespeed = 6;
 				raildir = -xscale;
 			}
-			if (verticalbuffer <= 0 && wallspeed > 0 && !scr_solid(x + xscale, y) && !place_meeting(x, y, obj_verticalhallway) && !place_meeting(x, y - 12, obj_verticalhallway))
+			if (verticalbuffer <= 0 && (wallspeed > 0 or place_meeting(x + xscale, y, obj_unclimbablewall)) && !scr_solid(x + xscale, y) && !place_meeting(x, y, obj_verticalhallway) && !place_meeting(x, y - 12, obj_verticalhallway))
 			{
 				trace("climbwall out");
 				with instance_create(x, y, obj_jumpdust)

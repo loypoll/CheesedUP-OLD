@@ -109,7 +109,10 @@ function scr_player_handstandjump()
 	mask_index = spr_player_mask;
 	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && scr_slope()))
 	{
-		wallspeed = 6;
+		if !place_meeting(x + hsp, y, obj_unclimbablewall)
+			wallspeed = 6;
+		else
+			wallspeed = -vsp;
 		grabclimbbuffer = 10;
 		state = states.climbwall;
 	}
