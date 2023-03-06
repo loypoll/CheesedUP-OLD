@@ -40,7 +40,8 @@ function scr_player_ratmount()
 	}
 	if (ratmount_movespeed >= 12 && gustavodash != 51)
 	{
-		instance_create(x, y, obj_jumpdust);
+		with instance_create(x, y, obj_jumpdust)
+			image_xscale = REMIX ? other.xscale : 1;
 		gustavodash = 51;
 	}
 	if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)

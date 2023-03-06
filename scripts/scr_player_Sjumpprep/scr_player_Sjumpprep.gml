@@ -52,6 +52,7 @@ function scr_player_Sjumpprep()
 			}
 			image_speed = 0.35;
 			break;
+		
 		case "N":
 			hsp = 0;
 			vsp = 0;

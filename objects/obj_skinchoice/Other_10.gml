@@ -39,7 +39,7 @@ switch character
 	case "N":
 		palettes = [];
 		
-		add_palette(1, "N-classic", noone, "The Noise", "The mischievous gremlin.");
+		add_palette(0, "N-classic", noone, "The Noise", "The mischievous gremlin.");
 		break;
 	
 	#endregion

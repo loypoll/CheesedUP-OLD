@@ -45,6 +45,7 @@ function scr_wc_create()
 	WC_showinvisible = 0; // 0: no, 1: yes, 2: show names of objects without sprites
 	WC_oobcam = false;
 	WC_showcollisions = false;
+	WC_liverooms = false;
 	
 	// shortcuts
 	WC_binds = ds_map_create();

@@ -2,6 +2,10 @@ active = false;
 depth = -7;
 desireddepth = -6;
 
+revealed = false;
+if ds_list_find_index(global.saveroom, id) != -1
+	revealed = true;
+
 tiles = [];
 surf = -1;
 

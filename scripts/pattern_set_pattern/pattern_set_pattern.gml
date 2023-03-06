@@ -1,7 +1,9 @@
 function pattern_set_pattern(sprite, subimg)
 {
+	/*
     if sprite == global.Pattern_Texture_Indexed && global.Pattern_Texture_Indexed != noone
         exit;
+	*/
     if sprite == noone
         exit;
 	

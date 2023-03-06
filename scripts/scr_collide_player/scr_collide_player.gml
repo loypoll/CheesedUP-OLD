@@ -65,14 +65,16 @@ function scr_collide_player()
 		{
 			for (var k = 1; k <= 4; k++)
 			{
-				if (scr_solid_player(x + sh, y) && !scr_solid_player(x + sh, y - k))
+				if scr_solid_player(x + sh, y) && !scr_solid_player(x + sh, y - k)
 					y -= k;
-				if (state != states.ghost && state != states.rocket)
+				if state != states.ghost && (state != states.rocket or REMIX)
 				{
-					if (!scr_solid_player(x + sh, y) && !scr_solid_player(x + sh, y + 1) && scr_solid_player(x + sh, y + (k + 1)))
+					var final_k = REMIX ? k : 1;
+					if !scr_solid_player(x + sh, y) && !scr_solid_player(x + sh, y + final_k) && scr_solid_player(x + sh, y + k + 1)
 						y += k;
 				}
 			}
+			
 			if (!scr_solid_player(x + sh, y))
 				x += sh;
 			else

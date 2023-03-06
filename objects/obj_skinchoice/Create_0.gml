@@ -61,7 +61,6 @@ add_palette = function(palette, entry, texture = noone, name = "PALETTE", descri
 		description: description
 	});
 }
-event_user(0);
 
 // automatically select character
 if instance_exists(obj_player1)
@@ -72,6 +71,9 @@ if instance_exists(obj_player1)
 			sel.char = i;
 	}
 }
+
+// DO THE FUNNY
+event_user(0);
 
 // functions
 select = function()

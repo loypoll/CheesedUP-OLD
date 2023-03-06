@@ -1,4 +1,4 @@
-targetRoom = mansion_plain;
+targetRoom = mansion_weird2;
 msg = "Mansion";
 level = "mansion";
 door_index = 4;

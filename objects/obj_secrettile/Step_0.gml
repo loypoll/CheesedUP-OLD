@@ -1,10 +1,25 @@
 var player = instance_place(x, y, obj_player);
 if player or active
 {
+	if !revealed
+	{
+		revealed = true;
+		ds_list_add(global.saveroom, id);
+		if REMIX
+			sound_play("event:/sfx/pto/secretwall");
+	}
+	
 	with obj_secrettile
 	{
 		if distance_to_object(other) <= 0
+		{
+			if !revealed
+			{
+				revealed = true;
+				ds_list_add(global.saveroom, id);
+			}
 			active = true;
+		}
 	}
 	
 	depth = -8;

@@ -8,14 +8,34 @@ function scr_player_climbwall()
 			move = key_left + key_right;
 			suplexmove = false;
 			vsp = -wallspeed;
-			if (wallspeed < 20)
-				wallspeed += 0.15;
-			if (wallspeed < 0)
+			
+			if place_meeting(x + xscale, y, obj_unclimbablewall)
 			{
-				if (mach4mode == 0)
-					movespeed += 0.2;
-				else
-					movespeed += 0.4;
+				wallspeed -= grav / 2;
+				if wallspeed > 6
+					wallspeed = 6;
+				
+				if grounded
+				{
+					state = states.normal
+					movespeed = 0
+				}
+				
+				var mv = wallspeed / 16;
+				image_speed = lerp(0.35, 0.75, mv);
+			}
+			else
+			{
+				if (wallspeed < 20)
+					wallspeed += 0.15;
+				if (wallspeed < 0)
+				{
+					if (mach4mode == 0)
+						movespeed += 0.2;
+					else
+						movespeed += 0.4;
+				}
+				image_speed = 0.6;
 			}
 			if (wallspeed < 0)
 			{
@@ -45,21 +65,39 @@ function scr_player_climbwall()
 			if (verticalbuffer <= 0 && wallspeed > 0 && !scr_solid(x + xscale, y) && !place_meeting(x, y, obj_verticalhallway) && !place_meeting(x, y - 12, obj_verticalhallway))
 			{
 				trace("climbwall out");
-				instance_create(x, y, obj_jumpdust);
+				with instance_create(x, y, obj_jumpdust)
+					image_xscale = REMIX ? other.xscale : 1;
+				
 				vsp = 0;
 				ledge_bump(32);
-				if (wallspeed < 6)
-					wallspeed = 6;
-				if ((wallspeed >= 6 && wallspeed < 12) || skateboarding)
+				
+				if (wallspeed >= 6 && wallspeed < 12) || skateboarding
 				{
 					state = states.mach2;
 					movespeed = wallspeed;
 				}
-				else if (wallspeed >= 12)
+				else if wallspeed >= 12
 				{
 					state = states.mach3;
 					sprite_index = spr_mach4;
 					movespeed = wallspeed;
+				}
+				movespeed = max(wallspeed, 6);
+				
+				if REMIX
+				{
+					if vsp < 0
+					{
+						for(var i = 0; i < 32; i++)
+						{
+							if scr_solid(x + xscale, y + i + 1)
+							{
+								y += i;
+								break;
+							}
+						}
+					}
+					hsp = movespeed * xscale;
 				}
 			}
 			if (wallspeed < 0 && place_meeting(x, y + 12, obj_solid))
@@ -91,6 +129,12 @@ function scr_player_climbwall()
 					image_index = 0;
 					state = states.Sjumpland;
 					machhitAnim = false;
+					
+					if REMIX with obj_camera
+					{
+						shake_mag = 3;
+						shake_mag_acc = 4 / room_speed;
+					}
 				}
 				else if (!key_jump)
 				{
@@ -114,7 +158,6 @@ function scr_player_climbwall()
 					image_index = 0;
 				}
 			}
-			image_speed = 0.6;
 			if (steppybuffer > 0)
 				steppybuffer--;
 			else
@@ -123,6 +166,7 @@ function scr_player_climbwall()
 				steppybuffer = 10;
 			}
 			break;
+		
 		case "V":
 			if (windingAnim < 200)
 				windingAnim++;
@@ -180,6 +224,7 @@ function scr_player_climbwall()
 			if (!instance_exists(obj_cloudeffect))
 				instance_create(x, y + 43, obj_cloudeffect);
 			break;
+		
 		case "N":
 			hsp = 0;
 			if (sprite_index == spr_playerN_wallclingstart && floor(image_index) == (image_number - 1))

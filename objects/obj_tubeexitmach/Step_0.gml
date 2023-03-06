@@ -10,7 +10,8 @@ if (state == states.tube)
 				sprite_index = spr_dashpadmach;
 				vsp = 0;
 				image_index = 0;
-				instance_create(x, y, obj_jumpdust);
+				with instance_create(x, y, obj_jumpdust)
+					image_xscale = REMIX ? other.xscale : 1;
 			}
 			if (other.image_xscale != 0)
 				xscale = other.image_xscale;

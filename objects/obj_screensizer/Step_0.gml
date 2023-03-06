@@ -8,3 +8,4 @@ if (global.option_unfocus_mute)
 }
 else
 	fmod_set_parameter("focus", 1, false);
+fmod_set_parameter("REMIX", REMIX, false);

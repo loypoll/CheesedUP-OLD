@@ -16,7 +16,7 @@ function meta_showcollisions()
 {
 	return
 	{
-		description: "gives or takes a key from the player",
+		description: "toggles viewable collisions",
 		arguments: ["<enable>"],
 		suggestions: [
 			["true", "false"],

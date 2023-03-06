@@ -41,7 +41,8 @@ if (place_meeting(x, y - 1, obj_player))
 						movespeed = abs(movespeed);
 						dir = xscale;
 						movespeed += 3;
-						instance_create(x, y, obj_jumpdust);
+						with instance_create(x, y, obj_jumpdust)
+							image_xscale = REMIX ? other.xscale : 1;
 						sprite_index = spr_player_trashslide;
 					}
 				}
