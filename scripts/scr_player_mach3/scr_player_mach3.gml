@@ -154,6 +154,8 @@ function scr_player_mach3()
 				else
 					movespeed = wallspeed;
 				state = states.climbwall;
+				if REMIX
+					vsp = -wallspeed;
 			}
 			if (!grounded && place_meeting(x + sign(hsp), y, obj_climbablewall) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_metalblock))
 			{

@@ -83,8 +83,8 @@
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_scroll","animationFPS":15.0,"animationSpeedType":0,"colour":4294967295,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":1.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"bg_secret","path":"sprites/bg_secret/bg_secret.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":1.0,"vtiled":true,"x":0,"y":-200,},
   ],
   "parent": {
-    "name": "Pinball and Kung Fu",
-    "path": "folders/Rooms/Unused/Pinball and Kung Fu.yy",
+    "name": "Space Pinball",
+    "path": "folders/Rooms/Unused/Space Pinball.yy",
   },
   "parentRoom": null,
   "physicsSettings": {
