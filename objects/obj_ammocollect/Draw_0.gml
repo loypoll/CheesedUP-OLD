@@ -1,8 +1,8 @@
 if (flash)
 {
-	draw_set_flash(true);
+	draw_set_flash();
 	draw_self();
-	draw_set_flash(false);
+	draw_reset_flash();
 }
 else
 	draw_self();

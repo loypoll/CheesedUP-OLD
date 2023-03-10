@@ -35,7 +35,9 @@ function scr_enemy_walk()
 		hsp = 0;
 	if (turntimer > 0 && turner == 1)
 		turntimer--;
-	if ((scr_solid(x + image_xscale, y) || place_meeting(x + hsp, y, obj_hallway) || (x + hsp) > (room_width + 50) || (x + hsp) < -50) || (turntimer <= 0 && turner))
+	if (scr_solid(x + image_xscale, y) || place_meeting(x + hsp, y, obj_hallway) || x + hsp > room_width + 50 || x + hsp < -50)
+	or place_meeting(x + (image_xscale * 15), y + 31, obj_water) or place_meeting(x + (image_xscale * 15), y + 31, obj_current)
+	|| (turntimer <= 0 && turner)
 	{
 		if (!place_meeting(x + sign(hsp), y, obj_slope))
 		{

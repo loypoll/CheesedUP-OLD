@@ -52,8 +52,8 @@ function scr_enemy_grabbed()
 			global.combotime = 60;
 			if (!important)
 				global.style += (5 + global.combo);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_baddiegibs);
+			create_slapstar(x, y);
+			create_baddiegibs(x, y);
 			flash = true;
 			with (obj_camera)
 			{
@@ -94,8 +94,8 @@ function scr_enemy_grabbed()
 			global.combotime = 60;
 			if (!important)
 				global.style += (5 + global.combo);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_baddiegibs);
+			create_slapstar(x, y);
+			create_baddiegibs(x, y);
 			flash = true;
 			with (obj_camera)
 			{
@@ -131,8 +131,8 @@ function scr_enemy_grabbed()
 			global.combotime = 60;
 			if (!important)
 				global.style += (5 + global.combo);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_baddiegibs);
+			create_slapstar(x, y);
+			create_baddiegibs(x, y);
 			flash = true;
 			with (obj_camera)
 			{
@@ -169,12 +169,11 @@ function scr_enemy_grabbed()
 			sound_play_3d("event:/sfx/pep/punch", x, y)
 			state = states.stun
 			image_xscale = -_obj_player.xscale
-			instance_create(x, y, obj_slapstar)
-			instance_create(x, y, obj_slapstar)
-			instance_create(x, y, obj_slapstar)
-			instance_create(x, y, obj_baddiegibs)
-			instance_create(x, y, obj_baddiegibs)
-			instance_create(x, y, obj_baddiegibs)
+			repeat 3
+			{
+				create_slapstar(x, y)
+				create_baddiegibs(x, y)
+			}
 			with obj_camera
 			{
 				shake_mag = 3
@@ -235,8 +234,8 @@ function scr_enemy_grabbed()
 			global.combotime = 60;
 			if (!important)
 				global.style += (5 + global.combo);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_baddiegibs);
+			create_slapstar(x, y);
+			create_baddiegibs(x, y);
 			flash = true;
 			with (obj_camera)
 			{
@@ -336,12 +335,12 @@ function scr_enemy_grabbed()
 				mach3destroy = true;
 			state = states.hit;
 			image_xscale = -_obj_player.xscale;
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_baddiegibs);
-			instance_create(x, y, obj_baddiegibs);
-			instance_create(x, y, obj_baddiegibs);
+			create_slapstar(x, y);
+			create_slapstar(x, y);
+			create_slapstar(x, y);
+			create_baddiegibs(x, y);
+			create_baddiegibs(x, y);
+			create_baddiegibs(x, y);
 			with (obj_camera)
 			{
 				shake_mag = 3;

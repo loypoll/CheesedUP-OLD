@@ -1,6 +1,8 @@
 if live_call() return live_result;
 
 // animation / background
+sound_play("event:/sfx/pto/diagopen");
+
 charshift = [0, 0, 0];
 anim_con = 0;
 anim_t = 0;
@@ -110,10 +112,10 @@ postdraw = function(curve)
 		charx = lerp(charx, obj_player1.x - camera_get_view_x(view_camera[0]), 1 - anim_t);
 		chary = lerp(chary, obj_player1.y - camera_get_view_y(view_camera[0]), curve2);
 		
+		shader_set(global.Pal_Shader);
 		if pal.texture != noone
 			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, scale, scale, pal.texture);
 		
-		shader_set(global.Pal_Shader);
 		pal_swap_set(characters[sel.char][2], pal.palette, false);
 		draw_sprite_ext(characters[sel.char][1], -1, charx, chary, scale, scale, 0, c_white, 1);
 		pattern_reset();
@@ -134,10 +136,11 @@ draw = function(curve)
 	{
 		// character
 		var charx = 960 / 2 + charshift[0] * 100, chary = 540 / 2 - 16 + charshift[1] * 100;
+		
+		shader_set(global.Pal_Shader);
 		if pal.texture != noone
 			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, 2, 2, pal.texture);
 		
-		shader_set(global.Pal_Shader);
 		pal_swap_set(characters[sel.char][2], pal.palette, false);
 		draw_sprite_ext(characters[sel.char][1], -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2]);
 		reset_shader_fix();

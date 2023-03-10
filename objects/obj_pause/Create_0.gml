@@ -48,3 +48,7 @@ scr_pauseicon_add(spr_pauseicons, 1, 5, -15);
 scr_pauseicon_add(spr_pauseicons, 2, -10);
 scr_pauseicon_add(spr_pauseicons, 3, -10);
 alarm[1] = 1;
+
+surface = noone;
+surface2 = noone;
+blur_uniform = shader_get_uniform(shd_blur, "size");

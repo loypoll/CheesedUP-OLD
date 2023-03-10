@@ -5,8 +5,8 @@ if (grounded)
 		shake_mag = 3;
 		shake_mag_acc = 3 / room_speed;
 	}
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_baddiegibs);
+	create_slapstar(x, y);
+	create_baddiegibs(x, y);
 	with (instance_create(x, y, obj_sausageman_dead))
 	{
 		sprite_index = other.sprite_index;

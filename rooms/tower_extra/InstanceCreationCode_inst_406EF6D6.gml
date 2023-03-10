@@ -1,5 +1,5 @@
 msg = "Pizza Arcade";
-level = "oldsaloon";
+level = "pinball";
 targetRoom = pinball_1;
 door_index = 1;
 

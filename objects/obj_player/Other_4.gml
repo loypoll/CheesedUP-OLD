@@ -142,6 +142,27 @@ if verticalhallway
 	verticalstate = states.normal;
 }
 
+if oldHallway
+{
+	x = player_x;
+	y = player_y;
+	
+	if state == states.climbwall
+	{
+		var xx = x;
+		while !scr_solid(x + xscale, y)
+		{
+			x += xscale;
+			if abs(x) > room_width
+			{
+				trace("wallclimbed out of bounds");
+				x = xx;
+				break;
+			}
+		}
+	}
+}
+
 if character == "M" && place_meeting(x, y, obj_boxofpizza)
 {
 	while place_meeting(x, y, obj_boxofpizza)
@@ -165,6 +186,7 @@ if state == states.spaceshuttle
 hallway = false;
 verticalhallway = false;
 box = false;
+oldHallway = false;
 
 if isgustavo
 	brick = true;

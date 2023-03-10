@@ -1,9 +1,12 @@
+// black borders
 draw_set_color(c_black);
 draw_rectangle(0, -50, -50, room_height + 50, false);
 draw_rectangle(room_width, -50, room_width + 50, room_height + 50, false);
 draw_rectangle(0, 0, room_width, -50, false);
 draw_rectangle(0, room_height, room_width, room_height + 50, false);
 draw_set_color(c_white);
+
+// ---
 draw_set_color(c_white);
 if (use_dark)
 {
@@ -32,12 +35,14 @@ if (finisher_alpha > 0)
 	draw_rectangle_color(-32, -32, room_width + 32, room_height + 32, 0, 0, 0, 0, false);
 	draw_set_alpha(1);
 }
+
 var _kungfu = global.kungfu;
 with (obj_baddie)
 {
 	if (object_index != obj_pizzafaceboss)
 		draw_enemy(_kungfu, true);
 }
+
 shader_set(global.Pal_Shader);
 with (obj_heatafterimage)
 {
@@ -65,7 +70,9 @@ if (room == boss_fakepep)
         }
     }
 }
-draw_set_flash(true);
+shader_reset();
+
+draw_set_flash();
 with (obj_baddie)
 {
 	var _stun = 0;
@@ -104,7 +111,8 @@ for (i = 0; i < array_length(flash_arr); i++)
 			event_perform(8, 0);
 	}
 }
-draw_set_flash(false);
+draw_reset_flash();
+
 shader_set(global.Pal_Shader);
 pal_swap_set(spr_peppalette, 0, false);
 with (obj_pizzagoblinbomb)
@@ -113,14 +121,9 @@ with (obj_pizzagoblinbomb)
 		draw_sprite(spr_grabicon, -1, x - 10, y - 30);
 	draw_self();
 }
-with (obj_player2)
+with (obj_player)
 {
-	if (visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
-		draw_player();
-}
-with (obj_player1)
-{
-	if (visible && state != states.titlescreen && bbox_in_camera(view_camera[0], 32))
+	if (visible && state != states.titlescreen && !flash && bbox_in_camera(view_camera[0], 32))
 		draw_player();
 }
 with (obj_sausageman_dead)
@@ -136,10 +139,19 @@ with (obj_sausageman_dead)
             pattern_reset();
 	}
 }
-draw_set_flash(true);
+shader_reset();
+
+draw_set_flash();
 with (obj_player)
 {
 	if (visible && flash && bbox_in_camera(view_camera[0], 32))
 		draw_sprite_ext(sprite_index, image_index, x, y, xscale, yscale, image_angle, image_blend, image_alpha);
 }
-draw_set_flash(false);
+draw_reset_flash();
+
+// pto entrance lamp overlays
+with obj_lampost
+{
+	if sprite_index == spr_lampostpanic_NEW
+		draw_sprite_ext(sprite_index, image_index + 2, x, y, image_xscale, image_yscale, 0, c_white, 1);
+}

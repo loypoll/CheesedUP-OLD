@@ -10,10 +10,15 @@ function scr_pizzagoblin_throw()
 		state = states.walk;
 		sprite_index = walkspr;
 	}
-	if (bombreset <= 0 && floor(image_index) == global.throw_frame[object_index])
+	
+	// failsafe
+	if object_index >= array_length(global.throw_data) or global.throw_data[object_index] == 0
+		global.throw_data[object_index] = global.throw_data[obj_pizzard];
+	
+	if (bombreset <= 0 && floor(image_index) == global.throw_data[object_index].frame)
 	{
-		bombreset = global.reset_timer[object_index];
-		sprite_index = global.throw_sprite[object_index];
+		bombreset = global.throw_data[object_index].time;
+		sprite_index = global.throw_data[object_index].sprite;
 		switch (object_index)
 		{
 			case obj_rancher:

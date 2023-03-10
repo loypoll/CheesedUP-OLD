@@ -33,11 +33,15 @@ function sh_panic(args)
 	if togglepanic
 	{
 		// activate pizza time
+		activate_panic();
+		
+		/*
 		with instance_create(room_width, room_height + 2000, obj_hungrypillar)
 		{
 			event_perform(ev_destroy, 0);
 			instance_destroy(id, false);
 		}
+		*/
 		
 		// set time
 		if minutes != undefined

@@ -64,8 +64,8 @@ if (grabbed == 1)
 		thrown = true;
 		hsp = -image_xscale * 25;
 		grav = 0;
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
 		with (obj_camera)
 		{
 			shake_mag = 3;
@@ -92,8 +92,8 @@ if (grabbed == 1)
 			hsp = -image_xscale * 10;
 			vsp = -15;
 		}
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
 		with (obj_camera)
 		{
 			shake_mag = 3;
@@ -120,8 +120,8 @@ if (grabbed == 1)
 		hsp = -image_xscale * 2;
 		grabbed = false;
 		vsp = -20;
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
 		flash = true;
 		with (obj_camera)
 		{
@@ -195,8 +195,8 @@ if (grabbed == 1)
 		}
 		if (obj_player.sprite_index == obj_player.spr_piledriverland)
 		{
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_baddiegibs);
+			create_slapstar(x, y);
+			create_baddiegibs(x, y);
 			grabbed = false;
 			thrown = true;
 			x = obj_player.x;

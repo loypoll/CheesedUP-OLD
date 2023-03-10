@@ -5,13 +5,15 @@ if player or active
 	{
 		revealed = true;
 		ds_list_add(global.saveroom, id);
+		
+		sound_stop(sfx_collectpizza);
 		if REMIX
 			sound_play("event:/sfx/pto/secretwall");
 	}
 	
 	with obj_secrettile
 	{
-		if distance_to_object(other) <= 0
+		if distance_to_object(other) <= 1
 		{
 			if !revealed
 			{

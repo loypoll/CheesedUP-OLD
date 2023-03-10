@@ -831,6 +831,7 @@ Käisar
 Kalby Jang
 Kam66
 Kamataya
+Kanashi
 Karl Anderson
 KarmaVIX
 Kazaurin
@@ -1429,6 +1430,7 @@ Squeenith
 Squid Gloves
 squidistasty
 SrRyteAway
+Starcronix
 StarForce
 StartHandshake
 StealyMcgrabsAlot
@@ -1440,7 +1442,6 @@ Stephen Bender
 Stephen Nun
 Stephen Sarabdial
 Steve McCool
-Stillman Blaylock
 Stooopz
 Storm the Sergal
 Strangebread
@@ -2394,6 +2395,7 @@ yoyle stew
 Zach Maynes
 Zain Balluza
 zespluz
+Zeus073
 Zetape
 Zhakich
 ZOMCREEP12

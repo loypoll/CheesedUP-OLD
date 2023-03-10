@@ -46,12 +46,12 @@ function scr_player_parry()
 				alarm[3] = 1;
 				state = states.hit;
 				image_xscale = -obj_player1.xscale;
-				instance_create(x, y, obj_slapstar);
-				instance_create(x, y, obj_slapstar);
-				instance_create(x, y, obj_slapstar);
-				instance_create(x, y, obj_baddiegibs);
-				instance_create(x, y, obj_baddiegibs);
-				instance_create(x, y, obj_baddiegibs);
+				create_slapstar(x, y);
+				create_slapstar(x, y);
+				create_slapstar(x, y);
+				create_baddiegibs(x, y);
+				create_baddiegibs(x, y);
+				create_baddiegibs(x, y);
 				with (obj_camera)
 				{
 					shake_mag = 3;

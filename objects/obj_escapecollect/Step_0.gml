@@ -11,6 +11,7 @@ if (place_meeting(x, y, obj_destructibles))
 	depth = 102;
 else
 	depth = 2;
+
 if (global.panic == true || instance_exists(obj_wartimer))
 {
 	image_alpha = 1;
@@ -25,3 +26,5 @@ if (global.panic == true || instance_exists(obj_wartimer))
 		movespeed++;
 	}
 }
+else
+	image_alpha = 0.35;

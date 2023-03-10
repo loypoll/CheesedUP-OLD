@@ -583,6 +583,7 @@ function scr_pepperman_mini()
 				}
 			}
 			break;
+		
 		case states.normal:
 			move = 0;
 			if (distance_to_object(targetplayer) < 250)
@@ -625,6 +626,7 @@ function scr_pepperman_mini()
 				hsp = 0;
 			}
 			break;
+		
 		case states.jump:
 			hsp = image_xscale * attackspeed;
 			if (floor(image_index) == (image_number - 1) && sprite_index == spr_pepperman_minijump)

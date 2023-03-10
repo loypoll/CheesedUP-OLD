@@ -96,12 +96,12 @@ with (instance_place(x, y, obj_player))
 					shake_mag_acc = 40 / room_speed;
 				}
 				global.boxhp -= 1;
-				instance_create(x, y, obj_slapstar);
-				instance_create(x, y, obj_slapstar);
-				instance_create(x, y, obj_slapstar);
-				instance_create(x, y, obj_baddiegibs);
-				instance_create(x, y, obj_baddiegibs);
-				instance_create(x, y, obj_baddiegibs);
+				create_slapstar(x, y);
+				create_slapstar(x, y);
+				create_slapstar(x, y);
+				create_baddiegibs(x, y);
+				create_baddiegibs(x, y);
+				create_baddiegibs(x, y);
 				ds_list_shuffle(global.boxlist);
 				with (obj_presentbox)
 				{
@@ -117,12 +117,12 @@ with (instance_place(x, y, obj_player))
 					shake_mag = 20;
 					shake_mag_acc = 40 / room_speed;
 				}
-				instance_create(x, y, obj_slapstar);
-				instance_create(x, y, obj_slapstar);
-				instance_create(x, y, obj_slapstar);
-				instance_create(x, y, obj_baddiegibs);
-				instance_create(x, y, obj_baddiegibs);
-				instance_create(x, y, obj_baddiegibs);
+				create_slapstar(x, y);
+				create_slapstar(x, y);
+				create_slapstar(x, y);
+				create_baddiegibs(x, y);
+				create_baddiegibs(x, y);
+				create_baddiegibs(x, y);
 				sprite_index = spr_present;
 			}
 			with (instance_create(x, y, obj_sausageman_dead))
@@ -140,12 +140,12 @@ if (place_meeting(x, y, obj_baddie) && obj_baddie.thrown == 1 && sprite_index !=
 			shake_mag_acc = 40 / room_speed;
 		}
 		global.boxhp -= 1;
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
 		ds_list_shuffle(global.boxlist);
 		with (obj_presentbox)
 		{
@@ -161,12 +161,12 @@ if (place_meeting(x, y, obj_baddie) && obj_baddie.thrown == 1 && sprite_index !=
 			shake_mag = 20;
 			shake_mag_acc = 40 / room_speed;
 		}
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
 		sprite_index = spr_present;
 	}
 	with (instance_create(x, y, obj_sausageman_dead))
@@ -182,12 +182,12 @@ if (place_meeting(x, y, obj_shotgunbullet) && sprite_index != spr_present)
 			shake_mag_acc = 40 / room_speed;
 		}
 		global.boxhp -= 1;
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
 		ds_list_shuffle(global.boxlist);
 		with (obj_presentbox)
 		{
@@ -203,12 +203,12 @@ if (place_meeting(x, y, obj_shotgunbullet) && sprite_index != spr_present)
 			shake_mag = 20;
 			shake_mag_acc = 40 / room_speed;
 		}
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
 		sprite_index = spr_present;
 	}
 	with (instance_create(x, y, obj_sausageman_dead))

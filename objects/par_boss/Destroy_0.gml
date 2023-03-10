@@ -1,12 +1,12 @@
 ds_map_destroy(player_hurtstates);
 ds_map_destroy(boss_hurtstates);
 ds_map_destroy(boss_unparryablestates);
-instance_create(x, y, obj_slapstar);
-instance_create(x, y, obj_slapstar);
-instance_create(x, y, obj_slapstar);
-instance_create(x, y, obj_baddiegibs);
-instance_create(x, y, obj_baddiegibs);
-instance_create(x, y, obj_baddiegibs);
+create_slapstar(x, y);
+create_slapstar(x, y);
+create_slapstar(x, y);
+create_baddiegibs(x, y);
+create_baddiegibs(x, y);
+create_baddiegibs(x, y);
 instance_create(x, y, obj_bangeffect);
 with (obj_camera)
 {

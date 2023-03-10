@@ -1,12 +1,12 @@
 if (ds_list_find_index(global.baddieroom, id) == -1)
 {
 	ds_list_add(global.baddieroom, id);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
 	if (reset == 0)
 	{
 		instance_create(x, y + 30, obj_bangeffect);

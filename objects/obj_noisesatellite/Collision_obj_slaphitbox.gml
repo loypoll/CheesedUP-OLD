@@ -25,7 +25,7 @@ else if (state != states.grabbed && slapped == 0)
 	if (hp > 0)
 		hp -= 1;
 	if (slapped == 0)
-		instance_create(x, y, obj_slapstar);
+		create_slapstar(x, y);
 	with (instance_create(x, y, obj_spikehurteffect))
 		other.image_xscale = image_xscale;
 	slapped = true;

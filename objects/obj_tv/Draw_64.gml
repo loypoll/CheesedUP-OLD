@@ -1,3 +1,4 @@
+if live_call() return live_result;
 if room == editor_room
 	exit;
 
@@ -54,8 +55,8 @@ if room != strongcold_endscreen
 		draw_sprite_ext(spr_tv_bgfinal, tv_bg_index, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, c_white, alpha);
 	
 	// player
-	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 	shader_set(global.Pal_Shader);
+	pattern_set(global.Base_Pattern_Color, sprite_index, image_index, image_xscale, image_yscale, global.palettetexture);
 	if obj_player1.isgustavo
 		pal_swap_set(spr_ratmountpalette, obj_player1.paletteselect, false);
 	else
@@ -130,13 +131,26 @@ if (global.panic)
 	if (timer_tower)
 		timerspr = spr_timer_tower;
 	draw_sprite(timerspr, pizzaface_index, timer_x + 320, timer_y + 10);
+	
+	// M:SS timer
 	var minutes = 0;
 	for (var seconds = ceil(global.fill / 12); seconds > 59; seconds -= 60)
 		minutes++;
-	if (seconds < 10)
+	
+	var timer_xx = 153, timer_yy = 18;
+	if REMIX
+	{
+		if minutes == 0 && seconds < 30
+		{
+			draw_set_colour(c_red);
+			timer_xx += random_range(-1, 1);
+			timer_yy += random_range(-1, 1);
+		}
+	}
+	
+	if seconds < 10
 		seconds = concat("0", seconds);
-	else
-		seconds = string(seconds);
+	
 	draw_set_halign(1);
 	draw_set_valign(1);
 	draw_set_font(global.bigfont);

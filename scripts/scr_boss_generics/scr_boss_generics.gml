@@ -320,12 +320,11 @@ function scr_boss_phase1hurt(func = noone)
 			sound_play_3d("event:/sfx/pep/punch", x, y);
 			state = states.stun;
 			image_xscale = -player.xscale;
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_baddiegibs);
-			instance_create(x, y, obj_baddiegibs);
-			instance_create(x, y, obj_baddiegibs);
+			repeat 3
+			{
+				create_slapstar(x, y);
+				create_baddiegibs(x, y);
+			}
 			instance_create(x, y, obj_bangeffect);
 			instance_destroy(obj_bossdark);
 			repeat (4)

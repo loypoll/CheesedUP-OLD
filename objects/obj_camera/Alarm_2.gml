@@ -11,7 +11,7 @@ if (global.miniboss == 1)
 	{
 		instance_create(x, y, obj_bangeffect);
 		repeat (6)
-			instance_create(x, y, obj_slapstar);
+			create_slapstar(x, y);
 		state = states.ejected;
 		vsp = -10;
 		audio_stop_all();

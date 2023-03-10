@@ -1,6 +1,6 @@
-instance_create(x, y, obj_slapstar);
-instance_create(x, y, obj_slapstar);
-instance_create(x, y, obj_slapstar);
+create_slapstar(x, y);
+create_slapstar(x, y);
+create_slapstar(x, y);
 instance_create(x, y, obj_bossdefeatflash);
 obj_tv.message = "VICTORY!!!";
 obj_tv.showtext = true;

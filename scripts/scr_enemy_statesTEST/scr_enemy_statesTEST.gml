@@ -39,8 +39,8 @@ function scr_enemy_pummel()
 					other.vsp = -2;
 				}
 				other.hp--;
-				instance_create(x, y, obj_slapstar);
-				instance_create(x, y, obj_baddiegibs);
+				create_slapstar(x, y);
+				create_baddiegibs(x, y);
 				with (obj_camera)
 				{
 					shake_mag = 3;
@@ -57,8 +57,8 @@ function scr_enemy_pummel()
 					vsp = -14;
 					movespeed = 2;
 					instance_create(x, y, obj_highjumpcloud2);
-					instance_create(x, y, obj_slapstar);
-					instance_create(x, y, obj_baddiegibs);
+					create_slapstar(x, y);
+					create_baddiegibs(x, y);
 					with (obj_camera)
 					{
 						shake_mag = 3;
@@ -91,8 +91,8 @@ function scr_enemy_pummel()
 						shake_mag_acc = 3 / room_speed;
 					}
 					instance_create(x, y, obj_highjumpcloud2);
-					instance_create(x, y, obj_slapstar);
-					instance_create(x, y, obj_baddiegibs);
+					create_slapstar(x, y);
+					create_baddiegibs(x, y);
 					with (other)
 					{
 						hp -= 2;

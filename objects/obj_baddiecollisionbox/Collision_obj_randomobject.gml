@@ -8,10 +8,10 @@ if ((other.hsp != 0 || other.vsp != 0) && instance_exists(baddieID) && baddieID.
 		global.combotime = 60;
 		global.heattime = 60;
 	}
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
 }

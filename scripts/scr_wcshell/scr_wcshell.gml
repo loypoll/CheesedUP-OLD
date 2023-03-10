@@ -12,6 +12,12 @@ function scr_wc_create()
 {
 	WC_debug = false;
 	
+	// builtin list
+	WC_builtins = ds_map_create();
+	ds_map_add(WC_builtins, "undefined", undefined);
+	ds_map_add(WC_builtins, "NaN", NaN);
+	ds_map_add(WC_builtins, "infinity", infinity);
+	
 	// all command aliases
 	WCscr_altname("clear", "cls");
 	WCscr_altname("var", "variable");
@@ -220,6 +226,8 @@ function scr_wc_create()
 			value = asset_get_index(value);
 		else if string_is_number(value) // number
 			value = real(value);
+		else if ds_map_exists(WC_builtins, value) // builtin variable
+			value = ds_map_find_value(WC_builtins, value);
 		else if string_char_at(value, 1) == "'"
 		&& string_char_at(value, string_length(value)) == "'" // forced string
 		{
@@ -658,9 +666,9 @@ function scr_wc_draw()
 			text = object_get_name(WC_select_inst.object_index);
 			xx += choose(1, -1);
 			
-			draw_set_flash(true, col);
+			draw_set_flash(col);
 			WCscr_drawobject(WC_select_inst, abs(sin(current_time / 500)) * 0.5);
-			draw_set_flash(false);
+			draw_reset_flash();
 		}
 		
 		// draw it
@@ -693,7 +701,7 @@ function scr_wc_draw()
 	#endregion
 	#region debug view
 	
-	if WC_debugview && instance_exists(WC_debugview_target)
+	if WC_debugview && instance_exists(WC_debugview_target) && WC_debugview_target != global
 	{
 		// draw its mask
 		if !(instance_exists(WC_drag_inst) && WC_drag_inst.id == WC_debugview_target.id)
@@ -765,7 +773,7 @@ function scr_wc_drawgui()
 					if WC_debugview_target.alarm[c] > -1
 						str += "\nalarm[" + string(c) + "]: " + string(WC_debugview_target.alarm[c]);
 				}
-			
+				
 				draw_text_outline(4, 24, str);
 			}
 			

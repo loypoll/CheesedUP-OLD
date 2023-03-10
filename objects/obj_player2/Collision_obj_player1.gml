@@ -54,12 +54,12 @@ if (other.cutscene == 0 && other.state != states.actor && state != states.actor 
 			obj_player1.depth = -6;
 			obj_player2.depth = -7;
 			thrown = true;
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_baddiegibs);
-			instance_create(x, y, obj_baddiegibs);
-			instance_create(x, y, obj_baddiegibs);
+			create_slapstar(x, y);
+			create_slapstar(x, y);
+			create_slapstar(x, y);
+			create_baddiegibs(x, y);
+			create_baddiegibs(x, y);
+			create_baddiegibs(x, y);
 			with (obj_camera)
 			{
 				shake_mag = 3;

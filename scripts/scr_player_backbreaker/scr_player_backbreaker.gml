@@ -23,7 +23,10 @@ function scr_player_backbreaker()
 	{
 		if (supercharged == 1 && (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmountsupertaunt) && !instance_exists(obj_tauntaftereffectspawner))
 		{
+			if REMIX
+				global.combotime = 60;
 			instance_create(x, y, obj_tauntaftereffectspawner);
+			
 			var c = 0;
 			var lag = 20;
 			with (obj_baddie)
@@ -44,12 +47,11 @@ function scr_player_backbreaker()
 						c++;
 					instance_create(x, y, obj_parryeffect);
 					alarm[3] = 3;
-					instance_create(x, y, obj_slapstar);
-					instance_create(x, y, obj_slapstar);
-					instance_create(x, y, obj_slapstar);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
+					repeat 3
+					{
+						create_slapstar(x, y);
+						create_baddiegibs(x, y);
+					}
 					with (obj_camera)
 					{
 						shake_mag = 3;

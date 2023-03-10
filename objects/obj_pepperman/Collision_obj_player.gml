@@ -49,6 +49,6 @@ else if (state == states.mini && ministate != states.transition && (other.instak
 	instance_destroy(obj_peppermanbowlingballspawner);
 	instance_destroy(obj_peppermanGIANTbowlingball);
 	destroyable = true;
-	spr_dead = spr_pepperman_minifall;
+	spr_dead = REMIX ? spr_pepperman_minidead : spr_pepperman_minifall;
 	instance_destroy();
 }

@@ -5,16 +5,53 @@ function scr_pauseicon_draw(index, x, y)
 }
 function scr_create_pause_image()
 {
+	if live_call() return live_result;
+	
 	draw_set_alpha(1);
-	screensprite = sprite_create_from_surface(application_surface, 0, 0, surface_get_width(application_surface), surface_get_height(application_surface), false, false, 0, 0);
-	guisprite = sprite_create_from_surface(obj_screensizer.gui_surf, 0, 0, surface_get_width(obj_screensizer.gui_surf), surface_get_height(obj_screensizer.gui_surf), false, false, 0, 0);
 	screenscale = min(SCREEN_WIDTH / surface_get_width(application_surface), SCREEN_HEIGHT / surface_get_height(application_surface));
+	
+	// surface drawing
+	surface = surface_create(max(surface_get_width(application_surface), surface_get_width(obj_screensizer.gui_surf)), max(surface_get_height(application_surface), surface_get_height(obj_screensizer.gui_surf)));
+	
+	surface_set_target(surface);
+	
+	draw_clear(c_black);
+	gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha); // FIXES THE WEIRD DARKENING ISSUE!
+	
+	draw_surface(application_surface, 0, 0);
+	draw_surface(obj_screensizer.gui_surf, 0, 0);
+	
+	shader_reset();
+	
+	gpu_set_blendmode(bm_normal);
+	surface_reset_target();
+	
+	// second surface, to fade in the blur
+	if REMIX
+	{
+		surface2 = surface_create(surface_get_width(surface), surface_get_height(surface));
+		surface_set_target(surface2);
+		
+		shader_set(shd_blur);
+		shader_set_uniform_f(blur_uniform, 960 / 3, 540 / 3, 3);
+		
+		draw_surface(surface, 0, 0);
+		surface_reset_target();
+	}
 }
 function scr_draw_pause_image()
 {
-	draw_rectangle_color(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, 0, 0, 0, 0, false);
-	draw_sprite_ext(screensprite, 0, 0, 0, screenscale, screenscale, 0, c_white, 1);
-	draw_sprite_ext(guisprite, 0, 0, 0, 1, 1, 0, c_white, 1);
+	if live_call() return live_result;
+
+	if REMIX
+	{
+		if fade < 1
+			draw_surface_ext(surface, 0, 0, screenscale, screenscale, 0, c_white, 1);
+		if fade != 0
+			draw_surface_ext(surface2, 0, 0, screenscale, screenscale, 0, c_white, fade);
+	}
+	else
+		draw_surface_ext(surface, 0, 0, screenscale, screenscale, 0, c_white, 1);
 }
 function scr_pause_stop_sounds()
 {
@@ -26,10 +63,10 @@ function scr_pause_stop_sounds()
 }
 function scr_delete_pause_image()
 {
-	if (sprite_exists(screensprite))
-		sprite_delete(screensprite);
-	if (sprite_exists(guisprite))
-		sprite_delete(guisprite);
+	surface_free(surface);
+	surface_free(surface2);
+	surface = noone;
+	surface2 = noone;
 }
 function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0)
 {
@@ -85,6 +122,7 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 {
 	if (pause_sounds)
 		fmod_event_instance_set_paused_all(true);
+	
 	ds_list_clear(instance_list);
 	for (var i = 0; i < instance_count; i++)
 	{
@@ -93,6 +131,7 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 			ds_list_add(instance_list, obj);
 	}
 	instance_deactivate_all(true);
+	
 	instance_activate_object(obj_inputAssigner);
 	instance_activate_object(obj_savesystem);
 	instance_activate_object(obj_pause);
@@ -100,6 +139,8 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 	instance_activate_object(obj_music);
 	instance_activate_object(obj_fmod);
 	instance_activate_object(obj_shell);
+	if live_enabled
+		instance_activate_object(obj_gmlive);
 }
 function pause_spawn_priests()
 {

@@ -22,9 +22,9 @@ if (ds_list_find_index(global.baddieroom, id) == -1)
 					shake_mag = 5;
 					shake_mag_acc = 20 / room_speed;
 				}
-				instance_create(x, y, obj_baddiegibs);
-				instance_create(x, y, obj_baddiegibs);
-				instance_create(x, y, obj_baddiegibs);
+				create_baddiegibs(x, y);
+				create_baddiegibs(x, y);
+				create_baddiegibs(x, y);
 				with (instance_create(x, y, obj_sausageman_dead))
 					cigar = true;
 			}
@@ -35,9 +35,9 @@ if (ds_list_find_index(global.baddieroom, id) == -1)
 					shake_mag = 5;
 					shake_mag_acc = 20 / room_speed;
 				}
-				instance_create(x, y, obj_baddiegibs);
-				instance_create(x, y, obj_baddiegibs);
-				instance_create(x, y, obj_baddiegibs);
+				create_baddiegibs(x, y);
+				create_baddiegibs(x, y);
+				create_baddiegibs(x, y);
 				instance_create(x, y, obj_sausageman_dead);
 			}
 		}
@@ -52,9 +52,9 @@ if (ds_list_find_index(global.baddieroom, id) == -1)
 						shake_mag = 5;
 						shake_mag_acc = 20 / room_speed;
 					}
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
 					hsp = 0;
 					vsp = 0;
 					cigar = true;
@@ -70,9 +70,9 @@ if (ds_list_find_index(global.baddieroom, id) == -1)
 						shake_mag = 5;
 						shake_mag_acc = 20 / room_speed;
 					}
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
 					hsp = 0;
 					vsp = 0;
 					sprite_index = spr_sausageman_stomped;
@@ -90,13 +90,13 @@ if (ds_list_find_index(global.baddieroom, id) == -1)
 						shake_mag = 20;
 						shake_mag_acc = 40 / room_speed;
 					}
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
 					hsp *= 3;
 					vsp *= 3;
 					cigar = true;
@@ -111,13 +111,13 @@ if (ds_list_find_index(global.baddieroom, id) == -1)
 						shake_mag = 20;
 						shake_mag_acc = 40 / room_speed;
 					}
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
 					hsp *= 3;
 					vsp *= 3;
 				}

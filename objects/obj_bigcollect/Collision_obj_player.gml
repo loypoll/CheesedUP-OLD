@@ -5,6 +5,7 @@ if (other.state != states.gotoplayer)
 	global.heattime = 60;
 	with (obj_camera)
 		healthshaketime = 60;
+	sound_stop("event:/sfx/pto/secretwall");
 	sound_play("event:/sfx/misc/collectpizza");
 	instance_destroy();
 	global.combotime = 60;

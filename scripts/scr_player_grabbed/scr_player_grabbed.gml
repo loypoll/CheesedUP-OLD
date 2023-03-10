@@ -72,12 +72,12 @@ function scr_player_grabbed()
 	}
 	if (place_meeting(x, y, obj_swordhitbox))
 	{
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
 		with (obj_camera)
 		{
 			shake_mag = 3;
@@ -209,8 +209,8 @@ function scr_player_grabbed()
 			sprite_index = spr_machfreefall;
 		}
 		thrown = true;
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
 		flash = true;
 		x = _obj_player.x;
 		y = _obj_player.y;

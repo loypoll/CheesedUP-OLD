@@ -9,6 +9,9 @@ function scr_player_climbwall()
 			suplexmove = false;
 			vsp = -wallspeed;
 			
+			if instance_exists(obj_fadeout) && y < -50
+				vsp = 0;
+			
 			if place_meeting(x + xscale, y, obj_unclimbablewall)
 			{
 				wallspeed -= grav / 2;
@@ -36,11 +39,12 @@ function scr_player_climbwall()
 						movespeed += 0.4;
 				}
 				image_speed = 0.6;
-			}
-			if (wallspeed < 0)
-			{
-				if (!scr_solid(x + xscale, y + 50))
-					vsp = 0;
+				
+				if (wallspeed < 0)
+				{
+					if (!scr_solid(x + xscale, y + 50))
+						vsp = 0;
+				}
 			}
 			crouchslideAnim = true;
 			if (vsp < -5)
@@ -68,7 +72,6 @@ function scr_player_climbwall()
 				with instance_create(x, y, obj_jumpdust)
 					image_xscale = REMIX ? other.xscale : 1;
 				
-				vsp = 0;
 				ledge_bump(32);
 				
 				if (wallspeed >= 6 && wallspeed < 12) || skateboarding
@@ -99,6 +102,7 @@ function scr_player_climbwall()
 					}
 					hsp = movespeed * xscale;
 				}
+				vsp = 0;
 			}
 			if (wallspeed < 0 && place_meeting(x, y + 12, obj_solid))
 				wallspeed = 0;

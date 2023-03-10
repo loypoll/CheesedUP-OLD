@@ -114,8 +114,8 @@ if (grabbed == 1 && !ratgrabbed)
 			hsp = -image_xscale * 10;
 			vsp = -15;
 		}
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
 		with (obj_camera)
 		{
 			shake_mag = 3;
@@ -140,8 +140,8 @@ if (grabbed == 1 && !ratgrabbed)
 		hsp = -image_xscale * 2;
 		grabbed = false;
 		vsp = -20;
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
 		flash = true;
 		with (obj_camera)
 		{
@@ -215,8 +215,8 @@ if (grabbed == 1 && !ratgrabbed)
 		}
 		if (playerid.sprite_index == playerid.spr_piledriverland)
 		{
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_baddiegibs);
+			create_slapstar(x, y);
+			create_baddiegibs(x, y);
 			grabbed = false;
 			thrown = true;
 			x = playerid.x;
@@ -235,12 +235,12 @@ if (place_meeting(x, y, obj_swordhitbox) && thrown == 0)
 {
 	grabbed = false;
 	thrown = true;
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
 	with (obj_camera)
 	{
 		shake_mag = 3;

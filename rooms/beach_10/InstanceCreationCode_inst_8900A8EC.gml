@@ -1,1 +1,1 @@
-cooldownrandom = true;
+cooldownmax = 200;

@@ -1,11 +1,11 @@
 if (noshake == 0)
 {
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
 	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	with (obj_camera)
 	{

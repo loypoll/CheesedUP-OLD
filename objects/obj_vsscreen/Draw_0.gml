@@ -16,11 +16,11 @@ else
 draw_sprite(spr_vstitle, 0, shake, vsy + shake);
 if (flash)
 {
-	draw_set_flash(true);
+	draw_set_flash();
 	draw_sprite(spr_vspeppino, 0, pepx, room_height - 357);
 	draw_sprite(spr_vsnoise, 0, noisex, room_height - 357);
 	draw_sprite(spr_vstitle, 0, shake, vsy + shake);
-	draw_set_flash(false);
+	draw_reset_flash();
 }
 else
 {

@@ -10,7 +10,15 @@ function scr_player_punch()
 		if (move != 0)
 		{
 			dir = move;
-			movespeed = Approach(movespeed, move * 4, 0.5);
+			if REMIX && movespeed != 0
+			{
+				if move > 0
+					movespeed = Approach(movespeed, max(move * 4, movespeed), 0.6);
+				else
+					movespeed = Approach(movespeed, min(move * 4, movespeed), 0.6);
+			}
+			else
+				movespeed = Approach(movespeed, move * 4, 0.5);
 		}
 		else
 			movespeed = Approach(movespeed, 0, 0.5);

@@ -126,12 +126,12 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
 else if (ds_list_find_index(global.baddieroom, id) == -1 && important == 1)
 {
 	trace("destroy unimportant");
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
 	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	with (obj_camera)
 	{

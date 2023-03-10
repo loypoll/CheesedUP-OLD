@@ -158,7 +158,10 @@ function draw_superslam_enemy()
 	if (state == states.superslam && floor(image_index) >= 5 && floor(image_index) <= 7 && instance_exists(baddiegrabbedID))
 	{
 		with (baddiegrabbedID)
-			draw_enemy(global.kungfu, true);
+		{
+			if object_is_ancestor(object_index, obj_baddie) // prevent crash
+				draw_enemy(global.kungfu, true);
+		}
 	}
 }
 function draw_player()
@@ -171,18 +174,18 @@ function draw_player()
 	if (isgustavo)
 		spr = spr_ratmountpalette;
 	pal_swap_set(spr, ps, false);
-	draw_sprite_ext(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+	draw_sprite_ext(sprite_index, image_index, x + smoothx, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
 	if (global.noisejetpack)
 	{
 		pal_swap_set(spr_peppalette, 2, false);
-		draw_sprite_ext(sprite_index, image_index, x, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
+		draw_sprite_ext(sprite_index, image_index, x + smoothx, y, xscale * scale_xs, yscale * scale_ys, angle, b, image_alpha);
 	}
 	draw_superslam_enemy();
 	if (global.pistol)
 	{
 		pal_swap_set(spr_peppalette, 0, false);
 		if (pistolcharge >= 4)
-			draw_sprite(spr_revolvercharge, pistolcharge, x, y - 70);
+			draw_sprite(spr_revolvercharge, pistolcharge, x + smoothx, y - 70);
 	}
 	pattern_reset();
 }

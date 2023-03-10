@@ -69,8 +69,7 @@ function scr_collide_player()
 					y -= k;
 				if state != states.ghost && (state != states.rocket or REMIX)
 				{
-					var final_k = REMIX ? k : 1;
-					if !scr_solid_player(x + sh, y) && !scr_solid_player(x + sh, y + final_k) && scr_solid_player(x + sh, y + k + 1)
+					if !scr_solid_player(x + sh, y) && !scr_solid_player(x + sh, y + 1) && scr_solid_player(x + sh, y + k + 1)
 						y += k;
 				}
 			}

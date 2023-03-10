@@ -2,12 +2,12 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
 {
 	notification_push(notifs.pizzaboy_dead, [room]);
 	sound_play_3d("event:/sfx/enemies/kill", x, y);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
 	with (obj_camera)
 	{
 		shake_mag = 3;
@@ -18,12 +18,12 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && important == 0)
 }
 else if (ds_list_find_index(global.baddieroom, id) == -1 && important == 1)
 {
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
 	with (obj_camera)
 	{
 		shake_mag = 3;

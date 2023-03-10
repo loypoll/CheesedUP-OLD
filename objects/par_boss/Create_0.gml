@@ -123,12 +123,12 @@ function SUPER_boss_destroy(argument0)
 		y = hitY;
 		state = states.chainsaw;
 		instance_create(other.x, other.y, obj_parryeffect);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
 		with (obj_camera)
 		{
 			shake_mag = 3;
@@ -190,12 +190,12 @@ function SUPER_boss_hurt(argument0, argument1)
 		other.hithsp = -other.image_xscale * other.movespeed;
 		other.state = states.hit;
 		instance_create(other.x, other.y, obj_parryeffect);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
 		with (obj_camera)
 		{
 			shake_mag = 3;
@@ -226,12 +226,12 @@ function SUPER_boss_hurt_noplayer(argument0)
 	hithsp = other.image_xscale * 15;
 	state = states.hit;
 	instance_create(x, y, obj_parryeffect);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_slapstar);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
-	instance_create(x, y, obj_baddiegibs);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_slapstar(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
+	create_baddiegibs(x, y);
 	with (obj_camera)
 	{
 		shake_mag = 3;
@@ -279,10 +279,10 @@ function SUPER_player_hurt(argument0, argument1)
 		hitvsp = -8;
 		state = states.hit;
 		instance_create(other.x, other.y, obj_parryeffect);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
 		with (obj_camera)
 		{
 			shake_mag = 3;

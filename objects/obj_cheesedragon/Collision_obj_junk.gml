@@ -6,9 +6,9 @@ if (lastform == 0)
 	image_index = 0;
 	alarm[0] = -1;
 	repeat (5)
-		instance_create(x, y, obj_baddiegibs);
+		create_baddiegibs(x, y);
 	repeat (5)
-		instance_create(x, y, obj_slapstar);
+		create_slapstar(x, y);
 	with (obj_camera)
 	{
 		shake_mag = 10;
@@ -23,9 +23,9 @@ else
 		image_index = 4;
 	}
 	repeat (5)
-		instance_create(x, y, obj_baddiegibs);
+		create_baddiegibs(x, y);
 	repeat (5)
-		instance_create(x, y, obj_slapstar);
+		create_slapstar(x, y);
 	with (obj_camera)
 	{
 		shake_mag = 10;

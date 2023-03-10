@@ -523,12 +523,12 @@ function boss_pepperman_fistmatch()
 			shake_mag_acc = 3 / room_speed;
 		}
 		instance_create(other.x, other.y, obj_parryeffect);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_slapstar);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
-		instance_create(x, y, obj_baddiegibs);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
+		create_baddiegibs(x, y);
 	}
 	if (sprite_index != idlespr && image_index > (image_number - 1))
 		sprite_index = idlespr;
@@ -555,10 +555,10 @@ function boss_pepperman_fistmatch()
 					other.fist_buffer += 8;
 					other.hp -= other.fist_dmg_player;
 					instance_create(other.x, other.y, obj_parryeffect);
-					instance_create(x, y, obj_slapstar);
-					instance_create(x, y, obj_slapstar);
-					instance_create(x, y, obj_baddiegibs);
-					instance_create(x, y, obj_baddiegibs);
+					create_slapstar(x, y);
+					create_slapstar(x, y);
+					create_baddiegibs(x, y);
+					create_baddiegibs(x, y);
 					if (other.hp <= 0)
 					{
 						with (other)

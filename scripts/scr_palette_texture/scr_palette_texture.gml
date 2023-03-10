@@ -67,9 +67,9 @@ function scr_palette_texture(sprite, subimg, x, y, xscale, yscale, rot = 0, col 
 	var xo = sprite_get_xoffset(sprite);
 	var yo = sprite_get_yoffset(sprite);
 	
-	draw_set_flash(true, c_white);
+	draw_set_flash(c_white);
 	draw_sprite_ext(sprite, subimg, xo * abs(xscale), yo * abs(yscale), xscale, yscale, rot, c_white, 1);
-	draw_set_flash(false);
+	draw_reset_flash();
 	
 	gpu_set_blendmode(bm_normal);
 	

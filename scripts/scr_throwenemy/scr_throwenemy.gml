@@ -5,12 +5,11 @@ function scr_throwenemy()
 		with (other.baddieID)
 		{
 			hp -= 1;
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_slapstar);
-			instance_create(x, y, obj_baddiegibs);
-			instance_create(x, y, obj_baddiegibs);
-			instance_create(x, y, obj_baddiegibs);
+			repeat 3
+			{
+				create_slapstar(x, y);
+				create_baddiegibs(x, y);
+			}
 			with (obj_camera)
 			{
 				shake_mag = 3;

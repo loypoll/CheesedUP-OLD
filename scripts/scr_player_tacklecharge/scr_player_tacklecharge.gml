@@ -39,8 +39,8 @@ function scr_player_tacklecharge()
 				with (baddiegrabbedID)
 				{
 					other.thrown = true;
-					instance_create(x, y, obj_slapstar);
-					instance_create(x, y, obj_baddiegibs);
+					create_slapstar(x, y);
+					create_baddiegibs(x, y);
 					other.flash = true;
 					x = other.x;
 					y = other.y;

@@ -94,14 +94,24 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 	if door_index > -1
 		global.door_index = door_index;
 }
+
+// level name at the bottom of the screen
 if REMIX && other.state != states.victory
 {
 	if !instance_exists(transfotip)
 	{
-		with instance_create(0, 0, obj_transfotip)
+		if instance_exists(obj_transfotip)
+			transfotip = obj_transfotip.id;
+		else
+			transfotip = instance_create(x, y, obj_transfotip);
+		
+		with transfotip
 		{
 			other.transfotip = id;
 			text = "{s}" + other.msg + "/";
+			alarm[0] = 1;
+			
+			fadeout_speed = 0.025;
 		}
 	}
 	else
