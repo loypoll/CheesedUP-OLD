@@ -24,7 +24,7 @@ function sh_live_rooms(args)
 	}
 	
 	room_set_live(room, WC_liverooms);
-	return "Live rooms " + WC_liverooms ? "ON" : "OFF";
+	return "Live rooms " + (WC_liverooms ? "ON" : "OFF");
 }
 function meta_live_rooms()
 {
