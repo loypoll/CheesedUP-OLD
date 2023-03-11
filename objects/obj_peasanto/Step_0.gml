@@ -46,6 +46,8 @@ if (state == states.walk && attack_cooldown <= 0)
 {
 	if (x != targetplayer.x && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y < (y + 50) && targetplayer.y > (y - 50))
 	{
+		fmod_event_instance_play(chargesnd);
+		fmod_event_instance_set_3d_attributes(chargesnd, x, y);
 		flame_buffer = flame_max;
 		state = states.charge;
 		image_xscale = sign(targetplayer.x - x);

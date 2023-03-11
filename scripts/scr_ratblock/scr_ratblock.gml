@@ -17,10 +17,12 @@ function scr_ratblock_destroy()
 		{
 			switch (state)
 			{
+				/*
 				case states.barrel:
 					if (!place_meeting(x, y - 12, other))
 						instance_destroy(other);
 					break;
+				*/
 				case states.boxxedpepspin:
 					vsp = -6;
 					instance_destroy(other);

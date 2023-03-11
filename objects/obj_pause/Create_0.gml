@@ -35,9 +35,7 @@ savedpanicpause = false;
 savedkidspartypause = false;
 fade = 0;
 fadein = false;
-screensprite = -4;
 screensize = 0;
-guisprite = -4;
 instance_list = ds_list_create();
 sound_list = ds_list_create();
 priest_list = ds_list_create();
@@ -49,6 +47,6 @@ scr_pauseicon_add(spr_pauseicons, 2, -10);
 scr_pauseicon_add(spr_pauseicons, 3, -10);
 alarm[1] = 1;
 
-surface = noone;
-surface2 = noone;
 blur_uniform = shader_get_uniform(shd_blur, "size");
+screensprite = noone;
+screensprite2 = noone;

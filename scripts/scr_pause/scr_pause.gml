@@ -5,13 +5,13 @@ function scr_pauseicon_draw(index, x, y)
 }
 function scr_create_pause_image()
 {
-	if live_call() return live_result;
-	
 	draw_set_alpha(1);
 	screenscale = min(SCREEN_WIDTH / surface_get_width(application_surface), SCREEN_HEIGHT / surface_get_height(application_surface));
 	
 	// surface drawing
-	surface = surface_create(max(surface_get_width(application_surface), surface_get_width(obj_screensizer.gui_surf)), max(surface_get_height(application_surface), surface_get_height(obj_screensizer.gui_surf)));
+	var wd = max(surface_get_width(application_surface), surface_get_width(obj_screensizer.gui_surf));
+	var ht = max(surface_get_height(application_surface), surface_get_height(obj_screensizer.gui_surf));
+	var surface = surface_create(wd, ht);
 	
 	surface_set_target(surface);
 	
@@ -26,10 +26,13 @@ function scr_create_pause_image()
 	gpu_set_blendmode(bm_normal);
 	surface_reset_target();
 	
+	// convert to a sprite because surfaces are unstable
+	screensprite = sprite_create_from_surface(surface, 0, 0, wd, ht, false, false, 0, 0);
+	
 	// second surface, to fade in the blur
 	if REMIX
 	{
-		surface2 = surface_create(surface_get_width(surface), surface_get_height(surface));
+		var surface2 = surface_create(wd, ht);
 		surface_set_target(surface2);
 		
 		shader_set(shd_blur);
@@ -37,21 +40,24 @@ function scr_create_pause_image()
 		
 		draw_surface(surface, 0, 0);
 		surface_reset_target();
+		
+		// make sprite
+		screensprite2 = sprite_create_from_surface(surface2, 0, 0, wd, ht, false, false, 0, 0);
+		surface_free(surface2);
 	}
+	surface_free(surface);
 }
 function scr_draw_pause_image()
 {
-	if live_call() return live_result;
-
 	if REMIX
 	{
 		if fade < 1
-			draw_surface_ext(surface, 0, 0, screenscale, screenscale, 0, c_white, 1);
+			draw_sprite_ext(screensprite, 0, 0, 0, screenscale, screenscale, 0, c_white, 1);
 		if fade != 0
-			draw_surface_ext(surface2, 0, 0, screenscale, screenscale, 0, c_white, fade);
+			draw_sprite_ext(screensprite2, 0, 0, 0, screenscale, screenscale, 0, c_white, fade);
 	}
 	else
-		draw_surface_ext(surface, 0, 0, screenscale, screenscale, 0, c_white, 1);
+		draw_sprite_ext(screensprite, 0, 0, 0, screenscale, screenscale, 0, c_white, 1);
 }
 function scr_pause_stop_sounds()
 {
@@ -63,10 +69,8 @@ function scr_pause_stop_sounds()
 }
 function scr_delete_pause_image()
 {
-	surface_free(surface);
-	surface_free(surface2);
-	surface = noone;
-	surface2 = noone;
+	sprite_delete(screensprite);
+	sprite_delete(screensprite2);
 }
 function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0)
 {
