@@ -1,5 +1,7 @@
+#macro REMIX global.gameplay
 #macro debug (GM_build_type == "run")
 
+// initialize
 scr_get_languages();
 pal_swap_init_system_fix(shd_pal_swapper, true);
 
@@ -23,10 +25,18 @@ global.wartimerfont1 = font_add_sprite_ext(spr_wartimer_font1, "1234567890", tru
 global.wartimerfont2 = font_add_sprite_ext(spr_wartimer_font2, "1234567890", true, 0);
 global.ptofont = font_add_sprite_ext(spr_smallfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!._1234567890:;?▯|*/',\"()=-+@█%~ÁÉÍÓÚáéíóúÑñ[]<>$", true, 0);
 
+// settings
+ini_open("saveData.ini");
+global.gameplay = ini_read_real("Modded", "gameplay", true); // misc. improvements on or off?
+
 // gameplay settings
-#macro REMIX (global.gameplay == 2)
-global.gameplay = 2;
+global.uppercut = ini_read_real("Modded", "uppercut", true); // *buffed uppercut*
+global.poundjump = ini_read_real("Modded", "poundjump", true);
+global.attackstyle = ini_read_real("Modded", "attackstyle", 0); // grab, kungfu
+
+// visual settings
 global.panicbg = true;
+ini_close();
 
 // crash handler
 exception_unhandled_handler
