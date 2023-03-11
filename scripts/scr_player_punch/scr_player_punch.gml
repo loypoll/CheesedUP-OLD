@@ -46,6 +46,10 @@ function scr_player_punch()
 				vertical = true;
 			}
 		}
+		
+		// quick fall
+		if REMIX && key_down && vsp < 10
+			vsp = 10;
 	}
 	else
 	{
