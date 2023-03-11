@@ -11,6 +11,7 @@ function sh_showcollisions(args)
 			return "Invalid argument: " + args[1];
 	}
 	WC_showcollisions = togglepanic;
+	toggle_collisions(togglepanic);
 }
 function meta_showcollisions()
 {
@@ -22,4 +23,17 @@ function meta_showcollisions()
 			["true", "false"],
 		],
 	}
+}
+
+function toggle_collisions(enable)
+{
+	global.hidetiles = enable;
+	
+	with obj_solid visible = enable;
+	with obj_slope visible = enable;
+	with obj_platform visible = enable;
+	with obj_ladder visible = enable;
+	with obj_solidhole visible = enable;
+	with obj_secretblock visible = enable;
+	with obj_secretbigblock visible = enable;
 }

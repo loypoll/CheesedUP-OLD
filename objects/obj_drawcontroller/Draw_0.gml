@@ -144,7 +144,8 @@ shader_reset();
 draw_set_flash();
 with (obj_player)
 {
-	if (visible && flash && bbox_in_camera(view_camera[0], 32))
+	if object_index != obj_player2 or global.coop
+	if visible && flash && bbox_in_camera(view_camera[0], 32)
 		draw_sprite_ext(sprite_index, image_index, x, y, xscale, yscale, image_angle, image_blend, image_alpha);
 }
 draw_reset_flash();
