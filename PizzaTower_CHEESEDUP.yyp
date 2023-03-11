@@ -427,6 +427,8 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"fmod.dll","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"fmodstudio.dll","CopyToMask":-1,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"gmlive-server.exe","CopyToMask":-1,"filePath":"datafiles",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"neko.dll","CopyToMask":0,"filePath":"datafiles/GMLive",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"neko.dll","CopyToMask":0,"filePath":"datafiles",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"english.txt","CopyToMask":-1,"filePath":"datafiles/lang",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Master.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Master.strings.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},

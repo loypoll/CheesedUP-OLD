@@ -1,10 +1,6 @@
 function scr_player_barrelslide()
 {
-	image_speed = abs(movespeed) / 8;
-	if (image_speed < 0.35)
-		image_speed = 0.35;
-	if (image_speed > 0.85)
-		image_speed = 0.85;
+	image_speed = clamp(abs(movespeed) / 8, 0.35, 0.85);
 	hsp = movespeed;
 	if (abs(movespeed) < 14)
 		movespeed = Approach(movespeed, xscale * 14, 0.1);

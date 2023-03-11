@@ -40,6 +40,10 @@ if (scr_solid(x, y + 1))
 if (place_meeting(x, y + 1, obj_slope))
 	collision_flags |= colflag.sloped;
 
+// fuck you
+with (obj_ratblock)
+	scr_ratblock_destroy();
+
 // state machine
 switch (state)
 {
@@ -1247,8 +1251,6 @@ if (movespeed > 12 && abs(hsp) > 12 && state == states.mach3 && state != states.
 		other.speedlineseffectid = id;
 	}
 }
-with (obj_ratblock)
-	scr_ratblock_destroy();
 scr_collide_destructibles();
 if (state != states.backtohub && state != states.ghostpossess && state != states.gotoplayer && state != states.debugstate && state != states.titlescreen && state != states.tube && state != states.grabbed && state != states.door && state != states.Sjump && state != states.ejected && state != states.comingoutdoor && state != states.boulder && state != states.keyget && state != states.victory && state != states.portal && state != states.timesup && state != states.gottreasure && state != states.dead)
 	scr_collide_player();

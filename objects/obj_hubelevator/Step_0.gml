@@ -25,7 +25,7 @@ if state == 1
 			state = 2;
 			close_menu();
 		}
-		else if key_slap2
+		else if key_slap2 or keyboard_check_pressed(vk_escape)
 		{
 			sound_play_centered(sfx_enemyprojectile);
 			state = 0;
