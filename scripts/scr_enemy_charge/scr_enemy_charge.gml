@@ -25,7 +25,7 @@ function scr_enemy_charge()
 		hsp = image_xscale * movespeed;
 		if (grounded && vsp > 0)
 		{
-			if (place_meeting(x + image_xscale, y, obj_solid))
+			if (check_wall(x + image_xscale, y))
 				image_xscale *= -1;
 			state = states.walk;
 			image_index = 0;
@@ -63,7 +63,7 @@ function scr_enemy_charge()
 	if (object_index == obj_ancho)
 	{
 		hsp = image_xscale * movespeed;
-		if (place_meeting(x + hsp, y, obj_solid))
+		if (check_wall(x + hsp, y))
 		{
 			state = states.stun;
 			stunned = 100;

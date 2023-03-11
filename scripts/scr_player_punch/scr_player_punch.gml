@@ -138,7 +138,7 @@ function scr_player_punch()
 					if (sprite_index == spr_player_Sjumpcancelslide)
 						image_speed = abs(movespeed) / 15;
 				}
-				if (sprite_index != spr_player_kungfujump && place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_slope))
+				if (sprite_index != spr_player_kungfujump && check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_slope))
 				{
 					vsp = -4;
 					sprite_index = spr_player_kungfujump;

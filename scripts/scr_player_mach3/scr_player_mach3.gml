@@ -145,8 +145,8 @@ function scr_player_mach3()
 				if (character == "V")
 					sprite_index = spr_playerV_divekickstart;
 			}
-			if (!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && !place_meeting(x, y + 1, obj_slope))
-			|| (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope))
+			if (!grounded && (check_wall(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && !place_meeting(x, y + 1, obj_slope))
+			|| (grounded && (check_wall(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope))
 			{
 				wallspeed = movespeed;
 				grabclimbbuffer = 0;
@@ -196,7 +196,7 @@ function scr_player_mach3()
 				else if (global.pistol)
 					scr_pistolshoot(states.mach3);
 			}
-			if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
+			if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 			{
 				var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 				if (_bump)
@@ -390,12 +390,12 @@ function scr_player_mach3()
 				state = states.machroll;
 				vsp = 10;
 			}
-			if ((!grounded && place_meeting(x + hsp, y, obj_solid) && (!place_meeting(x + sign(hsp), y, obj_slope || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + hsp, y, obj_mach3solid))) || (grounded && (place_meeting(x + hsp, y - 32, obj_solid) || scr_solid_slope(x + sign(hsp), y - 32)) && place_meeting(x, y + 1, obj_slope) && !place_meeting(x + hsp, y, obj_mach3solid)))
+			if ((!grounded && check_wall(x + hsp, y) && (!place_meeting(x + sign(hsp), y, obj_slope || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + hsp, y, obj_mach3solid))) || (grounded && (check_wall(x + hsp, y - 32) || scr_solid_slope(x + sign(hsp), y - 32)) && place_meeting(x, y + 1, obj_slope) && !place_meeting(x + hsp, y, obj_mach3solid)))
 			{
 				wallspeed = 10;
 				state = states.climbwall;
 			}
-			if ((scr_solid(x + 1, y) && !place_meeting(x + 1, y, obj_mach3solid) && xscale == 1) && !scr_slope() && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting(x + sign(hsp), y, obj_solid)) && (grounded || fightball == 1))
+			if ((scr_solid(x + 1, y) && !place_meeting(x + 1, y, obj_mach3solid) && xscale == 1) && !scr_slope() && (!place_meeting(x + sign(hsp), y, obj_slope) || check_wall(x + sign(hsp), y)) && (grounded || fightball == 1))
 			{
 				if (fightball == 0)
 				{
@@ -464,7 +464,7 @@ function scr_player_mach3()
 					fightball = false;
 				}
 			}
-			if ((scr_solid(x - 1, y) && !place_meeting(x - 1, y, obj_mach3solid) && xscale == -1) && !scr_slope() && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting(x + sign(hsp), y, obj_solid)) && (grounded || fightball == 1))
+			if ((scr_solid(x - 1, y) && !place_meeting(x - 1, y, obj_mach3solid) && xscale == -1) && !scr_slope() && (!place_meeting(x + sign(hsp), y, obj_slope) || check_wall(x + sign(hsp), y)) && (grounded || fightball == 1))
 			{
 				if (fightball == 0)
 				{
@@ -650,7 +650,7 @@ function scr_player_mach3()
 				}
 				vsp = -11;
 			}
-			if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting(x + sign(hsp), y, obj_solid)) && (!place_meeting(x + sign(hsp), y, obj_metalblock) && character != "V") && (!place_meeting(x + sign(hsp), y, obj_destructibles) && character != "V") && !place_meeting(x + sign(hsp), y, obj_hungrypillar))
+			if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && (!place_meeting(x + sign(hsp), y, obj_slope) || check_wall(x + sign(hsp), y)) && (!place_meeting(x + sign(hsp), y, obj_metalblock) && character != "V") && (!place_meeting(x + sign(hsp), y, obj_destructibles) && character != "V") && !place_meeting(x + sign(hsp), y, obj_hungrypillar))
 			{
 				pizzapepper = 0;
 				sprite_index = spr_hitwall;

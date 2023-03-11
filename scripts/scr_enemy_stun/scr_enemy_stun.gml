@@ -69,7 +69,7 @@ function scr_enemy_stun()
 				scr_destroy_destructibles(0, hitvsp);
 		}
 	}
-	if (hitvsp < 0 && place_meeting(x, y - 1, obj_solid) && !place_meeting(x, y - 1, obj_destructibles))
+	if (hitvsp < 0 && check_wall(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
 	{
 		if (thrown == 1)
 		{
@@ -78,7 +78,7 @@ function scr_enemy_stun()
 			thrown = false;
 		}
 	}
-	if (hithsp != 0 && place_meeting(x + hithsp, y, obj_solid) && !place_meeting(x + hithsp, y, obj_destructibles))
+	if (hithsp != 0 && check_wall(x + hithsp, y) && !place_meeting(x + hithsp, y, obj_destructibles))
 	{
 		if (thrown == 1)
 		{

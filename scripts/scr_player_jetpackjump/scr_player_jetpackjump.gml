@@ -155,9 +155,9 @@ function scr_player_jetpackjump()
 		state = states.handstandjump;
 		movespeed = 5;
 	}
-	if (place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + xscale, y, obj_destructibles))
+	if (check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles))
 		movespeed = 0;
-	if (sprite_index == spin && jetpackbounce == 1 && place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + xscale, y, obj_destructibles))
+	if (sprite_index == spin && jetpackbounce == 1 && check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles))
 	{
 		jetpackdash = false;
 		instance_create(x + (xscale * 10), y, obj_bangeffect);

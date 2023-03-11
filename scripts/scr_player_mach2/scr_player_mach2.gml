@@ -98,7 +98,7 @@ function scr_player_mach2()
 			create_particle(x, y, particle.jumpdust, 0);
 		}
 	}
-	if ((!grounded && (place_meeting(x + hsp, y, obj_solid) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (place_meeting(x + sign(hsp), y - 16, obj_solid) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
+	if ((!grounded && (check_wall(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (check_wall(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
 	{
 		wallspeed = movespeed;
 		grabclimbbuffer = 0;
@@ -155,7 +155,7 @@ function scr_player_mach2()
 		if (character == "V")
 			sprite_index = spr_playerV_divekickstart;
 	}
-	if (key_attack && !place_meeting(x + xscale, y, obj_solid) && character == "S" && grounded)
+	if (key_attack && !check_wall(x + xscale, y) && character == "S" && grounded)
 	{
 		state = states.handstandjump;
 		movespeed = 0;
@@ -226,7 +226,7 @@ function scr_player_mach2()
 		sprite_index = spr_clown;
 	if (mortjump)
 		sprite_index = spr_player_mortjumpstart;
-	if (state != states.machslide && scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
+	if (state != states.machslide && scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 	{
 		if (skateboarding)
 			xscale *= -1;

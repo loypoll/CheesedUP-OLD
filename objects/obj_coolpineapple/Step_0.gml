@@ -154,7 +154,7 @@ switch (state)
 		{
 			breakdance_movespeed = Approach(breakdance_movespeed, 0, 0.25);
 			hsp = image_xscale * breakdance_movespeed;
-			if (place_meeting(x + sign(hsp), y, obj_solid))
+			if (check_wall(x + sign(hsp), y))
 			{
 				image_xscale *= -1;
 				if (breakdance_movespeed < 3)

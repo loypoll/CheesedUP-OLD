@@ -9,7 +9,7 @@ function scr_player_balloon()
 		movespeed = Approach(movespeed, move * 6, 0.35);
 	else
 		movespeed = Approach(movespeed, 0, 0.35);
-	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope))
+	if (check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope))
 		movespeed = 0;
 	if (balloonbuffer > 0)
 		balloonbuffer--;

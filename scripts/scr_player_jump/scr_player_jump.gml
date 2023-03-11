@@ -62,7 +62,7 @@ function state_player_jump()
 	{
 		if (key_jump && wallclingcooldown == 10)
 		{
-			if (place_meeting(x + xscale, y, obj_solid))
+			if (check_wall(x + xscale, y))
 			{
 				sound_play_3d("event:/sfx/pep/step", x, y);
 				sprite_index = spr_playerN_wallclingstart;
@@ -467,7 +467,7 @@ function state_player_jump()
 		if (image_index > (image_number - 1))
 			sprite_index = spr_shotgunfall;
 	}
-	if (place_meeting(x, y, obj_solid))
+	if (check_wall(x, y))
 	{
 		state = states.crouch;
 		landAnim = false;
@@ -516,7 +516,7 @@ function state_pepperman_jump()
 		vsp = 14;
 		sprite_index = spr_bodyslamfall;
 	}
-	if (key_attack && (!place_meeting(x + xscale, y, obj_solid) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
+	if (key_attack && (!check_wall(x + xscale, y) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
 	{
 		if (move != 0)
 			xscale = move;

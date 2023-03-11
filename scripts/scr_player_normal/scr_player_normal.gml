@@ -299,7 +299,7 @@ function state_player_normal()
 				railmomentum = true;
 			freefallstart = 0;
 		}
-		if (key_down || (grounded && vsp > 0 && scr_solid(x, y - 3) && scr_solid(x, y)) || place_meeting(x, y, obj_solid))
+		if (key_down || (grounded && vsp > 0 && scr_solid(x, y - 3) && scr_solid(x, y)) || check_wall(x, y))
 		{
 			state = states.crouch;
 			landAnim = false;
@@ -359,7 +359,7 @@ function state_player_normal()
 	switch (character)
 	{
 		case "P":
-			if (key_attack && state != states.handstandjump && !place_meeting(x + xscale, y, obj_solid) && (!place_meeting(x, y + 1, obj_iceblockslope) || !place_meeting(x + (xscale * 5), y, obj_solid)) && !global.kungfu)
+			if (key_attack && state != states.handstandjump && !check_wall(x + xscale, y) && (!place_meeting(x, y + 1, obj_iceblockslope) || !check_wall(x + (xscale * 5), y)) && !global.kungfu)
 			{
 				sprite_index = spr_mach1;
 				image_index = 0;
@@ -395,7 +395,7 @@ function state_player_normal()
 			}
 			break;
 		case "V":
-			if (key_attack && !place_meeting(x + xscale, y, obj_solid))
+			if (key_attack && !check_wall(x + xscale, y))
 			{
 				if (pizzapepper == 0)
 				{
@@ -490,7 +490,7 @@ function state_pepperman_normal()
 		state = states.jump;
 		sprite_index = spr_fall;
 	}
-	if (key_attack && (!place_meeting(x + xscale, y, obj_solid) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
+	if (key_attack && (!check_wall(x + xscale, y) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
 	{
 		if (move != 0)
 			xscale = move;

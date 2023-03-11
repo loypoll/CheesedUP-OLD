@@ -23,7 +23,7 @@ function scr_player_motorcycle()
 		vsp /= 10;
 		jumpstop = true;
 	}
-	if ((place_meeting(x + sign(hsp), y, obj_solid) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_slope))
+	if ((check_wall(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_slope))
 	{
 		jumpstop = false;
 		vsp = -11;

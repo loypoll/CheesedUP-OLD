@@ -6,12 +6,12 @@ function scr_player_ratmount()
 		ratgrabbedID = -4;
 	hsp = movespeed;
 	var r = ratmount_movespeed;
-	if ((place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + hsp, y, obj_destructibles)) || (abs(movespeed) < 8 && move != xscale) || !key_attack || abs(movespeed) <= 6)
+	if ((check_wall(x + xscale, y) && !place_meeting(x + hsp, y, obj_destructibles)) || (abs(movespeed) < 8 && move != xscale) || !key_attack || abs(movespeed) <= 6)
 	{
 		gustavodash = 0;
 		ratmount_movespeed = 8;
 	}
-	if ((place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope) && !place_meeting(x + hsp, y, obj_destructibles)) && gustavodash != 51)
+	if ((check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope) && !place_meeting(x + hsp, y, obj_destructibles)) && gustavodash != 51)
 	{
 		movespeed = 0;
 		if (r >= 12)
@@ -204,7 +204,7 @@ function scr_player_ratmount()
 		else
 			sprite_index = spr_player_ratmountgroundpoundfall;
 	}
-	if (key_attack && grounded && !place_meeting(x + xscale, y, obj_solid))
+	if (key_attack && grounded && !check_wall(x + xscale, y))
 	{
 		move = xscale;
 		if (ratmount_movespeed < 12)

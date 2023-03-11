@@ -34,7 +34,7 @@ function scr_player_machslide()
 			machslideAnim = true;
 		movespeed = 0;
 	}
-	if (place_meeting(x + xscale, y, obj_solid) && (sprite_index == spr_machslide || sprite_index == spr_machslidestart))
+	if (check_wall(x + xscale, y) && (sprite_index == spr_machslide || sprite_index == spr_machslidestart))
 	{
 		sound_play_3d("event:/sfx/pep/splat", x, y);
 		sprite_index = spr_player_wallsplat;

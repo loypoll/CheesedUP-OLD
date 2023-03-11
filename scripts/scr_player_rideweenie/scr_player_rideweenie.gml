@@ -29,7 +29,7 @@ function scr_player_rideweenie()
 		movespeed = Approach(movespeed, 0, 0.7);
 	if (sprite_index == spr_player_weenieturn && floor(image_index) == (image_number - 1))
 		sprite_index = spr_rideweenie;
-	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope) && !place_meeting(x + hsp, y, obj_ratblock) && !place_meeting(x + hsp, y, obj_destructibles))
+	if (check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope) && !place_meeting(x + hsp, y, obj_ratblock) && !place_meeting(x + hsp, y, obj_destructibles))
 	{
 		if (abs(hsp) < 3)
 			hsp = 0;

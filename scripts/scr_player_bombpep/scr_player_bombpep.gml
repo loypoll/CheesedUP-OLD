@@ -198,7 +198,7 @@ function scr_player_bombpepside()
 	machhitAnim = false;
 	with (instance_place(x + hsp, y, obj_metalblock))
 		instance_destroy();
-	if (scr_solid(x + xscale, y) && (scr_solid_slope(x + sign(hsp), y) || place_meeting(x + sign(hsp), y, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+	if (scr_solid(x + xscale, y) && (scr_solid_slope(x + sign(hsp), y) || check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
 		sprite_index = spr_hitwall;
 		sound_play_3d("event:/sfx/pep/groundpound", x, y);

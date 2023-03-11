@@ -92,7 +92,7 @@ if (bonebuffer == 0)
 		var t = false;
 		while (y < room_height)
 		{
-			if (place_meeting(x, y, obj_solid))
+			if (check_wall(x, y))
 				y++;
 			else
 			{

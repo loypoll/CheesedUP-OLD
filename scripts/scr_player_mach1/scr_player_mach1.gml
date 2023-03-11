@@ -78,7 +78,7 @@ function scr_player_mach1()
 		vsp /= 20;
 		jumpstop = true;
 	}
-	if (place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope))
+	if (check_wall(x + xscale, y) && !place_meeting(x + sign(hsp), y, obj_slope))
 	{
 		movespeed = 0;
 		state = states.normal;

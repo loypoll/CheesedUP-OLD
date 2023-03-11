@@ -64,7 +64,7 @@ function scr_player_knightpepslopes()
 		sprite_index = spr_knightpep_fly;
 	if ((sprite_index == spr_knightpep_doublejump || sprite_index == spr_knightpep_fly) && floor(image_index) == (image_number - 1))
 		image_index = image_number - 1;
-	if (scr_solid(x + sign(hsp), y) && (!scr_slope() || place_meeting(x + sign(hsp), y - 2, obj_solid)) && !place_meeting(x + sign(hsp), y, obj_slope) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+	if (scr_solid(x + sign(hsp), y) && (!scr_slope() || check_wall(x + sign(hsp), y - 2)) && !place_meeting(x + sign(hsp), y, obj_slope) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
 		instance_create(x + (xscale * 40), y, obj_bumpeffect);
 		movespeed = 0;

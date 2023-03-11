@@ -162,7 +162,7 @@ function scr_player_knightpep()
 				movespeed = 0;
 		}
 	}
-	if (!grounded && place_meeting(x + sign(hsp), y, obj_solid) && !scr_slope())
+	if (!grounded && check_wall(x + sign(hsp), y) && !scr_slope())
 		movespeed = 0;
 	if (move != 0 && hsp != 0 && sprite_index != spr_knightpep_doublejump)
 	{

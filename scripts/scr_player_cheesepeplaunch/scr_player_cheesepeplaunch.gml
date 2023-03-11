@@ -14,7 +14,7 @@ function scr_player_cheesepeplaunch()
 		sprite_index = spr_cheesepepland;
 		image_index = 0;
 	}
-	if (place_meeting(x + sign(xscale), y, obj_solid) && !place_meeting(x, y + 1, obj_slope))
+	if (check_wall(x + sign(xscale), y) && !place_meeting(x, y + 1, obj_slope))
 	{
 		state = states.cheesepepstick;
 		wallspeed = movespeed;

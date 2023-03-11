@@ -3,7 +3,7 @@ function scr_player_shotgunshoot()
 	image_speed = 0.4;
 	move = key_left + key_right;
 	hsp = xscale * movespeed;
-	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope))
+	if (check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope))
 		movespeed = 0;
 	if (move != 0)
 	{

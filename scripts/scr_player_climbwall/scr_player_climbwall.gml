@@ -104,7 +104,7 @@ function scr_player_climbwall()
 				}
 				vsp = 0;
 			}
-			if (wallspeed < 0 && place_meeting(x, y + 12, obj_solid))
+			if (wallspeed < 0 && check_wall(x, y + 12))
 				wallspeed = 0;
 			if (input_buffer_jump > 8)
 			{
@@ -123,7 +123,7 @@ function scr_player_climbwall()
 				jumpstop = false;
 				walljumpbuffer = 4;
 			}
-			if (state != states.mach2 && verticalbuffer <= 0 && place_meeting(x, y - 1, obj_solid) && scr_solid(x + xscale, y) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
+			if (state != states.mach2 && verticalbuffer <= 0 && check_wall(x, y - 1) && scr_solid(x + xscale, y) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
 			{
 				trace("climbwall hit head");
 				if (!skateboarding)

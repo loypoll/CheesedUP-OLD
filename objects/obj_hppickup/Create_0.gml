@@ -8,7 +8,7 @@ grav = 0.5;
 part = false;
 partx = 0;
 party = 0;
-if (place_meeting(x, y, obj_solid))
+if (check_wall(x, y))
 {
 	y = 16;
 	part = true;
@@ -16,5 +16,5 @@ if (place_meeting(x, y, obj_solid))
 	party = y;
 	alarm[0] = 1;
 }
-if (place_meeting(x, y, obj_solid))
+if (check_wall(x, y))
 	x = clamp(x, 96, room_width - 96);

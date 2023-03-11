@@ -6,7 +6,7 @@ function scr_player_faceplant()
 		movespeed += 0.5;
 	else if (!grounded)
 		movespeed = 10;
-	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_slope) && !place_meeting(x + hsp, y, obj_destructibles))
+	if (check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_slope) && !place_meeting(x + hsp, y, obj_destructibles))
 	{
 		sprite_index = spr_hitwall;
 		with (obj_camera)

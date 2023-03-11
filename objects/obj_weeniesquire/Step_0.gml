@@ -47,7 +47,7 @@ switch (state)
 			if (place_meeting(x - other.hsp, y, other))
 				instance_destroy();
 		}
-		if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_slope))
+		if (check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_slope))
 		{
 			state = states.stun;
 			stunned = 80;

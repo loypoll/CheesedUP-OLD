@@ -19,7 +19,7 @@ function scr_player_mortjump()
 	}
 	else
 		movespeed = Approach(movespeed, 0, 0.5);
-	if (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope))
+	if (check_wall(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_slope))
 	{
 		movespeed = 0;
 		if (sprite_index == spr_player_barrelmove)

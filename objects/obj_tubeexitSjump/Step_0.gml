@@ -8,11 +8,8 @@ if (state == states.tube)
 			sprite_index = spr_superspringplayer;
 			state = states.Sjump;
 			vsp = -10;
-			if (place_meeting(x, y, obj_solid))
-			{
-				while (place_meeting(x, y, obj_solid))
-					y--;
-			}
+			while (check_wall(x, y))
+				y--;
 			var p = (object_index == obj_player1) ? 0 : 1;
 			GamepadSetVibration(p, 1, 1, 0.9);
 		}

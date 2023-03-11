@@ -4,7 +4,7 @@ function scr_player_bee()
 	sprite_index = spr_hurtwalk;
 	movespeed = 10;
 	hsp = xscale * movespeed;
-	if (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope))
+	if (check_wall(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_slope))
 		xscale *= -1;
 	if (bee_buffer > 0)
 		bee_buffer--;

@@ -26,7 +26,7 @@ function scr_player_chainsawbump()
 	}
 	if (sprite_index == spr_player_chainsawdash && movespeed < 20)
 		movespeed += 0.1;
-	if (place_meeting(x + xscale, y, obj_solid) && !place_meeting(x + xscale, y, obj_destructibles))
+	if (check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles))
 	{
 		if (sprite_index != spr_player_chainsawhitwall)
 		{

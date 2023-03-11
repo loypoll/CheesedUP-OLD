@@ -28,7 +28,7 @@ function scr_player_knightpepattack()
 		sprite_index = spr_knightpepdownslope;
 		slope_buffer = 20;
 	}
-	if (place_meeting(x + hsp, y, obj_solid) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_slope))
+	if (check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_slope))
 		movespeed = 0;
 	if (grounded)
 		doublejump = false;

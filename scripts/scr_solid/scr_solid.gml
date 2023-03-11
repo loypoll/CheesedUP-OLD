@@ -4,7 +4,7 @@ function scr_solid(_x, _y)
 	var old_y = y;
 	x = _x;
 	y = _y;
-	if (place_meeting(x, y, obj_solid))
+	if (check_wall(x, y))
 	{
 		x = old_x;
 		y = old_y;
@@ -37,6 +37,17 @@ function scr_solid(_x, _y)
 	x = old_x;
 	y = old_y;
 	return false;
+}
+function check_wall(x, y)
+{
+	var condition = false;
+	
+	if place_meeting(x, y, obj_solid)
+		condition = true;
+	if place_meeting(x, y, obj_solidhole)
+		condition = false;
+	
+	return condition;
 }
 function check_slope(slope_object)
 {
