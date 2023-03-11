@@ -27,13 +27,10 @@ function meta_showcollisions()
 
 function toggle_collisions(enable)
 {
-	global.hidetiles = enable;
-	
-	with obj_solid visible = enable;
-	with obj_slope visible = enable;
-	with obj_platform visible = enable;
-	with obj_ladder visible = enable;
-	with obj_solidhole visible = enable;
-	with obj_secretblock visible = enable;
-	with obj_secretbigblock visible = enable;
+	var i_love_cock = [obj_solid, obj_slope, obj_platform, obj_ladder, obj_solidhole, obj_secretblock, obj_secretbigblock];
+	with all
+	{
+		if array_contains(i_love_cock, object_index)
+			visible = enable;
+	}
 }

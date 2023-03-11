@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Settings",
-    "path": "folders/Objects/Game Settings.yy",
+    "name": "Unused",
+    "path": "folders/Objects/Unused.yy",
   },
   "parentObjectId": null,
   "persistent": true,

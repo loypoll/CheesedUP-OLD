@@ -38,15 +38,42 @@ function scr_solid(_x, _y)
 	y = old_y;
 	return false;
 }
-function check_wall(x, y)
+function check_wall(_x, _y)
 {
 	var condition = false;
-	
-	if place_meeting(x, y, obj_solid)
+	if place_meeting(_x, _y, obj_solid)
+	{
 		condition = true;
-	if place_meeting(x, y, obj_solidhole)
-		condition = false;
-	
+		
+		/*
+		if place_meeting(_x, _y, obj_solidhole)
+		{
+			condition = false;
+			
+			var old_x = x, old_y = y;
+			x = _x;
+			y = _y;
+						
+			for(var xx = bbox_left; xx < bbox_right; xx++)
+			{
+				for(var yy = bbox_top; yy < bbox_bottom; yy++)
+				{
+					if !collision_point(xx, yy, obj_solidhole, false, false)
+					&& collision_point(xx, yy, obj_solid, false, false)
+					{
+						condition = true;
+						break;
+					}
+				}
+				if condition
+					break;
+			}
+			
+			x = old_x;
+			y = old_y;
+		}
+		*/
+	}
 	return condition;
 }
 function check_slope(slope_object)

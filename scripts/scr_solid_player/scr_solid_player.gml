@@ -4,8 +4,10 @@ function scr_solid_player(_x, _y)
 	var old_y = y;
 	x = _x;
 	y = _y;
+	
 	ds_list_clear(global.instancelist);
 	var num = instance_place_list(x, y, obj_solid, global.instancelist, false);
+		
 	var _collided = false;
 	for (var i = 0; i < num; i++)
 	{
@@ -18,24 +20,50 @@ function scr_solid_player(_x, _y)
 					if (state != states.ghost)
 						_collided = true;
 					break;
+				
 				case obj_mach3solid:
 					if (state != states.mach3 && (state != states.machslide || sprite_index != spr_mach3boost) && (state != states.chainsaw || tauntstoredstate != states.mach3))
 						_collided = true;
 					break;
+				
 				default:
 					_collided = true;
+					/*
+					if place_meeting(x, y, obj_solidhole)
+					{
+						_collided = false;
+						
+						for(var xx = bbox_left; xx < bbox_right; xx++)
+						{
+							for(var yy = bbox_top; yy < bbox_bottom; yy++)
+							{
+								if !collision_point(xx, yy, obj_solidhole, false, false)
+								&& collision_point(xx, yy, obj_solid, false, false)
+								{
+									_collided = true;
+									break;
+								}
+							}
+							if _collided
+								break;
+						}
+					}
+					*/
+					break;
 			}
 		}
 		if (_collided)
 			break;
 	}
 	ds_list_clear(global.instancelist);
+	
 	if (_collided)
 	{
 		x = old_x;
 		y = old_y;
 		return true;
 	}
+	
 	if (y > old_y && state != states.ladder && place_meeting(x, y, obj_platform))
 	{
 		num = instance_place_list(x, y, obj_platform, global.instancelist, false);

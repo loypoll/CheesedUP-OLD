@@ -30,7 +30,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "dbg_e",
+    "path": "sprites/dbg_e/dbg_e.yy",
+  },
   "spriteMaskId": null,
   "visible": false,
 }
