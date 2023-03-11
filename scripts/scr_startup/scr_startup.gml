@@ -35,7 +35,8 @@ global.poundjump = ini_read_real("Modded", "poundjump", true);
 global.attackstyle = ini_read_real("Modded", "attackstyle", 0); // grab, kungfu
 
 // visual settings
-global.panicbg = true;
+global.panicbg = ini_read_real("Modded", "panicbg", true);
+global.panictilt = ini_read_real("Modded", "panictilt", false);
 ini_close();
 
 // crash handler
