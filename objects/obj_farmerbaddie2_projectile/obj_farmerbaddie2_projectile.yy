@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Unused",
-    "path": "folders/Objects/Unused.yy",
+    "name": "Hitbox",
+    "path": "folders/Objects/Baddie/Hitbox.yy",
   },
   "parentObjectId": {
     "name": "obj_hurtbox",
