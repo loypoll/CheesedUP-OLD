@@ -9,3 +9,14 @@ if (global.option_unfocus_mute)
 else
 	fmod_set_parameter("focus", 1, false);
 fmod_set_parameter("REMIX", REMIX, false);
+
+if REMIX
+{
+	gameframe_spr_border = spr_null;
+	gameframe_border_width = 0;
+}
+else
+{
+	gameframe_spr_border = spr_gameframe_border;
+	gameframe_border_width = 2;
+}

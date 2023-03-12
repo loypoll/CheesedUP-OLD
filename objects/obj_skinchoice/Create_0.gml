@@ -213,7 +213,7 @@ draw = function(curve)
 	
 	draw_set_align(fa_center);
 	draw_set_alpha(curve);
-	draw_set_font(global.ptofont);
+	draw_set_font(global.font_small);
 	draw_text(960 / 2, 450, pal.description);
 	draw_set_alpha(1);
 }

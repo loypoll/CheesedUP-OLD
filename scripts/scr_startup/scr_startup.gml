@@ -1,5 +1,5 @@
 #macro REMIX global.gameplay
-#macro debug (GM_build_type == "run")
+#macro debug true//(GM_build_type == "run")
 
 // initialize
 scr_get_languages();
@@ -23,7 +23,7 @@ global.combofont = font_add_sprite_ext(spr_font_combo, "0123456789/:", true, 0);
 global.combofont2 = font_add_sprite_ext(spr_tv_combobubbletext, "0123456789", true, 0);
 global.wartimerfont1 = font_add_sprite_ext(spr_wartimer_font1, "1234567890", true, 0);
 global.wartimerfont2 = font_add_sprite_ext(spr_wartimer_font2, "1234567890", true, 0);
-global.ptofont = font_add_sprite_ext(spr_smallfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!._1234567890:;?▯|*/',\"()=-+@█%~ÁÉÍÓÚáéíóúÑñ[]<>$", true, 0);
+global.font_small = font_add_sprite_ext(spr_smallfont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!._1234567890:;?▯|*/',\"()=-+@█%~ÁÉÍÓÚáéíóúÑñ[]<>$", true, 0);
 
 // settings
 ini_open("saveData.ini");
@@ -33,6 +33,7 @@ global.gameplay = ini_read_real("Modded", "gameplay", true); // misc. improvemen
 global.uppercut = ini_read_real("Modded", "uppercut", true); // *buffed uppercut*
 global.poundjump = ini_read_real("Modded", "poundjump", true);
 global.attackstyle = ini_read_real("Modded", "attackstyle", 0); // grab, kungfu
+global.doublegrab = ini_read_real("Modded", "doublegrab", 1); // nothing, shoulderbash, tumble
 
 // visual settings
 global.panicbg = ini_read_real("Modded", "panicbg", true);

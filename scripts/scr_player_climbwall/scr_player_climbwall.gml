@@ -68,23 +68,23 @@ function scr_player_climbwall()
 					railmovespeed = 6;
 					raildir = -xscale;
 				}
-				if (verticalbuffer <= 0 && (wallspeed > 0 or place_meeting(x + xscale, y, obj_unclimbablewall)) && !scr_solid(x + xscale, y) && !place_meeting(x, y, obj_verticalhallway) && !place_meeting(x, y - 12, obj_verticalhallway))
+				if (verticalbuffer <= 0 /*&& wallspeed > 0*/ && !scr_solid(x + xscale, y) && !place_meeting(x, y, obj_verticalhallway) && !place_meeting(x, y - 12, obj_verticalhallway))
 				{
 					trace("climbwall out");
 					with instance_create(x, y, obj_jumpdust)
 						image_xscale = REMIX ? other.xscale : 1;
 				
 					ledge_bump(32);
-				
-					if (wallspeed >= 6 && wallspeed < 12) || skateboarding
-					{
-						state = states.mach2;
-						movespeed = wallspeed;
-					}
-					else if wallspeed >= 12
+					
+					if wallspeed >= 12
 					{
 						state = states.mach3;
 						sprite_index = spr_mach4;
+						movespeed = wallspeed;
+					}
+					else
+					{
+						state = states.mach2;
 						movespeed = wallspeed;
 					}
 					movespeed = max(wallspeed, 6);

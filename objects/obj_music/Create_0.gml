@@ -234,5 +234,6 @@ add_music(war_1, "event:/music/w5/war", "event:/music/w5/warsecret", 0)
 
 // cheesed up
 add_music(tower_extra, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
+add_music(rm_onlinerace, "event:/music/pto/bossroom", "event:/music/pillarmusic", 0)
 
 add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);

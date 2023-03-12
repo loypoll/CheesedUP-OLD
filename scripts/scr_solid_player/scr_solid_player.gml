@@ -64,13 +64,15 @@ function scr_solid_player(_x, _y)
 		return true;
 	}
 	
-	if (y > old_y && state != states.ladder && place_meeting(x, y, obj_platform))
+	num = instance_place_list(x, y, obj_platform, global.instancelist, false);
+	if (state != states.ladder && num > 0)
 	{
-		num = instance_place_list(x, y, obj_platform, global.instancelist, false);
 		_collided = false;
 		for (i = 0; i < num; i++)
 		{
 			b = ds_list_find_value(global.instancelist, i);
+			
+			if (b.image_yscale > 0 && y > old_y) or (b.image_yscale < 0 && y < old_y)
 			if (!place_meeting(x, old_y, b) && place_meeting(x, y, b))
 				_collided = true;
 		}

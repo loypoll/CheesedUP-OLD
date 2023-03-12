@@ -39,7 +39,7 @@ else
 
 // visibility
 visible = true;
-if room == strongcold_endscreen || room == Longintro || room == Mainmenu || room == rm_levelselect || room == rank_room || room == timesuproom || room == Realtitlescreen || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic)
+if room == strongcold_endscreen || room == Longintro || room == Mainmenu || room == rm_levelselect || room == rank_room || room == timesuproom || room == Realtitlescreen || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic) || room == rm_onlinerace
 	visible = false;
 if (instance_exists(obj_debugcontroller) && !obj_debugcontroller.showhud) || !global.option_hud
 	visible = false;

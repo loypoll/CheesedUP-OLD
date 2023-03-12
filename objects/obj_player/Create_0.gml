@@ -622,3 +622,9 @@ noisebossscream = false;
 smoothx = 0;
 oldHallway = false;
 noisetype = 0
+
+// race
+lapindex = noone;
+lapdis = 0;
+racepos = 0;
+
