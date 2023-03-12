@@ -41,7 +41,6 @@ switch character
 		
 		add_palette(0, "N-classic", noone, "The Noise", "The mischievous gremlin.");
 		break;
-	
 	#endregion
 }
 pal_swap_index_palette(characters[sel.char][2]);

@@ -58,7 +58,7 @@ function state_player_jump()
 			jumpstop = true;
 		}
 	}
-	if (character == "N")
+	if character == "N" && noisetype == 1
 	{
 		if (key_jump && wallclingcooldown == 10)
 		{
@@ -374,14 +374,37 @@ function state_player_jump()
 	}
 	switch (character)
 	{
-		case "P":
-			if (key_attack && grounded && fallinganimation < 40)
+		default:
+			if character != "N" or noisetype == 0
 			{
-				sprite_index = spr_mach1;
-				image_index = 0;
-				state = states.mach2;
-				if (movespeed < 6)
-					movespeed = 6;
+				if (key_attack && grounded && fallinganimation < 40)
+				{
+					sprite_index = spr_mach1;
+					image_index = 0;
+					state = states.mach2;
+					if (movespeed < 6)
+						movespeed = 6;
+				}
+			}
+			else
+			{
+				if (key_attack2 && (pogochargeactive || pizzapepper > 0))
+				{
+					if (!key_up)
+						sprite_index = spr_playerN_jetpackstart;
+					else
+						sprite_index = spr_superjumpprep;
+					image_index = 0;
+					hsp = 0;
+					vsp = 0;
+					state = states.Sjumpprep;
+				}
+				if (key_attack && !pogochargeactive && !key_slap2 && pizzapepper == 0)
+				{
+					sprite_index = spr_playerN_pogostart;
+					image_index = 0;
+					state = states.pogo;
+				}
 			}
 			break;
 		case "V":
@@ -432,25 +455,6 @@ function state_player_jump()
 					image_xscale = other.xscale;
 				}
 				sound_play_3d("event:/sfx/enemies/killingblow", x, y);
-			}
-			break;
-		case "N":
-			if (key_attack2 && (pogochargeactive || pizzapepper > 0))
-			{
-				if (!key_up)
-					sprite_index = spr_playerN_jetpackstart;
-				else
-					sprite_index = spr_superjumpprep;
-				image_index = 0;
-				hsp = 0;
-				vsp = 0;
-				state = states.Sjumpprep;
-			}
-			if (key_attack && !pogochargeactive && !key_slap2 && pizzapepper == 0)
-			{
-				sprite_index = spr_playerN_pogostart;
-				image_index = 0;
-				state = states.pogo;
 			}
 			break;
 	}

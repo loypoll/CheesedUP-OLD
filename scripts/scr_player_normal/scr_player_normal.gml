@@ -358,40 +358,44 @@ function state_player_normal()
 	}
 	switch (character)
 	{
-		case "P":
-			if (key_attack && state != states.handstandjump && !check_wall(x + xscale, y) && (!place_meeting(x, y + 1, obj_iceblockslope) || !check_wall(x + (xscale * 5), y)) && !global.kungfu)
+		default:
+			if character != "N" or noisetype == 0
 			{
-				sprite_index = spr_mach1;
-				image_index = 0;
-				state = states.mach2;
-				if (movespeed < 6)
-					movespeed = 6;
-			}
-			if (global.kungfu && key_attack && state != states.handstandjump)
-			{
-				state = states.blockstance;
-				sprite_index = spr_player_airattack;
-				hsp = 0;
-				movespeed = 0;
-			}
-			break;
-		case "N":
-			if (pogochargeactive || pizzapepper > 0)
-			{
-				if (key_attack2)
+				if (key_attack && state != states.handstandjump && !check_wall(x + xscale, y) && (!place_meeting(x, y + 1, obj_iceblockslope) || !check_wall(x + (xscale * 5), y)) && !global.kungfu)
 				{
-					state = states.Sjumpprep;
+					sprite_index = spr_mach1;
 					image_index = 0;
-					sprite_index = !key_up ? spr_playerN_jetpackstart : spr_superjumpprep;
+					state = states.mach2;
+					if (movespeed < 6)
+						movespeed = 6;
+				}
+				if (global.kungfu && key_attack && state != states.handstandjump)
+				{
+					state = states.blockstance;
+					sprite_index = spr_player_airattack;
 					hsp = 0;
-					vsp = 0;
+					movespeed = 0;
 				}
 			}
-			else if (key_attack && !key_slap2)
+			else
 			{
-				sprite_index = spr_playerN_pogostart;
-				image_index = 0;
-				state = states.pogo;
+				if (pogochargeactive || pizzapepper > 0)
+				{
+					if (key_attack2)
+					{
+						state = states.Sjumpprep;
+						image_index = 0;
+						sprite_index = !key_up ? spr_playerN_jetpackstart : spr_superjumpprep;
+						hsp = 0;
+						vsp = 0;
+					}
+				}
+				else if (key_attack && !key_slap2)
+				{
+					sprite_index = spr_playerN_pogostart;
+					image_index = 0;
+					state = states.pogo;
+				}
 			}
 			break;
 		case "V":

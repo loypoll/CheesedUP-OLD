@@ -5,7 +5,7 @@ function scr_characterspr()
 		spr_idle = spr_player_idle;
 		spr_move = spr_player_move;
 		spr_crawl = spr_player_crawl;
-		spr_idle = spr_player_idle; // yeah set it again why don't you
+		spr_idle = spr_player_idle;
 		spr_hurt = spr_player_hurt;
 		spr_jump = spr_player_jump;
 		spr_jump2 = spr_player_jump2;
@@ -14,7 +14,7 @@ function scr_characterspr()
 		spr_crouch = spr_player_crouch;
 		spr_crouchjump = spr_player_crouchjump;
 		spr_crouchfall = spr_player_crouchfall;
-		spr_couchstart = spr_player_couchstart; // they never fixed the typo
+		spr_couchstart = spr_player_couchstart;
 		spr_bump = spr_player_bump;
 		spr_land = spr_player_land;
 		spr_land2 = spr_player_land2;
@@ -233,7 +233,7 @@ function scr_characterspr()
 		spr_palette = spr_peppalette;
 		paletteselect = 1;
 	}
-	if (character == "N" || (character == "P" && !ispeppino))
+	if character == "N"
 	{
 		spr_idle = spr_playerN_idle;
 		spr_move = spr_playerN_move;

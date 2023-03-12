@@ -50,7 +50,7 @@ function scr_player_handstandjump()
 		vsp /= 20;
 		jumpstop = true;
 	}
-	if (input_buffer_jump > 0 && can_jump && !key_down && global.attackstyle != 2)
+	if (input_buffer_jump > 0 && can_jump && !key_down && global.attackstyle != 2 && (character != "N" or noisetype == 0))
 	{
 		fmod_event_instance_play(rollgetupsnd);
 		input_buffer_jump = 0;
@@ -87,7 +87,7 @@ function scr_player_handstandjump()
 		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && sprite_index == airattackdashstart)
 		sprite_index = airattackdash;
-	if (floor(image_index) == (image_number - 1) && key_attack && sprite_index == attackdash)
+	if (floor(image_index) == (image_number - 1) && key_attack && sprite_index == attackdash && character != "N")
 	{
 		image_speed = 0.35;
 		state = states.mach2;

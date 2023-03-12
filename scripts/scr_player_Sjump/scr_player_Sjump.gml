@@ -71,7 +71,7 @@ function scr_player_Sjump()
 		state = states.Sjumpland;
 		machhitAnim = false;
 	}
-	else if ((key_attack2 || input_buffer_slap > 0) && character == "P" && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
+	else if ((key_attack2 || input_buffer_slap > 0) && (character != "N" or noisetype == 0) && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
 	{
 		input_buffer_slap = 0;
 		image_index = 0;
@@ -96,7 +96,7 @@ function scr_player_Sjump()
 				image_xscale = other.xscale;
 		}
 	}
-	if (character == "N" && key_jump2)
+	if (character == "N" && noisetype == 1 && key_jump2)
 	{
 		jumpstop = false;
 		vsp = -15;
@@ -106,12 +106,24 @@ function scr_player_Sjump()
 		with (instance_create(x, y, obj_jumpdust))
 			image_xscale = other.xscale;
 	}
-	if (character == "N")
+	if (character == "N" && noisetype == 1)
 	{
 		if (move == 1)
 			hsp = 3;
 		if (move == -1)
 			hsp = -3;
+	}
+	//Jetpack
+	if key_attack2 && character == "N" && noisetype == 1
+	{
+		springsjump = false;
+		state = states.Sjumpprep
+		image_index = 0
+		sprite_index = spr_playerN_jetpackstart
+		hsp = 0
+		vsp = 0
+		if move != 0
+			xscale = move
 	}
 	if (character == "V" && floor(image_index) == (image_number - 1))
 	{
