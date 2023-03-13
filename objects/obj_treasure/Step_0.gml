@@ -59,6 +59,8 @@ switch state
 						obj_tv.alarm[0] = 200;
 						other.player = (object_index == obj_player1) ? 1 : 2;
 						ds_list_clear(global.instancelist);
+						if REMIX
+							global.combotime = 60;
 						break;
 					}
 				}
