@@ -167,7 +167,7 @@ function scr_player_mach3()
 					state = states.climbwall;
 				}
 				
-				if (input_buffer_slap > 0 && !key_up && shotgunAnim == 0 && !global.pistol && sprite_index != spr_dashpadmach)
+				if (input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton) && sprite_index != spr_dashpadmach)
 				{
 					input_buffer_slap = 0;
 					sprite_index = spr_suplexdash;
@@ -180,7 +180,7 @@ function scr_player_mach3()
 						movespeed = 5;
 					image_index = 0;
 				}
-				else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && shotgunAnim == 0 && sprite_index != spr_dashpadmach && !global.pistol)
+				else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton) && sprite_index != spr_dashpadmach)
 				{
 					input_buffer_slap = 0;
 					state = states.punch;
@@ -194,7 +194,7 @@ function scr_player_mach3()
 				}
 				
 				// kungfu
-				if key_slap2 && !key_up && global.attackstyle == 1 && !suplexmove
+				if key_slap2 && !key_up && global.attackstyle == 1 && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton)
 				{
 					if grounded
 					{

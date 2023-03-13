@@ -334,7 +334,7 @@ function state_player_normal()
 	}
 	
 	// suplex dash
-	if (input_buffer_slap > 0 && !key_up && shotgunAnim == 0 && !global.pistol)
+	if (input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
 	{
 		input_buffer_slap = 0;
 		sprite_index = spr_suplexdash;
@@ -348,7 +348,7 @@ function state_player_normal()
 	}
 	
 	// uppercut
-	else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && shotgunAnim == 0 && !global.pistol)
+	else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
 	{
 		state = states.punch;
 		input_buffer_slap = 0;
@@ -362,7 +362,7 @@ function state_player_normal()
 	}
 	
 	// kungfu
-	if key_slap2 && !key_up && global.attackstyle == 1
+	if key_slap2 && !key_up && global.attackstyle == 1 && ((shotgunAnim == false && !global.pistol) or global.shootbutton)
 	{
 		sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
 		suplexmove = true;

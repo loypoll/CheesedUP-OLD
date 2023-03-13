@@ -141,7 +141,10 @@ function scr_player_punch()
 								movespeed = 2;
 							*/
 							if (key_attack)
+							{
 								state = states.mach2;
+								movespeed = max(movespeed, 2);
+							}
 							else
 								state = states.normal;
 							break;
@@ -165,7 +168,10 @@ function scr_player_punch()
 					if (grounded && vsp >= 0)
 					{
 						if (key_attack && movespeed > 0)
+						{
 							state = states.mach2;
+							movespeed = max(movespeed, 2);
+						}
 						else
 							state = states.normal;
 					}
