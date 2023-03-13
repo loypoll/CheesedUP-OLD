@@ -198,18 +198,17 @@ function scr_player_mach3()
 				{
 					if grounded
 					{
-						particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-						create_particle(x, y, particle.crazyrunothereffect);
-						
+						with instance_create(x, y, obj_superdashcloud)
+							image_xscale = other.xscale;
 						sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
 					}
 					else
 						sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
 					suplexmove = true;
 					
-					with instance_create(x, y, obj_superdashcloud)
-						image_xscale = other.xscale;
-		
+					particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+					create_particle(x, y, particle.crazyrunothereffect);
+					
 					fmod_event_instance_play(snd_dive);
 					state = states.punch;
 					if movespeed < 10

@@ -305,9 +305,9 @@ function state_player_jump()
 	{
 		sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
 		suplexmove = true;
-				
-		with instance_create(x, y, obj_superdashcloud)
-			image_xscale = other.xscale;
+		
+		particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+		create_particle(x, y, particle.crazyrunothereffect);	
 		
 		if vsp > 0
 			vsp = 0;
