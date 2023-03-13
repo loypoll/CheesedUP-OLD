@@ -1,1 +1,1 @@
-targetRoom = entrance_secret5;
+targetRoom = entranceB_secret5;

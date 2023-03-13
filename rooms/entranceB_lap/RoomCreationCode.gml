@@ -1,5 +1,4 @@
 global.roommessage = "WELCOME TO PIZZA TOWER";
-global.gameframe_caption_text = "A shifted graveyard in the.. well.. Pizza Tower..";
 if (!obj_secretmanager.init)
 {
 	trace("secret init");

@@ -1,1 +1,1 @@
-targetRoom = entrance_treasure;
+targetRoom = entranceB_treasure;

@@ -1,1 +1,1 @@
-targetRoom = entrance_lap;
+targetRoom = entranceB_lap;
