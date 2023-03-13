@@ -151,9 +151,11 @@ function scr_player_climbwall()
 						image_index = 0;
 					}
 				}
-				if REMIX && state == states.climbwall
+				
+				// grab if there are destructibles in front of you
+				if REMIX && state == states.climbwall && place_meeting(x + xscale, y, obj_destructibles)
 				{
-					if (place_meeting(x + xscale, y, obj_destructibles) && input_buffer_slap > 0 && shotgunAnim == false && !global.pistol)
+					if (input_buffer_slap > 0 && shotgunAnim == false && !global.pistol)
 					{
 						input_buffer_slap = 0;
 						sprite_index = spr_suplexdash;
@@ -163,7 +165,25 @@ function scr_player_climbwall()
 						movespeed = max(wallspeed, 5);
 						image_index = 0;
 					}
+					
+					// kungfu
+					else if key_slap2 && global.attackstyle == 1
+					{
+						sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
+						suplexmove = true;
+						
+						particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+						create_particle(x, y, particle.crazyrunothereffect);
+						
+						fmod_event_instance_play(snd_dive);
+						state = states.punch;
+						movespeed = max(wallspeed, 10);
+						if vsp > 0
+							vsp = 0;
+						image_index = 0;
+					}
 				}
+				
 				if (steppybuffer > 0)
 					steppybuffer--;
 				else

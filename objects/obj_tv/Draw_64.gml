@@ -47,7 +47,7 @@ if room != strongcold_endscreen
 		if instance_exists(obj_ghostcollectibles)
 			bgindex = 20;
 		if obj_player1.state == states.secretenter && instance_exists(obj_fadeout)
-			bgcol = merge_color(c_white, c_black, obj_fadeout.fadealpha);
+			bgcol = merge_color(c_white, c_black, clamp(obj_fadeout.fadealpha, 0, 1));
 		
 		draw_sprite_ext(spr_tv_bgfinal_NEW, bgindex, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, bgcol, alpha);
 	}
