@@ -361,6 +361,7 @@
     {"name":"War","order":22,"path":"folders/Tile Sets/War.yy",},
     {"name":"Timelines","order":24,"path":"folders/Timelines.yy",},
     {"name":"Chainsaw","order":338,"path":"folders/Sprites/Player/Peppino/Chainsaw.yy",},
+    {"name":"BSide Levels","order":20,"path":"folders/Rooms/Levels/BSide Levels.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_bossdoor","order":10,"path":"objects/obj_bossdoor/obj_bossdoor.yy",},
@@ -1725,6 +1726,7 @@
     {"name":"minigolf_11","order":10,"path":"rooms/minigolf_11/minigolf_11.yy",},
     {"name":"space_2","order":1,"path":"rooms/space_2/space_2.yy",},
     {"name":"halloween_entrance","order":27,"path":"rooms/halloween_entrance/halloween_entrance.yy",},
+    {"name":"entranceB_3","order":2,"path":"rooms/entranceB_3/entranceB_3.yy",},
     {"name":"chateau_secret1","order":11,"path":"rooms/chateau_secret1/chateau_secret1.yy",},
     {"name":"chateau_2","order":1,"path":"rooms/chateau_2/chateau_2.yy",},
     {"name":"chateau_secret2","order":12,"path":"rooms/chateau_secret2/chateau_secret2.yy",},
@@ -5155,6 +5157,7 @@
     {"name":"spr_noisette1","order":28,"path":"sprites/spr_noisette1/spr_noisette1.yy",},
     {"name":"bg_dungeontomato2","order":12,"path":"sprites/bg_dungeontomato2/bg_dungeontomato2.yy",},
     {"name":"bg_dungeonskeleton1","order":9,"path":"sprites/bg_dungeonskeleton1/bg_dungeonskeleton1.yy",},
+    {"name":"entranceB_2","order":1,"path":"rooms/entranceB_2/entranceB_2.yy",},
     {"name":"bg_dungeonskeleton2","order":10,"path":"sprites/bg_dungeonskeleton2/bg_dungeonskeleton2.yy",},
     {"name":"bg_kidsparty2","order":3,"path":"sprites/bg_kidsparty2/bg_kidsparty2.yy",},
     {"name":"spr_pizzahead_giddy","order":3,"path":"sprites/spr_pizzahead_giddy/spr_pizzahead_giddy.yy",},
