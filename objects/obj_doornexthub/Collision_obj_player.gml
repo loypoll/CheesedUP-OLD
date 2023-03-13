@@ -59,10 +59,10 @@ if (!place_meeting(x, y, obj_doorblocked))
 					x = door.x + 50;
 				}
 			}
-			else if REMIX
+			else if REMIX && key_up2
 			{
 				instance_destroy(obj_keydoor_shake);
-				with instance_create(x + 50, y + 50, obj_keydoor_shake)
+				with instance_create(door.x + 50, door.y + 50, obj_keydoor_shake)
 					sprite_index = spr_elevatorlocked_shake;
 			}
 		}
