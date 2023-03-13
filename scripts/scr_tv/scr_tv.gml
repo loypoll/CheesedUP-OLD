@@ -140,6 +140,7 @@ function scr_tv_get_transfo_sprite()
 	var _state = obj_player1.state;
 	if (_state == states.backbreaker || _state == states.chainsaw)
 		_state = obj_player1.tauntstoredstate;
+	
 	var _spr = noone;
 	switch (_state)
 	{
