@@ -141,9 +141,9 @@ function scr_player_mach3()
 					image_index = 0;
 					vsp = 10;
 					if (!grounded)
-						sprite_index = spr_player_mach2jump;
+						sprite_index = spr_mach2jump;
 					else
-						sprite_index = spr_player_machroll;
+						sprite_index = spr_machroll;
 					if (character == "V")
 						sprite_index = spr_playerV_divekickstart;
 				}

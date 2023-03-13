@@ -62,7 +62,7 @@ if (state != states.grabbed)
 			machpunchAnim = true;
 			if (!grounded && state != states.freefall)
 			{
-				sprite_index = spr_player_mach2jump;
+				sprite_index = spr_mach2jump;
 				vsp = -10;
 			}
 		}

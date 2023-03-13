@@ -83,7 +83,9 @@ function scr_characterspr()
 		spr_mach4 = spr_player_mach4;
 		spr_machclimbwall = spr_player_climbwall;
 		spr_dive = spr_player_dive;
-		spr_machroll = spr_player_backslide;
+		spr_machroll = spr_player_machroll;
+		spr_backslide = spr_player_backslide;
+		spr_backslideland = spr_player_backslideland;
 		spr_hitwall = spr_player_mach3hitwall;
 		spr_superjumpland = spr_player_superjumpland;
 		spr_walljumpstart = spr_player_walljumpstart;
@@ -317,6 +319,8 @@ function scr_characterspr()
 		spr_machclimbwall = spr_playerN_climbwall;
 		spr_dive = spr_playerN_dive;
 		spr_machroll = spr_playerN_machroll;
+		spr_backslide = spr_player_backslide;
+		spr_backslideland = spr_player_backslideland;
 		spr_hitwall = spr_playerN_mach3hitwall;
 		spr_superjumpland = spr_playerN_Sjumpland;
 		spr_walljumpstart = spr_playerN_walljumpstart;
