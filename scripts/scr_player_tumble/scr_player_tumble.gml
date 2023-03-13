@@ -128,7 +128,7 @@ function scr_player_tumble()
 		crouchslipbuffer--;
 	if (!key_down && key_attack && grounded && state != states.bump && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && sprite_index != spr_player_breakdance)
 	{
-		if (crouchslipbuffer == 0)
+		if crouchslipbuffer == 0 && (character != "N" or noisetype == 0)
 		{
 			with (instance_create(x, y, obj_jumpdust))
 				image_xscale = other.xscale;
@@ -143,9 +143,9 @@ function scr_player_tumble()
 	}
 	if (!key_down && !key_attack && grounded && vsp > 0 && state != states.bump && (sprite_index != spr_tumble && sprite_index != spr_tumbleend) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32) && sprite_index != spr_player_breakdance)
 	{
-		if (crouchslipbuffer == 0)
+		if crouchslipbuffer == 0
 		{
-			if (movespeed > 6)
+			if movespeed > 6 && (character != "N" or noisetype == 0)
 			{
 				state = states.machslide;
 				sprite_index = spr_machslidestart;
