@@ -49,8 +49,7 @@
   ],
   "isDnd": false,
   "layers": [
-    {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Foreground_1","animationFPS":1.0,"animationSpeedType":1,"colour":4294967295,"depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"fg_entrance1","path":"sprites/fg_entrance1/fg_entrance1.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":true,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":1800,},
-    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+    {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_18C9177B_1","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_verticalhallway","path":"objects/obj_verticalhallway/obj_verticalhallway.yy",},"properties":[],"rotation":0.0,"scaleX":2.0,"scaleY":-2.0,"x":640.0,"y":-96.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_61AB668D_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorA","path":"objects/obj_doorA/obj_doorA.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":-128.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5AAA60EF","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"rotation":0.0,"scaleX":7.0,"scaleY":15.0,"x":416.0,"y":-352.0,},
@@ -131,8 +130,8 @@
     {"resourceType":"GMRBackgroundLayer","resourceVersion":"1.0","name":"Backgrounds_1","animationFPS":15.0,"animationSpeedType":0,"colour":4294967295,"depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"spriteId":{"name":"bg_entrance3","path":"sprites/bg_entrance3/bg_entrance3.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":true,"visible":true,"vspeed":0.0,"vtiled":true,"x":0,"y":0,},
   ],
   "parent": {
-    "name": "EntranceB",
-    "path": "folders/Rooms/Levels/BSide Levels/EntranceB.yy",
+    "name": "John Gutter",
+    "path": "folders/Rooms/B-Side Levels/John Gutter.yy",
   },
   "parentRoom": null,
   "physicsSettings": {
