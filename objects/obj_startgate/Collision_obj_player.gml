@@ -5,6 +5,11 @@ with (other)
 	{
 		audio_stop_all();
 		stop_music();
+		if REMIX
+		{
+			smoothx = x - other.x;
+			x = other.x;
+		}
 		global.startgate = true;
 		global.leveltosave = other.level;
 		global.leveltorestart = other.targetRoom;

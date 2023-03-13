@@ -290,6 +290,9 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 			}
 			
 			camera_set_view_pos(view_camera[0], cam_x, cam_y);
+			
+			lockx = cam_x;
+			locky = cam_y;
 			break;
 		
 		case states.camera_followtarget:
@@ -318,4 +321,22 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 			camera_set_view_pos(view_camera[0], cam_x, cam_y + irandom_range(-shake_mag, shake_mag));
 			break;
 	}
+}
+else if REMIX
+{
+	var cam_x = lockx, cam_y = locky;
+	if shake_mag != 0
+	{
+		cam_x += irandom_range(-shake_mag, shake_mag);
+		repeat 2
+			cam_y += irandom_range(-shake_mag, shake_mag);
+	}
+	
+	// better panic shake
+	if global.panic && !instance_exists(obj_ghostcollectibles)
+	{
+		cam_x += random_range(-1, 1);
+		repeat 2 cam_y += random_range(-1, 1);
+	}
+	camera_set_view_pos(view_camera[0], cam_x, cam_y);
 }

@@ -166,6 +166,7 @@ function scr_player_mach3()
 					grabclimbbuffer = 0;
 					state = states.climbwall;
 				}
+				
 				if (input_buffer_slap > 0 && !key_up && shotgunAnim == 0 && !global.pistol && sprite_index != spr_dashpadmach)
 				{
 					input_buffer_slap = 0;
@@ -179,7 +180,7 @@ function scr_player_mach3()
 						movespeed = 5;
 					image_index = 0;
 				}
-				else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && sprite_index != spr_dashpadmach && !global.pistol)
+				else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && shotgunAnim == 0 && sprite_index != spr_dashpadmach && !global.pistol)
 				{
 					input_buffer_slap = 0;
 					state = states.punch;
@@ -191,6 +192,33 @@ function scr_player_mach3()
 					particle_set_scale(particle.highjumpcloud2, xscale, 1);
 					create_particle(x, y, particle.highjumpcloud2, 0);
 				}
+				
+				// kungfu
+				if key_slap2 && !key_up && global.attackstyle == 1 && !suplexmove
+				{
+					if grounded
+					{
+						particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+						create_particle(x, y, particle.crazyrunothereffect);
+						
+						sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
+					}
+					else
+						sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
+					suplexmove = true;
+					
+					with instance_create(x, y, obj_superdashcloud)
+						image_xscale = other.xscale;
+		
+					fmod_event_instance_play(snd_dive);
+					state = states.punch;
+					if movespeed < 10
+						movespeed = 10;
+					if vsp > 0
+						vsp = 0;
+					image_index = 0;
+				}
+				
 				if (input_buffer_shoot > 0 && sprite_index != spr_dashpadmach)
 				{
 					if (shotgunAnim)

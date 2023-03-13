@@ -1,14 +1,21 @@
+if buffer > 0
+	buffer--;
+
 var player = instance_place(x, y, obj_player);
 if player or active
 {
 	if !revealed
 	{
+		if buffer > 0
+			image_alpha = 0;
 		revealed = true;
 		ds_list_add(global.saveroom, id);
 		
-		sound_stop(sfx_collectpizza);
-		if REMIX
+		if REMIX && buffer <= 0
+		{
+			sound_stop(sfx_collectpizza);
 			sound_play("event:/sfx/pto/secretwall");
+		}
 	}
 	
 	with obj_secrettile

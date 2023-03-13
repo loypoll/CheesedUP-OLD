@@ -2,11 +2,11 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "obj_doorB",
-  "eventList": [],
-  "managed": true,
-  "overriddenProperties": [
-    {"resourceType":"GMOverriddenProperty","resourceVersion":"1.0","name":"","objectId":{"name":"obj_doorX","path":"objects/obj_doorX/obj_doorX.yy",},"propertyId":{"name":"door","path":"objects/obj_doorX/obj_doorX.yy",},"value":"B",},
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
+  "managed": true,
+  "overriddenProperties": [],
   "parent": {
     "name": "Exits",
     "path": "folders/Objects/Room Structure/Doors/Exits.yy",

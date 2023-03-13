@@ -53,6 +53,12 @@ if state == 2
 			image_index = 0;
 			state = states.door;
 			mach2 = 0;
+			
+			if REMIX
+			{
+				smoothx = x - (other.x + 50);
+				x = other.x + 50;
+			}
 		}
 		instance_create(x, y, obj_fadeout);
 	}

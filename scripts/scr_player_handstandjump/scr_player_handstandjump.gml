@@ -39,10 +39,13 @@ function scr_player_handstandjump()
 		var attackdash = spr_player_pistolshot;
 	else
 		attackdash = spr_suplexdash;
+	
 	if (sprite_index == spr_player_lungestart && floor(image_index) == (image_number - 1))
 		sprite_index = spr_player_lunge;
+	
 	var airattackdash = spr_suplexdashjump;
 	var airattackdashstart = spr_suplexdashjumpstart;
+	
 	if (global.attackstyle == 2)
 		vsp = 0;
 	if (!key_jump2 && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)

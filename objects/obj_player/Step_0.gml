@@ -8,7 +8,7 @@ prevxscale = xscale;
 // input buffers and coyote time
 if (key_slap2)
 	input_buffer_shoot = 10;
-if (key_slap2)
+if (global.attackstyle == 1 ? key_chainsaw2 : key_slap2)
 	input_buffer_slap = 12;
 if (key_jump)
 	input_buffer_jump = 15;
@@ -1266,4 +1266,4 @@ prevstate = state;
 prevsprite = sprite_index;
 
 // smooth x
-smoothx = Approach(smoothx, 0, 3);
+smoothx = Approach(smoothx, 0, 4);

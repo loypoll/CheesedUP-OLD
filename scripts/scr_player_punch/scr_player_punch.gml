@@ -76,10 +76,57 @@ function scr_player_punch()
 						movespeed += 0.2;
 				}
 				hsp = xscale * movespeed;
+				
 				var _kungfuground = sprite_index == spr_player_kungfu1 || sprite_index == spr_player_kungfu2 || sprite_index == spr_player_kungfu3 || sprite_index == spr_shotgunsuplexdash;
+				var _kungfuair = sprite_index == spr_player_kungfuair1 || sprite_index == spr_player_kungfuair2 || sprite_index == spr_player_kungfuair3 || sprite_index == spr_player_kungfuair1transition || sprite_index == spr_player_kungfuair2transition || sprite_index == spr_player_kungfuair3transition;
 				var _Sjumpcancel = sprite_index == spr_player_Sjumpcancel || sprite_index == spr_player_Sjumpcancelland || sprite_index == spr_player_Sjumpcancelslide;
+				
 				if (_kungfuground && image_index > 7 && !key_attack && movespeed > 0)
 					movespeed -= 0.5;
+				else if _kungfuground && movespeed < 12
+					movespeed += 0.2;
+				
+				if _kungfuground && (input_buffer_jump > 0 && can_jump && (character != "N" or noisetype == 0))
+				{
+					scr_fmod_soundeffect(jumpsnd, x, y);
+					input_buffer_jump = 0;
+					particle_set_scale(particle.jumpdust, xscale, 1);
+					create_particle(x, y, particle.jumpdust, 0);
+					jumpstop = false;
+					image_index = 0;
+					vsp = -11;
+					state = states.mach2;
+					sprite_index = spr_mach2jump;
+				}
+				if _kungfuground && vsp < 0
+					sprite_index = choose(spr_player_kungfuair1, spr_player_kungfuair2, spr_player_kungfuair3);
+				if (key_down && (_kungfuair or _kungfuground))
+				{
+					particle_set_scale(particle.jumpdust, xscale, 1);
+					create_particle(x, y, particle.jumpdust, 0);
+					state = states.tumble;
+					image_index = 0;
+					
+					if !grounded
+					{
+						sprite_index = spr_mach2jump;
+						flash = false;
+						vsp = 10;
+					}
+					else
+					{
+						sprite_index = spr_crouchslip;
+						movespeed = 12;
+						crouchslipbuffer = 25;
+						fmod_event_instance_play(snd_crouchslide);
+					}
+				}
+				if (!key_jump2 && jumpstop == 0 && vsp < 0 && _kungfuair)
+				{
+					vsp /= 20;
+					jumpstop = true;
+				}
+				
 				if (floor(image_index) == (image_number - 1))
 				{
 					switch (sprite_index)
@@ -88,10 +135,17 @@ function scr_player_punch()
 						case spr_player_kungfu2:
 						case spr_player_kungfu3:
 						case spr_shotgunsuplexdash:
+							/*
 							state = states.normal;
 							if (move != xscale && move != 0)
 								movespeed = 2;
+							*/
+							if (key_attack)
+								state = states.mach2;
+							else
+								state = states.normal;
 							break;
+						
 						case spr_player_kungfuair1transition:
 							sprite_index = spr_player_kungfuair1;
 							break;
@@ -109,7 +163,12 @@ function scr_player_punch()
 				if (!_kungfuground && !_Sjumpcancel)
 				{
 					if (grounded && vsp >= 0)
-						state = states.normal;
+					{
+						if (key_attack && movespeed > 0)
+							state = states.mach2;
+						else
+							state = states.normal;
+					}
 				}
 				if (_Sjumpcancel)
 				{
@@ -144,11 +203,23 @@ function scr_player_punch()
 				}
 				if (sprite_index != spr_player_kungfujump && check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_slope))
 				{
-					vsp = -4;
-					sprite_index = spr_player_kungfujump;
-					image_index = 0;
-					state = states.punch;
-					movespeed = -6;
+					if !grounded
+					{
+						if !place_meeting(x + hsp, y, obj_unclimbablewall)
+							wallspeed = 6;
+						else
+							wallspeed = -vsp;
+						grabclimbbuffer = 10;
+						state = states.climbwall;
+					}
+					else
+					{
+						vsp = -4;
+						sprite_index = spr_player_kungfujump;
+						image_index = 0;
+						state = states.punch;
+						movespeed = -6;
+					}
 				}
 				if (punch_afterimage > 0)
 					punch_afterimage--;
