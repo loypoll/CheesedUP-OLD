@@ -39,7 +39,7 @@ else
 
 // visibility
 visible = true;
-if room == strongcold_endscreen || room == Longintro || room == Mainmenu || room == rm_levelselect || room == rank_room || room == timesuproom || room == Realtitlescreen || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic)
+if room == strongcold_endscreen || room == Longintro || room == Mainmenu || room == rm_levelselect || room == rank_room || room == timesuproom || room == Realtitlescreen || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic) || room == rm_onlinerace
 	visible = false;
 if (instance_exists(obj_debugcontroller) && !obj_debugcontroller.showhud) || !global.option_hud
 	visible = false;
@@ -123,7 +123,7 @@ if global.timedgatetimer
 // panic screen shake
 if !instance_exists(obj_ghostcollectibles) && !REMIX
 {
-	if ((global.panic == true && global.minutes < 1) || player.sprite_index == spr_player_timesup)
+	if ((global.panic == true && global.minutes < 1) || player.sprite_index == spr_Timesup)
 	{
 		shake_mag = 2;
 		shake_mag_acc = 3 / room_speed;
@@ -290,6 +290,9 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 			}
 			
 			camera_set_view_pos(view_camera[0], cam_x, cam_y);
+			
+			lockx = cam_x;
+			locky = cam_y;
 			break;
 		
 		case states.camera_followtarget:
@@ -318,4 +321,22 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 			camera_set_view_pos(view_camera[0], cam_x, cam_y + irandom_range(-shake_mag, shake_mag));
 			break;
 	}
+}
+else if REMIX
+{
+	var cam_x = lockx, cam_y = locky;
+	if shake_mag != 0
+	{
+		cam_x += irandom_range(-shake_mag, shake_mag);
+		repeat 2
+			cam_y += irandom_range(-shake_mag, shake_mag);
+	}
+	
+	// better panic shake
+	if global.panic && !instance_exists(obj_ghostcollectibles)
+	{
+		cam_x += random_range(-1, 1);
+		repeat 2 cam_y += random_range(-1, 1);
+	}
+	camera_set_view_pos(view_camera[0], cam_x, cam_y);
 }

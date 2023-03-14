@@ -1,11 +1,11 @@
 function scr_characterspr()
 {
-	if (character == "P" && ispeppino)
+	if character == "P"
 	{
 		spr_idle = spr_player_idle;
 		spr_move = spr_player_move;
 		spr_crawl = spr_player_crawl;
-		spr_idle = spr_player_idle; // yeah set it again why don't you
+		spr_idle = spr_player_idle;
 		spr_hurt = spr_player_hurt;
 		spr_jump = spr_player_jump;
 		spr_jump2 = spr_player_jump2;
@@ -14,7 +14,7 @@ function scr_characterspr()
 		spr_crouch = spr_player_crouch;
 		spr_crouchjump = spr_player_crouchjump;
 		spr_crouchfall = spr_player_crouchfall;
-		spr_couchstart = spr_player_couchstart; // they never fixed the typo
+		spr_couchstart = spr_player_couchstart;
 		spr_bump = spr_player_bump;
 		spr_land = spr_player_land;
 		spr_land2 = spr_player_land2;
@@ -83,7 +83,9 @@ function scr_characterspr()
 		spr_mach4 = spr_player_mach4;
 		spr_machclimbwall = spr_player_climbwall;
 		spr_dive = spr_player_dive;
-		spr_machroll = spr_player_backslide;
+		spr_machroll = spr_player_machroll;
+		spr_backslide = spr_player_backslide;
+		spr_backslideland = spr_player_backslideland;
 		spr_hitwall = spr_player_mach3hitwall;
 		spr_superjumpland = spr_player_superjumpland;
 		spr_walljumpstart = spr_player_walljumpstart;
@@ -230,10 +232,13 @@ function scr_characterspr()
 		spr_superspringplayer = spr_player_presentbox;
 		spr_suplexcancel = spr_player_suplexcancel;
 		spr_mortthrow = spr_player_mortthrow;
+		spr_breakdanceuppercut = spr_player_breakdanceuppercut;
+		spr_breakdanceuppercutend = spr_player_breakdanceuppercutend;
 		spr_palette = spr_peppalette;
+		
 		paletteselect = 1;
 	}
-	if (character == "N" || (character == "P" && !ispeppino))
+	if character == "N"
 	{
 		spr_idle = spr_playerN_idle;
 		spr_move = spr_playerN_move;
@@ -317,6 +322,8 @@ function scr_characterspr()
 		spr_machclimbwall = spr_playerN_climbwall;
 		spr_dive = spr_playerN_dive;
 		spr_machroll = spr_playerN_machroll;
+		spr_backslide = spr_player_backslide;
+		spr_backslideland = spr_player_backslideland;
 		spr_hitwall = spr_playerN_mach3hitwall;
 		spr_superjumpland = spr_playerN_Sjumpland;
 		spr_walljumpstart = spr_playerN_walljumpstart;
@@ -463,6 +470,8 @@ function scr_characterspr()
 		spr_superspringplayer = spr_playerN_superspring;
 		spr_suplexcancel = spr_playerN_suplexcancel;
 		spr_mortthrow = spr_playerN_mortthrow;
+		spr_breakdanceuppercut = spr_player_breakdanceuppercut;
+		spr_breakdanceuppercutend = spr_player_breakdanceuppercutend;
 		spr_palette = spr_noisepalette;
 		paletteselect = 0;
 	}

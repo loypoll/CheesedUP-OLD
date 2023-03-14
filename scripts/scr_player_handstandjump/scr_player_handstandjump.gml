@@ -39,10 +39,13 @@ function scr_player_handstandjump()
 		var attackdash = spr_player_pistolshot;
 	else
 		attackdash = spr_suplexdash;
+	
 	if (sprite_index == spr_player_lungestart && floor(image_index) == (image_number - 1))
 		sprite_index = spr_player_lunge;
+	
 	var airattackdash = spr_suplexdashjump;
 	var airattackdashstart = spr_suplexdashjumpstart;
+	
 	if (global.attackstyle == 2)
 		vsp = 0;
 	if (!key_jump2 && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
@@ -50,7 +53,7 @@ function scr_player_handstandjump()
 		vsp /= 20;
 		jumpstop = true;
 	}
-	if (input_buffer_jump > 0 && can_jump && !key_down && global.attackstyle != 2)
+	if (input_buffer_jump > 0 && can_jump && !key_down && global.attackstyle != 2 && (character != "N" or noisetype == 0))
 	{
 		fmod_event_instance_play(rollgetupsnd);
 		input_buffer_jump = 0;
@@ -87,7 +90,7 @@ function scr_player_handstandjump()
 		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && sprite_index == airattackdashstart)
 		sprite_index = airattackdash;
-	if (floor(image_index) == (image_number - 1) && key_attack && sprite_index == attackdash)
+	if (floor(image_index) == (image_number - 1) && key_attack && sprite_index == attackdash && character != "N")
 	{
 		image_speed = 0.35;
 		state = states.mach2;

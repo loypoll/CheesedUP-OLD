@@ -47,7 +47,7 @@ if room != strongcold_endscreen
 		if instance_exists(obj_ghostcollectibles)
 			bgindex = 20;
 		if obj_player1.state == states.secretenter && instance_exists(obj_fadeout)
-			bgcol = merge_color(c_white, c_black, obj_fadeout.fadealpha);
+			bgcol = merge_color(c_white, c_black, clamp(obj_fadeout.fadealpha, 0, 1));
 		
 		draw_sprite_ext(spr_tv_bgfinal_NEW, bgindex, tv_x + collect_x, tv_y + collect_y + hud_posY, 1, 1, 0, bgcol, alpha);
 	}
@@ -154,7 +154,7 @@ if (global.panic)
 	draw_set_halign(1);
 	draw_set_valign(1);
 	draw_set_font(global.bigfont);
-	draw_text(timer_x + 153, timer_y + 18, concat(minutes, ":", seconds));
+	draw_text(timer_x + timer_xx, timer_y + timer_yy, concat(minutes, ":", seconds));
 }
 else if (surface_exists(bar_surface))
 	surface_free(bar_surface);

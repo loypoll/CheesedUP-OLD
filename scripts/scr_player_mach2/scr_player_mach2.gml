@@ -149,9 +149,9 @@ function scr_player_mach2()
 		vsp = 10;
 		image_index = 0;
 		if (!grounded)
-			sprite_index = spr_player_mach2jump;
+			sprite_index = spr_mach2jump;
 		else
-			sprite_index = spr_player_machroll;
+			sprite_index = spr_machroll;
 		if (character == "V")
 			sprite_index = spr_playerV_divekickstart;
 	}
@@ -242,7 +242,8 @@ function scr_player_mach2()
 			}
 		}
 	}
-	if (input_buffer_slap > 0 && !key_up && !skateboarding && shotgunAnim == 0 && !global.pistol)
+	
+	if (input_buffer_slap > 0 && !key_up && !skateboarding && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
 	{
 		input_buffer_slap = 0;
 		sprite_index = spr_suplexdash;
@@ -255,18 +256,44 @@ function scr_player_mach2()
 			movespeed = 5;
 		image_index = 0;
 	}
-	else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && !global.pistol)
+	else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
 	{
 		input_buffer_slap = 0;
 		state = states.punch;
 		image_index = 0;
-		sprite_index = spr_player_breakdanceuppercut;
+		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
 		vsp = -10;
 		movespeed = hsp;
 		particle_set_scale(particle.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particle.highjumpcloud2, 0);
 	}
+	
+	// kungfu
+	if key_slap2 && !key_up && global.attackstyle == 1 && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton)
+	{
+		if grounded
+		{
+			with instance_create(x, y, obj_superdashcloud)
+				image_xscale = other.xscale;
+			sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
+		}
+		else
+			sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
+		suplexmove = true;
+		
+		particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+		create_particle(x, y, particle.crazyrunothereffect);
+		
+		fmod_event_instance_play(snd_dive);
+		state = states.punch;
+		if movespeed < 10
+			movespeed = 10;
+		if vsp > 0
+			vsp = 0;
+		image_index = 0;
+	}
+	
 	if (input_buffer_shoot > 0 && !skateboarding)
 	{
 		if (shotgunAnim)

@@ -72,6 +72,8 @@ if instance_exists(obj_player1)
 		if obj_player1.character == characters[i][0]
 			sel.char = i;
 	}
+	
+	noisetype = obj_player1.noisetype
 }
 
 // DO THE FUNNY
@@ -90,6 +92,7 @@ select = function()
 		scr_characterspr();
 		paletteselect = other.palettes[other.sel.pal].palette;
 		global.palettetexture = other.palettes[other.sel.pal].texture;
+		noisetype = other.noisetype
 		
 		ini_open_from_string(obj_savesystem.ini_str);
 		ini_write_string("Game", "character", character);
@@ -139,10 +142,22 @@ draw = function(curve)
 		
 		shader_set(global.Pal_Shader);
 		if pal.texture != noone
-			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, 2, 2, pal.texture);
-		
+			pattern_set(global.Base_Pattern_Color, characters[sel.char][1], -1, 2, 2, pal.texture);	
 		pal_swap_set(characters[sel.char][2], pal.palette, false);
-		draw_sprite_ext(characters[sel.char][1], -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2]);
+		if characters[sel.char][0] == "N"
+		{
+			var nsprite = spr_playerN_idle;
+			
+			if noisetype == 0
+				nsprite = spr_playerN_idle;
+		
+			else if noisetype == 1
+				nsprite = spr_playerN_pogofall;
+				
+			draw_sprite_ext(nsprite, -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2]);
+		}
+		else
+			draw_sprite_ext(characters[sel.char][1], -1, charx, chary, 2, 2, 0, c_white, curve * charshift[2]);
 		reset_shader_fix();
 		pattern_reset();
 		
@@ -198,7 +213,7 @@ draw = function(curve)
 	
 	draw_set_align(fa_center);
 	draw_set_alpha(curve);
-	draw_set_font(global.ptofont);
+	draw_set_font(global.font_small);
 	draw_text(960 / 2, 450, pal.description);
 	draw_set_alpha(1);
 }

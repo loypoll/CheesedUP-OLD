@@ -1,4 +1,4 @@
-msg = "Badlands";
+msg = "Old Desert";
 targetRoom = desert_1;
 level = "desert";
 door_index = 1;

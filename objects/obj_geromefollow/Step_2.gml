@@ -1,7 +1,7 @@
 yoffset = 0;
 if (state != states.backbreaker)
 {
-	if (sprite_index != spr_gerome_collected && sprite_index != spr_gerome_taunt)
+	if (sprite_index != spr_gerome_collected && sprite_index != spr_gerome_taunt && sprite_index != spr_gerome_taunt_NEW)
 	{
 		event_inherited();
 		if (!do_end)
@@ -13,7 +13,7 @@ if (state != states.backbreaker)
 			image_xscale = playerid.xscale;
 		if (obj_player1.state == states.backbreaker)
 		{
-			sprite_index = spr_gerome_taunt;
+			sprite_index = REMIX ? spr_gerome_taunt_NEW : spr_gerome_taunt;
 			image_index = irandom(sprite_get_number(sprite_index) - 1);
 			state = states.backbreaker;
 			tauntID = instance_create(x, y, obj_baddietaunteffect);

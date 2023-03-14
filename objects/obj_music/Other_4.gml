@@ -1,3 +1,8 @@
+if check_race() && !global.racestarted
+	fmod_set_parameter("race", 1, 0);
+else
+	fmod_set_parameter("race", 0, 0);
+
 if (!global.panic)
 {
 	var mu = ds_map_find_value(music_map, room);

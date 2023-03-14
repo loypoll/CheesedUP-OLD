@@ -6,3 +6,5 @@ number = "1";
 negative = false;
 flash = true;
 depth = -100;
+
+fadeout = false;

@@ -6,9 +6,9 @@ previcemovespeed = icemovespeed;
 prevxscale = xscale;
 
 // input buffers and coyote time
-if (key_slap2)
+if (global.shootbutton ? key_shoot2 : key_slap2)
 	input_buffer_shoot = 10;
-if (key_slap2)
+if (global.attackstyle == 1 ? key_chainsaw2 : key_slap2)
 	input_buffer_slap = 12;
 if (key_jump)
 	input_buffer_jump = 15;
@@ -44,7 +44,7 @@ if (place_meeting(x, y + 1, obj_slope))
 with (obj_ratblock)
 	scr_ratblock_destroy();
 
-// state machine
+// https://youtu.be/-0bckaBj__M
 switch (state)
 {
 	case states.normal:	
@@ -615,7 +615,7 @@ else if (sprite_index != spr_noise_phasetrans1P)
 	noisebossscream = false;
 if (global.pistol && state != states.animation && state != states.actor && state != states.hurt && state != states.bump && !instance_exists(obj_vigilante_duelintro))
 {
-	if (key_slap || pistolchargeshooting)
+	if ((global.shootbutton ? key_shoot : key_slap) || pistolchargeshooting)
 		pistolcharge += 0.5;
 	else
 	{
@@ -661,7 +661,7 @@ if (global.pistol && state != states.animation && state != states.actor && state
 		pistolchargedelay = 5;
 		pistolchargeshooting = false;
 		pistolchargeshot = 1;
-		if (key_slap)
+		if (global.shootbutton ? key_shoot : key_slap)
 			pistolcharge = 4;
 	}
 }
@@ -1100,7 +1100,7 @@ if (state == states.throwing || state == states.backkick || state == states.shou
 	grabbing = true;
 else
 	grabbing = false;
-if ((state == states.ratmountbounce && vsp >= 0) || sprite_index == spr_player_Sjumpcancel || sprite_index == spr_swingding || sprite_index == spr_tumble || state == states.boxxedpepspin || state == states.trashroll || state == states.trashjump || state == states.shotgundash || (state == states.shotgunfreefall && (sprite_index == spr_shotgunjump2 || sprite_index == spr_shotgunjump3)) || state == states.Sjump || state == states.rocket || state == states.rocketslide || state == states.chainsawbump || (state == states.punch && ((sprite_index != spr_player_breakdanceuppercut && sprite_index != spr_player_breakdanceuppercutend) || vsp < 0)) || state == states.faceplant || state == states.rideweenie || state == states.mach3 || (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) || state == states.freefall || state == states.fireass || state == states.jetpackjump || (state == states.firemouth && sprite_index != spr_firemouthintro) || state == states.hookshot || state == states.jetpackjump || state == states.skateboard || state == states.mach4 || state == states.Sjump || state == states.machfreefall || state == states.tacklecharge || (state == states.superslam && sprite_index == spr_piledriver) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.trickjump || state == states.cheesepep || state == states.cheeseball || state == states.ratmounttumble || state == states.ratmountgroundpound || global.noisejetpack == 1 || state == states.ratmountpunch || state == states.antigrav || holycross > 0 || state == states.barrelslide || state == states.barrelclimbwall || ratmount_movespeed >= 12 || ghostdash == 1 || state == states.slipbanan || state == states.shoulderbash || (state == states.machslide && (sprite_index == spr_mach3boost || sprite_index == spr_player_machslideboost3fall)))
+if ((state == states.ratmountbounce && vsp >= 0) || sprite_index == spr_player_Sjumpcancel || sprite_index == spr_swingding || sprite_index == spr_tumble || state == states.boxxedpepspin || state == states.trashroll || state == states.trashjump || state == states.shotgundash || (state == states.shotgunfreefall && (sprite_index == spr_shotgunjump2 || sprite_index == spr_shotgunjump3)) || state == states.Sjump || state == states.rocket || state == states.rocketslide || state == states.chainsawbump || (state == states.punch && ((sprite_index != spr_breakdanceuppercut && sprite_index != spr_breakdanceuppercutend) || vsp < 0)) || state == states.faceplant || state == states.rideweenie || state == states.mach3 || (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) || state == states.freefall || state == states.fireass || state == states.jetpackjump || (state == states.firemouth && sprite_index != spr_firemouthintro) || state == states.hookshot || state == states.jetpackjump || state == states.skateboard || state == states.mach4 || state == states.Sjump || state == states.machfreefall || state == states.tacklecharge || (state == states.superslam && sprite_index == spr_piledriver) || state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.trickjump || state == states.cheesepep || state == states.cheeseball || state == states.ratmounttumble || state == states.ratmountgroundpound || global.noisejetpack == 1 || state == states.ratmountpunch || state == states.antigrav || holycross > 0 || state == states.barrelslide || state == states.barrelclimbwall || ratmount_movespeed >= 12 || ghostdash == 1 || state == states.slipbanan || state == states.shoulderbash || (state == states.machslide && (sprite_index == spr_mach3boost || sprite_index == spr_player_machslideboost3fall)))
 	instakillmove = true;
 else
 	instakillmove = false;
@@ -1266,4 +1266,4 @@ prevstate = state;
 prevsprite = sprite_index;
 
 // smooth x
-smoothx = Approach(smoothx, 0, 3);
+smoothx = Approach(smoothx, 0, 4);

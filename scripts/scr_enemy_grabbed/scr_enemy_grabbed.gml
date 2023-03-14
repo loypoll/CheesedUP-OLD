@@ -2,6 +2,62 @@ function scr_enemy_grabbed()
 {
 	if (!pepperman_grab)
 	{
+		if instance_exists(grabbedby) && grabbedby.object_index == obj_otherplayer
+		{
+			image_xscale = -grabbedby.image_xscale;
+			stunned = 200;
+			
+			x = grabbedby.x + grabbedby.badX;
+			y = grabbedby.y + grabbedby.badY;
+			
+			if grabbedby.state == states.finishingblow
+			{
+				if floor(grabbedby.image_index) >= 4
+				or string_pos("swingdingend", sprite_get_name(sprite_index)) > 0
+				{
+					thrown = true
+					
+					var lag = 5
+					hitLag = lag
+					hitX = x
+					hitY = y
+					
+					instance_create(x, y, obj_parryeffect)
+					alarm[3] = 1
+					
+					state = states.stun
+					repeat 3
+					{
+						create_slapstar(x, y)
+						create_baddiegibs(x, y)
+					}
+					hsp = hithsp
+					vsp = hitvsp
+					linethrown = true
+					
+					if string_pos("uppercut", sprite_get_name(sprite_index)) > 0
+					{
+						hithsp = 0
+						hitvsp = -25
+						linethrown = true
+					}
+					else
+					{
+						hithsp = (-other.image_xscale) * 25
+						hitvsp = -8
+						linethrown = true
+					}
+				}
+				else
+				{
+					x = grabbedby.x + grabbedby.image_xscale * 60
+					y = grabbedby.y
+				}
+				check_grabbed_solid(grabbedby)
+			}
+			exit;
+		}
+		
 		var _obj_player = asset_get_index(concat("obj_player", grabbedby));
 		image_xscale = -_obj_player.xscale;
 		stunned = 200;
@@ -251,7 +307,7 @@ function scr_enemy_grabbed()
 		}
 		if (_obj_player.state == states.superslam || (_obj_player.state == states.chainsaw && sprite_index == spr_player_piledriver))
 		{
-			if (_obj_player.character == "P" && _obj_player.ispeppino)
+			if (_obj_player.character == "P")
 			{
 				if (_obj_player.sprite_index != _obj_player.spr_piledriverland)
 				{

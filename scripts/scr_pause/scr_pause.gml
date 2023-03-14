@@ -36,7 +36,7 @@ function scr_create_pause_image()
 		surface_set_target(surface2);
 		
 		shader_set(shd_blur);
-		shader_set_uniform_f(blur_uniform, 960 / 3, 540 / 3, 3);
+		shader_set_uniform_f(blur_uniform, 960 / 3, 540 / 3, 2);
 		
 		draw_surface(surface, 0, 0);
 		surface_reset_target();
@@ -143,8 +143,6 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 	instance_activate_object(obj_music);
 	instance_activate_object(obj_fmod);
 	instance_activate_object(obj_shell);
-	if live_enabled
-		instance_activate_object(obj_gmlive);
 }
 function pause_spawn_priests()
 {

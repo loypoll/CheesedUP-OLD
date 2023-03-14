@@ -20,7 +20,7 @@ if (other.state != states.gotoplayer)
 	{
 		for (var xx = 0; xx < 4; xx++)
 		{
-			create_collect(_x, _y, obj_player1.ispeppino ? choose(spr_sausagecollect, spr_shroomcollect, spr_shrimpcollect, spr_tomatocollect) : choose(spr_halloweencollectibles1, spr_halloweencollectibles2, spr_halloweencollectibles3, spr_halloweencollectibles4, spr_halloweencollectibles5));
+			create_collect(_x, _y, obj_player1.character != "N" ? choose(spr_sausagecollect, spr_shroomcollect, spr_shrimpcollect, spr_tomatocollect) : choose(spr_halloweencollectibles1, spr_halloweencollectibles2, spr_halloweencollectibles3, spr_halloweencollectibles4, spr_halloweencollectibles5));
 			_x += 16;
 		}
 		_x = _xstart;

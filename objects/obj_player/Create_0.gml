@@ -78,8 +78,8 @@ previcemovespeed = 0;
 icedir = 1;
 icemomentum = false;
 savedicedir = 1;
-ispeppino = true;
-isgustavo = false;
+ispeppino = true; // not used in cheesed up
+isgustavo = false; // go fuck yourself
 jumped = true;
 grav = 0.5;
 hsp = 0;
@@ -621,3 +621,10 @@ noisebossscream = false;
 // pto extra
 smoothx = 0;
 oldHallway = false;
+noisetype = 0
+
+// race
+lapindex = noone;
+lapdis = 0;
+racepos = 0;
+

@@ -15,6 +15,8 @@ function textures_offload(texturegroup_array)
 }
 function scr_playerreset()
 {
+	global.racestarted = false;
+	
 	trace("playerreset");
 	
 	global.lap = false;

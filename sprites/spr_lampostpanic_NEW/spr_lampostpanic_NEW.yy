@@ -28,8 +28,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "CheesyPizza",
-    "path": "folders/Sprites/CheesyPizza.yy",
+    "name": "Tweaked",
+    "path": "folders/Sprites/CheesyPizza/Tweaked.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

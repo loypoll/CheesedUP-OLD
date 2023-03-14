@@ -39,6 +39,8 @@ switch (room)
 		scr_add_grannypizzalevel("war", 22);
 		if (quick_ini_read_string("", "Game", "finalrank", "none") != "none")
 			scr_add_grannypizzalevel("exit", 23, false, false, false, true);
+		if REMIX
+			scr_add_grannypizzaboss("w5stick", "b_pizzaface", 24);
 		break;
 }
 level_xpad = (sprite_get_width(spr_tutorialbubble) * text_xscale) / (array_length(levelarray) + 1);

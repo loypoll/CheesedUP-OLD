@@ -121,6 +121,36 @@ with (obj_pizzagoblinbomb)
 		draw_sprite(spr_grabicon, -1, x - 10, y - 30);
 	draw_self();
 }
+with obj_otherplayer
+{
+	if !(room != player_room or room == rank_room or !visible) && bbox_in_camera(view_camera[0], 32)
+	{
+		if sprite_exists(sprite_index)
+		{
+			if spr_pattern != noone
+				pattern_set(color_array, sprite_index, image_index, image_xscale, image_yscale, spr_pattern);
+			if sprite_exists(spr_palette)
+				pal_swap_set(spr_palette, paletteselect, false);
+			draw_sprite_ext(sprite_index, -1, x, y, image_xscale, image_yscale, image_angle, image_blend, image_alpha);
+			pal_swap_reset();
+			pattern_reset();
+		}
+		
+		// username
+		draw_set_colour(c_white);
+		draw_set_font(global.font_small);
+		draw_set_align(fa_center, fa_top);
+		
+		var spritey = 0;
+		if sprite_exists(sprite_index)
+			spritey = sprite_get_bbox_top(sprite_index);
+		
+		var yy = clamp(spritey + y - 75, 0, room_height - 16);
+		
+		// draw it
+		draw_text(x, yy, name);
+	}
+}
 with (obj_player)
 {
 	if (visible && state != states.titlescreen && !flash && bbox_in_camera(view_camera[0], 32))

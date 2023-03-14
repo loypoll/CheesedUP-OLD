@@ -332,7 +332,9 @@ function state_player_normal()
 		else if (global.pistol)
 			scr_pistolshoot(states.normal);
 	}
-	if (input_buffer_slap > 0 && !key_up && shotgunAnim == 0 && !global.pistol)
+	
+	// suplex dash
+	if (input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
 	{
 		input_buffer_slap = 0;
 		sprite_index = spr_suplexdash;
@@ -344,54 +346,85 @@ function state_player_normal()
 		movespeed = 8;
 		image_index = 0;
 	}
-	else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && !global.pistol)
+	
+	// uppercut
+	else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
 	{
 		state = states.punch;
 		input_buffer_slap = 0;
 		image_index = 0;
-		sprite_index = spr_player_breakdanceuppercut;
+		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
 		vsp = -14;
 		movespeed = hsp;
 		particle_set_scale(particle.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particle.highjumpcloud2, 0);
 	}
+	
+	// kungfu
+	if key_slap2 && !key_up && global.attackstyle == 1 && ((shotgunAnim == false && !global.pistol) or global.shootbutton)
+	{
+		sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
+		suplexmove = true;
+		
+		particle_set_scale(particle.jumpdust, xscale, 1);
+		create_particle(x, y, particle.jumpdust, 0);
+				
+		particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+		create_particle(x, y, particle.crazyrunothereffect);
+				
+		with instance_create(x, y, obj_superdashcloud)
+			image_xscale = other.xscale;
+				
+		fmod_event_instance_play(snd_dive);
+		state = states.punch;
+		if vsp > 0
+			vsp = 0;
+		movespeed = 10;
+		image_index = 0;
+	}
+	
 	switch (character)
 	{
-		case "P":
-			if (key_attack && state != states.handstandjump && !check_wall(x + xscale, y) && (!place_meeting(x, y + 1, obj_iceblockslope) || !check_wall(x + (xscale * 5), y)) && !global.kungfu)
+		default:
+			if character != "N" or noisetype == 0
 			{
-				sprite_index = spr_mach1;
-				image_index = 0;
-				state = states.mach2;
-				if (movespeed < 6)
-					movespeed = 6;
-			}
-			if (global.kungfu && key_attack && state != states.handstandjump)
-			{
-				state = states.blockstance;
-				sprite_index = spr_player_airattack;
-				hsp = 0;
-				movespeed = 0;
-			}
-			break;
-		case "N":
-			if (pogochargeactive || pizzapepper > 0)
-			{
-				if (key_attack2)
+				if (key_attack && state != states.handstandjump && !check_wall(x + xscale, y) && (!place_meeting(x, y + 1, obj_iceblockslope) || !check_wall(x + (xscale * 5), y)) && !global.kungfu)
 				{
-					state = states.Sjumpprep;
+					sprite_index = spr_mach1;
 					image_index = 0;
-					sprite_index = !key_up ? spr_playerN_jetpackstart : spr_superjumpprep;
+					state = states.mach2;
+					if (movespeed < 6)
+						movespeed = 6;
+				}
+				if (global.kungfu && key_attack && state != states.handstandjump)
+				{
+					state = states.blockstance;
+					sprite_index = spr_player_airattack;
 					hsp = 0;
-					vsp = 0;
+					movespeed = 0;
 				}
 			}
-			else if (key_attack && !key_slap2)
+			else
 			{
-				sprite_index = spr_playerN_pogostart;
-				image_index = 0;
-				state = states.pogo;
+				if (pogochargeactive || pizzapepper > 0)
+				{
+					if (key_attack2)
+					{
+						sound_play_3d(sfx_woag, x, y)
+						state = states.Sjumpprep;
+						image_index = 0;
+						sprite_index = !key_up ? spr_playerN_jetpackstart : spr_superjumpprep;
+						hsp = 0;
+						vsp = 0;
+					}
+				}
+				else if (key_attack && !key_slap2)
+				{
+					sprite_index = spr_playerN_pogostart;
+					image_index = 0;
+					state = states.pogo;
+				}
 			}
 			break;
 		case "V":

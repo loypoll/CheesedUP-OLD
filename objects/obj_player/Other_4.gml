@@ -79,7 +79,7 @@ if object_index != obj_player2 || global.coop
 {
 	var doortarget = noone;
 	with obj_doorX
-		if door == other.targetDoor doortarget = id;
+		if safe_get(id, "door") == other.targetDoor then doortarget = id;
 	
 	if instance_exists(doortarget)
 	{
@@ -88,7 +88,7 @@ if object_index != obj_player2 || global.coop
 		else if box
 			x = doortarget.x + 32;
 		else
-			x = doortarget.x + 16;
+			x = doortarget.x + 16 + (REMIX ? 2 : 0);
 		y = doortarget.y - 14;
 	}
 }

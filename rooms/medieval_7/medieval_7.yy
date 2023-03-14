@@ -52,7 +52,6 @@
     {"name":"inst_1FF0A2F9","path":"rooms/medieval_7/medieval_7.yy",},
     {"name":"inst_A3A41061","path":"rooms/medieval_7/medieval_7.yy",},
     {"name":"inst_28578ED9","path":"rooms/medieval_7/medieval_7.yy",},
-    {"name":"inst_28578ED9","path":"rooms/medieval_7/medieval_7.yy",},
   ],
   "isDnd": false,
   "layers": [

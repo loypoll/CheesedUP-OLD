@@ -58,7 +58,7 @@ function state_player_jump()
 			jumpstop = true;
 		}
 	}
-	if (character == "N")
+	if character == "N" && noisetype == 1
 	{
 		if (key_jump && wallclingcooldown == 10)
 		{
@@ -271,7 +271,9 @@ function state_player_jump()
 			shake_mag_acc = 30 / room_speed;
 		}
 	}
-	if (input_buffer_slap > 0 && !key_up && sprite_index != spr_suplexbump && shotgunAnim == 0 && !global.pistol)
+	
+	// suplex dash
+	if (input_buffer_slap > 0 && !key_up && sprite_index != spr_suplexbump && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
 	{
 		input_buffer_slap = 0;
 		particle_set_scale(particle.jumpdust, xscale, 1);
@@ -283,18 +285,38 @@ function state_player_jump()
 		state = states.handstandjump;
 		movespeed = 5;
 	}
-	else if (input_buffer_slap > 0 && key_up && shotgunAnim == 0 && !global.pistol)
+	
+	// uppercut
+	else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
 	{
 		input_buffer_slap = 0;
 		state = states.punch;
 		image_index = 0;
-		sprite_index = spr_player_breakdanceuppercut;
+		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
 		vsp = -10;
 		movespeed = hsp;
 		particle_set_scale(particle.highjumpcloud2, xscale, 1);
 		create_particle(x, y, particle.highjumpcloud2, 0);
 	}
+	
+	// kungfu
+	if key_slap2 && !key_up && global.attackstyle == 1 && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton)
+	{
+		sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
+		suplexmove = true;
+		
+		particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+		create_particle(x, y, particle.crazyrunothereffect);	
+		
+		if vsp > 0
+			vsp = 0;
+		fmod_event_instance_play(snd_dive);
+		state = states.punch;
+		movespeed = 11;
+		image_index = 0;
+	}
+	
 	if (input_buffer_shoot > 0)
 	{
 		if (shotgunAnim)
@@ -374,14 +396,38 @@ function state_player_jump()
 	}
 	switch (character)
 	{
-		case "P":
-			if (key_attack && grounded && fallinganimation < 40)
+		default:
+			if character != "N" or noisetype == 0
 			{
-				sprite_index = spr_mach1;
-				image_index = 0;
-				state = states.mach2;
-				if (movespeed < 6)
-					movespeed = 6;
+				if (key_attack && grounded && fallinganimation < 40)
+				{
+					sprite_index = spr_mach1;
+					image_index = 0;
+					state = states.mach2;
+					if (movespeed < 6)
+						movespeed = 6;
+				}
+			}
+			else
+			{
+				if (key_attack2 && (pogochargeactive || pizzapepper > 0))
+				{
+					if (!key_up)
+						sprite_index = spr_playerN_jetpackstart;
+					else
+						sprite_index = spr_superjumpprep;
+					sound_play_3d(sfx_woag, x, y)
+					image_index = 0;
+					hsp = 0;
+					vsp = 0;
+					state = states.Sjumpprep;
+				}
+				if (key_attack && !pogochargeactive && !key_slap2 && pizzapepper == 0)
+				{
+					sprite_index = spr_playerN_pogostart;
+					image_index = 0;
+					state = states.pogo;
+				}
 			}
 			break;
 		case "V":
@@ -432,25 +478,6 @@ function state_player_jump()
 					image_xscale = other.xscale;
 				}
 				sound_play_3d("event:/sfx/enemies/killingblow", x, y);
-			}
-			break;
-		case "N":
-			if (key_attack2 && (pogochargeactive || pizzapepper > 0))
-			{
-				if (!key_up)
-					sprite_index = spr_playerN_jetpackstart;
-				else
-					sprite_index = spr_superjumpprep;
-				image_index = 0;
-				hsp = 0;
-				vsp = 0;
-				state = states.Sjumpprep;
-			}
-			if (key_attack && !pogochargeactive && !key_slap2 && pizzapepper == 0)
-			{
-				sprite_index = spr_playerN_pogostart;
-				image_index = 0;
-				state = states.pogo;
 			}
 			break;
 	}

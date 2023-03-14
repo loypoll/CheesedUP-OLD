@@ -92,7 +92,7 @@ function Instakill()
 		sprite_index = spr_player_chainsawhit;
 		image_index = 0;
 	}
-	if (other.baddieID.heavy == 1)
+	if (other.baddieID.heavy == 1 or (state == states.punch && global.attackstyle == 1))
 		var lag = 15;
 	else
 		lag = 5;

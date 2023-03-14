@@ -23,7 +23,7 @@ if move_hor != 0
 	{
 		charshift[0] = move_hor;
 		charshift[2] = 0; // alpha
-		sound_play_multiple(sfx_angelmove);
+		sound_play_multiple(sfx_angelmove);	
 	}
 	
 	if arrowbuffer == -1
@@ -74,3 +74,9 @@ if anim_con != 0 && anim_t <= 0
 // select
 if key_jump && is_method(select) && anim_t >= 1
 	select();
+
+if characters[sel.char][0] == "N" && key_taunt2
+{
+	sound_play(sfx_step);
+	noisetype = !noisetype;
+}

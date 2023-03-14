@@ -1,1 +1,4 @@
-instance_destroy();
+if REMIX
+	fadeout = true;
+else
+	instance_destroy();

@@ -112,6 +112,7 @@ switch room
 	case boss_vigilante: global.srank = 6; break;
 	case boss_noise: global.srank = 5; break;
 	case boss_fakepep: global.srank = 4; break;
+	case boss_pizzaface: global.srank = 4; break;
 }
 global.arank = floor(global.srank / 2);
 global.brank = floor(global.arank / 2);

@@ -94,7 +94,7 @@ function baddiecollisionbox_update(player)
 				other.baddieID.grabbedby = (object_index == obj_player1) ? 1 : 2;
 				pepp_grab = true;
 			}
-			if (instance_exists(other.baddieID) && y < other.baddieID.y && attacking == 0 && sprite_index != spr_player_mach2jump && (state == states.jump || state == states.mach1 || state == states.grab) && vsp > 0 && other.baddieID.vsp >= 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
+			if (instance_exists(other.baddieID) && y < other.baddieID.y && attacking == 0 && sprite_index != spr_mach2jump && (state == states.jump || state == states.mach1 || state == states.grab) && vsp > 0 && other.baddieID.vsp >= 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
 			{
 				if (x != other.baddieID.x)
 					other.baddieID.image_xscale = -sign(other.baddieID.x - x);
