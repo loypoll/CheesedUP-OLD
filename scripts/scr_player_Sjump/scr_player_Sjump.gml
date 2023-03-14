@@ -116,6 +116,7 @@ function scr_player_Sjump()
 	//Jetpack
 	if key_attack2 && character == "N" && noisetype == 1
 	{
+		sound_play_3d(sfx_woag, x, y)
 		springsjump = false;
 		state = states.Sjumpprep
 		image_index = 0

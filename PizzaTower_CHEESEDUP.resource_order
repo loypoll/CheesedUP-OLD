@@ -1,10 +1,10 @@
 {
   "FolderOrderSettings": [
+    {"name":"B-Side Levels","order":4,"path":"folders/Rooms/B-Side Levels.yy",},
     {"name":"Bosses","order":1,"path":"folders/Rooms/Bosses.yy",},
     {"name":"Cutscenes","order":2,"path":"folders/Rooms/Cutscenes.yy",},
     {"name":"Levels","order":3,"path":"folders/Rooms/Levels.yy",},
     {"name":"Badland","order":4,"path":"folders/Rooms/Levels/Badland.yy",},
-    {"name":"B-Side Levels","order":4,"path":"folders/Rooms/B-Side Levels.yy",},
     {"name":"Chateau","order":16,"path":"folders/Rooms/Levels/Chateau.yy",},
     {"name":"Dungeon","order":3,"path":"folders/Rooms/Levels/Dungeon.yy",},
     {"name":"Farm","order":6,"path":"folders/Rooms/Levels/Farm.yy",},

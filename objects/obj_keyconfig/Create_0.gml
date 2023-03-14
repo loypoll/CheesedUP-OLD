@@ -15,6 +15,8 @@ input = [
 	["key_slap"],
 	["key_attack"],
 	["key_taunt"],
-	["key_start"]
+	["key_start"],
+	["key_shoot"],
+	["key_chainsaw"]
 ];
 controller = false;

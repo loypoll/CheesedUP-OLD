@@ -1,6 +1,6 @@
 function scr_characterspr()
 {
-	if (character == "P" && ispeppino)
+	if character == "P"
 	{
 		spr_idle = spr_player_idle;
 		spr_move = spr_player_move;
@@ -232,7 +232,10 @@ function scr_characterspr()
 		spr_superspringplayer = spr_player_presentbox;
 		spr_suplexcancel = spr_player_suplexcancel;
 		spr_mortthrow = spr_player_mortthrow;
+		spr_breakdanceuppercut = spr_player_breakdanceuppercut;
+		spr_breakdanceuppercutend = spr_player_breakdanceuppercutend;
 		spr_palette = spr_peppalette;
+		
 		paletteselect = 1;
 	}
 	if character == "N"
@@ -467,6 +470,8 @@ function scr_characterspr()
 		spr_superspringplayer = spr_playerN_superspring;
 		spr_suplexcancel = spr_playerN_suplexcancel;
 		spr_mortthrow = spr_playerN_mortthrow;
+		spr_breakdanceuppercut = spr_player_breakdanceuppercut;
+		spr_breakdanceuppercutend = spr_player_breakdanceuppercutend;
 		spr_palette = spr_noisepalette;
 		paletteselect = 0;
 	}

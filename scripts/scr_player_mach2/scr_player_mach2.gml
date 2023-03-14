@@ -261,7 +261,7 @@ function scr_player_mach2()
 		input_buffer_slap = 0;
 		state = states.punch;
 		image_index = 0;
-		sprite_index = spr_player_breakdanceuppercut;
+		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
 		vsp = -10;
 		movespeed = hsp;

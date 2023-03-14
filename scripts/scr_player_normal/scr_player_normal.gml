@@ -353,7 +353,7 @@ function state_player_normal()
 		state = states.punch;
 		input_buffer_slap = 0;
 		image_index = 0;
-		sprite_index = spr_player_breakdanceuppercut;
+		sprite_index = spr_breakdanceuppercut;
 		fmod_event_instance_play(snd_uppercut);
 		vsp = -14;
 		movespeed = hsp;
@@ -411,6 +411,7 @@ function state_player_normal()
 				{
 					if (key_attack2)
 					{
+						sound_play_3d(sfx_woag, x, y)
 						state = states.Sjumpprep;
 						image_index = 0;
 						sprite_index = !key_up ? spr_playerN_jetpackstart : spr_superjumpprep;

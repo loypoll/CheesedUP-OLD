@@ -123,7 +123,7 @@ if global.timedgatetimer
 // panic screen shake
 if !instance_exists(obj_ghostcollectibles) && !REMIX
 {
-	if ((global.panic == true && global.minutes < 1) || player.sprite_index == spr_player_timesup)
+	if ((global.panic == true && global.minutes < 1) || player.sprite_index == spr_Timesup)
 	{
 		shake_mag = 2;
 		shake_mag_acc = 3 / room_speed;
