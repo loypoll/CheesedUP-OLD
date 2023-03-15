@@ -143,7 +143,7 @@ function scr_player_punch()
 							if (key_attack)
 							{
 								state = states.mach2;
-								movespeed = max(movespeed, 2);
+								movespeed = max(movespeed, 6);
 							}
 							else
 								state = states.normal;
@@ -170,7 +170,7 @@ function scr_player_punch()
 						if (key_attack && movespeed > 0)
 						{
 							state = states.mach2;
-							movespeed = max(movespeed, 2);
+							movespeed = max(movespeed, 6);
 						}
 						else
 							state = states.normal;

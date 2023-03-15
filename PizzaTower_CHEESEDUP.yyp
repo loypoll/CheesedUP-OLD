@@ -62,7 +62,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Objects/Unused.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Visuals","folderPath":"folders/Objects/Visuals.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Particle","folderPath":"folders/Objects/Visuals/Particle.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Paths","folderPath":"folders/Paths.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Rooms","folderPath":"folders/Rooms.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"B-Side Levels","folderPath":"folders/Rooms/B-Side Levels.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"John Gutter","folderPath":"folders/Rooms/B-Side Levels/John Gutter.yy",},
@@ -148,11 +147,9 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Input","folderPath":"folders/Scripts/Systems/Input.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Palette Swapper","folderPath":"folders/Scripts/Systems/Palette Swapper.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Saving","folderPath":"folders/Scripts/Systems/Saving.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sequences","folderPath":"folders/Sequences.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Shaders","folderPath":"folders/Shaders.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Afterimage","folderPath":"folders/Shaders/Afterimage.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Shaders/Unused.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sounds","folderPath":"folders/Sounds.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Sprites","folderPath":"folders/Sprites.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Backgrounds","folderPath":"folders/Sprites/Backgrounds.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Beach","folderPath":"folders/Sprites/Backgrounds/Beach.yy",},
@@ -426,7 +423,6 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"War","folderPath":"folders/Tile Sets/War.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
@@ -456,7 +452,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.2.0.71",
+    "IDEVersion": "2023.2.1.75",
   },
   "resources": [
     {"id":{"name":"obj_bossdoor","path":"objects/obj_bossdoor/obj_bossdoor.yy",},},
