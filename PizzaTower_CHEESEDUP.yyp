@@ -7226,6 +7226,7 @@
     {"id":{"name":"tileset_tile_citydark","path":"tilesets/tileset_tile_citydark/tileset_tile_citydark.yy",},},
     {"id":{"name":"tileset_tile_war2","path":"tilesets/tileset_tile_war2/tileset_tile_war2.yy",},},
     {"id":{"name":"tileset_spaceglass","path":"tilesets/tileset_spaceglass/tileset_spaceglass.yy",},},
+    {"id":{"name":"obj_modconfig","path":"objects/obj_modconfig/obj_modconfig.yy",},},
     {"id":{"name":"spr_towerfloor5tiles","path":"sprites/spr_towerfloor5tiles/spr_towerfloor5tiles.yy",},},
     {"id":{"name":"tile_towerfloor5","path":"tilesets/tile_towerfloor5/tile_towerfloor5.yy",},},
     {"id":{"name":"tilesert_factory3","path":"tilesets/tilesert_factory3/tilesert_factory3.yy",},},

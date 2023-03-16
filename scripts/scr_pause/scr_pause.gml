@@ -1,6 +1,8 @@
 function scr_pauseicon_draw(index, x, y)
 {
 	var icon = pause_icons[index];
+	if icon.sprite_index == spr_cursor // animate the cursor
+		icon.image_index = (icon.image_index + 0.35) % 32;
 	draw_sprite_ext(icon.sprite_index, icon.image_index, x + icon.sprite_xoffset + icon.shake_x, y + icon.sprite_yoffset + icon.shake_y, 1, 1, 0, c_white, icon.image_alpha);
 }
 function scr_create_pause_image()
