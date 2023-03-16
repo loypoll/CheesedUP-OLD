@@ -1,6 +1,6 @@
 if (global.spaceblockswitch == 1)
 {
-	if ((x != xstart || sprite_index != spr_spaceblock_closed) && !place_meeting(xstart, ystart, obj_player) && !place_meeting(xstart, ystart, obj_baddie) && !place_meeting(xstart, ystart, obj_clownmato) && !place_meeting(xstart, ystart, obj_monster))
+	if ((x != xstart or sprite_index != spr_spaceblock_closed) && !place_meeting(xstart, ystart, obj_player) && !place_meeting(xstart, ystart, obj_baddie) && !place_meeting(xstart, ystart, obj_clownmato) && !place_meeting(xstart, ystart, obj_monster))
 	{
 		x = xstart;
 		y = ystart;

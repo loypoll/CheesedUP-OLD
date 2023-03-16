@@ -1,5 +1,5 @@
 var d = 0.03;
-if (keyboard_check_pressed(global.key_slap) || keyboard_check_pressed(global.key_jump) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_jumpC))
+if (keyboard_check_pressed(global.key_slap) or keyboard_check_pressed(global.key_jump) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_jumpC))
 {
 	if (alarm[1] > 0)
 		event_perform(2, 1);

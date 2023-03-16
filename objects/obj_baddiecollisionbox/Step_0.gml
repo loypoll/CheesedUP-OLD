@@ -17,7 +17,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 		{
 			var _obj_player = id;
 			var _playerindex = (object_index == obj_player1) ? 1 : 2;
-			if (instance_exists(other.baddieID) && y < other.baddieID.y && other.baddieID.stompbuffer <= 0 && attacking == 0 && !global.kungfu && sprite_index != spr_mach2jump && ((state == states.boots && vsp > 0) || state == states.jump || (isgustavo && ratmount_movespeed < 12 && state == states.ratmountjump) || state == states.mach1 || state == states.grab) && vsp > 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
+			if (instance_exists(other.baddieID) && y < other.baddieID.y && other.baddieID.stompbuffer <= 0 && attacking == 0 && !global.kungfu && sprite_index != spr_mach2jump && ((state == states.boots && vsp > 0) or state == states.jump or (isgustavo && ratmount_movespeed < 12 && state == states.ratmountjump) or state == states.mach1 or state == states.grab) && vsp > 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
 			{
 				sound_play_3d("event:/sfx/enemies/stomp", x, y);
 				image_index = 0;
@@ -40,7 +40,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 					with (other.baddieID)
 						global.golfhit++;
 				}
-				if (key_jump2 || input_buffer_jump > 0)
+				if (key_jump2 or input_buffer_jump > 0)
 				{
 					instance_create(x, y + 50, obj_stompeffect);
 					stompAnim = true;
@@ -75,7 +75,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 					image_index = 0;
 				}
 			}
-			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) || state != states.tumble) && (/*(state == states.handstandjump && global.attackstyle == 1) || */instakillmove == 1) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
+			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) or state != states.tumble) && (/*(state == states.handstandjump && global.attackstyle == 1) or */instakillmove == 1) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
 				Instakill();
 			else if (instance_exists(other.baddieID) && state == states.handstandjump && global.attackstyle != 3 && other.baddieID.invtime <= 0 && !other.baddieID.invincible)
 			{
@@ -98,7 +98,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 					other.baddieID.grabbedby = _playerindex;
 					with (other.baddieID)
 					{
-						if (object_index == obj_pepperman || object_index == obj_noiseboss || object_index == obj_vigilanteboss || object_index == obj_pizzafaceboss || object_index == obj_fakepepboss || object_index == obj_pizzafaceboss_p3)
+						if (object_index == obj_pepperman or object_index == obj_noiseboss or object_index == obj_vigilanteboss or object_index == obj_pizzafaceboss or object_index == obj_fakepepboss or object_index == obj_pizzafaceboss_p3)
 							scr_boss_grabbed();
 					}
 				}
@@ -209,7 +209,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 				vsp = 0;
 			}
 			var pepp_grab = false;
-			if (character == "M" && instance_exists(other.baddieID) && (state == states.normal || state == states.jump) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw && other.baddieID.state == states.stun && other.baddieID.stuntouchbuffer == 0 && !other.baddieID.thrown && !other.baddieID.invincible)
+			if (character == "M" && instance_exists(other.baddieID) && (state == states.normal or state == states.jump) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw && other.baddieID.state == states.stun && other.baddieID.stuntouchbuffer == 0 && !other.baddieID.thrown && !other.baddieID.invincible)
 			{
 				other.baddieID.pepperman_grab = true;
 				pepperman_grabID = other.baddieID.id;
@@ -217,7 +217,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 				other.baddieID.grabbedby = _playerindex;
 				pepp_grab = true;
 			}
-			if (instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && state != states.chainsaw && (state == states.tumble || state == states.mach2 || state == states.machslide || sprite_index == spr_player_ratmountattack || sprite_index == spr_lonegustavo_dash) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == 0 && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
+			if (instance_exists(other.baddieID) && other.baddieID.object_index != obj_bigcheese && state != states.chainsaw && (state == states.tumble or state == states.mach2 or state == states.machslide or sprite_index == spr_player_ratmountattack or sprite_index == spr_lonegustavo_dash) && other.baddieID.state != states.punch && other.baddieID.state != states.hit && !pepp_grab && other.baddieID.thrown == 0 && other.baddieID.stuntouchbuffer <= 0 && other.baddieID.state != states.grabbed && other.baddieID.state != states.chainsawbump && other.baddieID.state != states.chainsaw && !other.baddieID.invincible)
 			{
 				var lag = 0;
 				other.baddieID.stuntouchbuffer = 15;
@@ -254,7 +254,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 			}
 			if (character != "M" && instance_exists(other.baddieID) && state == states.grabbing && !other.baddieID.invincible)
 			{
-				if (instance_exists(other.baddieID) && y < (other.baddieID.y - 50) && attacking == 0 && state != states.handstandjump && other.baddieID.state != states.grabbed && sprite_index != spr_mach2jump && (state == states.jump || state == states.mach1 || (state == states.grab && sprite_index != spr_swingding)) && vsp > 0 && (other.baddieID.vsp >= 0 || other.baddieID.object_index == obj_farmerbaddie || other.baddieID.object_index == obj_farmerbaddie2 || other.baddieID.object_index == obj_farmerbaddie3) && sprite_index != spr_stompprep && !other.baddieID.invincible)
+				if (instance_exists(other.baddieID) && y < (other.baddieID.y - 50) && attacking == 0 && state != states.handstandjump && other.baddieID.state != states.grabbed && sprite_index != spr_mach2jump && (state == states.jump or state == states.mach1 or (state == states.grab && sprite_index != spr_swingding)) && vsp > 0 && (other.baddieID.vsp >= 0 or other.baddieID.object_index == obj_farmerbaddie or other.baddieID.object_index == obj_farmerbaddie2 or other.baddieID.object_index == obj_farmerbaddie3) && sprite_index != spr_stompprep && !other.baddieID.invincible)
 				{
 					sound_play_3d("event:/sfx/enemies/stomp", x, y);
 					if (x != other.baddieID.x)
@@ -282,7 +282,7 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 							sprite_index = spr_stompprep;
 					}
 				}
-				if (other.baddieID.thrown == 0 && (character == "P" || character == "N") && !other.baddieID.invincible)
+				if (other.baddieID.thrown == 0 && (character == "P" or character == "N") && !other.baddieID.invincible)
 				{
 					movespeed = 0;
 					image_index = 0;

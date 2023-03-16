@@ -24,7 +24,7 @@ function scr_pizzaball_normal()
 			instance_destroy(b);
 		}
 		ds_list_clear(global.instancelist);
-		if (check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_destroyablegolf) && (!place_meeting(x + hsp, y, obj_slope) || check_wall(x + hsp, y - 4)))
+		if (check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_destroyablegolf) && (!place_meeting(x + hsp, y, obj_slope) or check_wall(x + hsp, y - 4)))
 		{
 			angle = 0;
 			image_xscale *= -1;
@@ -46,7 +46,7 @@ function scr_pizzaball_normal()
 				movespeed /= 1.3;
 			}
 		}
-		else if (grounded || kicked)
+		else if (grounded or kicked)
 		{
 			if (movespeed > 0)
 				movespeed -= deccel;
@@ -75,11 +75,11 @@ function scr_pizzaball_normal()
 	}
 	if (jspd < 0)
 		jspd = 0;
-	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_pizzaball_hitwall || sprite_index == spr_pizzaball_hitwall2))
+	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_pizzaball_hitwall or sprite_index == spr_pizzaball_hitwall2))
 		sprite_index = spr_pizzaball_idle2;
 	if (sprite_index != spr_pizzaball_hitwall && sprite_index != spr_pizzaball_hitwall2)
 	{
-		if (thrown || kicked)
+		if (thrown or kicked)
 			sprite_index = spr_pizzaball_roll;
 		else if (chair)
 			sprite_index = spr_pizzaball_idle1;

@@ -87,7 +87,7 @@ if (state != states.grabbed)
 			other.image_xscale = -xscale;
 			other.hsp = -other.image_xscale * 4;
 			other.vsp = -4;
-			if (other.state == states.walk || other.state == states.turn)
+			if (other.state == states.walk or other.state == states.turn)
 				other.state = states.idle;
 			image_index = 0;
 			state = states.bump;

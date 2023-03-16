@@ -18,7 +18,7 @@ switch (state)
 			image_xscale *= -1;
 			hsp *= -1;
 		}
-		else if (!(scr_solid(x + (image_xscale * 32), y + 31) || place_meeting(x + (image_xscale * 32), y + 31, obj_platform)))
+		else if (!(scr_solid(x + (image_xscale * 32), y + 31) or place_meeting(x + (image_xscale * 32), y + 31, obj_platform)))
 		{
 			image_xscale *= -1;
 			hsp *= -1;

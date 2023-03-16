@@ -21,7 +21,7 @@ for (var i = 0; i < array_length(credits_arr); i++)
 		var b = q[j];
 		var title = false;
 		trace(b);
-		if (b == "CHIVALROUS CUSTOMERS" || b == "COOL CUSTOMERS" || b == "WEENIE CUSTOMERS" || b == "CHEESY CUSTOMERS")
+		if (b == "CHIVALROUS CUSTOMERS" or b == "COOL CUSTOMERS" or b == "WEENIE CUSTOMERS" or b == "CHEESY CUSTOMERS")
 		{
 			title = true;
 			trace("Found title");
@@ -30,7 +30,7 @@ for (var i = 0; i < array_length(credits_arr); i++)
 			draw_set_halign(fa_center);
 			xx = SCREEN_WIDTH / 2;
 		}
-		if (!title || i == 0)
+		if (!title or i == 0)
 			draw_text_color(xx, yy, b, c_white, c_white, c_white, c_white, image_alpha);
 		if (title)
 		{

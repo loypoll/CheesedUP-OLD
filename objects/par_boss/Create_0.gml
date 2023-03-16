@@ -90,7 +90,7 @@ function SUPER_boss_destroy(argument0)
 	with (argument0)
 	{
 		camera_zoom(1, 0.1);
-		if (state == states.fistmatch || state == states.superattack || state == states.parry || state == states.backbreaker)
+		if (state == states.fistmatch or state == states.superattack or state == states.parry or state == states.backbreaker)
 		{
 			sprite_index = spr_player_attackdash;
 			image_index = 6;
@@ -165,12 +165,12 @@ function SUPER_boss_hurt(argument0, argument1)
 		hitLag = lag;
 		hitX = x;
 		hitY = y;
-		if (state == states.chainsaw || state == states.hit)
+		if (state == states.chainsaw or state == states.hit)
 		{
 			x = hitX;
 			y = hitY;
 		}
-		if (other.state == states.hit || other.state == states.chainsaw)
+		if (other.state == states.hit or other.state == states.chainsaw)
 		{
 			other.x = other.hitX;
 			other.y = other.hitY;
@@ -213,7 +213,7 @@ function SUPER_boss_hurt_noplayer(argument0)
 			super += 30;
 	}
 	var lag = 8;
-	if (state == states.hit || state == states.chainsaw)
+	if (state == states.hit or state == states.chainsaw)
 	{
 		x = hitX;
 		y = hitY;
@@ -247,12 +247,12 @@ function SUPER_player_hurt(argument0, argument1)
 	with (argument1)
 	{
 		var lag = 8;
-		if (state == states.hit || state == states.chainsaw)
+		if (state == states.hit or state == states.chainsaw)
 		{
 			x = hitX;
 			y = hitY;
 		}
-		if (other.state == states.chainsaw || other.state == states.hit)
+		if (other.state == states.chainsaw or other.state == states.hit)
 		{
 			other.x = other.hitX;
 			other.y = other.hitY;

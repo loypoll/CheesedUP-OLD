@@ -1,4 +1,4 @@
-if (cooldown <= 0 && (escape == 0 || global.panic == true))
+if (cooldown <= 0 && (escape == 0 or global.panic == true))
 {
 	sound_play_3d("event:/sfx/enemies/cannongoblin", x, y);
 	with (instance_create(x + (image_xscale * 15), y, obj_canongoblinbomb))

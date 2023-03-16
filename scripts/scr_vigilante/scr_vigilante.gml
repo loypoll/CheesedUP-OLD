@@ -28,7 +28,7 @@ function vigilante_end_attack(phase, wastedhits)
 	for (var i = 0; i < array_length(attack_list[phase][wastedhits]); i++)
 	{
 		var b = attack_list[phase][wastedhits][i];
-		if (b[0] == vigi_attacks.reload || b[0] == vigi_attacks.crate)
+		if (b[0] == vigi_attacks.reload or b[0] == vigi_attacks.crate)
 		{
 			found = true;
 			break;
@@ -302,7 +302,7 @@ function scr_vigilante_walk()
 		}
 		if (!reposition)
 		{
-			if (flickertime <= 0 && (!place_meeting(x, y, obj_vigilantespot) || oldspotID == instance_place(x, y, obj_vigilantespot)))
+			if (flickertime <= 0 && (!place_meeting(x, y, obj_vigilantespot) or oldspotID == instance_place(x, y, obj_vigilantespot)))
 			{
 				var t = spotID;
 				with (obj_vigilantespot)
@@ -326,7 +326,7 @@ function scr_vigilante_walk()
 			t = spotID;
 			with (obj_vigilantespot)
 			{
-				if ((other.x > (room_width / 2) && x < (room_width / 2)) || (other.x < (room_width / 2) && x > (room_width / 2)))
+				if ((other.x > (room_width / 2) && x < (room_width / 2)) or (other.x < (room_width / 2) && x > (room_width / 2)))
 					t = id;
 			}
 			spotID = t;
@@ -516,7 +516,7 @@ function scr_vigilante_throw_dynamite()
 		with (instance_create(x + (image_xscale * 20), y - 16, obj_vigilantedynamite))
 		{
 			calculate_jump_velocity(obj_player1.x, other.y, 18, grav);
-			if (abs(hsp) <= 1 && (abs(vsp) <= 1 || vsp > 0))
+			if (abs(hsp) <= 1 && (abs(vsp) <= 1 or vsp > 0))
 				calculate_jump_velocity(obj_player1.x, other.y, 25, grav);
 		}
 		return true;
@@ -1037,7 +1037,7 @@ function scr_vigilante_machinegun()
 	else
 	{
 		hsp = image_xscale * 4;
-		if (sprite_index == spr_playerV_jump && (floor(image_index) == (image_number - 1) || vsp > -10))
+		if (sprite_index == spr_playerV_jump && (floor(image_index) == (image_number - 1) or vsp > -10))
 			sprite_index = spr_vigilante_uzi;
 		if (place_meeting(x + hsp, y, obj_solid))
 		{

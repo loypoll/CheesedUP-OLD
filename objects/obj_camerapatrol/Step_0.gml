@@ -79,7 +79,7 @@ if (state == states.walk)
 	else if (alarm[5] == -1)
 		alarm[5] = 30;
 }
-else if (state == states.stun || state == states.grabbed || state == states.hit)
+else if (state == states.stun or state == states.grabbed or state == states.hit)
 	alarm[5] = -1;
 if (instance_exists(obj_jumpscare))
 {
@@ -114,7 +114,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != states.grabbed)
 	depth = 0;
-if (state == states.stun || state == states.walk)
+if (state == states.stun or state == states.walk)
 	movespeed = 0;
 if (state != states.stun)
 	thrown = false;

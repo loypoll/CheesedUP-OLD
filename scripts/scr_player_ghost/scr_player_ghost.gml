@@ -48,7 +48,7 @@ function scr_player_ghost()
 		else
 		{
 			var m = maxspeed;
-			if (move_h != 0 || move_v != 0)
+			if (move_h != 0 or move_v != 0)
 				ghostangle = point_direction(0, 0, move_h, move_v);
 			else
 				m = 0;
@@ -90,7 +90,7 @@ function scr_player_ghost()
 				{
 					var mh = sign(hsp);
 					var mv = sign(vsp);
-					if (move_h != 0 || move_v != 0)
+					if (move_h != 0 or move_v != 0)
 					{
 						mh = move_h;
 						mv = move_v;

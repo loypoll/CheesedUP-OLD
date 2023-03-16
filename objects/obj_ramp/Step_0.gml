@@ -11,9 +11,9 @@ if (place_meeting(x, y - s, obj_player))
 		if (state == states.mach3)
 			by = 10;
 		var bx = 8;
-		if (state == states.mach3 || state == states.ratmounttumble)
+		if (state == states.mach3 or state == states.ratmounttumble)
 			bx = 18;
-		if ((state == states.mach2 || state == states.ratmounttumble || state == states.trashroll || state == states.tumble || state == states.mach3 || state == states.trickjump) && y <= (other.y + by) && xscale == sign(other.image_xscale) && place_meeting(x, y + s, other))
+		if ((state == states.mach2 or state == states.ratmounttumble or state == states.trashroll or state == states.tumble or state == states.mach3 or state == states.trickjump) && y <= (other.y + by) && xscale == sign(other.image_xscale) && place_meeting(x, y + s, other))
 		{
 			vsp = -12;
 			movespeed = 14;

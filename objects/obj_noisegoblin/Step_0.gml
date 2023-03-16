@@ -54,7 +54,7 @@ if (x != targetplayer.x && targetplayer.state != states.bombpep && state != stat
 {
 	if ((targetplayer.x > (x - 200) && targetplayer.x < (x + 200)) && (y <= (targetplayer.y + 200) && y >= (targetplayer.y - 200)))
 	{
-		if (state == states.walk || (state == states.idle && sprite_index != scaredspr))
+		if (state == states.walk or (state == states.idle && sprite_index != scaredspr))
 		{
 			sound_play_3d("event:/sfx/enemies/noisegoblinbow");
 			sprite_index = spr_archergoblin_shoot;

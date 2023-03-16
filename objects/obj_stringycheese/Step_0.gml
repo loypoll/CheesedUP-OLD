@@ -44,7 +44,7 @@ switch (state)
 				vsp = 10;
 				with (playerid)
 				{
-					if (state == states.trashjump || state == states.trashjumpprep)
+					if (state == states.trashjump or state == states.trashjumpprep)
 						create_debris(x, y, spr_player_trashlid);
 					tauntstoredstate = state;
 					tauntstoredmovespeed = movespeed;
@@ -70,7 +70,7 @@ switch (state)
 		handy = playerid.y;
 		drawhandx = handx;
 		drawhandy = handy;
-		if (handy < (y - 200) || playerid.state == states.tube)
+		if (handy < (y - 200) or playerid.state == states.tube)
 		{
 			state = states.normal;
 			with (playerid)
@@ -119,7 +119,7 @@ switch (state)
 					var _solid = false;
 					if check_wall(x, y - 1)
                         _solid = true;
-                    if (_solid || (vsp > 0 && y < other.y) || (x == other.previousx && y == other.previousy))
+                    if (_solid or (vsp > 0 && y < other.y) or (x == other.previousx && y == other.previousy))
 						other.idlebuffer++;
 					else
 						other.idlebuffer = 0;

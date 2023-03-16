@@ -157,7 +157,7 @@ function scr_noise_arenaintro()
 				image_index = 0;
 				introbuffer = 80;
 			}
-			else if (sprite_index == spr_noise_intro3 || sprite_index == spr_playerN_idle)
+			else if (sprite_index == spr_noise_intro3 or sprite_index == spr_playerN_idle)
 			{
 				state = states.walk;
 				spotlightID.expand = true;
@@ -202,7 +202,7 @@ function scr_noise_walk()
 		vsp = -5;
 		touchedground = true;
 	}
-	if (x != targetplayer.x && sprite_index != spr_playerN_bombend && (sprite_index == spr_noise_vulnerable1 || sprite_index == spr_noise_vulnerable1loop))
+	if (x != targetplayer.x && sprite_index != spr_playerN_bombend && (sprite_index == spr_noise_vulnerable1 or sprite_index == spr_noise_vulnerable1loop))
 		image_xscale = sign(targetplayer.x - x);
 	if (cooldown > 0 && flickertime <= 0 && !ballooncrash)
 		cooldown--;
@@ -323,7 +323,7 @@ function scr_noise_mach2()
 		sprite_index = spr_playerN_secondjump1;
 		skateboardjumpcooldown = -1;
 	}
-	if ((sprite_index == spr_playerN_secondjump1 || sprite_index == spr_playerN_secondjump2) && place_meeting(x + hsp, y, obj_solid))
+	if ((sprite_index == spr_playerN_secondjump1 or sprite_index == spr_playerN_secondjump2) && place_meeting(x + hsp, y, obj_solid))
 	{
 		sound_play_3d("event:/sfx/pep/jump", x, y);
 		sprite_index = spr_playerN_walljumpstart;
@@ -336,7 +336,7 @@ function scr_noise_mach2()
 		sprite_index = spr_playerN_walljumpend;
 	if (sprite_index == spr_playerN_secondjump1 && floor(image_index) == (image_number - 1))
 		sprite_index = spr_playerN_secondjump2;
-	if (grounded && vsp > 0 && (sprite_index == spr_playerN_secondjump1 || sprite_index == spr_playerN_secondjump2 || sprite_index == spr_playerN_walljumpend))
+	if (grounded && vsp > 0 && (sprite_index == spr_playerN_secondjump1 or sprite_index == spr_playerN_secondjump2 or sprite_index == spr_playerN_walljumpend))
 		sprite_index = spr_playerN_mach;
 	var tx = targetplayer.x;
 	var ix = sign(tx - x);
@@ -384,7 +384,7 @@ function scr_noise_machslide()
 			image_index = image_number - 1;
 		else if (sprite_index == spr_playerN_machslidestart)
 			sprite_index = spr_playerN_machslideend;
-		else if (sprite_index == spr_playerN_machslideend || sprite_index == spr_playerN_noisebombkick)
+		else if (sprite_index == spr_playerN_machslideend or sprite_index == spr_playerN_noisebombkick)
 		{
 			state = states.walk;
 			hsp = 0;
@@ -432,7 +432,7 @@ function scr_noise_spin()
 			machbuffer = 240;
 			golf = false;
 			lastattack = 0;
-			if (skateboardhit == 1 || phase == 2)
+			if (skateboardhit == 1 or phase == 2)
 				skateboardjumpcooldown = 60;
 		}
 		else if (el == "jetpack")
@@ -465,7 +465,7 @@ function scr_noise_spin()
 			attackspeed = 2;
 			machbuffer = 240;
 			lastattack = 2;
-			if (pogohit == 1 || phase == 2)
+			if (pogohit == 1 or phase == 2)
 				pogobomb = true;
 		}
 		else if (el == "hotair")
@@ -478,7 +478,7 @@ function scr_noise_spin()
 			vsp = -30;
 			hsp = 0;
 			lastattack = 3;
-			if (hotairhit == 1 || phase == 2)
+			if (hotairhit == 1 or phase == 2)
 				dropcooldown = 60;
 			else
 				dropcooldown = 120;
@@ -608,7 +608,7 @@ function scr_noise_pogo()
 		if (attackspeed > 8)
 			attackspeed -= 0.1;
 	}
-	if (pogobomb == 1 && ((image_xscale > 0 && targetplayer.x > (x - 20)) || (image_xscale < 0 && targetplayer.x < (x + 20)) || vsp > 0) && attackspeed > 10)
+	if (pogobomb == 1 && ((image_xscale > 0 && targetplayer.x > (x - 20)) or (image_xscale < 0 && targetplayer.x < (x + 20)) or vsp > 0) && attackspeed > 10)
 	{
 		with (instance_create(x, y, obj_noisebombboss))
 		{
@@ -669,7 +669,7 @@ function scr_noise_dropstart()
 		cloudbuffer--;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_playerN_jump)
 		sprite_index = spr_playerN_fall;
-	if (place_meeting(x, y, obj_solid) || vsp >= 0 || place_meeting(x, y - 1, obj_solid))
+	if (place_meeting(x, y, obj_solid) or vsp >= 0 or place_meeting(x, y - 1, obj_solid))
 		y -= 30;
 	if (y < -50)
 	{
@@ -717,7 +717,7 @@ function scr_noise_drop()
 	}
 	if (sprite_index == spr_noisehotairdrop && dropcooldown <= -1 && image_index > 3)
 	{
-		if (phase == 2 || hotairhit == 1)
+		if (phase == 2 or hotairhit == 1)
 			dropcooldown = 80;
 		else
 			dropcooldown = 120;

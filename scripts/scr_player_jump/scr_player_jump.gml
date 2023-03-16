@@ -84,7 +84,7 @@ function state_player_jump()
 			}
 		}
 	}
-	if (global.mort && (sprite_index == spr_mortdoublejump || sprite_index == spr_mortdoublejumpstart))
+	if (global.mort && (sprite_index == spr_mortdoublejump or sprite_index == spr_mortdoublejumpstart))
 	{
 		if (vsp > 6)
 			vsp = 6;
@@ -107,7 +107,7 @@ function state_player_jump()
 			mort = true;
 		}
 	}
-	if (can_jump && input_buffer_jump > 0 && !key_down && !key_attack && vsp > 0 && !(sprite_index == spr_facestomp || sprite_index == spr_freefall))
+	if (can_jump && input_buffer_jump > 0 && !key_down && !key_attack && vsp > 0 && !(sprite_index == spr_facestomp or sprite_index == spr_freefall))
 	{
 		input_buffer_jump = 0;
 		scr_fmod_soundeffect(jumpsnd, x, y);
@@ -134,12 +134,12 @@ function state_player_jump()
 	}
 	if (grounded && vsp > 0)
 	{
-		if (vsp > 0 && (!key_attack || sprite_index == spr_suplexbump))
+		if (vsp > 0 && (!key_attack or sprite_index == spr_suplexbump))
 		{
 			sound_play_3d("event:/sfx/pep/step", x, y);
-			if (key_attack || sprite_index == spr_shotgunshoot)
+			if (key_attack or sprite_index == spr_shotgunshoot)
 				landAnim = false;
-			if (sprite_index == spr_mortdoublejump || sprite_index == spr_mortdoublejumpstart)
+			if (sprite_index == spr_mortdoublejump or sprite_index == spr_mortdoublejumpstart)
 				sprite_index = spr_player_mortland;
 			if (sprite_index != spr_shotgunshoot)
 				image_index = 0;
@@ -251,7 +251,7 @@ function state_player_jump()
 		image_speed = 0.4;
 	else
 		image_speed = 0.35;
-	if (grounded && (sprite_index == spr_facestomp || sprite_index == spr_freefall))
+	if (grounded && (sprite_index == spr_facestomp or sprite_index == spr_freefall))
 	{
 		sound_play_3d("event:/sfx/pep/groundpound", x, y);
 		image_index = 0;
@@ -410,7 +410,7 @@ function state_player_jump()
 			}
 			else
 			{
-				if (key_attack2 && (pogochargeactive || pizzapepper > 0))
+				if (key_attack2 && (pogochargeactive or pizzapepper > 0))
 				{
 					if (!key_up)
 						sprite_index = spr_playerN_jetpackstart;
@@ -481,7 +481,7 @@ function state_player_jump()
 			}
 			break;
 	}
-	if (!key_attack || move != xscale)
+	if (!key_attack or move != xscale)
 		mach2 = 0;
 	if (floor(image_index) == (image_number - 1))
 		jumpAnim = false;
@@ -543,7 +543,7 @@ function state_pepperman_jump()
 		vsp = 14;
 		sprite_index = spr_bodyslamfall;
 	}
-	if (key_attack && (!check_wall(x + xscale, y) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
+	if (key_attack && (!check_wall(x + xscale, y) or place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
 	{
 		if (move != 0)
 			xscale = move;

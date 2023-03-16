@@ -90,7 +90,7 @@ function scr_player_mach3()
 						sprite_index = spr_mach4;
 					if (sprite_index == spr_player_Sjumpcancel && grounded)
 						sprite_index = spr_mach4;
-					if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach))
+					if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit or sprite_index == spr_dashpadmach))
 						sprite_index = spr_mach4;
 					if (sprite_index == spr_mach2jump && grounded && vsp > 0)
 						sprite_index = spr_mach4;
@@ -111,13 +111,13 @@ function scr_player_mach3()
 						other.crazyruneffectid = id;
 					}
 				}
-				if (sprite_index == spr_mach4 || sprite_index == spr_fightball)
+				if (sprite_index == spr_mach4 or sprite_index == spr_fightball)
 					image_speed = 0.4;
 				else if (sprite_index == spr_crazyrun)
 					image_speed = 0.75;
-				else if (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach)
+				else if (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit or sprite_index == spr_dashpadmach)
 					image_speed = 0.4;
-				if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0 && (character == "P" || character == "N" && noisetype == 0)) || ((character == "S" && (move == 0 || move != xscale) && grounded) && fightball == 0))
+				if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0 && (character == "P" or character == "N" && noisetype == 0)) or ((character == "S" && (move == 0 or move != xscale) && grounded) && fightball == 0))
 				{
 					sprite_index = spr_machslidestart;
 					sound_play_3d("event:/sfx/pep/break", x, y);
@@ -125,7 +125,7 @@ function scr_player_mach3()
 					image_index = 0;
 					launched = false;
 				}
-				if (move == -xscale && grounded && vsp > 0 && !launched && (character == "P" || character == "N") && fightball == 0 && sprite_index != spr_dashpadmach)
+				if (move == -xscale && grounded && vsp > 0 && !launched && (character == "P" or character == "N") && fightball == 0 && sprite_index != spr_dashpadmach)
 				{
 					sound_play_3d("event:/sfx/pep/machslideboost", x, y);
 					sprite_index = spr_mach3boost;
@@ -147,8 +147,8 @@ function scr_player_mach3()
 					if (character == "V")
 						sprite_index = spr_playerV_divekickstart;
 				}
-				if (!grounded && (check_wall(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && !place_meeting(x, y + 1, obj_slope))
-				|| (grounded && (check_wall(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope))
+				if (!grounded && (check_wall(x + hsp, y) or scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && !place_meeting(x, y + 1, obj_slope))
+				|| (grounded && (check_wall(x + sign(hsp), y - 16) or scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_mach3solid) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope))
 				{
 					wallspeed = movespeed;
 					grabclimbbuffer = 0;
@@ -225,7 +225,7 @@ function scr_player_mach3()
 					else if (global.pistol)
 						scr_pistolshoot(states.mach3);
 				}
-				if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
+				if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) or check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 				{
 					var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 					if (_bump)
@@ -369,7 +369,7 @@ function scr_player_mach3()
 					}
 					vsp = -11;
 				}
-				if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && (!place_meeting(x + sign(hsp), y, obj_slope) || check_wall(x + sign(hsp), y)) && (!place_meeting(x + sign(hsp), y, obj_metalblock) && character != "V") && (!place_meeting(x + sign(hsp), y, obj_destructibles) && character != "V") && !place_meeting(x + sign(hsp), y, obj_hungrypillar))
+				if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && (!place_meeting(x + sign(hsp), y, obj_slope) or check_wall(x + sign(hsp), y)) && (!place_meeting(x + sign(hsp), y, obj_metalblock) && character != "V") && (!place_meeting(x + sign(hsp), y, obj_destructibles) && character != "V") && !place_meeting(x + sign(hsp), y, obj_hungrypillar))
 				{
 					pizzapepper = 0;
 					sprite_index = spr_hitwall;
@@ -471,7 +471,7 @@ function scr_player_mach3()
 			{
 				if (sprite_index == spr_mach3jump && floor(image_index) == (image_number - 1))
 					sprite_index = spr_mach4;
-				if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit || sprite_index == spr_dashpadmach))
+				if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit or sprite_index == spr_dashpadmach))
 					sprite_index = spr_mach4;
 				if (sprite_index == spr_mach2jump && grounded && vsp > 0)
 					sprite_index = spr_mach4;
@@ -496,7 +496,7 @@ function scr_player_mach3()
 				image_index = 0;
 				sprite_index = spr_player_Sjumpcancelstart;
 			}
-			if (grounded && (sprite_index == spr_player_Sjumpcancelstart || sprite_index == spr_taunt))
+			if (grounded && (sprite_index == spr_player_Sjumpcancelstart or sprite_index == spr_taunt))
 				sprite_index = spr_mach4;
 			if (floor(image_index) == 0 && sprite_index == spr_player_Sjumpcancelstart)
 			{
@@ -513,13 +513,13 @@ function scr_player_mach3()
 				tauntimer = 0;
 			if (taunttimer <= 0 && sprite_index == spr_taunt)
 				tauntstoredsprite = sprite_index;
-			if (sprite_index == spr_mach4 || sprite_index == spr_fightball)
+			if (sprite_index == spr_mach4 or sprite_index == spr_fightball)
 				image_speed = 0.4;
 			else if (sprite_index == spr_crazyrun)
 				image_speed = 0.75;
-			else if (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit)
+			else if (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit)
 				image_speed = 0.4;
-			if (((!key_attack && fightball == 0) && grounded && vsp > 0) || ((character == "S" && (move == 0 || move != xscale) && grounded) && fightball == 0))
+			if (((!key_attack && fightball == 0) && grounded && vsp > 0) or ((character == "S" && (move == 0 or move != xscale) && grounded) && fightball == 0))
 			{
 				sprite_index = spr_machslidestart;
 				sound_play_3d("event:/sfx/pep/break", x, y);
@@ -541,12 +541,12 @@ function scr_player_mach3()
 				state = states.machroll;
 				vsp = 10;
 			}
-			if ((!grounded && check_wall(x + hsp, y) && (!place_meeting(x + sign(hsp), y, obj_slope || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + hsp, y, obj_mach3solid))) || (grounded && (check_wall(x + hsp, y - 32) || scr_solid_slope(x + sign(hsp), y - 32)) && place_meeting(x, y + 1, obj_slope) && !place_meeting(x + hsp, y, obj_mach3solid)))
+			if ((!grounded && check_wall(x + hsp, y) && (!place_meeting(x + sign(hsp), y, obj_slope or scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + hsp, y, obj_mach3solid))) or (grounded && (check_wall(x + hsp, y - 32) or scr_solid_slope(x + sign(hsp), y - 32)) && place_meeting(x, y + 1, obj_slope) && !place_meeting(x + hsp, y, obj_mach3solid)))
 			{
 				wallspeed = 10;
 				state = states.climbwall;
 			}
-			if ((scr_solid(x + 1, y) && !place_meeting(x + 1, y, obj_mach3solid) && xscale == 1) && !scr_slope() && (!place_meeting(x + sign(hsp), y, obj_slope) || check_wall(x + sign(hsp), y)) && (grounded || fightball == 1))
+			if ((scr_solid(x + 1, y) && !place_meeting(x + 1, y, obj_mach3solid) && xscale == 1) && !scr_slope() && (!place_meeting(x + sign(hsp), y, obj_slope) or check_wall(x + sign(hsp), y)) && (grounded or fightball == 1))
 			{
 				if (fightball == 0)
 				{
@@ -615,7 +615,7 @@ function scr_player_mach3()
 					fightball = false;
 				}
 			}
-			if ((scr_solid(x - 1, y) && !place_meeting(x - 1, y, obj_mach3solid) && xscale == -1) && !scr_slope() && (!place_meeting(x + sign(hsp), y, obj_slope) || check_wall(x + sign(hsp), y)) && (grounded || fightball == 1))
+			if ((scr_solid(x - 1, y) && !place_meeting(x - 1, y, obj_mach3solid) && xscale == -1) && !scr_slope() && (!place_meeting(x + sign(hsp), y, obj_slope) or check_wall(x + sign(hsp), y)) && (grounded or fightball == 1))
 			{
 				if (fightball == 0)
 				{
@@ -751,11 +751,11 @@ function scr_player_mach3()
 			other.chargeeffectid = id;
 		}
 	}
-	if (sprite_index == spr_mach4 || sprite_index == spr_fightball)
+	if (sprite_index == spr_mach4 or sprite_index == spr_fightball)
 		image_speed = 0.4;
 	else if (sprite_index == spr_crazyrun)
 		image_speed = 0.75;
-	else if (sprite_index == spr_rollgetup || sprite_index == spr_mach3hit)
+	else if (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit)
 		image_speed = 0.4;
 	else
 		image_speed = 0.4;

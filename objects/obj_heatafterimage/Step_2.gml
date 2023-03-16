@@ -8,7 +8,7 @@ y += ((Hspeed + obj_player1.vsp) - 1);
 if (is_visible)
 {
 	visible = obj_player1.visible;
-	if (place_meeting(x, y, obj_secretportal) || place_meeting(x, y, obj_secretportalstart))
+	if (place_meeting(x, y, obj_secretportal) or place_meeting(x, y, obj_secretportalstart))
 		visible = false;
 }
 if (!instance_exists(obj_pizzaface_thunderdark))

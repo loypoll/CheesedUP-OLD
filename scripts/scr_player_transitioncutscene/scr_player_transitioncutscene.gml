@@ -23,7 +23,7 @@ function scr_player_transitioncutscene()
 	}
 	if (sprite_index == spr_player_levelcomplete && costumercutscenetimer < 0)
 	{
-		if (grounded && (x > (other.x + 32) && x < (other.x + 160)) && key_up && (state == states.normal || state == states.mach1 || state == states.mach2 || state == states.mach3))
+		if (grounded && (x > (other.x + 32) && x < (other.x + 160)) && key_up && (state == states.normal or state == states.mach1 or state == states.mach2 or state == states.mach3))
 		{
 			if (global.collect >= global.srank)
 				global.rank = "s";

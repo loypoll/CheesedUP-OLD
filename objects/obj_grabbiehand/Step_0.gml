@@ -84,7 +84,7 @@ switch (state)
 					sprite_index = spr_mach4;
 			}
 		}
-		if (scr_solid(x, y - 1) || ((reverse && scr_solid(x, y + 1)) || place_meeting(x, y, obj_verticalhallway) || place_meeting(x, y, obj_hallway)))
+		if (scr_solid(x, y - 1) or ((reverse && scr_solid(x, y + 1)) or place_meeting(x, y, obj_verticalhallway) or place_meeting(x, y, obj_hallway)))
 		{
 			sound_play_3d("event:/sfx/enemies/projectile", x, y);
 			if (playerid == obj_player1.id)

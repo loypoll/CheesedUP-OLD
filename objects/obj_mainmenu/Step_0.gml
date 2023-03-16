@@ -1,7 +1,7 @@
 scr_getinput()
 index += 0.1
-key_jump = (key_jump || (scr_check_menu_key(vk_enter) && keyboard_check_pressed(vk_return)) || (scr_check_menu_key(vk_space) && keyboard_check_pressed(vk_space)))
-key_jump2 = (key_jump2 || (scr_check_menu_key(vk_enter) && keyboard_check(vk_return)) || (scr_check_menu_key(vk_space) && keyboard_check(vk_space)))
+key_jump = (key_jump or (scr_check_menu_key(vk_enter) && keyboard_check_pressed(vk_return)) or (scr_check_menu_key(vk_space) && keyboard_check_pressed(vk_space)))
+key_jump2 = (key_jump2 or (scr_check_menu_key(vk_enter) && keyboard_check(vk_return)) or (scr_check_menu_key(vk_space) && keyboard_check(vk_space)))
 
 switch state
 {
@@ -9,7 +9,7 @@ switch state
 		if !debug
 			jumpscarecount++
 		currentselect = -1
-		if ((keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4 || scr_checkanystick(obj_inputAssigner.player_input_device[0])) && (!instance_exists(obj_mainmenu_jumpscare)))
+		if ((keyboard_check_pressed(vk_anykey) or scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4 or scr_checkanystick(obj_inputAssigner.player_input_device[0])) && (!instance_exists(obj_mainmenu_jumpscare)))
 		{
 			state = states.transition
 			currentselect = -1
@@ -72,13 +72,13 @@ switch state
 		else
 		{
 			move = (key_left2 + key_right2)
-			if ((sprite_index != spr_titlepep_punch && sprite_index != spr_titlepep_angry) || move != 0)
+			if ((sprite_index != spr_titlepep_punch && sprite_index != spr_titlepep_angry) or move != 0)
 			{
 				if (move != 0)
 					angrybuffer = 0
 				currentselect += move
 				currentselect = clamp(currentselect, 0, 2)
-				if (currentselect != visualselect && (sprite_index == spr_titlepep_left || sprite_index == spr_titlepep_middle || sprite_index == spr_titlepep_right))
+				if (currentselect != visualselect && (sprite_index == spr_titlepep_left or sprite_index == spr_titlepep_middle or sprite_index == spr_titlepep_right))
 				{
 					visualselect = Approach(visualselect, currentselect, 1)
 					image_index = 0
@@ -225,7 +225,7 @@ switch state
 			deletebuffer++
 		else
 			deletebuffer = 0
-		if ((deleteselect == 1 && key_jump) || (deleteselect == 0 && deletebuffer >= 120))
+		if ((deleteselect == 1 && key_jump) or (deleteselect == 0 && deletebuffer >= 120))
 		{
 			if (deleteselect == 0)
 			{

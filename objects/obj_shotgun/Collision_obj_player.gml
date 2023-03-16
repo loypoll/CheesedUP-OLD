@@ -1,6 +1,6 @@
 with (other)
 {
-	if (state == states.handstandjump || state == states.lungeattack || state == states.punch)
+	if (state == states.handstandjump or state == states.lungeattack or state == states.punch)
 	{
 		image_index = 0;
 		sprite_index = spr_shotgunpullout;

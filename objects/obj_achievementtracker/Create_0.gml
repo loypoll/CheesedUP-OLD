@@ -137,7 +137,7 @@ add_achievement_notify("pal_dark", -4, function(data)
 {
 	var type = data[0];
 	var arr = data[1];
-	if (type == notifs.unlocked_achievement && (arr[0] == "pepperman" || arr[0] == "vigilante" || arr[0] == "noise" || arr[0] == "fakepep" || arr[0] == "pizzaface"))
+	if (type == notifs.unlocked_achievement && (arr[0] == "pepperman" or arr[0] == "vigilante" or arr[0] == "noise" or arr[0] == "fakepep" or arr[0] == "pizzaface"))
 	{
 		ini_open_from_string(obj_savesystem.ini_str);
 		var _found = false;
@@ -344,7 +344,7 @@ add_achievement_notify("entrance2", function() {}, function(data)
 {
 	var type = data[0];
 	var arr = data[1];
-	if (type == notifs.end_level && arr[0] == "entrance" && (arr[2] < 2 || (arr[2] == 2 && arr[3] <= 0)))
+	if (type == notifs.end_level && arr[0] == "entrance" && (arr[2] < 2 or (arr[2] == 2 && arr[3] <= 0)))
 		achievement_unlock(name, "Let's Make This Quick", spr_achievement_entrance, 1);
 });
 
@@ -355,7 +355,7 @@ function(data)
 {
 	var type = data[0];
 	var arr = data[1];
-	if ((type == notifs.combo_end && arr[0] >= 99 && global.leveltosave == "entrance") || (type == notifs.baddie_kill && global.combo >= 99 && global.leveltosave == "entrance"))
+	if ((type == notifs.combo_end && arr[0] >= 99 && global.leveltosave == "entrance") or (type == notifs.baddie_kill && global.combo >= 99 && global.leveltosave == "entrance"))
 		achievement_unlock(name, "Primate Rage", spr_achievement_entrance, 2);
 });
 
@@ -408,7 +408,7 @@ add_achievement_notify("medieval3", function(data) {},
 function(data)
 {
 	var type = data[0];
-	if (type == notifs.baddie_kill && global.leveltosave == "medieval" && (obj_player1.state == states.tumble || (obj_player1.tauntstoredstate == states.tumble && obj_player1.state == states.chainsaw)) && (obj_player1.sprite_index == obj_player1.spr_tumblestart || obj_player1.sprite_index == obj_player1.spr_tumbleend || obj_player1.sprite_index == obj_player1.spr_tumble))
+	if (type == notifs.baddie_kill && global.leveltosave == "medieval" && (obj_player1.state == states.tumble or (obj_player1.tauntstoredstate == states.tumble && obj_player1.state == states.chainsaw)) && (obj_player1.sprite_index == obj_player1.spr_tumblestart or obj_player1.sprite_index == obj_player1.spr_tumbleend or obj_player1.sprite_index == obj_player1.spr_tumble))
 		achievement_unlock(name, "Spherical", spr_achievement_medieval, 2);
 });
 
@@ -555,7 +555,7 @@ add_achievement_notify("graveyard2", function(data)
 	var arr = data[1];
 	if (global.leveltosave == "graveyard")
 	{
-		if (type == notifs.baddie_kill && (obj_player1.state == states.ghost || (obj_player1.state == states.chainsaw && obj_player1.tauntstoredstate == states.ghost)))
+		if (type == notifs.baddie_kill && (obj_player1.state == states.ghost or (obj_player1.state == states.chainsaw && obj_player1.tauntstoredstate == states.ghost)))
 		{
 			achievement_get_variable("grav2count").value += 1;
 			if (achievement_get_variable("grav2count").value >= 20)
@@ -593,7 +593,7 @@ add_achievement_notify("farm1", function(data)
 	{
 		var n = achievement_get_variable("f1_count");
 		var r = room_get_name(arr[1]);
-		if (obj_player.state == states.backbreaker && (string_letters(r) == "farm" || string_letters(r) == "farmb"))
+		if (obj_player.state == states.backbreaker && (string_letters(r) == "farm" or string_letters(r) == "farmb"))
 		{
 			n.value++;
 			if (n.value >= 3)
@@ -616,7 +616,7 @@ add_achievement_notify("farm3", function(data)
 {
 	var type = data[0];
 	var arr = data[1];
-	if ((type == notifs.hurt_player || type == notifs.fall_outofbounds) && (arr[1] == states.mort || arr[1] == states.morthook || arr[1] == states.mortattack || arr[1] == states.mortjump)) // STATES.
+	if ((type == notifs.hurt_player or type == notifs.fall_outofbounds) && (arr[1] == states.mort or arr[1] == states.morthook or arr[1] == states.mortattack or arr[1] == states.mortjump)) // STATES.
 		achievement_get_variable("f3_hurted").value = true;
 	if (type == notifs.end_level && arr[0] == "farm" && !achievement_get_variable("f3_hurted").value)
 		achievement_unlock(name, "Good Egg", spr_achievement_farm, 0);
@@ -738,7 +738,7 @@ function(data)
 {
 	var type = data[0];
 	var arr = data[1];
-	if (type == notifs.levelblock_break && global.leveltosave == "forest" && (arr[0] == obj_smallforestblock || arr[0] == obj_bigforestblock))
+	if (type == notifs.levelblock_break && global.leveltosave == "forest" && (arr[0] == obj_smallforestblock or arr[0] == obj_bigforestblock))
 	{
 		achievement_get_variable("fo2_count").value += 1;
 		if (achievement_get_variable("fo2_count").value >= 183)
@@ -855,7 +855,7 @@ add_achievement_notify("minigolf2", function(data)
 {
 	var type = data[0];
 	var arr = data[1];
-	if (type == notifs.pizzaball && (arr[0] == obj_player1 || arr[0] == obj_player1))
+	if (type == notifs.pizzaball && (arr[0] == obj_player1 or arr[0] == obj_player1))
 		achievement_get_variable("g2_count").value = 0;
 	else if (type == notifs.pizzaball_killenemy)
 	{
@@ -975,7 +975,7 @@ add_achievement_notify("industrial1", function(data)
 {
 	var type = data[0];
 	var arr = data[1];
-	if (global.leveltosave == "industrial" && type == notifs.priest_collect && (arr[2] == states.boxxedpep || arr[2] == states.boxxedpepjump || arr[2] == states.boxxedpepspin)) // STATES.
+	if (global.leveltosave == "industrial" && type == notifs.priest_collect && (arr[2] == states.boxxedpep or arr[2] == states.boxxedpepjump or arr[2] == states.boxxedpepspin)) // STATES.
 	{
 		achievement_get_variable("i1_count").value += 1;
 		if (achievement_get_variable("i1_count").value >= 4)
@@ -1083,7 +1083,7 @@ add_achievement_notify("chateau2", function(data)
 {
 	var type = data[0];
 	var arr = data[1];
-	if (type == notifs.hurt_player && (arr[2] == obj_anchortrap || arr[2] == obj_knighttrap))
+	if (type == notifs.hurt_player && (arr[2] == obj_anchortrap or arr[2] == obj_knighttrap))
 		achievement_get_variable("ch2_hurt").value = true;
 	if (type == notifs.end_level && arr[0] == "chateau" && !achievement_get_variable("ch2_hurt").value)
 		achievement_unlock(name, "Haunted Playground", spr_achievement_chateau, 1);
@@ -1180,7 +1180,7 @@ add_achievement_notify("war2", function(data)
 			achievement_get_variable("war2_hit").value = false;
 			achievement_get_variable("war2_start").value = true;
 		}
-		else if ((type == notifs.baddie_kill || type == notifs.enemies_dead || type == notifs.block_break || type == notifs.bazooka_explode) && achievement_get_variable("war2_start").value == 1)
+		else if ((type == notifs.baddie_kill or type == notifs.enemies_dead or type == notifs.block_break or type == notifs.bazooka_explode) && achievement_get_variable("war2_start").value == 1)
 			achievement_get_variable("war2_hit").value = true;
 		else if (type == notifs.shotgunblast_end)
 		{

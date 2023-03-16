@@ -6,7 +6,7 @@ switch (state)
 		var targetplayer = obj_player1.id;
 		if (hamspotted == 1)
 			targetplayer = 1077;
-		if ((targetplayer.x > x && image_xscale < 0) || (targetplayer.x < x && image_xscale > 0))
+		if ((targetplayer.x > x && image_xscale < 0) or (targetplayer.x < x && image_xscale > 0))
 		{
 			movespeed = Approach(movespeed, 0, 0.5);
 			if (movespeed <= 0)

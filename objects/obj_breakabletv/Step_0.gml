@@ -2,7 +2,7 @@ if (place_meeting(x, y, obj_player))
 {
 	with (obj_player)
 	{
-		if (state == states.mach1 || state == states.mach2)
+		if (state == states.mach1 or state == states.mach2)
 		{
 			state = states.finishingblow;
 			sprite_index = spr_player_finishingblow1;
@@ -26,7 +26,7 @@ if (grabbed == 1)
 	image_xscale = -obj_player.xscale;
 	grav = 0;
 	obj_player.baddiegrabbedID = id;
-	if (obj_player.state == states.grabbing || obj_player.state == states.grab || obj_player.state == states.throwing || obj_player.state == states.slam || obj_player.state == states.tacklecharge)
+	if (obj_player.state == states.grabbing or obj_player.state == states.grab or obj_player.state == states.throwing or obj_player.state == states.slam or obj_player.state == states.tacklecharge)
 	{
 		grounded = false;
 		x = obj_player.x;
@@ -45,7 +45,7 @@ if (grabbed == 1)
 	with (obj_player)
 	{
 		move = key_left2 + key_right2;
-		if (!(state == states.grab || state == states.grabbing || state == states.throwing || state == states.slam || state == states.tacklecharge || state == states.punch || state == states.superslam || state == states.backkick || state == states.uppunch || state == states.shoulder))
+		if (!(state == states.grab or state == states.grabbing or state == states.throwing or state == states.slam or state == states.tacklecharge or state == states.punch or state == states.superslam or state == states.backkick or state == states.uppunch or state == states.shoulder))
 		{
 			other.x = x;
 			other.y = y;

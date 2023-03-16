@@ -1,12 +1,12 @@
 scr_getinput();
 if (selecting == -1)
 {
-	if (((key_up2 && key_down2 != key_up2) || keyboard_check_pressed(vk_up)) && key_select > -1)
+	if (((key_up2 && key_down2 != key_up2) or keyboard_check_pressed(vk_up)) && key_select > -1)
 	{
 		key_select -= 1;
 		sound_play("event:/sfx/ui/step");
 	}
-	if (((key_down2 && key_up2 != key_down2) || keyboard_check_pressed(vk_down)) && key_select < 9)
+	if (((key_down2 && key_up2 != key_down2) or keyboard_check_pressed(vk_down)) && key_select < 9)
 	{
 		key_select += 1;
 		sound_play("event:/sfx/ui/step");
@@ -14,12 +14,12 @@ if (selecting == -1)
 }
 if (selecting == -1)
 {
-	if (player == 0 && ((key_right2 && key_right2 != key_left2) || keyboard_check_pressed(vk_right)))
+	if (player == 0 && ((key_right2 && key_right2 != key_left2) or keyboard_check_pressed(vk_right)))
 		player += 1;
-	if (player == 1 && ((-key_left2 && key_left2 != key_right2) || keyboard_check_pressed(vk_left)))
+	if (player == 1 && ((-key_left2 && key_left2 != key_right2) or keyboard_check_pressed(vk_left)))
 		player -= 1;
 }
-if ((key_jump2 || keyboard_check_pressed(vk_enter)) && selecting == -1 && key_select == -1)
+if ((key_jump2 or keyboard_check_pressed(vk_enter)) && selecting == -1 && key_select == -1)
 {
 	sound_play("event:/sfx/ui/select");
 	ini_open("saveData.ini");
@@ -57,7 +57,7 @@ if (selecting == 0 && player == 0)
 		selecting = -1;
 	}
 }
-if (key_select == 0 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
+if (key_select == 0 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
 {
 	selecting = key_select;
 	global.key_up = -1;
@@ -70,7 +70,7 @@ if (selecting == 1 && player == 0)
 		selecting = -1;
 	}
 }
-if (key_select == 1 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
+if (key_select == 1 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
 {
 	selecting = key_select;
 	global.key_down = -1;
@@ -83,7 +83,7 @@ if (selecting == 2 && player == 0)
 		selecting = -1;
 	}
 }
-if (key_select == 2 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
+if (key_select == 2 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
 {
 	selecting = key_select;
 	global.key_right = -1;
@@ -96,7 +96,7 @@ if (selecting == 3 && player == 0)
 		selecting = -1;
 	}
 }
-if (key_select == 3 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
+if (key_select == 3 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
 {
 	selecting = key_select;
 	global.key_left = -1;
@@ -109,7 +109,7 @@ if (selecting == 4 && player == 0)
 		selecting = -1;
 	}
 }
-if (key_select == 4 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
+if (key_select == 4 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
 {
 	selecting = key_select;
 	global.key_jump = -1;
@@ -122,7 +122,7 @@ if (selecting == 5 && player == 0)
 		selecting = -1;
 	}
 }
-if (key_select == 5 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
+if (key_select == 5 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
 {
 	selecting = key_select;
 	global.key_slap = -1;
@@ -135,7 +135,7 @@ if (selecting == 6 && player == 0)
 		selecting = -1;
 	}
 }
-if (key_select == 6 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
+if (key_select == 6 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
 {
 	selecting = key_select;
 	global.key_attack = -1;
@@ -148,7 +148,7 @@ if (selecting == 7 && player == 0)
 		selecting = -1;
 	}
 }
-if (key_select == 7 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
+if (key_select == 7 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
 {
 	selecting = key_select;
 	global.key_shoot = -1;
@@ -161,7 +161,7 @@ if (selecting == 8 && player == 0)
 		selecting = -1;
 	}
 }
-if (key_select == 8 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
+if (key_select == 8 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
 {
 	selecting = key_select;
 	global.key_taunt = -1;
@@ -174,7 +174,7 @@ if (selecting == 9 && player == 0)
 		selecting = -1;
 	}
 }
-if (key_select == 9 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
+if (key_select == 9 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 0)
 {
 	selecting = key_select;
 	global.key_start = -1;
@@ -188,7 +188,7 @@ if (selecting == 0 && player == 1)
 		selecting = -1;
 	}
 }
-if (key_select == 0 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
+if (key_select == 0 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
 {
 	selecting = key_select;
 	global.key_upN = -1;
@@ -201,7 +201,7 @@ if (selecting == 1 && player == 1)
 		selecting = -1;
 	}
 }
-if (key_select == 1 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
+if (key_select == 1 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
 {
 	selecting = key_select;
 	global.key_downN = -1;
@@ -214,7 +214,7 @@ if (selecting == 2 && player == 1)
 		selecting = -1;
 	}
 }
-if (key_select == 2 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
+if (key_select == 2 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
 {
 	selecting = key_select;
 	global.key_rightN = -1;
@@ -227,7 +227,7 @@ if (selecting == 3 && player == 1)
 		selecting = -1;
 	}
 }
-if (key_select == 3 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
+if (key_select == 3 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
 {
 	selecting = key_select;
 	global.key_leftN = -1;
@@ -240,7 +240,7 @@ if (selecting == 4 && player == 1)
 		selecting = -1;
 	}
 }
-if (key_select == 4 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
+if (key_select == 4 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
 {
 	selecting = key_select;
 	global.key_jumpN = -1;
@@ -253,7 +253,7 @@ if (selecting == 5 && player == 1)
 		selecting = -1;
 	}
 }
-if (key_select == 5 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
+if (key_select == 5 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
 {
 	selecting = key_select;
 	global.key_slapN = -1;
@@ -266,7 +266,7 @@ if (selecting == 6 && player == 1)
 		selecting = -1;
 	}
 }
-if (key_select == 6 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
+if (key_select == 6 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
 {
 	selecting = key_select;
 	global.key_attackN = -1;
@@ -279,7 +279,7 @@ if (selecting == 7 && player == 1)
 		selecting = -1;
 	}
 }
-if (key_select == 7 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
+if (key_select == 7 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
 {
 	selecting = key_select;
 	global.key_shootN = -1;
@@ -292,7 +292,7 @@ if (selecting == 8 && player == 1)
 		selecting = -1;
 	}
 }
-if (key_select == 8 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
+if (key_select == 8 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
 {
 	selecting = key_select;
 	global.key_tauntN = -1;
@@ -305,7 +305,7 @@ if (selecting == 9 && player == 1)
 		selecting = -1;
 	}
 }
-if (key_select == 9 && (key_jump || keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
+if (key_select == 9 && (key_jump or keyboard_check_pressed(vk_enter)) && selecting == -1 && player == 1)
 {
 	selecting = key_select;
 	global.key_startN = -1;

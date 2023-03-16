@@ -7,12 +7,12 @@ if (instance_exists(obj_player))
 			if (place_meeting(x, y, obj_goldendoor))
 				game_restart();
 		}
-		if (room != obj_player1.targetRoom || roomreset)
+		if (room != obj_player1.targetRoom or roomreset)
 		{
 			scr_room_goto(obj_player1.targetRoom);
 			with (obj_player)
 			{
-				if (state == states.ejected || state == states.policetaxi)
+				if (state == states.ejected or state == states.policetaxi)
 				{
 					visible = true;
 					state = states.normal;
@@ -21,7 +21,7 @@ if (instance_exists(obj_player))
 		}
 		if (global.coop == 1)
 		{
-			if (room != obj_player2.targetRoom || roomreset)
+			if (room != obj_player2.targetRoom or roomreset)
 				scr_room_goto(obj_player1.targetRoom);
 			with (obj_player)
 			{

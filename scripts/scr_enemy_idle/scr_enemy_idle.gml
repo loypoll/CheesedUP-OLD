@@ -1,12 +1,12 @@
 function scr_enemy_idle()
 {
 	hsp = 0;
-	if (vsp > 1 && (grounded || (grounded && !place_meeting(x, y, obj_platform))))
+	if (vsp > 1 && (grounded or (grounded && !place_meeting(x, y, obj_platform))))
 	{
 		create_particle(x, y, particle.landcloud, 0);
 		image_index = 0;
 	}
-	if ((vsp >= 0 || object_index == obj_miniufo || object_index == obj_kentukybomber) && sprite_index == scaredspr && scaredbuffer <= 0)
+	if ((vsp >= 0 or object_index == obj_miniufo or object_index == obj_kentukybomber) && sprite_index == scaredspr && scaredbuffer <= 0)
 	{
 		state = states.walk;
 		sprite_index = walkspr;

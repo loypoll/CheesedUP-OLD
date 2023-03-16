@@ -36,11 +36,11 @@ if (!isOpen) {
 		} else {
 			self.close()
 		}
-	} else if (self._key_combo_pressed([metaKey], ord("A")) || keyboard_check_pressed(vk_home)) {
+	} else if (self._key_combo_pressed([metaKey], ord("A")) or keyboard_check_pressed(vk_home)) {
 		// Jump to beginning of line
 		cursorPos = 1;
 		targetScrollPosition = maxScrollPosition;
-	} else if (self._key_combo_pressed([metaKey], ord("E")) || keyboard_check_pressed(vk_end)) {
+	} else if (self._key_combo_pressed([metaKey], ord("E")) or keyboard_check_pressed(vk_end)) {
 		// Jump to end of line
 		cursorPos = string_length(consoleString) + 1;
 		targetScrollPosition = maxScrollPosition;
@@ -64,7 +64,7 @@ if (!isOpen) {
 		consoleString = "";
 		cursorPos = 1;
 		targetScrollPosition = maxScrollPosition;
-	} else if (self._key_combo_pressed([metaKey], vk_backspace) || (metaKey == vk_control && ord(keyboard_string) == 127)) {
+	} else if (self._key_combo_pressed([metaKey], vk_backspace) or (metaKey == vk_control && ord(keyboard_string) == 127)) {
 		// delete characters from the cursor position to the preceding space or start of the line
 		var precedingSpaceIndex = 1;
 		// don't want to check for space at or before the cursor position, so start 2 back
@@ -255,7 +255,7 @@ if (!isOpen) {
 	var lerpValue = (scrollSmoothness == 0) ? 1 : self._remap(scrollSmoothness, 1, 0, 0.08, 0.4);
 	scrollPosition = lerp(scrollPosition, targetScrollPosition, lerpValue);
 	scrollPosition = clamp(scrollPosition, 0, maxScrollPosition)
-	if (scrollPosition == 0 || scrollPosition == maxScrollPosition) {
+	if (scrollPosition == 0 or scrollPosition == maxScrollPosition) {
 		targetScrollPosition = clamp(targetScrollPosition, 0, maxScrollPosition);
 	}
 	

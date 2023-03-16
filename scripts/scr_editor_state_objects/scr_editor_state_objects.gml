@@ -28,7 +28,7 @@ function scr_editor_get_object_mouse(xpos, ypos)
 		var b = ds_list_find_value(global.instancelist, i);
 		with (b)
 		{
-			if (layerdepth == other.layerdepth && (o == -4 || depth < o.depth))
+			if (layerdepth == other.layerdepth && (o == -4 or depth < o.depth))
 				o = b;
 		}
 	}

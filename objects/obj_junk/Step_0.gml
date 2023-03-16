@@ -9,7 +9,7 @@ if (grabbed == 1 && !ratgrabbed)
 	image_xscale = -playerid.xscale;
 	grav = 0;
 	playerid.baddiegrabbedID = id;
-	if (playerid.state == states.finishingblow || playerid.state == states.grabbing || playerid.state == states.grab || playerid.state == states.throwing || playerid.state == states.slam || playerid.state == states.tacklecharge)
+	if (playerid.state == states.finishingblow or playerid.state == states.grabbing or playerid.state == states.grab or playerid.state == states.throwing or playerid.state == states.slam or playerid.state == states.tacklecharge)
 	{
 		grav = 0;
 		grounded = false;
@@ -29,7 +29,7 @@ if (grabbed == 1 && !ratgrabbed)
 	with (playerid)
 	{
 		move = key_left2 + key_right2;
-		if (!(state == states.finishingblow || state == states.grab || state == states.grabbing || state == states.throwing || state == states.slam || state == states.tacklecharge || state == states.punch || state == states.superslam || state == states.backkick || state == states.uppunch || state == states.shoulder))
+		if (!(state == states.finishingblow or state == states.grab or state == states.grabbing or state == states.throwing or state == states.slam or state == states.tacklecharge or state == states.punch or state == states.superslam or state == states.backkick or state == states.uppunch or state == states.shoulder))
 		{
 			other.grav = 0.5;
 			other.x = x;

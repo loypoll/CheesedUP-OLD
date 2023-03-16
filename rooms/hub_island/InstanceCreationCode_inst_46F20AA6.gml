@@ -7,9 +7,9 @@ pm_scene_info = [[cutscene_do_dialog, [dialog_create("Here you go")]], [cutscene
 })]]];
 dialog_func = function()
 {
-	if (!global.bottlecutscene || !global.papercutscene)
+	if (!global.bottlecutscene or !global.papercutscene)
 		do_dialog(pm_dialog[0]);
-	else if (global.beachboatcutscene == -4 || !global.beachboatcutscene)
+	else if (global.beachboatcutscene == -4 or !global.beachboatcutscene)
 	{
 		do_dialog_cutscene(pm_scene_info);
 		global.beachboatcutscene = true;

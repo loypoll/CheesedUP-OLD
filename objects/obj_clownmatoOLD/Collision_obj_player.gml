@@ -1,4 +1,4 @@
-if (other.cutscene || other.state == states.firemouth)
+if (other.cutscene or other.state == states.firemouth)
 	exit;
 with (other)
 {

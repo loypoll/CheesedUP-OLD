@@ -6,7 +6,7 @@ function scr_player_mach1()
 	crouchslideAnim = true;
 	dir = xscale;
 	move = key_left + key_right;
-	if (scr_solid(x + xscale, y) && (!place_meeting(x + xscale, y, obj_slope) || scr_solid_slope(x + sign(hsp), y)))
+	if (scr_solid(x + xscale, y) && (!place_meeting(x + xscale, y, obj_slope) or scr_solid_slope(x + sign(hsp), y)))
 	{
 		mach2 = 0;
 		state = states.normal;

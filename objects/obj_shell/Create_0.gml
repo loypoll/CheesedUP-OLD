@@ -152,7 +152,7 @@ function _update_filtered_suggestions() {
 	inputArray = self._input_string_split(inputString);
 	
 	// Return if we have nothing to parse
-	if (string_length(inputString) == 0 || array_length(inputArray) == 0) { return; }
+	if (string_length(inputString) == 0 or array_length(inputArray) == 0) { return; }
 	
 	// Set font for string_width calculation
 	draw_set_font(consoleFont);
@@ -190,7 +190,7 @@ function _update_filtered_suggestions() {
 				var currentArgument = inputArray[array_length(inputArray) - 1];
 				for (var i = 0; i < array_length(argumentSuggestions); i++) {
 					var prefixMatch = string_pos(currentArgument, argumentSuggestions[i]) == 1;
-					if (string_last_pos(" ", inputString) == string_length(inputString) || prefixMatch) {
+					if (string_last_pos(" ", inputString) == string_length(inputString) or prefixMatch) {
 						array_push(filteredSuggestions, argumentSuggestions[i]);
 						autocompleteMaxWidth = max(autocompleteMaxWidth, string_width(argumentSuggestions[i]));
 					}
@@ -240,7 +240,7 @@ function _key_combo_pressed(modifier_array, key) {
 
 	if (keyboard_check_pressed(key)) {
 		if (array_length(modifier_array) == 0) {
-			if (keyboard_check(vk_shift) || keyboard_check(vk_control) || keyboard_check(vk_alt)) {
+			if (keyboard_check(vk_shift) or keyboard_check(vk_control) or keyboard_check(vk_alt)) {
 				return false;
 			}
 		}
@@ -472,7 +472,7 @@ function _input_string_split(_input) {
 	}
 	// If we ended on our delimiter character, include an empty string as the final split
 	// If we ended without closing a quote, include what's been written in quotes so far as a complete argument
-	if (str2 == "" || inQuotes) {
+	if (str2 == "" or inQuotes) {
 		splits[slot] = str2;
 	}
 

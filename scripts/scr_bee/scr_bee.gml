@@ -6,7 +6,7 @@ function scr_bee_chase()
 	y += lengthdir_y(spd, chase_angle);
 	if (fallback_buffer > 0)
 		fallback_buffer--;
-	if (fallback_buffer <= 0 || distance_to_pos(x, y, target_x, target_y, spd * 2, spd * 2))
+	if (fallback_buffer <= 0 or distance_to_pos(x, y, target_x, target_y, spd * 2, spd * 2))
 		state = states.idle;
 }
 function scr_bee_idle()

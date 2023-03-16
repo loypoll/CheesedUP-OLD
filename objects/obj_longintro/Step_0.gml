@@ -2,12 +2,12 @@ with (obj_player)
 	state = states.titlescreen;
 if (scene >= 0)
 {
-	if (!showtext && (keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4))
+	if (!showtext && (keyboard_check_pressed(vk_anykey) or scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4))
 	{
 		showtext = true;
 		alarm[0] = 120;
 	}
-	else if (showtext && (keyboard_check_pressed(global.key_slap) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC)))
+	else if (showtext && (keyboard_check_pressed(global.key_slap) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC)))
 	{
 		room_goto(Mainmenu);
 		exit;

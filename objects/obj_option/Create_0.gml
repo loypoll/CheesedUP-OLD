@@ -320,7 +320,7 @@ add_option_press(controls_menu, 3, "option_reset_config", function()
 		for (i = 0; i < array_length(menus); i++)
 		{
 			b = menus[i]
-			if (b.menu_id == menus.controller || b.menu_id == menus.deadzone)
+			if (b.menu_id == menus.controller or b.menu_id == menus.deadzone)
 			{
 				for (var j = 0; j < array_length(b.options); j++)
 				{

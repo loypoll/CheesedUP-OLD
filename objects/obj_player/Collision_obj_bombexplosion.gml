@@ -25,7 +25,7 @@ if (scr_transformationcheck() && state != states.bombpepside && state != states.
 			movespeed = 14;
 			sprite_index = spr_hurt;
 		}
-		else if (dir >= 270 || dir < 45)
+		else if (dir >= 270 or dir < 45)
 		{
 			state = states.bombpepside;
 			sprite_index = spr_hurt;

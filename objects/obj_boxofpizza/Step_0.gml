@@ -4,7 +4,7 @@ with (obj_player)
 {
 	if (other.image_yscale == 1)
 	{
-		if (((key_down && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other) && ((state == states.crouch || character == "S" || character == "M") || state == states.machroll || (state == states.tumble && sprite_index == spr_dive))) || ((state == states.crouchslide || (state == states.tumble && key_down) || state == states.freefall || state == states.freefallland) && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
+		if (((key_down && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other) && ((state == states.crouch or character == "S" or character == "M") or state == states.machroll or (state == states.tumble && sprite_index == spr_dive))) or ((state == states.crouchslide or (state == states.tumble && key_down) or state == states.freefall or state == states.freefallland) && !place_meeting(x, y + 1, obj_destructibles) && place_meeting(x, y + 1, other))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
 		{
 			obj_player1.lastroom = room;
 			obj_player2.lastroom = room;
@@ -45,7 +45,7 @@ with (obj_player)
 	}
 	if (other.image_yscale == -1)
 	{
-		if (((key_up && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 10, other) && (state == states.normal || state == states.pogo || state == states.jump || state == states.mach1 || state == states.mach2 || state == states.mach3 || state == states.Sjumpprep || (state == states.punch && sprite_index == spr_breakdanceuppercut))) || ((state == states.Sjump || state == states.Sjumpland) && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
+		if (((key_up && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 10, other) && (state == states.normal or state == states.pogo or state == states.jump or state == states.mach1 or state == states.mach2 or state == states.mach3 or state == states.Sjumpprep or (state == states.punch && sprite_index == spr_breakdanceuppercut))) or ((state == states.Sjump or state == states.Sjumpland) && !place_meeting(x, y - 1, obj_destructibles) && place_meeting(x, y - 1, other))) && !instance_exists(obj_fadeout) && state != states.door && state != states.comingoutdoor)
 		{
 			obj_player1.lastroom = room;
 			obj_player2.lastroom = room;
@@ -89,17 +89,17 @@ with (obj_player)
 		}
 	}
 }
-if (place_meeting(x, y + 1, obj_doorA) || place_meeting(x, y - 1, obj_doorA))
+if (place_meeting(x, y + 1, obj_doorA) or place_meeting(x, y - 1, obj_doorA))
 	targetDoor = "A";
-if (place_meeting(x, y + 1, obj_doorB) || place_meeting(x, y - 1, obj_doorB))
+if (place_meeting(x, y + 1, obj_doorB) or place_meeting(x, y - 1, obj_doorB))
 	targetDoor = "B";
-if (place_meeting(x, y + 1, obj_doorC) || place_meeting(x, y - 1, obj_doorC))
+if (place_meeting(x, y + 1, obj_doorC) or place_meeting(x, y - 1, obj_doorC))
 	targetDoor = "C";
-if (place_meeting(x, y + 1, obj_doorD) || place_meeting(x, y - 1, obj_doorD))
+if (place_meeting(x, y + 1, obj_doorD) or place_meeting(x, y - 1, obj_doorD))
 	targetDoor = "D";
-if (place_meeting(x, y + 1, obj_doorE) || place_meeting(x, y - 1, obj_doorE))
+if (place_meeting(x, y + 1, obj_doorE) or place_meeting(x, y - 1, obj_doorE))
 	targetDoor = "E";
-if (place_meeting(x, y + 1, obj_doorF) || place_meeting(x, y - 1, obj_doorF))
+if (place_meeting(x, y + 1, obj_doorF) or place_meeting(x, y - 1, obj_doorF))
 	targetDoor = "F";
-if (place_meeting(x, y + 1, obj_doorG) || place_meeting(x, y - 1, obj_doorG))
+if (place_meeting(x, y + 1, obj_doorG) or place_meeting(x, y - 1, obj_doorG))
 	targetDoor = "G";

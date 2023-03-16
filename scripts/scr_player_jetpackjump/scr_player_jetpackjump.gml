@@ -38,7 +38,7 @@ function scr_player_jetpackjump()
 	}
 	with (obj_iceblock_breakable)
 	{
-		if (place_meeting(x - other.hsp, y, other) || place_meeting(x - other.xscale, y, other) || place_meeting(x, y - other.vsp, other))
+		if (place_meeting(x - other.hsp, y, other) or place_meeting(x - other.xscale, y, other) or place_meeting(x, y - other.vsp, other))
 		{
 			instance_destroy();
 			GamepadSetVibration(0, 0.5, 0.5, 0.8);
@@ -64,7 +64,7 @@ function scr_player_jetpackjump()
 	}
 	with (obj_destructibles)
 	{
-		if (place_meeting(x - other.hsp, y, other) || place_meeting(x - other.xscale, y, other) || place_meeting(x, y - other.vsp, other))
+		if (place_meeting(x - other.hsp, y, other) or place_meeting(x - other.xscale, y, other) or place_meeting(x, y - other.vsp, other))
 		{
 			instance_destroy();
 			GamepadSetVibration(0, 0.4, 0.4, 0.8);
@@ -92,7 +92,7 @@ function scr_player_jetpackjump()
 	move = key_left + key_right;
 	dir = xscale;
 	var spin = spr_rockethitwall;
-	if (sprite_index != spin || !jetpackdash)
+	if (sprite_index != spin or !jetpackdash)
 	{
 		dir = xscale;
 		if (key_jump2 && sprite_index == spr_player_jetpackstart2)

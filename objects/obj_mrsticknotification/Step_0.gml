@@ -6,7 +6,7 @@ if (!finish)
 		y = Approach(y, 32, accel);
 		with (obj_player)
 		{
-			if (place_meeting(x, y, obj_grannypizzasign) || place_meeting(x, y, obj_tutorialbook))
+			if (place_meeting(x, y, obj_grannypizzasign) or place_meeting(x, y, obj_tutorialbook))
 			{
 				other.finish = true;
 				with (obj_transfotip)

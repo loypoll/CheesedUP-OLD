@@ -34,7 +34,7 @@ function scr_player_ratmountcrouch()
 		jumpAnim = false;
 		sprite_index = spr_player_ratmountgroundpoundfall;
 	}
-	if (((grounded && !key_down) || brick) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
+	if (((grounded && !key_down) or brick) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 		state = states.ratmount
 	if (hsp != 0)
 		sprite_index = spr_lonegustavo_crouchwalk;

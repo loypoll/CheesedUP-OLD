@@ -2,7 +2,7 @@ if (state != states.stun)
 {
 	if (!other.isgustavo)
 	{
-		if (other.state != states.mach3 || !other.launched)
+		if (other.state != states.mach3 or !other.launched)
 		{
 			if (state != states.blockstance)
 			{
@@ -37,7 +37,7 @@ if (state != states.stun)
 			other.playerid = id;
 		}
 	}
-	else if (other.state == states.ratmountpunch || other.ratmount_movespeed >= 12)
+	else if (other.state == states.ratmountpunch or other.ratmount_movespeed >= 12)
 	{
 		sound_play_3d("event:/sfx/pep/punch", x, y);
 		instance_destroy();

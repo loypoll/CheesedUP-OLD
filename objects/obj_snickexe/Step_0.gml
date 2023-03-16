@@ -13,7 +13,7 @@ if (hitboxcreate == 0 && (obj_player1.instakillmove == 0 && obj_player1.state !=
 		ID = other.id;
 	}
 }
-if (place_meeting(x, y, obj_player1) && (obj_player1.instakillmove == 1 || obj_player1.state == states.handstandjump))
+if (place_meeting(x, y, obj_player1) && (obj_player1.instakillmove == 1 or obj_player1.state == states.handstandjump))
 {
 	repeat (6)
 	{
@@ -23,7 +23,7 @@ if (place_meeting(x, y, obj_player1) && (obj_player1.instakillmove == 1 || obj_p
 	x = room_width / 2;
 	y = -100;
 }
-if (room == ruin_11 || room == ruin_3)
+if (room == ruin_11 or room == ruin_3)
 {
 	x = room_width / 2;
 	y = -100;

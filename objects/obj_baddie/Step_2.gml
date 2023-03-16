@@ -11,7 +11,7 @@ if (state != states.stun && state != states.hit)
 	linethrown = false;
 if (state == states.stun && !thrown)
 	linethrown = false;
-if (object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 && object_index != obj_gustavograbbable && object_index != obj_noiseboss && object_index != obj_pizzafaceboss && object_index != obj_pepperman && object_index != obj_pf_fakepep && object_index != obj_fakepepboss && object_index != obj_pizzaball && (place_meeting(x + 1, y, obj_spike) || place_meeting(x - 1, y, obj_spike) || place_meeting(x, y + 1, obj_spike) || place_meeting(x, y - 1, obj_spike)))
+if (object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 && object_index != obj_gustavograbbable && object_index != obj_noiseboss && object_index != obj_pizzafaceboss && object_index != obj_pepperman && object_index != obj_pf_fakepep && object_index != obj_fakepepboss && object_index != obj_pizzaball && (place_meeting(x + 1, y, obj_spike) or place_meeting(x - 1, y, obj_spike) or place_meeting(x, y + 1, obj_spike) or place_meeting(x, y - 1, obj_spike)))
 {
 	if (elite)
 		elitehit = 0;
@@ -31,11 +31,11 @@ if (sprite_index == walkspr && hsp != 0 && sign(hsp) == sign(image_xscale) && gr
 {
 	steppy = true;
 	var _yy = y + 43;
-	if (object_index == obj_pizzafaceboss_p2 || object_index == obj_pizzafaceboss_p3)
+	if (object_index == obj_pizzafaceboss_p2 or object_index == obj_pizzafaceboss_p3)
 		_yy = y + 78;
 	create_particle(x - (image_xscale * 20), _yy, particle.cloudeffect, 0);
 }
-if ((object_index != obj_pizzice || state != states.pizzagoblinthrow) && object_index != obj_pizzafaceboss_p3 && object_index != obj_fakepepboss && state != states.phase1hurt)
+if ((object_index != obj_pizzice or state != states.pizzagoblinthrow) && object_index != obj_pizzafaceboss_p3 && object_index != obj_fakepepboss && state != states.phase1hurt)
 {
 	if (state == states.walk)
 		image_speed = 0.35;
@@ -46,7 +46,7 @@ if (dodgebuffer > 0)
 	dodgebuffer--;
 if (object_index != obj_vigilanteboss && object_index != obj_pizzafaceboss_p3 && object_index != obj_gustavograbbable && object_index != obj_noiseboss && object_index != obj_pizzafaceboss && object_index != obj_pepperman && object_index != obj_pf_fakepep && object_index != obj_fakepepboss)
 {
-	if (object_index != obj_bazookabaddie || !instance_exists(bazookaID))
+	if (object_index != obj_bazookabaddie or !instance_exists(bazookaID))
 	{
 		with (instance_nearest(x, y, obj_player))
 		{
@@ -69,9 +69,9 @@ if (state != states.pizzaheadjump && object_index != obj_pepperman && object_ind
 {
 	if (y > (room_height + 100))
 		instance_destroy();
-	if (thrown && (x > (room_width + 100) || x < -100 || y < -100))
+	if (thrown && (x > (room_width + 100) or x < -100 or y < -100))
 		instance_destroy();
-	if (!thrown && (x > (room_width + 400) || x < -400 || y > (room_height + 400) || y < -400))
+	if (!thrown && (x > (room_width + 400) or x < -400 or y > (room_height + 400) or y < -400))
 		instance_destroy(id, false);
 }
 if (state != states.hit)

@@ -68,7 +68,7 @@ function scr_cutoff()
 					{
 						if (!place_meeting(x, y, obj_solid))
 							instance_destroy();
-						else if (other.object_index == obj_tiledestroy || ((object_index != obj_cutoffsmall || other.object_index == obj_secretblock) && (object_index != obj_cutoff || (other.object_index == obj_secretbigblock || other.object_index == obj_secretmetalblock))))
+						else if (other.object_index == obj_tiledestroy or ((object_index != obj_cutoffsmall or other.object_index == obj_secretblock) && (object_index != obj_cutoff or (other.object_index == obj_secretbigblock or other.object_index == obj_secretmetalblock))))
 						{
 							var a = scr_cutoff_get_angle(b);
 							var da = a;

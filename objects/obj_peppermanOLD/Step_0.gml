@@ -124,5 +124,5 @@ switch (state)
 		break;
 }
 xscale = image_xscale;
-colliding = !(state == states.superslam || state == states.fistmatch || state == states.superattackstart || state == states.superattackcharge);
-attacking = (state == states.shoulderbash || state == states.freefall || state == states.freefallprep || state == states.supershoulderbash || state == states.shoulder || state == states.superslam || state == states.fistmatch || state == states.superattackstart || state == states.superattackcharge || state == states.walk);
+colliding = !(state == states.superslam or state == states.fistmatch or state == states.superattackstart or state == states.superattackcharge);
+attacking = (state == states.shoulderbash or state == states.freefall or state == states.freefallprep or state == states.supershoulderbash or state == states.shoulder or state == states.superslam or state == states.fistmatch or state == states.superattackstart or state == states.superattackcharge or state == states.walk);

@@ -10,7 +10,7 @@ function snap_tile(value, snap)
 function add_object(argument0, argument1, argument2, argument3, argument4 = 0, argument5 = 0)
 {
 	var s = 1;
-	if (sprite_get_width(argument2) >= 64 || sprite_get_height(argument2) >= 64)
+	if (sprite_get_width(argument2) >= 64 or sprite_get_height(argument2) >= 64)
 		s = min(64 / sprite_get_width(argument2), 64 / sprite_get_height(argument2));
 	ds_list_add(object_list[argument0], 
 	{

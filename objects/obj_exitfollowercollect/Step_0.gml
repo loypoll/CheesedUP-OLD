@@ -30,7 +30,7 @@ if (global.panic && !global.exitrank && distance_to_object(obj_player1) <= 300 &
 			yoffset = 0;
 		if (other.object_index == obj_snottyexit)
 			snotty = true;
-		else if (other.object_index == obj_gustavofollower || other.object_index == obj_fakepepfollower)
+		else if (other.object_index == obj_gustavofollower or other.object_index == obj_fakepepfollower)
 			isgustavo = true;
 	}
 	instance_destroy();

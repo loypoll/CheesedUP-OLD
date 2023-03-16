@@ -121,7 +121,7 @@ function mort_attack()
 			alarm[0] = 15;
 		}
 	}
-	if (sprite_index == spr_player_mortattackdown || sprite_index == spr_player_mortattackup || sprite_index == spr_player_mortattack)
+	if (sprite_index == spr_player_mortattackdown or sprite_index == spr_player_mortattackup or sprite_index == spr_player_mortattack)
 	{
 		if (punch_afterimage > 0)
 			punch_afterimage--;

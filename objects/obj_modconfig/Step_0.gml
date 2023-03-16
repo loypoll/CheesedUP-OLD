@@ -1,7 +1,7 @@
 if live_call() return live_result;
 scr_getinput(); // no really why dont they just do this
 
-key_back = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(_dvc, gp_face2));
+key_back = (keyboard_check_pressed(vk_escape) or keyboard_check_pressed(vk_return) or gamepad_button_check_pressed(_dvc, gp_face2));
 
 // go back
 if key_back or key_slap2

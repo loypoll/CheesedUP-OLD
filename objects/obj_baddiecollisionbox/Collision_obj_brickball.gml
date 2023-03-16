@@ -7,7 +7,7 @@ if (instance_exists(baddieID) && baddieID.invtime == 0 && baddieID.rattime <= 0 
 		global.combotime = 60;
 		global.heattime = 60;
 	}
-	if (!baddieID.elite || baddieID.elitehit <= 0)
+	if (!baddieID.elite or baddieID.elitehit <= 0)
 	{
 		if (baddieID.destroyable)
 		{

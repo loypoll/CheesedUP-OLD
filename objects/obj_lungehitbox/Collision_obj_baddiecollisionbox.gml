@@ -5,7 +5,7 @@ if (_baddieID.state != states.grabbed && !_baddieID.invincible && _baddieID.hitt
 {
 	with (playerid)
 	{
-		if ((floor(image_index) < 4 || (global.attackstyle == 3 && image_index < 6)) && (state == states.lungeattack || state == states.handstandjump) && state != states.chainsaw && _baddieID.state != states.hit)
+		if ((floor(image_index) < 4 or (global.attackstyle == 3 && image_index < 6)) && (state == states.lungeattack or state == states.handstandjump) && state != states.chainsaw && _baddieID.state != states.hit)
 		{
 			var lag = 5;
 			var baddie_id = _baddieID.id;

@@ -69,7 +69,7 @@ switch (state)
 			}
 			if (string_letters(room_get_name(room)) == "freezer")
 				sprite_index = spr_gustavo_exitsignfreezer;
-			else if (room == saloon_5 || room == saloon_4 || room == saloon_3 || room == saloon_2 || room == saloon_1)
+			else if (room == saloon_5 or room == saloon_4 or room == saloon_3 or room == saloon_2 or room == saloon_1)
 				sprite_index = spr_gustavo_exitsigndrunk;
 			else if (string_letters(room_get_name(room)) == "chateau")
 				sprite_index = spr_gustavorat_exitsign;

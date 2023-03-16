@@ -15,7 +15,7 @@ function scr_player_grind()
 			default:
 				if character != "N" or noisetype == 0
 				{
-					if (movespeed < 12 || skateboarding)
+					if (movespeed < 12 or skateboarding)
 					{
 						state = states.mach2;
 						sprite_index = spr_mach2jump;
@@ -58,7 +58,7 @@ function scr_player_grind()
 						sprite_index = spr_clownjump;
 						image_index = 0;
 					}
-					if (movespeed < 12 || skateboarding)
+					if (movespeed < 12 or skateboarding)
 					{
 						state = states.mach2;
 						sprite_index = spr_mach2jump;

@@ -1,4 +1,4 @@
-if (!global.option_hud || (instance_exists(obj_debugcontroller) && !obj_debugcontroller.showhud))
+if (!global.option_hud or (instance_exists(obj_debugcontroller) && !obj_debugcontroller.showhud))
 	exit;
 if (instance_exists(obj_ghostcollectibles))
 	exit;

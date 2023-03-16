@@ -9,7 +9,7 @@ function scr_player_ratmountskid()
 	gustavodash = 0;
 	ratmount_movespeed = 8;
 	image_speed = 0.4;
-	if (abs(movespeed) <= 0 || abs(hsp) <= 0)
+	if (abs(movespeed) <= 0 or abs(hsp) <= 0)
 	{
 		movespeed = 0;
 		state = states.ratmount;
@@ -35,7 +35,7 @@ function scr_player_ratmountskid()
 		vsp = -11;
 		jumpstop = false;
 	}
-	if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick)
+	if (((input_buffer_slap > 0 && key_up) or key_shoot2) && brick)
 	{
 		input_buffer_slap = 0;
 		ratmount_kickbrick();

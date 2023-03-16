@@ -25,18 +25,18 @@ else
 	if (sprite_index != spr_gerome_collected)
 	{
 		var s = obj_player1.sprite_index;
-		if (s == obj_player1.spr_supertaunt1 || s == obj_player1.spr_supertaunt2 || s == obj_player1.spr_supertaunt3 || s == obj_player1.spr_supertaunt4 || s == spr_player_ratmountsupertaunt)
+		if (s == obj_player1.spr_supertaunt1 or s == obj_player1.spr_supertaunt2 or s == obj_player1.spr_supertaunt3 or s == obj_player1.spr_supertaunt4 or s == spr_player_ratmountsupertaunt)
 		{
 			sprite_index = spr_gerome_collected;
 			image_index = 0;
 		}
 	}
-	if (obj_player1.state != states.backbreaker || (sprite_index == spr_gerome_collected && floor(image_index) == (image_number - 1)))
+	if (obj_player1.state != states.backbreaker or (sprite_index == spr_gerome_collected && floor(image_index) == (image_number - 1)))
 	{
 		sprite_index = spr_gerome_keyidle;
 		instance_destroy(tauntID);
 		state = states.normal;
 	}
 }
-if (room == rank_room || room == timesuproom)
+if (room == rank_room or room == timesuproom)
 	visible = false;

@@ -34,7 +34,7 @@ function scr_player_stringfall()
 		sprite_index = spr_player_mrpinch;
 		hsp = movespeed;
 		move = key_left + key_right;
-		if (move == 0 || grounded)
+		if (move == 0 or grounded)
 			movespeed = Approach(movespeed, 0, 0.1);
 		else
 			movespeed = Approach(movespeed, move * 4, 0.25);

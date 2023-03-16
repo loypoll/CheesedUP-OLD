@@ -1,4 +1,4 @@
-if (room == Mainmenu || room == tower_soundtest)
+if (room == Mainmenu or room == tower_soundtest)
 	exit;
 draw_set_font(lang_get_font("smallfont"));
 draw_set_halign(1);

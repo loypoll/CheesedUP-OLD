@@ -11,7 +11,7 @@ else
 var b = false;
 if (minutes <= 0 && seconds <= 10)
 	b = true;
-if (!b || addseconds > 0)
+if (!b or addseconds > 0)
 	draw_sprite(spr_wartimer, (addseconds > 0) ? 1 : 0, xx, yy);
 else
 	draw_sprite(spr_wartimer_panic, timer_index, xx, yy);

@@ -1,4 +1,4 @@
-if (instance_exists(obj_pizzafaceboss_p3intro) || instance_exists(obj_blackoutline))
+if (instance_exists(obj_pizzafaceboss_p3intro) or instance_exists(obj_blackoutline))
 	exit;
 if (image_alpha <= 0)
 	exit;
@@ -55,7 +55,7 @@ switch (state)
 			pattern_set(global.Base_Pattern_Color, playerspr, 0, 1, 1, global.palettetexture);
 			pal_swap_set(spr_peppalette, obj_player1.paletteselect, false);
 			draw_sprite_ext(playerspr, -1, px, py, 1, 1, 0, c_player, 1);
-			if (bossspr == spr_vsfakepep || bossspr == spr_vsfakepep2)
+			if (bossspr == spr_vsfakepep or bossspr == spr_vsfakepep2)
 			{
 				pattern_set(global.Base_Pattern_Color, bossspr, 0, _xs, _ys, global.palettetexture);
 				pal_swap_set(spr_peppalette, obj_player1.paletteselect, false);

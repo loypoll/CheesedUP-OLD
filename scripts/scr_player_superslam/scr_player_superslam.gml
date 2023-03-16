@@ -64,7 +64,7 @@ function scr_player_superslam()
 		}
 		vsp += 0.5;
 	}
-	if (grounded && (freefallsmash < 10 || !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + 1, obj_destructibles) && sprite_index == spr_piledriver && vsp > 0)
+	if (grounded && (freefallsmash < 10 or !place_meeting(x, y + vsp, obj_metalblock)) && !place_meeting(x, y + 1, obj_destructibles) && sprite_index == spr_piledriver && vsp > 0)
 	{
 		sound_play_3d("event:/sfx/pep/groundpound", x, y);
 		create_particle(x, y + 3, particle.groundpoundeffect, 0);

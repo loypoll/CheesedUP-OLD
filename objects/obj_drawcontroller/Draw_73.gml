@@ -1,15 +1,15 @@
 with (obj_player)
 {
-	if (state == states.backbreaker && (sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4))
+	if (state == states.backbreaker && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4))
 		draw_superslam_enemy();
 }
-if (room == Mainmenu || room == Longintro || room == Realtitlescreen)
+if (room == Mainmenu or room == Longintro or room == Realtitlescreen)
 {
 	use_dark = false;
 	kidsparty_lightning = false;
 	dark_lightning = false;
 }
-if (kidsparty_lightning || dark_lightning)
+if (kidsparty_lightning or dark_lightning)
 {
 	var cw = camera_get_view_width(view_camera[0]) + 32;
 	var ch = camera_get_view_height(view_camera[0]) + 32;
@@ -92,7 +92,7 @@ if (kidsparty_lightning || dark_lightning)
 			{
 				if (instance_exists(baddieID) && baddieID.state == states.walk)
 				{
-					if (collision || (instance_exists(baddieID) && baddieID.alarm[5] != -1))
+					if (collision or (instance_exists(baddieID) && baddieID.alarm[5] != -1))
 					{
 						c = 255;
 						draw_surface_ext(other.patrolcone_tex, x - surf_x, y - surf_y - (tsh / 2), (image_angle > 90) ? -1 : 1, 1, 0, c, 1);

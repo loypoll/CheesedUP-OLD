@@ -1,7 +1,7 @@
 countdown -= 0.5;
-if (place_meeting(x + 1, y, obj_ratblock) || place_meeting(x - 1, y, obj_ratblock) || place_meeting(x, y - 1, obj_ratblock) || place_meeting(x, y + 1, obj_ratblock))
+if (place_meeting(x + 1, y, obj_ratblock) or place_meeting(x - 1, y, obj_ratblock) or place_meeting(x, y - 1, obj_ratblock) or place_meeting(x, y + 1, obj_ratblock))
 	instance_destroy();
-if (scr_solid(x + 1, y) || scr_solid(x - 1, y))
+if (scr_solid(x + 1, y) or scr_solid(x - 1, y))
 	drop = true;
 if (check_wall(x, y + 1))
 	hsp = 0;

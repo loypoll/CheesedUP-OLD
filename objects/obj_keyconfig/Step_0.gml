@@ -9,19 +9,19 @@ var horizpress_dz = global.gamepad_deadzone_press;
 var _dvc = obj_inputAssigner.player_input_device[0];
 gamepad_set_axis_deadzone(_dvc, 0.4);
 
-key_back = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(_dvc, gp_face2))
-key_up2 = (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W")) || (gamepad_axis_value(_dvc, gp_axislv) < -vertpress_dz && stickpressed_vertical == 0) || gamepad_button_check_pressed(_dvc, gp_padu));
-key_down2 = (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S")) || (gamepad_axis_value(_dvc, gp_axislv) > vertpress_dz && stickpressed_vertical == 0) || gamepad_button_check_pressed(_dvc, gp_padd));
-key_left2 = (keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A")) || (gamepad_axis_value(_dvc, gp_axislh) < -horizpress_dz && stickpressed_horizontal == 0) || gamepad_button_check_pressed(_dvc, gp_padl));
-key_right2 = (keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D")) || (gamepad_axis_value(_dvc, gp_axislh) > horizpress_dz && stickpressed_horizontal == 0) || gamepad_button_check_pressed(_dvc, gp_padr));
-key_jump = (keyboard_check_pressed(ord("Z")) || (global.key_start != 13 && keyboard_check_pressed(vk_return)) || (global.key_start != 32 && keyboard_check_pressed(vk_space)) || gamepad_button_check_pressed(_dvc, gp_face1));
-key_jump2 = (keyboard_check(ord("Z")) || (global.key_start != 13 && keyboard_check(vk_return)) || (global.key_start != 32 && keyboard_check(vk_space)) || gamepad_button_check_pressed(_dvc, gp_face1));
+key_back = (keyboard_check_pressed(vk_escape) or keyboard_check_pressed(vk_return) or gamepad_button_check_pressed(_dvc, gp_face2))
+key_up2 = (keyboard_check_pressed(vk_up) or keyboard_check_pressed(ord("W")) or (gamepad_axis_value(_dvc, gp_axislv) < -vertpress_dz && stickpressed_vertical == 0) or gamepad_button_check_pressed(_dvc, gp_padu));
+key_down2 = (keyboard_check_pressed(vk_down) or keyboard_check_pressed(ord("S")) or (gamepad_axis_value(_dvc, gp_axislv) > vertpress_dz && stickpressed_vertical == 0) or gamepad_button_check_pressed(_dvc, gp_padd));
+key_left2 = (keyboard_check_pressed(vk_left) or keyboard_check_pressed(ord("A")) or (gamepad_axis_value(_dvc, gp_axislh) < -horizpress_dz && stickpressed_horizontal == 0) or gamepad_button_check_pressed(_dvc, gp_padl));
+key_right2 = (keyboard_check_pressed(vk_right) or keyboard_check_pressed(ord("D")) or (gamepad_axis_value(_dvc, gp_axislh) > horizpress_dz && stickpressed_horizontal == 0) or gamepad_button_check_pressed(_dvc, gp_padr));
+key_jump = (keyboard_check_pressed(ord("Z")) or (global.key_start != 13 && keyboard_check_pressed(vk_return)) or (global.key_start != 32 && keyboard_check_pressed(vk_space)) or gamepad_button_check_pressed(_dvc, gp_face1));
+key_jump2 = (keyboard_check(ord("Z")) or (global.key_start != 13 && keyboard_check(vk_return)) or (global.key_start != 32 && keyboard_check(vk_space)) or gamepad_button_check_pressed(_dvc, gp_face1));
 
-if (gamepad_axis_value(_dvc, gp_axislh) >= horizpress_dz || gamepad_axis_value(_dvc, gp_axislh) <= (-horizpress_dz))
+if (gamepad_axis_value(_dvc, gp_axislh) >= horizpress_dz or gamepad_axis_value(_dvc, gp_axislh) <= (-horizpress_dz))
 	stickpressed_horizontal = true;
 else
 	stickpressed_horizontal = false;
-if (gamepad_axis_value(_dvc, gp_axislv) >= vertpress_dz || gamepad_axis_value(_dvc, gp_axislv) <= (-vertpress_dz))
+if (gamepad_axis_value(_dvc, gp_axislv) >= vertpress_dz or gamepad_axis_value(_dvc, gp_axislv) <= (-vertpress_dz))
 	stickpressed_vertical = true;
 else
 	stickpressed_vertical = false;
@@ -59,7 +59,7 @@ if !selecting
             key_select = 4;
 	}
 	key_select = clamp(key_select, -1, (array_length(input) - 1))
-	if (((key_jump || key_back) && key_select <= -1) || (key_select > -1 && key_back))
+	if (((key_jump or key_back) && key_select <= -1) or (key_select > -1 && key_back))
 	{
 		var _found = false
 		for (var i = 0; i < array_length(input); i++)
@@ -125,7 +125,7 @@ if !selecting
 	}
 	else if (key_select > -1 && key_jump)
 	{
-		if ((controller && gamepad_button_check_pressed(_dvc, gp_face1)) || (!controller && (!gamepad_button_check_pressed(_dvc, gp_face1))))
+		if ((controller && gamepad_button_check_pressed(_dvc, gp_face1)) or (!controller && (!gamepad_button_check_pressed(_dvc, gp_face1))))
 		{
 			selecting = 1
 			startbuffer = 1
@@ -137,7 +137,7 @@ else if (!controller)
 	if keyboard_check_pressed(vk_anykey)
 	{
 		var _is_pause = input[key_select][0] == "key_start"
-		if ((keyboard_key != vk_escape || _is_pause) && keyboard_key != vk_return && (!_is_pause || keyboard_key != vk_space))
+		if ((keyboard_key != vk_escape or _is_pause) && keyboard_key != vk_return && (!_is_pause or keyboard_key != vk_space))
 		{
 			for (i = 0; i < array_length(input); i++)
 			{
@@ -170,7 +170,7 @@ else
 		variable_global_set(concat(input[key_select][0], "C"), val)
 		selecting = 0
 	}
-	else if (val == gp_start || val == gp_select)
+	else if (val == gp_start or val == gp_select)
 	{
 		startbuffer = 5
 		selecting = 0

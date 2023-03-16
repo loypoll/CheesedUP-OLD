@@ -24,13 +24,13 @@ function scr_player_slap()
 		hsp = xscale * movespeed;
 	if (sprite_index != spr_player_slapdash)
 	{
-		if (move == 0 || scr_solid(x + hsp, y))
+		if (move == 0 or scr_solid(x + hsp, y))
 			movespeed = 0;
 		if (move != 0 && movespeed < 4)
 			movespeed += 0.25;
 		if (movespeed > 4)
 			movespeed -= 0.25;
-		if (((scr_solid(x + 1, y) && move == 1) || (scr_solid(x - 1, y) && move == -1)) && !place_meeting(x + sign(hsp), y, obj_slope))
+		if (((scr_solid(x + 1, y) && move == 1) or (scr_solid(x - 1, y) && move == -1)) && !place_meeting(x + sign(hsp), y, obj_slope))
 			movespeed = 0;
 	}
 	landAnim = false;
@@ -118,7 +118,7 @@ function scr_player_slap()
 			state = states.jump;
 		}
 	}
-	if (!instance_exists(obj_cloudeffect) && grounded && move != 0 && (floor(image_index) == 4 || floor(image_index) == 10))
+	if (!instance_exists(obj_cloudeffect) && grounded && move != 0 && (floor(image_index) == 4 or floor(image_index) == 10))
 		instance_create(x, y + 43, obj_cloudeffect);
 	image_speed = 0.35;
 }

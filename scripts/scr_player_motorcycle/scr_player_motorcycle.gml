@@ -1,7 +1,7 @@
 function scr_player_motorcycle()
 {
 	hsp = xscale * movespeed;
-	if (grounded || !jumped)
+	if (grounded or !jumped)
 		movespeed = Approach(movespeed, 13, 0.5);
 	else
 		movespeed = Approach(movespeed, 8, 0.5);
@@ -23,7 +23,7 @@ function scr_player_motorcycle()
 		vsp /= 10;
 		jumpstop = true;
 	}
-	if ((check_wall(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_slope))
+	if ((check_wall(x + sign(hsp), y) or scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_slope))
 	{
 		jumpstop = false;
 		vsp = -11;

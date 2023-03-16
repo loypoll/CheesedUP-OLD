@@ -5,7 +5,7 @@ function state_boss_stun()
 		stuntouchbuffer--;
 	sprite_index = stunfallspr;
 	image_speed = 0.35;
-	if ((grounded || (grounded && !place_meeting(x, y, obj_platform))) && vsp > 0)
+	if ((grounded or (grounded && !place_meeting(x, y, obj_platform))) && vsp > 0)
 	{
 		if (thrown == 1 && hp <= 0 && destroyable)
 			instance_destroy();

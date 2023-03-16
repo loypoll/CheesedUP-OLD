@@ -10,19 +10,19 @@ function scr_hurtplayer(player)
 		if (global.failcutscene)
 		{
 		}
-		else if (state == states.ratmounthurt || state == states.supergrab || state == states.pizzaface_phase2transition || state == states.parry || instance_exists(obj_vigilante_duelintro) || state == states.taxi || state == states.spaceshuttle || state == states.tube || state == states.debugstate || state == states.golf || state == states.slipbanan)
+		else if (state == states.ratmounthurt or state == states.supergrab or state == states.pizzaface_phase2transition or state == states.parry or instance_exists(obj_vigilante_duelintro) or state == states.taxi or state == states.spaceshuttle or state == states.tube or state == states.debugstate or state == states.golf or state == states.slipbanan)
 		{
 		}
 		else if (global.noisejetpack == 1)
 		{
 		}
-		else if (holycross > 0 || invtime > 0)
+		else if (holycross > 0 or invtime > 0)
 		{
 		}
 		else if (sprite_index == spr_player_jetpackstart2)
 		{
 		}
-		else if ((state == states.backbreaker && (parrytimer > 0 || instance_exists(obj_parryhitbox) || sprite_index == spr_supertaunt1 || sprite_index == spr_supertaunt2 || sprite_index == spr_supertaunt3 || sprite_index == spr_supertaunt4 || sprite_index == spr_player_ratmountsupertaunt)) || state == states.chainsaw || state == states.phase1hurt || state == states.actor || instance_exists(obj_bossdark))
+		else if ((state == states.backbreaker && (parrytimer > 0 or instance_exists(obj_parryhitbox) or sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_ratmountsupertaunt)) or state == states.chainsaw or state == states.phase1hurt or state == states.actor or instance_exists(obj_bossdark))
 		{
 			if (state == states.backbreaker)
 				trace(parrytimer);
@@ -102,7 +102,7 @@ function scr_hurtplayer(player)
 		else if (state == states.shotgundash)
 		{
 		}
-		else if ((state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes || state == states.knightpepbump) && cutscene == 0)
+		else if ((state == states.knightpep or state == states.knightpepattack or state == states.knightpepslopes or state == states.knightpepbump) && cutscene == 0)
 		{
 		}
 		else if (state == states.ghost)
@@ -153,7 +153,7 @@ function scr_hurtplayer(player)
 			hurted = true;
 			sound_play_3d("event:/sfx/pep/hurt", x, y);
 		}
-		else if (state != states.hurt && state != states.ratmounthurt && state != states.grabbed && (hurted == 0 || state == states.cheesepep || state == states.cheesepepstickside || state == states.cheesepepstickup) && cutscene == 0)
+		else if (state != states.hurt && state != states.ratmounthurt && state != states.grabbed && (hurted == 0 or state == states.cheesepep or state == states.cheesepepstickside or state == states.cheesepepstickup) && cutscene == 0)
 		{
 			if (state == states.animatronic)
 			{
@@ -164,7 +164,7 @@ function scr_hurtplayer(player)
 				with (create_debris(x, y, spr_animatronicdebris))
 					image_index = 2;
 			}
-			if (state == states.barrel || state == states.barrelclimbwall || state == states.barreljump || state == states.barrelslide)
+			if (state == states.barrel or state == states.barrelclimbwall or state == states.barreljump or state == states.barrelslide)
 			{
 				repeat (4)
 					create_debris(x, y, spr_barreldebris);
@@ -172,7 +172,7 @@ function scr_hurtplayer(player)
 			var _old_xscale = xscale;
 			if (x != other.x)
 				xscale = sign(other.x - x);
-			if (state == states.mort || state == states.morthook || state == states.mortjump || state == states.mortattack)
+			if (state == states.mort or state == states.morthook or state == states.mortjump or state == states.mortattack)
 			{
 				sound_play_3d("event:/sfx/mort/mortdead", x, y);
 				create_debris(x, y - 40, spr_mortdead);
@@ -211,7 +211,7 @@ function scr_hurtplayer(player)
 				else
 					y = obj_player1.y;
 			}
-			if (state == states.trashroll || state == states.trashjump)
+			if (state == states.trashroll or state == states.trashjump)
 				create_debris(x, y, spr_player_trashlid);
 			scr_sleep(100);
 			sound_play_3d("event:/sfx/pep/hurt", x, y);
@@ -299,7 +299,7 @@ function scr_hurtplayer(player)
 					global.collect = 0;
 				if (global.collect != 0)
 				{
-					if (character == "P" || character == "V")
+					if (character == "P" or character == "V")
 					{
 						repeat (10)
 						{

@@ -53,7 +53,7 @@ switch (state)
 			railmovespeed = 0;
 		with (instance_place(x + hsp, y, obj_destructibles))
 			instance_destroy();
-		if (check_wall(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
+		if (check_wall(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
 		{
 			sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 			state = states.stun;
@@ -82,7 +82,7 @@ switch (state)
 			railspeed = 0;
 			sprite_index = walkspr;
 		}
-		if (check_wall(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
+		if (check_wall(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x, y, obj_destructibles))
 		{
 			sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 			state = states.stun;
@@ -124,7 +124,7 @@ if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset == 0)
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 20) && y >= (targetplayer.y - 20)))
 	{
-		if (state == states.walk || (state == states.idle && sprite_index != scaredspr))
+		if (state == states.walk or (state == states.idle && sprite_index != scaredspr))
 		{
 			sound_play_3d("event:/sfx/enemies/projectile", x, y);
 			image_index = 0;
@@ -200,7 +200,7 @@ if (state == states.tackle && image_index > 8)
 }
 if (state != states.slap && state != states.mach2 && state != states.tackle)
 	snd = false;
-if (state == states.mach2 || (state == states.slap && image_index > 11) || (state == states.tackle && image_index > 8))
+if (state == states.mach2 or (state == states.slap && image_index > 11) or (state == states.tackle && image_index > 8))
 {
 	if (!hitboxcreate)
 	{
@@ -209,7 +209,7 @@ if (state == states.mach2 || (state == states.slap && image_index > 11) || (stat
 		{
 			if (other.state == states.slap)
 				sprite_index = spr_swordhitbox;
-			else if (other.state == states.mach2 || other.state == states.tackle)
+			else if (other.state == states.mach2 or other.state == states.tackle)
 				sprite_index = spr_bighitbox;
 			ID = other.id;
 		}

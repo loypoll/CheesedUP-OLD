@@ -1,6 +1,6 @@
 with (baddieID)
 {
-	if (alarm[5] != -1 || state == states.punch)
+	if (alarm[5] != -1 or state == states.punch)
 	{
 		var p = patroltimermax - patroltimer;
 		if (state == states.punch)

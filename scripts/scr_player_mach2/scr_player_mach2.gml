@@ -98,7 +98,7 @@ function scr_player_mach2()
 			create_particle(x, y, particle.jumpdust, 0);
 		}
 	}
-	if ((!grounded && (check_wall(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (check_wall(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
+	if ((!grounded && (check_wall(x + hsp, y) or scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) or (grounded && (check_wall(x + sign(hsp), y - 16) or scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && place_meeting(x, y + 1, obj_slope)))
 	{
 		wallspeed = movespeed;
 		grabclimbbuffer = 0;
@@ -124,7 +124,7 @@ function scr_player_mach2()
 			other.dashcloudid = id;
 		}
 	}
-	if (grounded && floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup || sprite_index == spr_player_rampjump))
+	if (grounded && floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup or sprite_index == spr_player_rampjump))
 		sprite_index = spr_mach;
 	if (floor(image_index) == (image_number - 1) && sprite_index == spr_suplexdash)
 		sprite_index = spr_mach;
@@ -160,7 +160,7 @@ function scr_player_mach2()
 		state = states.handstandjump;
 		movespeed = 0;
 	}
-	if ((!key_attack && movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0) || (character == "S" && move == 0 && grounded))
+	if ((!key_attack && movespeed >= 8 && grounded && vsp > 0 && skateboarding == 0) or (character == "S" && move == 0 && grounded))
 	{
 		image_index = 0;
 		state = states.machslide;
@@ -217,7 +217,7 @@ function scr_player_mach2()
 			vsp = -6;
 		}
 	}
-	if (sprite_index == spr_rollgetup || sprite_index == spr_player_longjumpend || sprite_index == spr_player_longjump || sprite_index == spr_suplexdash)
+	if (sprite_index == spr_rollgetup or sprite_index == spr_player_longjumpend or sprite_index == spr_player_longjump or sprite_index == spr_suplexdash)
 		image_speed = 0.4;
 	else
 		image_speed = abs(movespeed) / 15;
@@ -226,7 +226,7 @@ function scr_player_mach2()
 		sprite_index = spr_clown;
 	if (mortjump)
 		sprite_index = spr_player_mortjumpstart;
-	if (state != states.machslide && scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
+	if (state != states.machslide && scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) or check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 	{
 		if (skateboarding)
 			xscale *= -1;

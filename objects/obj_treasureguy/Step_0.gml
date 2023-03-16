@@ -35,7 +35,7 @@ switch (state)
 				vsp = 0;
 			sprite_index = spr_minijohn_underground;
 			visible = false;
-			if (player.x > (x - 80) && player.x < (x + 80) && y <= (player.y + 60) && y >= (player.y - 60) && (player.state == states.freefallland || player.sprite_index == player.spr_piledriverland))
+			if (player.x > (x - 80) && player.x < (x + 80) && y <= (player.y + 60) && y >= (player.y - 60) && (player.state == states.freefallland or player.sprite_index == player.spr_piledriverland))
 			{
 				sound_play_3d("event:/sfx/enemies/treasureguy", x, y);
 				notification_push(notifs.treasureguy_unbury, [room, object_index, id]);
@@ -123,7 +123,7 @@ if (state == states.chase)
 	hsp = image_xscale * runmovespeed;
 	if (grounded)
 	{
-		if (scr_solid(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) || place_meeting(x + sign(hsp), y - 4, obj_slope)))
+		if (scr_solid(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) or place_meeting(x + sign(hsp), y - 4, obj_slope)))
 		{
 			if (!jumped)
 			{

@@ -11,7 +11,7 @@ if (place_meeting(x, y - 1, obj_player))
 				{
 					if (state != states.barrel && state != states.barreljump && state != states.barrelslide && state != states.barrelclimbwall)
 					{
-						if (state != states.slipnslide || sprite_index != spr_currentplayer)
+						if (state != states.slipnslide or sprite_index != spr_currentplayer)
 							sound_play_3d("event:/sfx/misc/waterslidesplash", x, y);
 						state = states.slipnslide;
 						sprite_index = spr_currentplayer;

@@ -252,7 +252,7 @@ if (!fadein)
 				{
 					image_xscale = Approach(image_xscale, 0, 0.04);
 					image_yscale = image_xscale;
-					if (image_xscale <= 0 || y >= ((room_height / 2) + 120))
+					if (image_xscale <= 0 or y >= ((room_height / 2) + 120))
 					{
 						sound_play("event:/sfx/ending/star");
 						image_xscale = 1;

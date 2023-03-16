@@ -72,7 +72,7 @@ if (bombreset > 0)
 	bombreset--;
 if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)))
 {
-	if (state != states.rage && bombreset <= 0 && (global.stylethreshold >= 3 || elite) && state == states.walk)
+	if (state != states.rage && bombreset <= 0 && (global.stylethreshold >= 3 or elite) && state == states.walk)
 	{
 		state = states.rage;
 		sprite_index = spr_tank_chargestart;

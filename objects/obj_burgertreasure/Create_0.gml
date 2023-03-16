@@ -1,7 +1,7 @@
 event_inherited();
 got_func = function()
 {
-	if (global.burgercutscene == -4 || !global.burgercutscene)
+	if (global.burgercutscene == -4 or !global.burgercutscene)
 	{
 		global.burgercutscene = true;
 		quick_ini_write_real(get_savefile_ini(), "cutscene", "burger", true);

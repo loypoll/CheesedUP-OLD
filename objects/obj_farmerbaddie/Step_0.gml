@@ -94,7 +94,7 @@ else if (state == states.charge)
 	t = playerid.x > (x - x1) && playerid.x < (x + x1) && playerid.y > (y - 400) && playerid.y < (y + 400);
 	hsp = image_xscale * attackspeed;
 	var q = outofsight;
-	if (!t || collision_line(x, y, playerid.x, playerid.y, obj_solid, true, false) != -4)
+	if (!t or collision_line(x, y, playerid.x, playerid.y, obj_solid, true, false) != -4)
 		outofsight = true;
 	if (t)
 		outofsight = false;

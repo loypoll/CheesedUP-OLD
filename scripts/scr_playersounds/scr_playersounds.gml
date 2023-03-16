@@ -50,7 +50,7 @@ function scr_playersounds()
 		fmod_event_instance_set_3d_attributes(animatronicsnd, x, y);
 		fmod_event_instance_set_3d_attributes(snd_dashpad, x, y);
 		fmod_event_instance_set_3d_attributes(gallopingsnd, x, y);
-		if (state == states.freefall || state == states.freefallprep || (state == states.superslam || (state == states.chainsaw && tauntstoredstate == states.superslam)))
+		if (state == states.freefall or state == states.freefallprep or (state == states.superslam or (state == states.chainsaw && tauntstoredstate == states.superslam)))
 		{
 			if (!fmod_event_instance_is_playing(freefallsnd))
 				fmod_event_instance_play(freefallsnd);
@@ -59,7 +59,7 @@ function scr_playersounds()
 		}
 		else
 			fmod_event_instance_stop(freefallsnd, true);
-		if (state == states.mach2 || state == states.mach3 || state == states.climbwall || state == states.rocket)
+		if (state == states.mach2 or state == states.mach3 or state == states.climbwall or state == states.rocket)
 		{
 			fmod_event_instance_set_paused(machsnd, false);
 			if (!fmod_event_instance_is_playing(machsnd))
@@ -67,7 +67,7 @@ function scr_playersounds()
 			var s = 0;
 			if (state == states.mach2 && sprite_index == spr_mach1 && grounded)
 				s = 1;
-			else if ((state == states.mach2 && sprite_index == spr_mach) || state == states.climbwall)
+			else if ((state == states.mach2 && sprite_index == spr_mach) or state == states.climbwall)
 				s = 2;
 			else if (state == states.mach3 && sprite_index != spr_crazyrun)
 				s = 3;
@@ -80,7 +80,7 @@ function scr_playersounds()
 		}
 		else
 			fmod_event_instance_stop(machsnd, true);
-		if ((state == states.knightpepslopes && grounded && vsp > 0) || state == states.grind || (state == states.trashroll && grounded && vsp > 0 && sprite_index == spr_player_trashslide))
+		if ((state == states.knightpepslopes && grounded && vsp > 0) or state == states.grind or (state == states.trashroll && grounded && vsp > 0 && sprite_index == spr_player_trashslide))
 		{
 			if (!fmod_event_instance_is_playing(knightslidesnd))
 				fmod_event_instance_play(knightslidesnd);
@@ -109,7 +109,7 @@ function scr_playersounds()
 			fmod_event_instance_stop(superjumpsnd, true);
 		if (fmod_event_instance_is_playing(superjumpsnd))
 			fmod_event_instance_set_3d_attributes(superjumpsnd, x, y);
-		if (sprite_index == spr_tumblestart || sprite_index == spr_tumble)
+		if (sprite_index == spr_tumblestart or sprite_index == spr_tumble)
 		{
 			if (!fmod_event_instance_is_playing(tumblesnd))
 			{
@@ -131,7 +131,7 @@ function scr_playersounds()
 			}
 			tumbleintro = false;
 		}
-		if (sprite_index == spr_machroll || sprite_index == spr_backslide || sprite_index == spr_backslideland)
+		if (sprite_index == spr_machroll or sprite_index == spr_backslide or sprite_index == spr_backslideland)
 		{
 			if (!fmod_event_instance_is_playing(machrollsnd))
 				fmod_event_instance_play(machrollsnd);
@@ -200,12 +200,12 @@ function scr_playersounds()
 			}
 			hamkuffID = -4;
 		}
-		if ((state == states.ratmount || state == states.ratmountjump) && ratmount_movespeed >= 12 && (sprite_index == spr_player_ratmountattack || sprite_index == spr_player_ratmountmach3 || sprite_index == spr_player_ratmountdashjump || sprite_index == spr_lonegustavo_dash || sprite_index == spr_lonegustavo_mach3 || sprite_index == spr_lonegustavo_dashjump))
+		if ((state == states.ratmount or state == states.ratmountjump) && ratmount_movespeed >= 12 && (sprite_index == spr_player_ratmountattack or sprite_index == spr_player_ratmountmach3 or sprite_index == spr_player_ratmountdashjump or sprite_index == spr_lonegustavo_dash or sprite_index == spr_lonegustavo_mach3 or sprite_index == spr_lonegustavo_dashjump))
 		{
 			if (!fmod_event_instance_is_playing(ratmountmachsnd))
 				fmod_event_instance_play(ratmountmachsnd);
 			s = 0;
-			if (sprite_index == spr_player_ratmountmach3 || sprite_index == spr_lonegustavo_mach3 || sprite_index == spr_player_ratmountdashjump || sprite_index == spr_lonegustavo_dashjump)
+			if (sprite_index == spr_player_ratmountmach3 or sprite_index == spr_lonegustavo_mach3 or sprite_index == spr_player_ratmountdashjump or sprite_index == spr_lonegustavo_dashjump)
 				s = 1;
 			fmod_event_instance_set_parameter(ratmountmachsnd, "state", s, true);
 			if (grounded)

@@ -162,7 +162,7 @@ variable_global_set("meta_shell_set_height", function() {
 variable_global_set("sh_shell_set_anchor_v", function(args) {
 	if (array_length(args) > 1) {
 		var newAnchor = args[1];
-		if (newAnchor == "top" || newAnchor == "middle" || newAnchor == "bottom") {
+		if (newAnchor == "top" or newAnchor == "middle" or newAnchor == "bottom") {
 			screenAnchorPointV = newAnchor;
 		} else {
 			return "Invalid anchor point.\nPossible values: [top, middle, bottom]";
@@ -190,7 +190,7 @@ variable_global_set("meta_shell_set_anchor_v", function() {
 variable_global_set("sh_shell_set_anchor_h", function(args) {
 	if (array_length(args) > 1) {
 		var newAnchor = args[1];
-		if (newAnchor == "left" || newAnchor == "center" || newAnchor == "right") {
+		if (newAnchor == "left" or newAnchor == "center" or newAnchor == "right") {
 			screenAnchorPointH = newAnchor;
 		} else {
 			return "Invalid anchor point.\nPossible values: [left, center, right]";

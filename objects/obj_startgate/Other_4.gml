@@ -51,7 +51,7 @@ switch targetRoom
 		level = "b_pizzaface"
 		break
 }
-if (targetRoom == boss_pepperman || targetRoom == boss_vigilante || targetRoom == boss_noise || targetRoom == boss_fakepep)
+if (targetRoom == boss_pepperman or targetRoom == boss_vigilante or targetRoom == boss_noise or targetRoom == boss_fakepep)
 	boss = true;
 if (object_index != obj_bossdoor)
 {

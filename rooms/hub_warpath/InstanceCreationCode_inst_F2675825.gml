@@ -23,7 +23,7 @@ dialog_func = function()
 {
 	if (!global.kidspartycutscene)
 		do_dialog(g_dialog[0]);
-	else if (!global.mrstickcutscene1 || !global.mrstickcutscene2 || !global.mrstickcutscene3)
+	else if (!global.mrstickcutscene1 or !global.mrstickcutscene2 or !global.mrstickcutscene3)
 		do_dialog(g_dialog[1]);
 	else if (!global.gasolinecutscene)
 		do_dialog(g_dialog[2]);

@@ -94,5 +94,5 @@ if (boundbox == 0)
 		other.boundbox = true;
 	}
 }
-if (sprite_index == idlespr && (hsp != 0 || vsp != 0))
+if (sprite_index == idlespr && (hsp != 0 or vsp != 0))
 	sprite_index = walkspr;

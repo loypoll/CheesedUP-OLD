@@ -6,14 +6,14 @@ timer_ystart = SCREEN_HEIGHT + timer_yplus;
 if (global.combotime > 0 && global.combo > 0)
 	visualcombo = global.combo;
 
-if (room == Realtitlescreen || room == Longintro || room == Mainmenu || room == rank_room || room == rm_levelselect || room == timesuproom || room == boss_room1 || room == characterselect || room == hub_loadingscreen || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic) || room == rm_onlinerace)
+if (room == Realtitlescreen or room == Longintro or room == Mainmenu or room == rank_room or room == rm_levelselect or room == timesuproom or room == boss_room1 or room == characterselect or room == hub_loadingscreen or (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic) or room == rm_onlinerace)
 {
 	visible = false;
 	sprite_index = spr_tv_off;
 }
 else
 	visible = true;
-if ((instance_exists(obj_debugcontroller) && !obj_debugcontroller.showhud) || !global.option_hud)
+if ((instance_exists(obj_debugcontroller) && !obj_debugcontroller.showhud) or !global.option_hud)
 	visible = false;
 
 image_speed = 0.35;
@@ -41,7 +41,7 @@ if (bubblespr != -4 && bubblespr != spr_tv_bubbleclosed)
                 break
             case spr_tv_bubbleclose:
                 bubblespr = spr_tv_bubbleclosed
-                if (prompt == -4 || prompt == "")
+                if (prompt == -4 or prompt == "")
                     bubblespr = -4
                 break
 		}
@@ -68,7 +68,7 @@ switch (state)
 		}
 		
 		var _state = obj_player1.state;
-		if (_state == states.backbreaker || _state == states.chainsaw)
+		if (_state == states.backbreaker or _state == states.chainsaw)
 			_state = obj_player1.tauntstoredstate;
 		
 		var _transfo = true;
@@ -84,7 +84,7 @@ switch (state)
 			{
 				if (mach4mode == 1)
 					tv_do_expression(spr_tv_exprmach4);
-				else if (state == states.mach3 || sprite_index == spr_mach3boost)
+				else if (state == states.mach3 or sprite_index == spr_mach3boost)
 					tv_do_expression(spr_tv_exprmach3);
 			}
 		}
@@ -273,7 +273,7 @@ switch (state)
 				break;
 			
 			case spr_tv_exprcombo:
-				if (global.combo < 3 || _transfospr != -4 || obj_player1.isgustavo || obj_player1.mach4mode || obj_player1.state == states.hurt || obj_player1.state == states.mach3 || obj_player1.sprite_index == obj_player1.spr_mach3boost || global.stylethreshold >= 3)
+				if (global.combo < 3 or _transfospr != -4 or obj_player1.isgustavo or obj_player1.mach4mode or obj_player1.state == states.hurt or obj_player1.state == states.mach3 or obj_player1.sprite_index == obj_player1.spr_mach3boost or global.stylethreshold >= 3)
 				{
 					state = states.tv_whitenoise;
 					expressionsprite = -4;
@@ -296,7 +296,7 @@ switch (state)
 			case spr_tv_exprmach3:
 				with (obj_player1)
 				{
-					if (state != states.mach3 && state != states.climbwall && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)) && sprite_index != spr_mach3boost && mach4mode == 0)
+					if (state != states.mach3 && state != states.climbwall && (state != states.chainsaw or (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)) && sprite_index != spr_mach3boost && mach4mode == 0)
 					{
 						other.state = states.tv_whitenoise;
 						other.expressionsprite = -4;
@@ -309,7 +309,7 @@ switch (state)
 			case spr_tv_exprmach4:
 				with (obj_player1)
 				{
-					if (mach4mode == 0 && (state != states.chainsaw || (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)))
+					if (mach4mode == 0 && (state != states.chainsaw or (tauntstoredstate != states.mach3 && tauntstoredstate != states.climbwall)))
 					{
 						other.state = states.tv_whitenoise;
 						other.expressionsprite = -4;
@@ -326,7 +326,7 @@ switch (state)
 					if (isgustavo)
 						_transfo = true;
 				}
-				if (global.stylethreshold < 3 || _transfo || obj_player1.mach4mode || obj_player1.state == states.hurt || obj_player1.state == states.mach3 || obj_player1.sprite_index == obj_player1.spr_mach3boost)
+				if (global.stylethreshold < 3 or _transfo or obj_player1.mach4mode or obj_player1.state == states.hurt or obj_player1.state == states.mach3 or obj_player1.sprite_index == obj_player1.spr_mach3boost)
 				{
 					state = states.tv_whitenoise;
 					expressionsprite = noone;
@@ -342,7 +342,7 @@ switch (state)
 					if (isgustavo)
 						_transfo = true;
 				}
-				if (!global.panic || _transfo || obj_player1.mach4mode || obj_player1.state == states.hurt || obj_player1.state == states.mach3 || obj_player1.sprite_index == obj_player1.spr_mach3boost)
+				if (!global.panic or _transfo or obj_player1.mach4mode or obj_player1.state == states.hurt or obj_player1.state == states.mach3 or obj_player1.sprite_index == obj_player1.spr_mach3boost)
 				{
 					state = states.tv_whitenoise;
 					expressionsprite = noone;

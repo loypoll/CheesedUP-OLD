@@ -15,7 +15,7 @@ function scr_player_machroll()
 		default:
 			if character != "N" or noisetype == 0
 			{
-				if (scr_solid(x + xscale, y) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+				if (scr_solid(x + xscale, y) && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 				{
 					hsp = 0;
 					image_speed = 0.35;
@@ -58,7 +58,7 @@ function scr_player_machroll()
 					image_index = 0;
 					if (grounded)
 						sprite_index = spr_rollgetup;
-					if (movespeed < 12 || skateboarding == 1)
+					if (movespeed < 12 or skateboarding == 1)
 					{
 						if (!grounded)
 							sprite_index = spr_mach;
@@ -102,7 +102,7 @@ function scr_player_machroll()
 					image_index = 0;
 					instance_create(x - 10, y + 10, obj_bumpeffect);
 				}
-				if ((!key_down || !grounded) && !scr_solid(x + 27, y - 32) && !scr_solid(x - 27, y - 32) && !scr_solid(x, y - 32) && !scr_solid(x, y - 16))
+				if ((!key_down or !grounded) && !scr_solid(x + 27, y - 32) && !scr_solid(x - 27, y - 32) && !scr_solid(x, y - 32) && !scr_solid(x, y - 16))
 				{
 					image_index = 0;
 					state = states.mach3;

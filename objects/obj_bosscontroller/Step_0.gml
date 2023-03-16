@@ -21,7 +21,7 @@ player_index = wrap(player_index, 0, sprite_get_number(spr_bossfight_playerhp));
 boss_index = wrap(boss_index, 0, sprite_get_number(boss_hpsprite));
 if (room == boss_vigilante)
 {
-	if ((instance_exists(obj_vigilanteboss) && obj_vigilanteboss.state == states.duel) || instance_exists(obj_vigilante_duelintro))
+	if ((instance_exists(obj_vigilanteboss) && obj_vigilanteboss.state == states.duel) or instance_exists(obj_vigilante_duelintro))
 		image_alpha = 0;
 	else
 		image_alpha = Approach(image_alpha, 1, 0.1);

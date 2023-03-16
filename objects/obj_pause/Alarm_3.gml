@@ -50,5 +50,5 @@ else
 	global.leveltorestart = -4;
 	global.leveltosave = -4;
 }
-if (rm == boss_pizzaface || rm == boss_noise || rm == boss_pepperman || rm == boss_fakepep || rm == boss_vigilante)
+if (rm == boss_pizzaface or rm == boss_noise or rm == boss_pepperman or rm == boss_fakepep or rm == boss_vigilante)
 	global.bossintro = true;

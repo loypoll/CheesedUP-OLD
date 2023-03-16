@@ -9,7 +9,7 @@ if (!instance_exists(playerid))
 var _move = true;
 with (obj_player)
 {
-	if (state == states.taxi || state == states.victory || state == states.keyget || state == states.gottreasure || state == states.door || state == states.spaceshuttle)
+	if (state == states.taxi or state == states.victory or state == states.keyget or state == states.gottreasure or state == states.door or state == states.spaceshuttle)
 		_move = false;
 }
 if (!treasure)

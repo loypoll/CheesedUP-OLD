@@ -2,7 +2,7 @@ if (DEBUG)
 {
 	with (obj_solid)
 	{
-		if (object_index == obj_solid || object_index == obj_secretbigblock || object_index == obj_secretblock || object_index == obj_secretmetalblock)
+		if (object_index == obj_solid or object_index == obj_secretbigblock or object_index == obj_secretblock or object_index == obj_secretmetalblock)
 			visible = other.showcollisions;
 	}
 	with (obj_slope)

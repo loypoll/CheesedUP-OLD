@@ -5,13 +5,13 @@ if (room != rank_room && room != timesuproom && room != Mainmenu)
 	alarm[0] = 200;
 }
 var r = string_letters(room_get_name(room));
-if (r != "towertutorial" && r != "towerup" && (string_copy(r, 1, 5) == "tower" || string_copy(r, 1, 5) == "streethouse") && !global.panic)
+if (r != "towertutorial" && r != "towerup" && (string_copy(r, 1, 5) == "tower" or string_copy(r, 1, 5) == "streethouse") && !global.panic)
 	visible = true;
 else
 	visible = false;
 if (is_bossroom())
 	visible = false;
-if (room == tower_soundtest || room == Mainmenu)
+if (room == tower_soundtest or room == Mainmenu)
 {
 	visible = false;
 	yi = -50;

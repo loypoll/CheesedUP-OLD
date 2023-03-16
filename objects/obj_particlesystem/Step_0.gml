@@ -27,9 +27,9 @@ if (!ds_list_empty(global.debris_list))
 					}
 					image_index += image_speed;
 				}
-				var outofx = x > (room_width + sprw) || x < -sprw;
-				var outofy = y > (room_height + sprh) || y < -sprh;
-				if (outofx || outofy || (type == part_type.fadeout && alpha <= 0))
+				var outofx = x > (room_width + sprw) or x < -sprw;
+				var outofy = y > (room_height + sprh) or y < -sprh;
+				if (outofx or outofy or (type == part_type.fadeout && alpha <= 0))
 					_destroy = true;
 				if (_destroy)
 				{

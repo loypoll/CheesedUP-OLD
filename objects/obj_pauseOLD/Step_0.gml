@@ -95,7 +95,7 @@ if (pause && !instance_exists(obj_option))
 					depth = other.depth - 1;
 				break;
 			case 3:
-				if (room == hub_room1 || room == characterselect || room == cowboytask || room == Titlescreen || room == Mainmenu || room == Scootertransition || room == rm_levelselect || string_letters(room_get_name(room)) == "towertutorial" || (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
+				if (room == hub_room1 or room == characterselect or room == cowboytask or room == Titlescreen or room == Mainmenu or room == Scootertransition or room == rm_levelselect or string_letters(room_get_name(room)) == "towertutorial" or (string_copy(room_get_name(room), 1, 5) == "tower" && !global.panic))
 				{
 					pause = false;
 					instance_activate_all();

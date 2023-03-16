@@ -1,6 +1,6 @@
 if (other.state != states.gotoplayer && other.state != states.chainsaw)
 {
-	if (other.state == states.knightpep || other.state == states.knightpepslopes || other.state == states.cheeseball)
+	if (other.state == states.knightpep or other.state == states.knightpepslopes or other.state == states.cheeseball)
 	{
 		repeat (8)
 		{

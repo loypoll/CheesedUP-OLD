@@ -11,7 +11,7 @@ if (global.hatcutscene3 == -4)
 sprite_index = spr_playerV_idle;
 v_dialog[0] = [dialog_create("wash my darn hat", -4, function()
 {
-	if (global.hatcutscene1 == -4 || !global.hatcutscene1)
+	if (global.hatcutscene1 == -4 or !global.hatcutscene1)
 	{
 		global.hatcutscene1 = true;
 		quick_ini_write_real(get_savefile_ini(), "cutscene", "hat1", true);
@@ -25,7 +25,7 @@ v_dialog[1] = [[cutscene_do_dialog, [dialog_create("there you go, a jetpack")]],
 v_dialog[2] = [dialog_create("you washed my darn hat")];
 dialog_func = function()
 {
-	if (!global.hatcutscene1 || !global.hatcutscene3)
+	if (!global.hatcutscene1 or !global.hatcutscene3)
 		do_dialog(v_dialog[0]);
 	else if (global.hatcutscene3)
 		do_dialog_cutscene(v_dialog[1]);

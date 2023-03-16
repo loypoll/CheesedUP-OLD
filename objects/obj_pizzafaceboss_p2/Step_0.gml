@@ -51,7 +51,7 @@ switch (state)
 }
 if (obj_player1.state != states.actor && obj_player1.y >= (y - 20) && obj_player1.state != states.animation && state != states.hit && state != states.stun && state != states.phase1hurt && hsp == 0 && state != states.fall)
 {
-	if ((x > (room_width / 2) && obj_player1.x >= (x - 60)) || (x <= (room_width / 2) && obj_player1.x <= (x + 60)))
+	if ((x > (room_width / 2) && obj_player1.x >= (x - 60)) or (x <= (room_width / 2) && obj_player1.x <= (x + 60)))
 	{
 		with (obj_player)
 		{

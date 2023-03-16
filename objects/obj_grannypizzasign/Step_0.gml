@@ -30,7 +30,7 @@ switch (text_state)
 	
 	case states.normal:
 		text_y = Approach(text_y, text_ystart, 2);
-		if (!place_meeting(x, y, obj_player) || _hide)
+		if (!place_meeting(x, y, obj_player) or _hide)
 			text_state = states.titlescreen;
 		break;
 }

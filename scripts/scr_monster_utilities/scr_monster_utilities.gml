@@ -124,7 +124,7 @@ function scr_monster_detect(argument0, argument1, argument2)
 		{
 			with (argument2)
 			{
-				if (state != states.crouch || (!scr_solid(x, y - 24) && !place_meeting(x, y - 24, obj_platform)))
+				if (state != states.crouch or (!scr_solid(x, y - 24) && !place_meeting(x, y - 24, obj_platform)))
 					detect = true;
 			}
 		}
@@ -137,7 +137,7 @@ function scr_puppet_detect()
 {
 	with (obj_player)
 	{
-		if ((object_index != obj_player2 || global.coop) && !place_meeting(x, y, obj_puppetsafezone))
+		if ((object_index != obj_player2 or global.coop) && !place_meeting(x, y, obj_puppetsafezone))
 		{
 			return id;
 		}
@@ -190,14 +190,14 @@ function scr_monsterinvestigate(speed, walkspr, idlespr)
 		case 1:
 			sprite_index = walkspr;
 			hsp = image_xscale * speed;
-			if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
+			if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) or place_meeting(x + sign(hsp), y - 4, obj_solid)))
 			{
 				investigatestate++;
 				image_xscale *= -1;
 			}
 			if (investigatestate == 1)
 			{
-				if ((image_xscale > 0 && x > (room_width / 2)) || (image_xscale < 0 && x < (room_width / 2)))
+				if ((image_xscale > 0 && x > (room_width / 2)) or (image_xscale < 0 && x < (room_width / 2)))
 				{
 					investigatestate = 2;
 					waitbuffer = 100;

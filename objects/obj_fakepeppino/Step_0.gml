@@ -30,7 +30,7 @@ if (!touched)
 				sprite_index = spr_fakepeppino_idle;
 			if (sprite_index == spr_fakepeppino_walk)
 			{
-				if (!steppy && (floor(image_index) == 2 || floor(image_index) == 7))
+				if (!steppy && (floor(image_index) == 2 or floor(image_index) == 7))
 				{
 					steppy = true;
 					create_particle(x, y + 38, particle.cloudeffect, 0);

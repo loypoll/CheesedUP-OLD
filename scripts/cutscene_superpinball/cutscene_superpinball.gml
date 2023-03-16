@@ -94,5 +94,5 @@ function cutscene_superpinball_end()
 }
 function check_player_coop()
 {
-	return object_index != obj_player2 || global.coop;
+	return object_index != obj_player2 or global.coop;
 }

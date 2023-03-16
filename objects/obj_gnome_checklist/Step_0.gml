@@ -34,7 +34,7 @@ else if (image_alpha < 1)
 	image_alpha += 0.1;
 else
 	image_alpha = 1;
-if (room == timesuproom || !global.showgnomelist)
+if (room == timesuproom or !global.showgnomelist)
 	visible = false;
 else
 	visible = true;

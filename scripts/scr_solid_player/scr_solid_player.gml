@@ -22,7 +22,7 @@ function scr_solid_player(_x, _y)
 					break;
 				
 				case obj_mach3solid:
-					if (state != states.mach3 && (state != states.machslide || sprite_index != spr_mach3boost) && (state != states.chainsaw || tauntstoredstate != states.mach3))
+					if (state != states.mach3 && (state != states.machslide or sprite_index != spr_mach3boost) && (state != states.chainsaw or tauntstoredstate != states.mach3))
 						_collided = true;
 					break;
 				

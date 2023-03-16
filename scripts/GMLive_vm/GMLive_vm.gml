@@ -541,16 +541,16 @@ function vm_group_field_on_field(l_th, l_act, l_scope, l_st) {
 	var l_z = l_st[0];
 	var l_ctx = l_st[l_z];
 	var l_val;
-	if (typeof(l_ctx) == "ref" || is_numeric(l_ctx) && l_ctx >= 100000) {
+	if (typeof(l_ctx) == "ref" or is_numeric(l_ctx) && l_ctx >= 100000) {
 		l_val = variable_instance_get(l_ctx, l_s);
-		if (l_val != undefined || variable_instance_exists(l_ctx, l_s)) {
+		if (l_val != undefined or variable_instance_exists(l_ctx, l_s)) {
 			l_st[@l_z] = l_val;
 			return 0;
 		}
 		if (variable_instance_exists(l_ctx, "id")) return vm_group_field_dump_no_var(l_th, l_act, l_ctx, l_s);
 	} else with (l_ctx) {
 		l_val = variable_instance_get(self, l_s);
-		if (l_val != undefined || variable_instance_exists(self, l_s)) {
+		if (l_val != undefined or variable_instance_exists(self, l_s)) {
 			l_st[@l_z] = l_val;
 			return 0;
 		}
@@ -568,7 +568,7 @@ function vm_group_field_on_field_set(l_th, l_act, l_scope, l_st) {
 	var l_ctx = l_st[l_z];
 	var l_val = l_st[l_z + 1];
 	var l_checkExists;
-	if (typeof(l_ctx) == "ref" || is_numeric(l_ctx) && l_ctx >= 100000) {
+	if (typeof(l_ctx) == "ref" or is_numeric(l_ctx) && l_ctx >= 100000) {
 		try {
 			l_checkExists = l_ctx.id
 		} catch (l__g) {
@@ -613,7 +613,7 @@ function vm_group_field_on_field_aop(l_th, l_act, l_scope, l_st) {
 	var l_ctx = l_st[l_z];
 	var l_val = l_st[l_z + 1];
 	var l_checkExists, l_cur;
-	if (typeof(l_ctx) == "ref" || is_numeric(l_ctx) && l_ctx >= 100000) {
+	if (typeof(l_ctx) == "ref" or is_numeric(l_ctx) && l_ctx >= 100000) {
 		try {
 			l_checkExists = l_ctx.id
 		} catch (l__g) {
@@ -623,7 +623,7 @@ function vm_group_field_on_field_aop(l_th, l_act, l_scope, l_st) {
 			return l_th.h_proc_error2(l_x, l_act);
 		}
 		l_cur = variable_instance_get(l_ctx, l_s);
-		if (l_cur != undefined || variable_instance_exists(l_ctx, l_s)) {
+		if (l_cur != undefined or variable_instance_exists(l_ctx, l_s)) {
 			l_cur = vm_group_op_funcs[l_o](l_cur, l_val);
 			variable_instance_set(l_ctx, l_s, l_cur);
 			l_st[@l_z] = 0;
@@ -638,7 +638,7 @@ function vm_group_field_on_field_aop(l_th, l_act, l_scope, l_st) {
 		l_checkExists = false;
 		with (l_ctx) {
 			l_cur = variable_instance_get(self, l_s);
-			if (l_cur != undefined || variable_instance_exists(l_ctx, l_s)) {
+			if (l_cur != undefined or variable_instance_exists(l_ctx, l_s)) {
 				l_cur = vm_group_op_funcs[l_o](l_cur, l_val);
 				variable_instance_set(self, l_s, l_cur);
 				l_checkExists = true;
@@ -835,7 +835,7 @@ function vm_group_field_on_in(l_th, l_act, l_scope, l_st) {
 	var l_z = l_st[0] - 1;
 	l_st[@0] = l_z;
 	var l_ctx = l_st[l_z + 1];
-	if (typeof(l_ctx) == "ref" || is_numeric(l_ctx) && l_ctx >= 100000) {
+	if (typeof(l_ctx) == "ref" or is_numeric(l_ctx) && l_ctx >= 100000) {
 		l_st[@l_z] = l_not != variable_instance_exists(l_ctx, l_st[l_z]);
 		return 0;
 	} else with (l_ctx) {

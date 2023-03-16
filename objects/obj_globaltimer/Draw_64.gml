@@ -1,6 +1,6 @@
-if (!global.option_timer || room == Realtitlescreen || room == Longintro || room == Finalintro || room == Mainmenu || room == hub_loadingscreen || room == Creditsroom || room == Johnresurrectionroom || room == rank_room || instance_exists(obj_titlecard) || !global.option_hud)
+if (!global.option_timer or room == Realtitlescreen or room == Longintro or room == Finalintro or room == Mainmenu or room == hub_loadingscreen or room == Creditsroom or room == Johnresurrectionroom or room == rank_room or instance_exists(obj_titlecard) or !global.option_hud)
 	exit;
-if (!global.option_hud || (instance_exists(obj_debugcontroller) && !obj_debugcontroller.showhud))
+if (!global.option_hud or (instance_exists(obj_debugcontroller) && !obj_debugcontroller.showhud))
 	exit;
 draw_set_color(c_white);
 var seconds = 0;

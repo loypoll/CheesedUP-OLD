@@ -125,7 +125,7 @@ function scr_fakepep_destroy_sounds()
 function scr_fakepep_update_sounds()
 {
 	fmod_event_instance_set_3d_attributes(snd_grab, x, y);
-	if (state == states.freefall || state == states.jump)
+	if (state == states.freefall or state == states.jump)
 	{
 		if (!fmod_event_instance_is_playing(snd_bodyslam))
 			fmod_event_instance_play(snd_bodyslam);
@@ -141,7 +141,7 @@ function scr_fakepep_update_sounds()
 	}
 	else
 		fmod_event_instance_stop(snd_mach, false);
-	if ((state == states.Sjumpprep || state == states.Sjump) && sprite_index != spr_fakepeppino_idle)
+	if ((state == states.Sjumpprep or state == states.Sjump) && sprite_index != spr_fakepeppino_idle)
 	{
 		if (!fmod_event_instance_is_playing(snd_superjump))
 			fmod_event_instance_play(snd_superjump);
@@ -306,7 +306,7 @@ function scr_fakepepboss_arenaintro()
 		}
 		if (floor(image_index) == (image_number - 1))
 		{
-			if (sprite_index == spr_fakepeppino_intro1 || sprite_index == spr_fakepeppino_intro2)
+			if (sprite_index == spr_fakepeppino_intro1 or sprite_index == spr_fakepeppino_intro2)
 				image_index = image_number - 1;
 			else if (sprite_index == spr_fakepeppino_intro3)
 				image_index = image_number - 4;
@@ -365,7 +365,7 @@ function scr_fakepepboss_arenaintro()
 }
 function scr_fakepepboss_walk()
 {
-	if (phase == 2 && (flickertime > 0 || !grounded))
+	if (phase == 2 && (flickertime > 0 or !grounded))
 	{
 		if (grounded)
 			hsp = Approach(hsp, 0, 0.25);
@@ -728,7 +728,7 @@ function scr_fakepepboss_mach2()
 					machdir = 3;
 				}
 			}
-			else if ((image_xscale > 0 && x >= targetplayer.x) || (image_xscale < 0 && x <= targetplayer.x))
+			else if ((image_xscale > 0 && x >= targetplayer.x) or (image_xscale < 0 && x <= targetplayer.x))
 			{
 				state = states.freefall;
 				sprite_index = spr_fakepeppino_bodyslamfall;
@@ -829,7 +829,7 @@ function scr_fakepepboss_Sjump()
 			y += sign(vsp);
 		while (place_meeting(x, y, obj_solid))
 			y -= sign(vsp);
-		if (superjumpbounce > 0 || superjumpdir == 0)
+		if (superjumpbounce > 0 or superjumpdir == 0)
 		{
 			superjumpbounce--;
 			superjumpdir = !superjumpdir;
@@ -913,7 +913,7 @@ function scr_fakepepboss_throwing()
 		hsp = image_xscale * attackspeed;
 		with (headID)
 		{
-			if ((other.image_xscale > 0 && other.x > x) || (other.image_xscale < 0 && other.x < x))
+			if ((other.image_xscale > 0 && other.x > x) or (other.image_xscale < 0 && other.x < x))
 			{
 				instance_destroy();
 				other.sprite_index = spr_fakepeppino_gethead;
@@ -953,7 +953,7 @@ function scr_fakepepboss_backbreaker()
 			}
 		}
 	}
-	if (sprite_index == spr_fakepeppino_supertaunt1 || sprite_index == spr_fakepeppino_supertaunt2 || sprite_index == spr_fakepeppino_supertaunt3)
+	if (sprite_index == spr_fakepeppino_supertaunt1 or sprite_index == spr_fakepeppino_supertaunt2 or sprite_index == spr_fakepeppino_supertaunt3)
 	{
 		vsp = 0;
 		if (floor(image_index) == (image_number - 1))

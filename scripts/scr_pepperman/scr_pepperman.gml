@@ -185,12 +185,12 @@ function scr_pepperman_walk()
 	woosh = false;
 	if (!pizzahead)
 	{
-		var shoulder = wastedhits < 4 || (wastedhits >= 8 && wastedhits < 10);
-		var stomp = wastedhits < 8 || wastedhits >= 10;
+		var shoulder = wastedhits < 4 or (wastedhits >= 8 && wastedhits < 10);
+		var stomp = wastedhits < 8 or wastedhits >= 10;
 	}
 	else
 	{
-		shoulder = elitehit == 3 || elitehit == 4;
+		shoulder = elitehit == 3 or elitehit == 4;
 		stomp = elitehit < 3;
 	}
 	if (shoulder && cooldown == 0)
@@ -255,7 +255,7 @@ function scr_pepperman_jump()
 	else
 		cooldown = 40;
 	targetspot = obj_player1.id;
-	if ((x >= (targetspot.x - 32) && x <= (targetspot.x + 32) && y < (targetspot.y - 48)) || (image_xscale > 0 && x > (targetspot.x + 100)) || (image_xscale < 0 && x < (targetspot.x - 100)) || vsp > 2)
+	if ((x >= (targetspot.x - 32) && x <= (targetspot.x + 32) && y < (targetspot.y - 48)) or (image_xscale > 0 && x > (targetspot.x + 100)) or (image_xscale < 0 && x < (targetspot.x - 100)) or vsp > 2)
 	{
 		state = states.freefallprep;
 		sprite_index = spr_pepperman_groundpoundstart;

@@ -1312,7 +1312,7 @@ function gml_builder(l_pg, l_src) constructor {
 					var l_nextArgs = undefined;
 					var l_nextArgc = 0;
 					var l_nextPrefix = undefined;
-					if (!(l_tk.h_lb || self.h_offset >= self.h_length)) {
+					if (!(l_tk.h_lb or self.h_offset >= self.h_length)) {
 						var l__g1 = self.h_tokens[self.h_offset];
 						if ((l__g1.__enumIndex__ == 21)) {
 							self.h_offset += 1;

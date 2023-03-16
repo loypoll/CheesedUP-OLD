@@ -1,6 +1,6 @@
 function noise_start_round()
 {
-	if (round_count == 6 || (round_count == 3 && extrarounds))
+	if (round_count == 6 or (round_count == 3 && extrarounds))
 	{
 		with (instance_create(256, 416, obj_baddiespawner))
 		{

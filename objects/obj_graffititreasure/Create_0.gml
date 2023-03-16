@@ -1,7 +1,7 @@
 event_inherited();
 got_func = function()
 {
-	if (global.graffiticutscene == -4 || !global.graffiticutscene)
+	if (global.graffiticutscene == -4 or !global.graffiticutscene)
 	{
 		global.graffiticutscene = true;
 		quick_ini_write_real(get_savefile_ini(), "cutscene", "graffiti", true);

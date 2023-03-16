@@ -3,7 +3,7 @@ if (state != states.chase)
 {
 	with (other)
 	{
-		if (y < other.y && attacking == 0 && sprite_index != spr_mach2jump && ((state == states.boots && vsp > 0) || state == states.jump || state == states.mach1 || state == states.grab) && vsp > 0 && other.vsp >= 0 && sprite_index != spr_stompprep)
+		if (y < other.y && attacking == 0 && sprite_index != spr_mach2jump && ((state == states.boots && vsp > 0) or state == states.jump or state == states.mach1 or state == states.grab) && vsp > 0 && other.vsp >= 0 && sprite_index != spr_stompprep)
 		{
 			image_index = 0;
 			if (key_jump2)

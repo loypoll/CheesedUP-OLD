@@ -23,7 +23,7 @@ if (!kick)
 	}
 	if (sprite_index == spr_playerN_noisebomb && countdown < (countdownmax / 2))
 		sprite_index = spr_playerN_noisebombflash;
-	if (sprite_index == spr_playerN_noisebomb || sprite_index == spr_playerN_noisebombflash)
+	if (sprite_index == spr_playerN_noisebomb or sprite_index == spr_playerN_noisebombflash)
 		countdown--;
 	if (countdown <= 0)
 		instance_destroy();

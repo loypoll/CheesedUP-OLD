@@ -1,7 +1,7 @@
 var ww = window_get_width();
 var wh = window_get_height();
 var cr = cr_beam;
-if ((device_mouse_x_to_gui(0) != mouse_xprevious || device_mouse_y_to_gui(0) != mouse_yprevious) && gameframe_mouse_in_window())
+if ((device_mouse_x_to_gui(0) != mouse_xprevious or device_mouse_y_to_gui(0) != mouse_yprevious) && gameframe_mouse_in_window())
 {
 	if (window_get_cursor() == -1)
 		cr = cr_default;
@@ -51,7 +51,7 @@ else
 }
 if startbuffer > 0
     startbuffer--;
-if window_has_focus() && (dirty || window_width_current != ww || window_height_current != wh || global.option_scale_mode != last_scale_mode || global.option_fullscreen != gameframe_get_fullscreen())
+if window_has_focus() && (dirty or window_width_current != ww or window_height_current != wh or global.option_scale_mode != last_scale_mode or global.option_fullscreen != gameframe_get_fullscreen())
 {
 	if dirty
         dirty = false;

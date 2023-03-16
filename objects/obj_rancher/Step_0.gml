@@ -52,7 +52,7 @@ if (sprite_index != scaredspr && x != targetplayer.x && state != states.pizzagob
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 100) && y >= (targetplayer.y - 100)))
 	{
-		if ((state == states.walk || (state == states.idle && sprite_index != scaredspr)) && !scr_solid_line(targetplayer))
+		if ((state == states.walk or (state == states.idle && sprite_index != scaredspr)) && !scr_solid_line(targetplayer))
 		{
 			sprite_index = spr_ranch_shoot;
 			image_index = 0;

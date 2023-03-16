@@ -50,7 +50,7 @@ function gml_node_tools_is_statement(l_q) {
 
 if (live_enabled) 
 function gml_node_tools_is_in_block(l_q, l_p) {
-	if (l_p == undefined || l_q == undefined) return false;
+	if (l_p == undefined or l_q == undefined) return false;
 	var l__g = l_p;
 	switch (l__g.__enumIndex__/* gml_node */) {
 		case 93/* block */: return true;
@@ -59,7 +59,7 @@ function gml_node_tools_is_in_block(l_q, l_p) {
 		case 101/* do_while */: return l_q == l__g.h_loop;
 		case 100/* do_until */: return l_q == l__g.h_loop;
 		case 102/* repeat_hx */: return l_q == l__g.h_loop;
-		case 103/* for_hx */: return (l_q == l__g.h_pre || l_q == l__g.h_post) || l_q == l__g.h_loop;
+		case 103/* for_hx */: return (l_q == l__g.h_pre or l_q == l__g.h_post) or l_q == l__g.h_loop;
 		case 96/* switch_hx */:
 			var l__cases = l__g.h_cases;
 			if (l_q == l__g.h_def) return true;
@@ -266,17 +266,17 @@ function gml_node_tools_seek_arr(l_arr, l_fn, l_st) {
 
 if (live_enabled) 
 function gml_node_tools_seek_or2(l_a, l_b, l_fn, l_st) {
-	return l_fn(l_a, undefined) || l_fn(l_b, undefined);
+	return l_fn(l_a, undefined) or l_fn(l_b, undefined);
 }
 
 if (live_enabled) 
 function gml_node_tools_seek_or3(l_a, l_b, l_c, l_fn, l_st) {
-	return (l_fn(l_a, undefined) || l_fn(l_b, undefined)) || l_fn(l_c, undefined);
+	return (l_fn(l_a, undefined) or l_fn(l_b, undefined)) or l_fn(l_c, undefined);
 }
 
 if (live_enabled) 
 function gml_node_tools_seek_or4(l_a, l_b, l_c, l_d, l_fn, l_st) {
-	return (l_fn(l_a, undefined) || l_fn(l_b, undefined) || l_fn(l_c, undefined)) || l_fn(l_d, undefined);
+	return (l_fn(l_a, undefined) or l_fn(l_b, undefined) or l_fn(l_c, undefined)) or l_fn(l_d, undefined);
 }
 
 if (live_enabled) 
@@ -375,19 +375,19 @@ function gml_node_tools_seek_all(l_q, l_st, l_c) {
 		case 27/* call_script_with_array */:
 			var l_x1 = l__g.h_index;
 			var l_y = l__g.h_array;
-			l_r = l_c(l_x1, undefined) || l_c(l_y, undefined);
+			l_r = l_c(l_x1, undefined) or l_c(l_y, undefined);
 			break;
 		case 94/* if_then */:
 			var l_c1 = l__g.h_cond;
 			var l_a = l__g.h_then;
 			var l_b = l__g.h_not;
-			l_r = l_c(l_c1, undefined) || l_b != undefined && l_c(l_a, undefined) && l_c(l_b, undefined);
+			l_r = l_c(l_c1, undefined) or l_b != undefined && l_c(l_a, undefined) && l_c(l_b, undefined);
 			break;
 		case 95/* ternary */:
 			var l_c1 = l__g.h_cond;
 			var l_a = l__g.h_then;
 			var l_b = l__g.h_not;
-			l_r = l_c(l_c1, undefined) || l_c(l_a, undefined) && l_c(l_b, undefined);
+			l_r = l_c(l_c1, undefined) or l_c(l_a, undefined) && l_c(l_b, undefined);
 			break;
 		case 103/* for_hx */: l_r = gml_node_tools_seek_or2(l__g.h_pre, l__g.h_cond, l_c, undefined); break;
 		case 99/* while_hx */: l_r = l_c(l__g.h_cond, undefined); break;
@@ -416,7 +416,7 @@ function gml_node_tools_seek_all(l_q, l_st, l_c) {
 		case 111/* try_catch */:
 			var l_x = l__g.h_block;
 			var l_e = l__g.h_catcher;
-			l_r = l_c(l_x, undefined) || l_c(l_e, undefined);
+			l_r = l_c(l_x, undefined) or l_c(l_e, undefined);
 			break;
 		case 37/* set_op */: l_r = gml_node_tools_seek_or2(l__g.h_a, l__g.h_b, l_c, l_st); break;
 		case 42/* in */: l_r = gml_node_tools_seek_or2(l__g.h_fd, l__g.h_obj, l_c, l_st); break;
@@ -486,7 +486,7 @@ function gml_node_tools_seek(l_q, l_st, l_c) {
 				for (l_k = 0; l_k < l_l; l_k++) {
 					if (l_c(l_w[l_k], l_st)) break;
 				}
-				if (l_k < l_l || l_c(l_m[l_i].expr, l_st)) break;
+				if (l_k < l_l or l_c(l_m[l_i].expr, l_st)) break;
 			}
 			if (l_i < l_n) l_result = true; else l_result = l_o != undefined && l_c(l_o, l_st);
 		}

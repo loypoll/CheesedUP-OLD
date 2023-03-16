@@ -2,7 +2,7 @@ function scr_player_cheeseballclimbwall()
 {
 	hsp = 0;
 	vsp = -wallspeed;
-	if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
+	if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
 	{
 		sound_play_3d("event:/sfx/pep/groundpound", x, y);
 		image_index = 0;

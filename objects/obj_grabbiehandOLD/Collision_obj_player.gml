@@ -29,7 +29,7 @@ if (sprite_index == spr_grabbiehand_fall && player == -4)
 			with (instance_create(x, y, obj_boxxeddebris))
 				image_index = 4;
 		}
-		if (state == states.cheesepep || state == states.cheesepepstick)
+		if (state == states.cheesepep or state == states.cheesepepstick)
 		{
 			repeat (8)
 			{

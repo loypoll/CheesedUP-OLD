@@ -20,5 +20,5 @@ if (global.combotime > 0 && global.combo > 0)
 title_index += 0.35;
 if (title_index >= 2)
 	title_index = frac(title_index);
-if (room == rank_room || room == timesuproom)
+if (room == rank_room or room == timesuproom)
 	instance_destroy();

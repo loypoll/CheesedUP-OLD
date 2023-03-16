@@ -8,7 +8,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 	}
 	with (obj_player)
 	{
-		if ((state == states.victory && place_meeting(x, y, obj_startgate)) || (state == states.door && place_meeting(x, y, obj_exitgate)))
+		if ((state == states.victory && place_meeting(x, y, obj_startgate)) or (state == states.door && place_meeting(x, y, obj_exitgate)))
 			_cutscenehandler = true;
 	}
 	with (obj_charswitch_intro)
@@ -134,7 +134,7 @@ if (!pause && instance_exists(obj_player1) && obj_player1.key_start && room != M
 					_txt = lang_get_value("barreltip");
 					break;
 				case states.trashroll:
-					if (sprite_index == spr_player_corpsesurf || sprite_index == spr_player_corpsestart)
+					if (sprite_index == spr_player_corpsesurf or sprite_index == spr_player_corpsestart)
 						_txt = lang_get_value("gravesurftip");
 					else
 						_txt = lang_get_value("trashrolltip");
@@ -238,8 +238,8 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 	var _dvc = obj_inputAssigner.player_input_device[0];
     if (key_jump && _dvc >= 0 && gamepad_button_check_pressed(_dvc, global.key_jumpC) && global.key_jumpC == gp_face2)
         key_jump = false;
-    key_jump = (key_jump || (global.key_start != vk_return && keyboard_check_pressed(vk_return)) || (global.key_start != vk_space && keyboard_check_pressed(vk_space)) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face1));
-	key_back = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_start));
+    key_jump = (key_jump or (global.key_start != vk_return && keyboard_check_pressed(vk_return)) or (global.key_start != vk_space && keyboard_check_pressed(vk_space)) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face1));
+	key_back = (keyboard_check_pressed(vk_escape) or keyboard_check_pressed(vk_return) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_start));
 	if (backbuffer > 0)
 	{
 		backbuffer--;
@@ -270,7 +270,7 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 				break;
 			
 			case 2:
-				if (room == Endingroom || room == tower_soundtest || room == Creditsroom || room == Johnresurrectionroom)
+				if (room == Endingroom or room == tower_soundtest or room == Creditsroom or room == Johnresurrectionroom)
 					break;
 				else
 				{
@@ -302,7 +302,7 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 				break;
 			
 			case 3:
-				if (room == Endingroom || room == Creditsroom || room == Johnresurrectionroom)
+				if (room == Endingroom or room == Creditsroom or room == Johnresurrectionroom)
 					break;
 				else
 				{
@@ -319,7 +319,7 @@ if (pause && !instance_exists(obj_option) && alarm[3] == -1)
 					var arr = noone;
 					ds_list_copy(sl, sound_list);
 					ds_list_copy(il, instance_list);
-					if (room == hub_room1 || room == Finalintro || room == characterselect || room == cowboytask || room == Titlescreen || room == Mainmenu || room == Scootertransition || room == rm_levelselect || (string_copy(room_get_name(room), 1, 5) == "tower" && (!global.panic)))
+					if (room == hub_room1 or room == Finalintro or room == characterselect or room == cowboytask or room == Titlescreen or room == Mainmenu or room == Scootertransition or room == rm_levelselect or (string_copy(room_get_name(room), 1, 5) == "tower" && (!global.panic)))
 					{
 						if global.startgate
 						{

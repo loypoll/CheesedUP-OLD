@@ -1,6 +1,6 @@
 with (other)
 {
-	if (state == states.cheesepep || skateboarding == 1 || state == states.boxxedpep || state == states.cheesepepstick || state == states.cheesepepstickside || state == states.cheesepepstickup)
+	if (state == states.cheesepep or skateboarding == 1 or state == states.boxxedpep or state == states.cheesepepstick or state == states.cheesepepstickside or state == states.cheesepepstickup)
 	{
 		state = states.normal;
 		boxxed = false;

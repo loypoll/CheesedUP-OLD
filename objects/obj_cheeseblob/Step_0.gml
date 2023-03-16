@@ -1,4 +1,4 @@
-if (grounded || scr_solid(x + 1, y) || scr_solid(x - 1, y))
+if (grounded or scr_solid(x + 1, y) or scr_solid(x - 1, y))
 {
 	repeat (8)
 	{

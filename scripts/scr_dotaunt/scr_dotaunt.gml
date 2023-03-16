@@ -1,12 +1,12 @@
 function scr_dotaunt()
 {
-	if ((key_taunt2 || input_finisher_buffer > 0 || (state == states.backbreaker && key_up && supercharged)) && !skateboarding)
+	if ((key_taunt2 or input_finisher_buffer > 0 or (state == states.backbreaker && key_up && supercharged)) && !skateboarding)
 	{
 		input_finisher_buffer = 0;
 		pistolanim = -4;
 		flash = false;
 		notification_push(notifs.taunt, [room]);
-		if ((!key_up || !supercharged) && global.tauntcount < 10 && place_meeting(x, y, obj_exitgate) && (global.panic == true || instance_exists(obj_wartimer)) && global.combotime > 0)
+		if ((!key_up or !supercharged) && global.tauntcount < 10 && place_meeting(x, y, obj_exitgate) && (global.panic == true or instance_exists(obj_wartimer)) && global.combotime > 0)
 		{
 			global.tauntcount++;
 			global.collect += 25;

@@ -63,7 +63,7 @@ function scr_do_rank(showtoppins = true, boss = false)
 		var _lap = false;
 		ini_open_from_string(obj_savesystem.ini_str);
 		ini_write_real("Tutorial", "finished", true);
-		if ((global.level_minutes < 2 || (global.level_minutes < 1 || (global.level_minutes == 1 && global.level_seconds <= 40))) && ini_read_real("Tutorial", "lapunlocked", false) == 0)
+		if ((global.level_minutes < 2 or (global.level_minutes < 1 or (global.level_minutes == 1 && global.level_seconds <= 40))) && ini_read_real("Tutorial", "lapunlocked", false) == 0)
 		{
 			ini_write_real("Tutorial", "lapunlocked", true);
 			_lap = true;

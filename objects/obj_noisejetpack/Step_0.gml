@@ -14,7 +14,7 @@ switch (state)
 		y = Approach(y, ty, movespeed);
 		if (abs(y - ty) <= 50)
 			movespeed = Approach(movespeed, 0, 0.1);
-		if (y == ty || movespeed <= 0)
+		if (y == ty or movespeed <= 0)
 		{
 			create_particle(x, y, particle.genericpoofeffect);
 			scr_sound_multiple("event:/sfx/misc/collect", x, y);

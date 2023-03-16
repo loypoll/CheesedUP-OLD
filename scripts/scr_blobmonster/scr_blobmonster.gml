@@ -12,7 +12,7 @@ function scr_blob_normal()
 	var _col = collision_line(x, y - _calc, x + (16 * image_xscale), y - _calc, obj_solid, false, true);
 	if (place_meeting(x + hsp, y, obj_solid))
 	{
-		if (_col != -4 || changeside_buffer > 0)
+		if (_col != -4 or changeside_buffer > 0)
 			image_xscale *= -1;
 		else
 		{

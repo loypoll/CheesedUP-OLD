@@ -1,4 +1,4 @@
-if (sprite_index != spr_stick_helicopter && (sprite_index != spr_stick_leave || image_index < 3))
+if (sprite_index != spr_stick_helicopter && (sprite_index != spr_stick_leave or image_index < 3))
 {
 	fmod_event_instance_stop(global.snd_mrstickhat, true);
 	scr_collide();
@@ -115,7 +115,7 @@ switch (state)
 		else if (sprite_index == spr_stick_takemoney2)
 		{
 			hsp = image_xscale * 4;
-			if (abs(x - xstart) >= 200 || (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope)))
+			if (abs(x - xstart) >= 200 or (place_meeting(x + sign(hsp), y, obj_solid) && !place_meeting(x + sign(hsp), y, obj_slope)))
 			{
 				hsp = 0;
 				sprite_index = spr_stick_leave;

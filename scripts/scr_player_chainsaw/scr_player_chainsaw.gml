@@ -20,7 +20,7 @@ function scr_player_chainsaw()
 		vsp = tauntstoredvsp;
 		if (global.attackstyle == 0)
 		{
-			if ((tauntstoredstate == states.handstandjump && (tauntstoredsprite == spr_player_suplexgrabjumpstart || tauntstoredsprite == spr_player_suplexgrabjump || tauntstoredsprite == spr_player_airattack || tauntstoredsprite == spr_player_airattackstart)) || sprite_index == spr_piledriverland)
+			if ((tauntstoredstate == states.handstandjump && (tauntstoredsprite == spr_player_suplexgrabjumpstart or tauntstoredsprite == spr_player_suplexgrabjump or tauntstoredsprite == spr_player_airattack or tauntstoredsprite == spr_player_airattackstart)) or sprite_index == spr_piledriverland)
 			{
 				jumpAnim = true;
 				state = states.jump;
@@ -29,12 +29,12 @@ function scr_player_chainsaw()
 				jumpstop = false;
 				image_index = 0;
 			}
-			else if (tauntstoredstate == states.handstandjump || tauntstoredstate == states.finishingblow)
+			else if (tauntstoredstate == states.handstandjump or tauntstoredstate == states.finishingblow)
 				state = states.normal;
 		}
 		if (global.attackstyle == 1)
 		{
-			if ((tauntstoredstate == states.handstandjump && (tauntstoredsprite == spr_player_suplexgrabjumpstart || tauntstoredsprite == spr_player_suplexgrabjump || tauntstoredsprite == spr_player_airattack || tauntstoredsprite == spr_player_airattackstart)) || sprite_index == spr_piledriverland)
+			if ((tauntstoredstate == states.handstandjump && (tauntstoredsprite == spr_player_suplexgrabjumpstart or tauntstoredsprite == spr_player_suplexgrabjump or tauntstoredsprite == spr_player_airattack or tauntstoredsprite == spr_player_airattackstart)) or sprite_index == spr_piledriverland)
 			{
 				movespeed = 4;
 				state = states.tackle;
@@ -42,7 +42,7 @@ function scr_player_chainsaw()
 				image_index = 0;
 				vsp = -5;
 			}
-			else if (tauntstoredstate == states.handstandjump || tauntstoredstate == states.finishingblow)
+			else if (tauntstoredstate == states.handstandjump or tauntstoredstate == states.finishingblow)
 			{
 				movespeed = 4;
 				state = states.tackle;

@@ -1,4 +1,4 @@
-if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.object_index != obj_pizzafaceboss && !baddieID.thrown && !other.baddieID.mach3destroy && baddieID.state != states.hit && other.baddieID.thrown && other.baddieID.state != states.hit && baddieID.killbyenemybuffer <= 0 && baddieID.killbyenemy && baddieID != other.baddieID && baddieID.state != states.grabbed && !baddieID.invincible && baddieID.instantkillable && ((global.attackstyle != 2 && !global.kungfu) || baddieID.hp <= 0) && !global.kungfu)
+if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.object_index != obj_pizzafaceboss && !baddieID.thrown && !other.baddieID.mach3destroy && baddieID.state != states.hit && other.baddieID.thrown && other.baddieID.state != states.hit && baddieID.killbyenemybuffer <= 0 && baddieID.killbyenemy && baddieID != other.baddieID && baddieID.state != states.grabbed && !baddieID.invincible && baddieID.instantkillable && ((global.attackstyle != 2 && !global.kungfu) or baddieID.hp <= 0) && !global.kungfu)
 {
 	sound_play_3d("event:/sfx/pep/punch", x, y);
 	if (!baddieID.important)
@@ -8,12 +8,12 @@ if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.obj
 		global.heattime = 60;
 	}
 	var lag = 5;
-	if (baddieID.object_index != obj_tank || baddieID.hp <= 0)
+	if (baddieID.object_index != obj_tank or baddieID.hp <= 0)
 	{
 		baddieID.hitLag = lag;
 		baddieID.hitX = baddieID.x;
 		baddieID.hitY = baddieID.y;
-		if (baddieID.object_index != obj_tank || baddieID.hp <= 0)
+		if (baddieID.object_index != obj_tank or baddieID.hp <= 0)
 			baddieID.hp -= 1;
 		instance_create(baddieID.x, baddieID.y, obj_parryeffect);
 		baddieID.alarm[3] = 3;
@@ -36,7 +36,7 @@ if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.obj
 		baddieID.grabbedby = 0;
 		if (instance_exists(other.baddieID))
 			other.baddieID.killbyenemybuffer = 10;
-		if (baddieID.destroyable && (!baddieID.elite || baddieID.elitehit <= 0))
+		if (baddieID.destroyable && (!baddieID.elite or baddieID.elitehit <= 0))
 			instance_destroy(baddieID);
 	}
 }

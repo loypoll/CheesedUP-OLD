@@ -1,6 +1,6 @@
 if (other.cutscene == 0 && other.state != states.actor && state != states.actor && other.state != states.gotoplayer && state != states.gotoplayer)
 {
-	if (hurted == 0 && other.hurted == 0 && fightballadvantage == 1 && (state == states.handstandjump || state == states.punch) && (other.state == states.handstandjump || other.state == states.punch))
+	if (hurted == 0 && other.hurted == 0 && fightballadvantage == 1 && (state == states.handstandjump or state == states.punch) && (other.state == states.handstandjump or other.state == states.punch))
 	{
 		if (object_index == obj_player1)
 		{
@@ -27,7 +27,7 @@ if (other.cutscene == 0 && other.state != states.actor && state != states.actor 
 	}
 	with (obj_player2)
 	{
-		if (state == states.handstandjump && other.hurted == 0 && other.state != states.hurt && other.state != states.knightpepslopes && other.state != states.knightpep && other.state != states.tumble && other.state != states.fireass && other.state != states.bombpep && other.cutscene == 0 && other.hurted == 0 && hurted == 0 && !(other.state == states.handstandjump || other.state == states.punch))
+		if (state == states.handstandjump && other.hurted == 0 && other.state != states.hurt && other.state != states.knightpepslopes && other.state != states.knightpep && other.state != states.tumble && other.state != states.fireass && other.state != states.bombpep && other.cutscene == 0 && other.hurted == 0 && hurted == 0 && !(other.state == states.handstandjump or other.state == states.punch))
 		{
 			movespeed = 0;
 			image_index = 0;
@@ -47,7 +47,7 @@ if (other.cutscene == 0 && other.state != states.actor && state != states.actor 
 			obj_player1.sprite_index = obj_player1.spr_squished;
 			obj_player1.image_index = 0;
 		}
-		if (other.state == states.punch && hurted == 0 && other.hurted == 0 && !(state == states.handstandjump || state == states.punch))
+		if (other.state == states.punch && hurted == 0 && other.hurted == 0 && !(state == states.handstandjump or state == states.punch))
 		{
 			xscale = -other.xscale;
 			with (other)

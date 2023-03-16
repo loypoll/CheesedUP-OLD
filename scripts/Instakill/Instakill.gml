@@ -21,7 +21,7 @@ function Instakill()
 			}
 		}
 	}
-	if (state == states.mach3 && sprite_index != spr_player_Sjumpcancel && sprite_index != spr_mach3hit && (character == "P" || character == "V"))
+	if (state == states.mach3 && sprite_index != spr_player_Sjumpcancel && sprite_index != spr_mach3hit && (character == "P" or character == "V"))
 	{
 		if (fightball == 0)
 			sprite_index = spr_mach3hit;
@@ -44,9 +44,9 @@ function Instakill()
 	other.baddieID.player_instakillmove = true;
 	if (!other.baddieID.important)
 		global.style += (2 + global.combo);
-	if (!other.baddieID.elite || other.baddieID.elitehit <= 0)
+	if (!other.baddieID.elite or other.baddieID.elitehit <= 0)
 		other.baddieID.mach3destroy = true;
-	if (!other.baddieID.killprotection && !global.kungfu && (!other.baddieID.elite || other.baddieID.elitehit <= 0))
+	if (!other.baddieID.killprotection && !global.kungfu && (!other.baddieID.elite or other.baddieID.elitehit <= 0))
 		other.baddieID.instakilled = true;
 	if (!other.baddieID.important)
 	{
@@ -54,7 +54,7 @@ function Instakill()
 		global.heattime = 60;
 	}
 	global.hit += 1;
-	if (!grounded && state != states.ratmountgroundpound && state != states.ratmountpunch && state != states.ratmountpunch && state != states.boxxedpepspin && state != states.freefall && (key_jump2 || input_buffer_jump > 0 || state == states.jetpackjump))
+	if (!grounded && state != states.ratmountgroundpound && state != states.ratmountpunch && state != states.ratmountpunch && state != states.boxxedpepspin && state != states.freefall && (key_jump2 or input_buffer_jump > 0 or state == states.jetpackjump))
 	{
 		input_buffer_jump = 0;
 		suplexmove = false;

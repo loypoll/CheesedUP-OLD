@@ -76,9 +76,9 @@ switch (global.boxhp)
 }
 with (instance_place(x, y, obj_player))
 {
-	if ((state == states.handstandjump || state == states.punch || state == states.lungeattack) && other.sprite_index != spr_present)
+	if ((state == states.handstandjump or state == states.punch or state == states.lungeattack) && other.sprite_index != spr_present)
 	{
-		if (state == states.handstandjump || state == states.punch || state == states.lungeattack)
+		if (state == states.handstandjump or state == states.punch or state == states.lungeattack)
 		{
 			sprite_index = choose(spr_suplexmash1, spr_suplexmash2, spr_suplexmash3, spr_suplexmash4, spr_punch);
 			image_index = 0;
@@ -249,7 +249,7 @@ switch (character)
 }
 if (sprite_index == spr_present)
 	getout -= 1;
-if (getout == 0 && sprite_index == spr_present && (character == 0 || global.boxhp < 14 || (global.boxhp < 18 && character == 1) || (global.boxhp < 17 && character == 2) || (global.boxhp < 16 && character == 3) || (global.boxhp < 15 && character == 4)))
+if (getout == 0 && sprite_index == spr_present && (character == 0 or global.boxhp < 14 or (global.boxhp < 18 && character == 1) or (global.boxhp < 17 && character == 2) or (global.boxhp < 16 && character == 3) or (global.boxhp < 15 && character == 4)))
 {
 	image_index = 0;
 	sprite_index = upspr;

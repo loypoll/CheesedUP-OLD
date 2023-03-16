@@ -27,7 +27,7 @@ else
 	instance_create(0, 0, obj_endgamefade);
 	alarm[1] = 120;
 }
-if (instance_exists(obj_treasureviewer) || !do_rank)
+if (instance_exists(obj_treasureviewer) or !do_rank)
 	exit;
 obj_player1.visible = false;
 obj_player2.visible = false;

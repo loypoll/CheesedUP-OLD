@@ -1,5 +1,5 @@
 draw_set_alpha(1);
-if (is_bossroom() || room == editor_room || instance_exists(obj_tutorialbook))
+if (is_bossroom() or room == editor_room or instance_exists(obj_tutorialbook))
 	exit;
 if (global.kungfu)
 {

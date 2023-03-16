@@ -1,7 +1,7 @@
 event_inherited();
 if (playerid.state != states.backbreaker)
 {
-	if (x != xprevious || y != yprevious)
+	if (x != xprevious or y != yprevious)
 		sprite_index = spr_run;
 	else
 		sprite_index = spr_idle;

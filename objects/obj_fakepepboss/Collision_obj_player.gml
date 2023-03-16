@@ -1,4 +1,4 @@
-if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == states.handstandjump || other.instakillmove) && visible && (state == states.walk || (state == states.jump && sprite_index == spr_fakepeppino_bodyslamstart) || (state == states.freefall && sprite_index == spr_fakepeppino_bodyslamland) || (state == states.mach2 && attackspeed < 18) || state == states.Sjumpprep || (state == states.throwing && sprite_index != spr_fakepeppino_flailing))))
+if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == states.handstandjump or other.instakillmove) && visible && (state == states.walk or (state == states.jump && sprite_index == spr_fakepeppino_bodyslamstart) or (state == states.freefall && sprite_index == spr_fakepeppino_bodyslamland) or (state == states.mach2 && attackspeed < 18) or state == states.Sjumpprep or (state == states.throwing && sprite_index != spr_fakepeppino_flailing))))
 {
 	if (subhp > 0)
 	{
@@ -47,7 +47,7 @@ if (staggerbuffer <= 0 && flickertime <= 0 && ((other.state == states.handstandj
 		image_index = 0;
 	}
 }
-else if (state == states.freefall || (state == states.mach2 && attackspeed >= 18) || state == states.Sjump || (state == states.throwing && attackspeed > 4))
+else if (state == states.freefall or (state == states.mach2 && attackspeed >= 18) or state == states.Sjump or (state == states.throwing && attackspeed > 4))
 {
 	if (other.flash)
 		flash = false;

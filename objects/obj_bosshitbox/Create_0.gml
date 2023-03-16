@@ -13,7 +13,7 @@ function SUPER_player_hurt(argument0, argument1)
 		with (argument1)
 		{
 			var lag = 8;
-			if (state == states.chainsaw || state == states.hit)
+			if (state == states.chainsaw or state == states.hit)
 			{
 				x = hitX;
 				y = hitY;

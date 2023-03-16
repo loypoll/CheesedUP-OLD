@@ -203,7 +203,7 @@ function scr_enemy_rage()
 				sprite_index = spr_tank_charge;
 			with (instance_place(x + hsp, y, obj_destructibles))
 				instance_destroy();
-			if ((check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles) && !scr_slope()) || slope_buffer <= 0)
+			if ((check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_destructibles) && !scr_slope()) or slope_buffer <= 0)
 			{
 				slope_buffer = 8;
 				state = states.stun;

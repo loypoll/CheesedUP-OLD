@@ -16,7 +16,7 @@ boss_func = function()
 	{
 		with (obj_pizzafaceboss_p2)
 		{
-			if (state != states.fall || substate == states.transition)
+			if (state != states.fall or substate == states.transition)
 				eh = elitehit;
 		}
 		boss_hp = eh;

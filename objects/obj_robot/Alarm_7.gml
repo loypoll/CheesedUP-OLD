@@ -1,5 +1,5 @@
 alarm[7] = 10;
-if (state == states.mach1 || state == states.pizzagoblinthrow || state == states.tackle || state == states.slap)
+if (state == states.mach1 or state == states.pizzagoblinthrow or state == states.tackle or state == states.slap)
 {
 	with (create_red_afterimage(x, y, sprite_index, image_index - 1, image_xscale))
 	{

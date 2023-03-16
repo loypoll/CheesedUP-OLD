@@ -65,14 +65,14 @@ switch state
 							flash = true;
 							sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 						}
-						if (state == states.mach3 || (state == states.machslide && sprite_index == spr_mach3boost))
+						if (state == states.mach3 or (state == states.machslide && sprite_index == spr_mach3boost))
 							launch = 1
 						if (state == states.machslide && sprite_index == spr_mach3boost && launch)
 							movespeed -= 0.6
 						if (state == states.mach3 && movespeed > 15)
 							movespeed = 15
 						freefallsmash = 0
-						if (state == states.grind || state == states.climbwall || state == states.Sjumpprep || state == states.Sjump || state == states.Sjumpland || y < other.y - 400)
+						if (state == states.grind or state == states.climbwall or state == states.Sjumpprep or state == states.Sjump or state == states.Sjumpland or y < other.y - 400)
 						{
 							sound_play_3d("event:/sfx/pep/bumpwall", x, y)
 							vsp = -4
@@ -181,7 +181,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 if (state != states.walk && state != states.blockstance)
 	attract_player = 0
 var _dis = 300
-if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != states.spaceshuttle && obj_player1.state != states.taxi && ((distance_to_object(obj_player) < _dis && obj_player1.brick) || distance_to_object(obj_ratmountgroundpound) < _dis || (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) || distance_to_object(obj_brickball) < _dis))
+if (state == states.walk && obj_player1.isgustavo && !obj_player1.cutscene && obj_player1.state != states.spaceshuttle && obj_player1.state != states.taxi && ((distance_to_object(obj_player) < _dis && obj_player1.brick) or distance_to_object(obj_ratmountgroundpound) < _dis or (distance_to_object(obj_brickcomeback) < _dis && instance_exists(obj_brickcomeback) && !obj_brickcomeback.trapped) or distance_to_object(obj_brickball) < _dis))
 {
 	state = states.blockstance
 	sprite_index = spr_hamkuff_chain1

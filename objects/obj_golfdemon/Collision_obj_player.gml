@@ -1,4 +1,4 @@
-if (state != states.grabbed && (other.state != states.handstandjump || invincible) && (other.state != states.tumble || (other.sprite_index != other.spr_tumble && other.sprite_index != other.spr_tumblestart && other.sprite_index != other.spr_tumbleend)) && state != states.stun && (state == states.chase || state == states.walk))
+if (state != states.grabbed && (other.state != states.handstandjump or invincible) && (other.state != states.tumble or (other.sprite_index != other.spr_tumble && other.sprite_index != other.spr_tumblestart && other.sprite_index != other.spr_tumbleend)) && state != states.stun && (state == states.chase or state == states.walk))
 {
 	var s = other.state;
 	if (other.flash)

@@ -7,7 +7,7 @@ if (other.team == 1 && instance_exists(baddieID) && baddieID.parryable && baddie
 		global.combotime = 60;
 		global.heattime = 60;
 	}
-	if (!baddieID.elite || baddieID.elitehit <= 0)
+	if (!baddieID.elite or baddieID.elitehit <= 0)
 	{
 		if (baddieID.destroyable)
 		{

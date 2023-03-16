@@ -21,7 +21,7 @@ if (empty)
 	{
 		with (obj_player)
 		{
-			if (distance_to_object(other) <= 280 && state == states.machslide && (sprite_index == spr_machslideboost || sprite_index == spr_mach3boost))
+			if (distance_to_object(other) <= 280 && state == states.machslide && (sprite_index == spr_machslideboost or sprite_index == spr_mach3boost))
 			{
 				other.machslidecount++;
 				other.machslidebuffer = 30;
@@ -35,7 +35,7 @@ if (machslidebuffer > 0)
 	machslidebuffer--;
 else
 	machslidecount = 0;
-active = totem_count(id) > 0 || machslidecount >= machslidemax;
+active = totem_count(id) > 0 or machslidecount >= machslidemax;
 if (active)
 {
 	if (!fmod_event_instance_is_playing(snd))

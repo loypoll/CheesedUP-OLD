@@ -10,5 +10,5 @@ if (john && global.panic)
 		uparrowID = -4;
 	}
 }
-if ((room == tower_5 && targetRoom == tower_pizzafacehall) || room == tower_pizzafacehall)
+if ((room == tower_5 && targetRoom == tower_pizzafacehall) or room == tower_pizzafacehall)
 	sprite_index = spr_pizzafacedoor;

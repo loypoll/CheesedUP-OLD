@@ -6,7 +6,7 @@ function scr_player_ratmount()
 		ratgrabbedID = -4;
 	hsp = movespeed;
 	var r = ratmount_movespeed;
-	if ((check_wall(x + xscale, y) && !place_meeting(x + hsp, y, obj_destructibles)) || (abs(movespeed) < 8 && move != xscale) || !key_attack || abs(movespeed) <= 6)
+	if ((check_wall(x + xscale, y) && !place_meeting(x + hsp, y, obj_destructibles)) or (abs(movespeed) < 8 && move != xscale) or !key_attack or abs(movespeed) <= 6)
 	{
 		gustavodash = 0;
 		ratmount_movespeed = 8;
@@ -44,7 +44,7 @@ function scr_player_ratmount()
 			image_xscale = REMIX ? other.xscale : 1;
 		gustavodash = 51;
 	}
-	if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+	if (ratmount_movespeed >= 12 or gusdashpadbuffer > 0)
 	{
 		if (!instance_exists(chargeeffectid))
 		{
@@ -90,7 +90,7 @@ function scr_player_ratmount()
 		image_speed = abs(movespeed) / 12;
 	else
 		image_speed = 0.35;
-	if (sprite_index == spr_player_ratmountmach3 || sprite_index == spr_lonegustavo_mach3)
+	if (sprite_index == spr_player_ratmountmach3 or sprite_index == spr_lonegustavo_mach3)
 		image_speed = 0.4;
 	var front = scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_slope);
 	if (brick)
@@ -99,7 +99,7 @@ function scr_player_ratmount()
 		{
 			if (hsp != 0 && !front)
 			{
-				if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+				if (ratmount_movespeed >= 12 or gusdashpadbuffer > 0)
 					sprite_index = spr_player_ratmountmach3;
 				else if (key_attack)
 					sprite_index = spr_player_ratmountattack;
@@ -143,7 +143,7 @@ function scr_player_ratmount()
 	{
 		if (hsp != 0 && !front)
 		{
-			if (ratmount_movespeed >= 12 || gusdashpadbuffer > 0)
+			if (ratmount_movespeed >= 12 or gusdashpadbuffer > 0)
 				sprite_index = spr_lonegustavo_mach3;
 			else if (key_attack)
 				sprite_index = spr_lonegustavo_dash;
@@ -173,12 +173,12 @@ function scr_player_ratmount()
 		scr_fmod_soundeffect(jumpsnd, x, y);
 		if (brick)
 		{
-			if ((ratmount_movespeed >= 12 && key_attack) || gusdashpadbuffer > 0)
+			if ((ratmount_movespeed >= 12 && key_attack) or gusdashpadbuffer > 0)
 				sprite_index = spr_player_ratmountdashjump;
 			else
 				sprite_index = spr_player_ratmountjump;
 		}
-		else if ((ratmount_movespeed >= 12 && key_attack) || gusdashpadbuffer > 0)
+		else if ((ratmount_movespeed >= 12 && key_attack) or gusdashpadbuffer > 0)
 			sprite_index = spr_lonegustavo_dashjump;
 		else
 			sprite_index = spr_player_ratmountgroundpound;
@@ -210,7 +210,7 @@ function scr_player_ratmount()
 		if (ratmount_movespeed < 12)
 			ratmount_movespeed = Approach(ratmount_movespeed, 12, 0.15);
 	}
-	if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick && gusdashpadbuffer == 0)
+	if (((input_buffer_slap > 0 && key_up) or key_shoot2) && brick && gusdashpadbuffer == 0)
 	{
 		input_buffer_slap = 0;
 		ratmount_kickbrick();
@@ -248,7 +248,7 @@ function scr_player_ratmount()
 			other.dashcloudid = id;
 		}
 	}
-	if ((key_down && grounded && vsp > 0 && gusdashpadbuffer <= 0) || scr_solid(x, y))
+	if ((key_down && grounded && vsp > 0 && gusdashpadbuffer <= 0) or scr_solid(x, y))
 	{
 		state = states.ratmountcrouch;
 		if (brick == 1)
@@ -276,7 +276,7 @@ function ratmount_dotaunt()
 		tauntstoredstate = state;
 		tauntstoredvsp = vsp;
 		state = states.backbreaker;
-		if (!supercharged || !key_up)
+		if (!supercharged or !key_up)
 		{
 			scr_create_parryhitbox();
 			sound_play_3d("event:/sfx/pep/taunt", x, y);
@@ -302,7 +302,7 @@ function ratmount_kickbrick()
 	sound_play_3d("event:/sfx/enemies/killingblow", x + (image_xscale * _pad), y);
 	with (instance_create(x + (image_xscale * _pad), y, obj_brickball))
 	{
-		if (other.state == states.ratmountjump || other.state == states.ratmountbounce)
+		if (other.state == states.ratmountjump or other.state == states.ratmountbounce)
 			up = true;
 		image_xscale = other.xscale;
 		xoffset = _pad;

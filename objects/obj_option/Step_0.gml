@@ -23,15 +23,15 @@ for (var i = 0; i < array_length(bg_alpha); i++)
 bg_x -= 1;
 bg_y -= 1;
 
-if (instance_exists(obj_keyconfig) || instance_exists(obj_screenconfirm) || instance_exists(obj_modconfig))
+if (instance_exists(obj_keyconfig) or instance_exists(obj_screenconfirm) or instance_exists(obj_modconfig))
 	exit;
 scr_getinput();
 
 var _dvc = obj_inputAssigner.player_input_device[0];
 if (key_jump && _dvc >= 0 && gamepad_button_check_pressed(_dvc, global.key_jumpC) && global.key_jumpC == gp_face2)
     key_jump = false;
-key_jump = (key_jump || (global.key_start != vk_return && keyboard_check_pressed(vk_return)) || (global.key_start != vk_space && keyboard_check_pressed(vk_space)) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face1));
-key_back = (keyboard_check_pressed(vk_escape) || keyboard_check_pressed(vk_return) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2));
+key_jump = (key_jump or (global.key_start != vk_return && keyboard_check_pressed(vk_return)) or (global.key_start != vk_space && keyboard_check_pressed(vk_space)) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face1));
+key_back = (keyboard_check_pressed(vk_escape) or keyboard_check_pressed(vk_return) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], gp_face2));
 if (backbuffer > 0)
 {
 	backbuffer--;
@@ -66,7 +66,7 @@ switch (option.type)
 		break;
 	
 	case menutype.toggle:
-		if (key_jump || -key_left2 || key_right2)
+		if (key_jump or -key_left2 or key_right2)
 		{
 			fmod_event_one_shot("event:/sfx/ui/select");
 			option.value = !option.value;
@@ -112,7 +112,7 @@ for (i = 0; i < array_length(m.options); i++)
 	var b = m.options[i];
 	if (b.type == menutype.slide)
 	{
-		if (b.moved && (move2 == 0 || optionselected != i))
+		if (b.moved && (move2 == 0 or optionselected != i))
 		{
 			b.moved = false;
 			b.moving = false;
@@ -142,7 +142,7 @@ else
 if (slidebuffer > 0)
 	slidebuffer--;
 
-if ((key_back || key_slap2 || keyboard_check_pressed(vk_escape)) && !instance_exists(obj_keyconfig) && !instance_exists(obj_audioconfig))
+if ((key_back or key_slap2 or keyboard_check_pressed(vk_escape)) && !instance_exists(obj_keyconfig) && !instance_exists(obj_audioconfig))
 {
 	fmod_event_one_shot("event:/sfx/ui/back");
 	if (menu == menus.options)

@@ -12,7 +12,7 @@ function scr_player_ratmountjump()
 	}
 	hsp = movespeed;
 	var r = ratmount_movespeed;
-	if ((check_wall(x + xscale, y) && !place_meeting(x + hsp, y, obj_destructibles)) || (abs(movespeed) < 8 && move != xscale) || abs(movespeed) <= 6)
+	if ((check_wall(x + xscale, y) && !place_meeting(x + hsp, y, obj_destructibles)) or (abs(movespeed) < 8 && move != xscale) or abs(movespeed) <= 6)
 	{
 		gustavodash = 0;
 		ratmount_movespeed = 8;
@@ -122,7 +122,7 @@ function scr_player_ratmountjump()
 		image_index = 0;
 		sprite_index = spr_lonegustavo_groundpoundstart;
 	}
-	if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick)
+	if (((input_buffer_slap > 0 && key_up) or key_shoot2) && brick)
 	{
 		input_buffer_slap = 0;
 		ratmount_kickbrick();

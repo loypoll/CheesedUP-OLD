@@ -141,7 +141,7 @@ if (phase == 0 && state != states.pizzaface_ram)
 	invincible = true;
 else
 	invincible = false;
-attacking = state == states.pizzaface_ram || state == states.pizzaface_nose || state == states.pizzahead_spinningkick || state == states.pizzahead_spinningpunch || state == states.pizzahead_groundpunch || state == states.pizzahead_slamhead || state == states.pizzahead_slamhead2;
+attacking = state == states.pizzaface_ram or state == states.pizzaface_nose or state == states.pizzahead_spinningkick or state == states.pizzahead_spinningpunch or state == states.pizzahead_groundpunch or state == states.pizzahead_slamhead or state == states.pizzahead_slamhead2;
 colliding = state != states.pizzaface_ram;
 if (phase > 0)
 {

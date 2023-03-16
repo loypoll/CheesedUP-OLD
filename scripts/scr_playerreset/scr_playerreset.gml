@@ -266,7 +266,7 @@ function scr_playerreset()
 			var destroy = true;
 			with (obj_player)
 			{
-				if (state == states.dead || state == states.timesup)
+				if (state == states.dead or state == states.timesup)
 					destroy = false;
 			}
 			if (destroy)

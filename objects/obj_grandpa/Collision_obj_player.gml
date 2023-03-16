@@ -1,6 +1,6 @@
 with (obj_player)
 {
-	if (state == states.knightpep || state == states.knightpepslopes)
+	if (state == states.knightpep or state == states.knightpepslopes)
 	{
 		global.combotime = 60;
 		instance_destroy(other);

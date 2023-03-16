@@ -32,7 +32,7 @@ function scr_player_knightpepslopes()
 	}
 	if (input_buffer_jump > 0)
 	{
-		if (can_jump || !doublejump)
+		if (can_jump or !doublejump)
 		{
 			scr_fmod_soundeffect(jumpsnd, x, y);
 			vsp = -11;
@@ -62,9 +62,9 @@ function scr_player_knightpepslopes()
 	}
 	if (sprite_index != spr_knightpep_fly && sprite_index != spr_knightpep_doublejump && sprite_index != spr_knightpep_jump && !grounded)
 		sprite_index = spr_knightpep_fly;
-	if ((sprite_index == spr_knightpep_doublejump || sprite_index == spr_knightpep_fly) && floor(image_index) == (image_number - 1))
+	if ((sprite_index == spr_knightpep_doublejump or sprite_index == spr_knightpep_fly) && floor(image_index) == (image_number - 1))
 		image_index = image_number - 1;
-	if (scr_solid(x + sign(hsp), y) && (!scr_slope() || check_wall(x + sign(hsp), y - 2)) && !place_meeting(x + sign(hsp), y, obj_slope) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+	if (scr_solid(x + sign(hsp), y) && (!scr_slope() or check_wall(x + sign(hsp), y - 2)) && !place_meeting(x + sign(hsp), y, obj_slope) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
 		instance_create(x + (xscale * 40), y, obj_bumpeffect);
 		movespeed = 0;

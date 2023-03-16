@@ -24,7 +24,7 @@ function scr_player_noisejetpack()
 		else if (movespeed < 8)
 			movespeed = Approach(movespeed, 8, 0.5);
 	}
-	if (check_wall(x + sign(hsp), y) || scr_solid_slope(x + sign(hsp), y))
+	if (check_wall(x + sign(hsp), y) or scr_solid_slope(x + sign(hsp), y))
 	{
 		movespeed = 4;
 		xscale *= -1;

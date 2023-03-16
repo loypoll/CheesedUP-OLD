@@ -9,7 +9,7 @@ if (obj_player.x > (x - 200) && obj_player.x < (x + 200))
 }
 if (place_meeting(x + hsp, y, obj_noiserock))
 	obj_noiserock.hsp = hsp;
-if ((obj_noiserock.falling == 1 || obj_noiserock.hit == 1) && jumpaway == 0)
+if ((obj_noiserock.falling == 1 or obj_noiserock.hit == 1) && jumpaway == 0)
 {
 	sprite_index = spr_playerN_jump;
 	image_index = 0;

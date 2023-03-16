@@ -66,7 +66,7 @@ if (state == states.thrown)
 			playerid = other.id;
 	}
 }
-if ((state == states.walk || state == states.idle) && sit)
+if ((state == states.walk or state == states.idle) && sit)
 {
 	hsp = 0;
 	sprite_index = spr_pizzaball_idle1;
@@ -91,7 +91,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (bigcheeseID != -4)
 {
-	if (!instance_exists(bigcheeseID) || bigcheeseID.state != states.throwing || bigcheeseID.shot)
+	if (!instance_exists(bigcheeseID) or bigcheeseID.state != states.throwing or bigcheeseID.shot)
 	{
 		if (instance_exists(bigcheeseID) && bigcheeseID.object_index == obj_golfburger && sprite_index == stunfallspr)
 			sprite_index = walkspr;
