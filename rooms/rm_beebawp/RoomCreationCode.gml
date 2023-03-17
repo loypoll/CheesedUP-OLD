@@ -1,2 +1,2 @@
-global.roommessage = "PIZZA TOWER IN YE OLDE TIME";
-global.gameframe_caption_text = "Ye olde Pizza Tower";
+ds_list_clear(global.saveroom);
+global.gameframe_caption_text = "Green Filling";
