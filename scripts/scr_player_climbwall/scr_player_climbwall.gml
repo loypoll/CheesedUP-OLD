@@ -158,7 +158,7 @@ function scr_player_climbwall()
 					if (input_buffer_slap > 0 && shotgunAnim == false && !global.pistol)
 					{
 						input_buffer_slap = 0;
-						sprite_index = spr_suplexdash;
+						sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
 						suplexmove = true;
 						fmod_event_instance_play(suplexdashsnd);
 						state = states.handstandjump;

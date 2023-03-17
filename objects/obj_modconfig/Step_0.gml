@@ -20,7 +20,7 @@ if key_back
 		depth = -700;
 		alarm[1] = 100;
 	}
-	sound_play(sfx_back);
+	sound_play_oneshot(sfx_back);
 	instance_destroy();
 }
 
@@ -28,7 +28,7 @@ if key_back
 var move = key_down2 - key_up2;
 if move != 0
 {
-	sound_play(sfx_step);
+	sound_play_oneshot(sfx_step);
 	simuplayer.state = states.titlescreen;
 	
 	sel += move;
@@ -63,11 +63,11 @@ if move2 != 0
 	opt.value = clamp(opt.value + move2, 0, array_length(opt.opts) - 1);
 	
 	if valueold != opt.value
-		sound_play(sfx_step);
+		sound_play_oneshot(sfx_step);
 }
 if key_jump
 {
-	sound_play(sfx_select);
+	sound_play_oneshot(sfx_select);
 	var opt = options_array[sel];
 	opt.value = wrap(opt.value + 1, 0, array_length(opt.opts) - 1);
 }

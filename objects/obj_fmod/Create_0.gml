@@ -324,6 +324,7 @@ sound_cache = ds_map_create();
 #macro sfx_ratdeflate "event:/sfx/rat/deflate"
 #macro sfx_ratdeflateeat "event:/sfx/rat/deflateeat"
 #macro sfx_ratgrabeat "event:/sfx/rat/grabeat"
+#macro sfx_ratgrab "event:/sfx/rat/grab"
 #macro sfx_ratbowling "event:/sfx/rat/ratbowling"
 #macro sfx_ratsniff "event:/sfx/rat/ratsniff"
 #macro sfx_ratdead "event:/sfx/rat/ratdead"

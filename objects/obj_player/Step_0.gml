@@ -6,9 +6,9 @@ previcemovespeed = icemovespeed;
 prevxscale = xscale;
 
 // input buffers and coyote time
-if (global.shootbutton == 1 ? key_shoot2 : key_slap2)
-	input_buffer_shoot = 10;
 if (global.shootbutton ? key_shoot2 : key_slap2)
+	input_buffer_shoot = 10;
+if (global.shootbutton == 1 ? key_shoot2 : key_slap2)
 	input_buffer_pistol = 10;
 if (global.attackstyle == 1 ? key_chainsaw2 : key_slap2)
 	input_buffer_slap = 12;

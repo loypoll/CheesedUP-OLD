@@ -151,7 +151,7 @@ var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic g
 			if val == 0
 			{
 				p.timer = -20;
-				sound_play_centered(sfx_suplexdash);
+				sound_play_centered_oneshot(sfx_suplexdash);
 				
 				p.state = states.handstandjump;
 				p.sprite = spr_player_suplexdash;
@@ -162,7 +162,7 @@ var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic g
 			if val == 1
 			{
 				p.timer = -5;
-				sound_play_centered(sfx_dive);
+				sound_play_centered_oneshot(sfx_dive);
 				
 				p.state = states.punch;
 				p.sprite = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
@@ -204,7 +204,7 @@ var opt = add_option("Buffed Uppercut", "uppercut", "Keeps your momentum when up
 	if p.timer >= 20
 	{
 		p.timer = -50;
-		sound_play_centered(sfx_uppercut);
+		sound_play_centered_oneshot(sfx_uppercut);
 			
 		p.state = states.panicjump;
 		p.sprite = spr_player_breakdanceuppercut;

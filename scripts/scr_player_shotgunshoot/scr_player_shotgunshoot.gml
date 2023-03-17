@@ -28,6 +28,6 @@ function scr_player_shotgunshoot()
 			momemtum = true;
 		}
 	}
-	if (input_buffer_slap > 0 && image_index > (image_number - 3))
+	if (input_buffer_shoot > 0 && image_index > (image_number - 3))
 		scr_shotgunshoot();
 }

@@ -329,13 +329,13 @@ function state_player_normal()
 	if (input_buffer_shoot > 0 && shotgunAnim)
 		scr_shotgunshoot();
 	else if (input_buffer_pistol > 0 && global.pistol)
-		scr_pistolshoot(states.jump);
+		scr_pistolshoot(states.normal);
 	
 	// suplex dash
 	if (input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 	{
 		input_buffer_slap = 0;
-		sprite_index = spr_suplexdash;
+		sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
 		suplexmove = true;
 		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
