@@ -2,7 +2,10 @@ function sound_pause_all(enable)
 {
 	var sound = ds_map_find_first(obj_fmod.sound_cache);
 	while sound != undefined
+	{
 		fmod_event_instance_set_paused(obj_fmod.sound_cache[? sound], enable);
+		sound = ds_map_find_next(obj_fmod.sound_cache, sound);
+	}
 }
 function sound_stop(event, force = true)
 {

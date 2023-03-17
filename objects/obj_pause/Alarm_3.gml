@@ -4,14 +4,14 @@ scr_pause_stop_sounds();
 var rm = room;
 if (!hub)
 {
-	pause = false;
-	scr_pause_activate_objects();
-	
 	if REMIX
 	{
 		clear_particles();
 		sound_stop_all(true);
 	}
+	
+	pause = false;
+	scr_pause_activate_objects();
 	
 	obj_player1.targetRoom = Realtitlescreen;
 	obj_player2.targetRoom = Realtitlescreen;
@@ -35,10 +35,10 @@ if (!hub)
 }
 else
 {
-	scr_pause_activate_objects();
-	
 	if REMIX
 		sound_stop_all(true);
+	
+	scr_pause_activate_objects();
 	
 	with (instance_create(0, 0, obj_backtohub_fadeout))
 		fadealpha = 0.9;
