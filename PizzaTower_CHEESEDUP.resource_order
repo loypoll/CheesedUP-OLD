@@ -1,6 +1,5 @@
 {
   "FolderOrderSettings": [
-    {"name":"Pizzascape","order":1,"path":"folders/Rooms/B-Side Levels/Pizzascape.yy",},
     {"name":"Animation Curves","order":8,"path":"folders/Animation Curves.yy",},
     {"name":"Extensions","order":10,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":4,"path":"folders/Fonts.yy",},
@@ -18,6 +17,7 @@
     {"name":"Visuals","order":8,"path":"folders/Objects/Visuals.yy",},
     {"name":"Rooms","order":6,"path":"folders/Rooms.yy",},
     {"name":"B-Side Levels","order":3,"path":"folders/Rooms/B-Side Levels.yy",},
+    {"name":"Pizzascape","order":1,"path":"folders/Rooms/B-Side Levels/Pizzascape.yy",},
     {"name":"Bosses","order":4,"path":"folders/Rooms/Bosses.yy",},
     {"name":"Cutscenes","order":5,"path":"folders/Rooms/Cutscenes.yy",},
     {"name":"Levels","order":2,"path":"folders/Rooms/Levels.yy",},
@@ -81,6 +81,7 @@
     {"name":"Baddie","order":3,"path":"folders/Sprites/Baddie.yy",},
     {"name":"Boss","order":7,"path":"folders/Sprites/Boss.yy",},
     {"name":"CheesyPizza","order":12,"path":"folders/Sprites/CheesyPizza.yy",},
+    {"name":"Pizzasonas","order":1,"path":"folders/Sprites/CheesyPizza/Pizzasonas.yy",},
     {"name":"Cutscene","order":9,"path":"folders/Sprites/Cutscene.yy",},
     {"name":"Debug","order":1,"path":"folders/Sprites/Debug.yy",},
     {"name":"Effects and Particles","order":10,"path":"folders/Sprites/Effects and Particles.yy",},
@@ -142,7 +143,6 @@
     {"name":"Tower and Hub","order":1,"path":"folders/Tile Sets/Tower and Hub.yy",},
     {"name":"Unused","order":24,"path":"folders/Tile Sets/Unused.yy",},
     {"name":"War","order":23,"path":"folders/Tile Sets/War.yy",},
-    {"name":"Pizzasonas","order":1,"path":"folders/Sprites/CheesyPizza/Pizzasonas.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_bossdoor","order":10,"path":"objects/obj_bossdoor/obj_bossdoor.yy",},
