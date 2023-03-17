@@ -1,11 +1,11 @@
 if (!instance_exists(obj_keyconfig))
 {
-	if ((-obj_player.key_left2 || keyboard_check_pressed(vk_left)) && optionselected > 0)
+	if ((-obj_player.key_left2 or keyboard_check_pressed(vk_left)) && optionselected > 0)
 		optionselected -= 1;
-	if ((obj_player.key_right2 || keyboard_check_pressed(vk_right)) && optionselected < 1)
+	if ((obj_player.key_right2 or keyboard_check_pressed(vk_right)) && optionselected < 1)
 		optionselected += 1;
 }
-if (optionselected == 1 && (obj_player.key_jump || keyboard_check_pressed(vk_enter)))
+if (optionselected == 1 && (obj_player.key_jump or keyboard_check_pressed(vk_enter)))
 {
 	file_delete("saveData.ini");
 	scr_initinput();
@@ -49,7 +49,7 @@ if (optionselected == 1 && (obj_player.key_jump || keyboard_check_pressed(vk_ent
 	obj_mainmenuselect.selected = false;
 	instance_destroy();
 }
-if ((obj_player.key_slap2 || keyboard_check_pressed(vk_escape)) || (optionselected == 0 && (obj_player.key_jump || keyboard_check_pressed(vk_enter))))
+if ((obj_player.key_slap2 or keyboard_check_pressed(vk_escape)) or (optionselected == 0 && (obj_player.key_jump or keyboard_check_pressed(vk_enter))))
 {
 	obj_mainmenuselect.selected = false;
 	instance_destroy();

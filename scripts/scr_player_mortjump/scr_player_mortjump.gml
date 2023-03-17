@@ -29,7 +29,7 @@ function scr_player_mortjump()
 	{
 		if (sprite_index == spr_player_mortjumpstart)
 			sprite_index = spr_player_mortjump;
-		else if (sprite_index == spr_player_mortdoublejump || sprite_index == spr_mortdoublejumpstart)
+		else if (sprite_index == spr_player_mortdoublejump or sprite_index == spr_mortdoublejumpstart)
 			sprite_index = spr_mortdoublejump;
 	}
 	var dj = true;

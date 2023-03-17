@@ -11,7 +11,7 @@ function live_async_http_0(l_map) {
 	var l_i, l_n, l_s, l_list, l_names, l_srcMap;
 	live_is_ready = true;
 	live_request_guid = ds_map_find_value(l_map, "guid");
-	if (ds_map_find_value(l_map, "version") == undefined || ds_map_find_value(l_map, "version") < 106) show_error("Outdated GMLive server detected! Please update the included files from the extension.", true);
+	if (ds_map_find_value(l_map, "version") == undefined or ds_map_find_value(l_map, "version") < 106) show_error("Outdated GMLive server detected! Please update the included files from the extension.", true);
 	l_list = ds_map_find_value(l_map, "shaders");
 	l_n = ds_list_size(l_list);
 	for (l_i = 0; l_i < l_n; l_i++) {
@@ -231,13 +231,13 @@ function live_async_http(l_e) {
 		if (l_e == undefined) l_e = async_load;
 		if (!live_async_http_check(l_e)) exit;
 		live_request_id = undefined;
-		if (ds_map_find_value(l_e, "status") < 0 || ds_map_find_value(l_e, "result") == undefined) exit;
+		if (ds_map_find_value(l_e, "status") < 0 or ds_map_find_value(l_e, "result") == undefined) exit;
 		var l_json1 = ds_map_find_value(l_e, "result");
 		var l_map = json_decode(l_json1);
-		if (l_map == -1 || ds_map_exists(l_map, "default")) {
+		if (l_map == -1 or ds_map_exists(l_map, "default")) {
 			if (string_char_at(l_json1, 1) == "{" && string_char_at(l_json1, string_length(l_json1) - 1 + 1) == "]") l_json1 += "}";
 			l_map = json_decode(l_json1);
-			if (l_map == -1 || ds_map_exists(l_map, "default")) {
+			if (l_map == -1 or ds_map_exists(l_map, "default")) {
 				live_log("Invalid JSON response (" + gml_std_Std_stringify(string_length(l_json1) / 1000) + " KB)", 2);
 				exit;
 			}

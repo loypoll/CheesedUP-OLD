@@ -303,7 +303,7 @@ function live_room_loader_add_layer(l_ql) {
 				}
 				var l_fxl = l_ql;
 				l_s = l_fxl[?"effectType"];
-				if (l_s == undefined || l_s == pointer_null) exit;
+				if (l_s == undefined or l_s == pointer_null) exit;
 				var l_fx1 = fx_create(l_s);
 				var l__g_list = l_fxl[?"properties"];
 				var l__g_index = 0;
@@ -323,7 +323,7 @@ function live_room_loader_add_layer(l_ql) {
 							break;
 						case 2:
 							l_s = l_pp[?"value"];
-							if (l_s == undefined || l_s == pointer_null) continue;
+							if (l_s == undefined or l_s == pointer_null) continue;
 							l_f = asset_get_index(l_s);
 							if (l_f != -1) fx_set_parameter(l_fx1, l_pp[?"name"], l_f);
 							break;

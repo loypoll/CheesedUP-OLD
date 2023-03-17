@@ -25,7 +25,7 @@ if (use_dark)
 		}
 	}
 }
-if (obj_player1.finisher || obj_player2.finisher || (obj_player.state == states.playersuperattack && obj_player.superattackstate == states.transition))
+if (obj_player1.finisher or obj_player2.finisher or (obj_player.state == states.playersuperattack && obj_player.superattackstate == states.transition))
 	finisher_alpha = Approach(finisher_alpha, 0.3, 0.1);
 else if (finisher_alpha > 0)
 	finisher_alpha = Approach(finisher_alpha, 0, 0.02);

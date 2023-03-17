@@ -46,7 +46,7 @@ function scr_player_supergrab()
 				if (punchcount > 0)
 				{
 					GamepadSetVibration(0, 0.8, 0.8, 0.65);
-					if ((xscale > 0 && x > (room_width - 100)) || (xscale < 0 && x < 100))
+					if ((xscale > 0 && x > (room_width - 100)) or (xscale < 0 && x < 100))
 						reposition = true;
 					if (reposition)
 						x = lerp(x, room_width / 2, 0.05);

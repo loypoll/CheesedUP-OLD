@@ -2,13 +2,13 @@ if (room == rm_editor)
 	exit;
 if (global.collectsound < 10)
 	global.collectsound += 1;
-if (place_meeting(x, y, obj_secretbigblock) || place_meeting(x, y, obj_shotgunblock))
+if (place_meeting(x, y, obj_secretbigblock) or place_meeting(x, y, obj_shotgunblock))
 	visible = false;
 else
 	visible = true;
 if (global.timeattack == 1)
 	instance_destroy();
-if (place_meeting(x, y, obj_destructibles) || place_meeting(x, y, obj_iceblock_breakable))
+if (place_meeting(x, y, obj_destructibles) or place_meeting(x, y, obj_iceblock_breakable))
 	depth = 102;
 else
 	depth = 2;

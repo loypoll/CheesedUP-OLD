@@ -1,6 +1,8 @@
 function scr_pauseicon_draw(index, x, y)
 {
 	var icon = pause_icons[index];
+	if icon.sprite_index == spr_cursor // animate the cursor
+		icon.image_index = (icon.image_index + 0.35) % 32;
 	draw_sprite_ext(icon.sprite_index, icon.image_index, x + icon.sprite_xoffset + icon.shake_x, y + icon.sprite_yoffset + icon.shake_y, 1, 1, 0, c_white, icon.image_alpha);
 }
 function scr_create_pause_image()
@@ -114,7 +116,7 @@ function scr_pause_activate_objects(unpause_sounds = true)
 	{
 		for (i = 0; i < ds_list_size(sound_list); i++)
 			fmod_event_instance_set_paused(ds_list_find_value(sound_list, i), false);
-		fmod_event_instance_set_paused_all(false);
+		sound_pause_all(false);
 	}
 	ds_list_clear(instance_list);
 	ds_list_clear(sound_list);
@@ -125,7 +127,7 @@ function scr_pause_activate_objects(unpause_sounds = true)
 function scr_pause_deactivate_objects(pause_sounds = true)
 {
 	if (pause_sounds)
-		fmod_event_instance_set_paused_all(true);
+		sound_pause_all(true);
 	
 	ds_list_clear(instance_list);
 	for (var i = 0; i < instance_count; i++)
@@ -143,6 +145,7 @@ function scr_pause_deactivate_objects(pause_sounds = true)
 	instance_activate_object(obj_music);
 	instance_activate_object(obj_fmod);
 	instance_activate_object(obj_shell);
+	instance_activate_object(obj_persistent);
 }
 function pause_spawn_priests()
 {

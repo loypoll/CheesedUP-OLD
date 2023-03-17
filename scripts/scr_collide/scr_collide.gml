@@ -25,7 +25,7 @@ function scr_collide()
 		if (!scr_solid(x, y + (bbox_size_y * sv)))
 		{
 			y += (bbox_size_y * sv);
-			if ((vsp_final > 0 && y >= target_y) || (vsp_final < 0 && y <= target_y))
+			if ((vsp_final > 0 && y >= target_y) or (vsp_final < 0 && y <= target_y))
 			{
 				y = target_y;
 				break;
@@ -56,7 +56,7 @@ function scr_collide()
 		if (!scr_solid(x + (bbox_size_x * sh), y) && down == scr_solid(x + (bbox_size_x * sh), y + 1))
 		{
 			x += (bbox_size_x * sh);
-			if ((hsp_final > 0 && x >= target_x) || (hsp_final < 0 && x <= target_x))
+			if ((hsp_final > 0 && x >= target_x) or (hsp_final < 0 && x <= target_x))
 			{
 				x = target_x;
 				break;
@@ -85,7 +85,7 @@ function scr_collide()
 		vsp += grav;
 	if (platformid != -4)
 	{
-		if (vsp < 0 || !instance_exists(platformid) || !place_meeting(x, y + 12 + (abs(platformid.v_velocity) * 2), platformid))
+		if (vsp < 0 or !instance_exists(platformid) or !place_meeting(x, y + 12 + (abs(platformid.v_velocity) * 2), platformid))
 		{
 			platformid = -4;
 			y = floor(y);
@@ -135,6 +135,6 @@ function scr_collide()
 	if plat && plat.image_yscale < 0
 		plat = false;
 	grounded |= (!place_meeting(x, y, obj_platform) && plat);
-	if (platformid != -4 || (place_meeting(x, y + 1, obj_movingplatform) && !place_meeting(x, y - 2, obj_movingplatform)))
+	if (platformid != -4 or (place_meeting(x, y + 1, obj_movingplatform) && !place_meeting(x, y - 2, obj_movingplatform)))
 		grounded = true;
 }

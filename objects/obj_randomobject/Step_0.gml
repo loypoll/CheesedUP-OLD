@@ -10,7 +10,7 @@ switch (state)
 			case states.normal:
 				var moveH = playerid.key_left + playerid.key_right;
 				var moveV = playerid.key_down - playerid.key_up;
-				if (moveH != 0 || moveV != 0)
+				if (moveH != 0 or moveV != 0)
 				{
 					moveX = moveH;
 					moveY = moveV;

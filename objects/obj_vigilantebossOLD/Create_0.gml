@@ -128,12 +128,12 @@ function boss_hurt_noplayer(argument0)
 }
 function player_hurt(argument0, argument1)
 {
-	if (!argument1.inv_frames && (argument1.state != states.backbreaker || argument1.parry_inst == -4))
+	if (!argument1.inv_frames && (argument1.state != states.backbreaker or argument1.parry_inst == -4))
 	{
 		hitstate = state;
 		hithsp = hsp;
 		hitvsp = vsp;
-		if (state != states.uppunch || vsp < 0)
+		if (state != states.uppunch or vsp < 0)
 		{
 			SUPER_player_hurt(argument0, argument1);
 			with (argument1)

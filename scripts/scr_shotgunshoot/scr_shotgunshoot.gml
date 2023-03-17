@@ -1,6 +1,7 @@
 function scr_shotgunshoot()
 {
 	input_buffer_shoot = 0;
+	input_buffer_pistol = 0;
 	sound_play_3d("event:/sfx/enemies/kill", x, y);
 	with (instance_create(x, y, obj_pistoleffect))
 		image_xscale = other.xscale;

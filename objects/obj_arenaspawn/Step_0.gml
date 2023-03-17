@@ -87,7 +87,7 @@ switch (state)
 			if (!finish)
 				_doorfinish = false;
 		}
-		if (!instance_exists(obj_baddie) && !instance_exists(obj_arena_pizzaportal) && (!instance_exists(obj_arenadoor) || _doorfinish))
+		if (!instance_exists(obj_baddie) && !instance_exists(obj_arena_pizzaportal) && (!instance_exists(obj_arenadoor) or _doorfinish))
 		{
 			wave++;
 			if (wave > maxwave)

@@ -1,6 +1,6 @@
 function scr_enemy_chase()
 {
-	if (object_index == obj_minijohn || object_index == obj_banditochicken || object_index == obj_golfdemon)
+	if (object_index == obj_minijohn or object_index == obj_banditochicken or object_index == obj_golfdemon)
 	{
 		var targetplayer = obj_player1;
 		if (obj_player1.spotlight == 0)

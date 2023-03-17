@@ -6,7 +6,7 @@ if (key && !unlocked)
 ini_close();
 if (unlocked)
 	sprite_index = spr_elevatoropen;
-if (unlocked || key)
+if (unlocked or key)
 	scr_create_uparrowhitbox();
 if (global.panic)
 {

@@ -4,7 +4,7 @@ with (obj_player)
 	{
 		with (other)
 		{
-			if (place_meeting(x, y + 1, other) || place_meeting(x, y - 1, other) || place_meeting(x + 1, y, other) || place_meeting(x - 1, y, other))
+			if (place_meeting(x, y + 1, other) or place_meeting(x, y - 1, other) or place_meeting(x + 1, y, other) or place_meeting(x - 1, y, other))
 				instance_destroy();
 		}
 	}

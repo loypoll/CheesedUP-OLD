@@ -9,7 +9,7 @@ if (!global.panic)
 	if (!is_undefined(mu))
 	{
 		var prevmusic = music;
-		if (prevmusic == -4 || mu.event_name != prevmusic.event_name)
+		if (prevmusic == -4 or mu.event_name != prevmusic.event_name)
 		{
 			fmod_event_instance_play(mu.event);
 			fmod_event_instance_set_paused(mu.event, false);
@@ -30,7 +30,7 @@ if (!global.panic)
 			}
 			music = mu;
 			savedmusicpos = 0;
-			if (room == war_1 || room == tower_finalhallway)
+			if (room == war_1 or room == tower_finalhallway)
 				fmod_event_instance_stop(music.event, true);
 		}
 	}
@@ -79,7 +79,7 @@ else if (secretend)
 		trace("Resuming panic music: room_start");
 	}
 }
-if (room == rank_room || room == boss_pizzaface || room == boss_noise || room == boss_vigilante || room == boss_fakepep || room == boss_pepperman)
+if (room == rank_room or room == boss_pizzaface or room == boss_noise or room == boss_vigilante or room == boss_fakepep or room == boss_pepperman)
 {
 	if (music != -4)
 	{

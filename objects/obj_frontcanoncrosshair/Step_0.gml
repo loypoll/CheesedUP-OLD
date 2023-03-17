@@ -7,7 +7,7 @@ switch (state)
 			fmod_event_instance_stop(snd, true);
 		if (collisioned)
 			visible = false;
-		else if (place_meeting(x, y, obj_frontcanonbomb) || place_meeting(x, y, obj_canonexplosion) || !instance_exists(obj_frontcanongoblin))
+		else if (place_meeting(x, y, obj_frontcanonbomb) or place_meeting(x, y, obj_canonexplosion) or !instance_exists(obj_frontcanongoblin))
 			collisioned = true;
 		if (cooldown > 0)
 			cooldown--;

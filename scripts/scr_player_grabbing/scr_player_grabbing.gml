@@ -38,12 +38,12 @@ function scr_player_grabbing()
 		sprite_index = spr_fall;
 		state = states.jump;
 	}
-	if (floor(image_index) == (image_number - 1) && (sprite_index == attackdash || sprite_index == spr_player_Sjump))
+	if (floor(image_index) == (image_number - 1) && (sprite_index == attackdash or sprite_index == spr_player_Sjump))
 		state = states.normal;
 	if (floor(image_index) == (image_number - 1) && sprite_index == airattackdashstart)
 		sprite_index = airattackdash;
 	grav = 0;
-	if ((scr_solid(x + 1, y) && xscale == 1) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)))
+	if ((scr_solid(x + 1, y) && xscale == 1) && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)))
 	{
 		sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 		grav = 0.5;
@@ -57,7 +57,7 @@ function scr_player_grabbing()
 		machhitAnim = false;
 		instance_create(x + 10, y + 10, obj_bumpeffect);
 	}
-	if ((scr_solid(x - 1, y) && xscale == -1) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)))
+	if ((scr_solid(x - 1, y) && xscale == -1) && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)))
 	{
 		sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 		grav = 0.5;

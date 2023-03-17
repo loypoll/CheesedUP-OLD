@@ -40,7 +40,7 @@ if (bombreset > 0)
 	bombreset--;
 if (state != states.pizzagoblinthrow && bombreset == 0)
 {
-	if (state == states.walk || state == states.idle)
+	if (state == states.walk or state == states.idle)
 	{
 		image_index = 0;
 		state = states.pizzagoblinthrow;

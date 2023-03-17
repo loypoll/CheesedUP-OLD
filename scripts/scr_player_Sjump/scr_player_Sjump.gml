@@ -32,7 +32,7 @@ function scr_player_Sjump()
 			piledrivereffect = 15;
 		}
 	}
-	if ((sprite_index == spr_superjump || sprite_index == spr_superspringplayer) && (character == "N" || character == "P"))
+	if ((sprite_index == spr_superjump or sprite_index == spr_superspringplayer) && (character == "N" or character == "P"))
 		vsp = sjumpvsp;
 	sjumpvsp -= 0.1;
 	if (character == "V" && image_index > 3)
@@ -50,7 +50,7 @@ function scr_player_Sjump()
 		a = 0;
 		if (sprite_index == spr_player_supersidejump)
 			sprite_index = spr_player_supersidejumpland;
-		if (sprite_index == spr_superjump || sprite_index == spr_superspringplayer)
+		if (sprite_index == spr_superjump or sprite_index == spr_superspringplayer)
 			sprite_index = spr_superjumpland;
 		with (obj_camera)
 		{
@@ -71,7 +71,7 @@ function scr_player_Sjump()
 		state = states.Sjumpland;
 		machhitAnim = false;
 	}
-	else if ((key_attack2 || input_buffer_slap > 0) && (character != "N" or noisetype == 0) && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
+	else if ((key_attack2 or input_buffer_slap > 0) && (character != "N" or noisetype == 0) && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
 	{
 		input_buffer_slap = 0;
 		image_index = 0;

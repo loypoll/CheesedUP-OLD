@@ -40,7 +40,7 @@ function scr_player_slipbanan()
 		if (floor(image_index) == (image_number - 1) && abs(hsp) <= 2)
 			state = states.normal;
 	}
-	if (scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) || check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+	if (scr_solid(x + xscale, y) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) or check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
 		sound_play_3d("event:/sfx/pep/slipbump", x, y);
 		if (sprite_index == spr_slipbanan1)

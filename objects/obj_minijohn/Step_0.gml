@@ -157,7 +157,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != states.chase)
 	momentum = 0;
-if (state == states.walk || state == states.idle)
+if (state == states.walk or state == states.idle)
 {
 	var targetplayer = obj_player1;
 	if (obj_player1.spotlight == 0)

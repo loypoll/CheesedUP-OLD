@@ -11,7 +11,7 @@ function scr_player_victory()
 	crouchAnim = true;
 	machhitAnim = false;
 	global.heattime = 60;
-	if (place_meeting(x, y, obj_keydoor) || place_meeting(x, y, obj_geromedoor))
+	if (place_meeting(x, y, obj_keydoor) or place_meeting(x, y, obj_geromedoor))
 		sprite_index = spr_victory;
 	if (place_meeting(x, y, obj_startgate))
 		sprite_index = spr_entergate;

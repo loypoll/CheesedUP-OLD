@@ -44,14 +44,14 @@ if (state != states.stun)
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 var targetplayer = global.coop ? instance_nearest(x, y, obj_player) : obj_player1;
-if (state == states.walk || state == states.idle)
+if (state == states.walk or state == states.idle)
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 160) && y >= (targetplayer.y - 160)))
 		activated = true;
 }
-if (!activated && (state == states.walk || state == states.idle))
+if (!activated && (state == states.walk or state == states.idle))
 	sprite_index = spr_banditochicken_sleep;
-if ((state == states.walk || state == states.idle) && activated == 1 && sprite_index != spr_banditochicken_wake && sprite_index != spr_banditochicken_scared)
+if ((state == states.walk or state == states.idle) && activated == 1 && sprite_index != spr_banditochicken_wake && sprite_index != spr_banditochicken_scared)
 {
 	sound_play_3d("event:/sfx/enemies/banditochicken", x, y);
 	movespeed = 0;

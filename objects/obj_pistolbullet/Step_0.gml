@@ -27,7 +27,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 		switch (object_index)
 		{
 			case obj_vigilanteboss:
-				if (state != states.hit && (state != states.mach2 || kick) && (flickertime <= 0 && vsp > 0) && !reposition)
+				if (state != states.hit && (state != states.mach2 or kick) && (flickertime <= 0 && vsp > 0) && !reposition)
 				{
 					flash = true;
 					alarm[2] = 3;

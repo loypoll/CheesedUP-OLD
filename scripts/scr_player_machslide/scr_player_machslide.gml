@@ -11,7 +11,7 @@ function scr_player_machslide()
 	movespeed = Approach(movespeed, 0, 0.4);
 	if (sprite_index == spr_machslidestart && floor(image_index) == (image_number - 1))
 		sprite_index = spr_machslide;
-	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_machslideboost || sprite_index == spr_mach3boost))
+	if (floor(image_index) == (image_number - 1) && (sprite_index == spr_machslideboost or sprite_index == spr_mach3boost))
 	{
 		if (!grounded)
 		{
@@ -26,7 +26,7 @@ function scr_player_machslide()
 	else
 		image_speed = 0.35;
 	landAnim = false;
-	if (floor(movespeed) <= 0 && (sprite_index == spr_machslide || sprite_index == spr_crouchslide))
+	if (floor(movespeed) <= 0 && (sprite_index == spr_machslide or sprite_index == spr_crouchslide))
 	{
 		state = states.normal;
 		image_index = 0;
@@ -34,14 +34,14 @@ function scr_player_machslide()
 			machslideAnim = true;
 		movespeed = 0;
 	}
-	if (check_wall(x + xscale, y) && (sprite_index == spr_machslide || sprite_index == spr_machslidestart))
+	if (check_wall(x + xscale, y) && (sprite_index == spr_machslide or sprite_index == spr_machslidestart))
 	{
 		sound_play_3d("event:/sfx/pep/splat", x, y);
 		sprite_index = spr_player_wallsplat;
 		state = states.bump;
 		image_index = 0;
 	}
-	if (((floor(image_index) == (image_number - 1) && sprite_index == spr_machslideboost) || sprite_index == spr_player_machslideboostfall) && grounded)
+	if (((floor(image_index) == (image_number - 1) && sprite_index == spr_machslideboost) or sprite_index == spr_player_machslideboostfall) && grounded)
 	{
 		hsp = 0;
 		image_index = 0;
@@ -49,7 +49,7 @@ function scr_player_machslide()
 		movespeed = 8;
 		state = states.mach2;
 	}
-	if (((floor(image_index) == (image_number - 1) && sprite_index == spr_mach3boost) || sprite_index == spr_player_machslideboost3fall) && grounded)
+	if (((floor(image_index) == (image_number - 1) && sprite_index == spr_mach3boost) or sprite_index == spr_player_machslideboost3fall) && grounded)
 	{
 		if (!launch)
 		{
@@ -78,17 +78,15 @@ function scr_player_machslide()
 		state = states.normal;
 		sprite_index = spr_facehurtup;
 	}
-	if (input_buffer_shoot > 0)
+	if (input_buffer_shoot > 0 && shotgunAnim)
 	{
-		if (shotgunAnim)
-		{
-			if (move != 0)
-				xscale = move;
-			scr_shotgunshoot();
-		}
-		else if (global.pistol)
-			scr_pistolshoot(states.normal);
+		if (move != 0)
+			xscale = move;
+		scr_shotgunshoot();
 	}
+	else if (input_buffer_pistol > 0 && global.pistol)
+		scr_pistolshoot(states.normal);
+	
 	if (!instance_exists(dashcloudid) && grounded && !place_meeting(x, y + 1, obj_water))
 	{
 		with (instance_create(x, y, obj_dashcloud2))

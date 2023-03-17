@@ -1,7 +1,7 @@
 function scr_hillbilly_idle()
 {
 	sprite_index = idlespr;
-	if ((global.monsterspeed >= 1 && point_in_camera(x, y, view_camera[0])) || distance_to_pos(x, y, playerinst.x, playerinst.y, 480, 270))
+	if ((global.monsterspeed >= 1 && point_in_camera(x, y, view_camera[0])) or distance_to_pos(x, y, playerinst.x, playerinst.y, 480, 270))
 	{
 		state = states.chase;
 		image_xscale = (playerinst.x > x) ? 1 : -1;

@@ -3,7 +3,7 @@ with (other)
 {
 	if (state != states.Sjump && state != states.gotoplayer && state != states.actor)
 	{
-		if (state == states.knightpep || state == states.knightpepattack || state == states.knightpepslopes)
+		if (state == states.knightpep or state == states.knightpepattack or state == states.knightpepslopes)
 		{
 			with (instance_create(x, y, obj_knightdebris))
 				image_index = 0;
@@ -37,7 +37,7 @@ with (other)
 		}
 		if (other.image_yscale == -1)
 		{
-			if (sprite_index == spr_bottle_idle || sprite_index == spr_bottle_activate)
+			if (sprite_index == spr_bottle_idle or sprite_index == spr_bottle_activate)
 			{
 				repeat (5)
 					instance_create(other.x, other.y + 40, obj_bubbles);

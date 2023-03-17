@@ -6,7 +6,7 @@ for (var i = 0; i < array_length(monster_alarm); i++)
 {
 	if (monster_active[i])
 	{
-		if (i != 4 || effect_buffer <= 0)
+		if (i != 4 or effect_buffer <= 0)
 		{
 			if (monster_room[i] != room_get_name(room))
 			{

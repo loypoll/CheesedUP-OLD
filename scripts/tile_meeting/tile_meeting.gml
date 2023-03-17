@@ -12,8 +12,8 @@ function tile_meeting(tileX, tileY, layer_id, flags = tile_flag.solid)
 	var move_x = tileX - x;
 	var move_y = tileY - y;
 	
-	var solid_flag = (flags & tile_flag.solid) > 0 || (flags & tile_flag.wall) > 0;
-	var slope_flag = (flags & tile_flag.solid) > 0 || (flags & tile_flag.slope) > 0;
+	var solid_flag = (flags & tile_flag.solid) > 0 or (flags & tile_flag.wall) > 0;
+	var slope_flag = (flags & tile_flag.solid) > 0 or (flags & tile_flag.slope) > 0;
 	
 	var _x1 = tilemap_get_cell_x_at_pixel(_tm, bbox_left + move_x, bbox_top + move_y);
 	var _y1 = tilemap_get_cell_y_at_pixel(_tm, bbox_left + move_x, bbox_top + move_y);

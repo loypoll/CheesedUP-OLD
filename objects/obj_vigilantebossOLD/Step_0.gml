@@ -4,7 +4,7 @@ if (hp <= 0 && state != states.arenaround && state != states.fistmatch)
 	if (!thrown && !destroyable)
 		boss_destroy(lastplayerid);
 }
-if ((state == states.mach1 || state == states.machslide || state == states.crouchslide || state == states.uppunch || state == states.punch || state == states.millionpunch || state == states.handstandjump) && alarm[0] <= 0)
+if ((state == states.mach1 or state == states.machslide or state == states.crouchslide or state == states.uppunch or state == states.punch or state == states.millionpunch or state == states.handstandjump) && alarm[0] <= 0)
 	alarm[0] = 6;
 if (chooseparry_buffer > 0)
 	chooseparry_buffer--;
@@ -16,7 +16,7 @@ if (important && honor && nexthonor && phase > 3 && state != states.superattack)
 		if (state == states.chainsawbump)
 			ch = true;
 	}
-	if (instance_exists(obj_shotgunbullet) || ch)
+	if (instance_exists(obj_shotgunbullet) or ch)
 	{
 		nexthonor = false;
 		with (obj_tv)
@@ -157,7 +157,7 @@ switch (state)
 		state_boss_stun();
 		break;
 }
-if (hitstate == states.superattack || state == states.superattack)
+if (hitstate == states.superattack or state == states.superattack)
 {
 	with (lastplayerid)
 	{
@@ -170,4 +170,4 @@ if (hitstate == states.superattack || state == states.superattack)
 		}
 	}
 }
-attacking = state == states.revolver || state == states.mach1 || state == states.charge || state == states.punch || state == states.groundpunchstart || state == states.millionpunch || state == states.freefall || state == states.uppunch || state == states.handstandjump || state == states.superattack || state == states.superattackstart || state == states.crouchslide;
+attacking = state == states.revolver or state == states.mach1 or state == states.charge or state == states.punch or state == states.groundpunchstart or state == states.millionpunch or state == states.freefall or state == states.uppunch or state == states.handstandjump or state == states.superattack or state == states.superattackstart or state == states.crouchslide;

@@ -13,7 +13,7 @@ function scr_pizzaball_hit()
 			s = tauntstoredstate;
 		notification_push(notifs.pizzaball, [obj_player1]);
 		var p = obj_player1.id;
-		if (s == states.mach2 || (p.sprite_index == p.spr_machslidestart || p.sprite_index == p.spr_machslide || p.sprite_index == p.spr_machslideend))
+		if (s == states.mach2 or (p.sprite_index == p.spr_machslidestart or p.sprite_index == p.spr_machslide or p.sprite_index == p.spr_machslideend))
 			scr_pizzaball_go_to_thrown(hithsp * 0.5, hitvsp * 0.5);
 		else
 			scr_pizzaball_go_to_thrown(hithsp * 1.5, -12);

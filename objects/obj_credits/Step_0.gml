@@ -1,5 +1,5 @@
 scroll_y -= 2;
-if (!finish && (keyboard_check_pressed(global.key_slap) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC)))
+if (!finish && (keyboard_check_pressed(global.key_slap) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC)))
 {
 	finish = true;
 	with (obj_ending)

@@ -10,7 +10,7 @@ if (player < 2)
     else if (global.panic && !place_meeting(xstart, ystart, obj_player1))
         player = 2;
 }
-if (global.panic == false || player <= 1)
+if (global.panic == false or player <= 1)
 {
 	x = -100;
 	y = -100;

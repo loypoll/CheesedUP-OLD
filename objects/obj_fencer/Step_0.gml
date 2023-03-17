@@ -53,7 +53,7 @@ if (ragebuffer > 0)
 	ragebuffer--;
 if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)))
 {
-	if (state != states.rage && ragebuffer == 0 && elite && (state == states.walk || state == states.charge))
+	if (state != states.rage && ragebuffer == 0 && elite && (state == states.walk or state == states.charge))
 	{
 		state = states.rage;
 		sprite_index = spr_fencer_rage;
@@ -82,7 +82,7 @@ if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y
 		}
 	}
 }
-if (state == states.stun || state == states.walk)
+if (state == states.stun or state == states.walk)
 {
 	charging = false;
 	movespeed = 0;
@@ -91,7 +91,7 @@ if (sprite_index == spr_fencer_chargestart && floor(image_index) == (image_numbe
 	sprite_index = spr_fencer_charge;
 if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
-if (hitboxcreate == 0 && (state == states.walk || state == states.rage || state == states.charge))
+if (hitboxcreate == 0 && (state == states.walk or state == states.rage or state == states.charge))
 {
 	hitboxcreate = true;
 	with (instance_create(x, y, obj_forkhitbox))

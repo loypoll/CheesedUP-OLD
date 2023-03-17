@@ -1,7 +1,7 @@
 var _x = x;
 var _y = y;
 event_inherited();
-if (x != _x || y != _y)
+if (x != _x or y != _y)
 	sprite_index = walkspr;
 else
 	sprite_index = idlespr;

@@ -24,7 +24,7 @@ if (stationned == 0)
 		spewcrap = 100;
 	}
 }
-if ((place_meeting(x + sign(hsp), y, obj_solid) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_slope))
+if ((place_meeting(x + sign(hsp), y, obj_solid) or scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_slope))
 	image_xscale *= -1;
 instance_destroy(instance_place(x + hsp, y, obj_destructibles));
 switch (sprite_index)

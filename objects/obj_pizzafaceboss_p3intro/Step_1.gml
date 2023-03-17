@@ -411,7 +411,7 @@ switch (introstate)
 		break;
 }
 mask_index = spr_pizzahead_idle;
-if (sprite_index == spr_pizzahead_giddy && !steppysnd && (floor(image_index) == 2 || floor(image_index) == 6))
+if (sprite_index == spr_pizzahead_giddy && !steppysnd && (floor(image_index) == 2 or floor(image_index) == 6))
 {
 	steppysnd = true;
 	sound_play_3d("event:/sfx/pizzahead/step", x, y + 40);

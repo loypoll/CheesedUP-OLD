@@ -3,7 +3,7 @@ function scr_player_facestomp()
 	move = key_left + key_right;
 	jumpAnim = false;
 	hsp = move * movespeed;
-	if ((scr_solid(x + 1, y) && xscale == 1) || (scr_solid(x - 1, y) && xscale == -1))
+	if ((scr_solid(x + 1, y) && xscale == 1) or (scr_solid(x - 1, y) && xscale == -1))
 		movespeed = 0;
 	if (move == 0)
 		movespeed = 0;
@@ -25,7 +25,7 @@ function scr_player_facestomp()
 		state = states.freefall;
 		superslam = 0;
 	}
-	if (grounded && (!place_meeting(x, y + 1, obj_destructibles) || place_meeting(x, y + 1, obj_metalblock)) && vsp > 0)
+	if (grounded && (!place_meeting(x, y + 1, obj_destructibles) or place_meeting(x, y + 1, obj_metalblock)) && vsp > 0)
 	{
 		state = states.freefallland;
 		jumpAnim = true;

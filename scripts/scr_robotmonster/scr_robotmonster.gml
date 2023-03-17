@@ -3,7 +3,7 @@ function scr_robot_normal()
 	image_speed = 0.35;
 	sprite_index = walkspr;
 	hsp = image_xscale * movespeed;
-	if (place_meeting(x + hsp, y, obj_solid) || (place_meeting(x + hsp, y, obj_hallway) && !place_meeting(x, y, obj_hallway)))
+	if (place_meeting(x + hsp, y, obj_solid) or (place_meeting(x + hsp, y, obj_hallway) && !place_meeting(x, y, obj_hallway)))
 		image_xscale *= -1;
 	if (random_buffer <= 0)
 	{
@@ -44,7 +44,7 @@ function scr_robot_chase()
 		hsp = 0;
 		state = states.throwing;
 	}
-	if ((global.monsterspeed >= 1 && !point_in_camera(x, y, view_camera[0])) || distance_to_object(playerinst) > distance_to_idle)
+	if ((global.monsterspeed >= 1 && !point_in_camera(x, y, view_camera[0])) or distance_to_object(playerinst) > distance_to_idle)
 		state = states.normal;
 }
 function scr_robot_attack()
@@ -70,7 +70,7 @@ function scr_robot_detect()
 	var _col = collision_line(x, y, playerinst.x, playerinst.y, obj_solid, false, true);
 	var _player_colX = (image_xscale > 0) ? (playerinst.x < (x + threshold_x) && playerinst.x > x) : (playerinst.x > (x - threshold_x) && playerinst.x < x);
 	var _player_colY = playerinst.y > (y - threshold_y) && playerinst.y < (y + threshold_y);
-	if ((global.monsterspeed >= 1 && point_in_camera(x, y, view_camera[0])) || (_col == -4 && _player_colX && _player_colY))
+	if ((global.monsterspeed >= 1 && point_in_camera(x, y, view_camera[0])) or (_col == -4 && _player_colX && _player_colY))
 	{
 		if (image_yscale < 0)
 		{

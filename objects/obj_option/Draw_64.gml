@@ -7,7 +7,7 @@ if (room != Mainmenu)
 	with (obj_keyconfig)
 		event_perform(ev_draw, ev_gui);
 }
-if (instance_exists(obj_keyconfig) || instance_exists(obj_screenconfirm))
+if (instance_exists(obj_keyconfig) or instance_exists(obj_screenconfirm) or instance_exists(obj_modconfig))
 	exit;
 
 draw_set_font(lang_get_font("bigfont"));

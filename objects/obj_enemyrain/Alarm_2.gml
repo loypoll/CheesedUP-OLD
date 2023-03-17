@@ -14,7 +14,7 @@ if (instance_number(obj_baddie) < 20)
 	objects[2] = obj_destructibles;
 	for (i = 0; i < 3; i += 1)
 	{
-		while (position_meeting(spawnxrandom + 50, spawny - 50, objects[i]) || position_meeting(spawnxrandom - 50, spawny - 50, objects[i]))
+		while (position_meeting(spawnxrandom + 50, spawny - 50, objects[i]) or position_meeting(spawnxrandom - 50, spawny - 50, objects[i]))
 		{
 			spawny += 1;
 			if (spawnxrandom > playerid.x)
@@ -22,7 +22,7 @@ if (instance_number(obj_baddie) < 20)
 			if (spawnxrandom <= playerid.x)
 				spawnxrandom += 1;
 		}
-		while (position_meeting(spawnxrandom + 50, spawny + 50, objects[i]) || position_meeting(spawnxrandom - 50, spawny + 50, objects[i]))
+		while (position_meeting(spawnxrandom + 50, spawny + 50, objects[i]) or position_meeting(spawnxrandom - 50, spawny + 50, objects[i]))
 		{
 			spawny -= 1;
 			if (spawnxrandom > playerid.x)

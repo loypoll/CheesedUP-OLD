@@ -13,7 +13,7 @@ switch (state)
 	
 	case states.transition:
 		sprite_index = spr_kingghost_dash;
-		if (!instance_exists(trapid) || (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap))
+		if (!instance_exists(trapid) or (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap))
 			state = states.normal;
 		
 		if (instance_exists(trapid))
@@ -29,7 +29,7 @@ switch (state)
 		break;
 	
 	case states.chase:
-		if (!instance_exists(trapid) || (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap && (trapid.object_index != obj_pinballtrap || trapid.sprite_index != spr_kingghost_pinball3)))
+		if (!instance_exists(trapid) or (distance_to_object(obj_player1) > trapid.player_distance_threshold && trapid.object_index != obj_tvtrap && (trapid.object_index != obj_pinballtrap or trapid.sprite_index != spr_kingghost_pinball3)))
 		{
 			state = states.normal;
 			with (trapid)

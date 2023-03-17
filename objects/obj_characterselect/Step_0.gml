@@ -1,7 +1,7 @@
 image_speed = 0.35;
-if ((obj_player1.key_right2 || -obj_player2.key_left2) && selected == 0 && ready == 0)
+if ((obj_player1.key_right2 or -obj_player2.key_left2) && selected == 0 && ready == 0)
 	selected += 1;
-if ((-obj_player1.key_left2 || obj_player2.key_right2) && selected == 1 && ready == 0)
+if ((-obj_player1.key_left2 or obj_player2.key_right2) && selected == 1 && ready == 0)
 	selected -= 1;
 if (obj_player1.key_jump && selected == 0 && obj_peppinoselect.sprite_index != spr_peppinoselected)
 {

@@ -116,14 +116,14 @@ boss_update_pizzaheadKO(spr_bossfight_noiseHP, spr_bossfight_noisepalette);
 with (obj_noisey)
 {
 	var t = id;
-	if (thrown && (place_meeting(x + hsp, y, other) || place_meeting(x, y, other)))
+	if (thrown && (place_meeting(x + hsp, y, other) or place_meeting(x, y, other)))
 	{
 		with (other)
 			scr_noise_do_hurt(t);
 	}
 }
 boss_hurt_gustavo();
-if (droptrap && (state == states.walk || state == states.stun))
+if (droptrap && (state == states.walk or state == states.stun))
 {
 	if (abs(x - targetplayer.x) <= 200)
 	{
@@ -201,7 +201,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if ((state == states.walk || (state == states.stun && !savedthrown)) && flickertime <= 0 && (wastedhits != 7 || pizzahead))
+if ((state == states.walk or (state == states.stun && !savedthrown)) && flickertime <= 0 && (wastedhits != 7 or pizzahead))
 	invincible = false;
 else
 	invincible = true;
@@ -213,15 +213,15 @@ if (pizzahead)
 {
 	with (obj_gustavograbbable)
 	{
-		if (enemy_is_superslam(id) || enemy_is_swingding(id))
+		if (enemy_is_superslam(id) or enemy_is_swingding(id))
 			other.invincible = true;
 	}
 }
-if ((!invincible || ((state == states.walk && flickertime <= 0) || (state == states.stun && !savedthrown))) && !flash && alarm[5] < 0)
+if ((!invincible or ((state == states.walk && flickertime <= 0) or (state == states.stun && !savedthrown))) && !flash && alarm[5] < 0)
 	alarm[5] = 0.15 * room_speed;
-else if (invincible && (state != states.walk || flickertime > 0) && (state != states.stun || savedthrown))
+else if (invincible && (state != states.walk or flickertime > 0) && (state != states.stun or savedthrown))
 	flash = false;
-if ((state == states.mach2 || state == states.machslide || state == states.jetpack || state == states.bounce || state == states.pogo) && alarm[4] < 0)
+if ((state == states.mach2 or state == states.machslide or state == states.jetpack or state == states.bounce or state == states.pogo) && alarm[4] < 0)
 	alarm[4] = 5;
 mask_index = spr_player_mask;
 if (state != states.stun)

@@ -37,6 +37,7 @@ scr_pauseicon_add(spr_pauseicons, 4);
 scr_pauseicon_add(spr_pauseicons, 5);
 scr_pauseicon_add(spr_pauseicons, 6);
 scr_pauseicon_add(spr_pauseicons, 7, 8, 8);
+scr_pauseicon_add(spr_pauseicons, 8);
 
 #region categories
 
@@ -60,6 +61,11 @@ add_option_press(categories, 3, "option_controls", function()
 	instance_create_unique(0, 0, obj_keyconfig);
 	*/
 	menu_goto(menus.controls);
+});
+add_option_press(categories, 4, "option_mod", function()
+{
+	obj_option.key_jump = false;
+	instance_create_unique(0, 0, obj_modconfig);
 });
 array_push(menus, categories);
 
@@ -314,7 +320,7 @@ add_option_press(controls_menu, 3, "option_reset_config", function()
 		for (i = 0; i < array_length(menus); i++)
 		{
 			b = menus[i]
-			if (b.menu_id == menus.controller || b.menu_id == menus.deadzone)
+			if (b.menu_id == menus.controller or b.menu_id == menus.deadzone)
 			{
 				for (var j = 0; j < array_length(b.options); j++)
 				{

@@ -46,7 +46,7 @@ if (move)
 }
 if (grabbed)
 	hasgrabbed = true;
-if (grabbed || vsp > 0)
+if (grabbed or vsp > 0)
 	land = true;
 if (land)
 	depth = 0;

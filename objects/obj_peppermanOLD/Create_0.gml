@@ -123,11 +123,11 @@ function boss_hurt_noplayer(argument0)
 }
 function player_hurt(argument0, argument1)
 {
-	if (argument1.state != states.backbreaker || argument1.parry_inst == -4)
+	if (argument1.state != states.backbreaker or argument1.parry_inst == -4)
 	{
 		var _prevstate = state;
 		SUPER_player_hurt(argument0, argument1);
-		if (_prevstate == states.shoulderbash || _prevstate == states.supershoulderbash || _prevstate == states.shoulder || _prevstate == states.superslam)
+		if (_prevstate == states.shoulderbash or _prevstate == states.supershoulderbash or _prevstate == states.shoulder or _prevstate == states.superslam)
 		{
 			with (obj_camera)
 			{
@@ -164,12 +164,12 @@ function player_hurt(argument0, argument1)
 	{
 		with (argument1)
 		{
-			if (state == states.hit || state == states.chainsaw)
+			if (state == states.hit or state == states.chainsaw)
 			{
 				x = hitX;
 				y = hitY;
 			}
-			if (other.state == states.hit || other.state == states.chainsaw)
+			if (other.state == states.hit or other.state == states.chainsaw)
 			{
 				other.x = hitX;
 				other.y = hitY;

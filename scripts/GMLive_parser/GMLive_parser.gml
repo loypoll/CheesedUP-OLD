@@ -66,7 +66,7 @@ function gml_parser(l_src) constructor {
 								if (buffer_peek(l_buf, l_pos, buffer_u8) == 47) {
 									while (l_pos < l_len) {
 										l_c = buffer_peek(l_buf, l_pos, buffer_u8);
-										if (l_c == 13 || l_c == 10) break;
+										if (l_c == 13 or l_c == 10) break;
 										l_pos++;
 									}
 								} else if (buffer_peek(l_buf, l_pos, buffer_u8) == 42) {
@@ -86,7 +86,7 @@ function gml_parser(l_src) constructor {
 						l_z = false;
 						while (l_pos < l_len) {
 							l_c = buffer_peek(l_buf, l_pos, buffer_u8);
-							if (l_c == 13 || l_c == 10) break;
+							if (l_c == 13 or l_c == 10) break;
 							if (l_c == 92) l_z = true;
 							l_pos++;
 						}
@@ -102,7 +102,7 @@ function gml_parser(l_src) constructor {
 								l_z = true;
 								continue;
 							}
-							if (l_c == 13 || l_c == 10) {
+							if (l_c == 13 or l_c == 10) {
 								l_pos++;
 								if (l_c == 13 && buffer_peek(l_buf, l_pos, buffer_u8) == 10) l_pos++;
 								if (!l_z) return gml_parser_error("Multi-line comments inside macros must use \\ before line end", new gml_pos(l_src, l_row, l_pos - l_rowStart), l_out);
@@ -181,7 +181,7 @@ function gml_parser(l_src) constructor {
 				case 64:
 					if (l_ver.h_has_literal_strings) {
 						l_c = buffer_peek(l_buf, l_pos, buffer_u8);
-						if (l_c == 34 || l_c == 39) {
+						if (l_c == 34 or l_c == 39) {
 							l_pos++;
 							l_n = l_pos;
 							l_i = buffer_peek(l_buf, l_pos, buffer_u8);
@@ -272,7 +272,7 @@ function gml_parser(l_src) constructor {
 							l_start = l_pos;
 							while (l_pos < l_len) {
 								l_i = buffer_peek(l_buf, l_pos, buffer_u8);
-								if (l_i == 10 || l_i == 13) break; else l_pos++;
+								if (l_i == 10 or l_i == 13) break; else l_pos++;
 							}
 							break;
 						case 42:
@@ -739,7 +739,7 @@ function gml_parser(l_src) constructor {
 					l_start = l_pos;
 					while (l_pos < l_len) {
 						l_c = buffer_peek(l_buf, l_pos, buffer_u8);
-						if (l_c == 95 || l_c >= 97 && l_c <= 122 || l_c >= 65 && l_c <= 90 || l_c >= 48 && l_c <= 57) l_pos++; else break;
+						if (l_c == 95 or l_c >= 97 && l_c <= 122 or l_c >= 65 && l_c <= 90 or l_c >= 48 && l_c <= 57) l_pos++; else break;
 					}
 					var l_ident = gml_parser_buf_sub(l_buf, l_sub_buf, l_start, l_pos);
 					switch (l_ident) {
@@ -747,14 +747,14 @@ function gml_parser(l_src) constructor {
 							l_start = l_pos;
 							while (l_pos < l_len) {
 								l_c = buffer_peek(l_buf, l_pos, buffer_u8);
-								if (l_c == 32 || l_c == 9) l_pos++; else break;
+								if (l_c == 32 or l_c == 9) l_pos++; else break;
 							}
-							if ((l_c == 95 || l_c >= 97 && l_c <= 122 || l_c >= 65 && l_c <= 90) && l_pos < l_len) {
+							if ((l_c == 95 or l_c >= 97 && l_c <= 122 or l_c >= 65 && l_c <= 90) && l_pos < l_len) {
 								l_start = l_pos;
 								l_pos++;
 								while (l_pos < l_len) {
 									l_c = buffer_peek(l_buf, l_pos, buffer_u8);
-									if (l_c == 95 || l_c >= 97 && l_c <= 122 || l_c >= 65 && l_c <= 90 || l_c >= 48 && l_c <= 57) l_pos++; else break;
+									if (l_c == 95 or l_c >= 97 && l_c <= 122 or l_c >= 65 && l_c <= 90 or l_c >= 48 && l_c <= 57) l_pos++; else break;
 								}
 								l__out_tk = gml_token_header(l_d, gml_parser_buf_sub(l_buf, l_sub_buf, l_start, l_pos), false);
 								if (l__gthis.h_curr_macro != undefined) array_push(l__gthis.h_curr_macro.h_tokens, l__out_tk); else ds_list_add(l_out, l__out_tk);
@@ -774,7 +774,7 @@ function gml_parser(l_src) constructor {
 								l_config = undefined;
 								while (l_pos < l_len) {
 									var l_c1 = buffer_peek(l_buf, l_pos, buffer_u8);
-									if (l_c1 == 32 || l_c1 == 9) l_pos++; else break;
+									if (l_c1 == 32 or l_c1 == 9) l_pos++; else break;
 								}
 								var l_tmp;
 								if (l_pos >= l_len) {
@@ -783,17 +783,17 @@ function gml_parser(l_src) constructor {
 									l_tmp = true;
 								} else {
 									l_c = buffer_peek(l_buf, l_pos, buffer_u8);
-									if ((l_c == 95 || l_c >= 97 && l_c <= 122 || l_c >= 65 && l_c <= 90)) {
+									if ((l_c == 95 or l_c >= 97 && l_c <= 122 or l_c >= 65 && l_c <= 90)) {
 										l_start = l_pos;
 										l_pos++;
 										while (l_pos < l_len) {
 											var l_c2 = buffer_peek(l_buf, l_pos, buffer_u8);
-											if (l_c2 == 95 || l_c2 >= 97 && l_c2 <= 122 || l_c2 >= 65 && l_c2 <= 90 || l_c2 >= 48 && l_c2 <= 57) l_pos++; else break;
+											if (l_c2 == 95 or l_c2 >= 97 && l_c2 <= 122 or l_c2 >= 65 && l_c2 <= 90 or l_c2 >= 48 && l_c2 <= 57) l_pos++; else break;
 										}
 										l_name = gml_parser_buf_sub(l_buf, l_sub_buf, l_start, l_pos);
 										while (l_pos < l_len) {
 											var l_c3 = buffer_peek(l_buf, l_pos, buffer_u8);
-											if (l_c3 == 32 || l_c3 == 9) l_pos++; else break;
+											if (l_c3 == 32 or l_c3 == 9) l_pos++; else break;
 										}
 										l_config = undefined;
 										if (buffer_peek(l_buf, l_pos, buffer_u8) == 58) {
@@ -801,12 +801,12 @@ function gml_parser(l_src) constructor {
 											l_config = l_name;
 											while (l_pos < l_len) {
 												var l_c4 = buffer_peek(l_buf, l_pos, buffer_u8);
-												if (l_c4 == 32 || l_c4 == 9) l_pos++; else break;
+												if (l_c4 == 32 or l_c4 == 9) l_pos++; else break;
 											}
 											l_start = l_pos;
 											while (l_pos < l_len) {
 												var l_c5 = buffer_peek(l_buf, l_pos, buffer_u8);
-												if (l_c5 == 95 || l_c5 >= 97 && l_c5 <= 122 || l_c5 >= 65 && l_c5 <= 90 || l_c5 >= 48 && l_c5 <= 57) l_pos++; else break;
+												if (l_c5 == 95 or l_c5 >= 97 && l_c5 <= 122 or l_c5 >= 65 && l_c5 <= 90 or l_c5 >= 48 && l_c5 <= 57) l_pos++; else break;
 											}
 											l_name = gml_parser_buf_sub(l_buf, l_sub_buf, l_start, l_pos);
 										}
@@ -825,7 +825,7 @@ function gml_parser(l_src) constructor {
 						case "endregion": case "region":
 							while (l_pos < l_len) {
 								l_i = buffer_peek(l_buf, l_pos, buffer_u8);
-								if (l_i == 10 || l_i == 13) break; else l_pos++;
+								if (l_i == 10 or l_i == 13) break; else l_pos++;
 							}
 							break;
 						default:
@@ -884,10 +884,10 @@ function gml_parser(l_src) constructor {
 					}
 					break;
 				default:
-					if (l_c >= 97 && l_c <= 122 || l_c >= 65 && l_c <= 90 || l_c == 95) {
+					if (l_c >= 97 && l_c <= 122 or l_c >= 65 && l_c <= 90 or l_c == 95) {
 						while (l_pos < l_len) {
 							l_c = buffer_peek(l_buf, l_pos, buffer_u8);
-							if (l_c == 95 || l_c >= 97 && l_c <= 122 || l_c >= 65 && l_c <= 90 || l_c >= 48 && l_c <= 57) l_pos++; else break;
+							if (l_c == 95 or l_c >= 97 && l_c <= 122 or l_c >= 65 && l_c <= 90 or l_c >= 48 && l_c <= 57) l_pos++; else break;
 						}
 						l_s = gml_parser_buf_sub(l_buf, l_sub_buf, l_start, l_pos);
 						var l_fn = data_gml_keyword_mapper_map.h_obj[$ l_s];
@@ -913,7 +913,7 @@ function gml_parser(l_src) constructor {
 							l__out_tk = gml_token_ident(l_d, l_s);
 							if (l__gthis.h_curr_macro != undefined) array_push(l__gthis.h_curr_macro.h_tokens, l__out_tk); else ds_list_add(l_out, l__out_tk);
 						}
-					} else if (l_c >= 48 && l_c <= 57 || l_c == 46) {
+					} else if (l_c >= 48 && l_c <= 57 or l_c == 46) {
 						if (l_c == 48) {
 							l_i = buffer_peek(l_buf, l_pos, buffer_u8);
 							if (l_i == 120) {
@@ -963,7 +963,7 @@ function gml_parser(l_src) constructor {
 								} else {
 									l_pos++;
 									l_c = buffer_peek(l_buf, l_pos, buffer_u8);
-									if (l_c == 95 || l_c >= 97 && l_c <= 122 || l_c >= 65 && l_c <= 90) {
+									if (l_c == 95 or l_c >= 97 && l_c <= 122 or l_c >= 65 && l_c <= 90) {
 										l_s = gml_parser_buf_sub(l_buf, l_sub_buf, l_start, l_pos - 1);
 										l__out_tk = gml_token_number(l_d, gml_std_Std_parseFloat(l_s), l_s);
 										if (l__gthis.h_curr_macro != undefined) array_push(l__gthis.h_curr_macro.h_tokens, l__out_tk); else ds_list_add(l_out, l__out_tk);
@@ -974,7 +974,7 @@ function gml_parser(l_src) constructor {
 									}
 									l_z = true;
 								}
-							} else if (l_c >= 48 && l_c <= 57 || l_c == 95) {
+							} else if (l_c >= 48 && l_c <= 57 or l_c == 95) {
 								l_pos++;
 							} else break;
 						}

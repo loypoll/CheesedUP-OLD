@@ -62,7 +62,7 @@ function scr_enemy_grabbed()
 		image_xscale = -_obj_player.xscale;
 		stunned = 200;
 		_obj_player.baddiegrabbedID = id;
-		if (_obj_player.state == states.grabbing || _obj_player.state == states.grab || _obj_player.state == states.throwing || _obj_player.state == states.slam || _obj_player.state == states.tacklecharge)
+		if (_obj_player.state == states.grabbing or _obj_player.state == states.grab or _obj_player.state == states.throwing or _obj_player.state == states.slam or _obj_player.state == states.tacklecharge)
 		{
 			x = _obj_player.x;
 			if (_obj_player.sprite_index != _obj_player.spr_haulingstart)
@@ -81,7 +81,7 @@ function scr_enemy_grabbed()
 		{
 			suplexhavetomash = other.hp - 1;
 			move = key_left2 + key_right2;
-			if (!(state == states.grab || state == states.chainsaw || state == states.pummel || state == states.finishingblow || state == states.grabbing || state == states.throwing || state == states.slam || state == states.tacklecharge || state == states.punch || state == states.superslam || state == states.backkick || state == states.uppunch || state == states.shoulder))
+			if (!(state == states.grab or state == states.chainsaw or state == states.pummel or state == states.finishingblow or state == states.grabbing or state == states.throwing or state == states.slam or state == states.tacklecharge or state == states.punch or state == states.superslam or state == states.backkick or state == states.uppunch or state == states.shoulder))
 			{
 				other.x = x;
 				other.y = y;
@@ -90,7 +90,7 @@ function scr_enemy_grabbed()
 			}
 		}
 		hsp = 0;
-		if (_obj_player.state == states.punch || _obj_player.state == states.parry)
+		if (_obj_player.state == states.punch or _obj_player.state == states.parry)
 		{
 			alarm[3] = 3;
 			global.hit += 1;
@@ -196,7 +196,7 @@ function scr_enemy_grabbed()
 				shake_mag_acc = 3 / room_speed;
 			}
 		}
-		if (_obj_player.state == states.finishingblow && (floor(_obj_player.image_index) >= 4 || (floor(_obj_player.image_index) < 1 && _obj_player.sprite_index == _obj_player.spr_swingdingend)))
+		if (_obj_player.state == states.finishingblow && (floor(_obj_player.image_index) >= 4 or (floor(_obj_player.image_index) < 1 && _obj_player.sprite_index == _obj_player.spr_swingdingend)))
 		{
 			thrown = 1
 			if heavy
@@ -305,7 +305,7 @@ function scr_enemy_grabbed()
 			x = _obj_player.x + (_obj_player.xscale * 15);
 			y = _obj_player.y;
 		}
-		if (_obj_player.state == states.superslam || (_obj_player.state == states.chainsaw && sprite_index == spr_player_piledriver))
+		if (_obj_player.state == states.superslam or (_obj_player.state == states.chainsaw && sprite_index == spr_player_piledriver))
 		{
 			if (_obj_player.character == "P")
 			{
@@ -387,7 +387,7 @@ function scr_enemy_grabbed()
 			hitX = x;
 			hitY = y;
 			alarm[3] = 3;
-			if (!elite || elitehit <= 0)
+			if (!elite or elitehit <= 0)
 				mach3destroy = true;
 			state = states.hit;
 			image_xscale = -_obj_player.xscale;
@@ -467,7 +467,7 @@ function scr_enemy_grabbed()
 				y = _obj_player.y;
 			}
 		}
-		if (state != states.grabbed || _obj_player.state != states.grab)
+		if (state != states.grabbed or _obj_player.state != states.grab)
 		{
 			check_grabbed_solid(_obj_player);
 			if (state == states.hit)
@@ -527,7 +527,7 @@ function check_grabbed_solid(player)
 {
 	if (instakilled)
 		exit;
-	if (!place_meeting(x, y, obj_destructibles) && (scr_solid(x, y) || collision_line(x, y, player.x, player.y, obj_solid, false, true) != noone))
+	if (!place_meeting(x, y, obj_destructibles) && (scr_solid(x, y) or collision_line(x, y, player.x, player.y, obj_solid, false, true) != noone))
 	{
 		var _dist = abs(x - obj_player.x);
 		x = player.x;

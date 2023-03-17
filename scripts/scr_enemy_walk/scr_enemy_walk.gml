@@ -9,7 +9,7 @@ function scr_enemy_walk()
 		if (!walked)
 		{
 			hsp += (accel * sign(image_xscale));
-			if (hsp < -movespeed || hsp > movespeed)
+			if (hsp < -movespeed or hsp > movespeed)
 			{
 				hsp = movespeed * sign(image_xscale);
 				walked = true;
@@ -35,7 +35,7 @@ function scr_enemy_walk()
 		hsp = 0;
 	if (turntimer > 0 && turner == 1)
 		turntimer--;
-	if (scr_solid(x + image_xscale, y) || place_meeting(x + hsp, y, obj_hallway) || x + hsp > room_width + 50 || x + hsp < -50)
+	if (scr_solid(x + image_xscale, y) or place_meeting(x + hsp, y, obj_hallway) or x + hsp > room_width + 50 or x + hsp < -50)
 	or place_meeting(x + (image_xscale * 15), y + 31, obj_water) or place_meeting(x + (image_xscale * 15), y + 31, obj_current)
 	|| (turntimer <= 0 && turner)
 	{
@@ -87,7 +87,7 @@ function scr_enemy_walk()
 					image_xscale *= -1;
 				if (object_index == obj_pickle)
 					hsp = 0;
-				if (object_index == obj_miniufo || object_index == obj_kentukybomber)
+				if (object_index == obj_miniufo or object_index == obj_kentukybomber)
 					turntimer = turnmax;
 			}
 			turntimer = turnmax;
@@ -95,7 +95,7 @@ function scr_enemy_walk()
 	}
 	if (object_index != obj_ancho && object_index != obj_camerapatrol)
 	{
-		if (!(scr_solid(x + (image_xscale * 15), y + 31) || place_meeting(x + (image_xscale * 15), y + 31, obj_platform)) || (x + hsp) > (room_width + 50) || (x + hsp) < -50)
+		if (!(scr_solid(x + (image_xscale * 15), y + 31) or place_meeting(x + (image_xscale * 15), y + 31, obj_platform)) or (x + hsp) > (room_width + 50) or (x + hsp) < -50)
 		{
 			if (movespeed > 0 && grounded)
 			{

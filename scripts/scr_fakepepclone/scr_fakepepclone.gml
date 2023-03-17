@@ -16,7 +16,7 @@ function scr_fakepepclone_transitioncutscene()
 			attacked = false;
 			state = states.walk;
 			cooldown = 15;
-			if (attack.attack == fakepep_attacks.machclone || attack.attack == fakepep_attacks.flailingclone || attack.attack == fakepep_attacks.tauntclone)
+			if (attack.attack == fakepep_attacks.machclone or attack.attack == fakepep_attacks.flailingclone or attack.attack == fakepep_attacks.tauntclone)
 				cooldown = 0;
 			if (attack.attack == fakepep_attacks.superjumpclone)
 			{

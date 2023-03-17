@@ -55,7 +55,7 @@ function scr_player_bombgrab()
 			sprite_index = spr_haulingjump;
 			image_index = 0;
 		}
-		if ((sprite_index == spr_haulingjump || sprite_index == spr_haulingfall) && grounded && vsp > 0)
+		if ((sprite_index == spr_haulingjump or sprite_index == spr_haulingfall) && grounded && vsp > 0)
 		{
 			sound_play_3d("event:/sfx/pep/step", x, y);
 			create_particle(x, y, particle.landcloud);
@@ -137,7 +137,7 @@ function scr_player_bombpepup()
 		a = 0;
 		if (sprite_index == spr_player_supersidejump)
 			sprite_index = spr_player_supersidejumpland;
-		if (sprite_index == spr_superjump || sprite_index == spr_superspringplayer)
+		if (sprite_index == spr_superjump or sprite_index == spr_superspringplayer)
 			sprite_index = spr_superjumpland;
 		with (obj_camera)
 		{
@@ -198,7 +198,7 @@ function scr_player_bombpepside()
 	machhitAnim = false;
 	with (instance_place(x + hsp, y, obj_metalblock))
 		instance_destroy();
-	if (scr_solid(x + xscale, y) && (scr_solid_slope(x + sign(hsp), y) || check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+	if (scr_solid(x + xscale, y) && (scr_solid_slope(x + sign(hsp), y) or check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 	{
 		sprite_index = spr_hitwall;
 		sound_play_3d("event:/sfx/pep/groundpound", x, y);
@@ -248,7 +248,7 @@ function scr_player_bombpep()
 	alarm[5] = 2;
 	if (sprite_index == spr_bombpepintro && floor(image_index) == (image_number - 1))
 		sprite_index = spr_bombpeprun;
-	if (sprite_index == spr_bombpeprun || sprite_index == spr_bombpeprunabouttoexplode)
+	if (sprite_index == spr_bombpeprun or sprite_index == spr_bombpeprunabouttoexplode)
 	{
 		if (movespeed <= 8)
 			movespeed += 0.2;
@@ -286,13 +286,13 @@ function scr_player_bombpep()
 	}
 	if (bombpeptimer > 0)
 		bombpeptimer -= 0.5;
-	if (scr_solid(x + 1, y) && xscale == 1 && hsp != 0 && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)))
+	if (scr_solid(x + 1, y) && xscale == 1 && hsp != 0 && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)))
 	{
 		instance_create(x + 10, y + 10, obj_bumpeffect);
 		xscale *= -1;
 		GamepadSetVibration((object_index == obj_player1) ? 0 : 1, 0.2, 0.2, 0.4);
 	}
-	if (scr_solid(x - 1, y) && xscale == -1 && hsp != 0 && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)))
+	if (scr_solid(x - 1, y) && xscale == -1 && hsp != 0 && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)))
 	{
 		instance_create(x - 10, y + 10, obj_bumpeffect);
 		xscale *= -1;
@@ -309,7 +309,7 @@ function scr_player_bombpep()
 		image_speed = 0.45;
 	else
 		image_speed = 0.6;
-	if (hsp != 0 && (floor(image_index) == 0 || floor(image_index) == 2) && steppy == 0 && grounded)
+	if (hsp != 0 && (floor(image_index) == 0 or floor(image_index) == 2) && steppy == 0 && grounded)
 		steppy = true;
 	if (floor(image_index) != 0 && floor(image_index) != 2)
 		steppy = false;

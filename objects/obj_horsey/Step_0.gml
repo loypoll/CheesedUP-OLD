@@ -25,7 +25,7 @@ switch (state)
 		}
 		break;
 }
-if (hsp != 0 || vsp != 0)
+if (hsp != 0 or vsp != 0)
 {
 	if (blurbuffer > 0)
 		blurbuffer--;

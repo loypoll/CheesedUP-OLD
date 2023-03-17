@@ -11,7 +11,7 @@ function scr_pizzaface_destroy_sounds()
 }
 function scr_pizzaface_update_sounds()
 {
-	if (state == states.pizzaface_ram && (substate == states.arenaintro || substate == states.pizzaface_ram))
+	if (state == states.pizzaface_ram && (substate == states.arenaintro or substate == states.pizzaface_ram))
 	{
 		if (!fmod_event_instance_is_playing(snd_ram))
 			fmod_event_instance_play(snd_ram);
@@ -353,7 +353,7 @@ function scr_pizzaface_ram()
 			vsp = ramvsp;
 			if (vsp < -5)
 				vsp = 12;
-			if ((vsp > 0 && grounded) || place_meeting(x + sign(hsp), y, obj_solid))
+			if ((vsp > 0 && grounded) or place_meeting(x + sign(hsp), y, obj_solid))
 			{
 				sound_play_3d("event:/sfx/pep/groundpound", x, y);
 				substate = states.land;

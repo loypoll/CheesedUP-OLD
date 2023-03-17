@@ -7,7 +7,7 @@ function scr_pizzaball_golf()
 	var _i = 9;
 	if character == "N"
 		_i = 7;
-	if (player.key_up || shootup)
+	if (player.key_up or shootup)
 		arrow = true;
 	else
 		arrow = false;
@@ -21,7 +21,7 @@ function scr_pizzaball_golf()
 		notification_push(notifs.pizzaball, [player.object_index]);
 		GamepadSetVibration(0, 0.8, 0.8, 0.65);
 		sound_play_3d("event:/sfx/misc/golfpunch", x, y);
-		if (player.key_up || shootup)
+		if (player.key_up or shootup)
 			scr_pizzaball_go_to_thrown(player.xscale * 15, -16, false);
 		else if (player.key_down)
 			scr_pizzaball_go_to_thrown(player.xscale * 18, 5, false);

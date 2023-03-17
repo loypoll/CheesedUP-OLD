@@ -12,7 +12,7 @@ if (place_meeting(x, y, obj_destructibles))
 else
 	depth = 2;
 
-if (global.panic == true || instance_exists(obj_wartimer))
+if (global.panic == true or instance_exists(obj_wartimer))
 {
 	image_alpha = 1;
 	if (!gotowardsplayer && distance_to_object(obj_player1) < 25)

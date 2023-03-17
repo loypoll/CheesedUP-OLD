@@ -16,7 +16,7 @@ if (!DEBUG)
 	for (var i = 0; i < n; i++)
 	{
 		var s = parameter_string(i);
-		if (s == "-debug" || s == "debug")
+		if (s == "-debug" or s == "debug")
 			DEBUG = true;
 	}
 }
@@ -265,7 +265,7 @@ if (DEBUG)
 		{
 			with (obj_player)
 			{
-				if (object_index == obj_player1 || global.coop)
+				if (object_index == obj_player1 or global.coop)
 				{
 					state = argument0;
 					var _spr = sprite_index;

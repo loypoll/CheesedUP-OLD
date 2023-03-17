@@ -13,7 +13,7 @@ with (obj_player)
 			sprite_index = spr_player_hurt;
 			instance_create(x, y, obj_spikehurteffect);
 		}
-		if (key_jump || key_attack2 || key_slap2)
+		if (key_jump or key_attack2 or key_slap2)
 		{
 			if (grounded)
 			{

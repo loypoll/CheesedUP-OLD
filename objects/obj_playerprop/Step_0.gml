@@ -1,4 +1,4 @@
-if (sprite_index == spr_player_mach || sprite_index == spr_player_mach4)
+if (sprite_index == spr_player_mach or sprite_index == spr_player_mach4)
 {
 	if (alarm[1] == -1)
 		alarm[1] = 1;

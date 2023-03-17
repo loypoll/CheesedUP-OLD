@@ -149,7 +149,7 @@ function gml_seek_eval_proc(l_q, l_st) {
 							case 66: l_f1 = l_f1 < l_f2; break;
 							case 68: l_f1 = l_f1 > l_f2; break;
 							case 80: l_f1 = l_f1 && l_f2; break;
-							case 96: l_f1 = l_f1 || l_f2; break;
+							case 96: l_f1 = l_f1 or l_f2; break;
 							default:
 								gml_seek_eval_error_text = "Can't apply " + gml_op_get_name(l_o);
 								gml_seek_eval_error_pos = gml_std_haxe_enum_tools_getParameter(l_q, 0);

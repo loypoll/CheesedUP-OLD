@@ -1,8 +1,8 @@
 with (obj_player)
 {
-	if ((object_index != obj_player2 || global.coop) && state != states.actor && !instance_exists(obj_dialogcontroller))
+	if ((object_index != obj_player2 or global.coop) && state != states.actor && !instance_exists(obj_dialogcontroller))
 	{
-		if ((other.dir > 0 && x > (other.x - 50)) || (other.dir < 0 && x < (other.x + 50)))
+		if ((other.dir > 0 && x > (other.x - 50)) or (other.dir < 0 && x < (other.x + 50)))
 		{
 			with (other)
 			{

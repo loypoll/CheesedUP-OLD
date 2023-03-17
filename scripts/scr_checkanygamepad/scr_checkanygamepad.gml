@@ -1,12 +1,12 @@
 function scr_checkanystick(device, deadzone = 0.5)
 {
-	if (gamepad_axis_value(device, gp_axislh) > deadzone || gamepad_axis_value(device, gp_axislh) < -deadzone)
+	if (gamepad_axis_value(device, gp_axislh) > deadzone or gamepad_axis_value(device, gp_axislh) < -deadzone)
 		return true;
-	if (gamepad_axis_value(device, gp_axislv) > deadzone || gamepad_axis_value(device, gp_axislv) < -deadzone)
+	if (gamepad_axis_value(device, gp_axislv) > deadzone or gamepad_axis_value(device, gp_axislv) < -deadzone)
 		return true;
-	if (gamepad_axis_value(device, gp_axisrh) > deadzone || gamepad_axis_value(device, gp_axisrh) < -deadzone)
+	if (gamepad_axis_value(device, gp_axisrh) > deadzone or gamepad_axis_value(device, gp_axisrh) < -deadzone)
 		return true;
-	if (gamepad_axis_value(device, gp_axisrv) > deadzone || gamepad_axis_value(device, gp_axisrv) < -deadzone)
+	if (gamepad_axis_value(device, gp_axisrv) > deadzone or gamepad_axis_value(device, gp_axisrv) < -deadzone)
 		return true;
 }
 

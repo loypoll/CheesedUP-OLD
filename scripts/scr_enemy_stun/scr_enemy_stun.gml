@@ -44,7 +44,7 @@ function scr_enemy_stun()
 		if (sprite_index == spr_pepperman_shoulderhurtstart && floor(image_index) == (image_number - 1))
 			sprite_index = spr_pepperman_shoulderhurt;
 	}
-	else if (object_index == obj_fakepepboss || object_index == obj_pf_fakepep)
+	else if (object_index == obj_fakepepboss or object_index == obj_pf_fakepep)
 	{
 		if (!thrown)
 		{
@@ -73,7 +73,7 @@ function scr_enemy_stun()
 	{
 		if (thrown == 1)
 		{
-			if ((!elite || elitehit <= 0) && elitehurt && destroyable)
+			if ((!elite or elitehit <= 0) && elitehurt && destroyable)
 				instance_destroy();
 			thrown = false;
 		}
@@ -82,7 +82,7 @@ function scr_enemy_stun()
 	{
 		if (thrown == 1)
 		{
-			if ((!elite || elitehit <= 0) && elitehurt && destroyable)
+			if ((!elite or elitehit <= 0) && elitehurt && destroyable)
 				instance_destroy();
 			thrown = false;
 		}
@@ -97,7 +97,7 @@ function scr_enemy_stun()
 	}
 	if (grounded && vsp > 0 && thrown)
 	{
-		if ((!elite || elitehit <= 0) && elitehurt && destroyable)
+		if ((!elite or elitehit <= 0) && elitehurt && destroyable)
 			instance_destroy();
 		thrown = false;
 	}
@@ -106,7 +106,7 @@ function scr_enemy_stun()
 		elitehit--;
 		if (elitehit < 0)
 			elitehit = 0;
-		if (elitehit > 0 || !destroyable)
+		if (elitehit > 0 or !destroyable)
 		{
 			event_perform(1, 0);
 			var b = ds_list_find_index(global.baddieroom, id);

@@ -98,7 +98,7 @@ if (global.levelcomplete && !global.freezercutscene)
 		instance_destroy(obj_actor);
 		with (obj_player)
 		{
-			if (object_index != obj_player2 || global.coop)
+			if (object_index != obj_player2 or global.coop)
 			{
 				state = states.normal;
 				x = backtohubstartx;

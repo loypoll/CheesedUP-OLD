@@ -8,5 +8,5 @@ if (playerid.state == states.rocket)
 if (playerid.state == states.ratmount)
 	x = playerid.x + (playerid.xscale * 18);
 visible = !(room == rank_room);
-if (place_meeting(x, y, obj_secretportal) || place_meeting(x, y, obj_secretportalstart))
+if (place_meeting(x, y, obj_secretportal) or place_meeting(x, y, obj_secretportalstart))
 	visible = false;

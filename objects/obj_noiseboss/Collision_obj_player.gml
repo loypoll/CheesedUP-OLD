@@ -3,13 +3,13 @@
 
 
 
-if ((state == states.mach2 && hsp != 0) || (state == states.pizzahead_spinningkick && image_index > 3) || (state == states.freefall && !grounded) || state == states.machslide || state == states.pogo || state == states.jetpack || state == states.bounce)
+if ((state == states.mach2 && hsp != 0) or (state == states.pizzahead_spinningkick && image_index > 3) or (state == states.freefall && !grounded) or state == states.machslide or state == states.pogo or state == states.jetpack or state == states.bounce)
 {
 	if (other.flash)
 		other.flash = false;
 	scr_hurtplayer(other);
 }
-else if (((state == states.walk || (state == states.stun && !savedthrown)) && flickertime <= 0 && wastedhits == 7 && (other.instakillmove || other.state == states.handstandjump)) && !pizzahead)
+else if (((state == states.walk or (state == states.stun && !savedthrown)) && flickertime <= 0 && wastedhits == 7 && (other.instakillmove or other.state == states.handstandjump)) && !pizzahead)
 {
 	if (phase == 1)
 		scr_boss_do_hurt_phase2(other);

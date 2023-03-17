@@ -1,3 +1,6 @@
+function sound_pause_all(enable) {
+	fmod_event_instance_set_paused_all(enable);
+}
 function sound_stop(event, force = true)
 {
 	var sound = ds_map_find_value(obj_fmod.sound_cache, event);
@@ -30,12 +33,19 @@ function sound_play_3d(event, x = undefined, y = undefined)
 		sound = fmod_event_create_instance(event);
 		ds_map_add(obj_fmod.sound_cache, event, sound);
 	}
+	fmod_event_instance_set_paused(sound, false);
 	if x != undefined && y != undefined
 		fmod_event_instance_set_3d_attributes(sound, x, y);
 	fmod_event_instance_play(sound);
 }
 function sound_play_centered(event) {
 	sound_play_3d(event, camera_get_view_x(view_camera[0]) + 960 / 2, camera_get_view_y(view_camera[0]) + 540 / 2);
+}
+function sound_play_centered_oneshot(event) {
+	fmod_event_one_shot_3d(event, camera_get_view_x(view_camera[0]) + 960 / 2, camera_get_view_y(view_camera[0]) + 540 / 2);
+}
+function sound_play_oneshot(event) {
+	fmod_event_one_shot(event);
 }
 function sound_play_multiple(event, x = undefined, y = undefined)
 {

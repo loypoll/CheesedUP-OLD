@@ -24,7 +24,7 @@ if (destroy)
 	var b = false;
 	with (obj_cowstampede)
 	{
-		if ((image_xscale < 0 && x > (room_width * 0.3)) || (image_xscale > 0 && x < (room_width * 0.7)))
+		if ((image_xscale < 0 && x > (room_width * 0.3)) or (image_xscale > 0 && x < (room_width * 0.7)))
 			b = true;
 	}
 	if (!b)

@@ -40,7 +40,7 @@ function gameframe_update() {
 	gameframe_mouse_over_frame = false;
 	gameframe_delayed_update();
 	gameframe_cover_ensure();
-	if (window_get_fullscreen() || gameframe_isFullscreen_hx) {
+	if (window_get_fullscreen() or gameframe_isFullscreen_hx) {
 		gameframe_tools_keyctl_reset();
 		exit;
 	}
@@ -458,19 +458,19 @@ function gameframe_button_update(_x, _y, _height, _mx, _my) {
 		}
 	}
 	if (gameframe_button_wait_for_movement) {
-		if (_mx != gameframe_button_wait_for_movement_x || _my != gameframe_button_wait_for_movement_y) gameframe_button_wait_for_movement = false; else _over_row = false;
+		if (_mx != gameframe_button_wait_for_movement_x or _my != gameframe_button_wait_for_movement_y) gameframe_button_wait_for_movement = false; else _over_row = false;
 	}
 	var _dpiScale = gameframe_effective_scale;
 	var _pressed = mouse_check_button_pressed(1);
 	var _released = mouse_check_button_released(1);
-	var _disable = gameframe_drag_flags != 0 || !gameframe_can_input;
+	var _disable = gameframe_drag_flags != 0 or !gameframe_can_input;
 	var _i = 0;
 	for (var __g1 = array_length(gameframe_button_array); _i < __g1; _i++) {
 		var _button = gameframe_button_array[_i];
 		_button[13/* update */](_button);
 		_x += _button[5/* margin_left */] * _dpiScale;
 		var _width = _button[12/* get_width */](_button) * _dpiScale;
-		if (_disable || !_button[9/* enabled */]) {
+		if (_disable or !_button[9/* enabled */]) {
 			_button[@7/* hover */] = false;
 			_button[@8/* pressed */] = false;
 		} else if (_over_row && _mx >= _x && _mx < _x + _width) {
@@ -625,7 +625,7 @@ function gameframe_is_minimised() {
 function gameframe_maximize() {
 	/// gameframe_maximize()
 	/// @returns {void}
-	if (gameframe_isMaximized_hx || gameframe_isFullscreen_hx || window_get_fullscreen()) exit;
+	if (gameframe_isMaximized_hx or gameframe_isFullscreen_hx or window_get_fullscreen()) exit;
 	gameframe_isMaximized_hx = true;
 	gameframe_store_rect();
 	gameframe_maximize_1();
@@ -633,7 +633,7 @@ function gameframe_maximize() {
 
 function gameframe_maximise() {
 	// gameframe_maximise()
-	if (!(gameframe_isMaximized_hx || gameframe_isFullscreen_hx || window_get_fullscreen())) {
+	if (!(gameframe_isMaximized_hx or gameframe_isFullscreen_hx or window_get_fullscreen())) {
 		gameframe_isMaximized_hx = true;
 		gameframe_store_rect();
 		gameframe_maximize_1();
@@ -712,7 +712,7 @@ function gameframe_set_fullscreen_1(__mode, __wasFullscreen) {
 	if (__wasFullscreen == undefined) __wasFullscreen = false;
 	if (false) show_debug_message(argument[1]);
 	if (gameframe_debug) gameframe_log("setFullscreen(mode:", __mode, ", wasfs:", __wasFullscreen, ")");
-	if (__mode == 1 || __mode == 2) {
+	if (__mode == 1 or __mode == 2) {
 		gameframe_button_reset();
 		gameframe_drag_stop();
 	}
@@ -793,7 +793,7 @@ function gameframe_caption_get_height() {
 function gameframe_caption_get_overlap() {
 	/// gameframe_caption_get_overlap()->number
 	/// @returns {number}
-	if (window_get_fullscreen() || gameframe_isFullscreen_hx) return 0.;
+	if (window_get_fullscreen() or gameframe_isFullscreen_hx) return 0.;
 	var _h = gameframe_caption_get_height();
 	var _rect = application_get_position();
 	return max(0, _h - _rect[1]) / ((_rect[2] - _rect[0]) / surface_get_width(application_surface));
@@ -1021,7 +1021,7 @@ function gameframe_tools_keyctl_reset() {
 
 function gameframe_tools_keyctl_update() {
 	// gameframe_tools_keyctl_update()
-	if (!(window_has_focus() && (keyboard_check_direct(91) != 0 || keyboard_check_direct(92) != 0))) {
+	if (!(window_has_focus() && (keyboard_check_direct(91) != 0 or keyboard_check_direct(92) != 0))) {
 		gameframe_tools_keyctl_reset();
 		exit;
 	}
@@ -1046,7 +1046,7 @@ function gameframe_draw() {
 	/// gameframe_draw()
 	/// @returns {void}
 	if (!gameframe_is_ready) exit;
-	if (window_get_fullscreen() || gameframe_isFullscreen_hx) exit;
+	if (window_get_fullscreen() or gameframe_isFullscreen_hx) exit;
 	var _gw = window_get_width();
 	var _gh = window_get_height();
 	__display_set_gui_maximise_base(browser_width / _gw, browser_height / _gh, _gw % 2 / -2, _gh % 2 / -2);

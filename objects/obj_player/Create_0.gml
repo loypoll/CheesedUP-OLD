@@ -621,10 +621,10 @@ noisebossscream = false;
 // pto extra
 smoothx = 0;
 oldHallway = false;
-noisetype = 0
+noisetype = 0;
+input_buffer_pistol = 0;
 
 // race
 lapindex = noone;
 lapdis = 0;
 racepos = 0;
-

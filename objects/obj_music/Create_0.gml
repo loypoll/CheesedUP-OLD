@@ -216,7 +216,7 @@ add_music(industrial_1, "event:/music/w4/industrial", "event:/music/w4/industria
 add_music(sewer_1, "event:/music/w4/sewer", "event:/music/w4/sewersecret", 0)
 add_music(street_1, "event:/music/w4/street", "event:/music/w4/streetsecret", 0, function(room, event)
 {
-	if (room == street_1 || room == street_house3)
+	if (room == street_1 or room == street_house3)
 		fmod_event_instance_set_parameter(event, "state", 0, 1)
 	else if (room == street_bacon)
 		fmod_event_instance_set_parameter(event, "state", 2, 1)

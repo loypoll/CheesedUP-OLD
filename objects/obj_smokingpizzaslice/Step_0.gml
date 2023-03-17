@@ -114,7 +114,7 @@ if (state == states.walk && substate != states.turn)
 {
 	if ((player.x > (x - 400) && player.x < (x + 400)) && (y <= (player.y + 60) && y >= (player.y - 60)) && ragecooldown == 0)
 	{
-		if (global.stylethreshold >= 3 || elite)
+		if (global.stylethreshold >= 3 or elite)
 		{
 			if (x != player.x)
 				image_xscale = -sign(x - player.x);

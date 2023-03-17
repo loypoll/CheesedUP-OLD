@@ -79,7 +79,7 @@ if (state != states.grabbed)
 	depth = 0;
 if (state != states.stun)
 	thrown = false;
-if (boundbox == 0 && ((grounded && vsp > 0) || _b))
+if (boundbox == 0 && ((grounded && vsp > 0) or _b))
 {
 	with (instance_create(x, y, obj_baddiecollisionbox))
 	{

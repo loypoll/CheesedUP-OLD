@@ -5,7 +5,7 @@ function scr_player_Sjumpprep()
 		default:
 			if character != "N" or noisetype == 0
 			{
-				if (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft)
+				if (sprite_index == spr_superjumppreplight or sprite_index == spr_superjumpright or sprite_index == spr_superjumpleft)
 					move = key_left + key_right;
 				else
 					move = xscale;
@@ -24,7 +24,7 @@ function scr_player_Sjumpprep()
 					movespeed = 2;
 				if (sprite_index != spr_superjumpprep)
 				{
-					if (move != 0 && (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpright || sprite_index == spr_superjumpleft))
+					if (move != 0 && (sprite_index == spr_superjumppreplight or sprite_index == spr_superjumpright or sprite_index == spr_superjumpleft))
 					{
 						if (xscale == 1)
 						{
@@ -44,7 +44,7 @@ function scr_player_Sjumpprep()
 					else
 						sprite_index = spr_superjumppreplight;
 				}
-				if (!scr_check_superjump() && grounded && (character == "S" || (sprite_index == spr_superjumppreplight || sprite_index == spr_superjumpleft || sprite_index == spr_superjumpright)) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
+				if (!scr_check_superjump() && grounded && (character == "S" or (sprite_index == spr_superjumppreplight or sprite_index == spr_superjumpleft or sprite_index == spr_superjumpright)) && !scr_solid(x, y - 16) && !scr_solid(x, y - 32))
 				{
 					instance_create(x, y, obj_explosioneffect);
 					sprite_index = spr_superjump;

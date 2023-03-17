@@ -1,4 +1,4 @@
-if (state == states.titlescreen || (state == states.transition && dark))
+if (state == states.titlescreen or (state == states.transition && dark))
 	draw_sprite(spr_menudark, 0, 0, 0);
 if (state == states.bombdelete)
 {

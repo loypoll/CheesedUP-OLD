@@ -1,4 +1,4 @@
-if (state == states.transition || state == states.victory || state == states.dead)
+if (state == states.transition or state == states.victory or state == states.dead)
 {
 	draw_set_alpha(fade);
 	var cx = camera_get_view_x(view_camera[0]);

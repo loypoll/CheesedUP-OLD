@@ -1,4 +1,4 @@
-if (state != states.throwing && (other.hsp != 0 || other.thrown || other.state == states.tumble))
+if (state != states.throwing && (other.hsp != 0 or other.thrown or other.state == states.tumble))
 {
 	pizzaball = true;
 	golfid = other.id;

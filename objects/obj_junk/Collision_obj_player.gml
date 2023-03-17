@@ -1,4 +1,4 @@
-if (!grabbed && (other.state == states.handstandjump || other.state == states.punch || other.state == states.lungeattack) && unpickable == 0)
+if (!grabbed && (other.state == states.handstandjump or other.state == states.punch or other.state == states.lungeattack) && unpickable == 0)
 {
 	instance_create(x + (obj_player1.xscale * 40), y, obj_punchdust);
 	with (other)

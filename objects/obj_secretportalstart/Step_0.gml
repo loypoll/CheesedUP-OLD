@@ -6,7 +6,7 @@ switch (sprite_index)
 			visible = false;
 		with (obj_player)
 		{
-			if (object_index != obj_player2 || global.coop)
+			if (object_index != obj_player2 or global.coop)
 			{
 				x = other.x;
 				y = other.y;
@@ -27,7 +27,7 @@ switch (sprite_index)
 			sprite_index = spr_secretportal_spawnidle;
 			with (obj_player)
 			{
-				if (object_index != obj_player2 || global.coop)
+				if (object_index != obj_player2 or global.coop)
 				{
 					if (!isgustavo && tauntstoredstate != states.knightpep && tauntstoredstate != states.knightpepslopes && tauntstoredstate != states.knightpepbump && tauntstoredstate != states.firemouth)
 					{
@@ -72,7 +72,7 @@ switch (sprite_index)
 						other.drop = true;
 					if (other.drop)
 					{
-						if (!isgustavo && (tauntstoredstate == states.knightpep || tauntstoredstate == states.knightpepslopes || tauntstoredstate == states.knightpepbump || tauntstoredstate == states.firemouth))
+						if (!isgustavo && (tauntstoredstate == states.knightpep or tauntstoredstate == states.knightpepslopes or tauntstoredstate == states.knightpepbump or tauntstoredstate == states.firemouth))
 						{
 							state = tauntstoredstate;
 							movespeed = tauntstoredmovespeed;

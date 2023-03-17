@@ -63,7 +63,7 @@ if (x != targetplayer.x && state != states.pizzagoblinthrow && bombreset <= 0 &&
 {
 	if ((targetplayer.x > (x - 400) && targetplayer.x < (x + 400)) && (y <= (targetplayer.y + 20) && y >= (targetplayer.y - 20)))
 	{
-		if (state == states.walk || (state == states.idle && sprite_index != scaredspr))
+		if (state == states.walk or (state == states.idle && sprite_index != scaredspr))
 		{
 			sprite_index = spr_pizzagoblin_throwbomb;
 			image_index = 0;

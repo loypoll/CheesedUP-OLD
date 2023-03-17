@@ -8,7 +8,7 @@ with (obj_noisey)
 	b = false;
 with (obj_noiseboss)
 {
-	if (state == states.arenaintro || state == states.stun || wastedhits >= 6)
+	if (state == states.arenaintro or state == states.stun or wastedhits >= 6)
 		b = false;
 }
 if (b)

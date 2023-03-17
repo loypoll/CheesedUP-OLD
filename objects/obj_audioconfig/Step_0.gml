@@ -7,20 +7,20 @@ if (updown_buffer > 0)
 }
 else
 {
-	if ((key_up2 || keyboard_check_pressed(vk_up)) && audio_select > -1)
+	if ((key_up2 or keyboard_check_pressed(vk_up)) && audio_select > -1)
 	{
 		updown_buffer = updown_max;
 		audio_select -= 1;
 		sound_play("event:/sfx/pep/step");
 	}
-	if ((key_down2 || keyboard_check_pressed(vk_down)) && audio_select < 2)
+	if ((key_down2 or keyboard_check_pressed(vk_down)) && audio_select < 2)
 	{
 		updown_buffer = updown_max;
 		audio_select += 1;
 		sound_play("event:/sfx/pep/step");
 	}
 }
-if (key_jump || keyboard_check_pressed(vk_enter))
+if (key_jump or keyboard_check_pressed(vk_enter))
 {
 	switch (audio_select)
 	{
@@ -43,7 +43,7 @@ if (key_buffer > 0)
 	key_buffer--;
 else
 {
-	if (-key_left || keyboard_check(vk_left))
+	if (-key_left or keyboard_check(vk_left))
 	{
 		switch (audio_select)
 		{
@@ -59,7 +59,7 @@ else
 		}
 		key_buffer = key_max;
 	}
-	if (key_right || keyboard_check(vk_right))
+	if (key_right or keyboard_check(vk_right))
 	{
 		switch (audio_select)
 		{

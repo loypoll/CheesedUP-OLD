@@ -91,9 +91,9 @@ function state_player_normal()
 				sprite_index = spr_player_breakdance;
 			else if (global.fill <= 0 && !instance_exists(obj_ghostcollectibles))
 				sprite_index = spr_hurtwalk;
-			else if ((global.combo >= 25 && global.combo < 50) || instance_exists(obj_pizzafaceboss) || global.noisejetpack)
+			else if ((global.combo >= 25 && global.combo < 50) or instance_exists(obj_pizzafaceboss) or global.noisejetpack)
 				sprite_index = spr_3hpwalk;
-			else if (global.combo >= 50 || instance_exists(obj_pizzaface_thunderdark))
+			else if (global.combo >= 50 or instance_exists(obj_pizzaface_thunderdark))
 				sprite_index = spr_ragemove;
 			else
 				sprite_index = movespr;
@@ -156,7 +156,7 @@ function state_player_normal()
 			}
 			else if (!facehurt)
 			{
-				if (windingAnim < 1800 || angry || global.playerhealth == 1 || shoot)
+				if (windingAnim < 1800 or angry or global.playerhealth == 1 or shoot)
 				{
 					start_running = true;
 					movespeed = 0;
@@ -170,9 +170,9 @@ function state_player_normal()
 						sprite_index = spr_hurtidle;
 					else if (global.panic && !instance_exists(obj_ghostcollectibles))
 						sprite_index = spr_panic;
-					else if ((global.combo >= 25 && global.combo < 50) || instance_exists(obj_pizzafaceboss) || global.noisejetpack)
+					else if ((global.combo >= 25 && global.combo < 50) or instance_exists(obj_pizzafaceboss) or global.noisejetpack)
 						sprite_index = spr_3hpidle;
-					else if (global.combo >= 50 || instance_exists(obj_pizzaface_thunderdark))
+					else if (global.combo >= 50 or instance_exists(obj_pizzaface_thunderdark))
 						sprite_index = spr_rageidle;
 					else
 						sprite_index = idlespr;
@@ -276,7 +276,7 @@ function state_player_normal()
 	}
 	if (grounded)
 	{
-		if ((key_jump || (input_buffer_jump > 0 && !key_attack && vsp > 0)) && !key_down)
+		if ((key_jump or (input_buffer_jump > 0 && !key_attack && vsp > 0)) && !key_down)
 		{
 			input_buffer_jump = 0;
 			scr_fmod_soundeffect(jumpsnd, x, y);
@@ -299,7 +299,7 @@ function state_player_normal()
 				railmomentum = true;
 			freefallstart = 0;
 		}
-		if (key_down || (grounded && vsp > 0 && scr_solid(x, y - 3) && scr_solid(x, y)) || check_wall(x, y))
+		if (key_down or (grounded && vsp > 0 && scr_solid(x, y - 3) && scr_solid(x, y)) or check_wall(x, y))
 		{
 			state = states.crouch;
 			landAnim = false;
@@ -325,19 +325,17 @@ function state_player_normal()
 			jumpAnim = true;
 		state = states.jump;
 	}
-	if (input_buffer_shoot > 0)
-	{
-		if (shotgunAnim)
-			scr_shotgunshoot();
-		else if (global.pistol)
-			scr_pistolshoot(states.normal);
-	}
+	
+	if (input_buffer_shoot > 0 && shotgunAnim)
+		scr_shotgunshoot();
+	else if (input_buffer_pistol > 0 && global.pistol)
+		scr_pistolshoot(states.normal);
 	
 	// suplex dash
-	if (input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
+	if (input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 	{
 		input_buffer_slap = 0;
-		sprite_index = spr_suplexdash;
+		sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
 		suplexmove = true;
 		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
@@ -348,7 +346,7 @@ function state_player_normal()
 	}
 	
 	// uppercut
-	else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
+	else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 	{
 		state = states.punch;
 		input_buffer_slap = 0;
@@ -362,7 +360,7 @@ function state_player_normal()
 	}
 	
 	// kungfu
-	if key_slap2 && !key_up && global.attackstyle == 1 && ((shotgunAnim == false && !global.pistol) or global.shootbutton)
+	if key_slap2 && !key_up && global.attackstyle == 1 && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 	{
 		sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
 		suplexmove = true;
@@ -389,7 +387,7 @@ function state_player_normal()
 		default:
 			if character != "N" or noisetype == 0
 			{
-				if (key_attack && state != states.handstandjump && !check_wall(x + xscale, y) && (!place_meeting(x, y + 1, obj_iceblockslope) || !check_wall(x + (xscale * 5), y)) && !global.kungfu)
+				if (key_attack && state != states.handstandjump && !check_wall(x + xscale, y) && (!place_meeting(x, y + 1, obj_iceblockslope) or !check_wall(x + (xscale * 5), y)) && !global.kungfu)
 				{
 					sprite_index = spr_mach1;
 					image_index = 0;
@@ -407,7 +405,7 @@ function state_player_normal()
 			}
 			else
 			{
-				if (pogochargeactive || pizzapepper > 0)
+				if (pogochargeactive or pizzapepper > 0)
 				{
 					if (key_attack2)
 					{
@@ -507,7 +505,7 @@ function state_pepperman_normal()
 		else
 			sprite_index = spr_idle;
 	}
-	if ((input_buffer_jump > 0 || key_jump) && can_jump)
+	if ((input_buffer_jump > 0 or key_jump) && can_jump)
 	{
 		input_buffer_jump = 0;
 		scr_fmod_soundeffect(jumpsnd, x, y);
@@ -523,7 +521,7 @@ function state_pepperman_normal()
 		state = states.jump;
 		sprite_index = spr_fall;
 	}
-	if (key_attack && (!check_wall(x + xscale, y) || place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
+	if (key_attack && (!check_wall(x + xscale, y) or place_meeting(x + xscale, y, obj_destructibles)) && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw)
 	{
 		if (move != 0)
 			xscale = move;
@@ -533,7 +531,7 @@ function state_pepperman_normal()
 	}
 	if (sprite_index == spr_pepperman_throw && floor(image_index) == (image_number - 1))
 		sprite_index = spr_pepperman_idle;
-	if (move != 0 && (floor(image_index) == 4 || floor(image_index) == 11) && steppy == 0 && character != "V")
+	if (move != 0 && (floor(image_index) == 4 or floor(image_index) == 11) && steppy == 0 && character != "V")
 	{
 		instance_create(x, y + 38, obj_cloudeffect);
 		steppy = true;

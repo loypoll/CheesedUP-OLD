@@ -170,7 +170,7 @@ function boss_hurt_noplayer(argument0)
 }
 function player_hurt(argument0, argument1)
 {
-	if (!argument1.inv_frames && (argument1.state != states.backbreaker || argument1.parry_inst == -4))
+	if (!argument1.inv_frames && (argument1.state != states.backbreaker or argument1.parry_inst == -4))
 	{
 		hitstate = state;
 		hithsp = hsp;
@@ -181,7 +181,7 @@ function player_hurt(argument0, argument1)
 			inv_frames = true;
 			alarm[1] = 15;
 		}
-		if (hitstate == states.skateboard || hitstate == states.jetpack)
+		if (hitstate == states.skateboard or hitstate == states.jetpack)
 		{
 			stunned = (hitstate == states.skateboard) ? 30 : 70;
 			with (obj_camera)

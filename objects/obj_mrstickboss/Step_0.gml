@@ -86,5 +86,5 @@ switch (state)
 		state_boss_stun();
 		break;
 }
-colliding = !(state == states.jump || state == states.cardboard || state == states.cardboardend);
-attacking = (state == states.shield || state == states.jump || state == states.cardboard || state == states.cardboardend || state == states.smokebombstart);
+colliding = !(state == states.jump or state == states.cardboard or state == states.cardboardend);
+attacking = (state == states.shield or state == states.jump or state == states.cardboard or state == states.cardboardend or state == states.smokebombstart);

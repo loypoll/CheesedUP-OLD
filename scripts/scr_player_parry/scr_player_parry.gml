@@ -19,7 +19,7 @@ function scr_player_parry()
 		var parry_threshold = 84;
 		with (obj_baddie)
 		{
-			if ((other.parryID == id || distance_to_object(other) <= parry_threshold) && state != states.hit && state != states.grabbed && state != states.stun && parryable && !(state == states.stun && thrown == 1))
+			if ((other.parryID == id or distance_to_object(other) <= parry_threshold) && state != states.hit && state != states.grabbed && state != states.stun && parryable && !(state == states.stun && thrown == 1))
 			{
 				notification_push(notifs.parry, [id, object_index, room]);
 				obj_player1.xscale = -image_xscale;
@@ -40,7 +40,7 @@ function scr_player_parry()
 				obj_player1.hitLag = lag;
 				obj_player1.hitX = obj_player1.x;
 				obj_player1.hitY = obj_player1.y;
-				if (!elite || elitehit <= 0)
+				if (!elite or elitehit <= 0)
 					mach3destroy = true;
 				instance_create(x, y, obj_parryeffect);
 				alarm[3] = 1;

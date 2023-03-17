@@ -38,7 +38,7 @@ switch (state)
 		scr_enemy_rage();
 		break;
 }
-if (state == states.walk || state == states.idle)
+if (state == states.walk or state == states.idle)
 {
 	if (sprite_index != spr_golfdemon_idle2)
 		sprite_index = spr_golfdemon_idle;
@@ -57,7 +57,7 @@ if (flash == 1 && alarm[2] <= 0)
 	alarm[2] = 0.15 * room_speed;
 if (state != states.chase)
 	momentum = 0;
-if (state == states.walk || state == states.idle)
+if (state == states.walk or state == states.idle)
 {
 	var targetplayer = instance_nearest(x, y, obj_player);
 	if (sprite_index != spr_golfdemon_idle2 && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y > (y - 200) && targetplayer.y < (y + 200))

@@ -1,6 +1,6 @@
 if (instance_number(object_index) > 1)
 	exit;
-if (room == boss_pepperman || room == tower_pizzafacehall || instance_exists(obj_achievementviewer))
+if (room == boss_pepperman or room == tower_pizzafacehall or instance_exists(obj_achievementviewer))
 	visible = false;
 else
 	visible = true;

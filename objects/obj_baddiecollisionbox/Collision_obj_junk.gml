@@ -1,6 +1,6 @@
-if (instance_exists(baddieID) && baddieID.state != states.hit && baddieID.invtime == 0 && other.thrown == 1 && !baddieID.invincible && (baddieID.object_index != obj_noiseboss || (other.object_index != obj_pepjunk || !other.noisethrow)) && baddieID.destroyable)
+if (instance_exists(baddieID) && baddieID.state != states.hit && baddieID.invtime == 0 && other.thrown == 1 && !baddieID.invincible && (baddieID.object_index != obj_noiseboss or (other.object_index != obj_pepjunk or !other.noisethrow)) && baddieID.destroyable)
 {
-	if (baddieID.destroyable && (!baddieID.elite || baddieID.elitehit <= 0))
+	if (baddieID.destroyable && (!baddieID.elite or baddieID.elitehit <= 0))
 	{
 		instance_destroy();
 		instance_destroy(baddieID);

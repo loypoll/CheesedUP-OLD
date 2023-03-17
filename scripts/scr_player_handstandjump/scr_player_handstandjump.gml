@@ -9,7 +9,7 @@ function scr_player_handstandjump()
 	{
 		if (movespeed < 10)
 		{
-			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
+			if ((sprite_index == spr_player_pistolshot or sprite_index == spr_shotgun_shot) && movespeed < 8)
 				movespeed += 0.25;
 			else if (sprite_index == spr_player_lunge && movespeed < 12)
 				movespeed += 0.8;
@@ -21,7 +21,7 @@ function scr_player_handstandjump()
 	{
 		if (movespeed < 10)
 		{
-			if ((sprite_index == spr_player_pistolshot || sprite_index == spr_shotgun_shot) && movespeed < 8)
+			if ((sprite_index == spr_player_pistolshot or sprite_index == spr_shotgun_shot) && movespeed < 8)
 				movespeed += 0.25;
 			else if (movespeed < 10)
 				movespeed += 0.5;
@@ -38,7 +38,7 @@ function scr_player_handstandjump()
 	if (shoot == 1)
 		var attackdash = spr_player_pistolshot;
 	else
-		attackdash = spr_suplexdash;
+		attackdash = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
 	
 	if (sprite_index == spr_player_lungestart && floor(image_index) == (image_number - 1))
 		sprite_index = spr_player_lunge;
@@ -70,7 +70,7 @@ function scr_player_handstandjump()
 		image_index = 0;
 		sprite_index = airattackdashstart;
 	}
-	if (grounded && sprite_index == airattackdash && (!key_attack || character == "N") && global.attackstyle != 2)
+	if (grounded && sprite_index == airattackdash && (!key_attack or character == "N") && global.attackstyle != 2)
 	{
 		if (global.attackstyle != 3)
 		{
@@ -110,7 +110,7 @@ function scr_player_handstandjump()
 		fmod_event_instance_play(snd_crouchslide);
 	}
 	mask_index = spr_player_mask;
-	if ((!grounded && (check_wall(x + hsp, y) || scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) || (grounded && (check_wall(x + sign(hsp), y - 16) || scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && scr_slope()))
+	if ((!grounded && (check_wall(x + hsp, y) or scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) or (grounded && (check_wall(x + sign(hsp), y - 16) or scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && scr_slope()))
 	{
 		if !place_meeting(x + hsp, y, obj_unclimbablewall)
 			wallspeed = 6;
@@ -119,7 +119,7 @@ function scr_player_handstandjump()
 		grabclimbbuffer = 10;
 		state = states.climbwall;
 	}
-	if (grounded && scr_solid(x + xscale, y) && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)))
+	if (grounded && scr_solid(x + xscale, y) && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)))
 	{
 		var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
 		if (_bump)

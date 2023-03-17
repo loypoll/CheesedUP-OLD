@@ -199,13 +199,13 @@ function gml_std_StringTools_trim(l_s) {
 	var l_till = l_len;
 	while (l_till > 0) {
 		l_char = string_ord_at(l_s, l_till);
-		if (l_char == 32 || l_char > 8 && l_char < 14) l_till--; else break;
+		if (l_char == 32 or l_char > 8 && l_char < 14) l_till--; else break;
 	}
 	if (l_till < l_len) l_s = string_copy(l_s, 1, l_till);
 	var l_start = 1;
 	while (l_start <= l_till) {
 		l_char = string_ord_at(l_s, l_start);
-		if (l_char == 32 || l_char > 8 && l_char < 14) l_start++; else break;
+		if (l_char == 32 or l_char > 8 && l_char < 14) l_start++; else break;
 	}
 	if (l_start > 1) l_s = string_delete(l_s, 1, l_start - 1);
 	return l_s;
@@ -414,7 +414,7 @@ function compile_gml_compile_args_proc(l_actions, l_nodes, l_start, l_end) {
 		var l_params = [compile_gml_compile_args_get_simple_val];
 		var l_allConsts = l_kind == 0;
 		var l_usesLocals = l_kind == 1;
-		var l_usesSelf = l_kind == 2 || l_kind == 3;
+		var l_usesSelf = l_kind == 2 or l_kind == 3;
 		while (l_i + l_count < l_end) {
 			if (!compile_gml_compile_args_get_simple(l_nodes[l_i + l_count])) break;
 			l_kind = compile_gml_compile_args_get_simple_kind;
@@ -474,12 +474,12 @@ function gml_remove_sig(l_s) {
 if (live_enabled) 
 function gml_parse_name(l_s, l_i) {
 	var l_c = string_ord_at(l_s, l_i + 1);
-	if (l_c >= 97 && l_c <= 122 || l_c >= 65 && l_c <= 90 || l_c == 95) {
+	if (l_c >= 97 && l_c <= 122 or l_c >= 65 && l_c <= 90 or l_c == 95) {
 		var l_k = l_i;
 		while (true) {
 			l_i++;
 			l_c = string_ord_at(l_s, l_i + 1);
-			if (!(l_c == 95 || l_c >= 97 && l_c <= 122 || l_c >= 65 && l_c <= 90 || l_c >= 48 && l_c <= 57)) break;
+			if (!(l_c == 95 or l_c >= 97 && l_c <= 122 or l_c >= 65 && l_c <= 90 or l_c >= 48 && l_c <= 57)) break;
 		}
 		return gml_std_string_substring(l_s, l_k, l_i);
 	} else show_error("API.parseName: wrong format in " + l_s, true);
@@ -1474,7 +1474,7 @@ function gml_func() constructor {
 			l_rawFunc = method_get_index(l_func);
 			var l__self = method_get_self(l_func);
 			if (l__self != undefined) {
-				if (instanceof(l__self) == "instance" || is_numeric(l__self)) {
+				if (instanceof(l__self) == "instance" or is_numeric(l__self)) {
 					l_func = method(undefined, l_func);
 				} else switch (l_inst) {
 					case 1: case 2: case 3: show_error("self/other functions cannot have struct bindings in " + l_sig, true); break;
@@ -1815,7 +1815,7 @@ function gml_std_string_pos_ext_haxe(l_this, l_needle, l_startPos) {
 if (live_enabled) 
 function gml_std_string_last_pos_haxe(l_this, l_needle, l_startPos) {
 	if (false) show_debug_message(argument[1]);
-	if (l_startPos == undefined || l_startPos >= string_length(l_this)) return string_last_pos(l_needle, l_this) - 1;
+	if (l_startPos == undefined or l_startPos >= string_length(l_this)) return string_last_pos(l_needle, l_this) - 1;
 	return string_last_pos_ext(l_needle, l_this, l_startPos) - 1;
 }
 
@@ -2839,7 +2839,7 @@ function api_api_version_create(l_i) {
 	l_v.h_has_literal_strings = l_v2;
 	l_v.h_has_func_literal = l_v23;
 	l_v.h_has_constructor = l_v23;
-	l_v.h_has_try_catch = l_v23 || l_mod;
+	l_v.h_has_try_catch = l_v23 or l_mod;
 	l_v.h_has_value_calls = l_v23;
 	l_v.h_expr_macros = !l_v23;
 	l_v.h_has_delete = l_v23;
@@ -3172,7 +3172,7 @@ function ast_gml_node_def_ctr(l__name, l__params) constructor {
 		var l_param = l__params[l__g];
 		l__g++;
 		var l_t = l_param.h_type;
-		if (l_t == 2 || l_t == 1) {
+		if (l_t == 2 or l_t == 1) {
 			self.h_has_children = true;
 			break;
 		}
@@ -3345,7 +3345,7 @@ function gml_source(l_name, l_code, l_main, l_opt) constructor {
 			l_main = l_name;
 			var l_i = gml_std_string_last_pos_haxe(l_main, "/");
 			var l_k = gml_std_string_last_pos_haxe(l_main, "\\");
-			if (l_i < 0 || l_k > l_i) l_i = l_k;
+			if (l_i < 0 or l_k > l_i) l_i = l_k;
 			l_i = gml_std_string_pos_ext_haxe(l_main, ".");
 			if (l_i >= 0) l_main = gml_std_string_substring(l_main, 0, l_i);
 		}
@@ -3663,7 +3663,7 @@ function gml_seek_adjfix_proc(l_q, l_st) {
 			l_pre = (l_q.__enumIndex__ == 33);
 			var l_o;
 			var l_inBlock = gml_node_tools_is_in_block(l_q, ds_list_find_value(l_st, 0));
-			if (l_pre || l_inBlock) {
+			if (l_pre or l_inBlock) {
 				var l__g1 = l_x;
 				switch (l__g1.__enumIndex__/* gml_node */) {
 					case 83/* ds_map */:
@@ -3698,7 +3698,7 @@ function gml_seek_adjfix_proc(l_q, l_st) {
 			l_pre = (l_q.__enumIndex__ == 33);
 			var l_o;
 			var l_inBlock = gml_node_tools_is_in_block(l_q, ds_list_find_value(l_st, 0));
-			if (l_pre || l_inBlock) {
+			if (l_pre or l_inBlock) {
 				var l__g = l_x;
 				switch (l__g.__enumIndex__/* gml_node */) {
 					case 83/* ds_map */:
@@ -3783,7 +3783,7 @@ function gml_seek_calls_proc_func(l_q, l_d, l_fn, l_args1) {
 	var l_argCount = array_length(l_args1);
 	var l_minArgs = l_fn.h_min_args;
 	var l_maxArgs = l_fn.h_max_args;
-	if (l_argCount < l_minArgs || l_argCount > l_maxArgs) {
+	if (l_argCount < l_minArgs or l_argCount > l_maxArgs) {
 		var l_e;
 		if (l_minArgs == l_maxArgs) {
 			l_e = "`" + l_fname + "` takes " + string(l_minArgs) + " argument";
@@ -4510,7 +4510,7 @@ function live_bits_gmlive_indexer_add_assets() {
 	}
 	for (l_i = 0; l_i < 256; l_i++) {
 		l_s = audio_group_name(l_i);
-		if (l_s == "<undefined>" || l_s == "" || l_s == undefined) break;
+		if (l_s == "<undefined>" or l_s == "" or l_s == undefined) break;
 		gml_asset_add(l_s, l_i);
 	}
 }
@@ -4558,7 +4558,7 @@ function gml_action_list_print_action_value(l_v) {
 	if (l_v == undefined) {
 		return "null";
 	} else if (is_numeric(l_v)) {
-		if (!is_real(l_v) || sign(frac(l_v)) == 0) return string(l_v); else return json_stringify(l_v);
+		if (!is_real(l_v) or sign(frac(l_v)) == 0) return string(l_v); else return json_stringify(l_v);
 	} else if (is_string(l_v)) {
 		return json_stringify(l_v);
 	} else {
@@ -4579,7 +4579,7 @@ function gml_action_list_print_action_get_func_name(l_func) {
 		l_name = script_get_name(l_func);
 		l_label = ds_map_find_value(gml_func_name, l_func);
 	} else l_name = string(l_func);
-	if (l_label == undefined || l_label == l_name) return l_name; else return l_label + "@" + l_name;
+	if (l_label == undefined or l_label == l_name) return l_name; else return l_label + "@" + l_name;
 }
 
 if (live_enabled) 
@@ -4784,21 +4784,21 @@ function gml_type_check_array(l_v) {
 
 if (live_enabled) 
 function gml_type_check_z_number(l_v) {
-	if (l_v == undefined || is_numeric(l_v)) return "";
+	if (l_v == undefined or is_numeric(l_v)) return "";
 	if (is_string(l_v)) return "";
 	return "Expected a number or null";
 }
 
 if (live_enabled) 
 function gml_type_check_z_string(l_v) {
-	if (l_v == undefined || is_string(l_v)) return "";
+	if (l_v == undefined or is_string(l_v)) return "";
 	if (is_numeric(l_v)) return "";
 	return "Expected a string or null";
 }
 
 if (live_enabled) 
 function gml_type_check_z_array(l_v) {
-	if (l_v == undefined || is_array(l_v)) return "";
+	if (l_v == undefined or is_array(l_v)) return "";
 	return "Expected an array or null";
 }
 

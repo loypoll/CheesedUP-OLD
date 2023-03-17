@@ -153,7 +153,7 @@ function scr_bosscontroller_normal()
 	}
 	if (!instance_exists(bossID) && !bossdead && instance_exists(obj_player1) && obj_player1.state != states.tackle && obj_player1.state != states.comingoutdoor && room != boss_fakepephallway && room != boss_pizzaface && room != rank_room)
 	{
-		if (room != boss_vigilante || obj_player1.state != states.actor)
+		if (room != boss_vigilante or obj_player1.state != states.actor)
 		{
 			bossdead = true;
 			notification_push(notifs.boss_dead, [room]);
@@ -237,7 +237,7 @@ function scr_bosscontroller_draw_health(argument0, argument1, argument2, argumen
 		{
 			if (_index == 0 && argument3 < (argument1 * argument2) && hpp >= argument3)
 				c = 0;
-			if (_index == 0 || hpp < argument3)
+			if (_index == 0 or hpp < argument3)
 			{
 				var xf = (argument5 + (_x * argument7)) - zpad;
 				var yf = (argument6 + (_y * argument8)) - zpad;

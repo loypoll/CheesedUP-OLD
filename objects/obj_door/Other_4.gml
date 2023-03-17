@@ -5,7 +5,7 @@ if ds_list_find_index(global.saveroom, id) != -1
 
 if visited == true && sprite_index != spr_cheftaskdoor && sprite_index != spr_pepperdoor && sprite_index != spr_elevatordown1 && sprite_index != spr_elevatordown2 && sprite_index != spr_elevatordown3 && sprite_index != spr_elevatordown4
 	sprite_index = spr_doorvisited;
-if sprite_index == spr_doorvisited || sprite_index == spr_doorunvisited
+if sprite_index == spr_doorvisited or sprite_index == spr_doorunvisited
 {
 	sprite_index = global.door_sprite;
 	image_index = global.door_index;

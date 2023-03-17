@@ -8,7 +8,7 @@ function scr_player_ratmountpunch()
 	if (grounded)
 		movespeed = Approach(movespeed, xscale * 4, 0.1);
 	ratmountpunchtimer--;
-	if (ratmountpunchtimer < 0 && (!key_slap || gustavohitwall))
+	if (ratmountpunchtimer < 0 && (!key_slap or gustavohitwall))
 	{
 		sprite_index = spr_lonegustavo_walk;
 		state = states.ratmount;
@@ -28,7 +28,7 @@ function scr_player_ratmountpunch()
 		movespeed /= 1.5;
 		movespeed *= -1;
 	}
-	if ((key_down && grounded && !gustavohitwall) || scr_solid(x, y))
+	if ((key_down && grounded && !gustavohitwall) or scr_solid(x, y))
 		state = states.ratmountcrouch;
 	if (key_down && !grounded && !gustavohitwall)
 	{

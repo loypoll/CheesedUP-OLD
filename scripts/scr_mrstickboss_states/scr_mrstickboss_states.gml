@@ -102,7 +102,7 @@ function boss_mrstick_normal()
 		attack_cooldown--;
 	if (dx < 325)
 	{
-		if (x < (room_width / 7) || x > (room_width - (room_width / 7)))
+		if (x < (room_width / 7) or x > (room_width - (room_width / 7)))
 		{
 			do_mockery_buffer = do_mockery_max;
 			boss_mrstick_decide_attack();

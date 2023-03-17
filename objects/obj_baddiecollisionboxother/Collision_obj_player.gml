@@ -1,4 +1,4 @@
-if (instance_exists(baddieID) && baddieID.stun == 1 && (other.state == states.handstandjump || other.state == states.punch || other.instakillmove == 1))
+if (instance_exists(baddieID) && baddieID.stun == 1 && (other.state == states.handstandjump or other.state == states.punch or other.instakillmove == 1))
 {
 	with (other)
 	{

@@ -7,7 +7,7 @@ draw_set_halign(1);
 draw_set_color(c_white);
 draw_set_alpha(1);
 
-if is_bossroom() || instance_exists(obj_tutorialbook)
+if is_bossroom() or instance_exists(obj_tutorialbook)
 	exit;
 
 var collect_x = irandom_range(-collect_shake, collect_shake);

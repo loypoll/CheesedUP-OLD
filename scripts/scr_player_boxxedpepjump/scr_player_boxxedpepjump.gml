@@ -14,7 +14,7 @@ function scr_player_boxxedpepjump()
 		raildir = _railinst.dir;
 	}
 	hsp = movespeed + (railmovespeed * raildir);
-	if (scr_solid(x + sign(hsp), y) && xscale == move && (!place_meeting(x + xscale, y, obj_slope) || scr_solid_slope(x + xscale, y)))
+	if (scr_solid(x + sign(hsp), y) && xscale == move && (!place_meeting(x + xscale, y, obj_slope) or scr_solid_slope(x + xscale, y)))
 		movespeed = 0;
 	if (!key_jump2 && !jumpstop && vsp < 0)
 	{
@@ -23,7 +23,7 @@ function scr_player_boxxedpepjump()
 	}
 	if (move != 0)
 	{
-		if (((xscale > 0 && movespeed < 8) || (xscale < 0 && movespeed > -8)) && move == xscale)
+		if (((xscale > 0 && movespeed < 8) or (xscale < 0 && movespeed > -8)) && move == xscale)
 			movespeed += (xscale * 0.8);
 		if (boxxeddash == 0)
 			xscale = move;

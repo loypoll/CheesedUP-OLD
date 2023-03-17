@@ -13,11 +13,11 @@ function scr_boss_grabbed()
 	var playerid = (grabbedby == 1) ? obj_player1.id : obj_player2.id;
 	with (playerid)
 	{
-		if (state != states.supergrab || baddiegrabbedID != other)
+		if (state != states.supergrab or baddiegrabbedID != other)
 		{
 			if (other.elitehit <= 1 && other.object_index != obj_pizzafaceboss)
 				other.destroyable = true;
-			if (other.object_index != obj_pepperman || other.elitehit < 5)
+			if (other.object_index != obj_pepperman or other.elitehit < 5)
 				punchcount = 20 - (other.elitehit * 2);
 			else
 				punchcount = 20;
@@ -31,7 +31,7 @@ function scr_boss_grabbed()
 				punchcount = 0;
 				hiteffect = false;
 			}
-			else if ((xscale > 0 && x > (room_width - 100)) || (xscale < 0 && x < 100))
+			else if ((xscale > 0 && x > (room_width - 100)) or (xscale < 0 && x < 100))
 				reposition = true;
 			supergrabx = other.x - x;
 			supergraby = other.y - y;
@@ -116,8 +116,8 @@ function boss_hurt_gustavo()
 	{
 		with (obj_gustavograbbable)
 		{
-			var _slam = enemy_is_superslam(id) || enemy_is_swingding(id);
-			if ((thrown || _slam) && other.state != states.KO && (place_meeting(x + hsp, y, other) || place_meeting(x - image_xscale, y, other) || place_meeting(x - (32 * image_xscale), y, other) || place_meeting(x + (32 * image_xscale), y, other)))
+			var _slam = enemy_is_superslam(id) or enemy_is_swingding(id);
+			if ((thrown or _slam) && other.state != states.KO && (place_meeting(x + hsp, y, other) or place_meeting(x - image_xscale, y, other) or place_meeting(x - (32 * image_xscale), y, other) or place_meeting(x + (32 * image_xscale), y, other)))
 			{
 				with (other)
 				{

@@ -9,7 +9,7 @@ function scr_player_grabbed()
 		x = _obj_player.x;
 		y = _obj_player.y;
 	}
-	if (_obj_player.state == states.grabbing || _obj_player.state == states.grab || _obj_player.state == states.throwing || _obj_player.state == states.slam || _obj_player.state == states.tacklecharge)
+	if (_obj_player.state == states.grabbing or _obj_player.state == states.grab or _obj_player.state == states.throwing or _obj_player.state == states.slam or _obj_player.state == states.tacklecharge)
 	{
 		x = _obj_player.x;
 		if (_obj_player.sprite_index != _obj_player.spr_haulingstart)
@@ -43,7 +43,7 @@ function scr_player_grabbed()
 				shake_mag_acc = 3 / room_speed;
 			}
 		}
-		if (!(state == states.grab || (state == states.mach3 && fightball == 1) || (state == states.ratmount || state == states.ratmountattack || state == states.ratmountjump || state == states.ratmountspit) || state == states.finishingblow || state == states.grabbing || state == states.throwing || state == states.slam || state == states.tacklecharge || state == states.punch || state == states.superslam || state == states.backkick || state == states.uppunch || state == states.shoulder))
+		if (!(state == states.grab or (state == states.mach3 && fightball == 1) or (state == states.ratmount or state == states.ratmountattack or state == states.ratmountjump or state == states.ratmountspit) or state == states.finishingblow or state == states.grabbing or state == states.throwing or state == states.slam or state == states.tacklecharge or state == states.punch or state == states.superslam or state == states.backkick or state == states.uppunch or state == states.shoulder))
 		{
 			baddiegrabbedID = obj_null;
 			other.x = _obj_player.x;
@@ -54,7 +54,7 @@ function scr_player_grabbed()
 			other.image_index = 0;
 		}
 	}
-	if (_obj_player.state == states.ratmount || _obj_player.state == states.ratmountjump)
+	if (_obj_player.state == states.ratmount or _obj_player.state == states.ratmountjump)
 	{
 		visible = false;
 		x = _obj_player.x;
@@ -84,7 +84,7 @@ function scr_player_grabbed()
 			shake_mag_acc = 3 / room_speed;
 		}
 		state = states.hurt;
-		if (scr_solid(x, y) || collision_line(x, y, _obj_player.x, _obj_player.y, obj_solid, false, true) != -4)
+		if (scr_solid(x, y) or collision_line(x, y, _obj_player.x, _obj_player.y, obj_solid, false, true) != -4)
 		{
 			x = _obj_player.x;
 			y = _obj_player.y;

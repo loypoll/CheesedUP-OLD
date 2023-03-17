@@ -2,7 +2,7 @@ function scr_collide_destructibles()
 {
 	with (obj_player)
 	{
-		if ((state == states.jump && sprite_index == spr_playerN_noisebombspinjump) || (ghostdash && sprite_index != spr_ghostidle) || state == states.slipbanan || state == states.rideweenie || state == states.trickjump || state == states.ratmountbounce || (state == states.pogo && pogochargeactive == 1))
+		if ((state == states.jump && sprite_index == spr_playerN_noisebombspinjump) or (ghostdash && sprite_index != spr_ghostidle) or state == states.slipbanan or state == states.rideweenie or state == states.trickjump or state == states.ratmountbounce or (state == states.pogo && pogochargeactive == 1))
 		{
 			var arr = [[xscale, 0], [hsp + xscale, 0], [0, vsp + 1], [0, vsp - 1], [0, 1], [0, -1]];
 			for (var i = 0; i < array_length(arr); i++)
@@ -27,7 +27,7 @@ function scr_collide_destructibles()
 				}
 			}
 		}
-		if (state == states.trashroll || state == states.boxxedpepspin || ratmount_movespeed >= 12 || state == states.ratmountpunch || state == states.ratmounttumble || state == states.punch || state == states.handstandjump || state == states.ratmountattack || state == states.lungeattack || state == states.cheeseball || state == states.bombpepside || state == states.rocket || state == states.shotgundash || state == states.faceplant || state == states.slipnslide || state == states.tacklecharge || sprite_index == spr_barrelroll || sprite_index == spr_player_barrelslipnslide || state == states.chainsawbump || state == states.mach3 || state == states.knightpep || (state == states.boxxedpepjump && boxxeddash) || (state == states.boxxedpep && boxxeddash) || state == states.machroll || state == states.knightpepslopes || state == states.knightpepattack || state == states.tumble || state == states.hookshot || state == states.shoulderbash)
+		if (state == states.trashroll or state == states.boxxedpepspin or ratmount_movespeed >= 12 or state == states.ratmountpunch or state == states.ratmounttumble or state == states.punch or state == states.handstandjump or state == states.ratmountattack or state == states.lungeattack or state == states.cheeseball or state == states.bombpepside or state == states.rocket or state == states.shotgundash or state == states.faceplant or state == states.slipnslide or state == states.tacklecharge or sprite_index == spr_barrelroll or sprite_index == spr_player_barrelslipnslide or state == states.chainsawbump or state == states.mach3 or state == states.knightpep or (state == states.boxxedpepjump && boxxeddash) or (state == states.boxxedpep && boxxeddash) or state == states.machroll or state == states.knightpepslopes or state == states.knightpepattack or state == states.tumble or state == states.hookshot or state == states.shoulderbash)
 		{
 			if (place_meeting(x + hsp, y, obj_destructibles))
 			{
@@ -54,10 +54,10 @@ function scr_collide_destructibles()
 				}
 			}
 		}
-		if ((state == states.knightpep || sprite_index == spr_lonegustavo_groundpoundstart || state == states.ratmountbounce || sprite_index == spr_lonegustavo_groundpound || state == states.jetpackjump || state == states.firemouth || state == states.slipbanan || state == states.superslam || state == states.hookshot || (state == states.bombpepup && bombup_dir == 1)) && vsp > 0)
+		if ((state == states.knightpep or sprite_index == spr_lonegustavo_groundpoundstart or state == states.ratmountbounce or sprite_index == spr_lonegustavo_groundpound or state == states.jetpackjump or state == states.firemouth or state == states.slipbanan or state == states.superslam or state == states.hookshot or (state == states.bombpepup && bombup_dir == 1)) && vsp > 0)
 		{
 			var vy = 1;
-			if (state == states.ratmountbounce || sprite_index == spr_lonegustavo_groundpoundstart || sprite_index == spr_lonegustavo_groundpound)
+			if (state == states.ratmountbounce or sprite_index == spr_lonegustavo_groundpoundstart or sprite_index == spr_lonegustavo_groundpound)
 				vy = vsp;
 			if (place_meeting(x, y + vy, obj_destructibles))
 			{
@@ -71,7 +71,7 @@ function scr_collide_destructibles()
 					}
 				}
 				ds_list_clear(global.instancelist);
-				if (state == states.firemouth || state == states.jetpackjump)
+				if (state == states.firemouth or state == states.jetpackjump)
 				{
 					with (instance_place(x, y + vy, obj_tntblock))
 					{
@@ -130,10 +130,10 @@ function scr_collide_destructibles()
 		}
 		ds_list_clear(global.instancelist);
 		
-		if (vsp <= 0.5 && (state == states.jump || state == states.ratmountjump || state == states.mach3 || state == states.mach2 || state == states.antigrav || state == states.pogo || (state == states.bombpepup && bombup_dir == -1) || state == states.punch || state == states.climbwall || state == states.fireass || state == states.Sjump || state == states.cheeseballclimbwall || state == states.mach3 || (state == states.punch && (sprite_index == spr_breakdanceuppercut || sprite_index == spr_breakdanceuppercutend))))
+		if (vsp <= 0.5 && (state == states.jump or state == states.ratmountjump or state == states.mach3 or state == states.mach2 or state == states.antigrav or state == states.pogo or (state == states.bombpepup && bombup_dir == -1) or state == states.punch or state == states.climbwall or state == states.fireass or state == states.Sjump or state == states.cheeseballclimbwall or state == states.mach3 or (state == states.punch && (sprite_index == spr_breakdanceuppercut or sprite_index == spr_breakdanceuppercutend))))
 		{
 			vy = -1;
-			if (state == states.punch && (sprite_index == spr_breakdanceuppercut || sprite_index == spr_breakdanceuppercutend))
+			if (state == states.punch && (sprite_index == spr_breakdanceuppercut or sprite_index == spr_breakdanceuppercutend))
 				vy = vsp;
 			if (place_meeting(x, y + vy, obj_destructibles))
 			{
@@ -151,7 +151,7 @@ function scr_collide_destructibles()
 				}
 			}
 		}
-		if (vsp >= 0 && (state == states.freefall || state == states.superslam || state == states.freefallland || state == states.ratmountgroundpound || (state == states.ratmountbounce && vsp >= 0) || (state == states.slipbanan && vsp >= 10)))
+		if (vsp >= 0 && (state == states.freefall or state == states.superslam or state == states.freefallland or state == states.ratmountgroundpound or (state == states.ratmountbounce && vsp >= 0) or (state == states.slipbanan && vsp >= 10)))
 		{
 			if (place_meeting(x, y + vsp + 2, obj_destructibles))
 			{
@@ -161,18 +161,18 @@ function scr_collide_destructibles()
 				ds_list_clear(global.instancelist);
 			}
 		}
-		if (state == states.freefall || state == states.superslam || state == states.freefallland || state == states.slipbanan || (state == states.ratmountbounce && vsp > 0))
+		if (state == states.freefall or state == states.superslam or state == states.freefallland or state == states.slipbanan or (state == states.ratmountbounce && vsp > 0))
 		{
 			vy = 1;
 			if (state == states.ratmountbounce)
 				vy = vsp + 4;
-			if (place_meeting(x, y + vy, obj_metalblock) && (freefallsmash >= 10 || state == states.slipbanan || state == states.ratmountbounce))
+			if (place_meeting(x, y + vy, obj_metalblock) && (freefallsmash >= 10 or state == states.slipbanan or state == states.ratmountbounce))
 			{
 				with (instance_place(x, y + vy, obj_metalblock))
 					instance_destroy();
 			}
 		}
-		if (state == states.crouchslide || state == states.machroll || state == states.mach2 || state == states.punch)
+		if (state == states.crouchslide or state == states.machroll or state == states.mach2 or state == states.punch)
 		{
 			with (instance_place(x + hsp, y, obj_destructibles))
 			{

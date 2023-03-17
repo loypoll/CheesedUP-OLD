@@ -167,7 +167,7 @@ draw = function(curve)
 			var xx = 960 / 2 - 120 - sin(current_time / 200) * 4, yy = 540 / 2 + 16;
 			if charshift[0] < 0
 				xx += charshift[0] * 100;
-		
+			
 			if palettes[sel.pal - 1].texture != noone
 			{
 				scr_palette_texture(spr_palettearrow, 0, xx, yy, 1, 1, 90, c_white, 1, true, palettes[sel.pal - 1].texture);
@@ -181,7 +181,7 @@ draw = function(curve)
 			var xx = 960 / 2 + 120 + sin(current_time / 200) * 4, yy = 540 / 2 + 16;
 			if charshift[0] > 0
 				xx += charshift[0] * 100;
-		
+			
 			if palettes[sel.pal + 1].texture != noone
 			{
 				scr_palette_texture(spr_palettearrow, 0, xx, yy, 1, 1, 270, c_white, 1, true, palettes[sel.pal + 1].texture);

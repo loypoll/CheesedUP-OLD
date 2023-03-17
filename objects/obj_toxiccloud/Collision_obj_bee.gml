@@ -1,4 +1,4 @@
-if (other.inv_timer <= 0 && (other.state == states.normal || other.state == states.idle || other.state == states.chase))
+if (other.inv_timer <= 0 && (other.state == states.normal or other.state == states.idle or other.state == states.chase))
 {
 	with (other)
 	{

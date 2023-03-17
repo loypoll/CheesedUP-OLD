@@ -8,23 +8,23 @@ function baddiecollisionbox_update(player)
 			var _stagger = false;
 			if (instance_exists(other.baddieID) && instakillmove == 1 && other.baddieID.state != states.grabbed && other.baddieID.thrown == 0 && !other.baddieID.invincible && other.baddieID.instantkillable)
 			{
-				if (state == states.mach3 && sprite_index != spr_mach3hit && (character == "P" || character == "V"))
+				if (state == states.mach3 && sprite_index != spr_mach3hit && (character == "P" or character == "V"))
 				{
 					if (fightball == 0)
 						sprite_index = spr_mach3hit;
 					image_index = 0;
 					_destroy = true;
 				}
-				else if (state == states.Sjump || (state == states.freefall && freefallsmash > 10))
+				else if (state == states.Sjump or (state == states.freefall && freefallsmash > 10))
 					_destroy = true;
-				if ((state == states.mach2 || state == states.machroll) && grounded)
+				if ((state == states.mach2 or state == states.machroll) && grounded)
 				{
 					machpunchAnim = true;
 					image_index = 0;
 				}
 				if (!grounded && state != states.freefall && key_jump2)
 				{
-					if (state == states.mach2 || (state == states.mach3 && fightball == 0))
+					if (state == states.mach2 or (state == states.mach3 && fightball == 0))
 						sprite_index = spr_mach2jump;
 					suplexmove = false;
 					vsp = -11;
@@ -78,7 +78,7 @@ function baddiecollisionbox_update(player)
 				{
 					with (other.baddieID)
 					{
-						hp -= (state == states.mach2 || state == states.machroll) ? 1 : 2;
+						hp -= (state == states.mach2 or state == states.machroll) ? 1 : 2;
 						state = (hp > 0) ? states.staggered : states.stun;
 						stagger_buffer = stagger_max;
 						stagger_dir = other.xscale;
@@ -86,7 +86,7 @@ function baddiecollisionbox_update(player)
 				}
 			}
 			var pepp_grab = false;
-			if (character == "M" && instance_exists(other.baddieID) && (state == states.normal || state == states.jump) && state != states.pummel && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw && other.baddieID.state == states.staggered && other.baddieID.state != states.pummel && other.baddieID.state != states.stun && other.baddieID.stuntouchbuffer == 0 && !other.baddieID.thrown && !other.baddieID.invincible)
+			if (character == "M" && instance_exists(other.baddieID) && (state == states.normal or state == states.jump) && state != states.pummel && pepperman_grabID == -4 && sprite_index != spr_pepperman_throw && other.baddieID.state == states.staggered && other.baddieID.state != states.pummel && other.baddieID.state != states.stun && other.baddieID.stuntouchbuffer == 0 && !other.baddieID.thrown && !other.baddieID.invincible)
 			{
 				other.baddieID.pepperman_grab = true;
 				pepperman_grabID = other.baddieID.id;
@@ -94,7 +94,7 @@ function baddiecollisionbox_update(player)
 				other.baddieID.grabbedby = (object_index == obj_player1) ? 1 : 2;
 				pepp_grab = true;
 			}
-			if (instance_exists(other.baddieID) && y < other.baddieID.y && attacking == 0 && sprite_index != spr_mach2jump && (state == states.jump || state == states.mach1 || state == states.grab) && vsp > 0 && other.baddieID.vsp >= 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
+			if (instance_exists(other.baddieID) && y < other.baddieID.y && attacking == 0 && sprite_index != spr_mach2jump && (state == states.jump or state == states.mach1 or state == states.grab) && vsp > 0 && other.baddieID.vsp >= 0 && sprite_index != spr_stompprep && !other.baddieID.invincible && other.baddieID.stompable)
 			{
 				if (x != other.baddieID.x)
 					other.baddieID.image_xscale = -sign(other.baddieID.x - x);
@@ -145,7 +145,7 @@ function baddiecollisionbox_update(player)
 					other.baddieID.state = states.pummel;
 					other.baddieID.grabbedby = (object_index == obj_player1) ? 1 : 2;
 				}
-				else if (other.baddieID.thrown == 0 && (character == "P" || character == "N"))
+				else if (other.baddieID.thrown == 0 && (character == "P" or character == "N"))
 				{
 					movespeed = 0;
 					image_index = 0;

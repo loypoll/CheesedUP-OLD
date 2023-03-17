@@ -28,11 +28,11 @@ function scr_player_boxxedpep()
 		}
 		hsp = movespeed + (railmovespeed * raildir);
 	}
-	if (scr_solid(x + sign(hsp), y) && xscale == 1 && move == 1 && (!place_meeting(x + 1, y, obj_slope) || scr_solid_slope(x + 1, y)))
+	if (scr_solid(x + sign(hsp), y) && xscale == 1 && move == 1 && (!place_meeting(x + 1, y, obj_slope) or scr_solid_slope(x + 1, y)))
 		movespeed = 0;
-	if (scr_solid(x + sign(hsp), y) && xscale == -1 && move == -1 && (!place_meeting(x - 1, y, obj_slope) || scr_solid_slope(x - 1, y)))
+	if (scr_solid(x + sign(hsp), y) && xscale == -1 && move == -1 && (!place_meeting(x - 1, y, obj_slope) or scr_solid_slope(x - 1, y)))
 		movespeed = 0;
-	if (xscale == sign(hsp) && scr_solid(x + sign(hsp), y) && (!place_meeting(x - 1, y, obj_slope) || scr_solid_slope(x - 1, y)))
+	if (xscale == sign(hsp) && scr_solid(x + sign(hsp), y) && (!place_meeting(x - 1, y, obj_slope) or scr_solid_slope(x - 1, y)))
 		boxxeddashbuffer = 0;
 	if (!grounded && boxxeddashbuffer > 0)
 		boxxeddashbuffer--;
@@ -55,7 +55,7 @@ function scr_player_boxxedpep()
 		}
 		jumpstop = false;
 	}
-	if (sprite_index == spr_boxxedpepdash || sprite_index == spr_boxxedpepdashstart)
+	if (sprite_index == spr_boxxedpepdash or sprite_index == spr_boxxedpepdashstart)
 	{
 		sprite_index = spr_boxxedpepdashend;
 		image_index = 0;
@@ -66,7 +66,7 @@ function scr_player_boxxedpep()
 	{
 		if (move != 0)
 		{
-			if (((xscale > 0 && movespeed < 12) || (xscale < 0 && movespeed > -12)) && move == xscale)
+			if (((xscale > 0 && movespeed < 12) or (xscale < 0 && movespeed > -12)) && move == xscale)
 				movespeed += (xscale * 0.8);
 			if (boxxeddash == 0)
 				xscale = move;

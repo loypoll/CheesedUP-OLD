@@ -17,7 +17,7 @@ function scr_player_door()
 		image_speed = 0;
 		image_index = image_number - 1;
 	}
-	if (floor(image_index) == (image_number - 1) && !instance_exists(obj_fadeout) && (sprite_index == spr_downpizzabox || sprite_index == spr_uppizzabox))
+	if (floor(image_index) == (image_number - 1) && !instance_exists(obj_fadeout) && (sprite_index == spr_downpizzabox or sprite_index == spr_uppizzabox))
 		instance_create(x, y, obj_fadeout);
 	
 	if REMIX

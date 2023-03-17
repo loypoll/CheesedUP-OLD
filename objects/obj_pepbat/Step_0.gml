@@ -65,7 +65,7 @@ switch (state)
 			x += lengthdir_x(3, dir);
 			y += lengthdir_y(3, dir);
 		}
-		if (hit || distance_to_point(xstart, ystart) > 800)
+		if (hit or distance_to_point(xstart, ystart) > 800)
 		{
 			hit = false;
 			state = states.turn;

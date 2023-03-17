@@ -20,3 +20,6 @@ shd_alpha = shader_get_uniform(shd_firemouth_afterimage, "newAlpha");
 shd_color_red = shader_get_uniform(shd_color_afterimage, "red");
 shd_color_green = shader_get_uniform(shd_color_afterimage, "green");
 shd_color_blue = shader_get_uniform(shd_color_afterimage, "blue");
+
+color1 = shader_get_uniform(shd_mach3effect, "color1");
+color2 = shader_get_uniform(shd_mach3effect, "color2");

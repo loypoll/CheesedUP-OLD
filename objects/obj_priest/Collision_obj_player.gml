@@ -6,7 +6,7 @@ with (other)
 	{
 		if (state == states.ghost)
 			notification_push(notifs.priest_ghost, [ghosttimer, room]);
-		if (state == states.mort || state == states.mortjump || state == states.morthook || state == states.mortattack || state == states.mortjump || state == states.boxxedpep || state == states.boxxedpepjump || state == states.boxxedpepspin || state == states.ghost || state == states.barrelslide || state == states.barrel || state == states.barreljump)
+		if (state == states.mort or state == states.mortjump or state == states.morthook or state == states.mortattack or state == states.mortjump or state == states.boxxedpep or state == states.boxxedpepjump or state == states.boxxedpepspin or state == states.ghost or state == states.barrelslide or state == states.barrel or state == states.barreljump)
 		{
 			if (hsp != 0)
 				xscale = sign(hsp);
@@ -33,7 +33,7 @@ if (_transfo)
 	}
 	with (other)
 	{
-		if (state == states.mort || state == states.morthook || state == states.mortjump || state == states.mortattack)
+		if (state == states.mort or state == states.morthook or state == states.mortjump or state == states.mortattack)
 			create_debris(x, y - 40, spr_mortdead);
 	}
 	if (sprite_index != spr_angelpriest)

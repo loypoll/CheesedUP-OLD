@@ -2,7 +2,7 @@ with (other)
 {
 	if (!other.collisioned)
 	{
-		if (direction < 90 || direction > 270)
+		if (direction < 90 or direction > 270)
 			obj_player1.xscale = -1;
 		else
 			obj_player1.xscale = 1;

@@ -14,14 +14,14 @@ function scr_player_boxxedpepspin()
 	if (abs(movespeed) > 0)
 		movespeed = Approach(movespeed, 0, 0.1);
 	instance_destroy(instance_place(x + hsp, y, obj_destructibles));
-	if (scr_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_ratblock) && !place_meeting(x + hsp, y, obj_destructibles) && (!place_meeting(x + hsp, y, obj_slope) || scr_solid_slope(x + hsp, y)))
+	if (scr_solid(x + hsp, y) && !place_meeting(x + hsp, y, obj_ratblock) && !place_meeting(x + hsp, y, obj_destructibles) && (!place_meeting(x + hsp, y, obj_slope) or scr_solid_slope(x + hsp, y)))
 	{
 		sound_play_3d("event:/sfx/boxxed/step", x, y);
 		instance_create(x + hsp, y, obj_bangeffect);
 		movespeed = -(sign(hsp) * 6);
 		GamepadSetVibration(0, 0.4, 0.4, 0.65);
 	}
-	if ((!key_slap || abs(movespeed) <= 3) && boxxedspinbuffer == 0)
+	if ((!key_slap or abs(movespeed) <= 3) && boxxedspinbuffer == 0)
 	{
 		state = states.boxxedpepjump;
 		sprite_index = spr_boxxedpepair;

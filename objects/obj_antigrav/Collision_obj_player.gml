@@ -4,7 +4,7 @@ with (other)
 	if (state != states.antigrav && state != states.backbreaker && state != states.chainsaw && other.cooldown == 0)
 	{
 		create_transformation_tip(lang_get_value("antigravtip"), "antigrav");
-		if (state == states.rocket || state == states.rocketslide)
+		if (state == states.rocket or state == states.rocketslide)
 		{
 			with (instance_create(x, y + 12, obj_rocketdead))
 			{

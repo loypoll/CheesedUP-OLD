@@ -5,7 +5,7 @@ if (global.spaceblockswitch == 1)
 	sprite_index = spr_spaceblock_open;
 	image_alpha = 0.5;
 }
-else if (global.spaceblockswitch == 0 && (x != xstart || sprite_index != spr_spaceblock_closed) && !place_meeting(xstart, ystart, obj_player) && !place_meeting(xstart, ystart, obj_baddie) && !place_meeting(xstart, ystart, obj_clownmato) && !place_meeting(xstart, ystart, obj_monster))
+else if (global.spaceblockswitch == 0 && (x != xstart or sprite_index != spr_spaceblock_closed) && !place_meeting(xstart, ystart, obj_player) && !place_meeting(xstart, ystart, obj_baddie) && !place_meeting(xstart, ystart, obj_clownmato) && !place_meeting(xstart, ystart, obj_monster))
 {
 	mask_index = spr_spaceblock_closed;
 	sprite_index = spr_spaceblock_closed;

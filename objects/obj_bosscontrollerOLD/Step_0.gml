@@ -65,7 +65,7 @@ switch (state)
 			state = states.normal;
 			with (obj_player)
 			{
-				if (object_index != obj_player2 || global.coop)
+				if (object_index != obj_player2 or global.coop)
 					state = states.normal;
 			}
 			with (par_boss)
@@ -96,7 +96,7 @@ switch (state)
 			{
 				if (state != states.actor && state != states.comingoutdoor && state != states.hit && !instance_exists(obj_fadeout))
 				{
-					if (state == states.hit || state == states.chainsaw)
+					if (state == states.hit or state == states.chainsaw)
 					{
 						hitLag = 0;
 						x = hitX;
@@ -118,7 +118,7 @@ switch (state)
 			}
 			with (par_boss)
 			{
-				if (state == states.hit || state == states.chainsaw)
+				if (state == states.hit or state == states.chainsaw)
 				{
 					hitLag = 0;
 					x = hitX;
@@ -143,7 +143,7 @@ switch (state)
 			state = states.normal;
 			with (obj_player)
 			{
-				if (object_index == obj_player1 || global.coop)
+				if (object_index == obj_player1 or global.coop)
 					state = states.normal;
 			}
 			with (par_boss)
@@ -201,7 +201,7 @@ switch (state)
 			case 2:
 				super_portrait_index += 0.35;
 				super_portrait_x += 1;
-				if (obj_player.state != states.playersuperattack || obj_player.superattackstate != states.transition)
+				if (obj_player.state != states.playersuperattack or obj_player.superattackstate != states.transition)
 					super_portrait_state = 0;
 				break;
 		}
@@ -211,7 +211,7 @@ switch (state)
 		instance_destroy(obj_baddie);
 		if (player_hp > 0)
 		{
-			if (!instance_exists(bossID) || bossID.state != states.hit)
+			if (!instance_exists(bossID) or bossID.state != states.hit)
 			{
 				fade -= 0.05;
 				fade = clamp(fade, 0, 1);
@@ -243,11 +243,11 @@ portrait1_index += 0.35;
 portrait2_index += 0.35;
 if (state == states.normal && instance_exists(bossID))
 {
-	if (obj_player1.state == states.hit || obj_player1.state == states.thrown)
+	if (obj_player1.state == states.hit or obj_player1.state == states.thrown)
 		portrait1_sprite = portrait1_hurt;
 	else
 		portrait1_sprite = portrait1_idle;
-	if (bossID.state == states.hit || bossID.state == states.stun)
+	if (bossID.state == states.hit or bossID.state == states.stun)
 		portrait2_sprite = portrait2_hurt;
 	else
 		portrait2_sprite = portrait2_idle;

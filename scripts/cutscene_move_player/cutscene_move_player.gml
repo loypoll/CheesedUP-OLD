@@ -38,7 +38,7 @@ function cutscene_move_player(_player, _xto, _hsp, _threshold)
 		cutscene_end_action();
 	with (player)
 	{
-		if (move != 0 && (floor(image_index) == 3 || floor(image_index) == 8) && steppy == 0 && character != "V")
+		if (move != 0 && (floor(image_index) == 3 or floor(image_index) == 8) && steppy == 0 && character != "V")
 		{
 			instance_create(x, y + 43, obj_cloudeffect);
 			steppy = true;

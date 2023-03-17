@@ -11,7 +11,7 @@ if (isOpen) {
 	if (!surface_exists(shellSurface)) {
 		shellSurface = surface_create(display_get_gui_width(), display_get_gui_height());
 		self._recalculate_shell_properties();
-	} else if (surface_get_width(shellSurface) != display_get_gui_width() || surface_get_height(shellSurface) != display_get_gui_height()) {
+	} else if (surface_get_width(shellSurface) != display_get_gui_width() or surface_get_height(shellSurface) != display_get_gui_height()) {
 		surface_resize(shellSurface, display_get_gui_width(), display_get_gui_height());
 	}
 	
@@ -23,7 +23,7 @@ if (isOpen) {
 	}
 	if (!surface_exists(scrollSurface)) {
 		scrollSurface = surface_create(display_get_gui_width(), visibleHeight);
-	} else if (surface_get_width(scrollSurface) != display_get_gui_width() || 
+	} else if (surface_get_width(scrollSurface) != display_get_gui_width() or 
 			   surface_get_height(scrollSurface) != visibleHeight) {
 		surface_resize(scrollSurface, display_get_gui_width(), visibleHeight);
 	}
@@ -74,7 +74,7 @@ if (isOpen) {
 		// Draw text cursor
 		var cursorPosX = shellOriginX + promptXOffset + string_width(string_copy(consoleString + " ", 1, cursorPos - 1));
 		if (insertMode) {
-			if (delayFrames > 1 || current_time % 1000 < 600) {
+			if (delayFrames > 1 or current_time % 1000 < 600) {
 				draw_line_width(cursorPosX, yOffset, cursorPosX, yOffset + emHeight, 1);
 			} else if (keyboard_check(vk_anykey)) {
 				draw_line_width(cursorPosX, yOffset, cursorPosX, yOffset + emHeight, 1);
@@ -224,7 +224,7 @@ if (isOpen) {
 						var y1Col = y1 + (i * emHeight);
 						var y2Col = y1 + (i * emHeight) + emHeight - 1 + autocompletePadding;
 						if (point_in_rectangle(device_mouse_x_to_gui(0) - 1, device_mouse_y_to_gui(0) - 1, x1, y1Col, x2, y2Col)) {
-							if (device_mouse_x_to_gui(0) != mousePreviousX || device_mouse_y_to_gui(0) != mousePreviousY) {
+							if (device_mouse_x_to_gui(0) != mousePreviousX or device_mouse_y_to_gui(0) != mousePreviousY) {
 								suggestionIndex = i + autocompleteScrollPosition;
 								mousePreviousX = device_mouse_x_to_gui(0);
 								mousePreviousY = device_mouse_y_to_gui(0);

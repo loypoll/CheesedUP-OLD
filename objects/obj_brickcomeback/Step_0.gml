@@ -5,7 +5,7 @@ if (obj_player.isgustavo == 0)
 }
 if (!trapped)
 {
-	if (obj_player1.state == states.ratmountgrind || obj_player1.state == states.ratmountladder || obj_player1.state == states.ratmountcrouch)
+	if (obj_player1.state == states.ratmountgrind or obj_player1.state == states.ratmountladder or obj_player1.state == states.ratmountcrouch)
 	{
 		wait = true;
 		sprite_index = spr_lonebrick_wait;
@@ -33,7 +33,7 @@ if (!trapped)
 else if (baddieID == -4)
 {
 	vsp = -10;
-	if ((y + vsp) < 80 || scr_solid(x, y - 78))
+	if ((y + vsp) < 80 or scr_solid(x, y - 78))
 		vsp = 0;
 	y += vsp;
 }

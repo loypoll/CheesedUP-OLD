@@ -1,7 +1,7 @@
 x = playerid.x;
 y = playerid.y;
 image_xscale = playerid.xscale;
-if (abs(playerid.hsp) <= 0 || playerid.state != states.mach3 || playerid.state == states.slipbanan || abs(playerid.movespeed) <= 12 || (playerid.collision_flags & colflag.secret) > 0 || playerid.cutscene || playerid.state == states.comingoutdoor || playerid.state == states.door || room == timesuproom)
+if (abs(playerid.hsp) <= 0 or playerid.state != states.mach3 or playerid.state == states.slipbanan or abs(playerid.movespeed) <= 12 or (playerid.collision_flags & colflag.secret) > 0 or playerid.cutscene or playerid.state == states.comingoutdoor or playerid.state == states.door or room == timesuproom)
 	instance_destroy();
 if (room == timesuproom)
 	instance_destroy();

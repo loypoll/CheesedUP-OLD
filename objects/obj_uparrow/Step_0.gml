@@ -3,7 +3,7 @@ with (playerid)
 {
 	if (!place_meeting(x, y, obj_uparrowhitbox))
 		instance_destroy(other);
-	if (!grounded || (state != states.normal && state != states.ratmount))
+	if (!grounded or (state != states.normal && state != states.ratmount))
 		instance_destroy(other);
 }
 x = playerid.x;

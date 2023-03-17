@@ -58,7 +58,7 @@ switch (state)
 			if (credits_pos < array_length(credits))
 			{
 				b = credits[credits_pos++];
-				if (b[1] == -4 || !instance_exists(obj_credits))
+				if (b[1] == -4 or !instance_exists(obj_credits))
 				{
 					with (instance_create(0, 0, obj_endingcard))
 					{
@@ -95,7 +95,7 @@ switch (state)
 					sprite_index = other.spawn_arr[irandom(array_length(other.spawn_arr) - 1)];
 					spd = irandom_range(3, 6);
 					image_speed = 0.35;
-					if (sprite_index == spr_pepbat_move || sprite_index == spr_ufolive || sprite_index == spr_kentukybomber_move || sprite_index == spr_ghoul_attack || sprite_index == spr_ancho)
+					if (sprite_index == spr_pepbat_move or sprite_index == spr_ufolive or sprite_index == spr_kentukybomber_move or sprite_index == spr_ghoul_attack or sprite_index == spr_ancho)
 						y = irandom_range(160, 288);
 					if (sprite_index == spr_tank_walk)
 						y++;
@@ -113,7 +113,7 @@ switch (state)
 			if (music != -4 && !fmod_event_instance_is_playing(music.event))
 				_continue = true;
 		}
-		if (keyboard_check_pressed(global.key_slap) || gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC))
+		if (keyboard_check_pressed(global.key_slap) or gamepad_button_check_pressed(obj_inputAssigner.player_input_device[0], global.key_slapC))
 			_continue = true;
 		if (_continue)
 			state++;
@@ -129,7 +129,7 @@ switch (state)
 					sprite_index = other.spawn_arr[irandom(array_length(other.spawn_arr) - 1)];
 					spd = irandom_range(3, 6);
 					image_speed = 0.35;
-					if (sprite_index == spr_pepbat_move || sprite_index == spr_ufolive || sprite_index == spr_kentukybomber_move || sprite_index == spr_ghoul_attack || sprite_index == spr_ancho)
+					if (sprite_index == spr_pepbat_move or sprite_index == spr_ufolive or sprite_index == spr_kentukybomber_move or sprite_index == spr_ghoul_attack or sprite_index == spr_ancho)
 						y = irandom_range(160, 288);
 					if (sprite_index == spr_tank_walk)
 						y++;
@@ -158,7 +158,7 @@ switch (state)
 		fade = Approach(fade, 0, 0.05);
 		if (buffer > 0)
 			buffer--;
-		else if (fade <= 0 && (keyboard_check_pressed(vk_anykey) || scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4))
+		else if (fade <= 0 && (keyboard_check_pressed(vk_anykey) or scr_checkanygamepad(obj_inputAssigner.player_input_device[0]) != -4))
 			state++;
 		break;
 	

@@ -1,4 +1,4 @@
 function is_bossroom()
 {
-	return room == boss_pepperman || room == boss_noise || room == boss_vigilante || room == boss_mrstick || room == boss_pizzaface || room == boss_pizzaface_p3 || room == boss_fakepep || room == boss_fakepephallway || room == boss_fakepepkey || room == boss_pizzafacefinale || room == boss_pizzafacehub || room == Finalintro || room == Endingroom || room == Johnresurrectionroom || room == Creditsroom || room == tower_pizzafacehall;
+	return room == boss_pepperman or room == boss_noise or room == boss_vigilante or room == boss_mrstick or room == boss_pizzaface or room == boss_pizzaface_p3 or room == boss_fakepep or room == boss_fakepephallway or room == boss_fakepepkey or room == boss_pizzafacefinale or room == boss_pizzafacehub or room == Finalintro or room == Endingroom or room == Johnresurrectionroom or room == Creditsroom or room == tower_pizzafacehall;
 }

@@ -4,7 +4,7 @@ function scr_enemy_hit()
 	y = hitY + random_range(-6, 6);
 	hitLag--;
 	sprite_index = stunfallspr;
-	if (object_index == obj_pepperman || object_index == obj_vigilanteboss || object_index == obj_noiseboss || object_index == obj_pf_fakepep || object_index == obj_fakepepboss || object_index == obj_pizzafaceboss || object_index == obj_pizzafaceboss_p3)
+	if (object_index == obj_pepperman or object_index == obj_vigilanteboss or object_index == obj_noiseboss or object_index == obj_pf_fakepep or object_index == obj_fakepepboss or object_index == obj_pizzafaceboss or object_index == obj_pizzafaceboss_p3)
 	{
 		if (player_instakillmove && pizzahead && object_index != obj_gustavograbbable)
 		{
@@ -25,7 +25,7 @@ function scr_enemy_hit()
 		var _state = obj_player.state;
 		if (_state == states.chainsaw)
 			_state = obj_player.tauntstoredstate;
-		if (_state == states.mach2 || _state == states.tumble || (_state == states.machslide && obj_player.sprite_index != obj_player.spr_mach3boost && obj_player.sprite_index != spr_player_machslideboost3fall) || sprite_index == spr_player_ratmountattack || sprite_index == spr_lonegustavo_dash)
+		if (_state == states.mach2 or _state == states.tumble or (_state == states.machslide && obj_player.sprite_index != obj_player.spr_mach3boost && obj_player.sprite_index != spr_player_machslideboost3fall) or sprite_index == spr_player_ratmountattack or sprite_index == spr_lonegustavo_dash)
 			thrown = false;
 		else
 			thrown = true;
@@ -39,16 +39,16 @@ function scr_enemy_hit()
 		global.heattime = 60;
 		alarm[1] = 5;
 		var _hp = 0;
-		if ((global.attackstyle == 3 || global.attackstyle == 0) && !global.kungfu)
+		if ((global.attackstyle == 3 or global.attackstyle == 0) && !global.kungfu)
 			_hp = -1;
-		if (((!elite && (hp <= _hp || mach3destroy)) || (elite && (elitehit <= 0 || mach3destroy))) && object_get_parent(object_index) != 20 && object_index != obj_pizzafaceboss && destroyable && !mach2)
+		if (((!elite && (hp <= _hp or mach3destroy)) or (elite && (elitehit <= 0 or mach3destroy))) && object_get_parent(object_index) != 20 && object_index != obj_pizzafaceboss && destroyable && !mach2)
 		{
 			instance_destroy();
 			instance_create(x, y, obj_genericpoofeffect);
 		}
 		stunned = 200;
 		state = states.stun;
-		if (object_index == obj_pepperman || object_index == obj_vigilanteboss || object_index == obj_noiseboss || object_index == obj_pf_fakepep || object_index == obj_fakepepboss || object_index == obj_pizzafaceboss || object_index == obj_pizzafaceboss_p3)
+		if (object_index == obj_pepperman or object_index == obj_vigilanteboss or object_index == obj_noiseboss or object_index == obj_pf_fakepep or object_index == obj_fakepepboss or object_index == obj_pizzafaceboss or object_index == obj_pizzafaceboss_p3)
 		{
 			if (obj_player.tauntstoredstate != states.punch && obj_player.tauntstoredstate != states.freefall && obj_player.tauntstoredstate != states.superslam)
 			{
@@ -75,7 +75,7 @@ function scr_enemy_hit()
 				thrown = true;
 				linethrown = false;
 			}
-			if (_state == states.mach2 || _state == states.tumble)
+			if (_state == states.mach2 or _state == states.tumble)
 				stunned *= 5;
 		}
 		if (mach2)

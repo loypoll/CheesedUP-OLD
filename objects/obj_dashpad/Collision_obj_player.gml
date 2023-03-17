@@ -5,7 +5,7 @@ with (other)
 	{
 		if (boxxed == 0 && isgustavo == 0 && other.buffer == 0 && other.sprite_index == spr_dashpad)
 		{
-			if (state == states.trashjump || state == states.trashjumpprep)
+			if (state == states.trashjump or state == states.trashjumpprep)
 				create_debris(x, y, spr_player_trashlid);
 			if (state == states.animatronic)
 			{

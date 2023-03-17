@@ -35,7 +35,7 @@ function scr_player_ratmountbounce()
 			movespeed = Approach(movespeed, move * 8, 0.5);
 		else
 			movespeed = Approach(movespeed, 0, 0.5);
-		if (((input_buffer_slap > 0 && key_up) || key_shoot2) && brick)
+		if (((input_buffer_slap > 0 && key_up) or key_shoot2) && brick)
 		{
 			input_buffer_slap = 0;
 			ratmount_kickbrick();
@@ -61,7 +61,7 @@ function scr_player_ratmountbounce()
 			sprite_index = spr_lonegustavo_punch;
 		}
 		ratmount_fallingspeed += 0.5;
-		if (brick && scr_solid(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)))
+		if (brick && scr_solid(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)))
 		{
 			if (move != 0 && move == sign(hsp) && key_jump2)
 			{

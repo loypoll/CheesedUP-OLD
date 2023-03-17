@@ -6,7 +6,7 @@ if (!noise_grabbed)
 	{
 		vsp = 0;
 		hsp = hithsp;
-		if (place_meeting(x + sign(hithsp), y, obj_solid) || (place_meeting(x, y, obj_player) && obj_player.state != states.handstandjump))
+		if (place_meeting(x + sign(hithsp), y, obj_solid) or (place_meeting(x, y, obj_player) && obj_player.state != states.handstandjump))
 		{
 			instance_destroy();
 			if (obj_player1.flash)
@@ -17,7 +17,7 @@ if (!noise_grabbed)
 	event_inherited();
 	with (obj_noiseboss)
 	{
-		if (state == states.golf && ((other.x < (x - 16) && other.y > (y - 50)) || place_meeting(x, y - other.hsp, other) || place_meeting(x, y, other)))
+		if (state == states.golf && ((other.x < (x - 16) && other.y > (y - 50)) or place_meeting(x, y - other.hsp, other) or place_meeting(x, y, other)))
 		{
 			if (!other.noise)
 			{
@@ -44,7 +44,7 @@ else
 	{
 		other.x = x + (20 * image_xscale);
 		other.y = y;
-		if (sprite_index != spr_playerN_golfswing || floor(image_index) >= 9)
+		if (sprite_index != spr_playerN_golfswing or floor(image_index) >= 9)
 		{
 			other.noise = true;
 			other.noise_grabbed = false;

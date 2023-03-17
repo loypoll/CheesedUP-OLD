@@ -49,7 +49,7 @@ function scr_pizzaface_p2_update_sounds()
 	}
 	else if (fmod_event_instance_get_parameter(snd_tvthrow, "state") < 3)
 		fmod_event_instance_stop(snd_tvthrow, true);
-	if ((sprite_index == spr_pizzahead_ratballstart && floor(image_index) >= 17) || sprite_index == spr_pizzahead_ratballend)
+	if ((sprite_index == spr_pizzahead_ratballstart && floor(image_index) >= 17) or sprite_index == spr_pizzahead_ratballend)
 	{
 		if (!fmod_event_instance_is_playing(snd_spin))
 			fmod_event_instance_play(snd_spin);
@@ -57,7 +57,7 @@ function scr_pizzaface_p2_update_sounds()
 	}
 	else
 		fmod_event_instance_stop(snd_spin, true);
-	if (sprite_index == spr_pizzahead_giddy && !steppysnd && (floor(image_index) == 2 || floor(image_index) == 6))
+	if (sprite_index == spr_pizzahead_giddy && !steppysnd && (floor(image_index) == 2 or floor(image_index) == 6))
 	{
 		steppysnd = true;
 		sound_play_3d("event:/sfx/pizzahead/step", x, y + 40);
@@ -199,7 +199,7 @@ function scr_pizzaface_p2_normal()
 	}
 	else if (flickertime <= 0)
 	{
-		if (instance_exists(obj_pizzaheadportrait) || instance_exists(obj_forknightspawner))
+		if (instance_exists(obj_pizzaheadportrait) or instance_exists(obj_forknightspawner))
 			idle_buffer = 10;
 		if (idle_buffer > 0)
 		{
@@ -301,7 +301,7 @@ function scr_pizzaface_p2_fishing()
 					array_push(availablemoves, i);
 			}
 			do var t = availablemoves[irandom(array_length(availablemoves) - 1)];
-			until (lastattack != t || array_length(availablemoves) <= 1)
+			until (lastattack != t or array_length(availablemoves) <= 1)
 			
 			lastattack = t;
 			idle_buffer = 0;
@@ -523,7 +523,7 @@ function boss_pizzahead_throwing()
 					var s2 = 23 + other.wastedhits;
 					grav += (other.wastedhits * 0.1);
 					calculate_jump_velocity(obj_player1.x, obj_player1.y, s1, grav);
-					if (abs(hsp) <= 1 && (abs(vsp) <= 1 || vsp > 0))
+					if (abs(hsp) <= 1 && (abs(vsp) <= 1 or vsp > 0))
 						calculate_jump_velocity(obj_player1.x, obj_player1.y, s2, grav);
 					movespeed = abs(hsp);
 					if (movespeed <= 4)

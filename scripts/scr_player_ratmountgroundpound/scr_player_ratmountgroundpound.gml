@@ -44,7 +44,7 @@ function scr_player_ratmountgroundpound()
 		image_index = 0;
 		sprite_index = spr_lonegustavo_groundpound;
 	}
-	if (sprite_index == spr_lonegustavo_groundpound || sprite_index == spr_lonegustavo_groundpoundstart)
+	if (sprite_index == spr_lonegustavo_groundpound or sprite_index == spr_lonegustavo_groundpoundstart)
 	{
 		vsp++;
 		if (grounded && vsp > 0 && !place_meeting(x, y + vsp + 2, obj_grindrail) && !place_meeting(x, y + 10, obj_grindrail) && !place_meeting(x, y + vsp, obj_destructibles) && !place_meeting(x, y + vsp + 2, obj_destructibles) && !place_meeting(x, y + 10, obj_destructibles))
@@ -108,7 +108,7 @@ function scr_player_ratmountgroundpound()
 		sprite_index = spr_lonegustavo_idle;
 		state = states.ratmount;
 	}
-	if ((sprite_index == spr_lonegustavo_kick || sprite_index == spr_lonegustavo_jumpstart) && floor(image_index) == (image_number - 1))
+	if ((sprite_index == spr_lonegustavo_kick or sprite_index == spr_lonegustavo_jumpstart) && floor(image_index) == (image_number - 1))
 	{
 		if (sign(hsp) != 0)
 			xscale = sign(hsp);

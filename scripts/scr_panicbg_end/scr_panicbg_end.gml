@@ -23,7 +23,7 @@ function scr_panicbg_end()
 		
 		// Set current time in shader
 		var time_id = shader_get_uniform(shd_panicbg, "time");
-		shader_set_uniform_f(time_id, current_time / (global.panicbg_width + 40));
+		shader_set_uniform_f(time_id, scr_current_time() / (global.panicbg_width + 40));
 		
 		// Set amplitude
 		/*

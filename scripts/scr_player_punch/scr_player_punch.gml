@@ -1,6 +1,6 @@
 function scr_player_punch()
 {
-	if (sprite_index == spr_breakdanceuppercut || sprite_index == spr_breakdanceuppercutend)
+	if (sprite_index == spr_breakdanceuppercut or sprite_index == spr_breakdanceuppercutend)
 	{
 		move = key_left + key_right;
 		landAnim = true;
@@ -24,7 +24,7 @@ function scr_player_punch()
 			movespeed = Approach(movespeed, 0, 0.5);
 		if (floor(image_index) == (image_number - 1) && sprite_index == spr_breakdanceuppercut)
 			sprite_index = spr_breakdanceuppercutend;
-		if (grounded && vsp > 0 && (sprite_index == spr_breakdanceuppercut || sprite_index == spr_breakdanceuppercutend))
+		if (grounded && vsp > 0 && (sprite_index == spr_breakdanceuppercut or sprite_index == spr_breakdanceuppercutend))
 		{
 			if (hsp != 0)
 			{
@@ -77,9 +77,9 @@ function scr_player_punch()
 				}
 				hsp = xscale * movespeed;
 				
-				var _kungfuground = sprite_index == spr_player_kungfu1 || sprite_index == spr_player_kungfu2 || sprite_index == spr_player_kungfu3 || sprite_index == spr_shotgunsuplexdash;
-				var _kungfuair = sprite_index == spr_player_kungfuair1 || sprite_index == spr_player_kungfuair2 || sprite_index == spr_player_kungfuair3 || sprite_index == spr_player_kungfuair1transition || sprite_index == spr_player_kungfuair2transition || sprite_index == spr_player_kungfuair3transition;
-				var _Sjumpcancel = sprite_index == spr_player_Sjumpcancel || sprite_index == spr_player_Sjumpcancelland || sprite_index == spr_player_Sjumpcancelslide;
+				var _kungfuground = sprite_index == spr_player_kungfu1 or sprite_index == spr_player_kungfu2 or sprite_index == spr_player_kungfu3 or sprite_index == spr_shotgunsuplexdash;
+				var _kungfuair = sprite_index == spr_player_kungfuair1 or sprite_index == spr_player_kungfuair2 or sprite_index == spr_player_kungfuair3 or sprite_index == spr_player_kungfuair1transition or sprite_index == spr_player_kungfuair2transition or sprite_index == spr_player_kungfuair3transition;
+				var _Sjumpcancel = sprite_index == spr_player_Sjumpcancel or sprite_index == spr_player_Sjumpcancelland or sprite_index == spr_player_Sjumpcancelslide;
 				
 				if (_kungfuground && image_index > 7 && !key_attack && movespeed > 0)
 					movespeed -= 0.5;
@@ -143,7 +143,7 @@ function scr_player_punch()
 							if (key_attack)
 							{
 								state = states.mach2;
-								movespeed = max(movespeed, 2);
+								movespeed = max(movespeed, 6);
 							}
 							else
 								state = states.normal;
@@ -170,7 +170,7 @@ function scr_player_punch()
 						if (key_attack && movespeed > 0)
 						{
 							state = states.mach2;
-							movespeed = max(movespeed, 2);
+							movespeed = max(movespeed, 6);
 						}
 						else
 							state = states.normal;

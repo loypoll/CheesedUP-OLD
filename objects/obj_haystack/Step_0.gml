@@ -8,7 +8,7 @@ if (sprite_index != spr_haystackburning && sprite_index != spr_haystackburningup
 	}
 	with (obj_player)
 	{
-		if ((state == states.firemouth && (place_meeting(x + hsp, y, other) || place_meeting(x, y + 1, other))) || (state == states.fireass && place_meeting(x, y + 1, other)))
+		if ((state == states.firemouth && (place_meeting(x + hsp, y, other) or place_meeting(x, y + 1, other))) or (state == states.fireass && place_meeting(x, y + 1, other)))
 			other.sprite_index = spr_haystackburningup;
 	}
 }
@@ -78,9 +78,9 @@ else if (sprite_index == spr_haystackburning)
 if (state == states.transition)
 {
 	hsp = movespeed * dir;
-	if (check_wall(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) || check_wall(x + sign(hsp), y - 4)))
+	if (check_wall(x + sign(hsp), y) && (!place_meeting(x + sign(hsp), y, obj_slope) or check_wall(x + sign(hsp), y - 4)))
 		x_to = x;
-	if ((dir > 0 && x >= x_to) || (dir < 0 && x <= x_to))
+	if ((dir > 0 && x >= x_to) or (dir < 0 && x <= x_to))
 	{
 		x = x_to;
 		hsp = 0;

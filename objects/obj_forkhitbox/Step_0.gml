@@ -9,7 +9,7 @@ image_xscale = ID.image_xscale;
 image_yscale = ID.image_yscale;
 with (ID)
 {
-	if (object_index == obj_coolpineapple || object_index == obj_ghostknight || object_index == obj_forknight || object_index == obj_noisey || object_index == obj_smokingpizzaslice)
+	if (object_index == obj_coolpineapple or object_index == obj_ghostknight or object_index == obj_forknight or object_index == obj_noisey or object_index == obj_smokingpizzaslice)
 	{
 		if (state != states.walk && state != states.rage)
 		{
@@ -24,12 +24,12 @@ with (ID)
 				instance_destroy(other);
 			break;
 		case obj_pizzafaceboss_p3:
-			if ((state != states.punch && state != states.swinging) || (state == states.punch && floor(image_index) >= 38))
+			if ((state != states.punch && state != states.swinging) or (state == states.punch && floor(image_index) >= 38))
 				instance_destroy(other);
 			break;
 		case obj_fakepepclone:
 		case obj_fakepepboss:
-			if (state != states.Sjump && (state != states.Sjumpprep || image_index >= 11))
+			if (state != states.Sjump && (state != states.Sjumpprep or image_index >= 11))
 				instance_destroy(other);
 			break;
 		case obj_pepperman:
@@ -65,10 +65,10 @@ with (ID)
 			else if (state == states.slap)
 			{
 				other.x = x + (image_xscale * 32);
-				if (floor(image_index) == (image_number - 2) || floor(image_index) < 8)
+				if (floor(image_index) == (image_number - 2) or floor(image_index) < 8)
 					instance_destroy(other);
 			}
-			else if (state == states.mach2 || state == states.tackle)
+			else if (state == states.mach2 or state == states.tackle)
 				other.x = x + (image_xscale * 20);
 			break;
 		case obj_soldier:
@@ -118,7 +118,7 @@ with (ID)
 				instance_destroy(other);
 			break;
 		case obj_snickexe:
-			if (obj_player1.instakillmove || obj_player1.state == states.handstandjump)
+			if (obj_player1.instakillmove or obj_player1.state == states.handstandjump)
 			{
 				instance_destroy(other);
 				hitboxcreate = false;

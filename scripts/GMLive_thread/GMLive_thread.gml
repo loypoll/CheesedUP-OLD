@@ -49,7 +49,7 @@ function gml_thread(l_program, l_actions, l_args1, l_locals, l_self1, l_other1, 
 				if (is_string(l_js)) {
 					if (gml_std_StringTools_startsWith(l_js, "gml_Script_vm_group_")) {
 						l_text += "\n called from vm:" + gml_std_string_substring(l_js, string_length("gml_Script_vm_group_"));
-					} else if (gml_std_StringTools_startsWith(l_js, "gml_Script_") || gml_std_StringTools_startsWith(l_js, "gml_Object_")) {
+					} else if (gml_std_StringTools_startsWith(l_js, "gml_Script_") or gml_std_StringTools_startsWith(l_js, "gml_Object_")) {
 						l_text += "\n called from game:" + gml_std_string_substring(l_js, string_length("gml_Script_"));
 					} else l_text += "\n called from " + l_js;
 				} else l_text += "\n called from " + string(l_js);

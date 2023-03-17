@@ -19,7 +19,7 @@ with (obj_player1)
 		for (i = 0; i < array_length(other.palettes); i++)
 		{
 			var pal = other.palettes[i][2];
-			if (pal == paletteselect && (pal != 12 || other.palettes[i][3] == global.palettetexture))
+			if (pal == paletteselect && (pal != 12 or other.palettes[i][3] == global.palettetexture))
 			{
 				other.paletteselect = i;
 				break;

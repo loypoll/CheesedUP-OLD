@@ -2,7 +2,7 @@ with (other)
 {
 	var f = 10;
 	var _sound = false;
-	if (state == states.mach2 || state == states.mach3 || state == states.trashroll || state == states.crouch || state == states.handstandjump || state == states.tumble)
+	if (state == states.mach2 or state == states.mach3 or state == states.trashroll or state == states.crouch or state == states.handstandjump or state == states.tumble)
 		_sound = true;
 	if (hsp != 0 && grounded && vsp > 0)
 	{

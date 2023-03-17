@@ -11,7 +11,7 @@ function scr_player_tumble()
 	mask_index = spr_crouchmask;
 	if (sprite_index == spr_tumblestart)
 		movespeed = 6;
-	if (!grounded && (sprite_index == spr_crouchslip || sprite_index == spr_machroll || sprite_index == spr_mach2jump || sprite_index == spr_backslide || sprite_index == spr_backslideland))
+	if (!grounded && (sprite_index == spr_crouchslip or sprite_index == spr_machroll or sprite_index == spr_mach2jump or sprite_index == spr_backslide or sprite_index == spr_backslideland))
 	{
 		vsp = 10;
 		sprite_index = spr_dive;
@@ -84,11 +84,11 @@ function scr_player_tumble()
 		sprite_index = spr_tumble;
 		movespeed = 14;
 	}
-	if ((state != states.freefall && ((check_wall(x + xscale, y) || scr_solid_slope(x + xscale, y)) && !place_meeting(x + hsp, y, obj_rollblock) && (!place_meeting(x + hsp, y, obj_rattumble) || sprite_index != spr_tumble) && !place_meeting(x + hsp, y, obj_destructibles))) || place_meeting(x, y, obj_timedgate))
+	if ((state != states.freefall && ((check_wall(x + xscale, y) or scr_solid_slope(x + xscale, y)) && !place_meeting(x + hsp, y, obj_rollblock) && (!place_meeting(x + hsp, y, obj_rattumble) or sprite_index != spr_tumble) && !place_meeting(x + hsp, y, obj_destructibles))) or place_meeting(x, y, obj_timedgate))
 	{
 		hsp = 0;
 		movespeed = 0;
-		if (sprite_index == spr_tumble || sprite_index == spr_tumblestart)
+		if (sprite_index == spr_tumble or sprite_index == spr_tumblestart)
 		{
 			sound_play_3d("event:/sfx/pep/bumpwall", x, y);
 			state = states.bump;
@@ -155,7 +155,7 @@ function scr_player_tumble()
 				state = states.normal;
 		}
 	}
-	if (sprite_index == spr_crouchslip || sprite_index == spr_breakdancesuper || sprite_index == spr_machroll || sprite_index == spr_tumble || sprite_index == spr_tumblestart || sprite_index == spr_machroll || sprite_index == spr_mach2jump)
+	if (sprite_index == spr_crouchslip or sprite_index == spr_breakdancesuper or sprite_index == spr_machroll or sprite_index == spr_tumble or sprite_index == spr_tumblestart or sprite_index == spr_machroll or sprite_index == spr_mach2jump)
 		image_speed = abs(movespeed) / 15;
 	else if (floor(image_index) == (image_number - 1) && sprite_index == spr_mach2jump)
 		image_speed = 0;

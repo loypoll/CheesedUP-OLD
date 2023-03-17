@@ -9,12 +9,12 @@ if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.thr
 		global.heattime = 60;
 	}
 	var lag = 5;
-	if (baddieID.object_index != obj_tank || baddieID.hp <= 0)
+	if (baddieID.object_index != obj_tank or baddieID.hp <= 0)
 	{
 		baddieID.hitLag = lag;
 		baddieID.hitX = baddieID.x;
 		baddieID.hitY = baddieID.y;
-		if (baddieID.object_index != obj_tank || baddieID.hp <= 0)
+		if (baddieID.object_index != obj_tank or baddieID.hp <= 0)
 			baddieID.hp -= 1;
 		instance_create(baddieID.x, baddieID.y, obj_parryeffect);
 		baddieID.alarm[3] = 3;
@@ -35,7 +35,7 @@ if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.thr
 		baddieID.hithsp = -other.baddieID.image_xscale * 15;
 		baddieID.killbyenemybuffer = 10;
 		other.baddieID.killbyenemybuffer = 10;
-		if (baddieID.destroyable && (!baddieID.elite || baddieID.elitehit <= 0))
+		if (baddieID.destroyable && (!baddieID.elite or baddieID.elitehit <= 0))
 			instance_destroy(baddieID);
 	}
 }

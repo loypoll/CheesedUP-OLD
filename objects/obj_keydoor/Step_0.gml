@@ -1,4 +1,4 @@
-if (!global.horse && !instance_exists(obj_jumpscare) && (obj_player1.state == states.normal || obj_player1.state == states.mach1 || obj_player1.state == states.pogo || obj_player1.state == states.mach2 || obj_player1.state == states.mach3 || obj_player1.state == states.Sjumpprep) && sprite_index == spr_doorkey && obj_player1.key_up && obj_player1.grounded && global.key_inv == 1 && place_meeting(x, y, obj_player1))
+if (!global.horse && !instance_exists(obj_jumpscare) && (obj_player1.state == states.normal or obj_player1.state == states.mach1 or obj_player1.state == states.pogo or obj_player1.state == states.mach2 or obj_player1.state == states.mach3 or obj_player1.state == states.Sjumpprep) && sprite_index == spr_doorkey && obj_player1.key_up && obj_player1.grounded && global.key_inv == 1 && place_meeting(x, y, obj_player1))
 {
 	ds_list_add(global.saveroom, id);
 	sound_play_3d("event:/sfx/misc/keyunlock", x, y);

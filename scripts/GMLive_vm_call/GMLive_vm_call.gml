@@ -58,16 +58,16 @@ function vm_group_call_on_call_field(l_th, l_act, l_scope, l_stack) {
 	var l_argOffset = l_stack[0] - l_n + 1;
 	var l_val = undefined;
 	var l_notFound = true;
-	if (typeof(l_ctx) == "ref" || is_numeric(l_ctx) && l_ctx >= 100000) {
+	if (typeof(l_ctx) == "ref" or is_numeric(l_ctx) && l_ctx >= 100000) {
 		l_val = variable_instance_get(l_ctx, l_s);
-		if (l_val != undefined || variable_instance_exists(l_ctx, l_s)) {
+		if (l_val != undefined or variable_instance_exists(l_ctx, l_s)) {
 			l_notFound = false;
 		} else if (variable_instance_exists(l_ctx, "id")) {
 			return l_th.h_proc_error2("`" + gml_std_Std_stringify(l_ctx) + "` (" + object_get_name(l_ctx.object_index) + ") does not have a variable `" + l_s + "`", l_act);
 		}
 	} else with (l_ctx) {
 		l_val = variable_instance_get(self, l_s);
-		if (l_val != undefined || variable_instance_exists(self, l_s)) {
+		if (l_val != undefined or variable_instance_exists(self, l_s)) {
 			l_notFound = false;
 			break;
 		} else if (is_struct(l_ctx) && instanceof(l_ctx) == "instance") {

@@ -97,7 +97,7 @@ if (state == states.punch)
 		cooldown = 100;
 	}
 }
-if (state == states.stun || state == states.grabbed || state == states.hit)
+if (state == states.stun or state == states.grabbed or state == states.hit)
 	alarm[5] = -1;
 if (state == states.stun && stunned > 100 && birdcreated == 0)
 {

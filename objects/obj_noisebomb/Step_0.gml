@@ -1,4 +1,4 @@
-if (room == rank_room || room == timesuproom)
+if (room == rank_room or room == timesuproom)
 	visible = false;
 if (obj_player.state == states.pizzathrow)
 	visible = false;

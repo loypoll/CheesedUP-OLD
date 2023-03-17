@@ -1,4 +1,4 @@
-if (global.gerome || image_index != 0)
+if (global.gerome or image_index != 0)
 {
 	if (!uparrow)
 	{
@@ -11,7 +11,7 @@ else if (uparrow)
 	uparrow = false;
 	instance_destroy(uparrowID);
 }
-if (!global.horse && (obj_player1.state == states.normal || obj_player1.state == states.mach1 || obj_player1.state == states.pogo || obj_player1.state == states.mach2 || obj_player1.state == states.mach3 || obj_player1.state == states.Sjumpprep) && obj_player1.key_up && obj_player1.grounded && (global.gerome == 1 || image_index == 1) && place_meeting(x, y, obj_player1))
+if (!global.horse && (obj_player1.state == states.normal or obj_player1.state == states.mach1 or obj_player1.state == states.pogo or obj_player1.state == states.mach2 or obj_player1.state == states.mach3 or obj_player1.state == states.Sjumpprep) && obj_player1.key_up && obj_player1.grounded && (global.gerome == 1 or image_index == 1) && place_meeting(x, y, obj_player1))
 {
 	ds_list_add(global.saveroom, id);
 	sound_play_3d("event:/sfx/misc/keyunlock", x, y);
@@ -54,7 +54,7 @@ if (!global.horse && (obj_player1.state == states.normal || obj_player1.state ==
 	}
 	image_index = 1;
 }
-if (place_meeting(x, y, obj_player1) && floor(obj_player1.image_index) == (obj_player1.image_number - 1) && (obj_player1.state == states.victory || obj_player1.state == states.door))
+if (place_meeting(x, y, obj_player1) && floor(obj_player1.image_index) == (obj_player1.image_number - 1) && (obj_player1.state == states.victory or obj_player1.state == states.door))
 {
 	with (obj_player1)
 	{

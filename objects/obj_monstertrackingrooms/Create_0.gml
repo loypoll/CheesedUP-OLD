@@ -89,7 +89,7 @@ function robot_create(argument0, argument1)
 				var _hinst = -4;
 				with (obj_hallwaymonster)
 				{
-					if ((_dir.x < 0 && x > (room_width / 2)) || (_dir.x > 0 && x < (room_width / 2)))
+					if ((_dir.x < 0 && x > (room_width / 2)) or (_dir.x > 0 && x < (room_width / 2)))
 						_hinst = id;
 				}
 				image_xscale = sign(_dir.x);
@@ -138,7 +138,7 @@ function blob_create(argument0, argument1)
 				var _hinst = -4;
 				with (obj_hallwaymonster)
 				{
-					if ((_dir.x < 0 && x > (room_width / 2)) || (_dir.x > 0 && x < (room_width / 2)))
+					if ((_dir.x < 0 && x > (room_width / 2)) or (_dir.x > 0 && x < (room_width / 2)))
 						_hinst = id;
 				}
 				image_xscale = sign(_dir.x);
@@ -199,7 +199,7 @@ function hillbilly_create(argument0, argument1)
 				var _hinst = -4;
 				with (obj_hallwaymonster)
 				{
-					if ((_dir.x < 0 && x > (room_width / 2)) || (_dir.x > 0 && x < (room_width / 2)))
+					if ((_dir.x < 0 && x > (room_width / 2)) or (_dir.x > 0 && x < (room_width / 2)))
 						_hinst = id;
 				}
 				image_xscale = sign(_dir.x);
@@ -236,7 +236,7 @@ function hillbilly_create(argument0, argument1)
 }
 function grid_meeting(argument0, argument1)
 {
-	if (argument0 < 0 || argument0 > (map_width - 1) || argument1 < 0 || argument1 > (map_height - 1))
+	if (argument0 < 0 or argument0 > (map_width - 1) or argument1 < 0 or argument1 > (map_height - 1))
 		return false;
 	if (ds_grid_get(room_grid, argument0, argument1) != -4)
 		return true;
@@ -250,7 +250,7 @@ function grid_length_x(argument0, argument1, argument2)
 }
 function room_place(argument0, argument1)
 {
-	if (argument0 < 0 || argument0 > (map_width - 1) || argument1 < 0 || argument1 > (map_height - 1))
+	if (argument0 < 0 or argument0 > (map_width - 1) or argument1 < 0 or argument1 > (map_height - 1))
 		return -4;
 	return ds_grid_get(room_grid, argument0, argument1);
 }

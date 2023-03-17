@@ -42,12 +42,12 @@ with (other)
 				_dir = sign(speed);
 				if (!other.collisioned)
 				{
-					if (direction < 90 || direction > 270)
+					if (direction < 90 or direction > 270)
 						obj_player1.xscale = -1;
 					else
 						obj_player1.xscale = 1;
 				}
-				if (((direction < 90 || direction > 270) && x < other.x) || ((direction > 90 || direction < 270) && x > other.x))
+				if (((direction < 90 or direction > 270) && x < other.x) or ((direction > 90 or direction < 270) && x > other.x))
 					_dir = -1;
 				speed = _dir * speed;
 				image_angle = point_direction(x, y, xstart, ystart);

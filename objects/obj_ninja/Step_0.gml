@@ -115,7 +115,7 @@ if (sprite_index == spr_pizzaboy)
 {
 	if (x != targetplayer.x && targetplayer.x > (x - 200) && targetplayer.x < (x + 200) && targetplayer.y > (y - 150) && targetplayer.y < (y + 20))
 	{
-		if (state == states.walk || state == states.idle)
+		if (state == states.walk or state == states.idle)
 		{
 			if (sprite_index == spr_pizzaboy)
 				create_particle(x, y, particle.balloonpop, 0);

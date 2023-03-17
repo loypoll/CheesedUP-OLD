@@ -79,7 +79,7 @@ if (state == states.chase)
 	{
 		if (image_alpha > 0)
 		{
-			if (hsp < -0.2 || hsp > 0.2)
+			if (hsp < -0.2 or hsp > 0.2)
 				hsp *= 0.5;
 			image_alpha -= fadeout_time;
 		}

@@ -15,7 +15,7 @@ if (grounded && vsp > 0)
 			create_debris(x + random_range(-8, 8), y + 43, spr_cheesechunk);
 	}
 }
-if ((!scr_slope() && instance_place(x + sign(hsp), y, obj_solid)) || bouncedestroy == 0)
+if ((!scr_slope() && instance_place(x + sign(hsp), y, obj_solid)) or bouncedestroy == 0)
 {
 	repeat (8)
 	{

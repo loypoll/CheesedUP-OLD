@@ -23,5 +23,5 @@ if (state != states.arenaround)
 		}
 	}
 }
-if (state == states.arena || state == states.spawnenemy)
+if (state == states.arena or state == states.spawnenemy)
 	alarm[0] = 60;

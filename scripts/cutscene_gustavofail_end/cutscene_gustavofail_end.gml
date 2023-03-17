@@ -22,7 +22,7 @@ function cutscene_gustavofail_end(frames)
 				global.collect = 0;
 			if (global.collect != 0)
 			{
-				if (character == "P" || character == "V")
+				if (character == "P" or character == "V")
 				{
 					repeat (10)
 					{

@@ -1,4 +1,4 @@
-if ((other.hsp != 0 || other.vsp != 0) && instance_exists(baddieID) && baddieID.destroyable)
+if ((other.hsp != 0 or other.vsp != 0) && instance_exists(baddieID) && baddieID.destroyable)
 {
 	instance_destroy(baddieID);
 	sound_play_3d("event:/sfx/pep/punch", x, y);

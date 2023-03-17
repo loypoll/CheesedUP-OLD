@@ -53,7 +53,7 @@ switch (state)
 }
 if (state != states.pizzaheadjump)
 {
-	if ((state == states.fall && vsp < 0) || state == states.finale)
+	if ((state == states.fall && vsp < 0) or state == states.finale)
 	{
 		use_collision = false;
 		if (state == states.fall)
@@ -107,7 +107,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if ((state == states.punch || state == states.stomp || state == states.swinging || state == states.jump) && alarm[4] == -1)
+if ((state == states.punch or state == states.stomp or state == states.swinging or state == states.jump) && alarm[4] == -1)
 	alarm[4] = 5;
 invincible = true;
 if (vulnerable_buffer > 0 && state == states.walk && flickertime <= 0)
@@ -119,7 +119,7 @@ if (state == states.stun && !savedthrown)
 	invincible = false;
 if (!invincible && alarm[5] < 0 && !flash)
 	alarm[5] = 0.15 * room_speed;
-if ((state == states.grabdash || (state == states.mach2 && attackspeed >= 10) || (state == states.throwing && sprite_index == spr_fakepeppino_flailing)) && alarm[4] < 0)
+if ((state == states.grabdash or (state == states.mach2 && attackspeed >= 10) or (state == states.throwing && sprite_index == spr_fakepeppino_flailing)) && alarm[4] < 0)
 {
 	alarm[4] = 10;
 	if (state == states.freefall)

@@ -125,7 +125,7 @@ function scr_player_climbwall()
 					jumpstop = false;
 					walljumpbuffer = 4;
 				}
-				if (state != states.mach2 && verticalbuffer <= 0 && check_wall(x, y - 1) && scr_solid(x + xscale, y) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
+				if (state != states.mach2 && verticalbuffer <= 0 && check_wall(x, y - 1) && scr_solid(x + xscale, y) && !place_meeting(x, y - 1, obj_verticalhallway) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
 				{
 					trace("climbwall hit head");
 					if (!skateboarding)
@@ -158,7 +158,7 @@ function scr_player_climbwall()
 					if (input_buffer_slap > 0 && shotgunAnim == false && !global.pistol)
 					{
 						input_buffer_slap = 0;
-						sprite_index = spr_suplexdash;
+						sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
 						suplexmove = true;
 						fmod_event_instance_play(suplexdashsnd);
 						state = states.handstandjump;
@@ -202,7 +202,7 @@ function scr_player_climbwall()
 				else
 					vsp = 0;
 				wallclingcooldown = 0;
-				if (floor(image_index) == (image_number - 1) || !key_jump2)
+				if (floor(image_index) == (image_number - 1) or !key_jump2)
 				{
 					vsp = -15;
 					state = states.jump;
@@ -237,7 +237,7 @@ function scr_player_climbwall()
 				state = states.normal
 				movespeed = 0;
 			}
-			if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) || scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
+			if (scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)) && !place_meeting(x - sign(hsp), y, obj_slope))
 			{
 				sprite_index = spr_superjumpland;
 				sound_play_3d("event:/sfx/pep/groundpound", x, y);
@@ -268,7 +268,7 @@ function scr_player_climbwall()
 				xscale *= -1;
 				jumpstop = false;
 			}
-			if ((grounded && wallspeed <= 0) || wallspeed <= 0)
+			if ((grounded && wallspeed <= 0) or wallspeed <= 0)
 			{
 				state = states.jump;
 				sprite_index = spr_fall;

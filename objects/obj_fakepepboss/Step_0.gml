@@ -9,7 +9,7 @@ else
 	wastedhits = 4 - elitehit;
 if (phase == 2)
 	formed = true;
-if (!pizzahead || elitehit > 1)
+if (!pizzahead or elitehit > 1)
 	destroyable = false;
 switch (state)
 {
@@ -137,7 +137,7 @@ if (prevhp != elitehit)
 			flickertime = 11;
 			alarm[6] = 5;
 		}
-		if (global.playerhit >= 3 && (pizzahead || phase != 2 || wastedhits < 6))
+		if (global.playerhit >= 3 && (pizzahead or phase != 2 or wastedhits < 6))
 		{
 			global.playerhit = 0;
 			instance_create(obj_player1.x, -15, obj_hppickup);
@@ -219,7 +219,7 @@ if pizzahead
 {
 	with (obj_gustavograbbable)
 	{
-		if (enemy_is_superslam(id) || enemy_is_swingding(id))
+		if (enemy_is_superslam(id) or enemy_is_swingding(id))
 			other.invincible = 1
 	}
 }
@@ -227,7 +227,7 @@ if (!invincible && !flash && alarm[5] < 0)
 	alarm[5] = 0.15 * room_speed;
 else if (invincible && state != states.staggered && flashbuffer <= 0)
 	flash = false;
-if ((state == states.grabdash || (state == states.mach2 && attackspeed >= 10) || (state == states.throwing && sprite_index == spr_fakepeppino_flailing && attackspeed > 4) || state == states.freefall) && alarm[4] < 0)
+if ((state == states.grabdash or (state == states.mach2 && attackspeed >= 10) or (state == states.throwing && sprite_index == spr_fakepeppino_flailing && attackspeed > 4) or state == states.freefall) && alarm[4] < 0)
 	alarm[4] = 10;
 mask_index = spr_player_mask;
 if (state != states.stun)

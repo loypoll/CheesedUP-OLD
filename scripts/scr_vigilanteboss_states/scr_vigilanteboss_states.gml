@@ -104,7 +104,7 @@ function boss_vigilante_decide_attack()
 		if (is_undefined(cancel_buffer))
 			cancel_buffer = cancel_maxdefault;
 		combo_count = irandom(2);
-		if (important && (hp < duelhp_threshold || obj_bosscontroller.seconds < duelseconds_threshold))
+		if (important && (hp < duelhp_threshold or obj_bosscontroller.seconds < duelseconds_threshold))
 		{
 			if (hitstate != states.superattack)
 			{
@@ -115,7 +115,7 @@ function boss_vigilante_decide_attack()
 					instance_destroy();
 				with (obj_player)
 				{
-					if (object_index == obj_player1 || global.coop)
+					if (object_index == obj_player1 or global.coop)
 					{
 						state = states.superattackstart;
 						movespeed = 0;
@@ -407,7 +407,7 @@ function boss_vigilante_normal()
 		boss_vigilante_decide_attack();
 	if (state == states.normal)
 	{
-		if ((x < (room_width / 8) || x > (room_width - (room_width / 8))) && distance_to_object(targetplayer) < 172)
+		if ((x < (room_width / 8) or x > (room_width - (room_width / 8))) && distance_to_object(targetplayer) < 172)
 		{
 			state = states.float;
 			if (phase == 3)
@@ -443,7 +443,7 @@ function boss_vigilante_revolver()
 	hsp = 0;
 	if (image_index > (image_number - 1))
 	{
-		if (sprite_index == spr_playerV_revolverstart || sprite_index == spr_playerV_airrevolverstart)
+		if (sprite_index == spr_playerV_revolverstart or sprite_index == spr_playerV_airrevolverstart)
 		{
 			sprite_index = spr_playerV_revolvershoot;
 			image_index = 0;
@@ -458,7 +458,7 @@ function boss_vigilante_revolver()
 				instance_create(x, y, obj_highjumpcloud2);
 			}
 		}
-		else if (sprite_index == spr_playerV_revolvershoot || sprite_index == spr_playerV_airrevolver)
+		else if (sprite_index == spr_playerV_revolvershoot or sprite_index == spr_playerV_airrevolver)
 		{
 			if (revolver_count <= 0)
 			{
@@ -824,7 +824,7 @@ function boss_vigilante_superattackstart()
 		image_speed = 0.6;
 	with (lastplayerid)
 	{
-		if (object_index == obj_player1 || global.coop)
+		if (object_index == obj_player1 or global.coop)
 		{
 			var tx2 = room_width / 3;
 			x = Approach(x, tx2, movespeed);
@@ -852,7 +852,7 @@ function boss_vigilante_superattackstart()
 		state = states.superattack;
 		with (lastplayerid)
 		{
-			if (object_index == obj_player1 || global.coop)
+			if (object_index == obj_player1 or global.coop)
 				state = states.superattack;
 		}
 		duel_buffer = duel_max + irandom(duel_random);
@@ -907,7 +907,7 @@ function boss_vigilante_superattack()
 			x = room_width / 3;
 		}
 		xscale = 1;
-		if (other.duel_buffer == -1 && (key_slap2 || key_shoot2 || key_jump2))
+		if (other.duel_buffer == -1 && (key_slap2 or key_shoot2 or key_jump2))
 		{
 			other.duel_buffer = -2;
 			instance_create(x + (image_xscale * 20), y, obj_shotgunbullet);

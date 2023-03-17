@@ -31,7 +31,7 @@ switch (state)
 		image_speed = 0.35;
 		sprite_index = walkspr;
 		hsp = image_xscale * 4;
-		if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
+		if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) or place_meeting(x + sign(hsp), y - 4, obj_solid)))
 			image_xscale *= -1;
 		scr_monster_detect_audio();
 		if (scr_monster_detect(300, room_height, targetplayer))
@@ -129,7 +129,7 @@ switch (state)
 	case states.robotseeking:
 		targetplayer = instance_nearest(x, y, obj_player);
 		hsp = image_xscale * 6;
-		if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) || place_meeting(x + sign(hsp), y - 4, obj_solid)))
+		if (place_meeting(x + sign(hsp), y, obj_monstersolid) && (!place_meeting(x + sign(hsp), y, obj_monsterslope) or place_meeting(x + sign(hsp), y - 4, obj_solid)))
 			state = states.robotroaming;
 		if (scr_monster_detect(300, room_height, targetplayer))
 			state = states.robotchase;
@@ -138,9 +138,9 @@ switch (state)
 		scr_monsterinvestigate(10, spr_monstershroom_chase, spr_monstershroom_idle);
 		break;
 }
-if (object_index == obj_robotmonster || object_index == obj_hillbillymonster)
+if (object_index == obj_robotmonster or object_index == obj_hillbillymonster)
 {
-	if (state == states.robotchase || state == states.robotseeking || state == states.robotinvestigate)
+	if (state == states.robotchase or state == states.robotseeking or state == states.robotinvestigate)
 	{
 		instance_destroy(instance_place(x + hsp, y, obj_wirewall));
 		instance_destroy(instance_place(x + hsp, y, obj_destructibles));
@@ -149,7 +149,7 @@ if (object_index == obj_robotmonster || object_index == obj_hillbillymonster)
 }
 if (sprite_index == spr_monstershroom_chase)
 {
-	var _sound = floor(image_index) == 2 || floor(image_index) == 7;
+	var _sound = floor(image_index) == 2 or floor(image_index) == 7;
 	if (_sound && !step_sound)
 	{
 		step_sound = true;
@@ -160,7 +160,7 @@ if (sprite_index == spr_monstershroom_chase)
 }
 if (sprite_index == spr_hillbilly_chase)
 {
-	_sound = floor(image_index) == 3 || floor(image_index) == 9;
+	_sound = floor(image_index) == 3 or floor(image_index) == 9;
 	if (_sound && !step_sound)
 	{
 		step_sound = true;

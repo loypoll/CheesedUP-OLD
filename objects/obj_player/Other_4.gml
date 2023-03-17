@@ -68,14 +68,14 @@ if global.coop
 if state == states.grab && !REMIX
 	state = states.normal;
 
-if place_meeting(x, y, obj_boxofpizza) || place_meeting(x, y - 1, obj_boxofpizza)
+if place_meeting(x, y, obj_boxofpizza) or place_meeting(x, y - 1, obj_boxofpizza)
 {
 	box = true;
 	hallway = false;
 	state = states.crouch;
 }
 
-if object_index != obj_player2 || global.coop
+if object_index != obj_player2 or global.coop
 {
 	var doortarget = noone;
 	with obj_doorX

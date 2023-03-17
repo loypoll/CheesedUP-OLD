@@ -1,7 +1,7 @@
 event_inherited();
 got_func = function()
 {
-	if (global.hatcutscene2 == -4 || !global.hatcutscene2)
+	if (global.hatcutscene2 == -4 or !global.hatcutscene2)
 	{
 		global.hatcutscene2 = true;
 		quick_ini_write_real(get_savefile_ini(), "cutscene", "hat2", true);

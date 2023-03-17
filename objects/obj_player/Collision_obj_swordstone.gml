@@ -1,4 +1,4 @@
-if (grounded && other.sprite_index == spr_swordstone && (state == states.handstandjump || state == states.punch || state == states.lungeattack))
+if (grounded && other.sprite_index == spr_swordstone && (state == states.handstandjump or state == states.punch or state == states.lungeattack))
 {
 	transformationlives = 3;
 	sound_play_3d("event:/sfx/knight/start", x, y);

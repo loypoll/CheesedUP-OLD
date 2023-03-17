@@ -9,7 +9,7 @@ function scr_player_debugstate()
 	vsp = -(key_up - key_down) * _spd;
 	image_speed = 1;
 	sprite_index = spr_idle;
-	if (key_jump || key_slap2)
+	if (key_jump or key_slap2)
 	{
 		image_speed = 0.35;
 		state = states.normal;

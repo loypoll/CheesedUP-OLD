@@ -1,4 +1,4 @@
-if (!instance_exists(playerid) || playerid.holycross <= 0)
+if (!instance_exists(playerid) or playerid.holycross <= 0)
 {
 	instance_destroy();
 	exit;

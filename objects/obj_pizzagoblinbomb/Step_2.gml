@@ -19,9 +19,9 @@ switch (state)
 		hsp = movespeed * image_xscale;
 		if (check_wall(x + hsp, y) && !place_meeting(x + hsp, y, obj_ratblock))
 			image_xscale *= -1;
-		if (place_meeting(x + hsp, y, obj_ratblock) || place_meeting(x, y + vsp, obj_ratblock))
+		if (place_meeting(x + hsp, y, obj_ratblock) or place_meeting(x, y + vsp, obj_ratblock))
 			instance_destroy();
-		if (scr_solid(x + 1, y) || scr_solid(x - 1, y))
+		if (scr_solid(x + 1, y) or scr_solid(x - 1, y))
 			drop = true;
 		if (grounded)
 		{

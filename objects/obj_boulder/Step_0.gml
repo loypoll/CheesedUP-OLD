@@ -6,7 +6,7 @@ switch (state)
 			hsp = 0;
 			vsp = 0;
 			sprite_index = spr_meatball_idle;
-			if (point_in_camera(x, y, view_camera[0]) && (obj_camera.shake_mag >= 10 || obj_player.state == states.freefallland))
+			if (point_in_camera(x, y, view_camera[0]) && (obj_camera.shake_mag >= 10 or obj_player.state == states.freefallland))
 			{
 				active = true;
 				sprite_index = spr_meatball_roll;
@@ -34,7 +34,7 @@ switch (state)
 		}
 		else if (b_movespeed > 6)
 			b_movespeed -= 0.05;
-		if (scr_solid(x + sign(hsp), y) && (!scr_slope() || (scr_solid_slope(x + sign(hsp), y - 2) || scr_solid(x + sign(hsp), y - 2))) && !place_meeting(x + sign(hsp), y, obj_destructibles))
+		if (scr_solid(x + sign(hsp), y) && (!scr_slope() or (scr_solid_slope(x + sign(hsp), y - 2) or scr_solid(x + sign(hsp), y - 2))) && !place_meeting(x + sign(hsp), y, obj_destructibles))
 			image_xscale *= -1;
 		with (instance_place(x + sign(hsp), y, obj_destructibles))
 			instance_destroy();
@@ -76,7 +76,7 @@ switch (state)
 			stuntouchbuffer--;
 		sprite_index = stunfallspr;
 		image_speed = 0.35;
-		if ((grounded || (grounded && !place_meeting(x, y, obj_platform))) && vsp > 0 && !place_meeting(x + hsp, y, obj_destructibles))
+		if ((grounded or (grounded && !place_meeting(x, y, obj_platform))) && vsp > 0 && !place_meeting(x + hsp, y, obj_destructibles))
 		{
 			if (thrown == 1 && destroyable)
 				instance_destroy();

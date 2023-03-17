@@ -85,7 +85,7 @@ function lang_lexer(list, str)
 				while pos <= len
 				{
 					char = string_ord_at(str, pos);
-					if char == ord("\r") || char == ord("\n")
+					if char == ord("\r") or char == ord("\n")
 						break;
 					pos += 1;
 				}
@@ -99,7 +99,7 @@ function lang_lexer(list, str)
 				while pos <= len
 				{
 					char = string_ord_at(str, pos);
-					if char != ord("\"") || string_ord_at(str, pos - 1) == ord("\\")
+					if char != ord("\"") or string_ord_at(str, pos - 1) == ord("\\")
 						pos += 1;
 					else
 						break;
@@ -154,9 +154,9 @@ function lang_lexer(list, str)
 function lang_get_identifier(keycode, allow_numbers)
 {
 	if allow_numbers
-		return keycode == ord("_") || (keycode >= ord("a") && keycode <= ord("z")) || (keycode >= ord("A") && keycode <= ord("Z")) || (keycode >= ord("0") && keycode <= ord("9"));
+		return keycode == ord("_") or (keycode >= ord("a") && keycode <= ord("z")) or (keycode >= ord("A") && keycode <= ord("Z")) or (keycode >= ord("0") && keycode <= ord("9"));
 	else
-		return keycode == ord("_") || (keycode >= ord("a") && keycode <= ord("z")) || (keycode >= ord("A") && keycode <= ord("Z"));
+		return keycode == ord("_") or (keycode >= ord("a") && keycode <= ord("z")) or (keycode >= ord("A") && keycode <= ord("Z"));
 }
 
 function lang_exec(token_list) // HAHAHA

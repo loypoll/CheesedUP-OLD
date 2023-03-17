@@ -26,7 +26,7 @@ if (ds_list_find_index(global.saveroom, id) == -1)
 	global.collect += combototal;
 	global.comboscore += combototal;
 	instance_create(x1, y1, obj_bangeffect);
-	if (object_index == obj_rattumble || object_index == obj_rattumble_big)
+	if (object_index == obj_rattumble or object_index == obj_rattumble_big)
 		notification_push(notifs.rattumble_dead, [room]);
 	else
 		notification_push(notifs.ratblock_dead, [room]);

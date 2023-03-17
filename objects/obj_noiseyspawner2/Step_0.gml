@@ -8,7 +8,7 @@ with (obj_noisey)
 	b = false;
 with (obj_noiseboss)
 {
-	if ((state == states.arenaintro || state == states.stun) || phase == 1)
+	if ((state == states.arenaintro or state == states.stun) or phase == 1)
 		b = false;
 }
 if (b)

@@ -1,7 +1,7 @@
 event_inherited();
 got_func = function()
 {
-	if (global.gasolinecutscene == -4 || !global.gasolinecutscene)
+	if (global.gasolinecutscene == -4 or !global.gasolinecutscene)
 	{
 		global.gasolinecutscene = true;
 		quick_ini_write_real(get_savefile_ini(), "cutscene", "gasoline", true);

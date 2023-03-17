@@ -378,7 +378,7 @@ function boss_noise_handstandjump()
 		image_index = 0;
 		movespeed = 15;
 	}
-	if (spin_count > 0 || spinskateboard)
+	if (spin_count > 0 or spinskateboard)
 	{
 		if (spin_buffer > 0)
 			spin_buffer--;
@@ -584,7 +584,7 @@ function boss_noise_pogo()
 		sprite_index = pogomach ? spr_playerN_pogobouncemach : spr_playerN_pogobounce;
 		create_particle(x, y, particle.landcloud, 0);
 	}
-	if (!pogospeedprev && (sprite_index == spr_playerN_pogobounce || sprite_index == spr_playerN_pogobouncemach) && floor(image_index) == 4)
+	if (!pogospeedprev && (sprite_index == spr_playerN_pogobounce or sprite_index == spr_playerN_pogobouncemach) && floor(image_index) == 4)
 	{
 		vsp = bombpogo ? -12 : -6;
 		if (pogospeed < maxpogo)
@@ -592,7 +592,7 @@ function boss_noise_pogo()
 		movespeed = pogospeed;
 		pogospeedprev = true;
 	}
-	if (image_index > (image_number - 1) && (sprite_index == spr_playerN_pogobounce || sprite_index == spr_playerN_pogobouncemach || sprite_index == spr_playerN_pogofallmach || sprite_index == spr_playerN_pogofall))
+	if (image_index > (image_number - 1) && (sprite_index == spr_playerN_pogobounce or sprite_index == spr_playerN_pogobouncemach or sprite_index == spr_playerN_pogofallmach or sprite_index == spr_playerN_pogofall))
 		sprite_index = pogochargeactive ? spr_playerN_pogofallmach : spr_playerN_pogofall;
 	if (pogospeed > 12 && !pogochargeactive)
 		pogochargeactive = true;

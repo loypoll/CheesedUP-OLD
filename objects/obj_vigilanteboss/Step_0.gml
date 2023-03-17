@@ -92,7 +92,7 @@ if (state != states.flamethrower && flameID != -4)
 	instance_destroy(obj_flamethrowerhurtbox);
 	flameID = -4;
 }
-if (state == states.revolver || state == states.wait || state == states.dynamite || state == states.throwing || state == states.estampede)
+if (state == states.revolver or state == states.wait or state == states.dynamite or state == states.throwing or state == states.estampede)
 {
 	if (targetplayer.x != x)
 		image_xscale = -sign(x - targetplayer.x);
@@ -124,7 +124,7 @@ if (prevhp != elitehit)
 {
 	instance_destroy(bossvulnerableID);
 	currentattack = 0;
-	if (elitehit < prevhp && (wastedhits != 10 || destroyable))
+	if (elitehit < prevhp && (wastedhits != 10 or destroyable))
 	{
 		if (irandom(100) <= 25)
 			sound_play_3d("event:/sfx/voice/vigiduel", x, y);
@@ -153,7 +153,7 @@ if (prevhp != elitehit)
 	}
 	prevhp = elitehit;
 }
-if (((phase == 1 && elitehit <= 0) || (phase == 2 && elitehit <= 0)) && !pizzahead)
+if (((phase == 1 && elitehit <= 0) or (phase == 2 && elitehit <= 0)) && !pizzahead)
 {
 	if (phase == 1)
 	{
@@ -258,7 +258,7 @@ if (state == states.stun && stunned > 100 && birdcreated == 0)
 	with (instance_create(x, y, obj_enemybird))
 		ID = other.id;
 }
-if (state == states.reloading || (state == states.stun && savedthrown == thrown && !savedthrown))
+if (state == states.reloading or (state == states.stun && savedthrown == thrown && !savedthrown))
 	invincible = false;
 else
 	invincible = true;
