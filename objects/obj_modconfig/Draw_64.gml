@@ -2,7 +2,7 @@ if live_call() return live_result;
 
 // temp bg
 draw_set_colour(c_black);
-draw_set_alpha(0.25);
+draw_set_alpha(0.35);
 draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 draw_set_alpha(1);
 
@@ -54,7 +54,7 @@ draw_set_alpha(1);
 draw_text(690, 80, string_upper(opt.name));
 
 draw_set_font(global.font_small);
-draw_text_ext(690, 420, opt.desc, 16, 450);
+draw_text_ext(690, is_callable(opt.drawfunc) ? 420 : 260, opt.desc, 16, 450);
 
 draw_set_font(global.smallfont);
 draw_text(690, 116, opt.opts[opt.value][0]);

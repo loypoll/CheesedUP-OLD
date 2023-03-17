@@ -1,7 +1,7 @@
 if live_call() return live_result;
 
 // prep
-depth = -400;
+depth = -600;
 image_speed = 0.35;
 scr_init_input();
 stickpressed = false;
@@ -124,8 +124,10 @@ var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic g
 	}
 	else if p.timer < -20
 	{
-		if p.x > 75
+		if p.x > 75 && p.x + p.hsp > 75
 			p.move = -1;
+		else if p.x < 75 && p.x + p.hsp < 75
+			p.move = 1;
 		else
 		{
 			p.move = 0;
@@ -150,7 +152,7 @@ var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic g
 			{
 				p.timer = -20;
 				sound_play_centered(sfx_suplexdash);
-			
+				
 				p.state = states.handstandjump;
 				p.sprite = spr_player_suplexdash;
 				p.image = 0;
@@ -161,7 +163,7 @@ var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic g
 			{
 				p.timer = -5;
 				sound_play_centered(sfx_dive);
-			
+				
 				p.state = states.punch;
 				p.sprite = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
 				p.image = 0;
@@ -215,6 +217,17 @@ var opt = add_option("Buffed Uppercut", "uppercut", "Keeps your momentum when up
 	draw_simuplayer();
 });
 opt.value = global.uppercut;
+
+#endregion
+#region SHOOT BUTTON
+
+var opt = add_option("Shoot Button", "shootbutton", "Move the shoot button for both the pistol and the shotgun to a standalone SHOOT button, A by default.");
+opt.opts = [
+	["OFF", false],
+	["ON", true],
+	["SHOTGUN ONLY", 2]
+]
+opt.value = global.shootbutton;
 
 #endregion
 

@@ -78,17 +78,15 @@ function scr_player_machslide()
 		state = states.normal;
 		sprite_index = spr_facehurtup;
 	}
-	if (input_buffer_shoot > 0)
+	if (input_buffer_shoot > 0 && shotgunAnim)
 	{
-		if (shotgunAnim)
-		{
-			if (move != 0)
-				xscale = move;
-			scr_shotgunshoot();
-		}
-		else if (global.pistol)
-			scr_pistolshoot(states.normal);
+		if (move != 0)
+			xscale = move;
+		scr_shotgunshoot();
 	}
+	else if (input_buffer_pistol > 0 && global.pistol)
+		scr_pistolshoot(states.normal);
+	
 	if (!instance_exists(dashcloudid) && grounded && !place_meeting(x, y + 1, obj_water))
 	{
 		with (instance_create(x, y, obj_dashcloud2))

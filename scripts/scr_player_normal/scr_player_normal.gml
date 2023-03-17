@@ -325,16 +325,14 @@ function state_player_normal()
 			jumpAnim = true;
 		state = states.jump;
 	}
-	if (input_buffer_shoot > 0)
-	{
-		if (shotgunAnim)
-			scr_shotgunshoot();
-		else if (global.pistol)
-			scr_pistolshoot(states.normal);
-	}
+	
+	if (input_buffer_shoot > 0 && shotgunAnim)
+		scr_shotgunshoot();
+	else if (input_buffer_pistol > 0 && global.pistol)
+		scr_pistolshoot(states.jump);
 	
 	// suplex dash
-	if (input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
+	if (input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 	{
 		input_buffer_slap = 0;
 		sprite_index = spr_suplexdash;
@@ -348,7 +346,7 @@ function state_player_normal()
 	}
 	
 	// uppercut
-	else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton))
+	else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 	{
 		state = states.punch;
 		input_buffer_slap = 0;
@@ -362,7 +360,7 @@ function state_player_normal()
 	}
 	
 	// kungfu
-	if key_slap2 && !key_up && global.attackstyle == 1 && ((shotgunAnim == false && !global.pistol) or global.shootbutton)
+	if key_slap2 && !key_up && global.attackstyle == 1 && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 	{
 		sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
 		suplexmove = true;

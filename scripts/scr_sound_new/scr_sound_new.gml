@@ -1,3 +1,9 @@
+function sound_pause_all(enable)
+{
+	var sound = ds_map_find_first(obj_fmod.sound_cache);
+	while sound != undefined
+		fmod_event_instance_set_paused(obj_fmod.sound_cache[? sound], enable);
+}
 function sound_stop(event, force = true)
 {
 	var sound = ds_map_find_value(obj_fmod.sound_cache, event);
@@ -30,6 +36,7 @@ function sound_play_3d(event, x = undefined, y = undefined)
 		sound = fmod_event_create_instance(event);
 		ds_map_add(obj_fmod.sound_cache, event, sound);
 	}
+	fmod_event_instance_set_paused(sound, false);
 	if x != undefined && y != undefined
 		fmod_event_instance_set_3d_attributes(sound, x, y);
 	fmod_event_instance_play(sound);

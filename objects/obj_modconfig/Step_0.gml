@@ -1,7 +1,6 @@
 if live_call() return live_result;
 scr_getinput();
 
-depth = -400;
 key_back = safe_get(obj_option, "key_back") or key_slap2;
 
 // go back

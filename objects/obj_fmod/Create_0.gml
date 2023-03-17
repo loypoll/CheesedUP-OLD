@@ -19,7 +19,6 @@ sound_cache = ds_map_create();
 
 // function aliases
 #macro sound_get_length fmod_event_get_length // event (string)
-#macro sound_pause_all fmod_event_instance_set_paused_all // enabled (bool)
 // pauses ALL sounds.
 #macro sound_set_parameter fmod_set_parameter // parameter (string), value (double), instant (bool)
 // sets global parameter.

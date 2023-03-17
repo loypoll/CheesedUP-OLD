@@ -6,8 +6,10 @@ previcemovespeed = icemovespeed;
 prevxscale = xscale;
 
 // input buffers and coyote time
-if (global.shootbutton ? key_shoot2 : key_slap2)
+if (global.shootbutton == 1 ? key_shoot2 : key_slap2)
 	input_buffer_shoot = 10;
+if (global.shootbutton ? key_shoot2 : key_slap2)
+	input_buffer_pistol = 10;
 if (global.attackstyle == 1 ? key_chainsaw2 : key_slap2)
 	input_buffer_slap = 12;
 if (key_jump)
@@ -615,7 +617,7 @@ else if (sprite_index != spr_noise_phasetrans1P)
 	noisebossscream = false;
 if (global.pistol && state != states.animation && state != states.actor && state != states.hurt && state != states.bump && !instance_exists(obj_vigilante_duelintro))
 {
-	if ((global.shootbutton ? key_shoot : key_slap) or pistolchargeshooting)
+	if ((global.shootbutton == 1 ? key_shoot : key_slap) or pistolchargeshooting)
 		pistolcharge += 0.5;
 	else
 	{
@@ -661,7 +663,7 @@ if (global.pistol && state != states.animation && state != states.actor && state
 		pistolchargedelay = 5;
 		pistolchargeshooting = false;
 		pistolchargeshot = 1;
-		if (global.shootbutton ? key_shoot : key_slap)
+		if (global.shootbutton == 1 ? key_shoot : key_slap)
 			pistolcharge = 4;
 	}
 }
@@ -1073,6 +1075,8 @@ if (input_attack_buffer > 0)
 	input_attack_buffer--;
 if (input_buffer_shoot > 0)
 	input_buffer_shoot--;
+if (input_buffer_pistol > 0)
+	input_buffer_pistol--;
 if (input_finisher_buffer > 0)
 	input_finisher_buffer--;
 if (input_up_buffer > 0)

@@ -34,7 +34,7 @@ global.uppercut = ini_read_real("Modded", "uppercut", true); // *buffed uppercut
 global.poundjump = ini_read_real("Modded", "poundjump", false);
 global.attackstyle = ini_read_real("Modded", "attackstyle", 0); // grab, kungfu
 global.doublegrab = ini_read_real("Modded", "doublegrab", 0); // nothing, shoulderbash, tumble
-global.shootbutton = ini_read_real("Modded", "shootbutton", true); // 0 replace grab, 1 move to A
+global.shootbutton = ini_read_real("Modded", "shootbutton", false); // 0 replace grab, 1 move to A
 
 // visual settings
 global.panicbg = ini_read_real("Modded", "panicbg", true);

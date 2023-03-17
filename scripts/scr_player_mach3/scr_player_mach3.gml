@@ -167,7 +167,7 @@ function scr_player_mach3()
 					state = states.climbwall;
 				}
 				
-				if (input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton) && sprite_index != spr_dashpadmach)
+				if (input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)) && sprite_index != spr_dashpadmach)
 				{
 					input_buffer_slap = 0;
 					sprite_index = spr_suplexdash;
@@ -180,7 +180,7 @@ function scr_player_mach3()
 						movespeed = 5;
 					image_index = 0;
 				}
-				else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton) && sprite_index != spr_dashpadmach)
+				else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)) && sprite_index != spr_dashpadmach)
 				{
 					input_buffer_slap = 0;
 					state = states.punch;
@@ -194,7 +194,7 @@ function scr_player_mach3()
 				}
 				
 				// kungfu
-				if key_slap2 && !key_up && global.attackstyle == 1 && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton)
+				if key_slap2 && !key_up && global.attackstyle == 1 && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 				{
 					if grounded
 					{
@@ -218,13 +218,11 @@ function scr_player_mach3()
 					image_index = 0;
 				}
 				
-				if (input_buffer_shoot > 0 && sprite_index != spr_dashpadmach)
-				{
-					if (shotgunAnim)
-						scr_shotgunshoot();
-					else if (global.pistol)
-						scr_pistolshoot(states.mach3);
-				}
+				if (input_buffer_shoot > 0 && sprite_index != spr_dashpadmach && shotgunAnim)
+					scr_shotgunshoot();
+				else if (input_buffer_pistol > 0 && sprite_index != spr_dashpadmach && global.pistol)
+					scr_pistolshoot(states.mach3);
+				
 				if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) or check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 				{
 					var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
