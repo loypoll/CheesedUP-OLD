@@ -1,20 +1,27 @@
 if live_call() return live_result;
-scr_getinput(); // no really why dont they just do this
+scr_getinput();
 
+depth = -400;
 key_back = safe_get(obj_option, "key_back") or key_slap2;
 
 // go back
 if key_back
 {
-	// save stuff here
+	for(var i = 0; i < array_length(options_array); i++)
+	{
+		var opt = options_array[i];
+		if opt.type == 0
+			variable_global_set(opt.vari, opt.opts[opt.value][1]);
+	}
 	
 	if instance_exists(obj_option)
 		obj_option.backbuffer = 2;
-	with create_transformation_tip(lang_get_value("option_controls_saved"))
+	with create_transformation_tip("{u}Settings saved!/")
 	{
 		depth = -700;
 		alarm[1] = 100;
 	}
+	sound_play(sfx_back);
 	instance_destroy();
 }
 
@@ -23,6 +30,7 @@ var move = key_down2 - key_up2;
 if move != 0
 {
 	sound_play(sfx_step);
+	simuplayer.state = states.titlescreen;
 	
 	sel += move;
 	if sel >= array_length(options_array)

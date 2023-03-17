@@ -1,7 +1,7 @@
 if room == editor_room
 	exit;
 
-player = (obj_player1.spotlight == 1) ? obj_player1 : obj_player2;
+var player = (obj_player1.spotlight == 1) ? obj_player1 : obj_player2;
 if !instance_exists(obj_pizzaball)
 	targetgolf = -4;
 
@@ -123,7 +123,7 @@ if global.timedgatetimer
 // panic screen shake
 if !instance_exists(obj_ghostcollectibles) && !REMIX
 {
-	if ((global.panic == true && global.minutes < 1) or player.sprite_index == spr_Timesup)
+	if ((global.panic == true && global.minutes < 1) or player.sprite_index == player.spr_Timesup)
 	{
 		shake_mag = 2;
 		shake_mag_acc = 3 / room_speed;
@@ -162,37 +162,40 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 				ty = target.backtohubstarty;
 			
 			// charge cameras
-			if target.cutscene or target.collision_flags & colflag.secret > 0
+			if target.state != states.chainsaw or !REMIX
 			{
-				if player.state == states.actor && room == tower_pizzafacehall
-					chargecamera = Approach(chargecamera, 150, 8);
-				else
+				if target.cutscene or target.collision_flags & colflag.secret > 0
+				{
+					if player.state == states.actor && room == tower_pizzafacehall
+						chargecamera = Approach(chargecamera, 150, 8);
+					else
+						chargecamera = Approach(chargecamera, 0, 10);
+				}
+				else if target.state == states.mach2 or target.state == states.mach3
+				{
+					var _targetcharge = target.xscale * ((target.movespeed / 4) * 50);
+					var _tspeed = 0.3;
+					chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
+				}
+				else if target.ratmount_movespeed > 2 && target.key_attack && (target.state == states.ratmount or target.state == states.ratmountjump)
+				{
+					_targetcharge = target.xscale * ((abs(target.hsp) / 4) * 70);
+					_tspeed = 0.3;
+					chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
+				}
+				else if (abs(target.hsp) >= 16 or (target.state == states.chainsaw && target.tauntstoredmovespeed >= 16)) && player.state != states.climbwall && player.state != states.Sjump
+				{
+					_targetcharge = target.xscale * ((abs(target.hsp) / 4) * 50);
+					_tspeed = 2;
+					if (_targetcharge > 0 && chargecamera < 0) or (_targetcharge < 0 && chargecamera > 0)
+						_tspeed = 8;
+					chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
+				}
+				else if target.state == states.machslide
 					chargecamera = Approach(chargecamera, 0, 10);
+				else
+					chargecamera = Approach(chargecamera, 0, 6);
 			}
-			else if target.state == states.mach2 or target.state == states.mach3
-			{
-				var _targetcharge = target.xscale * ((target.movespeed / 4) * 50);
-				var _tspeed = 0.3;
-				chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
-			}
-			else if target.ratmount_movespeed > 2 && target.key_attack && (target.state == states.ratmount or target.state == states.ratmountjump)
-			{
-				_targetcharge = target.xscale * ((abs(target.hsp) / 4) * 70);
-				_tspeed = 0.3;
-				chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
-			}
-			else if (abs(target.hsp) >= 16 or (target.state == states.chainsaw && target.tauntstoredmovespeed >= 16)) && player.state != states.climbwall && player.state != states.Sjump
-			{
-				_targetcharge = target.xscale * ((abs(target.hsp) / 4) * 50);
-				_tspeed = 2;
-				if (_targetcharge > 0 && chargecamera < 0) or (_targetcharge < 0 && chargecamera > 0)
-					_tspeed = 8;
-				chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
-			}
-			else if target.state == states.machslide
-				chargecamera = Approach(chargecamera, 0, 10);
-			else
-				chargecamera = Approach(chargecamera, 0, 6);
 			
 			// remix specific
 			if REMIX
@@ -322,7 +325,7 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 			break;
 	}
 }
-else if REMIX
+else if REMIX && room != rank_room && room != timesuproom
 {
 	var cam_x = lockx, cam_y = locky;
 	if shake_mag != 0
