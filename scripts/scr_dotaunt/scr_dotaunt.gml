@@ -1,6 +1,6 @@
 function scr_dotaunt()
 {
-	if ((key_taunt2 or input_finisher_buffer > 0 or (state == states.backbreaker && key_up && supercharged)) && !skateboarding)
+	if key_taunt2 or input_finisher_buffer > 0 or state == states.backbreaker && key_up && supercharged && !skateboarding && sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach
 	{
 		input_finisher_buffer = 0;
 		pistolanim = -4;

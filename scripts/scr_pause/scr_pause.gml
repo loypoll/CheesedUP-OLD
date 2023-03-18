@@ -71,8 +71,16 @@ function scr_pause_stop_sounds()
 }
 function scr_delete_pause_image()
 {
-	sprite_delete(screensprite);
-	sprite_delete(screensprite2);
+	if sprite_exists(screensprite)
+	{
+		sprite_delete(screensprite);
+		trace("killed screensprite")
+	}
+	if sprite_exists(screensprite2)
+	{
+		sprite_delete(screensprite2);
+		trace("killed screensprite2")
+	}
 }
 function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0)
 {

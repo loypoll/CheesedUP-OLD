@@ -84,7 +84,7 @@ function scr_player_handstandjump()
 			image_index = image_number - 6;
 		}
 	}
-	if (grounded && sprite_index == airattackdash && key_attack && character != "N" && global.attackstyle != 2)
+	if (grounded && sprite_index == airattackdash && key_attack && (character != "N" or noisetype == 0) && global.attackstyle != 2)
 		state = states.mach2;
 	if (floor(image_index) == (image_number - 1) && sprite_index == attackdash)
 		state = states.normal;
@@ -110,7 +110,7 @@ function scr_player_handstandjump()
 		fmod_event_instance_play(snd_crouchslide);
 	}
 	mask_index = spr_player_mask;
-	if ((!grounded && (check_wall(x + hsp, y) or scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) or (grounded && (check_wall(x + sign(hsp), y - 16) or scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && scr_slope()))
+	if ((!grounded && (check_wall(x + hsp, y) or scr_solid_slope(x + hsp, y)) && !place_meeting(x + hsp, y, obj_destructibles)) or (grounded && (check_wall(x + sign(hsp), y - 16) or scr_solid_slope(x + sign(hsp), y - 16)) && !place_meeting(x + hsp, y, obj_destructibles) && !place_meeting(x + hsp, y, obj_metalblock) && scr_slope() && (character != "N" or noisetype == 0)))
 	{
 		if !place_meeting(x + hsp, y, obj_unclimbablewall)
 			wallspeed = 6;

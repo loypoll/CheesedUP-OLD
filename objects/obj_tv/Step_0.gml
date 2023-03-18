@@ -53,7 +53,7 @@ switch (state)
 {
 	case states.normal:
 		idlespr = spr_tv_idle;
-		if (global.panic)
+		if (global.panic) && (!instance_exists(obj_ghostcollectibles) or !REMIX)
 			idlespr = spr_tv_exprpanic;
 		else if (global.combo >= 3 && global.stylethreshold < 3 && !obj_player.isgustavo)
 			idlespr = spr_tv_exprcombo;
