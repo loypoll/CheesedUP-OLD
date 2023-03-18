@@ -71,7 +71,7 @@ function scr_player_Sjump()
 		state = states.Sjumpland;
 		machhitAnim = false;
 	}
-	else if ((key_attack2 or input_buffer_slap > 0) && (character != "N" or noisetype == 0) && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
+	else if ((key_attack2 or input_buffer_slap > 0 or key_slap2) && (character != "N" or noisetype == 0) && sprite_index != spr_superspringplayer && sprite_index != spr_player_Sjumpcancelstart)
 	{
 		input_buffer_slap = 0;
 		image_index = 0;
