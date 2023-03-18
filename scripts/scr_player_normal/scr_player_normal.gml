@@ -134,7 +134,7 @@ function state_player_normal()
 					facehurt = false;
 					idle = 0;
 				}
-				if (!global.pistol && !shotgunAnim && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6)
+				if (!global.pistol && !shotgunAnim && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6 && sprite_index != spr_keydoor)
 				{
 					idleanim = random_range(0, 100);
 					if (irandom(100) <= 25)

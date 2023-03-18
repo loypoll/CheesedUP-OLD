@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "rm_onlinerace",
-  "creationCodeFile": "${project_dir}/rooms/rm_levelselect/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/rm_onlinerace/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

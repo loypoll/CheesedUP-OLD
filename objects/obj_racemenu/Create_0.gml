@@ -1,5 +1,7 @@
 if live_call() return live_result;
 
+game_end();
+
 with obj_player
 	state = states.titlescreen;
 menu = 0;

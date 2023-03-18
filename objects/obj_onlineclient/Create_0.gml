@@ -1,5 +1,7 @@
 if live_call() return live_result;
 
+game_end();
+
 depth = -7;
 
 ip = "127.0.0.1";

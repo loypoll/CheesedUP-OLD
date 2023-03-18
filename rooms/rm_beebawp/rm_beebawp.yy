@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "rm_beebawp",
-  "creationCodeFile": "${project_dir}/rooms/medieval_1/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/rm_beebawp/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

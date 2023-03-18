@@ -23,6 +23,13 @@ if (!place_meeting(x, y, obj_doorblocked))
 					lastroom = room;
 					targetDoor = door.targetDoor;
 					targetRoom = door.targetRoom;
+					
+					if door.compatibility
+					{
+						oldHallway = true;
+						player_x = door.target_x;
+						player_y = door.target_y;
+					}
 				}
 				sound_play("event:/sfx/misc/door");
 				obj_camera.chargecamera = 0;

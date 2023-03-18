@@ -137,24 +137,32 @@ function ds_list_add_unique(list)
 		}
 	}
 }
-function point_in_camera(x, y, cam = view_camera[0])
+function point_in_camera(x, y, cam = -1)
 {
+	if cam == -1 cam = view_camera[view_current];
+	
 	var cam_x = camera_get_view_x(cam);
 	var cam_y = camera_get_view_y(cam);
 	var cam_w = camera_get_view_width(cam);
 	var cam_h = camera_get_view_height(cam);
+	
 	return point_in_rectangle(x, y, cam_x, cam_y, cam_x + cam_w, cam_y + cam_h);
 }
-function point_in_camera_ext(x, y, cam = view_camera[0], extra_width = 0, extra_height = 0)
+function point_in_camera_ext(x, y, cam = -1, extra_width = 0, extra_height = 0)
 {
+	if cam == -1 cam = view_camera[view_current];
+	
 	var cam_x = camera_get_view_x(cam);
 	var cam_y = camera_get_view_y(cam);
 	var cam_w = camera_get_view_width(cam);
 	var cam_h = camera_get_view_height(cam);
+	
 	return point_in_rectangle(x, y, cam_x - extra_width, cam_y - extra_height, cam_x + cam_w + extra_width, cam_y + cam_h + extra_height);
 }
-function bbox_in_camera(camera = view_camera[0], threshold = 0)
+function bbox_in_camera(camera = -1, threshold = 0)
 {
+	if camera == -1 camera = view_camera[view_current];
+	
 	var cam_x = camera_get_view_x(camera);
 	var cam_y = camera_get_view_y(camera);
 	var cam_w = camera_get_view_width(camera);

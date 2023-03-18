@@ -623,6 +623,7 @@ smoothx = 0;
 oldHallway = false;
 noisetype = 0;
 input_buffer_pistol = 0;
+keydoor = false;
 
 // race
 lapindex = noone;
