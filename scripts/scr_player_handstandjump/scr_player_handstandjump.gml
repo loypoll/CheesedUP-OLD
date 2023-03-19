@@ -5,6 +5,7 @@ function scr_player_handstandjump()
 	move = key_left + key_right;
 	momemtum = true;
 	dir = xscale;
+	
 	if (global.attackstyle != 3)
 	{
 		if (movespeed < 10)
@@ -46,14 +47,17 @@ function scr_player_handstandjump()
 	var airattackdash = spr_suplexdashjump;
 	var airattackdashstart = spr_suplexdashjumpstart;
 	
+	/*
 	if (global.attackstyle == 2)
 		vsp = 0;
+	*/
+	
 	if (!key_jump2 && jumpstop == 0 && vsp < 0.5 && stompAnim == 0)
 	{
 		vsp /= 20;
 		jumpstop = true;
 	}
-	if (input_buffer_jump > 0 && can_jump && !key_down && global.attackstyle != 2 && (character != "N" or noisetype == 0))
+	if (input_buffer_jump > 0 && can_jump && !key_down/* && global.attackstyle != 2*/ && (character != "N" or noisetype == 0))
 	{
 		fmod_event_instance_play(rollgetupsnd);
 		input_buffer_jump = 0;
@@ -70,7 +74,7 @@ function scr_player_handstandjump()
 		image_index = 0;
 		sprite_index = airattackdashstart;
 	}
-	if (grounded && sprite_index == airattackdash && (!key_attack or character == "N") && global.attackstyle != 2)
+	if (grounded && sprite_index == airattackdash && (!key_attack or character == "N")/* && global.attackstyle != 2*/)
 	{
 		if (global.attackstyle != 3)
 		{
@@ -84,7 +88,7 @@ function scr_player_handstandjump()
 			image_index = image_number - 6;
 		}
 	}
-	if (grounded && sprite_index == airattackdash && key_attack && (character != "N" or noisetype == 0) && global.attackstyle != 2)
+	if (grounded && sprite_index == airattackdash && key_attack && (character != "N" or noisetype == 0)/* && global.attackstyle != 2*/)
 		state = states.mach2;
 	if (floor(image_index) == (image_number - 1) && sprite_index == attackdash)
 		state = states.normal;
@@ -96,7 +100,7 @@ function scr_player_handstandjump()
 		state = states.mach2;
 		grav = 0.5;
 	}
-	if (key_down && grounded && global.attackstyle != 2)
+	if (key_down && grounded/* && global.attackstyle != 2*/)
 	{
 		with (instance_create(x, y, obj_jumpdust))
 			image_xscale = other.xscale;

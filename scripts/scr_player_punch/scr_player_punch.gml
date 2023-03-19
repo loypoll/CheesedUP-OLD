@@ -89,7 +89,7 @@ function scr_player_punch()
 					if movespeed > 12
 						movespeed = 12;
 				}
-				else if key_attack && move != 0
+				else if key_attack && move != 0 && REMIX
 					movespeed += 0.02;
 				
 				if _kungfuground && (input_buffer_jump > 0 && can_jump && (character != "N" or noisetype == 0))

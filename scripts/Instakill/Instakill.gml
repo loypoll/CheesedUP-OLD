@@ -107,12 +107,11 @@ function Instakill()
 	other.baddieID.alarm[3] = 3;
 	other.baddieID.state = states.hit;
 	other.baddieID.image_xscale = -xscale;
-	create_slapstar(x, y);
-	create_slapstar(x, y);
-	create_slapstar(x, y);
-	create_baddiegibs(x, y);
-	create_baddiegibs(x, y);
-	create_baddiegibs(x, y);
+	repeat 3
+	{
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+	}
 	with (obj_camera)
 	{
 		shake_mag = 3;

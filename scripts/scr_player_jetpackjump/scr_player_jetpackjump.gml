@@ -137,7 +137,7 @@ function scr_player_jetpackjump()
 		if (floor(image_index) == (image_number - 1))
 			jetpackdash = false;
 	}
-	if (input_buffer_slap > 0 && sprite_index != spr_suplexbump)
+	if ((input_buffer_slap > 0 or input_buffer_grab > 0) && sprite_index != spr_suplexbump)
 	{
 		if (sprite_index != spr_player_jetpackstart2)
 		{
@@ -145,6 +145,7 @@ function scr_player_jetpackjump()
 				sprite_index = spr_jetpackdebris;
 		}
 		input_buffer_slap = 0;
+		input_buffer_grab = 0;
 		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		image_index = 0;

@@ -202,6 +202,9 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 			// remix specific
 			if REMIX
 			{
+				// clamp chargecamera
+				chargecamera = clamp(chargecamera, -320, 320);
+				
 				// crouch camera
 				if ((player.state == states.crouch or (player.character == "S" && player.state == states.normal)) && player.hsp == 0)
 				&& !crouchcamera_goingback && player.key_down
