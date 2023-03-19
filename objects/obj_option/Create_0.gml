@@ -366,9 +366,18 @@ add_option_press(controller_menu, 1, "option_controller_binds", function(val)
 	with (instance_create_unique(0, 0, obj_keyconfig))
 	{
 		controller = 1;
-		array_pop(input);
-		array_push(input, ["key_superjump"]);
-		array_push(input, ["key_groundpound"]);
+		input = [
+			["key_up"],
+			["key_down"],
+			["key_right"],
+			["key_left"],
+			["key_jump"],
+			["key_slap"],
+			["key_attack"],
+			["key_taunt"],
+			["key_superjump"],
+			["key_groundpound"]
+		];
 	}
 });
 add_option_press(controller_menu, 2, "option_deadzone_title", function(val) {

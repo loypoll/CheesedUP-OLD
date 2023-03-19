@@ -1,3 +1,5 @@
+if live_call() return live_result;
+
 draw_set_font(lang_get_font("bigfont"));
 draw_set_alpha(1);
 draw_set_halign(fa_left);
@@ -24,10 +26,10 @@ for (var i = i1; i < array_length(input); i++)
 		val = -1;
 	
 	c = (key_select == i ? c_white : c_gray);
-	var yy = 50 + (50 * (i - i1));
+	var yy = 50 + ((controller ? 50 : 44) * (i - i1));
 	var i2 = i;
 	if controller && i >= 8
-		i2++;
+		i2 += 3;
 	draw_sprite_ext(spr_controlicons, i2, ((SCREEN_WIDTH / 2) - 60), yy, 1, 1, 0, c, 1);
 	
 	if !controller

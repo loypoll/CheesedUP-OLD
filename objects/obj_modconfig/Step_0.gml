@@ -6,12 +6,22 @@ key_back = safe_get(obj_option, "key_back") or key_slap2;
 // go back
 if key_back
 {
+	ini_open_from_string(obj_savesystem.ini_str_options);
 	for(var i = 0; i < array_length(options_array); i++)
 	{
 		var opt = options_array[i];
 		if opt.type == 0
-			variable_global_set(opt.vari, opt.opts[opt.value][1]);
+		{
+			var value = opt.opts[opt.value][1];
+			variable_global_set(opt.vari, value);
+			
+			if is_real(value)
+				ini_write_real("Modded", opt.vari, value);
+			else
+				ini_write_string("Modded", opt.vari, value);
+		}
 	}
+	obj_savesystem.ini_str_options = ini_close();
 	
 	if instance_exists(obj_option)
 		obj_option.backbuffer = 2;
