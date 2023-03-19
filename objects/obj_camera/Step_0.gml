@@ -175,6 +175,8 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 				{
 					var _targetcharge = target.xscale * ((target.movespeed / 4) * 50);
 					var _tspeed = 0.3;
+					if target.xscale != sign(_targetcharge) && REMIX
+						_tspeed = 4;
 					chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
 				}
 				else if target.ratmount_movespeed > 2 && target.key_attack && (target.state == states.ratmount or target.state == states.ratmountjump)
@@ -200,6 +202,9 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 			// remix specific
 			if REMIX
 			{
+				// clamp chargecamera
+				chargecamera = clamp(chargecamera, -320, 320);
+				
 				// crouch camera
 				if ((player.state == states.crouch or (player.character == "S" && player.state == states.normal)) && player.hsp == 0)
 				&& !crouchcamera_goingback && player.key_down

@@ -176,6 +176,10 @@ var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic g
 				p.move = p.xscale;
 				p.hsp = 6 * p.move;
 			}
+			if val == 2
+			{
+				
+			}
 		}
 	}
 	
@@ -184,7 +188,8 @@ var opt = add_option("Attack Style", "attackstyle", "Alternatives to the basic g
 opt.value = global.attackstyle;
 opt.opts = [
 	["GRAB", 0],
-	["KUNG FU", 1]
+	["KUNG FU", 1],
+	["SHOULDER BASH", 2]
 ];
 
 #endregion

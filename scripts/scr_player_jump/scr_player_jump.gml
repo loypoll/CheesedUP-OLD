@@ -273,9 +273,9 @@ function state_player_jump()
 	}
 	
 	// suplex dash
-	if (input_buffer_slap > 0 && !key_up && sprite_index != spr_suplexbump && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
+	if (input_buffer_grab > 0 && !key_up && sprite_index != spr_suplexbump && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 	{
-		input_buffer_slap = 0;
+		input_buffer_grab = 0;
 		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		image_index = 0;
@@ -287,7 +287,7 @@ function state_player_jump()
 	}
 	
 	// uppercut
-	else if ((global.attackstyle == 1 ? key_slap2 : input_buffer_slap > 0) && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
+	else if (input_buffer_slap > 0 && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 	{
 		input_buffer_slap = 0;
 		state = states.punch;
@@ -301,20 +301,42 @@ function state_player_jump()
 	}
 	
 	// kungfu
-	if key_slap2 && !key_up && global.attackstyle == 1 && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
+	if input_buffer_slap > 0 && !key_up && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 	{
-		sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
-		suplexmove = true;
+		switch global.attackstyle
+		{
+			case 1: // kung fu
+				input_buffer_slap = 0;
+				sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
+				suplexmove = true;
 		
-		particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-		create_particle(x, y, particle.crazyrunothereffect);	
+				particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+				create_particle(x, y, particle.crazyrunothereffect);	
 		
-		if vsp > 0
-			vsp = 0;
-		fmod_event_instance_play(snd_dive);
-		state = states.punch;
-		movespeed = 11;
-		image_index = 0;
+				if vsp > 0
+					vsp = 0;
+				fmod_event_instance_play(snd_dive);
+				state = states.punch;
+				movespeed = max(movespeed, 10);
+				image_index = 0;
+				break;
+			
+			case 2: // shoulderbash
+				input_buffer_slap = 0;
+				sprite_index = spr_airattackstart;
+				suplexmove = true;
+				
+				particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+				create_particle(x, y, particle.crazyrunothereffect);
+				
+				fmod_event_instance_play(snd_dive);
+				state = states.handstandjump;
+				if vsp < 0 && !REMIX
+					vsp = 0;
+				movespeed = max(movespeed, 10);
+				image_index = 0;
+				break;
+		}
 	}
 	
 	if (input_buffer_shoot > 0 && shotgunAnim)
@@ -410,11 +432,10 @@ function state_player_jump()
 			{
 				if (key_attack2 && (pogochargeactive or pizzapepper > 0))
 				{
-					if (!key_up)
-						sprite_index = spr_playerN_jetpackstart;
-					else
-						sprite_index = spr_superjumpprep;
+					sprite_index = !key_up ? spr_playerN_jetpackstart : spr_superjumpprep;
 					sound_play_3d(sfx_woag, x, y)
+					if sprite_index == spr_playerN_jetpackstart && REMIX
+							sound_play_3d(sfx_jetpackstart, x, y)
 					image_index = 0;
 					hsp = 0;
 					vsp = 0;

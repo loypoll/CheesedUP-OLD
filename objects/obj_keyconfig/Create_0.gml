@@ -20,3 +20,4 @@ input = [
 	["key_chainsaw"]
 ];
 controller = false;
+scroll = 0;

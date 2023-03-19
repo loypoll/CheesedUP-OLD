@@ -562,7 +562,6 @@ if !variable_global_exists("saveroom")
 	global.ammoalt = 1;
 	global.mort = false;
 	global.stylelock = false;
-	global.attackstyle = 0;
 	global.pummeltest = true;
 	global.horse = false;
 	global.checkpoint_room = -4;
@@ -623,6 +622,8 @@ smoothx = 0;
 oldHallway = false;
 noisetype = 0;
 input_buffer_pistol = 0;
+input_buffer_grab = 0;
+keydoor = false;
 
 // race
 lapindex = noone;

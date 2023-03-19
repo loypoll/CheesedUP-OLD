@@ -1,4 +1,4 @@
-if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.object_index != obj_pizzafaceboss && !baddieID.thrown && !other.baddieID.mach3destroy && baddieID.state != states.hit && other.baddieID.thrown && other.baddieID.state != states.hit && baddieID.killbyenemybuffer <= 0 && baddieID.killbyenemy && baddieID != other.baddieID && baddieID.state != states.grabbed && !baddieID.invincible && baddieID.instantkillable && ((global.attackstyle != 2 && !global.kungfu) or baddieID.hp <= 0) && !global.kungfu)
+if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.object_index != obj_pizzafaceboss && !baddieID.thrown && !other.baddieID.mach3destroy && baddieID.state != states.hit && other.baddieID.thrown && other.baddieID.state != states.hit && baddieID.killbyenemybuffer <= 0 && baddieID.killbyenemy && baddieID != other.baddieID && baddieID.state != states.grabbed && !baddieID.invincible && baddieID.instantkillable && ((/*global.attackstyle != 2 && */!global.kungfu) or baddieID.hp <= 0) && !global.kungfu)
 {
 	sound_play_3d("event:/sfx/pep/punch", x, y);
 	if (!baddieID.important)

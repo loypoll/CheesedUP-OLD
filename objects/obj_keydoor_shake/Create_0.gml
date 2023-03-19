@@ -1,1 +1,1 @@
-shake = choose(-12, 12);
+shake = choose(-10, 10);

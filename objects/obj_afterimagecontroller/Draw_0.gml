@@ -58,7 +58,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 					pal_swap_set(playerid.spr_palette, playerid.paletteselect, false);
 				}
 			}
-			else if (identifier == afterimage.mach3effect && REMIX)
+			else if ((identifier == afterimage.mach3effect or identifier == afterimage.simple) && REMIX)
 			{
 				shader_set(shd_mach3effect);
 				shd = true;
@@ -66,7 +66,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				shader_set_uniform_f(other.color1, color_get_red(b) / 255, color_get_green(b) / 255, color_get_blue(b) / 255);
 				b = merge_colour(b, c_black, 0.9);
 				shader_set_uniform_f(other.color2, color_get_red(b) / 255, color_get_green(b) / 255, color_get_blue(b) / 255);
-				b = image_blend;
+				b = c_white;
 			}
 			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, a);
 			if (shd)

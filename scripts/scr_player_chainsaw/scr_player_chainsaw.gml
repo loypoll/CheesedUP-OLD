@@ -18,7 +18,8 @@ function scr_player_chainsaw()
 		sprite_index = tauntstoredsprite;
 		state = tauntstoredstate;
 		vsp = tauntstoredvsp;
-		if (global.attackstyle == 0)
+		
+		//if (global.attackstyle == 0)
 		{
 			if ((tauntstoredstate == states.handstandjump && (tauntstoredsprite == spr_player_suplexgrabjumpstart or tauntstoredsprite == spr_player_suplexgrabjump or tauntstoredsprite == spr_player_airattack or tauntstoredsprite == spr_player_airattackstart)) or sprite_index == spr_piledriverland)
 			{
@@ -32,6 +33,7 @@ function scr_player_chainsaw()
 			else if (tauntstoredstate == states.handstandjump or tauntstoredstate == states.finishingblow)
 				state = states.normal;
 		}
+		/*
 		if (global.attackstyle == 1)
 		{
 			if ((tauntstoredstate == states.handstandjump && (tauntstoredsprite == spr_player_suplexgrabjumpstart or tauntstoredsprite == spr_player_suplexgrabjump or tauntstoredsprite == spr_player_airattack or tauntstoredsprite == spr_player_airattackstart)) or sprite_index == spr_piledriverland)
@@ -55,5 +57,6 @@ function scr_player_chainsaw()
 			if (tauntstoredstate == states.lungeattack)
 				state = states.lungeattack;
 		}
+		*/
 	}
 }

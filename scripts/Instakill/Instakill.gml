@@ -92,10 +92,13 @@ function Instakill()
 		sprite_index = spr_player_chainsawhit;
 		image_index = 0;
 	}
+	
+	var lag = 5;
 	if (other.baddieID.heavy == 1 or (state == states.punch && global.attackstyle == 1))
-		var lag = 15;
-	else
-		lag = 5;
+		lag = 15;
+	if state == states.handstandjump
+		lag = 10;
+	
 	other.baddieID.hitLag = lag;
 	other.baddieID.hitX = hx;
 	other.baddieID.hitY = hy;
@@ -107,12 +110,11 @@ function Instakill()
 	other.baddieID.alarm[3] = 3;
 	other.baddieID.state = states.hit;
 	other.baddieID.image_xscale = -xscale;
-	create_slapstar(x, y);
-	create_slapstar(x, y);
-	create_slapstar(x, y);
-	create_baddiegibs(x, y);
-	create_baddiegibs(x, y);
-	create_baddiegibs(x, y);
+	repeat 3
+	{
+		create_slapstar(x, y);
+		create_baddiegibs(x, y);
+	}
 	with (obj_camera)
 	{
 		shake_mag = 3;
@@ -123,9 +125,32 @@ function Instakill()
 		with (instance_create(other.baddieID.x, other.baddieID.y, obj_parryeffect))
 			sprite_index = spr_kungfueffect;
 	}
-	other.baddieID.hithsp = xscale * (movespeed + 2);
-	if (abs(other.baddieID.hithsp) < 10)
-		other.baddieID.hithsp = xscale * 10;
-	other.baddieID.hitvsp = -5;
+	if state == states.handstandjump
+	{
+		if key_up
+        {
+            other.baddieID.hitvsp = -11 * 1.25;
+            other.baddieID.hithsp = 0;
+        }
+        else if key_down
+        {
+            other.baddieID.hitvsp = 11 * 1.25;
+            other.baddieID.hithsp = 0;
+        }
+        else
+        {
+            other.baddieID.hitvsp = -8 * 1.25;
+            other.baddieID.hithsp = ((-other.baddieID.image_xscale) * 8) * 2;
+        }
+		other.baddieID.shoulderbashed = true; // reduces hp minimum to die to -6
+		suplexmove = false;
+	}
+	else
+	{
+		other.baddieID.hithsp = xscale * (movespeed + 2);
+		if (abs(other.baddieID.hithsp) < 10)
+			other.baddieID.hithsp = xscale * 10;
+		other.baddieID.hitvsp = -5;
+	}
 	state = states.chainsaw;
 }

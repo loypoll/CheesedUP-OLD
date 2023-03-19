@@ -1,48 +1,34 @@
 var _save = false;
-if (key && (obj_player1.state == states.normal or obj_player1.state == states.mach1 or obj_player1.state == states.pogo or obj_player1.state == states.mach2 or obj_player1.state == states.mach3 or obj_player1.state == states.Sjumpprep) && sprite_index == spr_elevatorlocked && obj_player1.key_up && obj_player1.grounded && place_meeting(x, y, obj_player1))
+var player = instance_place(x, y, obj_player);
+
+if (player && key && (player.state == states.normal or player.state == states.mach1 or player.state == states.pogo or player.state == states.mach2 or player.state == states.mach3 or player.state == states.Sjumpprep) && sprite_index == spr_elevatorlocked && player.key_up && player.grounded)
 {
 	_save = true;
 	ds_list_add(global.saveroom, id);
-	obj_player1.state = states.victory;
-	obj_player1.image_index = 0;
-	if (instance_exists(obj_player2) && global.coop == 1)
-	{
-		obj_player2.x = obj_player1.x;
-		obj_player2.y = obj_player1.y;
-		obj_player2.state = states.victory;
-		obj_player2.image_index = 0;
-	}
 	image_index = 0;
 	sprite_index = spr_elevatoropening;
 	sound_play_3d("event:/sfx/misc/elevatorstart", x, y);
 	sound_play_3d("event:/sfx/misc/keyunlock", x, y);
 	image_speed = 0.35;
-	obj_player1.sprite_index = obj_player1.spr_victory;
-	obj_player2.sprite_index = obj_player2.spr_victory;
 	with (instance_create(x + 50, y + 50, obj_lock))
 		sprite_index = spr_elevatorlock;
 	global.key_inv = false;
 	instance_destroy(obj_giantkeyfollow);
-}
-if (instance_exists(obj_player2))
-{
-	if (key && !instance_exists(obj_jumpscare) && obj_player2.state == states.normal && obj_player2.grounded && obj_player2.key_up && place_meeting(x, y, obj_player2))
+	
+	with obj_player
 	{
-		_save = true;
-		ds_list_add(global.saveroom, id);
-		obj_player2.state = states.victory;
-		obj_player2.image_index = 0;
-		obj_player1.x = obj_player2.x;
-		obj_player1.y = obj_player2.y;
-		obj_player1.sprite_index = obj_player1.spr_victory;
-		obj_player2.sprite_index = obj_player2.spr_victory;
-		obj_player1.state = states.victory;
-		obj_player1.image_index = 0;
+		state = states.victory;
 		image_index = 0;
-		sprite_index = spr_doorkeyopen;
-		image_speed = 0.35;
-		instance_create(x + 50, y + 50, obj_lock);
-		global.key_inv = false;
+		x = player.x;
+		y = player.y;
+		sprite_index = spr_victory;
+		
+		if REMIX
+		{
+			smoothx = x - (other.x + 50);
+			x = other.x + 50;
+			keydoor = true;
+		}
 	}
 }
 if (floor(image_index) == (image_number - 1))
@@ -55,32 +41,16 @@ if (_save)
 	obj_savesystem.ini_str = ini_close();
 	gamesave_async_save();
 }
-if (sprite_index == spr_elevatoropening && floor(image_index) == (image_number - 1) && place_meeting(x, y, obj_player1) && !instance_exists(obj_jumpscare) && floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_player1.state == states.victory)
+if (sprite_index == spr_elevatoropening && floor(image_index) == (image_number - 1) && player && !instance_exists(obj_jumpscare) && floor(player.image_index) == (player.image_number - 1) && player.state == states.victory)
 {
-	with (obj_player1)
+	with (obj_player)
 	{
-		obj_player1.targetDoor = other.targetDoor;
-		obj_player1.targetRoom = other.targetRoom;
-		if (instance_exists(obj_player2) && global.coop == 1)
-		{
-			obj_player2.targetDoor = other.targetDoor;
-			obj_player2.targetRoom = other.targetRoom;
-		}
-		if (!instance_exists(obj_fadeout))
-			instance_create(x, y, obj_fadeout);
+		targetDoor = other.targetDoor;
+		targetRoom = other.targetRoom;
+		instance_create_unique(x, y, obj_fadeout);
 	}
 }
-if (place_meeting(x, y, obj_doorA))
-	targetDoor = "A";
-if (place_meeting(x, y, obj_doorB))
-	targetDoor = "B";
-if (place_meeting(x, y, obj_doorC))
-	targetDoor = "C";
-if (place_meeting(x, y, obj_doorD))
-	targetDoor = "D";
-if (place_meeting(x, y, obj_doorE))
-	targetDoor = "E";
-if (place_meeting(x, y, obj_doorF))
-	targetDoor = "F";
-if (place_meeting(x, y, obj_doorG))
-	targetDoor = "G";
+
+var door = instance_place(x, y, obj_doorX);
+if (door)
+	targetDoor = door.door;

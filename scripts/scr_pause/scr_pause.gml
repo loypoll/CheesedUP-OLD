@@ -30,6 +30,7 @@ function scr_create_pause_image()
 	
 	// convert to a sprite because surfaces are unstable
 	screensprite = sprite_create_from_surface(surface, 0, 0, wd, ht, false, false, 0, 0);
+	screensprite2 = noone;
 	
 	// second surface, to fade in the blur
 	if REMIX
@@ -51,7 +52,7 @@ function scr_create_pause_image()
 }
 function scr_draw_pause_image()
 {
-	if REMIX
+	if REMIX && sprite_exists(screensprite2)
 	{
 		if fade < 1
 			draw_sprite_ext(screensprite, 0, 0, 0, screenscale, screenscale, 0, c_white, 1);
@@ -72,7 +73,8 @@ function scr_pause_stop_sounds()
 function scr_delete_pause_image()
 {
 	sprite_delete(screensprite);
-	sprite_delete(screensprite2);
+	if sprite_exists(screensprite2)
+		sprite_delete(screensprite2);
 }
 function scr_pauseicon_add(sprite, index, xoffset = 0, yoffset = 0)
 {

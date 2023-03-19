@@ -144,4 +144,5 @@ function scr_initenemy()
 	player_instakillmove = false;
 	stompbuffer = 0;
 	killbyenemybuffer = 0;
+	shoulderbashed = false;
 }

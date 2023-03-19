@@ -9,7 +9,7 @@ function sh_var(args)
 	var pretarget = args[1];
 	var variable = args[2];
 	var value = WCscr_allargs(args, 3);
-	
+		
 	// resolve target
 	var target_one = false; // only target one instance
 	var target = noone;
@@ -88,6 +88,15 @@ function sh_var(args)
 	or (target == global && variable_global_exists(variable))
 	or target == all
 		var_exists = true;
+	
+	// get variable if no value was provided
+	if array_length(args) < 4
+	{
+		if var_exists && target_one
+			return string("{0}.{1}: {2}", pretarget, variable, variable_instance_get(target, variable));
+		else
+			return "Must provide a value";
+	}
 	
 	// prep function
 	setvar = function(target, variable, value, arrind = -1)

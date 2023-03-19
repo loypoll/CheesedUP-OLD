@@ -1,6 +1,12 @@
 #macro REMIX global.gameplay
 #macro debug true//(GM_build_type == "run")
 
+if os_type == os_gxgames
+{
+	show_message_async("You have your build settings set to GX.games!!!\nChange it to \"Test\" or \"Windows\"!!!");
+	game_end();
+}
+
 // initialize
 scr_get_languages();
 pal_swap_init_system_fix(shd_pal_swapper, true);
@@ -48,6 +54,10 @@ exception_unhandled_handler
 	{
 	    show_debug_message(string(e));
 		show_message("The game crashed! longMessage:\n\n" + e.longMessage);
+		
+		stop_music();
+		sound_stop_all();
+		sound_play_centered(sfx_hurt);
 		
 		var _f = file_text_open_write("crash_log.txt");
 		file_text_write_string(_f, string(e));

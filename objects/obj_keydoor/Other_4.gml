@@ -2,3 +2,5 @@ if (place_meeting(x, y, obj_player))
 	visited = true;
 if (!(ds_list_find_index(global.saveroom, id) == -1))
 	sprite_index = spr_doorkeyopen;
+if variable_instance_exists(id, "target_x") && variable_instance_exists(id, "target_y")
+	compatibility = true;

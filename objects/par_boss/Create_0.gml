@@ -85,7 +85,7 @@ function SUPER_boss_destroy(argument0)
 {
 	destroyed = true;
 	depth = argument0.depth;
-	global.attackstyle = 0;
+	//global.attackstyle = 0;
 	global.savedattackstyle = 0;
 	with (argument0)
 	{

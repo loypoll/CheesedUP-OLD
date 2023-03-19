@@ -46,7 +46,7 @@ switch (state)
 		scr_enemy_hit();
 		break;
 	case states.stun:
-		if (global.attackstyle != 2)
+		//if (global.attackstyle != 2)
 		{
 			switch (hp)
 			{

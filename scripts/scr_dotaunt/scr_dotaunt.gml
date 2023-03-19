@@ -1,6 +1,6 @@
 function scr_dotaunt()
 {
-	if ((key_taunt2 or input_finisher_buffer > 0 or (state == states.backbreaker && key_up && supercharged)) && !skateboarding)
+	if key_taunt2 or input_finisher_buffer > 0 or state == states.backbreaker && key_up && supercharged && !skateboarding && sprite_index != spr_playerN_pogobounce && sprite_index != spr_playerN_pogobouncemach
 	{
 		input_finisher_buffer = 0;
 		pistolanim = -4;
@@ -43,7 +43,15 @@ function scr_dotaunt()
 				sound_play_3d("event:/sfx/pep/taunt", x, y);
 				taunttimer = 20;
 				sprite_index = spr_taunt;
-				image_index = random_range(0, 11);
+				
+				if sprite_index == spr_player_taunt && !REMIX
+				{
+					image_index = random_range(0, 10);
+					if image_index == 10
+						image_index = 9;
+				}
+				else
+					image_index = random_range(0, image_number);
 			}
 			with (instance_create(x, y, obj_taunteffect))
 				player = other.id;

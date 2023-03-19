@@ -20,7 +20,7 @@ function sh_room(args)
 		door = args[2];
 	
 	with obj_player1
-		targetDoor = door;
+		targetDoor = string_upper(door);
 	
 	room_goto(asset_get_index(roomgoto));
 	sound_play(sfx_door);

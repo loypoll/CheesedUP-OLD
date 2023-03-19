@@ -1,5 +1,7 @@
 if live_call() return live_result;
 
+game_end();
+
 port = "6400";
 max_clients = "5";
 

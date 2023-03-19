@@ -10,8 +10,10 @@ if (global.shootbutton ? key_shoot2 : key_slap2)
 	input_buffer_shoot = 10;
 if (global.shootbutton == 1 ? key_shoot2 : key_slap2)
 	input_buffer_pistol = 10;
-if (global.attackstyle == 1 ? key_chainsaw2 : key_slap2)
+if (key_slap2)
 	input_buffer_slap = 12;
+if (global.attackstyle != 0 ? key_chainsaw2 : key_slap2)
+	input_buffer_grab = 12;
 if (key_jump)
 	input_buffer_jump = 15;
 
@@ -1057,12 +1059,15 @@ if (object_index == obj_player1)
 	if (global.heattime <= 0 && global.style > -1 && global.stylelock == 0)
 		global.style -= 0.05;
 }
+
+// input buffers
 if (key_jump && !grounded && (state == states.mach2 or state == states.mach3) && (state != (states.climbwall & walljumpbuffer)) <= 0)
 	input_buffer_walljump = 24;
 if (boxxeddashbuffer > 0)
 	boxxeddashbuffer--;
 if (coyote_time > 0)
 	coyote_time--;
+
 if (input_buffer_jump > 0)
 	input_buffer_jump--;
 if (input_buffer_jump_negative > 0)
@@ -1087,6 +1092,10 @@ if (input_buffer_walljump > 0)
 	input_buffer_walljump--;
 if (input_buffer_slap > 0)
 	input_buffer_slap--;
+if (input_buffer_grab > 0)
+	input_buffer_grab--;
+
+// 
 if (key_particles == 1)
 	create_particle(x + random_range(-25, 25), y + random_range(-35, 25), particle.keyparticles, 0);
 if (state != states.ratmount && state != states.ratmountjump && state != states.chainsaw)
@@ -1105,6 +1114,7 @@ if (state == states.throwing or state == states.backkick or state == states.shou
 else
 	grabbing = false;
 if ((state == states.ratmountbounce && vsp >= 0) or sprite_index == spr_player_Sjumpcancel or sprite_index == spr_swingding or sprite_index == spr_tumble or state == states.boxxedpepspin or state == states.trashroll or state == states.trashjump or state == states.shotgundash or (state == states.shotgunfreefall && (sprite_index == spr_shotgunjump2 or sprite_index == spr_shotgunjump3)) or state == states.Sjump or state == states.rocket or state == states.rocketslide or state == states.chainsawbump or (state == states.punch && ((sprite_index != spr_breakdanceuppercut && sprite_index != spr_breakdanceuppercutend) or vsp < 0)) or state == states.faceplant or state == states.rideweenie or state == states.mach3 or (state == states.jump && sprite_index == spr_playerN_noisebombspinjump) or state == states.freefall or state == states.fireass or state == states.jetpackjump or (state == states.firemouth && sprite_index != spr_firemouthintro) or state == states.hookshot or state == states.jetpackjump or state == states.skateboard or state == states.mach4 or state == states.Sjump or state == states.machfreefall or state == states.tacklecharge or (state == states.superslam && sprite_index == spr_piledriver) or state == states.knightpep or state == states.knightpepattack or state == states.knightpepslopes or state == states.trickjump or state == states.cheesepep or state == states.cheeseball or state == states.ratmounttumble or state == states.ratmountgroundpound or global.noisejetpack == 1 or state == states.ratmountpunch or state == states.antigrav or holycross > 0 or state == states.barrelslide or state == states.barrelclimbwall or ratmount_movespeed >= 12 or ghostdash == 1 or state == states.slipbanan or state == states.shoulderbash or (state == states.machslide && (sprite_index == spr_mach3boost or sprite_index == spr_player_machslideboost3fall)))
+or (state == states.handstandjump && (sprite_index == spr_attackdash or sprite_index == spr_airattack or sprite_index == spr_airattackstart))
 	instakillmove = true;
 else
 	instakillmove = false;

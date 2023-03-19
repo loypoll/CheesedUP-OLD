@@ -38,7 +38,7 @@ if (state != states.stun)
 	birdcreated = false;
 if (bombreset > 0)
 	bombreset--;
-if (state != states.pizzagoblinthrow && bombreset == 0)
+if (state != states.pizzagoblinthrow && bombreset <= 0)
 {
 	if (state == states.walk or state == states.idle)
 	{

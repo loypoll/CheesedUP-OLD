@@ -1,6 +1,6 @@
-if (obj_player1.state == states.debugstate)
+if (other.state == states.debugstate)
 	exit;
-if (obj_player1.state == states.backtohub)
+if (other.state == states.backtohub)
 	exit;
 if (instance_exists(obj_jumpscare))
 	exit;

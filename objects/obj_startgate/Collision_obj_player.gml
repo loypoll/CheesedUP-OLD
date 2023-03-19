@@ -117,6 +117,7 @@ if REMIX && other.state != states.victory
 			alarm[0] = 1;
 			
 			fadeout_speed = 0.025;
+			fadeout = false;
 		}
 	}
 	else
