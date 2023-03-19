@@ -58,7 +58,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 					pal_swap_set(playerid.spr_palette, playerid.paletteselect, false);
 				}
 			}
-			else if (identifier == afterimage.mach3effect && REMIX)
+			else if ((identifier == afterimage.mach3effect or identifier == afterimage.simple) && REMIX)
 			{
 				shader_set(shd_mach3effect);
 				shd = true;

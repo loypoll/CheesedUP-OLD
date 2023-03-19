@@ -83,7 +83,13 @@ function scr_player_punch()
 				
 				if (_kungfuground && image_index > 7 && !key_attack && movespeed > 0)
 					movespeed -= 0.5;
-				else if _kungfuground && movespeed < 12
+				else if _kungfuground && movespeed <= 12
+				{
+					movespeed += 0.2;
+					if movespeed > 12
+						movespeed = 12;
+				}
+				else if key_attack && move != 0
 					movespeed += 0.2;
 				
 				if _kungfuground && (input_buffer_jump > 0 && can_jump && (character != "N" or noisetype == 0))
@@ -209,22 +215,25 @@ function scr_player_punch()
 				}
 				if (sprite_index != spr_player_kungfujump && check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles) && !place_meeting(x + xscale, y, obj_slope))
 				{
-					if !grounded
+					if ledge_bump(32)
 					{
-						if !place_meeting(x + hsp, y, obj_unclimbablewall)
-							wallspeed = 6;
+						if !grounded
+						{
+							if !place_meeting(x + hsp, y, obj_unclimbablewall)
+								wallspeed = 6;
+							else
+								wallspeed = -vsp;
+							grabclimbbuffer = 10;
+							state = states.climbwall;
+						}
 						else
-							wallspeed = -vsp;
-						grabclimbbuffer = 10;
-						state = states.climbwall;
-					}
-					else
-					{
-						vsp = -4;
-						sprite_index = spr_player_kungfujump;
-						image_index = 0;
-						state = states.punch;
-						movespeed = -6;
+						{
+							vsp = -4;
+							sprite_index = spr_player_kungfujump;
+							image_index = 0;
+							state = states.punch;
+							movespeed = -6;
+						}
 					}
 				}
 				if (punch_afterimage > 0)
