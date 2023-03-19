@@ -1,7 +1,10 @@
 function sh_state(args)
 {
+	if !WC_debug
+		return "You do not have permission to use this command";
 	if !instance_exists(obj_player1)
 		return "The player is not in the room";
+	
 	if array_length(args) < 2
 	{
 		var statename = "", keys_array = variable_struct_get_names(states);

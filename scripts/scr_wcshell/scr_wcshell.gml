@@ -26,6 +26,7 @@ function scr_wc_create()
 	WCscr_altname("panic", "pizzatime");
 	WCscr_altname("create", "object");
 	WCscr_altname("showcollisions", "toggle_collisions");
+	WCscr_altname("char", "character");
 	
 	// selection modes
 	enum WC_select_modes

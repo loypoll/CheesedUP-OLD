@@ -6,9 +6,8 @@ uniform vec3 color2;
 
 void main()
 {
-	// sugary spire reference
     vec4 color = vec4(texture2D(gm_BaseTexture, v_vTexcoord));
-	if ((color.r + color.g + color.b) > 0.01)
+	if (distance(color, vec4(0, 0, 0, 1)) <= 0.004)
 		color.rgb = color1;
 	else
 		color.rgb = color2;
