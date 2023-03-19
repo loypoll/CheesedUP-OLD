@@ -1,6 +1,12 @@
 #macro REMIX global.gameplay
 #macro debug true//(GM_build_type == "run")
 
+if os_browser != browser_not_a_browser
+{
+	show_message_async("You have your build settings set to GX.games!!!\nChange it to \"Test\" or \"Windows\"!!!");
+	game_end();
+}
+
 // initialize
 scr_get_languages();
 pal_swap_init_system_fix(shd_pal_swapper, true);
