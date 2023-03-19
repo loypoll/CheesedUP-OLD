@@ -86,14 +86,15 @@ if (targetplayer.x > (x - 950) && targetplayer.x < (x + 950) && y <= (targetplay
 		activated = 1;
 		image_index = 0;
 		sprite_index = spr_twoliter_wakingup;
-		image_xscale = (-(sign((x - targetplayer.x))));
+		if x != targetplayer.x
+			image_xscale = (-(sign((x - targetplayer.x))));
 	}
 }
 if (targetplayer.x > (x - 400) && targetplayer.x < (x + 400) && y <= (targetplayer.y + 150) && y >= (targetplayer.y - 60))
 {
 	if (bombreset <= 0)
 	{
-		if ((-(sign((x - targetplayer.x)))) != 0)
+		if x != targetplayer.x
 			image_xscale = (-(sign((x - targetplayer.x))));
 		if (state == states.walk)
 		{

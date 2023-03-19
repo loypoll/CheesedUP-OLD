@@ -16,8 +16,6 @@ with (obj_player)
 				targetRoom = hall.targetRoom;
 				
 				x = hall.x;
-				if global.coop
-					y = hall.y - 76;
 				
 				sprite_index = spr_downpizzabox;
 				image_index = 0;

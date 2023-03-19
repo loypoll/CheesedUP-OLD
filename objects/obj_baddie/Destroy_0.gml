@@ -2,7 +2,7 @@ if (room == rm_editor)
 	exit;
 if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite or elitehit <= 0) && destroyable)
 {
-	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman)
+	if (object_index != obj_peppinoclone && object_index != obj_ghoul && object_index != obj_bazookabaddie && object_index != obj_snowman && object_index != obj_twoliterdog)
 	{
 		with (instance_create(x, y, obj_sausageman_dead))
 		{
@@ -62,6 +62,19 @@ if (ds_list_find_index(global.baddieroom, id) == -1 && (!elite or elitehit <= 0)
 		{
 			with (instance_create(x, y, obj_sausageman_dead))
 				sprite_index = spr_tank_wheel;
+		}
+	}
+	if object_index == obj_twoliterdog
+	{
+		var p = instance_nearest(x, y, obj_player);
+		if p && x != p.x
+			image_xscale = sign(x - p.x);
+		
+		with instance_create(x, y, obj_twoliterball)
+		{
+			if other.explodeInstant
+				instance_destroy();
+			image_xscale = other.image_xscale;
 		}
 	}
 	if (object_index == obj_cheeseslime && snotty)
