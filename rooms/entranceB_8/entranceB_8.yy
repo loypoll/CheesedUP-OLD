@@ -244,7 +244,7 @@
   ],
   "parent": {
     "name": "John Gutter",
-    "path": "folders/Rooms/B-Side Levels/John Gutter.yy",
+    "path": "folders/Rooms/CheesyPizza/B-Side Levels/John Gutter.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

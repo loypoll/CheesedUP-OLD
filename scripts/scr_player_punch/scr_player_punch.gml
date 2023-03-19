@@ -102,7 +102,7 @@ function scr_player_punch()
 					image_index = 0;
 					vsp = -11;
 					state = states.mach2;
-					sprite_index = spr_mach2jump;
+					sprite_index = spr_player_longjump;
 				}
 				if _kungfuground && vsp < 0
 					sprite_index = choose(spr_player_kungfuair1, spr_player_kungfuair2, spr_player_kungfuair3);

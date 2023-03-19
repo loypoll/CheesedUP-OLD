@@ -155,6 +155,7 @@ if (global.panic)
 	draw_set_valign(1);
 	draw_set_font(global.bigfont);
 	draw_text(timer_x + timer_xx, timer_y + timer_yy, concat(minutes, ":", seconds));
+	draw_set_colour(c_white);
 }
 else if (surface_exists(bar_surface))
 	surface_free(bar_surface);
