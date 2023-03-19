@@ -66,7 +66,7 @@ for (var i = 0; i < ds_list_size(global.afterimage_list); i++)
 				shader_set_uniform_f(other.color1, color_get_red(b) / 255, color_get_green(b) / 255, color_get_blue(b) / 255);
 				b = merge_colour(b, c_black, 0.9);
 				shader_set_uniform_f(other.color2, color_get_red(b) / 255, color_get_green(b) / 255, color_get_blue(b) / 255);
-				b = image_blend;
+				b = c_white;
 			}
 			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, b, a);
 			if (shd)

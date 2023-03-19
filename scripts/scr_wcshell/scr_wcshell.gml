@@ -25,6 +25,7 @@ function scr_wc_create()
 	WCscr_altname("var", "variable");
 	WCscr_altname("panic", "pizzatime");
 	WCscr_altname("create", "object");
+	WCscr_altname("showcollisions", "toggle_collisions");
 	
 	// selection modes
 	enum WC_select_modes
@@ -225,22 +226,32 @@ function scr_wc_create()
 	function WCscr_getvalue(value)
 	{
 		value = string(value);
-		if asset_get_index(value) != -1 // asset
+		
+		// asset
+		if asset_get_index(value) != -1
 			value = asset_get_index(value);
-		else if string_is_number(value) // number
+			
+		// number
+		else if string_is_number(value)
 			value = real(value);
-		else if ds_map_exists(WC_builtins, value) // builtin variable
+		
+		// builtin variable
+		else if ds_map_exists(WC_builtins, value) 
 			value = ds_map_find_value(WC_builtins, value);
-		else if string_char_at(value, 1) == "'"
-		&& string_char_at(value, string_length(value)) == "'" // forced string
+		
+		// forced string
+		else if string_char_at(value, 1) == "\""
+		&& string_char_at(value, string_length(value)) == "\""
 		{
 			value = string_delete(value, 1, 1);
 			value = string_delete(value, string_length(value), 1);
 		}
+		
+		// parse?
 		else
 		{
-			// parse?
-			
+			// \" to "
+			value = string_replace(value, "\\\"", "\"");
 		}
 		return value;
 	}

@@ -25,8 +25,8 @@ if (player && key && (player.state == states.normal or player.state == states.ma
 		
 		if REMIX
 		{
-			smoothx = x - (door.x + 50);
-			x = door.x + 50;
+			smoothx = x - (other.x + 50);
+			x = other.x + 50;
 			keydoor = true;
 		}
 	}

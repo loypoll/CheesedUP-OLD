@@ -562,7 +562,6 @@ if !variable_global_exists("saveroom")
 	global.ammoalt = 1;
 	global.mort = false;
 	global.stylelock = false;
-	global.attackstyle = 0;
 	global.pummeltest = true;
 	global.horse = false;
 	global.checkpoint_room = -4;

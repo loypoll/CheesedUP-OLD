@@ -1,14 +1,21 @@
+if instance_exists(obj_loadingscreen)
+{
+	// delay the inevitable
+	alarm[0] = 1;
+	exit;
+}
+
 if (instance_exists(obj_player))
 {
 	if (custom_level == 0)
 	{
-		with (obj_player)
-		{
-			if (place_meeting(x, y, obj_goldendoor))
-				game_restart();
-		}
 		if (room != obj_player1.targetRoom or roomreset)
 		{
+			if obj_player1.targetRoom == room
+			{
+				with obj_player1
+					event_perform(ev_other, ev_room_start);
+			}
 			scr_room_goto(obj_player1.targetRoom);
 			with (obj_player)
 			{
@@ -19,15 +26,8 @@ if (instance_exists(obj_player))
 				}
 			}
 		}
-		if (global.coop == 1)
+		if (global.coop)
 		{
-			if (room != obj_player2.targetRoom or roomreset)
-				scr_room_goto(obj_player1.targetRoom);
-			with (obj_player)
-			{
-				if (state == states.ejected)
-					state = states.normal;
-			}
 			with (obj_player2)
 			{
 				if (instance_exists(obj_coopplayerfollow))

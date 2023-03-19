@@ -90,7 +90,7 @@ function scr_player_punch()
 						movespeed = 12;
 				}
 				else if key_attack && move != 0
-					movespeed += 0.2;
+					movespeed += 0.02;
 				
 				if _kungfuground && (input_buffer_jump > 0 && can_jump && (character != "N" or noisetype == 0))
 				{
@@ -220,7 +220,7 @@ function scr_player_punch()
 						if !grounded
 						{
 							if !place_meeting(x + hsp, y, obj_unclimbablewall)
-								wallspeed = 6;
+								wallspeed = movespeed;
 							else
 								wallspeed = -vsp;
 							grabclimbbuffer = 10;

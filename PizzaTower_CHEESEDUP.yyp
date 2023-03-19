@@ -93,7 +93,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Escape","folderPath":"folders/Rooms/Tower/Escape.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Scrapped Tower","folderPath":"folders/Rooms/Tower/Scrapped Tower.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Secrets","folderPath":"folders/Rooms/Tower/Secrets.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CheesyPizza","folderPath":"folders/Rooms/Tower/Secrets/CheesyPizza.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Secrets","folderPath":"folders/Rooms/Tower/CheesyPizza/Secrets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tutorial","folderPath":"folders/Rooms/Tower/Tutorial.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Rooms/Unused.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"April Factory","folderPath":"folders/Rooms/Unused/April Factory.yy",},
@@ -423,6 +423,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"War","folderPath":"folders/Tile Sets/War.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"CheesyPizza","folderPath":"folders/Rooms/Tower/CheesyPizza.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
@@ -3863,6 +3864,7 @@
     {"id":{"name":"spr_list3","path":"sprites/spr_list3/spr_list3.yy",},},
     {"id":{"name":"spr_player_crouchfall","path":"sprites/spr_player_crouchfall/spr_player_crouchfall.yy",},},
     {"id":{"name":"spr_player_crouchjump","path":"sprites/spr_player_crouchjump/spr_player_crouchjump.yy",},},
+    {"id":{"name":"tower_freerun","path":"rooms/tower_freerun/tower_freerun.yy",},},
     {"id":{"name":"spr_player_crouch","path":"sprites/spr_player_crouch/spr_player_crouch.yy",},},
     {"id":{"name":"spr_player_fall2","path":"sprites/spr_player_fall2/spr_player_fall2.yy",},},
     {"id":{"name":"spr_player_fall","path":"sprites/spr_player_fall/spr_player_fall.yy",},},
@@ -8234,6 +8236,7 @@
     {"roomId":{"name":"entranceB_treasure","path":"rooms/entranceB_treasure/entranceB_treasure.yy",},},
     {"roomId":{"name":"room_empty","path":"rooms/room_empty/room_empty.yy",},},
     {"roomId":{"name":"rm_beebawp","path":"rooms/rm_beebawp/rm_beebawp.yy",},},
+    {"roomId":{"name":"tower_freerun","path":"rooms/tower_freerun/tower_freerun.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","ConfigValues":{},"directory":"","groupParent":null,"isScaled":false,"loadType":"default","mipsToGenerate":0,"targets":-1,},
