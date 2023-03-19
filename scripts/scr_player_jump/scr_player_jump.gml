@@ -410,11 +410,10 @@ function state_player_jump()
 			{
 				if (key_attack2 && (pogochargeactive or pizzapepper > 0))
 				{
-					if (!key_up)
-						sprite_index = spr_playerN_jetpackstart;
-					else
-						sprite_index = spr_superjumpprep;
+					sprite_index = !key_up ? spr_playerN_jetpackstart : spr_superjumpprep;
 					sound_play_3d(sfx_woag, x, y)
+					if sprite_index == spr_playerN_jetpackstart && REMIX
+							sound_play_3d(sfx_jetpackstart, x, y)
 					image_index = 0;
 					hsp = 0;
 					vsp = 0;
