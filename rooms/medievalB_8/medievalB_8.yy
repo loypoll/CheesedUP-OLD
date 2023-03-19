@@ -159,7 +159,7 @@
   ],
   "parent": {
     "name": "Pizzascape",
-    "path": "folders/Rooms/B-Side Levels/Pizzascape.yy",
+    "path": "folders/Rooms/CheesyPizza/B-Side Levels/Pizzascape.yy",
   },
   "parentRoom": null,
   "physicsSettings": {
