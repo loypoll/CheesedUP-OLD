@@ -176,9 +176,11 @@ function scr_player_grab()
 		sprite_index = spr_haulingland;
 	if (sprite_index == spr_haulingland && floor(image_index) == (image_number - 1))
 		sprite_index = spr_haulingidle;
-	if (input_buffer_slap > 0 && sprite_index != spr_swingding)
+	if ((input_buffer_slap > 0 or input_buffer_grab > 0) && sprite_index != spr_swingding)
 	{
 		input_buffer_slap = 0;
+		input_buffer_grab = 0;
+		
 		if (move != 0)
 			move = xscale;
 		hsp = xscale * movespeed;
@@ -190,11 +192,13 @@ function scr_player_grab()
 			sprite_index = spr_uppercutfinishingblow;
 		image_index = 0;
 	}
-	else if ((input_buffer_slap > 0 && sprite_index == spr_swingding && swingdingendcooldown > 20) or swingdingthrow)
+	else if (((input_buffer_slap > 0 or input_buffer_grab > 0) && sprite_index == spr_swingding && swingdingendcooldown > 20) or swingdingthrow)
 	{
 		if (fmod_event_instance_is_playing("event:/sfx/pep/spin"))
 			fmod_event_instance_stop("event:/sfx/pep/spin", true);
 		input_buffer_slap = 0;
+		input_buffer_grab = 0;
+		
 		if (move != 0)
 			move = xscale;
 		hsp = xscale * movespeed;

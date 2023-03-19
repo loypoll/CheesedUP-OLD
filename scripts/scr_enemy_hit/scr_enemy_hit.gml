@@ -31,6 +31,8 @@ function scr_enemy_hit()
 			thrown = true;
 		vsp = hitvsp;
 		hsp = hithsp;
+		if vsp < 0
+			grounded = false;
 		global.hit += 1;
 		if (other.object_index == obj_pizzaball)
 			global.golfhit += 1;
@@ -38,10 +40,18 @@ function scr_enemy_hit()
 			global.combotime = 60;
 		global.heattime = 60;
 		alarm[1] = 5;
+		
 		var _hp = 0;
 		if ((global.attackstyle == 3 or global.attackstyle == 0) && !global.kungfu)
 			_hp = -1;
-		if (((!elite && (hp <= _hp or mach3destroy)) or (elite && (elitehit <= 0 or mach3destroy))) && object_get_parent(object_index) != 20 && object_index != obj_pizzafaceboss && destroyable && !mach2)
+		if shoulderbashed
+		{
+			_hp = -7;
+			mach3destroy = false;
+		}
+		shoulderbashed = false;
+		
+		if (((!elite && (hp <= _hp or mach3destroy)) or (elite && (elitehit <= 0 or mach3destroy))) && object_get_parent(object_index) != par_boss && object_index != obj_pizzafaceboss && destroyable && !mach2)
 		{
 			instance_destroy();
 			instance_create(x, y, obj_genericpoofeffect);

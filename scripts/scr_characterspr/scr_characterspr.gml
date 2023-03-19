@@ -234,7 +234,11 @@ function scr_characterspr()
 	spr_mortthrow = spr_player_mortthrow;
 	spr_breakdanceuppercut = spr_player_breakdanceuppercut;
 	spr_breakdanceuppercutend = spr_player_breakdanceuppercutend;
+	
 	spr_keydoor = spr_player_keydoor;
+	spr_attackdash = spr_player_attackdash;
+	spr_airattackstart = spr_player_airattackstart;
+	spr_airattack = spr_player_airattack;
 	
 	spr_palette = spr_peppalette;
 	paletteselect = 1;

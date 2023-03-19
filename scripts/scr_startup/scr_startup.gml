@@ -55,6 +55,10 @@ exception_unhandled_handler
 	    show_debug_message(string(e));
 		show_message("The game crashed! longMessage:\n\n" + e.longMessage);
 		
+		stop_music();
+		sound_stop_all();
+		sound_play_centered(sfx_hurt);
+		
 		var _f = file_text_open_write("crash_log.txt");
 		file_text_write_string(_f, string(e));
 		file_text_close(_f);

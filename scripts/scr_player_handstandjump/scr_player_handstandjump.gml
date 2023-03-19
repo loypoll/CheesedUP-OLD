@@ -10,7 +10,7 @@ function scr_player_handstandjump()
 	{
 		if (movespeed < 10)
 		{
-			if ((sprite_index == spr_player_pistolshot or sprite_index == spr_shotgun_shot) && movespeed < 8)
+			if (sprite_index == spr_player_pistolshot && movespeed < 8)
 				movespeed += 0.25;
 			else if (sprite_index == spr_player_lunge && movespeed < 12)
 				movespeed += 0.8;
@@ -46,6 +46,13 @@ function scr_player_handstandjump()
 	
 	var airattackdash = spr_suplexdashjump;
 	var airattackdashstart = spr_suplexdashjumpstart;
+	
+	if sprite_index == spr_attackdash or sprite_index == spr_airattack or sprite_index == spr_airattackstart
+	{
+		attackdash = spr_attackdash;
+		airattackdash = spr_airattack;
+		airattackdashstart = spr_airattackstart;
+	}
 	
 	/*
 	if (global.attackstyle == 2)

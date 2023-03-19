@@ -198,7 +198,8 @@ function scr_player_mach3()
 				{
 					switch global.attackstyle
 					{
-						case 1: // kungfu
+						case 1: // kung fu
+							input_buffer_slap = 0;
 							if grounded
 							{
 								with instance_create(x, y, obj_superdashcloud)
@@ -214,10 +215,32 @@ function scr_player_mach3()
 					
 							fmod_event_instance_play(snd_dive);
 							state = states.punch;
-							if movespeed < 10
-								movespeed = 10;
+							movespeed = max(movespeed, 10);
 							if vsp > 0
 								vsp = 0;
+							image_index = 0;
+							break;
+						
+						case 2: // shoulderbash
+							input_buffer_slap = 0;
+							if grounded
+							{
+								with instance_create(x, y, obj_superdashcloud)
+									image_xscale = other.xscale;
+								sprite_index = spr_attackdash;
+							}
+							else
+								sprite_index = spr_airattackstart;
+							suplexmove = true;
+							
+							particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+							create_particle(x, y, particle.crazyrunothereffect);
+							
+							fmod_event_instance_play(snd_dive);
+							state = states.handstandjump;
+							if vsp < 0 && !REMIX
+								vsp = 0;
+							movespeed = max(movespeed, 10);
 							image_index = 0;
 							break;
 					}

@@ -62,9 +62,11 @@ function scr_player_bombgrab()
 		}
 		if (sprite_index == spr_haulingjump && floor(image_index) == (image_number - 1))
 			sprite_index = spr_haulingfall;
-		if (input_buffer_slap > 0)
+		if (input_buffer_slap > 0 or input_buffer_grab > 0)
 		{
 			input_buffer_slap = 0;
+			input_buffer_grab = 0;
+			
 			image_index = 0;
 			if (key_up)
 			{

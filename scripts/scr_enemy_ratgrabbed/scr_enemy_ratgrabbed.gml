@@ -1,6 +1,6 @@
 function scr_enemy_ratgrabbed()
 {
-	var p = object_index == obj_junk or object_get_parent(object_index) == 593;
+	var p = object_index == obj_junk or object_get_parent(object_index) == obj_junk;
 	if ((!p && state == states.ratgrabbed) or (p && ratgrabbed))
 	{
 		visible = false;

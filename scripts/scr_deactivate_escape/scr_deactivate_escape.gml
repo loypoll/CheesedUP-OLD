@@ -13,7 +13,7 @@ function scr_deactivate_escape()
 			for (var i = 0; i < ds_list_size(deactivatedlist); i++)
 			{
 				var _id = ds_list_find_value(deactivatedlist, i);
-				if (object_get_parent(_id) == 622)
+				if (object_get_parent(_id) == obj_baddie)
 					_id.boundbox = false;
 				instance_deactivate_object(_id);
 			}
