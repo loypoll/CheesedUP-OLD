@@ -3605,6 +3605,7 @@
     {"name":"spr_player_supertaunt2","order":243,"path":"sprites/spr_player_supertaunt2/spr_player_supertaunt2.yy",},
     {"name":"spr_gate_spaceBG","order":41,"path":"sprites/spr_gate_spaceBG/spr_gate_spaceBG.yy",},
     {"name":"spr_player_supertaunt3","order":244,"path":"sprites/spr_player_supertaunt3/spr_player_supertaunt3.yy",},
+    {"name":"tower_extra2","order":5,"path":"rooms/tower_extra2/tower_extra2.yy",},
     {"name":"bg_dungeonsilouhette2","order":6,"path":"sprites/bg_dungeonsilouhette2/bg_dungeonsilouhette2.yy",},
     {"name":"spr_pizzahead_beatdown7","order":13,"path":"sprites/spr_pizzahead_beatdown7/spr_pizzahead_beatdown7.yy",},
     {"name":"spr_player_supertaunt4","order":245,"path":"sprites/spr_player_supertaunt4/spr_player_supertaunt4.yy",},
