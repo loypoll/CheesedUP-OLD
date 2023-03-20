@@ -1,6 +1,6 @@
 with (other)
 {
-	if (other.buffer <= 0 && state == states.handstandjump)
+	if (other.buffer <= 0 && state == states.handstandjump or (state == states.punch && string_pos("kungfu", sprite_get_name(sprite_index)) > 0))
 	{
 		sound_play_3d("event:/sfx/weenie/start", x, y);
 		state = states.rideweenie;

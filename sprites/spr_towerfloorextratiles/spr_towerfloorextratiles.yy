@@ -2,7 +2,7 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_towerfloorextratiles",
-  "bbox_bottom": 1343,
+  "bbox_bottom": 1663,
   "bbox_left": 0,
   "bbox_right": 1151,
   "bbox_top": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"21a9a910-017f-458c-a1fa-697e9185960c",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4bc7a3ea-3c9f-4539-8826-f39f9ab57c27",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1406,
+  "height": 1670,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"3fd1dd05-b03c-4f76-89ed-3377cdeb5bb5","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"9accfb3d-ba83-4e2d-92ac-4f7c837d7a29","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"21a9a910-017f-458c-a1fa-697e9185960c","path":"sprites/spr_towerfloorextratiles/spr_towerfloorextratiles.yy",},},},"Disabled":false,"id":"d2be7225-727d-4992-8d60-fc480f5fef8c","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"4bc7a3ea-3c9f-4539-8826-f39f9ab57c27","path":"sprites/spr_towerfloorextratiles/spr_towerfloorextratiles.yy",},},},"Disabled":false,"id":"f2c6ec82-5bde-4b5b-a688-37e4d46c2079","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

@@ -129,18 +129,18 @@ function Instakill()
 	{
 		if key_up
         {
-            other.baddieID.hitvsp = -11 * 1.25;
+            other.baddieID.hitvsp = -11;
             other.baddieID.hithsp = 0;
         }
         else if key_down
         {
-            other.baddieID.hitvsp = 11 * 1.25;
+            other.baddieID.hitvsp = 11;
             other.baddieID.hithsp = 0;
         }
         else
         {
-            other.baddieID.hitvsp = -8 * 1.25;
-            other.baddieID.hithsp = ((-other.baddieID.image_xscale) * 8) * 2;
+            other.baddieID.hitvsp = -8;
+            other.baddieID.hithsp = -other.baddieID.image_xscale * 8;
         }
 		other.baddieID.shoulderbashed = true; // reduces hp minimum to die to -6
 		suplexmove = false;

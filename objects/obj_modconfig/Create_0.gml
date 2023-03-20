@@ -246,7 +246,7 @@ var opt = add_option("Panic Background", "panicbg", "Brings back the wavy backgr
 		shader_set(shd_panicbg);
 		
 		shader_set_uniform_f(shader_get_uniform(shd_panicbg, "panic"), 1);
-		shader_set_uniform_f(shader_get_uniform(shd_panicbg, "time"), scr_current_time() / 1000);
+		shader_set_uniform_f(shader_get_uniform(shd_panicbg, "time"), current_time / 1000);
 		
 		draw_sprite_ext(bg_desert, -1, 0, 0, 0.4, 0.4, 0, c_white, 1);
 		

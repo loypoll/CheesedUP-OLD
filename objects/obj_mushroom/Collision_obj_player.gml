@@ -1,6 +1,5 @@
 if (other.cutscene == 0 && sprite_index != spr_bigmushroom_bounce && other.state != states.gotoplayer)
 {
-	other.jumpstop = true;
 	with (other)
 	{
 		grounded = false;

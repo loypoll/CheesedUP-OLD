@@ -34,7 +34,7 @@ sel = {
 };
 characters = [
 	["P", spr_player_idle, spr_peppalette, 1], // character, idle, palette sprite, main color
-	["N", spr_playerN_idle, spr_noisepalette, 1]
+	//["N", spr_playerN_idle, spr_noisepalette, 1]
 ];
 
 // set in user event 0

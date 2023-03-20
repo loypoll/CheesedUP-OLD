@@ -101,7 +101,7 @@ if ((floor(obj_player1.image_index) == (obj_player1.image_number - 1) && obj_pla
 }
 
 // level name at the bottom of the screen
-if REMIX && other.state != states.victory
+if REMIX && other.state != states.victory && other.state != states.backtohub
 {
 	if !instance_exists(transfotip)
 	{

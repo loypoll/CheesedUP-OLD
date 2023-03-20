@@ -85,8 +85,7 @@ add_music(medieval_1, "event:/music/w1/medieval", "event:/music/w1/medievalsecre
 	if (s != -1)
 		fmod_event_instance_set_parameter(event, "state", s, 1)
 	return;
-}
-)
+});
 add_music(ruin_1, "event:/music/w1/ruin", "event:/music/w1/ruinsecret", 0, function(room, event) //anon_gml_Object_obj_music_Create_0_3822_gml_Object_obj_music_Create_0
 {
 	s = -1
@@ -126,8 +125,7 @@ add_music(badland_1, "event:/music/w2/desert", "event:/music/w2/desertsecret", 0
 	if (s != -1)
 		fmod_event_instance_set_parameter(event, "state", s, 1)
 	return;
-}
-)
+});
 add_music(farm_2, "event:/music/w2/farm", "event:/music/w2/farmsecret", 0, function(room, event) //anon_gml_Object_obj_music_Create_0_4823_gml_Object_obj_music_Create_0
 {
 	s = -1
@@ -232,11 +230,65 @@ add_music(kidsparty_1, "event:/music/w5/kidsparty", "event:/music/w5/kidspartyse
 add_music(war_1, "event:/music/w5/war", "event:/music/w5/warsecret", 0)
 
 // cheesed up
-add_music(tower_extra, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state)
-add_music(rm_onlinerace, "event:/music/pto/bossroom", "event:/music/pillarmusic", 0)
+add_music(tower_extra, "event:/music/hub", "event:/music/pillarmusic", 0, hub_state);
+add_music(rm_onlinerace, "event:/music/pto/bossroom", "event:/music/pillarmusic", 0);
+
+add_music(midway_1, "event:/music/pto/midway", "event:/music/midwaysecret", 0);
 
 // old levels
 add_music(beach_1, "event:/music/w3/beach", "event:/music/w3/beachsecret", 0);
+add_music(factory_1, "event:/music/w4/industrial", "event:/music/w4/industrialsecret", 0, function(room, event, event_secret)
+{
+	var s = -1;
+	switch room
+	{
+		case factory_1:
+			s = 0;
+			break;
+		case factory_2:
+			s = 1;
+			break;
+	}
+
+	if s != -1
+		fmod_event_instance_set_parameter(event, "state", s, true);
+});
+add_music(desert_1, "event:/music/w2/desert", "event:/music/w2/desertsecret", 0, function(room, event)
+{
+	var s = -1;
+	switch room
+	{
+		case badland_1:
+		case badland_8b:
+		case badland_10:
+			s = 0;
+			break;
+		case badland_9:
+		case badland_mart4:
+			s = 1;
+			break;
+	}
+	
+	if s != -1
+		fmod_event_instance_set_parameter(event, "state", s, true);
+});
 
 // bside
-add_music(entranceB_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0)
+add_music(entranceB_1, "event:/music/w1/entrance", "event:/music/w1/entrancesecret", 0);
+add_music(medievalB_1, "event:/music/w1/medieval", "event:/music/w1/medievalsecret", 0, function(room, event, event_secret)
+{
+	var s = -1;
+	switch room
+	{
+		case medievalB_1:
+		case medievalB_5:
+			s = 0;
+			break;
+		case medievalB_6:
+			s = 2;
+			break;
+	}
+	
+	if s != -1
+		fmod_event_instance_set_parameter(event, "state", s, true);
+});

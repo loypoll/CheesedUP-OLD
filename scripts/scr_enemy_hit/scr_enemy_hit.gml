@@ -42,14 +42,13 @@ function scr_enemy_hit()
 		alarm[1] = 5;
 		
 		var _hp = 0;
-		if ((global.attackstyle == 3 or global.attackstyle == 0) && !global.kungfu)
+		if (/*(global.attackstyle == 3 or global.attackstyle == 0) && */!global.kungfu)
 			_hp = -1;
 		if shoulderbashed
 		{
 			_hp = -7;
 			mach3destroy = false;
 		}
-		shoulderbashed = false;
 		
 		if (((!elite && (hp <= _hp or mach3destroy)) or (elite && (elitehit <= 0 or mach3destroy))) && object_get_parent(object_index) != par_boss && object_index != obj_pizzafaceboss && destroyable && !mach2)
 		{

@@ -1,5 +1,18 @@
 function scr_enemy_stun()
 {
+	if shoulderbashed
+	{
+		switch hp
+	    {
+	        case -1:
+	            grav = 1.1;
+	            break;
+	        case -2:
+	            grav = 1.3;
+	            break;
+	    }
+	}
+	
 	if (object_index == obj_ninja)
 		attack = true;
 	switch (global.stylethreshold)
@@ -23,7 +36,7 @@ function scr_enemy_stun()
 	{
 		if (sprite_index != spr_tank_hitwall)
 		{
-			if (thrown == 0)
+			if (thrown == 0 or shoulderbashed)
 				sprite_index = stunfallspr;
 			else
 				sprite_index = spr_dead;
@@ -69,7 +82,7 @@ function scr_enemy_stun()
 				scr_destroy_destructibles(0, hitvsp);
 		}
 	}
-	if (hitvsp < 0 && check_wall(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
+	if (hitvsp < 0 && scr_solid(x, y - 1) && !place_meeting(x, y - 1, obj_destructibles))
 	{
 		if (thrown == 1)
 		{
@@ -78,7 +91,7 @@ function scr_enemy_stun()
 			thrown = false;
 		}
 	}
-	if (hithsp != 0 && check_wall(x + hithsp, y) && !place_meeting(x + hithsp, y, obj_destructibles))
+	if (hithsp != 0 && scr_solid(x + hithsp, y) && !place_meeting(x + hithsp, y, obj_destructibles))
 	{
 		if (thrown == 1)
 		{
@@ -150,7 +163,10 @@ function scr_enemy_stun()
 			hsp = Approach(hsp, 0, 0.3);
 	}
 	if (!thrown)
+	{
+		shoulderbashed = false;
 		grav = 0.5;
+	}
 	if (abs(hsp) > 4 && grounded)
 	{
 		if (!instance_exists(dashcloudid))

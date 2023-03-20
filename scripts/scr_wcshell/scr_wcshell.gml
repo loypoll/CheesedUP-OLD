@@ -804,7 +804,7 @@ function scr_wc_drawgui()
 				{
 					var getvar = variable_instance_get(WC_debugview_target, objvars[b]);
 					
-					draw_set_colour(c_white);
+					draw_set_colour(b % 2 == 1 ? c_ltgray : c_white);
 					if string_char_at(string(getvar), 1) == "-"
 						draw_set_colour(merge_colour(c_white, c_red, 0.5));
 					var todraw = string_replace_all(string(getvar), "\n", "\\n");
