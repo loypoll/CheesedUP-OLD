@@ -5358,6 +5358,7 @@
     {"id":{"name":"bg_pizzamartinterior","path":"sprites/bg_pizzamartinterior/bg_pizzamartinterior.yy",},},
     {"id":{"name":"spr_hallwayvertical","path":"sprites/spr_hallwayvertical/spr_hallwayvertical.yy",},},
     {"id":{"name":"spr_vigilantenoisette1","path":"sprites/spr_vigilantenoisette1/spr_vigilantenoisette1.yy",},},
+    {"id":{"name":"medievalB_9b","path":"rooms/medievalB_9b/medievalB_9b.yy",},},
     {"id":{"name":"spr_version","path":"sprites/spr_version/spr_version.yy",},},
     {"id":{"name":"spr_warterminal","path":"sprites/spr_warterminal/spr_warterminal.yy",},},
     {"id":{"name":"bg_grindrail","path":"sprites/bg_grindrail/bg_grindrail.yy",},},
@@ -8335,6 +8336,7 @@
     {"roomId":{"name":"midway_lap","path":"rooms/midway_lap/midway_lap.yy",},},
     {"roomId":{"name":"tower_extra2","path":"rooms/tower_extra2/tower_extra2.yy",},},
     {"roomId":{"name":"medievalB_9","path":"rooms/medievalB_9/medievalB_9.yy",},},
+    {"roomId":{"name":"medievalB_9b","path":"rooms/medievalB_9b/medievalB_9b.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","ConfigValues":{},"directory":"","groupParent":null,"isScaled":false,"loadType":"default","mipsToGenerate":0,"targets":-1,},
