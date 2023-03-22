@@ -1471,6 +1471,7 @@
     {"id":{"name":"obj_superdashcloud","path":"objects/obj_superdashcloud/obj_superdashcloud.yy",},},
     {"id":{"name":"obj_highjumpcloud1","path":"objects/obj_highjumpcloud1/obj_highjumpcloud1.yy",},},
     {"id":{"name":"obj_highjumpcloud2","path":"objects/obj_highjumpcloud2/obj_highjumpcloud2.yy",},},
+    {"id":{"name":"medievalB_9","path":"rooms/medievalB_9/medievalB_9.yy",},},
     {"id":{"name":"obj_grindeffect","path":"objects/obj_grindeffect/obj_grindeffect.yy",},},
     {"id":{"name":"obj_world5john","path":"objects/obj_world5john/obj_world5john.yy",},},
     {"id":{"name":"obj_brickgustavo","path":"objects/obj_brickgustavo/obj_brickgustavo.yy",},},
@@ -8333,6 +8334,7 @@
     {"roomId":{"name":"midway_7","path":"rooms/midway_7/midway_7.yy",},},
     {"roomId":{"name":"midway_lap","path":"rooms/midway_lap/midway_lap.yy",},},
     {"roomId":{"name":"tower_extra2","path":"rooms/tower_extra2/tower_extra2.yy",},},
+    {"roomId":{"name":"medievalB_9","path":"rooms/medievalB_9/medievalB_9.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","ConfigValues":{},"directory":"","groupParent":null,"isScaled":false,"loadType":"default","mipsToGenerate":0,"targets":-1,},

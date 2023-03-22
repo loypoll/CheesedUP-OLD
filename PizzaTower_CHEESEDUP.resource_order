@@ -1161,6 +1161,7 @@
     {"name":"obj_superdashcloud","order":818,"path":"objects/obj_superdashcloud/obj_superdashcloud.yy",},
     {"name":"obj_highjumpcloud1","order":819,"path":"objects/obj_highjumpcloud1/obj_highjumpcloud1.yy",},
     {"name":"obj_highjumpcloud2","order":820,"path":"objects/obj_highjumpcloud2/obj_highjumpcloud2.yy",},
+    {"name":"medievalB_9","order":10,"path":"rooms/medievalB_9/medievalB_9.yy",},
     {"name":"obj_grindeffect","order":821,"path":"objects/obj_grindeffect/obj_grindeffect.yy",},
     {"name":"obj_world5john","order":32,"path":"objects/obj_world5john/obj_world5john.yy",},
     {"name":"obj_brickgustavo","order":384,"path":"objects/obj_brickgustavo/obj_brickgustavo.yy",},
