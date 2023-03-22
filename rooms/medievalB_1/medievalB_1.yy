@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "medievalB_1",
-  "creationCodeFile": "${project_dir}/rooms/medieval_1/RoomCreationCode.gml",
+  "creationCodeFile": "${project_dir}/rooms/medievalB_1/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
