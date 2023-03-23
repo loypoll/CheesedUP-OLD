@@ -434,6 +434,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tower and Hub","folderPath":"folders/Tile Sets/Tower and Hub.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Unused","folderPath":"folders/Tile Sets/Unused.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"War","folderPath":"folders/Tile Sets/War.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Ancient Cheese","folderPath":"folders/Rooms/CheesyPizza/B-Side Levels/Ancient Cheese.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"credits.txt","CopyToMask":-1,"filePath":"datafiles",},
@@ -6241,6 +6242,7 @@
     {"id":{"name":"spr_madpop","path":"sprites/spr_madpop/spr_madpop.yy",},},
     {"id":{"name":"spr_pizzasona18","path":"sprites/spr_pizzasona18/spr_pizzasona18.yy",},},
     {"id":{"name":"spr_player_suplexcancel","path":"sprites/spr_player_suplexcancel/spr_player_suplexcancel.yy",},},
+    {"id":{"name":"ruinB_1","path":"rooms/ruinB_1/ruinB_1.yy",},},
     {"id":{"name":"spr_hamkuff_chain2","path":"sprites/spr_hamkuff_chain2/spr_hamkuff_chain2.yy",},},
     {"id":{"name":"spr_playerV_angryHUD","path":"sprites/spr_playerV_angryHUD/spr_playerV_angryHUD.yy",},},
     {"id":{"name":"spr_playerV_happyHUD","path":"sprites/spr_playerV_happyHUD/spr_playerV_happyHUD.yy",},},
@@ -8347,6 +8349,7 @@
     {"roomId":{"name":"medievalB_secret6","path":"rooms/medievalB_secret6/medievalB_secret6.yy",},},
     {"roomId":{"name":"medievalB_secret4","path":"rooms/medievalB_secret4/medievalB_secret4.yy",},},
     {"roomId":{"name":"medievalB_secret5","path":"rooms/medievalB_secret5/medievalB_secret5.yy",},},
+    {"roomId":{"name":"ruinB_1","path":"rooms/ruinB_1/ruinB_1.yy",},},
   ],
   "TextureGroups": [
     {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","ConfigValues":{},"directory":"","groupParent":null,"isScaled":false,"loadType":"default","mipsToGenerate":0,"targets":-1,},

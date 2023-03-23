@@ -170,6 +170,7 @@
     {"name":"Tower and Hub","order":1,"path":"folders/Tile Sets/Tower and Hub.yy",},
     {"name":"Unused","order":25,"path":"folders/Tile Sets/Unused.yy",},
     {"name":"War","order":23,"path":"folders/Tile Sets/War.yy",},
+    {"name":"Ancient Cheese","order":2,"path":"folders/Rooms/CheesyPizza/B-Side Levels/Ancient Cheese.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_bossdoor","order":10,"path":"objects/obj_bossdoor/obj_bossdoor.yy",},
