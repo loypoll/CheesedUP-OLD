@@ -289,7 +289,7 @@ function scr_player_mach2()
 				particle_set_scale(particle.crazyrunothereffect, xscale, 1);
 				create_particle(x, y, particle.crazyrunothereffect);
 				
-				fmod_event_instance_play(snd_dive);
+				sound_play_3d("event:/sfx/pto/kungfu", x, y);
 				state = states.punch;
 				movespeed = max(movespeed, 10);
 				if vsp > 0

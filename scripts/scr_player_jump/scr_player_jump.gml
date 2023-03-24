@@ -315,7 +315,7 @@ function state_player_jump()
 		
 				if vsp > 0
 					vsp = 0;
-				fmod_event_instance_play(snd_dive);
+				sound_play_3d("event:/sfx/pto/kungfu", x, y);
 				state = states.punch;
 				movespeed = max(movespeed, 10);
 				image_index = 0;
