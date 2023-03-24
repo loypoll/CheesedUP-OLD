@@ -1,4 +1,4 @@
-msg = "Midway";
-targetRoom = midway_1;
-level = "midway";
-group_arr = ["midwaygroup"];
+msg = "Freefalling";
+//targetRoom = sky_1;
+level = "sky";
+group_arr = ["skygroup"];

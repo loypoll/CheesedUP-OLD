@@ -1,2 +1,2 @@
-level = "medieval";
+level = "canada";
 treasureindex = 1;
