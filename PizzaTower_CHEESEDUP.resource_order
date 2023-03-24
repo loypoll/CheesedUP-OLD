@@ -108,6 +108,7 @@
     {"name":"Two Liter Dog","order":56,"path":"folders/Sprites/Baddie/Two Liter Dog.yy",},
     {"name":"Boss","order":8,"path":"folders/Sprites/Boss.yy",},
     {"name":"CheesyPizza","order":13,"path":"folders/Sprites/CheesyPizza.yy",},
+    {"name":"Levels","order":2,"path":"folders/Sprites/CheesyPizza/Levels.yy",},
     {"name":"Pizzasonas","order":1,"path":"folders/Sprites/CheesyPizza/Pizzasonas.yy",},
     {"name":"Cutscene","order":10,"path":"folders/Sprites/Cutscene.yy",},
     {"name":"Debug","order":2,"path":"folders/Sprites/Debug.yy",},
@@ -171,7 +172,6 @@
     {"name":"Tower and Hub","order":1,"path":"folders/Tile Sets/Tower and Hub.yy",},
     {"name":"Unused","order":25,"path":"folders/Tile Sets/Unused.yy",},
     {"name":"War","order":23,"path":"folders/Tile Sets/War.yy",},
-    {"name":"Levels","order":2,"path":"folders/Sprites/CheesyPizza/Levels.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_bossdoor","order":10,"path":"objects/obj_bossdoor/obj_bossdoor.yy",},

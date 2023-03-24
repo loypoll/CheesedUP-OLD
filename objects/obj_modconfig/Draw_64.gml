@@ -57,7 +57,8 @@ draw_set_font(global.font_small);
 draw_text_ext(690, is_callable(opt.drawfunc) ? 420 : 260, opt.desc, 16, 450);
 
 draw_set_font(global.smallfont);
-draw_text(690, 116, opt.opts[opt.value][0]);
+if opt.value < array_length(opt.opts)
+	draw_text(690, 116, opt.opts[opt.value][0]);
 
 if is_callable(opt.drawfunc)
 {

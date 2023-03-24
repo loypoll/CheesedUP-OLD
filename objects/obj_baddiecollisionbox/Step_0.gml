@@ -75,7 +75,8 @@ if (instance_exists(baddieID) && place_meeting(x, y, obj_player) && obj_player.c
 					image_index = 0;
 				}
 			}
-			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) or state != states.tumble) && (/*(state == states.handstandjump && global.attackstyle == 1) or */instakillmove == 1) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
+			if (instance_exists(other.baddieID) && other.baddieID.invtime == 0 && ((other.baddieID.object_index != obj_bigcheese && other.baddieID.object_index != obj_pepbat) or state != states.tumble) && other.baddieID.state != states.grabbed && !other.baddieID.invincible && other.baddieID.instantkillable)
+			&& (instakillmove && !(state == states.handstandjump && global.attackstyle == 2 && (object_index == obj_pepperman or object_index == obj_noiseboss or object_index == obj_vigilanteboss or object_index == obj_pizzafaceboss or object_index == obj_fakepepboss or object_index == obj_pizzafaceboss_p3)))
 				Instakill();
 			else if (instance_exists(other.baddieID) && state == states.handstandjump && global.attackstyle != 3 && other.baddieID.invtime <= 0 && !other.baddieID.invincible)
 			{
