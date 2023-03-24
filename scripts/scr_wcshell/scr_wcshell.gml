@@ -67,7 +67,7 @@ function scr_wc_create()
 	WCscr_addbind(ord("3"), "var");
 	WCscr_addbind(ord("4"), "oobcam");
 	WCscr_addbind(ord("5"), "panic");
-	WCscr_addbind(ord("7"), "showinvisible");
+	WCscr_addbind(ord("7"), "showcollisions");
 	WCscr_addbind(ord("9"), "debughud");
 	WCscr_addbind(vk_numpad0, function() {
 		global.option_resolution = 1;
