@@ -1,0 +1,1 @@
+targetRoom = ruinB_3;

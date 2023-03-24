@@ -1,1 +1,1 @@
-targetRoom = medieval_treasure;
+targetRoom = medievalB_treasure;
