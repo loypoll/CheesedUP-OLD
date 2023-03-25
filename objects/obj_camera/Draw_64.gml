@@ -30,14 +30,17 @@ if (obj_player.state != states.dead)
 		hud_posY = Approach(hud_posY, -300, 15);
 	else
 		hud_posY = Approach(hud_posY, 0, 15);
+	
 	var cmb = 0;
 	if (global.combo >= 50)
 		cmb = 2;
 	else if (global.combo >= 25)
 		cmb = 1;
-	pizzascore_index += (0 + (0.25 * cmb));
-	if (pizzascore_index > (pizzascore_number - 1))
-		pizzascore_index = 0 + frac(pizzascore_index);
+	
+	if global.heatmeter
+		cmb = global.stylethreshold;
+	
+	pizzascore_index = (pizzascore_index + (0.25 * cmb)) % pizzascore_number;
 	if (global.stylethreshold <= 0)
 	{
 		if (floor(pizzascore_index) != 0)
@@ -45,15 +48,24 @@ if (obj_player.state != states.dead)
 		else
 			pizzascore_index = 0;
 	}
+	
 	var sw = sprite_get_width(spr_heatmeter_fill);
 	var sh = sprite_get_height(spr_heatmeter_fill);
-	var b = 0;
+	var b = global.stylemultiplier;
 	var hud_xx = 121 + irandom_range(-collect_shake, collect_shake);
 	var hud_yy = 90 + irandom_range(-collect_shake, collect_shake) + hud_posY;
-	draw_sprite_part(spr_heatmeter_fill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
-	shader_set(global.Pal_Shader);
-	pal_swap_set(spr_heatmeter_palette, global.stylethreshold, false);
+	
+	// heat meter
+	if global.heatmeter
+	{
+		draw_sprite_part(spr_heatmeter_fill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
+		shader_set(global.Pal_Shader);
+		pal_swap_set(spr_heatmeter_palette, global.stylethreshold, false);
+		draw_sprite_ext(spr_heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
+	}
 	reset_shader_fix();
+	
+	// score
 	draw_sprite_ext(spr_pizzascore, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 	var _score = global.collect;
 	if (global.coop)
@@ -239,7 +251,7 @@ if (obj_player.state != states.dead)
 	    for (i = 0; i < global.fuel; i++)
 	    {
 	        bx -= bpad;
-	        draw_sprite_ext(bspr, bulletimage, bx, by, 1, 1, 0, c_white, alpha);
+	        draw_sprite_ext(bspr, bulletimage, bx, by, -1, 1, 0, c_white, alpha);
 	    }
 	}
 	

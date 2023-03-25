@@ -1048,7 +1048,7 @@ if (object_index == obj_player1)
 			global.combotime -= 0.15;
 	}
 	if (global.heattime > 0)
-		global.heattime -= 0.15;
+		global.heattime -= 0.5;
 	if (global.combotime <= 0 && global.combo >= 1)
 	{
 		if (global.combo >= 1)
@@ -1059,7 +1059,7 @@ if (object_index == obj_player1)
 		supercharge = 0;
 	}
 	if (global.heattime <= 0 && global.style > -1 && global.stylelock == 0)
-		global.style -= 0.05;
+		global.style -= 0.15;
 }
 
 // input buffers

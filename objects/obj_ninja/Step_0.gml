@@ -144,7 +144,7 @@ else if (state == states.walk && attack_buffer <= 0)
 	state = states.punch;
 	hsp = 0;
 	hitboxcreate = false;
-	if (!elite)
+	if (!elite && global.stylethreshold < 3)
 	{
 		sprite_index = spr_ninja_kickattack;
 		image_index = 0;

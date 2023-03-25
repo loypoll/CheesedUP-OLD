@@ -54,7 +54,7 @@ function scr_pistolshoot(required_state)
 			shoot = true;
 			global.bullet = floor(global.bullet - 1);
 			pistol.april = true;
-			sound_play_3d("event:/sfx/enemies/kill", x, y);
+			sound_play_3d(sfx_killingblow, x, y);
 		}
 	}
 }

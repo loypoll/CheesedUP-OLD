@@ -2091,6 +2091,7 @@
     {"id":{"name":"mansion_secret6","path":"rooms/mansion_secret6/mansion_secret6.yy",},},
     {"id":{"name":"factory_1","path":"rooms/factory_1/factory_1.yy",},},
     {"id":{"name":"factory_2","path":"rooms/factory_2/factory_2.yy",},},
+    {"id":{"name":"scr_perform_move","path":"scripts/scr_perform_move/scr_perform_move.yy",},},
     {"id":{"name":"factory_4","path":"rooms/factory_4/factory_4.yy",},},
     {"id":{"name":"factory_5","path":"rooms/factory_5/factory_5.yy",},},
     {"id":{"name":"factory_6","path":"rooms/factory_6/factory_6.yy",},},

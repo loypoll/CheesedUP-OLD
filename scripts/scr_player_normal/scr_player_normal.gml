@@ -91,6 +91,10 @@ function state_player_normal()
 				sprite_index = spr_player_breakdance;
 			else if (global.fill <= 0 && !instance_exists(obj_ghostcollectibles))
 				sprite_index = spr_hurtwalk;
+			else if (global.heatmeter && global.stylethreshold == 2)
+				sprite_index = spr_3hpwalk;
+			else if (global.heatmeter && global.stylethreshold >= 3)
+				sprite_index = spr_ragemove;
 			else if ((global.combo >= 25 && global.combo < 50) or instance_exists(obj_pizzafaceboss) or global.noisejetpack)
 				sprite_index = spr_3hpwalk;
 			else if (global.combo >= 50 or instance_exists(obj_pizzaface_thunderdark))
@@ -158,6 +162,10 @@ function state_player_normal()
 						sprite_index = spr_hurtidle;
 					else if (global.panic && !instance_exists(obj_ghostcollectibles))
 						sprite_index = spr_panic;
+					else if (global.heatmeter && global.stylethreshold == 2)
+						sprite_index = spr_3hpidle;
+					else if (global.heatmeter && global.stylethreshold >= 3)
+						sprite_index = spr_rageidle;
 					else if ((global.combo >= 25 && global.combo < 50) or instance_exists(obj_pizzafaceboss) or global.noisejetpack)
 						sprite_index = spr_3hpidle;
 					else if (global.combo >= 50 or instance_exists(obj_pizzaface_thunderdark))
@@ -353,52 +361,8 @@ function state_player_normal()
 		// kungfu
 		if input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 		{
-			switch global.attackstyle
-			{
-				case 1: // kung fu
-					input_buffer_slap = 0;
-					sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
-					suplexmove = true;
-				
-					particle_set_scale(particle.jumpdust, xscale, 1);
-					create_particle(x, y, particle.jumpdust, 0);
-				
-					particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-					create_particle(x, y, particle.crazyrunothereffect);
-				
-					with instance_create(x, y, obj_superdashcloud)
-						image_xscale = other.xscale;
-				
-					sound_play_3d("event:/sfx/pto/kungfu", x, y);
-					state = states.punch;
-					if vsp > 0
-						vsp = 0;
-					movespeed = max(movespeed, 10);
-					image_index = 0;
-					break;
-			
-				case 2: // shoulderbash
-					input_buffer_slap = 0;
-					sprite_index = spr_attackdash;
-					suplexmove = true;
-				
-					particle_set_scale(particle.jumpdust, xscale, 1);
-					create_particle(x, y, particle.jumpdust, 0);
-				
-					particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-					create_particle(x, y, particle.crazyrunothereffect);
-				
-					with instance_create(x, y, obj_superdashcloud)
-						image_xscale = other.xscale;
-				
-					fmod_event_instance_play(snd_dive);
-					state = states.handstandjump;
-					if vsp < 0 && !REMIX
-						vsp = 0;
-					movespeed = max(movespeed, 10);
-					image_index = 0;
-					break;
-			}
+			input_buffer_slap = 0;
+			scr_perform_move(moves.grabattack, states.normal);
 		}
 	}
 	

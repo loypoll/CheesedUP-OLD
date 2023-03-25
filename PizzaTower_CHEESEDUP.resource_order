@@ -1752,6 +1752,7 @@
     {"name":"mansion_secret5","order":1545,"path":"rooms/mansion_secret5/mansion_secret5.yy",},
     {"name":"mansion_secret6","order":1546,"path":"rooms/mansion_secret6/mansion_secret6.yy",},
     {"name":"factory_2","order":1,"path":"rooms/factory_2/factory_2.yy",},
+    {"name":"scr_perform_move","order":10,"path":"scripts/scr_perform_move/scr_perform_move.yy",},
     {"name":"factory_4","order":2,"path":"rooms/factory_4/factory_4.yy",},
     {"name":"factory_5","order":3,"path":"rooms/factory_5/factory_5.yy",},
     {"name":"factory_6","order":4,"path":"rooms/factory_6/factory_6.yy",},

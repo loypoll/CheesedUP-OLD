@@ -93,6 +93,13 @@ function scr_player_punch()
 		}
 		else if key_attack && move != 0 && REMIX
 			movespeed += 0.02;
+		
+		// double tap move
+		if (_kungfuground or _kungfuair) && input_buffer_slap > 0
+		{
+			input_buffer_slap = 0;
+			scr_perform_move(moves.doublegrab, states.punch);
+		}
 				
 		if _kungfuground && (input_buffer_jump > 0 && can_jump && (character != "N" or noisetype == 0))
 		{

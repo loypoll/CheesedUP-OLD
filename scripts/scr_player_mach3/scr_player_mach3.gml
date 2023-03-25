@@ -90,7 +90,7 @@ function scr_player_mach3()
 						sprite_index = spr_mach4;
 					if (sprite_index == spr_player_Sjumpcancel && grounded)
 						sprite_index = spr_mach4;
-					if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit or sprite_index == spr_dashpadmach))
+					if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit or sprite_index == spr_dashpadmach or sprite_index == spr_pistolshot))
 						sprite_index = spr_mach4;
 					if (sprite_index == spr_mach2jump && grounded && vsp > 0)
 						sprite_index = spr_mach4;
@@ -196,54 +196,8 @@ function scr_player_mach3()
 				// kungfu
 				if input_buffer_slap > 0 && !key_up && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 				{
-					switch global.attackstyle
-					{
-						case 1: // kung fu
-							input_buffer_slap = 0;
-							if grounded
-							{
-								with instance_create(x, y, obj_superdashcloud)
-									image_xscale = other.xscale;
-								sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
-							}
-							else
-								sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
-							suplexmove = true;
-					
-							particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-							create_particle(x, y, particle.crazyrunothereffect);
-					
-							sound_play_3d("event:/sfx/pto/kungfu", x, y);
-							state = states.punch;
-							movespeed = max(movespeed, 10);
-							if vsp > 0
-								vsp = 0;
-							image_index = 0;
-							break;
-						
-						case 2: // shoulderbash
-							input_buffer_slap = 0;
-							if grounded
-							{
-								with instance_create(x, y, obj_superdashcloud)
-									image_xscale = other.xscale;
-								sprite_index = spr_attackdash;
-							}
-							else
-								sprite_index = spr_airattackstart;
-							suplexmove = true;
-							
-							particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-							create_particle(x, y, particle.crazyrunothereffect);
-							
-							fmod_event_instance_play(snd_dive);
-							state = states.handstandjump;
-							if vsp < 0 && !REMIX
-								vsp = 0;
-							movespeed = max(movespeed, 10);
-							image_index = 0;
-							break;
-					}
+					input_buffer_slap = 0;
+					scr_perform_move(moves.grabattack, states.mach3);
 				}
 				
 				if sprite_index != spr_dashpadmach

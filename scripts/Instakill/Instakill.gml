@@ -43,7 +43,7 @@ function Instakill()
 		other.baddieID.elitehit = 0;
 	other.baddieID.player_instakillmove = true;
 	if (!other.baddieID.important)
-		global.style += (2 + global.combo);
+		global.style += (2 + floor(global.combo / 3));
 	if (!other.baddieID.elite or other.baddieID.elitehit <= 0)
 		other.baddieID.mach3destroy = true;
 	if (!other.baddieID.killprotection && !global.kungfu && (!other.baddieID.elite or other.baddieID.elitehit <= 0))

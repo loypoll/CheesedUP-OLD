@@ -28,17 +28,23 @@ function scr_player_chainsawbump()
 		movespeed += 0.1;
 	if (check_wall(x + xscale, y) && !place_meeting(x + xscale, y, obj_destructibles))
 	{
-		if (sprite_index != spr_player_chainsawhitwall)
+		var _bump = ledge_bump((vsp >= 0) ? 32 : 22);
+		if (_bump)
 		{
-			with (obj_camera)
+			if (sprite_index != spr_player_chainsawhitwall)
 			{
-				shake_mag = 10;
-				shake_mag_acc = 30 / room_speed;
+				with (obj_camera)
+				{
+					shake_mag = 10;
+					shake_mag_acc = 30 / room_speed;
+				}
+				sound_play_3d("event:/sfx/pep/groundpound", x, y);
+				sound_play_3d("event:/sfx/pep/bumpwall", x, y);
+				vsp = -6;
+				movespeed = -4;
+				sprite_index = spr_player_chainsawhitwall;
+				image_index = 0;
 			}
-			vsp = -6;
-			movespeed = -4;
-			sprite_index = spr_player_chainsawhitwall;
-			image_index = 0;
 		}
 	}
 	if (key_jump && grounded)
@@ -57,10 +63,18 @@ function scr_player_chainsawbump()
 		else
 			state = states.normal;
 	}
-	if (floor(image_index) == (image_number - 1) && sprite_index == spr_player_chainsawhitwall)
+	if (floor(image_index) >= image_number - 1 && sprite_index == spr_player_chainsawhitwall)
 		state = states.normal;
+	
 	if (sprite_index == spr_player_chainsawdash)
 		image_speed = 0.4 + (movespeed * 0.01);
+	else if sprite_index == spr_player_chainsawhitwall
+	{
+		if image_index < 3 or grounded
+			image_speed = 0.35;
+		else
+			image_speed = 0;
+	}
 	else
 		image_speed = 0.4;
 }

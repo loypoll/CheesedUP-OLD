@@ -198,5 +198,7 @@ function instance_random(object)
 }
 function heat_calculate(heat)
 {
+	if global.heatmeter
+		heat += round(heat * global.stylemultiplier);
 	return heat;
 }
