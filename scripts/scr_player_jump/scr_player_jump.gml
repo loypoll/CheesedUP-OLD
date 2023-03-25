@@ -342,6 +342,7 @@ function state_player_jump()
 	if (input_buffer_shoot > 0 && shotgunAnim)
 		scr_shotgunshoot();
 	else if (input_buffer_pistol > 0 && global.pistol)
+	or (global.shootstyle == 1 && key_shoot2)
 		scr_pistolshoot(states.jump);
 	
 	if (key_slap2 && shoot)

@@ -85,6 +85,7 @@ function scr_player_machslide()
 		scr_shotgunshoot();
 	}
 	else if (input_buffer_pistol > 0 && global.pistol)
+	or (global.shootstyle == 1 && key_shoot2)
 		scr_pistolshoot(states.normal);
 	
 	if (!instance_exists(dashcloudid) && grounded && !place_meeting(x, y + 1, obj_water))

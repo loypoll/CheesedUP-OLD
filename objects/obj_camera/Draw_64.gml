@@ -1,3 +1,5 @@
+if live_call() return live_result;
+
 draw_set_alpha(1);
 if (is_bossroom() or room == editor_room or instance_exists(obj_tutorialbook))
 	exit;
@@ -174,6 +176,28 @@ if (obj_player.state != states.dead)
 	}
 	draw_set_alpha(1);
 	reset_shader_fix();
+	
+	// bullets
+	if global.shootstyle == 1
+	{
+		var bx = hud_xx - 63, by = hud_yy + 20, bpad = 25;
+	    var bspr = spr_peppinobullet_collectible;
+		
+	    if obj_player1.character == "N"
+	    {
+	        bx = hud_xx - 69;
+	        by = hud_yy + 77;
+	        bspr = spr_playerN_noisebomb;
+	    }
+		
+	    bx += bpad * global.bullet;
+	    for (i = 0; i < global.bullet; i++)
+	    {
+	        bx -= bpad;
+	        draw_sprite_ext(bspr, -1, bx, by, 1, 1, 0, c_white, alpha);
+	    }
+	}
+	
 	draw_set_font(lang_get_font("bigfont"));
 	draw_set_halign(1);
 	draw_set_color(c_white);

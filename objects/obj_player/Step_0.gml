@@ -975,6 +975,8 @@ if (state == states.dead && y > (room_height * 2) && !instance_exists(obj_backto
 	global.leveltosave = -4;
 	global.startgate = 0;
 }
+if state != states.pistol && state != states.normal
+	shoot = false;
 if (baddiegrabbedID == obj_null && (state == states.grab or state == states.superslam or state == states.tacklecharge))
 	state = states.normal;
 if (cutscene == 1 && state != states.gotoplayer)

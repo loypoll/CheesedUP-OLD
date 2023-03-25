@@ -329,6 +329,7 @@ function state_player_normal()
 	if (input_buffer_shoot > 0 && shotgunAnim)
 		scr_shotgunshoot();
 	else if (input_buffer_pistol > 0 && global.pistol)
+	or (global.shootstyle == 1 && key_shoot2)
 		scr_pistolshoot(states.normal);
 	
 	if character != "V" && character != "S"

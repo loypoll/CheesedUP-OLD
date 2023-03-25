@@ -2,6 +2,9 @@ function scr_pistolshoot(required_state)
 {
 	if ((pistolcooldown <= 0 && state == required_state && state != states.bump && instance_number(obj_pistolbullet) < 3) or pistolchargeshooting == 1)
 	{
+		if floor(global.bullet) == 0 && !global.pistol
+			exit;
+		
 		input_buffer_shoot = 0;
 		input_buffer_pistol = 0;
 		pistolanim = spr_pistolshot;
@@ -40,6 +43,13 @@ function scr_pistolshoot(required_state)
 			}
 			else
 				GamepadSetVibration(0, 0.3, 0.3, 0.6);
+		}
+		
+		if !global.pistol
+		{
+			shoot = true;
+			pistolcooldown = 30;
+			global.bullet--;
 		}
 	}
 }

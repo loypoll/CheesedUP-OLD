@@ -246,10 +246,14 @@ function scr_player_mach3()
 					}
 				}
 				
-				if (input_buffer_shoot > 0 && sprite_index != spr_dashpadmach && shotgunAnim)
-					scr_shotgunshoot();
-				else if (input_buffer_pistol > 0 && sprite_index != spr_dashpadmach && global.pistol)
-					scr_pistolshoot(states.mach3);
+				if sprite_index != spr_dashpadmach
+				{
+					if (input_buffer_shoot > 0 && shotgunAnim)
+						scr_shotgunshoot();
+					else if (input_buffer_pistol > 0 && global.pistol)
+					or (global.shootstyle == 1 && key_shoot2)
+						scr_pistolshoot(states.mach3);
+				}
 				
 				if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) or check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 				{

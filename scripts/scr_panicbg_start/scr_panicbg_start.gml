@@ -14,20 +14,26 @@ function scr_panicbg_start()
 		draw_clear_alpha(c_black, 0);
 		
 		// Offset each layer to account for scrolling
-		var _cam_x = camera_get_view_x(view_camera[0])
-		var _cam_y = camera_get_view_y(view_camera[0])
-		
-		var room_bgs = room_get_bg_layers();
-		for (var i = 0; i < array_length(room_bgs); i++;)
+		if instance_exists(obj_parrallax)
 		{
-			var l = room_bgs[i], lay = l.layer_id, bg = l.bg_sprite;
-			if layer_get_depth(lay) <= 0 or bg == bg_treasure
-				continue;
+			var _cam_x = camera_get_view_x(view_camera[0])
+			var _cam_y = camera_get_view_y(view_camera[0])
+		
+			var room_bgs = room_get_bg_layers();
+			for (var i = 0; i < array_length(room_bgs); i++;)
+			{
+				var l = room_bgs[i], lay = l.layer_id, bg = l.bg_sprite;
+				if layer_get_depth(lay) <= 0
+					continue;
 			
-			layer_x(lay, layer_get_x(lay) - _cam_x + 64);
-			layer_y(lay, layer_get_y(lay) - _cam_y + 64);
+				var parallax = obj_parrallax.layer_get_parallax(l.layer_id);
+				if parallax == undefined
+					parallax = [0, 0];
+				layer_x(lay, floor(l.x + parallax[0]) - _cam_x + 64);
+				layer_y(lay, floor(l.y + parallax[1]) - _cam_y + 64);
 			
-			global.panicbg_width = max(global.panicbg_width, sprite_get_width(bg));
+				global.panicbg_width = max(global.panicbg_width, sprite_get_width(bg));
+			}
 		}
 	}
 }

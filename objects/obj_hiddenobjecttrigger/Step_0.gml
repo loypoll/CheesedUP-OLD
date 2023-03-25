@@ -11,4 +11,7 @@ if (place_meeting(x, y, obj_player))
 	}
 }
 if (_sound)
-	sound_play("event:/sfx/misc/collectgiantpizza");
+{
+	sound_stop(sfx_collectpizza);
+	sound_play("event:/sfx/pto/secretwall");
+}

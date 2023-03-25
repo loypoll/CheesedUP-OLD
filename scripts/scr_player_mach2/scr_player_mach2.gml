@@ -325,10 +325,14 @@ function scr_player_mach2()
 		}
 	}
 	
-	if (input_buffer_shoot > 0 && !skateboarding && shotgunAnim)
-		scr_shotgunshoot();
-	else if (input_buffer_pistol > 0 && !skateboarding && global.pistol)
-		scr_pistolshoot(states.mach2);
+	if !skateboarding
+	{
+		if (input_buffer_shoot > 0 && shotgunAnim)
+			scr_shotgunshoot();
+		else if (input_buffer_pistol > 0 && global.pistol)
+		or (global.shootstyle == 1 && key_shoot2)
+			scr_pistolshoot(states.mach2);
+	}
 	
 	/*
 	if (global.attackstyle == 2 && key_slap2)

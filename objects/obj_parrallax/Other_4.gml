@@ -1,5 +1,9 @@
 if live_call() return live_result;
 
+if room_started
+	exit;
+room_started = true;
+
 var layers = layer_get_all();
 for (var i = 0; i < array_length(layers); i++)
 {
@@ -98,6 +102,25 @@ for (var i = 0; i < array_length(layers); i++)
 	
 	if global.hidetiles && layer_tilemap_get_id(lay) != -1
 		layer_set_visible(lay, false);
+	
+	#endregion
+	#region FOREGROUND
+	
+	if layname == "Foreground_1"
+	{
+		var spr = layer_background_get_sprite(layer_background_get_id(lay));
+		if sprite_exists(spr)
+		{
+			var ht = sprite_get_height(spr);
+			
+			var yy = floor((room_height - ht) + (room_height - ht) * 0.15);
+			if spr == fg_entrance1
+				yy += 24;
+			yy = floor(yy / 10) * 10;
+			
+			layer_y(lay, yy);
+		}
+	}
 	
 	#endregion
 }
