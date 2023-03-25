@@ -14,8 +14,8 @@ if (state == states.charge)
 			sprite_index = spr_fireass;
 			image_index = 0;
 			movespeed = hsp;
-			if (!fmod_event_instance_is_playing(global.snd_fireass))
-				fmod_event_instance_play(global.snd_fireass);
+			if (!sound_is_playing(global.snd_fireass))
+				sound_play(global.snd_fireass);
 		}
 	}
 }

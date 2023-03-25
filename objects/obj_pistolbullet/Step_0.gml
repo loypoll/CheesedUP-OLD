@@ -1,12 +1,17 @@
-with (instance_place(x + spd, y, obj_shotgunblock))
-	instance_destroy();
-with (instance_place(x, y - spdh, obj_shotgunblock))
-	instance_destroy();
-with (instance_place(x + spd, y, obj_destructibles))
-	instance_destroy();
+if !april
+{
+	with (instance_place(x + spd, y, obj_shotgunblock))
+		instance_destroy();
+	with (instance_place(x, y - spdh, obj_shotgunblock))
+		instance_destroy();
+	with (instance_place(x + spd, y, obj_destructibles))
+		instance_destroy();
+}
+
 var _x = x;
 x += (image_xscale * spd);
 y += -spdh;
+
 if instance_exists(obj_bossplayerdeath)
 {
 	instance_destroy();
@@ -26,6 +31,10 @@ for (var i = 0; i < array_length(collision_list); i++)
 	{
 		switch (object_index)
 		{
+			default:
+				instance_destroy();
+				break;
+			
 			case obj_vigilanteboss:
 				if (state != states.hit && (state != states.mach2 or kick) && (flickertime <= 0 && vsp > 0) && !reposition)
 				{
@@ -85,6 +94,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 					instance_destroy(other);
 				}
 				break;
+			
 			case obj_pizzafaceboss_p2:
 				if (state != states.hit && (flickertime <= 0 && grounded && vsp > 0))
 				{
@@ -138,6 +148,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 					instance_destroy(other);
 				}
 				break;
+			
 			case obj_vigilantecow:
 			case obj_pizzahead_cog:
 			case obj_targetguy:
@@ -163,6 +174,7 @@ for (var i = 0; i < array_length(collision_list); i++)
 				}
 				instance_destroy(other);
 				break;
+			
 			case obj_johnecheese:
 				repeat (3)
 					create_debris(other.x, other.y, spr_slimedebris);
@@ -175,3 +187,17 @@ for (var i = 0; i < array_length(collision_list); i++)
 }
 if (sprite_index == spr_peppinobulletGIANT)
 	mask_index = sprite_index;
+
+// bump and die
+if april && collision_line(x, y, _x, y, obj_solid, false, false)
+{
+	for(var i = _x; i < x; i++)
+	{
+		if place_meeting(i, y, obj_solid)
+		{
+			x = i;
+			instance_destroy();
+			break;
+		}
+	}
+}

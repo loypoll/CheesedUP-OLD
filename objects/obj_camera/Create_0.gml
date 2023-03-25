@@ -66,3 +66,4 @@ crouchcamera = 0;
 crouchcamera_goingback = false;
 lockx = 0;
 locky = 0;
+bulletimage = 0;

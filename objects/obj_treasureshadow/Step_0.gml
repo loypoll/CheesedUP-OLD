@@ -1,4 +1,4 @@
-x = playerid.x;
+x = playerid.x + playerid.smoothx;
 y = playerid.y;
 if (playerid.grounded)
 	visible = true;

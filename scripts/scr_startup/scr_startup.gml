@@ -43,6 +43,7 @@ global.shootstyle = ini_read_real("Modded", "shootstyle", 0); // nothing, pistol
 global.doublegrab = ini_read_real("Modded", "doublegrab", 0); // nothing, shoulderbash, tumble, chainsaw
 global.autoparry = ini_read_real("Modded", "autoparry", false);
 global.shootbutton = ini_read_real("Modded", "shootbutton", 0); // 0 replace grab, 1 move to A, 2 only shotgun
+global.heatmeter = ini_read_real("Modded", "heatmeter", false);
 
 // visual settings
 global.panicbg = ini_read_real("Modded", "panicbg", true);

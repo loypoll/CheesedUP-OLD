@@ -180,21 +180,66 @@ if (obj_player.state != states.dead)
 	// bullets
 	if global.shootstyle == 1
 	{
-		var bx = hud_xx - 63, by = hud_yy + 20, bpad = 25;
+		bulletimage += 0.35;
+		
+		var bx = hud_xx - 63, by = hud_yy - 16, bpad = 42;
 	    var bspr = spr_peppinobullet_collectible;
+		
+		if global.doublegrab == 3
+			bpad = 25;
 		
 	    if obj_player1.character == "N"
 	    {
 	        bx = hud_xx - 69;
-	        by = hud_yy + 77;
+	        by = hud_yy + 45;
 	        bspr = spr_playerN_noisebomb;
 	    }
 		
-	    bx += bpad * global.bullet;
-	    for (i = 0; i < global.bullet; i++)
+		if global.heatmeter
+			by += 32;
+		
+	    bx += bpad * max(ceil(global.bullet), 3);
+	    for (var i = 0; i < max(global.bullet, 3); i++)
+	    {
+			var a = alpha, img = bulletimage, col = c_white;
+			if i >= floor(global.bullet)
+			{
+				a = 0.25;
+				img = 10;
+				col = c_black;
+			}
+			
+	        bx -= bpad;
+	        draw_sprite_ext(bspr, img, bx, by, 1, 1, 0, col, a);
+			if i == floor(global.bullet)
+			{
+				draw_set_flash();
+				draw_sprite_part_ext(bspr, img, 0, 0, 64, 96 * (0.5 + frac(global.bullet) / 2), bx - 32, by, 1, 1, c_white, 0.5);
+				draw_reset_flash();
+			}
+	    }
+		global.bullet = Approach(global.bullet, 3, 0.001);
+	}
+	
+	// chainsaw
+	if global.doublegrab == 3
+	{
+		var bx = hud_xx - 63, by = hud_yy + 60, bpad = 25;
+	    var bspr = spr_fuelHUD;
+		
+		if global.shootstyle != 1
+			bulletimage += 0.35;
+		else
+			bx += 100;
+		
+		if global.heatmeter
+			by += 32;
+		
+	    bx += bpad * global.fuel;
+	    for (i = 0; i < global.fuel; i++)
 	    {
 	        bx -= bpad;
-	        draw_sprite_ext(bspr, -1, bx, by, 1, 1, 0, c_white, alpha);
+	        draw_sprite_ext(bspr, bulletimage, bx, by, 1, 1, 0, c_white, alpha);
 	    }
 	}
 	
