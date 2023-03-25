@@ -18,7 +18,7 @@ if (abs(distance_to_object(obj_player1)) < 25 && !place_meeting(x, y, obj_destru
 		scr_ghostcollectible();
 	gotowardsplayer = true;
 }
-if (gotowardsplayer == 1)
+if (gotowardsplayer)
 {
 	move_towards_point(obj_player.x, obj_player.y, movespeed);
 	movespeed++;

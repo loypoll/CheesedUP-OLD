@@ -107,7 +107,7 @@ function scr_enemy_grabbed()
 			grav = 0;
 			global.combotime = 60;
 			if (!important)
-				global.style += (5 + global.combo);
+				global.style += (5 + floor(global.combo / 5));
 			create_slapstar(x, y);
 			create_baddiegibs(x, y);
 			flash = true;
@@ -149,7 +149,7 @@ function scr_enemy_grabbed()
 			vsp = -7;
 			global.combotime = 60;
 			if (!important)
-				global.style += (5 + global.combo);
+				global.style += (5 + floor(global.combo / 5));
 			create_slapstar(x, y);
 			create_baddiegibs(x, y);
 			flash = true;
@@ -186,7 +186,7 @@ function scr_enemy_grabbed()
 			}
 			global.combotime = 60;
 			if (!important)
-				global.style += (5 + global.combo);
+				global.style += (5 + floor(global.combo / 5));
 			create_slapstar(x, y);
 			create_baddiegibs(x, y);
 			flash = true;
@@ -219,7 +219,7 @@ function scr_enemy_grabbed()
 			global.combotime = 60
 			global.heattime = 60
 			if (!important)
-				global.style += (5 + global.combo)
+				global.style += (5 + floor(global.combo / 5))
 			GamepadSetVibration(_obj_player.object_index == obj_player1 ? 0 : 1, 0.8, 0.8, 0.65)
 			sound_play_3d("event:/sfx/enemies/killingblow", x, y)
 			sound_play_3d("event:/sfx/pep/punch", x, y)
@@ -289,7 +289,7 @@ function scr_enemy_grabbed()
 			vsp = -20;
 			global.combotime = 60;
 			if (!important)
-				global.style += (5 + global.combo);
+				global.style += (5 + floor(global.combo / 5));
 			create_slapstar(x, y);
 			create_baddiegibs(x, y);
 			flash = true;
@@ -307,7 +307,7 @@ function scr_enemy_grabbed()
 		}
 		if (_obj_player.state == states.superslam or (_obj_player.state == states.chainsaw && sprite_index == spr_player_piledriver))
 		{
-			if (_obj_player.character == "P")
+			if (_obj_player.character != "N")
 			{
 				if (_obj_player.sprite_index != _obj_player.spr_piledriverland)
 				{

@@ -11,5 +11,5 @@ if (is_visible)
 	if (place_meeting(x, y, obj_secretportal) or place_meeting(x, y, obj_secretportalstart))
 		visible = false;
 }
-if (!instance_exists(obj_pizzaface_thunderdark))
+if (!instance_exists(obj_pizzaface_thunderdark) && global.stylethreshold < 2)
 	visible = false;

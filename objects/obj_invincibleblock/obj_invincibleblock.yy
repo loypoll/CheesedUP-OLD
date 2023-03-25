@@ -10,10 +10,13 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "CheesyPizza",
-    "path": "folders/Objects/CheesyPizza.yy",
+    "name": "Room Structure",
+    "path": "folders/Objects/CheesyPizza/Room Structure.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_solid",
+    "path": "objects/obj_solid/obj_solid.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

@@ -79,7 +79,7 @@ function scr_player_mach3()
 						image_index = 0;
 						sprite_index = spr_mach3jump;
 					}
-					if (character == "P")
+					if (character != "N")
 						vsp = -11;
 					else
 						vsp = -13;
@@ -90,7 +90,7 @@ function scr_player_mach3()
 						sprite_index = spr_mach4;
 					if (sprite_index == spr_player_Sjumpcancel && grounded)
 						sprite_index = spr_mach4;
-					if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit or sprite_index == spr_dashpadmach))
+					if (floor(image_index) == (image_number - 1) && (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit or sprite_index == spr_dashpadmach or sprite_index == spr_pistolshot))
 						sprite_index = spr_mach4;
 					if (sprite_index == spr_mach2jump && grounded && vsp > 0)
 						sprite_index = spr_mach4;
@@ -117,7 +117,7 @@ function scr_player_mach3()
 					image_speed = 0.75;
 				else if (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit or sprite_index == spr_dashpadmach)
 					image_speed = 0.4;
-				if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0 && (character == "P" or character == "N" && noisetype == 0)) or ((character == "S" && (move == 0 or move != xscale) && grounded) && fightball == 0))
+				if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0 && character != "S" && (character != "N" or noisetype == 0)) or ((character == "S" && (move == 0 or move != xscale) && grounded) && fightball == 0))
 				{
 					sprite_index = spr_machslidestart;
 					sound_play_3d("event:/sfx/pep/break", x, y);
@@ -125,7 +125,7 @@ function scr_player_mach3()
 					image_index = 0;
 					launched = false;
 				}
-				if (move == -xscale && grounded && vsp > 0 && !launched && (character == "P" or character == "N") && fightball == 0 && sprite_index != spr_dashpadmach)
+				if (move == -xscale && grounded && vsp > 0 && !launched && character != "S" && fightball == 0 && sprite_index != spr_dashpadmach)
 				{
 					sound_play_3d("event:/sfx/pep/machslideboost", x, y);
 					sprite_index = spr_mach3boost;
@@ -194,62 +194,20 @@ function scr_player_mach3()
 				}
 				
 				// kungfu
-				if input_buffer_slap > 0 && !key_up && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
+				else if input_buffer_slap > 0 && !key_up && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 				{
-					switch global.attackstyle
-					{
-						case 1: // kung fu
-							input_buffer_slap = 0;
-							if grounded
-							{
-								with instance_create(x, y, obj_superdashcloud)
-									image_xscale = other.xscale;
-								sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
-							}
-							else
-								sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
-							suplexmove = true;
-					
-							particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-							create_particle(x, y, particle.crazyrunothereffect);
-					
-							sound_play_3d("event:/sfx/pto/kungfu", x, y);
-							state = states.punch;
-							movespeed = max(movespeed, 10);
-							if vsp > 0
-								vsp = 0;
-							image_index = 0;
-							break;
-						
-						case 2: // shoulderbash
-							input_buffer_slap = 0;
-							if grounded
-							{
-								with instance_create(x, y, obj_superdashcloud)
-									image_xscale = other.xscale;
-								sprite_index = spr_attackdash;
-							}
-							else
-								sprite_index = spr_airattackstart;
-							suplexmove = true;
-							
-							particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-							create_particle(x, y, particle.crazyrunothereffect);
-							
-							fmod_event_instance_play(snd_dive);
-							state = states.handstandjump;
-							if vsp < 0 && !REMIX
-								vsp = 0;
-							movespeed = max(movespeed, 10);
-							image_index = 0;
-							break;
-					}
+					input_buffer_slap = 0;
+					scr_perform_move(moves.grabattack, states.mach3);
 				}
 				
-				if (input_buffer_shoot > 0 && sprite_index != spr_dashpadmach && shotgunAnim)
-					scr_shotgunshoot();
-				else if (input_buffer_pistol > 0 && sprite_index != spr_dashpadmach && global.pistol)
-					scr_pistolshoot(states.mach3);
+				if sprite_index != spr_dashpadmach
+				{
+					if (input_buffer_shoot > 0 && shotgunAnim)
+						scr_shotgunshoot();
+					else if (input_buffer_pistol > 0 && global.pistol)
+					or (global.shootstyle == 1 && key_shoot2)
+						scr_pistolshoot(states.mach3);
+				}
 				
 				if ((scr_solid(x + sign(hsp), y) && !place_meeting(x + sign(hsp), y, obj_mach3solid)) && !scr_slope() && (scr_solid_slope(x + sign(hsp), y) or check_wall(x + sign(hsp), y)) && !place_meeting(x + sign(hsp), y, obj_metalblock) && !place_meeting(x + sign(hsp), y, obj_destructibles) && !place_meeting(x + sign(hsp), y, obj_climbablewall) && grounded)
 				{
@@ -785,7 +743,7 @@ function scr_player_mach3()
 		image_speed = 0.4;
 	else
 		image_speed = 0.4;
-	if (scr_check_superjump() && fightball == 0 && state == states.mach3 && (character != "N" or noisetype == 0) && grounded && vsp > 0 && sprite_index != spr_dashpadmach && !place_meeting(x, y, obj_dashpad))
+	if (scr_check_superjump() && fightball == 0 && state == states.mach3 && (character != "N" or noisetype == 0) && character != "V" && grounded && vsp > 0 && sprite_index != spr_dashpadmach && !place_meeting(x, y, obj_dashpad))
 	{
 		sprite_index = spr_superjumpprep;
 		state = states.Sjumpprep;

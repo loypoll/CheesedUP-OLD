@@ -10,7 +10,7 @@ function scr_panicbg_init(stop = false)
 	for(var i = 0; i < array_length(room_bgs); i++)
 	{
 		var l = room_bgs[i], bg = l.bg_sprite;
-		if layer_get_depth(l.layer_id) <= 0 or bg == bg_treasure // trust me it would completely break the game
+		if layer_get_depth(l.layer_id) <= 0 // trust me it completely breaks the game
 			continue;
 		layers[layernum++] = l.layer_id;
 	}

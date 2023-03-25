@@ -21,7 +21,7 @@ function Instakill()
 			}
 		}
 	}
-	if (state == states.mach3 && sprite_index != spr_player_Sjumpcancel && sprite_index != spr_mach3hit && (character == "P" or character == "V"))
+	if (state == states.mach3 && sprite_index != spr_player_Sjumpcancel && sprite_index != spr_mach3hit && (character != "N" or noisetype == 0))
 	{
 		if (fightball == 0)
 			sprite_index = spr_mach3hit;
@@ -43,7 +43,7 @@ function Instakill()
 		other.baddieID.elitehit = 0;
 	other.baddieID.player_instakillmove = true;
 	if (!other.baddieID.important)
-		global.style += (2 + global.combo);
+		global.style += (2 + floor(global.combo / 4));
 	if (!other.baddieID.elite or other.baddieID.elitehit <= 0)
 		other.baddieID.mach3destroy = true;
 	if (!other.baddieID.killprotection && !global.kungfu && (!other.baddieID.elite or other.baddieID.elitehit <= 0))
@@ -125,7 +125,7 @@ function Instakill()
 		with (instance_create(other.baddieID.x, other.baddieID.y, obj_parryeffect))
 			sprite_index = spr_kungfueffect;
 	}
-	if state == states.handstandjump
+	if state == states.handstandjump && !check_boss(other.baddieID.object_index)
 	{
 		if key_up
         {

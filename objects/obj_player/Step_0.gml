@@ -975,6 +975,8 @@ if (state == states.dead && y > (room_height * 2) && !instance_exists(obj_backto
 	global.leveltosave = -4;
 	global.startgate = 0;
 }
+if state != states.pistol && state != states.normal
+	shoot = false;
 if (baddiegrabbedID == obj_null && (state == states.grab or state == states.superslam or state == states.tacklecharge))
 	state = states.normal;
 if (cutscene == 1 && state != states.gotoplayer)
@@ -1046,7 +1048,7 @@ if (object_index == obj_player1)
 			global.combotime -= 0.15;
 	}
 	if (global.heattime > 0)
-		global.heattime -= 0.15;
+		global.heattime -= 0.5;
 	if (global.combotime <= 0 && global.combo >= 1)
 	{
 		if (global.combo >= 1)
@@ -1057,7 +1059,11 @@ if (object_index == obj_player1)
 		supercharge = 0;
 	}
 	if (global.heattime <= 0 && global.style > -1 && global.stylelock == 0)
-		global.style -= 0.05;
+		global.style -= 0.15;
+	
+	// bullet and chainsaw
+	global.bullet = Approach(global.bullet, 3, 0.001);
+	global.fuel = Approach(global.fuel, 3, 0.005);
 }
 
 // input buffers

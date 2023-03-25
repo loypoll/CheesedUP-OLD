@@ -21,13 +21,13 @@ function scr_enemy_stun()
 			stunned -= 1;
 			break;
 		case 1:
-			stunned -= 0.65;
+			stunned -= 1.15;
 			break;
 		case 2:
-			stunned -= 0.8;
+			stunned -= 1.3;
 			break;
 		case 3:
-			stunned -= 1;
+			stunned -= 1.5;
 	}
 	if (stuntouchbuffer > 0)
 		stuntouchbuffer--;

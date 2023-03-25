@@ -125,7 +125,7 @@ switch (state)
 		}
 		break;
 }
-if (elite)
+if (elite or global.stylethreshold >= 3)
 {
 	if (state == states.walk)
 	{

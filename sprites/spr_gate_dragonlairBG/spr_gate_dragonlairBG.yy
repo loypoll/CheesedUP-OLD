@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 7,
   "parent": {
-    "name": "Levels",
-    "path": "folders/Sprites/CheesyPizza/Levels.yy",
+    "name": "Level Gates",
+    "path": "folders/Sprites/CheesyPizza/Level Gates.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -65,8 +65,8 @@
   "swatchColours": null,
   "swfPrecision": 2.525,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "hubgroup",
+    "path": "texturegroups/hubgroup",
   },
   "type": 0,
   "VTile": false,

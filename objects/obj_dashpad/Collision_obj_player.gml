@@ -24,7 +24,7 @@ with (other)
 				y = other.y - 14;
 			vsp = 0;
 			create_particle(x, y, particle.jumpdust, 0);
-			if (character == "P")
+			if (character != "N" or noisetype == 0)
 			{
 				if (sprite_index != spr_dashpadmach)
 				{
@@ -32,7 +32,7 @@ with (other)
 					image_index = 0;
 				}
 			}
-			else if (character == "N")
+			else
 			{
 				if (sprite_index != spr_crazyrun)
 				{

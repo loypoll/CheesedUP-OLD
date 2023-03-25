@@ -346,7 +346,7 @@ global.snd_pizzafacemoving = fmod_event_create_instance("event:/sfx/pizzaface/mo
 global.snd_rankdown = fmod_event_create_instance("event:/sfx/ui/rankdown");
 global.snd_rank = fmod_event_create_instance("event:/music/rank");
 global.snd_parry = fmod_event_create_instance("event:/sfx/pep/parry");
-global.snd_fireass = fmod_event_create_instance("event:/sfx/pep/fireass");
+global.snd_fireass = "event:/sfx/pep/fireass";
 global.snd_breakblock = fmod_event_create_instance("event:/sfx/misc/breakblock");
 global.snd_collect = fmod_event_create_instance("event:/sfx/misc/collect");
 global.snd_bellcollect = fmod_event_create_instance("event:/sfx/misc/bellcollect");
@@ -541,7 +541,7 @@ if !variable_global_exists("saveroom")
 	global.spaceblockswitch = true;
 	global.gerome = false;
 	global.pigtotal_add = 0;
-	global.bullet = 0;
+	global.bullet = 3;
 	global.fuel = 3;
 	
 	var key = ds_map_find_first(global.lang_map);

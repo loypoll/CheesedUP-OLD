@@ -1,4 +1,10 @@
 /// @description figure out the distances
+if !check_race()
+{
+	instance_destroy();
+	exit;
+}
+
 var noid = true;
 with object_index
 {

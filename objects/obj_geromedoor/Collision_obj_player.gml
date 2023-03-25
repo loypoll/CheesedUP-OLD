@@ -60,8 +60,9 @@ if (!place_meeting(x, y, obj_doorblocked))
 					x = door.x + 50;
 				}
 			}
-			else if REMIX && key_up2
+			else if REMIX && key_up2 && !global.gerome
 			{
+				sound_play_3d("event:/sfx/misc/keyunlock", x, y);
 				instance_destroy(obj_keydoor_shake);
 				with instance_create(door.x + 50, door.y + 50, obj_keydoor_shake)
 					sprite_index = spr_geromedoor_shake;

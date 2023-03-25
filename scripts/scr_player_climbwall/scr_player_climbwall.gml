@@ -154,6 +154,7 @@ function scr_player_climbwall()
 				
 				// grab if there are destructibles in front of you
 				if REMIX && state == states.climbwall && place_meeting(x + xscale, y, obj_destructibles)
+				&& character != "V" && character != "S"
 				{
 					if (input_buffer_grab > 0 && shotgunAnim == false && !global.pistol)
 					{
@@ -169,40 +170,8 @@ function scr_player_climbwall()
 					// kungfu
 					else if input_buffer_slap > 0
 					{
-						switch global.attackstyle
-						{
-							case 1: // kung fu
-								input_buffer_slap = 0;
-								sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
-								suplexmove = true;
-								
-								particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-								create_particle(x, y, particle.crazyrunothereffect);
-								
-								sound_play_3d("event:/sfx/pto/kungfu", x, y);
-								state = states.punch;
-								movespeed = max(wallspeed, 10);
-								if vsp > 0
-									vsp = 0;
-								image_index = 0;
-								break;
-							
-							case 2: // shoulderbash
-								input_buffer_slap = 0;
-								sprite_index = spr_airattackstart;
-								suplexmove = true;
-								
-								particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-								create_particle(x, y, particle.crazyrunothereffect);
-								
-								fmod_event_instance_play(snd_dive);
-								state = states.handstandjump;
-								if vsp > 0 && !REMIX
-									vsp = 0;
-								movespeed = max(wallspeed, 10);
-								image_index = 0;
-								break;
-						}
+						input_buffer_slap = 0;
+						scr_perform_move(moves.grabattack, states.climbwall);
 					}
 				}
 				

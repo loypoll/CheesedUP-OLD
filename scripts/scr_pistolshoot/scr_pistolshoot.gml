@@ -1,7 +1,12 @@
 function scr_pistolshoot(required_state)
 {
+	if live_call(required_state) return live_result;
+	
 	if ((pistolcooldown <= 0 && state == required_state && state != states.bump && instance_number(obj_pistolbullet) < 3) or pistolchargeshooting == 1)
 	{
+		if floor(global.bullet) == 0 && !global.pistol
+			exit;
+		
 		input_buffer_shoot = 0;
 		input_buffer_pistol = 0;
 		pistolanim = spr_pistolshot;
@@ -29,7 +34,9 @@ function scr_pistolshoot(required_state)
 			sound_play_3d("event:/sfx/pep/pistolshot", x + (xscale * 20), y);
 		else
 			sound_play_3d("event:/sfx/pep/revolverBIGshot", x + (xscale * 20), y);
-		with (instance_create(x + (xscale * 20), y, obj_pistolbullet))
+		
+		var pistol = (instance_create(x + (xscale * 20), y, obj_pistolbullet))
+		with pistol
 		{
 			image_xscale = other.xscale;
 			if (other.pistolchargeshooting)
@@ -40,6 +47,14 @@ function scr_pistolshoot(required_state)
 			}
 			else
 				GamepadSetVibration(0, 0.3, 0.3, 0.6);
+		}
+		
+		if !global.pistol
+		{
+			shoot = true;
+			global.bullet = floor(global.bullet - 1);
+			pistol.april = true;
+			sound_play_3d(sfx_killingblow, x, y);
 		}
 	}
 }

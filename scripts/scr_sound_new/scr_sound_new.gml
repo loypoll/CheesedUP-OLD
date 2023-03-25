@@ -9,9 +9,14 @@ function sound_stop(event, force = true)
 }
 function sound_is_playing(event)
 {
-	var sound = ds_map_find_value(obj_fmod.sound_cache, event);
-	if sound != undefined
-		return fmod_event_instance_is_playing(sound);
+	if is_string(event)
+	{
+		var sound = ds_map_find_value(obj_fmod.sound_cache, event);
+		if sound != undefined
+			return fmod_event_instance_is_playing(sound);
+	}
+	else
+		return fmod_event_instance_is_playing(event);
 }
 function sound_stop_all(force = true)
 {

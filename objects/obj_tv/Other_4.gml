@@ -84,8 +84,6 @@ if (room == Realtitlescreen)
 
 switch room
 {
-	default: global.srank = 10000; break;
-	
 	case entrance_1: global.srank = 16000; break;
 	case medieval_1: global.srank = 20000; break;
 	case ruin_1: global.srank = 17000; break;
@@ -113,6 +111,11 @@ switch room
 	case boss_noise: global.srank = 5; break;
 	case boss_fakepep: global.srank = 4; break;
 	case boss_pizzaface: global.srank = 4; break;
+	
+	// old levels
+	
+	// new levels
+	case canada_1: global.srank = 24000; break;
 }
 global.arank = floor(global.srank / 2);
 global.brank = floor(global.arank / 2);

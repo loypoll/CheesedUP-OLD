@@ -1,3 +1,5 @@
+if live_call() return live_result;
+
 draw_set_alpha(1);
 if (is_bossroom() or room == editor_room or instance_exists(obj_tutorialbook))
 	exit;
@@ -28,14 +30,17 @@ if (obj_player.state != states.dead)
 		hud_posY = Approach(hud_posY, -300, 15);
 	else
 		hud_posY = Approach(hud_posY, 0, 15);
+	
 	var cmb = 0;
 	if (global.combo >= 50)
 		cmb = 2;
 	else if (global.combo >= 25)
 		cmb = 1;
-	pizzascore_index += (0 + (0.25 * cmb));
-	if (pizzascore_index > (pizzascore_number - 1))
-		pizzascore_index = 0 + frac(pizzascore_index);
+	
+	if global.heatmeter
+		cmb = global.stylethreshold;
+	
+	pizzascore_index = (pizzascore_index + (0.25 * cmb)) % pizzascore_number;
 	if (global.stylethreshold <= 0)
 	{
 		if (floor(pizzascore_index) != 0)
@@ -43,15 +48,24 @@ if (obj_player.state != states.dead)
 		else
 			pizzascore_index = 0;
 	}
+	
 	var sw = sprite_get_width(spr_heatmeter_fill);
 	var sh = sprite_get_height(spr_heatmeter_fill);
-	var b = 0;
+	var b = global.stylemultiplier;
 	var hud_xx = 121 + irandom_range(-collect_shake, collect_shake);
 	var hud_yy = 90 + irandom_range(-collect_shake, collect_shake) + hud_posY;
-	draw_sprite_part(spr_heatmeter_fill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
-	shader_set(global.Pal_Shader);
-	pal_swap_set(spr_heatmeter_palette, global.stylethreshold, false);
+	
+	// heat meter
+	if global.heatmeter
+	{
+		draw_sprite_part(spr_heatmeter_fill, pizzascore_index, 0, 0, sw * b, sh, hud_xx - 95, hud_yy + 24);
+		shader_set(global.Pal_Shader);
+		pal_swap_set(spr_heatmeter_palette, global.stylethreshold, false);
+		draw_sprite_ext(spr_heatmeter, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
+	}
 	reset_shader_fix();
+	
+	// score
 	draw_sprite_ext(spr_pizzascore, pizzascore_index, hud_xx, hud_yy, 1, 1, 0, c_white, alpha);
 	var _score = global.collect;
 	if (global.coop)
@@ -174,6 +188,90 @@ if (obj_player.state != states.dead)
 	}
 	draw_set_alpha(1);
 	reset_shader_fix();
+	
+	// bullets
+	if global.shootstyle == 1
+	{
+		bulletimage += 0.35;
+		
+		var bx = hud_xx - 63, by = hud_yy - 16, bpad = 42;
+	    var bspr = spr_peppinobullet_collectible;
+		
+		if global.doublegrab == 3
+			bpad = 25;
+		
+	    if obj_player1.character == "N"
+	    {
+	        bx = hud_xx - 69;
+	        by = hud_yy + 45;
+	        bspr = spr_playerN_noisebomb;
+	    }
+		
+		if global.heatmeter
+			by += 32;
+		
+	    bx += bpad * max(ceil(global.bullet), 3);
+	    for (var i = 0; i < max(global.bullet, 3); i++)
+	    {
+			var a = alpha, img = bulletimage, col = c_white;
+			if i >= floor(global.bullet)
+			{
+				a = 0.25;
+				img = 10;
+				col = c_black;
+			}
+			
+	        bx -= bpad;
+	        draw_sprite_ext(bspr, img, bx, by, 1, 1, 0, col, a);
+			if i == floor(global.bullet)
+			{
+				draw_set_flash();
+				draw_sprite_part_ext(bspr, img, 0, 0, 64, 96 * (0.5 + frac(global.bullet) / 2), bx - 32, by, 1, 1, c_white, 0.75);
+				draw_reset_flash();
+			}
+	    }
+	}
+	
+	// chainsaw
+	if global.doublegrab == 3
+	{
+		var bx = hud_xx - 63, by = hud_yy + 60, bpad = 25;
+	    var bspr = spr_fuelHUD;
+		
+		if global.shootstyle != 1
+		{
+			bulletimage += 0.35;
+			bpad = 42;
+		}
+		else
+			bx += 100;
+		
+		if global.heatmeter
+			by += 32;
+		
+	    bx += bpad * max(ceil(global.fuel), 3);
+	    for (i = 0; i < max(global.fuel, 3); i++)
+	    {
+			var a = alpha, img = bulletimage, col = c_white;
+			if i >= floor(global.fuel)
+			{
+				a = 0.25;
+				img = 10;
+				col = c_black;
+			}
+			
+	        bx -= bpad;
+	        draw_sprite_ext(bspr, img, bx, by, -1, 1, 0, col, a);
+			
+			if i == floor(global.fuel)
+			{
+				draw_set_flash();
+				draw_sprite_part_ext(bspr, img, 0, 0, 40, 46 * frac(global.fuel), bx - 20, by - 23, 1, 1, c_white, 0.75);
+				draw_reset_flash();
+			}
+	    }
+	}
+	
 	draw_set_font(lang_get_font("bigfont"));
 	draw_set_halign(1);
 	draw_set_color(c_white);

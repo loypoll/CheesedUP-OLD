@@ -67,7 +67,7 @@ function scr_wc_create()
 	WCscr_addbind(ord("3"), "var");
 	WCscr_addbind(ord("4"), "oobcam");
 	WCscr_addbind(ord("5"), "panic");
-	WCscr_addbind(ord("7"), "showinvisible");
+	WCscr_addbind(ord("7"), "showcollisions");
 	WCscr_addbind(ord("9"), "debughud");
 	WCscr_addbind(vk_numpad0, function() {
 		global.option_resolution = 1;
@@ -892,8 +892,8 @@ function scr_wc_drawgui()
 						WC_win_dragy = mousey - win_height;
 						win_resize = true;
 					}
-					win_width = max(mousex - WC_win_dragx, 16);
-					win_height = max(mousey - WC_win_dragy, 16);
+					win_width = clamp(mousex - WC_win_dragx, 16, guiwidth - win_x);
+					win_height = clamp(mousey - WC_win_dragy, 16, guiheight - win_y);
 				}
 				else
 					win_resize = false;
