@@ -123,7 +123,7 @@ if (state == states.chase && ragecooldown <= 0)
 	{
 		if (x != player.x)
 			image_xscale = sign(player.x - x);
-		if (elite)
+		if (elite or global.stylethreshold >= 3)
 		{
 			sprite_index = spr_minijohn_rage1;
 			image_index = 0;

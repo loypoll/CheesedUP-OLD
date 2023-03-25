@@ -5973,6 +5973,7 @@
     {"name":"bg_space1","order":2,"path":"sprites/bg_space1/bg_space1.yy",},
     {"name":"spr_title_thepigcity","order":16,"path":"sprites/spr_title_thepigcity/spr_title_thepigcity.yy",},
     {"name":"spr_towerpainting1","order":53,"path":"sprites/spr_towerpainting1/spr_towerpainting1.yy",},
+    {"name":"check_boss","order":11,"path":"scripts/check_boss/check_boss.yy",},
     {"name":"spr_pepperman_mask","order":49,"path":"sprites/spr_pepperman_mask/spr_pepperman_mask.yy",},
     {"name":"spr_temperature_meter","order":107,"path":"sprites/spr_temperature_meter/spr_temperature_meter.yy",},
     {"name":"sh_oobcam","order":5,"path":"scripts/sh_oobcam/sh_oobcam.yy",},

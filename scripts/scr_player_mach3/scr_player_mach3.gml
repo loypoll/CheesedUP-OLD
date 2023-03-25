@@ -194,7 +194,7 @@ function scr_player_mach3()
 				}
 				
 				// kungfu
-				if input_buffer_slap > 0 && !key_up && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
+				else if input_buffer_slap > 0 && !key_up && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 				{
 					input_buffer_slap = 0;
 					scr_perform_move(moves.grabattack, states.mach3);

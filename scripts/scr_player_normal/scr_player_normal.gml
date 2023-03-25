@@ -343,7 +343,7 @@ function state_player_normal()
 			movespeed = 8;
 			image_index = 0;
 		}
-	
+		
 		// uppercut
 		else if (input_buffer_slap > 0 && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 		{
@@ -357,9 +357,9 @@ function state_player_normal()
 			particle_set_scale(particle.highjumpcloud2, xscale, 1);
 			create_particle(x, y, particle.highjumpcloud2, 0);
 		}
-	
+		
 		// kungfu
-		if input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
+		else if input_buffer_slap > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
 		{
 			input_buffer_slap = 0;
 			scr_perform_move(moves.grabattack, states.normal);

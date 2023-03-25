@@ -31,6 +31,11 @@ for (var i = 0; i < array_length(collision_list); i++)
 	{
 		switch (object_index)
 		{
+			case obj_baddie:
+				global.style += (5 + floor(global.combo / 5));
+				instance_destroy();
+				break;
+			
 			default:
 				instance_destroy();
 				break;

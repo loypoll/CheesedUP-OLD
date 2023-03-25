@@ -129,8 +129,9 @@ function scr_perform_move(move, prestate)
 					with instance_create(x, y, obj_superdashcloud)
 						image_xscale = other.xscale;
 					
-					global.fuel--;
+					global.fuel = floor(global.fuel - 1);
 					state = states.chainsawbump;
+					hsp = max(abs(hsp), 10) * xscale;
 					sprite_index = spr_player_chainsawdash;
 					image_index = 0;
 				}

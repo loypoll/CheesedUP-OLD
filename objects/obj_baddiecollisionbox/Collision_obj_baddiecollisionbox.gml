@@ -3,7 +3,7 @@ if (instance_exists(baddieID) && instance_exists(other.baddieID) && baddieID.obj
 	sound_play_3d("event:/sfx/pep/punch", x, y);
 	if (!baddieID.important)
 	{
-		global.style += (4 + floor(global.combo / 2));
+		global.style += (5 + floor(global.combo / 5));
 		global.combotime = 60;
 		global.heattime = 60;
 	}

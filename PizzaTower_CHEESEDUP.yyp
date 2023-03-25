@@ -6525,6 +6525,7 @@
     {"id":{"name":"spr_title_thepigcity","path":"sprites/spr_title_thepigcity/spr_title_thepigcity.yy",},},
     {"id":{"name":"spr_towerpainting1","path":"sprites/spr_towerpainting1/spr_towerpainting1.yy",},},
     {"id":{"name":"spr_player_trashstart","path":"sprites/spr_player_trashstart/spr_player_trashstart.yy",},},
+    {"id":{"name":"check_boss","path":"scripts/check_boss/check_boss.yy",},},
     {"id":{"name":"spr_pepperman_mask","path":"sprites/spr_pepperman_mask/spr_pepperman_mask.yy",},},
     {"id":{"name":"spr_temperature_meter","path":"sprites/spr_temperature_meter/spr_temperature_meter.yy",},},
     {"id":{"name":"sh_oobcam","path":"scripts/sh_oobcam/sh_oobcam.yy",},},

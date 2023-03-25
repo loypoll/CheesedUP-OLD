@@ -47,12 +47,13 @@ function scr_player_chainsawbump()
 			}
 		}
 	}
-	if (key_jump && grounded)
+	if (key_jump && grounded && sprite_index != spr_player_chainsawhitwall)
 	{
 		jumpstop = false;
 		vsp = -11;
 		state = states.mach2;
 		sprite_index = spr_mach2jump;
+		hsp = abs(hsp) * xscale;
 	}
 	if (!instance_exists(obj_chainsawpuff))
 		instance_create(x, y, obj_chainsawpuff);
@@ -64,7 +65,10 @@ function scr_player_chainsawbump()
 			state = states.normal;
 	}
 	if (floor(image_index) >= image_number - 1 && sprite_index == spr_player_chainsawhitwall)
+	{
+		landAnim = false;
 		state = states.normal;
+	}
 	
 	if (sprite_index == spr_player_chainsawdash)
 		image_speed = 0.4 + (movespeed * 0.01);

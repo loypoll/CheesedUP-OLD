@@ -226,11 +226,10 @@ if (obj_player.state != states.dead)
 			if i == floor(global.bullet)
 			{
 				draw_set_flash();
-				draw_sprite_part_ext(bspr, img, 0, 0, 64, 96 * (0.5 + frac(global.bullet) / 2), bx - 32, by, 1, 1, c_white, 0.5);
+				draw_sprite_part_ext(bspr, img, 0, 0, 64, 96 * (0.5 + frac(global.bullet) / 2), bx - 32, by, 1, 1, c_white, 0.75);
 				draw_reset_flash();
 			}
 	    }
-		global.bullet = Approach(global.bullet, 3, 0.001);
 	}
 	
 	// chainsaw
@@ -240,18 +239,36 @@ if (obj_player.state != states.dead)
 	    var bspr = spr_fuelHUD;
 		
 		if global.shootstyle != 1
+		{
 			bulletimage += 0.35;
+			bpad = 42;
+		}
 		else
 			bx += 100;
 		
 		if global.heatmeter
 			by += 32;
 		
-	    bx += bpad * global.fuel;
-	    for (i = 0; i < global.fuel; i++)
+	    bx += bpad * max(ceil(global.fuel), 3);
+	    for (i = 0; i < max(global.fuel, 3); i++)
 	    {
+			var a = alpha, img = bulletimage, col = c_white;
+			if i >= floor(global.fuel)
+			{
+				a = 0.25;
+				img = 10;
+				col = c_black;
+			}
+			
 	        bx -= bpad;
-	        draw_sprite_ext(bspr, bulletimage, bx, by, -1, 1, 0, c_white, alpha);
+	        draw_sprite_ext(bspr, img, bx, by, -1, 1, 0, col, a);
+			
+			if i == floor(global.fuel)
+			{
+				draw_set_flash();
+				draw_sprite_part_ext(bspr, img, 0, 0, 40, 46 * frac(global.fuel), bx - 20, by - 23, 1, 1, c_white, 0.75);
+				draw_reset_flash();
+			}
 	    }
 	}
 	

@@ -99,6 +99,7 @@ function scr_player_punch()
 		{
 			input_buffer_slap = 0;
 			scr_perform_move(moves.doublegrab, states.punch);
+			exit;
 		}
 				
 		if _kungfuground && (input_buffer_jump > 0 && can_jump && (character != "N" or noisetype == 0))

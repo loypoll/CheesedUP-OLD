@@ -1060,6 +1060,10 @@ if (object_index == obj_player1)
 	}
 	if (global.heattime <= 0 && global.style > -1 && global.stylelock == 0)
 		global.style -= 0.15;
+	
+	// bullet and chainsaw
+	global.bullet = Approach(global.bullet, 3, 0.001);
+	global.fuel = Approach(global.fuel, 3, 0.005);
 }
 
 // input buffers
