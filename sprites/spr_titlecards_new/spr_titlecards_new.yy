@@ -27,8 +27,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Levels",
-    "path": "folders/Sprites/CheesyPizza/Levels.yy",
+    "name": "CheesyPizza",
+    "path": "folders/Sprites/CheesyPizza.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
