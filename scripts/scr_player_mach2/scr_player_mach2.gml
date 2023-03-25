@@ -243,82 +243,85 @@ function scr_player_mach2()
 		}
 	}
 	
-	if (input_buffer_grab > 0 && !key_up && !skateboarding && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
+	if character != "V" && character != "S"
 	{
-		input_buffer_grab = 0;
-		sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
-		suplexmove = true;
-		fmod_event_instance_play(suplexdashsnd);
-		particle_set_scale(particle.jumpdust, xscale, 1);
-		create_particle(x, y, particle.jumpdust, 0);
-		state = states.handstandjump;
-		if (movespeed < 5)
-			movespeed = 5;
-		image_index = 0;
-	}
-	else if (input_buffer_slap > 0 && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
-	{
-		input_buffer_slap = 0;
-		state = states.punch;
-		image_index = 0;
-		sprite_index = spr_breakdanceuppercut;
-		fmod_event_instance_play(snd_uppercut);
-		vsp = -10;
-		movespeed = hsp;
-		particle_set_scale(particle.highjumpcloud2, xscale, 1);
-		create_particle(x, y, particle.highjumpcloud2, 0);
-	}
-	
-	// kungfu
-	if input_buffer_slap > 0 && !key_up && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
-	{
-		switch global.attackstyle
+		if (input_buffer_grab > 0 && !key_up && !skateboarding && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 		{
-			case 1: // kung fu
-				input_buffer_slap = 0;
-				if grounded
-				{
-					with instance_create(x, y, obj_superdashcloud)
-						image_xscale = other.xscale;
-					sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
-				}
-				else
-					sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
-				suplexmove = true;
+			input_buffer_grab = 0;
+			sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
+			suplexmove = true;
+			fmod_event_instance_play(suplexdashsnd);
+			particle_set_scale(particle.jumpdust, xscale, 1);
+			create_particle(x, y, particle.jumpdust, 0);
+			state = states.handstandjump;
+			if (movespeed < 5)
+				movespeed = 5;
+			image_index = 0;
+		}
+		else if (input_buffer_slap > 0 && key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
+		{
+			input_buffer_slap = 0;
+			state = states.punch;
+			image_index = 0;
+			sprite_index = spr_breakdanceuppercut;
+			fmod_event_instance_play(snd_uppercut);
+			vsp = -10;
+			movespeed = hsp;
+			particle_set_scale(particle.highjumpcloud2, xscale, 1);
+			create_particle(x, y, particle.highjumpcloud2, 0);
+		}
+	
+		// kungfu
+		if input_buffer_slap > 0 && !key_up && !suplexmove && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol))
+		{
+			switch global.attackstyle
+			{
+				case 1: // kung fu
+					input_buffer_slap = 0;
+					if grounded
+					{
+						with instance_create(x, y, obj_superdashcloud)
+							image_xscale = other.xscale;
+						sprite_index = choose(spr_player_kungfu1, spr_player_kungfu2, spr_player_kungfu3);
+					}
+					else
+						sprite_index = choose(spr_player_kungfuair1transition, spr_player_kungfuair2transition, spr_player_kungfuair3transition);
+					suplexmove = true;
 				
-				particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-				create_particle(x, y, particle.crazyrunothereffect);
+					particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+					create_particle(x, y, particle.crazyrunothereffect);
 				
-				sound_play_3d("event:/sfx/pto/kungfu", x, y);
-				state = states.punch;
-				movespeed = max(movespeed, 10);
-				if vsp > 0
-					vsp = 0;
-				image_index = 0;
-				break;
+					sound_play_3d("event:/sfx/pto/kungfu", x, y);
+					state = states.punch;
+					movespeed = max(movespeed, 10);
+					if vsp > 0
+						vsp = 0;
+					image_index = 0;
+					break;
 			
-			case 2: // shoulderbash
-				input_buffer_slap = 0;
-				if grounded
-				{
-					with instance_create(x, y, obj_superdashcloud)
-						image_xscale = other.xscale;
-					sprite_index = spr_attackdash;
-				}
-				else
-					sprite_index = spr_airattackstart;
-				suplexmove = true;
+				case 2: // shoulderbash
+					input_buffer_slap = 0;
+					if grounded
+					{
+						with instance_create(x, y, obj_superdashcloud)
+							image_xscale = other.xscale;
+						sprite_index = spr_attackdash;
+					}
+					else
+						sprite_index = spr_airattackstart;
+					suplexmove = true;
 				
-				particle_set_scale(particle.crazyrunothereffect, xscale, 1);
-				create_particle(x, y, particle.crazyrunothereffect);
+					particle_set_scale(particle.crazyrunothereffect, xscale, 1);
+					create_particle(x, y, particle.crazyrunothereffect);
 				
-				fmod_event_instance_play(snd_dive);
-				state = states.handstandjump;
-				if vsp < 0 && !REMIX
-					vsp = 0;
-				movespeed = max(movespeed, 10);
-				image_index = 0;
-				break;
+					fmod_event_instance_play(snd_dive);
+					state = states.handstandjump;
+					if vsp < 0 && !REMIX
+						vsp = 0;
+					movespeed = max(movespeed, 10);
+					image_index = 0;
+					break;
+			}
 		}
 	}
 	

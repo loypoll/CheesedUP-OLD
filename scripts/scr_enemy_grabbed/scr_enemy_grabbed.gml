@@ -307,7 +307,7 @@ function scr_enemy_grabbed()
 		}
 		if (_obj_player.state == states.superslam or (_obj_player.state == states.chainsaw && sprite_index == spr_player_piledriver))
 		{
-			if (_obj_player.character == "P")
+			if (_obj_player.character != "N")
 			{
 				if (_obj_player.sprite_index != _obj_player.spr_piledriverland)
 				{

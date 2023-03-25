@@ -21,7 +21,7 @@ function Instakill()
 			}
 		}
 	}
-	if (state == states.mach3 && sprite_index != spr_player_Sjumpcancel && sprite_index != spr_mach3hit && (character == "P" or character == "V"))
+	if (state == states.mach3 && sprite_index != spr_player_Sjumpcancel && sprite_index != spr_mach3hit && (character != "N" or noisetype == 0))
 	{
 		if (fightball == 0)
 			sprite_index = spr_mach3hit;

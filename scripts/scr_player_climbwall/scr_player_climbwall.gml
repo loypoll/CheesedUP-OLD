@@ -154,6 +154,7 @@ function scr_player_climbwall()
 				
 				// grab if there are destructibles in front of you
 				if REMIX && state == states.climbwall && place_meeting(x + xscale, y, obj_destructibles)
+				&& character != "V" && character != "S"
 				{
 					if (input_buffer_grab > 0 && shotgunAnim == false && !global.pistol)
 					{

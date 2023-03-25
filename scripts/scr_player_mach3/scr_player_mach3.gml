@@ -79,7 +79,7 @@ function scr_player_mach3()
 						image_index = 0;
 						sprite_index = spr_mach3jump;
 					}
-					if (character == "P")
+					if (character != "N")
 						vsp = -11;
 					else
 						vsp = -13;
@@ -117,7 +117,7 @@ function scr_player_mach3()
 					image_speed = 0.75;
 				else if (sprite_index == spr_rollgetup or sprite_index == spr_mach3hit or sprite_index == spr_dashpadmach)
 					image_speed = 0.4;
-				if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0 && (character == "P" or character == "N" && noisetype == 0)) or ((character == "S" && (move == 0 or move != xscale) && grounded) && fightball == 0))
+				if (((!key_attack && fightball == 0 && !launched) && sprite_index != spr_dashpadmach && grounded && vsp > 0 && character != "S" && (character != "N" or noisetype == 0)) or ((character == "S" && (move == 0 or move != xscale) && grounded) && fightball == 0))
 				{
 					sprite_index = spr_machslidestart;
 					sound_play_3d("event:/sfx/pep/break", x, y);
@@ -125,7 +125,7 @@ function scr_player_mach3()
 					image_index = 0;
 					launched = false;
 				}
-				if (move == -xscale && grounded && vsp > 0 && !launched && (character == "P" or character == "N") && fightball == 0 && sprite_index != spr_dashpadmach)
+				if (move == -xscale && grounded && vsp > 0 && !launched && character != "S" && fightball == 0 && sprite_index != spr_dashpadmach)
 				{
 					sound_play_3d("event:/sfx/pep/machslideboost", x, y);
 					sprite_index = spr_mach3boost;
@@ -785,7 +785,7 @@ function scr_player_mach3()
 		image_speed = 0.4;
 	else
 		image_speed = 0.4;
-	if (scr_check_superjump() && fightball == 0 && state == states.mach3 && (character != "N" or noisetype == 0) && grounded && vsp > 0 && sprite_index != spr_dashpadmach && !place_meeting(x, y, obj_dashpad))
+	if (scr_check_superjump() && fightball == 0 && state == states.mach3 && (character != "N" or noisetype == 0) && character != "V" && grounded && vsp > 0 && sprite_index != spr_dashpadmach && !place_meeting(x, y, obj_dashpad))
 	{
 		sprite_index = spr_superjumpprep;
 		state = states.Sjumpprep;

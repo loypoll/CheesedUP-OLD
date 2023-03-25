@@ -10,6 +10,7 @@ function sh_showcollisions(args)
 		else
 			return "Invalid argument: " + args[1];
 	}
+	WC_showinvisible = 0;
 	WC_showcollisions = togglepanic;
 	toggle_collisions(togglepanic);
 }
