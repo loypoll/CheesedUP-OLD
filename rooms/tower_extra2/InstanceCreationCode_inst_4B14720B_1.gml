@@ -1,4 +1,4 @@
-msg = "Midway";
-targetRoom = midway_1;
-level = "midway";
-group_arr = ["midwaygroup"];
+msg = "Canada";
+//targetRoom = canada_1;
+level = "canada";
+//group_arr = ["canadagroup"];

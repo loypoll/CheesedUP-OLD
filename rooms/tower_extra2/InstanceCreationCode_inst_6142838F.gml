@@ -1,4 +1,4 @@
-msg = "Midway";
-targetRoom = midway_1;
-level = "midway";
-group_arr = ["midwaygroup"];
+msg = "La Burrata Temple";
+//targetRoom = sanctum_1;
+level = "sanctum";
+//group_arr = ["sanctumgroup"];

@@ -378,7 +378,7 @@ function state_player_normal()
 				with instance_create(x, y, obj_superdashcloud)
 					image_xscale = other.xscale;
 				
-				fmod_event_instance_play(snd_dive);
+				sound_play_3d("event:/sfx/pto/kungfu", x, y);
 				state = states.punch;
 				if vsp > 0
 					vsp = 0;
