@@ -5174,6 +5174,7 @@
     {"name":"spr_gustavokitchen4","order":16,"path":"sprites/spr_gustavokitchen4/spr_gustavokitchen4.yy",},
     {"name":"spr_gustavokitchen5","order":17,"path":"sprites/spr_gustavokitchen5/spr_gustavokitchen5.yy",},
     {"name":"spr_farmroot2","order":8,"path":"sprites/spr_farmroot2/spr_farmroot2.yy",},
+    {"name":"ruinB_5","order":4,"path":"rooms/ruinB_5/ruinB_5.yy",},
     {"name":"spr_gustavokitchen6","order":18,"path":"sprites/spr_gustavokitchen6/spr_gustavokitchen6.yy",},
     {"name":"spr_gnomesign1","order":11,"path":"sprites/spr_gnomesign1/spr_gnomesign1.yy",},
     {"name":"spr_gnomesign2","order":12,"path":"sprites/spr_gnomesign2/spr_gnomesign2.yy",},
