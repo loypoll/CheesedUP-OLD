@@ -25,7 +25,7 @@ else
 	if (sprite_index != spr_gerome_collected)
 	{
 		var s = obj_player1.sprite_index;
-		if (s == obj_player1.spr_supertaunt1 or s == obj_player1.spr_supertaunt2 or s == obj_player1.spr_supertaunt3 or s == obj_player1.spr_supertaunt4 or s == spr_player_ratmountsupertaunt)
+		if (s == obj_player1.spr_supertaunt1 or s == obj_player1.spr_supertaunt2 or s == obj_player1.spr_supertaunt3 or s == obj_player1.spr_supertaunt4 or s == spr_player_supertaunt5 or s == spr_player_ratmountsupertaunt)
 		{
 			sprite_index = spr_gerome_collected;
 			image_index = 0;

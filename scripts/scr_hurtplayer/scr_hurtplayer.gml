@@ -22,7 +22,7 @@ function scr_hurtplayer(player)
 		else if (sprite_index == spr_player_jetpackstart2)
 		{
 		}
-		else if ((state == states.backbreaker && (parrytimer > 0 or instance_exists(obj_parryhitbox) or sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_ratmountsupertaunt)) or state == states.chainsaw or state == states.phase1hurt or state == states.actor or instance_exists(obj_bossdark))
+		else if ((state == states.backbreaker && (parrytimer > 0 or instance_exists(obj_parryhitbox) or sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_supertaunt5 or sprite_index == spr_player_ratmountsupertaunt)) or state == states.chainsaw or state == states.phase1hurt or state == states.actor or instance_exists(obj_bossdark))
 		{
 			if (state == states.backbreaker)
 				trace(parrytimer);

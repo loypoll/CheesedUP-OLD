@@ -18,7 +18,7 @@ function scr_dotaunt()
 		if (!finisher)
 		{
 			taunttimer = 20;
-			if (state != states.backbreaker && sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4 && sprite_index != spr_player_ratmountsupertaunt)
+			if (state != states.backbreaker && sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4 && sprite_index != spr_player_supertaunt5 && sprite_index != spr_player_ratmountsupertaunt)
 			{
 				tauntstoredmovespeed = movespeed;
 				tauntstoredvsp = vsp + grav;
@@ -33,7 +33,10 @@ function scr_dotaunt()
 				obj_savesystem.ini_str = ini_close();
 				sound_play_3d("event:/sfx/pep/supertaunt", x, y);
 				image_index = 0;
-				sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3, spr_supertaunt4);
+				if character == "P" && REMIX
+					sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3, spr_supertaunt4, spr_player_supertaunt5);
+				else
+					sprite_index = choose(spr_supertaunt1, spr_supertaunt2, spr_supertaunt3, spr_supertaunt4);
 				if (isgustavo)
 					sprite_index = spr_player_ratmountsupertaunt;
 			}

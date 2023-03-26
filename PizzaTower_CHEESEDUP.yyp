@@ -3993,6 +3993,7 @@
     {"id":{"name":"spr_elevatorlocked","path":"sprites/spr_elevatorlocked/spr_elevatorlocked.yy",},},
     {"id":{"name":"spr_sausageman_stunfall","path":"sprites/spr_sausageman_stunfall/spr_sausageman_stunfall.yy",},},
     {"id":{"name":"spr_player_jetpackmid","path":"sprites/spr_player_jetpackmid/spr_player_jetpackmid.yy",},},
+    {"id":{"name":"spr_player_supertaunt5","path":"sprites/spr_player_supertaunt5/spr_player_supertaunt5.yy",},},
     {"id":{"name":"spr_player_fireass","path":"sprites/spr_player_fireass/spr_player_fireass.yy",},},
     {"id":{"name":"spr_player_fireassground","path":"sprites/spr_player_fireassground/spr_player_fireassground.yy",},},
     {"id":{"name":"spr_player_fireassend","path":"sprites/spr_player_fireassend/spr_player_fireassend.yy",},},
