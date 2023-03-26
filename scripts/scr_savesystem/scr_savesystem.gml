@@ -31,7 +31,11 @@ function get_percentage()
 		var r = ini_read_string("Ranks", level, "d");
 		if (r == "p")
 			extracount++;
-		count += ds_map_find_value(_rank_map, r);
+		
+		var val = ds_map_find_value(_rank_map, r);
+		if val != undefined
+			count += val;
+		
 		count += ini_read_real("Secret", level, 0);
 		var ac = 0;
 		for (j = 0; j < 3; j++)

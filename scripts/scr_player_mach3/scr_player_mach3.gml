@@ -170,6 +170,8 @@ function scr_player_mach3()
 				if (input_buffer_grab > 0 && !key_up && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)) && sprite_index != spr_dashpadmach)
 				{
 					input_buffer_grab = 0;
+					input_buffer_slap = 0;
+					
 					sprite_index = shotgunAnim ? spr_shotgunsuplexdash : spr_suplexdash;
 					suplexmove = true;
 					fmod_event_instance_play(suplexdashsnd);

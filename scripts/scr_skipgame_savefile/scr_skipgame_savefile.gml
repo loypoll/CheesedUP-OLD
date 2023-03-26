@@ -13,8 +13,8 @@ function scr_skipgame_savefile()
 	}
 	
 	// etc
-	ini_write_real("Ranks", "finalrank", "");
-	ini_write_real("Ranks", "exit", "");
+	ini_write_string("Ranks", "finalrank", "");
+	ini_write_string("Ranks", "exit", "");
 	ini_write_real("Tutorial", "finished", true);
 	ini_write_real("Tutorial", "tutorialcutscene", true);
 	ini_write_real("Game", "fakepepportrait", true);

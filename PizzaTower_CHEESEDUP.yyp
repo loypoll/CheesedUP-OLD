@@ -457,6 +457,7 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"english.txt","CopyToMask":-1,"filePath":"datafiles/lang",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Master.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"Master.strings.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"midis.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"music.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"sfx.bank","CopyToMask":-1,"filePath":"datafiles/sound/Desktop",},
   ],
