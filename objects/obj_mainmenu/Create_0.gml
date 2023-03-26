@@ -27,3 +27,11 @@ punch_y = 0;
 key_jump = false;
 index = 0;
 scr_init_input();
+
+if debug
+{
+	state = -1;
+	global.currentsavefile = 9;
+	scr_skipgame_savefile();
+	alarm[2] = 1;
+}

@@ -2,7 +2,7 @@ if live_call() return live_result;
 
 // temp bg
 draw_set_colour(c_black);
-draw_set_alpha(0.35);
+draw_set_alpha(0.75);
 draw_rectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, false);
 draw_set_alpha(1);
 
@@ -29,7 +29,10 @@ for(var i = 0; i < array_length(options_array); i++)
 			draw_text(80, yy, opt.name);
 			
 			// value
-			draw_text(350, yy, opt.opts[opt.value][0]);
+			var valuewd = string_width(opt.opts[opt.value][0]);
+			var newwd = min(valuewd, 100);
+			
+			draw_text_transformed(350, yy, opt.opts[opt.value][0], newwd / valuewd, 1, 0);
 			
 			yy += 18;
 			break;
@@ -54,7 +57,7 @@ draw_set_alpha(1);
 draw_text(690, 80, string_upper(opt.name));
 
 draw_set_font(global.font_small);
-draw_text_ext(690, is_callable(opt.drawfunc) ? 420 : 260, opt.desc, 16, 450);
+draw_text_ext(690, is_callable(opt.drawfunc) ? 420 : 260, opt.desc, 16, 440);
 
 draw_set_font(global.smallfont);
 if opt.value < array_length(opt.opts)

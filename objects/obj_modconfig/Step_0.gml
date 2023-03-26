@@ -40,6 +40,7 @@ if move != 0
 {
 	sound_play_oneshot(sfx_step);
 	simuplayer.state = states.titlescreen;
+	simuplayer.changed = true;
 	
 	sel += move;
 	if sel >= array_length(options_array)
@@ -67,6 +68,7 @@ for(var i = 0; i < array_length(options_array); i++)
 var move2 = key_left2 + key_right2;
 if move2 != 0
 {
+	simuplayer.changed = true;
 	var opt = options_array[sel];
 	
 	var valueold = opt.value;

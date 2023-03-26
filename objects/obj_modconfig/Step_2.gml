@@ -30,18 +30,23 @@ with p
 			image += lerp(0.35, 0.6, abs(hsp) / 6);
 			if move != 0
 			{
+				if xscale != move
+					hsp = move;
 				xscale = move;
 				hsp = Approach(hsp, 6 * move, 0.5);
 			}
 			else
 				hsp = 0;
 			
-			if y < groundlevel
-				sprite = spr_player_fall;
-			else if hsp == 0
-				sprite = spr_player_idle;
-			else
-				sprite = spr_player_move;
+			if sprite != spr_player_pistolidle
+			{
+				if y < groundlevel
+					sprite = spr_player_fall;
+				else if hsp == 0
+					sprite = spr_player_idle;
+				else
+					sprite = spr_player_move;
+			}
 			break;
 		
 		case states.panicjump:
@@ -65,12 +70,44 @@ with p
 		case states.handstandjump:
 			image += 0.35;
 			
-			hsp = Approach(hsp, xscale * 10, 0.5);
+			hsp = Approach(hsp, xscale * 10.4, 0.5);
 			if image > sprite_get_number(sprite) - 1
 			{
 				state = states.normal;
 				sprite = spr_player_idle;
 				move = 0;
+			}
+			break;
+		
+		case states.pistol:
+			image += 0.35;
+			if image > sprite_get_number(sprite) - 1
+			{
+				state = states.normal;
+				sprite = spr_player_pistolidle;
+			}
+			break;
+		
+		case states.faceplant:
+			image += 0.5;
+			if image > sprite_get_number(sprite) - 1
+			{
+				state = states.normal;
+				sprite = spr_player_idle;
+				move = 0;
+			}
+			break;
+		
+		case states.chainsawbump:
+			image += 0.4;
+			if image > sprite_get_number(sprite) - 1
+			{
+				state = states.normal;
+				sprite = spr_player_idle;
+				move = 0;
+				hsp = 0;
+				if other.bullets == 0
+					changed = true;
 			}
 			break;
 	}

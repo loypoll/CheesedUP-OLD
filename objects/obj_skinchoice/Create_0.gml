@@ -82,30 +82,44 @@ event_user(0);
 // functions
 select = function()
 {
+	var same = false;
 	with obj_player1
 	{
-		xscale = 1;
-		create_particle(x, y, particle.genericpoofeffect);
-		visible = false;
+		var prevchar = character, prevpal = paletteselect, prevtex = global.palettetexture, prevnoise = noisetype;
 		
+		// apply it
 		character = other.characters[other.sel.char][0];
 		scr_characterspr();
 		paletteselect = other.palettes[other.sel.pal].palette;
 		global.palettetexture = other.palettes[other.sel.pal].texture;
-		noisetype = other.noisetype
+		noisetype = other.noisetype;
 		
-		ini_open_from_string(obj_savesystem.ini_str);
-		ini_write_string("Game", "character", character);
-		ini_write_real("Game", "palette", paletteselect);
-		ini_write_string("Game", "palettetexture", other.palettes[other.sel.pal].entry);
-		obj_savesystem.ini_str = ini_close();
+		// if nothing changed, don't save
+		if character == prevchar && paletteselect == prevpal && noisetype == prevnoise && global.palettetexture == prevtex
+			same = true;
+		
+		if !same
+		{
+			// setup animation
+			xscale = 1;
+			create_particle(x, y, particle.genericpoofeffect);
+			visible = false;
+			
+			// save
+			ini_open_from_string(obj_savesystem.ini_str);
+			ini_write_string("Game", "character", character);
+			ini_write_real("Game", "palette", paletteselect);
+			ini_write_string("Game", "palettetexture", other.palettes[other.sel.pal].entry);
+			obj_savesystem.ini_str = ini_close();
+			gamesave_async_save();
+		}
 	}
 	anim_con = 2;
 	sound_play_centered(sfx_collecttoppin);
 }
 postdraw = function(curve)
 {
-	if anim_con == 2
+	if anim_con == 2 && !obj_player1.visible
 	{
 		var curve2 = animcurve_channel_evaluate(jumpcurve, 1 - anim_t);
 		
@@ -135,7 +149,7 @@ draw = function(curve)
 		curve2 = 1; // the timer
 	}
 	
-	if anim_con != 2
+	if anim_con != 2 or obj_player1.visible
 	{
 		// character
 		var charx = 960 / 2 + charshift[0] * 100, chary = 540 / 2 - 16 + charshift[1] * 100;

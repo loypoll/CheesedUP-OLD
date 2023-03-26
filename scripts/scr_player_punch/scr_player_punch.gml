@@ -61,7 +61,6 @@ function scr_player_punch()
 	{
 		move = key_left + key_right;
 		landAnim = true;
-		jumpstop = false;
 		image_speed = 0.4;
 		if (breakdance > 0)
 			breakdance--;
@@ -112,6 +111,7 @@ function scr_player_punch()
 			image_index = 0;
 			vsp = -11;
 			state = states.mach2;
+			movespeed = max(movespeed, 6);
 			sprite_index = spr_player_longjump;
 		}
 		else if _kungfuground && vsp < 0
@@ -142,7 +142,7 @@ function scr_player_punch()
 			vsp /= 20;
 			jumpstop = true;
 		}
-				
+		
 		if (floor(image_index) == (image_number - 1))
 		{
 			switch (sprite_index)
@@ -162,7 +162,10 @@ function scr_player_punch()
 						movespeed = max(movespeed, 6);
 					}
 					else
+					{
 						state = states.normal;
+						movespeed = max(movespeed, 0);
+					}
 					break;
 						
 				case spr_player_kungfuair1transition:
@@ -235,6 +238,8 @@ function scr_player_punch()
 						wallspeed = -vsp;
 					grabclimbbuffer = 10;
 					state = states.climbwall;
+					if REMIX
+						vsp = -wallspeed;
 				}
 				else
 				{

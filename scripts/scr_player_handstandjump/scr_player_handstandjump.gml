@@ -136,6 +136,8 @@ function scr_player_handstandjump()
 			wallspeed = -vsp;
 		grabclimbbuffer = 10;
 		state = states.climbwall;
+		if REMIX
+			vsp = -wallspeed;
 	}
 	if (grounded && scr_solid(x + xscale, y) && !place_meeting(x + sign(hsp), y, obj_destructibles) && (!place_meeting(x + sign(hsp), y, obj_slope) or scr_solid_slope(x + sign(hsp), y)))
 	{

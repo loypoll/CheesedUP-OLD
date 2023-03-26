@@ -7,6 +7,9 @@ if os_type == os_gxgames
 	game_end();
 }
 
+// disclaimer
+global.past_disclaimer = array_create(5, false);
+
 // initialize
 scr_get_languages();
 pal_swap_init_system_fix(shd_pal_swapper, true);
