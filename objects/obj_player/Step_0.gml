@@ -975,7 +975,7 @@ if (state == states.dead && y > (room_height * 2) && !instance_exists(obj_backto
 	global.leveltosave = -4;
 	global.startgate = 0;
 }
-if state != states.pistol && state != states.normal
+if state != states.pistol && state != states.normal && sprite_index != spr_player_pistoljump2
 	shoot = false;
 if (baddiegrabbedID == obj_null && (state == states.grab or state == states.superslam or state == states.tacklecharge))
 	state = states.normal;
@@ -1064,6 +1064,12 @@ if (object_index == obj_player1)
 	// bullet and chainsaw
 	global.bullet = Approach(global.bullet, 3, 0.001);
 	global.fuel = Approach(global.fuel, 3, 0.005);
+	
+	if obj_tv.targetspr == spr_tv_off
+	{
+		global.bullet = 3;
+		global.fuel = 3;
+	}
 }
 
 // input buffers
@@ -1286,4 +1292,6 @@ prevstate = state;
 prevsprite = sprite_index;
 
 // smooth x
+if smoothx != 0
+	xscale = -sign(smoothx);
 smoothx = Approach(smoothx, 0, 4);

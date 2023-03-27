@@ -1,2 +1,2 @@
-level = "medieval";
+level = "oldmansion";
 treasureindex = 1;

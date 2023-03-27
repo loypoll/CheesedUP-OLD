@@ -51,6 +51,7 @@ function scr_pistolshoot(required_state)
 		
 		if !global.pistol
 		{
+			pistolcooldown = 20;
 			shoot = true;
 			global.bullet = floor(global.bullet - 1);
 			pistol.april = true;

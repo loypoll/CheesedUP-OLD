@@ -1,6 +1,6 @@
 with (obj_player)
 {
-	if (state == states.backbreaker && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4))
+	if (state == states.backbreaker && (sprite_index == spr_supertaunt1 or sprite_index == spr_supertaunt2 or sprite_index == spr_supertaunt3 or sprite_index == spr_supertaunt4 or sprite_index == spr_player_supertaunt5))
 		draw_superslam_enemy();
 }
 if (room == Mainmenu or room == Longintro or room == Realtitlescreen)

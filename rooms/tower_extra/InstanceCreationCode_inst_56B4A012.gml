@@ -1,4 +1,4 @@
-msg = "Old Golf";
+msg = "Old Golf WIP";
 targetRoom = golf_room1;
 level = "golf";
 door_index = 2;

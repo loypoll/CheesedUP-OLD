@@ -1,4 +1,4 @@
-msg = "Old Shit!";
+msg = "Old Shit! WIP";
 targetRoom = floor4_room0;
 level = "oldsewer";
 door_index = 3;

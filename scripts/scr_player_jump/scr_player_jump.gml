@@ -275,7 +275,9 @@ function state_player_jump()
 	// suplex dash
 	if (input_buffer_grab > 0 && !key_up && sprite_index != spr_suplexbump && ((shotgunAnim == false && !global.pistol) or global.shootbutton == 1 or (global.shootbutton == 2 && !global.pistol)))
 	{
+		input_buffer_slap = 0;
 		input_buffer_grab = 0;
+		
 		particle_set_scale(particle.jumpdust, xscale, 1);
 		create_particle(x, y, particle.jumpdust, 0);
 		image_index = 0;

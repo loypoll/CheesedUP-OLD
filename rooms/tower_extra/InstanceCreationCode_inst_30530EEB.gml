@@ -1,4 +1,4 @@
-msg = "Old Freezer";
+msg = "Old Freezer WIP";
 targetRoom = floor5_room1;
 level = "oldfreezer";
 door_index = 3;

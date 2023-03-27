@@ -1,2 +1,2 @@
 visible = false;
-group_arr = ["desertgroup"];
+//group_arr = ["desertgroup"];

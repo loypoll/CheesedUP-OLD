@@ -1,7 +1,7 @@
 function scr_player_trickjump()
 {
 	hsp = movespeed * xscale;
-	if (sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4)
+	if (sprite_index != spr_supertaunt1 && sprite_index != spr_supertaunt2 && sprite_index != spr_supertaunt3 && sprite_index != spr_supertaunt4 && sprite_index != spr_player_supertaunt5)
 	{
 		image_speed = 0.35;
 		if (sprite_index == spr_player_rampjump && floor(image_index) == (image_number - 1))

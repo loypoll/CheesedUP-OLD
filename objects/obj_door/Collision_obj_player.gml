@@ -38,8 +38,8 @@ if !place_meeting(x, y, obj_doorblocked)
 			
 			if REMIX
 			{
-				smoothx = x - (door.x + 50);
-				x = door.x + 50;
+				smoothx = x - (door.x + door.sprite_width / 2);
+				x = door.x + door.sprite_width / 2;
 			}
 			
 			with obj_player

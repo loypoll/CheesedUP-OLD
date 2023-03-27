@@ -64,6 +64,7 @@ function scr_perform_move(move, prestate)
 						fmod_event_instance_stop(suplexdashsnd);
 						fmod_event_instance_play(snd_dive);
 						
+						state = states.handstandjump;
 						image_index = 0;
 						movespeed = max(movespeed, 10);
 						
@@ -101,7 +102,7 @@ function scr_perform_move(move, prestate)
 				break;
 			
 			case 2: // tumble
-				movespeed = 8;
+				movespeed = max(movespeed, 8);
 				if !grounded
 					vsp = -5;
 				
@@ -118,7 +119,7 @@ function scr_perform_move(move, prestate)
 				break;
 			
 			case 3: // chainsaw
-				if global.fuel > 0
+				if floor(global.fuel) > 0
 				{
 					particle_set_scale(particle.jumpdust, xscale, 1);
 					create_particle(x, y, particle.jumpdust, 0);
@@ -131,7 +132,7 @@ function scr_perform_move(move, prestate)
 					
 					global.fuel = floor(global.fuel - 1);
 					state = states.chainsawbump;
-					hsp = max(abs(hsp), 10) * xscale;
+					movespeed = max(movespeed, 10);
 					sprite_index = spr_player_chainsawdash;
 					image_index = 0;
 				}

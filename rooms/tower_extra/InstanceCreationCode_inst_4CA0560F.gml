@@ -1,4 +1,4 @@
-msg = "Old Desert";
+msg = "Old Desert WIP";
 targetRoom = desert_1;
 level = "desert";
 door_index = 1;
