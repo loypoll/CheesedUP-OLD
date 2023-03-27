@@ -1,0 +1,1 @@
+text = "Use your superjump and then press [M] to shoulderbash into metal blocks!"
