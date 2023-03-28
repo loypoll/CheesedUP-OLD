@@ -378,8 +378,10 @@ function state_player_normal()
 					sprite_index = spr_mach1;
 					image_index = 0;
 					state = states.mach2;
-					if (movespeed < 6)
-						movespeed = 6;
+					
+					if REMIX
+						movespeed = abs(movespeed);
+					movespeed = max(movespeed, 6);
 				}
 				if (global.kungfu && key_attack && state != states.handstandjump)
 				{
