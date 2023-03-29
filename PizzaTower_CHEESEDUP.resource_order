@@ -179,6 +179,7 @@
     {"name":"Tower and Hub","order":1,"path":"folders/Tile Sets/Tower and Hub.yy",},
     {"name":"Unused","order":25,"path":"folders/Tile Sets/Unused.yy",},
     {"name":"War","order":23,"path":"folders/Tile Sets/War.yy",},
+    {"name":"B Escape","order":1,"path":"folders/Rooms/CheesyPizza/Tower/B-Side Tower/B Escape.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_bossdoor","order":10,"path":"objects/obj_bossdoor/obj_bossdoor.yy",},
@@ -1015,6 +1016,7 @@
     {"name":"obj_noiserock","order":307,"path":"objects/obj_noiserock/obj_noiserock.yy",},
     {"name":"obj_boulderspawner","order":308,"path":"objects/obj_boulderspawner/obj_boulderspawner.yy",},
     {"name":"obj_firemouthflame","order":670,"path":"objects/obj_firemouthflame/obj_firemouthflame.yy",},
+    {"name":"tower_Bescapefinale2","order":2,"path":"rooms/tower_Bescapefinale2/tower_Bescapefinale2.yy",},
     {"name":"obj_freemilk","order":23,"path":"objects/obj_freemilk/obj_freemilk.yy",},
     {"name":"obj_tombstone","order":309,"path":"objects/obj_tombstone/obj_tombstone.yy",},
     {"name":"obj_ghostwall","order":24,"path":"objects/obj_ghostwall/obj_ghostwall.yy",},
