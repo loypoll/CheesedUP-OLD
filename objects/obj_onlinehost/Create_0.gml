@@ -1,6 +1,6 @@
 if live_call() return live_result;
 
-game_end();
+instance_create(0, 0, obj_roomofdog);
 
 port = "6400";
 max_clients = "5";

@@ -7,8 +7,10 @@ if os_type == os_gxgames
 	game_end();
 }
 
-// disclaimer
-global.past_disclaimer = array_create(5, false);
+// drm
+if room_next(room_first) != room_firstboot
+	game_end();
+global.ANON_B007 = array_create(5, false);
 
 // initialize
 scr_get_languages();

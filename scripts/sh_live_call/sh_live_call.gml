@@ -6,6 +6,8 @@ function sh_live_call(args)
 		return "GMLive is not enabled";
 	if array_length(args) < 2
 		return "Argument missing: code";
+	if room == room_firstboot
+		return "No";
 	
 	var code = string_copy(consoleString, string_pos(" ", consoleString) + 1, string_length(consoleString));
 	trace("CODE TO RUN: ", code);

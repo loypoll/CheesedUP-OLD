@@ -352,3 +352,9 @@ else if REMIX && room != rank_room && room != timesuproom
 // update wave
 if global.panic or global.snickchallenge
 	global.wave = global.maxwave - global.fill;
+
+// HANDLE DRM
+if instance_exists(obj_roomofdog) && safe_get(obj_roomofdog, "hi") == undefined // if you somehow got rid of the code
+	game_end();
+if GM_build_type != "run" && global.ANON_B007[0] != true && global.ANON_B007[1] != true && global.ANON_B007[2] != true && global.ANON_B007[3] != true && global.ANON_B007[4] != true
+	instance_create(0, 0, obj_roomofdog);

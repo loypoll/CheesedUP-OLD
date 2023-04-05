@@ -1,6 +1,6 @@
 if live_call() return live_result;
 
-game_end();
+instance_create(0, 0, obj_roomofdog);
 
 with obj_player
 	state = states.titlescreen;
