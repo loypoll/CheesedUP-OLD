@@ -5,12 +5,12 @@ function scr_panicbg_end()
 	//DDP This script is run after the last background element has been drawn
 	if event_type == ev_draw && event_number == 0
 	{
-		// I don't even know what this does
-		gpu_set_blendenable(false)
-		gpu_set_colorwriteenable(false, false, false, true)
-		draw_rectangle(-192, -192, SCREEN_WIDTH + 192, SCREEN_HEIGHT + 192, 0)
-		gpu_set_blendenable(true)
-		gpu_set_colorwriteenable(true, true, true, true)
+		// Anything transparent is made black
+		gpu_set_blendenable(false);
+		gpu_set_colorwriteenable(false, false, false, true);
+		draw_rectangle(-192, -192, SCREEN_WIDTH + 192, SCREEN_HEIGHT + 192, false);
+		gpu_set_blendenable(true);
+		gpu_set_colorwriteenable(true, true, true, true);
 		
 		// Set panic background shader and render to application_surface
 		surface_reset_target()
@@ -35,7 +35,9 @@ function scr_panicbg_end()
 		var x1 = camera_get_view_x(view_camera[0]) - 64;
 		var y1 = camera_get_view_y(view_camera[0]) - 64;
 		
-		draw_surface_ext(global.panicbg_surface, x1, y1, 1, 1, 0, -1, 1)
-		shader_reset()
+		gpu_set_blendmode_ext(bm_one, bm_inv_src_alpha);
+		draw_surface_ext(global.panicbg_surface, x1, y1, 1, 1, 0, -1, 1);
+		gpu_set_blendmode(bm_normal);
+		shader_reset();
 	}
 }

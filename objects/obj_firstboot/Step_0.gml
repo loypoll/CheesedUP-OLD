@@ -29,13 +29,16 @@ else if are_you_sure // impossible
 	instance_create(0, 0, obj_roomofdog);
 
 // drm
-if instance_exists(obj_roomofdog) && safe_get(obj_roomofdog, "hi") == undefined
-	game_end();
-if !is_array(global.ANON_B007)
-	instance_create(0, 0, obj_roomofdog);
-for(var i = 1; i < 5; i++)
+if GM_build_type != "run"
 {
-	if global.ANON_B007[i - 1] != global.ANON_B007[i]
-	or (global.ANON_B007[i] != false && state != -1)
+	if instance_exists(obj_roomofdog) && safe_get(obj_roomofdog, "hi") == undefined
+		game_end();
+	if !is_array(global.ANON_B007)
 		instance_create(0, 0, obj_roomofdog);
+	for(var i = 1; i < 5; i++)
+	{
+		if global.ANON_B007[i - 1] != global.ANON_B007[i]
+		or (global.ANON_B007[i] != false && state != -1)
+			instance_create(0, 0, obj_roomofdog);
+	}
 }

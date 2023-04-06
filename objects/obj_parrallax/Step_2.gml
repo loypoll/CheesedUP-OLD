@@ -38,7 +38,7 @@ function layer_get_parallax(lay)
 		case "Backgrounds_stillZH1": return [_cam_x * 0.35, _cam_y - calculate_parrallax_still_y(lay, 0.35) + Wave(-bg_ZH1_offset, bg_ZH1_offset, 4, 10)]; break;
 		case "Backgrounds_stillZH2": return [_cam_x * 0.35, _cam_y - calculate_parrallax_still_y(lay, 0.35) + Wave(-bg_ZH2_offset, bg_ZH2_offset, 4, 10)]; break;
 		
-		case "Foreground_1": return [_cam_x * -0.15, _cam_y * -0.15]; break;
+		case "Foreground_1": case "Foreground_A": return [_cam_x * -0.15, _cam_y * -0.15]; break;
 		case "Foreground_2": return [_cam_x * -0.25, _cam_y * -0.25]; break;
 		case "Foreground_Ground1": return [_cam_x * -0.15, room_height - sprite_get_height(layer_background_get_sprite(layer_background_get_id(lay)))]; break;
 		

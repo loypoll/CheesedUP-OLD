@@ -106,14 +106,14 @@ for (var i = 0; i < array_length(layers); i++)
 	#endregion
 	#region FOREGROUND
 	
-	if layname == "Foreground_1"
+	if layname == "Foreground_A"
 	{
 		var spr = layer_background_get_sprite(layer_background_get_id(lay));
 		if sprite_exists(spr)
 		{
 			var ht = sprite_get_height(spr);
 			
-			var yy = floor((room_height - ht) + (room_height - ht) * 0.15);
+			var yy = ceil((room_height - ht) + (room_height - ht) * 0.15);
 			if spr == fg_entrance1
 				yy += 24;
 			yy = floor(yy / 10) * 10;
@@ -128,7 +128,6 @@ for (var i = 0; i < array_length(layers); i++)
 // some more depths
 layer_depth("Foreground_1", -400);
 layer_depth("Foreground_Ground1", -401);
-layer_depth("Backgrounds_Ground1", 1000 + 250);
 
 // waving backgrounds
 bg_zigzag1_offset = layer_get_vspeed("Backgrounds_zigzag1");

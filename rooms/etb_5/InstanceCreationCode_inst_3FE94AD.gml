@@ -1,1 +1,1 @@
-cigar = true
+whoopass = true

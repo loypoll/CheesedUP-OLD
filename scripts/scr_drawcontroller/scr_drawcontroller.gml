@@ -7,9 +7,11 @@ function get_dark(blend, use_dark, use_position = false, posX = 0, posY = 0)
 		var d = room_width * room_height;
 		var b = d;
 		var bb = b;
+		
 		with (obj_lightsource)
 		{
 			if (object_index != obj_lightsource_attach or instance_exists(objectID))
+			&& (object_index != obj_siren or global.panic)
 			{
 				if (!use_position)
 					var dis = distance_to_object(other);
@@ -26,6 +28,7 @@ function get_dark(blend, use_dark, use_position = false, posX = 0, posY = 0)
 				}
 			}
 		}
+		
 		var t = (b + 0.4) * 255;
 		var a = (1 - obj_drawcontroller.dark_alpha) * 255;
 		a -= 102;

@@ -1,2 +1,2 @@
 particlespr = spr_beachdebris;
-targettiles = "Tiles_3";
+targettiles = "Tiles_1";

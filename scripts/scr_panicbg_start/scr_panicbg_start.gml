@@ -25,13 +25,13 @@ function scr_panicbg_start()
 				var l = room_bgs[i], lay = l.layer_id, bg = l.bg_sprite;
 				if layer_get_depth(lay) <= 0
 					continue;
-			
+				
 				var parallax = obj_parrallax.layer_get_parallax(l.layer_id);
 				if parallax == undefined
 					parallax = [0, 0];
 				layer_x(lay, floor(l.x + parallax[0]) - _cam_x + 64);
 				layer_y(lay, floor(l.y + parallax[1]) - _cam_y + 64);
-			
+				
 				global.panicbg_width = max(global.panicbg_width, sprite_get_width(bg));
 			}
 		}

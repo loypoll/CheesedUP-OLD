@@ -114,7 +114,9 @@ if REMIX && other.state != states.victory && other.state != states.backtohub
 		{
 			other.transfotip = id;
 			text = "{s}" + other.msg + "/";
+			
 			alarm[0] = 1;
+			alarm[1] = -1;
 			
 			fadeout_speed = 0.025;
 			fadeout = false;
