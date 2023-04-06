@@ -19,6 +19,7 @@ else
 	dark_lightning = false;
 }
 if (room == dungeon_5 or room == dungeon_6)
+or (room == strongcold_10 or room == strongcold_9)
 {
 	use_dark = true;
 	dark_alpha = 1;

@@ -1,5 +1,5 @@
 targetRoom = beach_1;
-msg = "Pineapple Beach";
+msg = "Pineapple Beach WIP";
 
 level = "beach";
 sprite_index = spr_gate_plage;

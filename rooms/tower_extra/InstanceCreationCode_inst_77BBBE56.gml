@@ -1,5 +1,5 @@
 targetRoom = dragonlair_1;
-msg = "Dragon Lair";
+msg = "Dragon Lair WIP";
 level = "dragonlair";
 door_index = 0;
 
