@@ -7,6 +7,8 @@ function scr_is_p_rank()
 }
 function scr_do_rank(showtoppins = true, boss = false)
 {
+	discord_end_timer();
+	
 	fmod_event_instance_stop(global.snd_escaperumble, true);
 	var ex = x;
 	var ey = y;

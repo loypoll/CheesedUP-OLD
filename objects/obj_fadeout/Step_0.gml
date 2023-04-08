@@ -18,6 +18,8 @@ if (fadealpha > f)
 		}
 		if (restarttimer)
 		{
+			discord_start_timer();
+			
 			global.level_minutes = 0;
 			global.level_seconds = 0;
 		}

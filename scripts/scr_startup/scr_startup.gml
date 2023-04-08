@@ -72,3 +72,6 @@ exception_unhandled_handler
 		file_text_close(_f);
 	}
 );
+
+// etc
+global.jeofmode = false;
