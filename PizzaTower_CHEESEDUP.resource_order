@@ -5347,6 +5347,7 @@
     {"name":"spr_bosstimer_bell","order":3,"path":"sprites/spr_bosstimer_bell/spr_bosstimer_bell.yy",},
     {"name":"spr_halloweencollectibles2","order":32,"path":"sprites/spr_halloweencollectibles2/spr_halloweencollectibles2.yy",},
     {"name":"spr_rattumbleblock_big_dead","order":21,"path":"sprites/spr_rattumbleblock_big_dead/spr_rattumbleblock_big_dead.yy",},
+    {"name":"check_kungfu_state","order":14,"path":"scripts/check_kungfu_state/check_kungfu_state.yy",},
     {"name":"spr_pizzafacemoustache","order":159,"path":"sprites/spr_pizzafacemoustache/spr_pizzafacemoustache.yy",},
     {"name":"beach_treasure","order":15,"path":"rooms/beach_treasure/beach_treasure.yy",},
     {"name":"spr_hallwaymonster","order":2,"path":"sprites/spr_hallwaymonster/spr_hallwaymonster.yy",},

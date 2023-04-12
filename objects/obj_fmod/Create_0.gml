@@ -1,19 +1,23 @@
 /// @description load banks / define sounds.
-fmod_init(32);
-fmod_set_num_listeners(1);
-
-var banks = ["sound/Desktop/Master.strings.bank", "sound/Desktop/Master.bank", "sound/Desktop/music.bank", "sound/Desktop/sfx.bank"];
-trace("Loading banks!");
-for (var i = 0; i < array_length(banks); i++)
+if !variable_global_exists("sound_map")
 {
-	var b = working_directory + banks[i];
-	if (!fmod_bank_load(b, false))
-		trace("Could not load bank: ", b);
-	else if (!fmod_bank_load_sample_data(b))
-		trace("Could not load sample data: ", b);
+	fmod_init(32);
+	fmod_set_num_listeners(1);
+
+	var banks = ["sound/Desktop/Master.strings.bank", "sound/Desktop/Master.bank", "sound/Desktop/music.bank", "sound/Desktop/sfx.bank"];
+	trace("Loading banks!");
+	for (var i = 0; i < array_length(banks); i++)
+	{
+		var b = working_directory + banks[i];
+		if (!fmod_bank_load(b, false))
+			trace("Could not load bank: ", b);
+		else if (!fmod_bank_load_sample_data(b))
+			trace("Could not load sample data: ", b);
+	}
 }
 global.sound_map = ds_map_create();
 sound_cache = ds_map_create();
+instance_cache = ds_list_create();
 
 #region macros
 
@@ -25,9 +29,9 @@ sound_cache = ds_map_create();
 #macro sound_get_parameter fmod_get_parameter // parameter (string)
 // gets global parameter.
 
-#macro sound_instance_create fmod_event_create_instance // event (string)
+#macro sound_instance_create sound_create_instance // event (string)
 // returns sound instance (number)
-#macro sound_instance_destroy fmod_event_instance_release // sound instance
+#macro sound_instance_destroy sound_destroy_instance // sound instance
 #macro sound_instance_play fmod_event_instance_play // sound instance
 #macro sound_instance_stop fmod_event_instance_stop // sound instance, force (bool)
 #macro sound_instance_move fmod_event_instance_set_3d_attributes // sound instance, x, y

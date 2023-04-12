@@ -11,5 +11,5 @@ alpha = false;
 state = states.normal;
 trapid = -4;
 image_speed = 0.35;
-snd_loop = fmod_event_create_instance("event:/sfx/kingghost/loop");
-snd_move = fmod_event_create_instance("event:/sfx/kingghost/move");
+snd_loop = sound_create_instance("event:/sfx/kingghost/loop");
+snd_move = sound_create_instance("event:/sfx/kingghost/move");

@@ -10,8 +10,8 @@ func = function()
 		if (music_pos < 0)
 			music_pos = array_length(music_arr) - 1;
 		fmod_event_instance_stop(music_event, true);
-		fmod_event_instance_release(music_event);
-		music_event = fmod_event_create_instance(music_arr[music_pos][0]);
+		sound_destroy_instance(music_event);
+		music_event = sound_create_instance(music_arr[music_pos][0]);
 		if (play)
 			fmod_event_instance_play(music_event);
 	}

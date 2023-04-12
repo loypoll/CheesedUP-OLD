@@ -11,9 +11,9 @@ savedsecretpause = false;
 savedpanicpos = 0;
 savedmusicpos = 0;
 exitmusic = false;
-pillarmusicID = fmod_event_create_instance("event:/music/pillarmusic");
-panicmusicID = fmod_event_create_instance("event:/music/pizzatime");
-kidspartychaseID = fmod_event_create_instance("event:/music/w5/kidspartychase");
+pillarmusicID = sound_create_instance("event:/music/pillarmusic");
+panicmusicID = sound_create_instance("event:/music/pizzatime");
+kidspartychaseID = sound_create_instance("event:/music/w5/kidspartychase");
 panicstart = false;
 
 add_music(Endingroom, "event:/music/ending", -4, false);

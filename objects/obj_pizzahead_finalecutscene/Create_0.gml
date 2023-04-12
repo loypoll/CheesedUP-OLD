@@ -6,7 +6,7 @@ superslam = false;
 pizzahead_x = 0;
 pizzahead_front = false;
 piledrivershot = false;
-snd = fmod_event_create_instance("event:/sfx/pizzahead/finale");
+snd = sound_create_instance("event:/sfx/pizzahead/finale");
 if (room == boss_pizzafacefinale)
 {
 	image_speed = 2;

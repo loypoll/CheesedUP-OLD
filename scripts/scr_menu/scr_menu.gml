@@ -99,7 +99,7 @@ function add_option_slide(_menu, _optionid, _name, _onmove = noone, _onchanged =
 		sound: -4
 	};
 	if _sound != noone
-		b.sound = fmod_event_create_instance(_sound);
+		b.sound = sound_create_instance(_sound);
 	array_push(_menu.options, b);
 	return b;
 }

@@ -7,4 +7,4 @@ with (obj_johnecheese_spawner)
 	alarm[0] = spawnmax;
 trace(snd);
 fmod_event_instance_stop(snd, true);
-fmod_event_instance_release(snd);
+sound_destroy_instance(snd);

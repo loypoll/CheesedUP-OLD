@@ -1,4 +1,4 @@
-if (other.state == states.handstandjump && other.grounded)
+if (other.state == states.handstandjump or check_kungfu_state(other) && other.grounded)
 {
 	with (other)
 	{

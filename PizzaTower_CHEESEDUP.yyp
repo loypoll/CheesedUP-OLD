@@ -5874,6 +5874,7 @@
     {"id":{"name":"spr_bosstimer_bell","path":"sprites/spr_bosstimer_bell/spr_bosstimer_bell.yy",},},
     {"id":{"name":"spr_halloweencollectibles2","path":"sprites/spr_halloweencollectibles2/spr_halloweencollectibles2.yy",},},
     {"id":{"name":"spr_rattumbleblock_big_dead","path":"sprites/spr_rattumbleblock_big_dead/spr_rattumbleblock_big_dead.yy",},},
+    {"id":{"name":"check_kungfu_state","path":"scripts/check_kungfu_state/check_kungfu_state.yy",},},
     {"id":{"name":"spr_pizzafacemoustache","path":"sprites/spr_pizzafacemoustache/spr_pizzafacemoustache.yy",},},
     {"id":{"name":"beach_treasure","path":"rooms/beach_treasure/beach_treasure.yy",},},
     {"id":{"name":"spr_hallwaymonster","path":"sprites/spr_hallwaymonster/spr_hallwaymonster.yy",},},

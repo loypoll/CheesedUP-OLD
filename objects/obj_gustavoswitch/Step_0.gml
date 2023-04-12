@@ -16,8 +16,8 @@ if (sprite_index == spr_gustavoswitch2 && floor(image_index) == (image_number - 
 		x = obj_gustavoswitch.x;
 		y = obj_gustavoswitch.y;
 		global.switchbuffer = 100;
-		fmod_event_instance_release(snd_voiceok);
-		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/gusok");
+		sound_destroy_instance(snd_voiceok);
+		snd_voiceok = sound_create_instance("event:/sfx/voice/gusok");
 		if (room == street_jail)
 		{
 			with (obj_music)

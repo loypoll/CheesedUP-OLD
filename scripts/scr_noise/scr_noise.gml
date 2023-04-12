@@ -1,13 +1,13 @@
 function scr_noise_init_sounds()
 {
-	snd_spin = fmod_event_create_instance("event:/sfx/noise/spin");
-	snd_skatestart = fmod_event_create_instance("event:/sfx/noise/skatestart");
-	snd_skateloop = fmod_event_create_instance("event:/sfx/noise/skateloop");
-	snd_jetpackloop = fmod_event_create_instance("event:/sfx/noise/jetpackloop");
-	snd_jetpackspin = fmod_event_create_instance("event:/sfx/noise/jetpackspin");
-	snd_groundpound = fmod_event_create_instance("event:/sfx/pep/groundpound");
-	snd_balloon = fmod_event_create_instance("event:/sfx/noise/balloon");
-	snd_droptrap = fmod_event_create_instance("event:/sfx/noise/droptrap");
+	snd_spin = sound_create_instance("event:/sfx/noise/spin");
+	snd_skatestart = sound_create_instance("event:/sfx/noise/skatestart");
+	snd_skateloop = sound_create_instance("event:/sfx/noise/skateloop");
+	snd_jetpackloop = sound_create_instance("event:/sfx/noise/jetpackloop");
+	snd_jetpackspin = sound_create_instance("event:/sfx/noise/jetpackspin");
+	snd_groundpound = sound_create_instance("event:/sfx/pep/groundpound");
+	snd_balloon = sound_create_instance("event:/sfx/noise/balloon");
+	snd_droptrap = sound_create_instance("event:/sfx/noise/droptrap");
 	fightball_snd_buffer = 0;
 }
 function scr_noise_destroy_sounds()

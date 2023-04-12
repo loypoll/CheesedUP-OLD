@@ -1,5 +1,5 @@
 scr_initenemy();
-snd = fmod_event_create_instance("event:/sfx/enemies/demoncharge");
+snd = sound_create_instance("event:/sfx/enemies/demoncharge");
 snd_count = 0;
 underground = true;
 hitboxID = -4;

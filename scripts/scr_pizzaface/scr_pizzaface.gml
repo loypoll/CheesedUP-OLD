@@ -1,9 +1,9 @@
 function scr_pizzaface_init_sounds()
 {
-	snd_ram = fmod_event_create_instance("event:/sfx/pizzaface/ram");
-	snd_haywire = fmod_event_create_instance("event:/sfx/pizzahead/haywire");
-	snd_spit = fmod_event_create_instance("event:/sfx/pizzaface/spit");
-	snd_wind = fmod_event_create_instance("event:/sfx/misc/windloop");
+	snd_ram = sound_create_instance("event:/sfx/pizzaface/ram");
+	snd_haywire = sound_create_instance("event:/sfx/pizzahead/haywire");
+	snd_spit = sound_create_instance("event:/sfx/pizzaface/spit");
+	snd_wind = sound_create_instance("event:/sfx/misc/windloop");
 }
 function scr_pizzaface_destroy_sounds()
 {

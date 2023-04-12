@@ -2,7 +2,7 @@ spr_dead = spr_rattumbleblock_big_dead;
 depth = 2;
 anim = false;
 animy = 0;
-sniffsnd = fmod_event_create_instance("event:/sfx/rat/ratsniff");
+sniffsnd = sound_create_instance("event:/sfx/rat/ratsniff");
 fmod_event_instance_set_3d_attributes(sniffsnd, x, y);
 use_sound = true;
 deadsnd = "event:/sfx/rat/ratbowling";

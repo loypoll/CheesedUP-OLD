@@ -1,5 +1,5 @@
 rank_spr = spr_rank_holyshit;
-music = fmod_event_create_instance("event:/music/finalrank");
+music = sound_create_instance("event:/music/finalrank");
 fmod_event_instance_play(music);
 bg_index = 0;
 bg_x = 0;

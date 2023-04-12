@@ -1,5 +1,5 @@
 state = 0; // not an enum
-snd = fmod_event_create_instance("event:/sfx/ending/towercollapse");
+snd = sound_create_instance("event:/sfx/ending/towercollapse");
 credits = [
 	[-4, lang_get_value_newline("credits_game")],
 	[-4, string_replace_all(lang_get_value_newline("credits_music"), "%", "\"")],
