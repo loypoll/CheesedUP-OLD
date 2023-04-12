@@ -52,13 +52,8 @@ if state == 1 && t >= 1
 	draw_set_font(font1);
 	draw_text(960 / 2, 540 / 2 - 16, str);
 	
-	/*
-	if cancon or !drm
-	{
-		draw_set_font(global.font_small);
-		draw_text(960 / 2, 420, lang_string("disclaimer.continue"));
-	}
-	*/
+	draw_set_font(global.font_small);
+	draw_text(960 / 2, 420, "Press R to try again");
 }
 
 // fade in

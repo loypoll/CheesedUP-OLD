@@ -1,3 +1,5 @@
 /// @description end level timer
+if live_call() return live_result;
+
 if active
-	np_setpresence_timestamps(0, 0, false);
+	np_clearpresence();

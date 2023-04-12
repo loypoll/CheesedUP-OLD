@@ -103,7 +103,7 @@ if details == ""
 	{
 		var f = string_digits(r);
 		
-		details = "Pizza Tower";
+		details = "The Pizza Tower";
 		if room == tower_entrancehall
 			state = "Entrance";
 		if room == tower_johngutterhall
