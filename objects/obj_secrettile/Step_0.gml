@@ -2,7 +2,7 @@ if buffer > 0
 	buffer--;
 
 var player = instance_place(x, y, obj_player);
-if player or active
+if (player && player.state != states.chainsaw) or active
 {
 	if !revealed
 	{

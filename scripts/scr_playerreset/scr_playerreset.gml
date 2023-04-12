@@ -15,8 +15,6 @@ function textures_offload(texturegroup_array)
 }
 function scr_playerreset()
 {
-	if global.leveltosave == noone
-		discord_end_timer();
 	global.racestarted = false;
 	
 	trace("playerreset");

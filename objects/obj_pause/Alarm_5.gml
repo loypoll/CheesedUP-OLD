@@ -3,10 +3,9 @@ var rm = roomtorestart;
 
 scr_pause_stop_sounds();
 if REMIX
-{
 	clear_particles();
-	sound_stop_all(true);
-}
+
+sound_stop_all(true);
 
 global.levelattempts++;
 ds_list_clear(global.saveroom);
@@ -21,7 +20,10 @@ scr_playerreset();
 global.levelreset = true;
 obj_player1.targetRoom = rm;
 obj_player2.targetRoom = rm;
+
 scr_room_goto(rm);
+discord_start_timer();
+
 var _d = "A";
 if (rm == boss_pizzaface)
 	_d = "B";

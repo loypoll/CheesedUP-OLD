@@ -1,24 +1,31 @@
 function sound_stop_all(force = true)
 {
-	var sound = ds_map_find_first(obj_fmod.sound_cache);
-	while sound != undefined
+	if ds_exists(obj_fmod.sound_cache, ds_type_map)
 	{
-		fmod_event_instance_stop(obj_fmod.sound_cache[? sound], force);
-		sound = ds_map_find_next(obj_fmod.sound_cache, sound);
+		var sound = ds_map_find_first(obj_fmod.sound_cache);
+		while sound != undefined
+		{
+			fmod_event_instance_stop(obj_fmod.sound_cache[? sound], force);
+			sound = ds_map_find_next(obj_fmod.sound_cache, sound);
+		}
 	}
-	
-	for(var i = 0; i < ds_list_size(obj_fmod.instance_cache); i++)
-		fmod_event_instance_stop(obj_fmod.instance_cache[| i]);
+	if ds_exists(obj_fmod.instance_cache, ds_type_list)
+	{
+		for(var i = 0; i < ds_list_size(obj_fmod.instance_cache); i++)
+			fmod_event_instance_stop(obj_fmod.instance_cache[| i]);
+	}
 }
 function sound_create_instance(event)
 {
 	var inst = fmod_event_create_instance(event);
-	ds_list_add(obj_fmod.instance_cache, inst);
+	if ds_exists(obj_fmod.instance_cache, ds_type_list)
+		ds_list_add(obj_fmod.instance_cache, inst);
 	return inst;
 }
 function sound_destroy_instance(inst)
 {
-	ds_list_delete(obj_fmod.instance_cache, ds_list_find_index(obj_fmod.instance_cache, inst));
+	if ds_exists(obj_fmod.instance_cache, ds_type_list)
+		ds_list_delete(obj_fmod.instance_cache, ds_list_find_index(obj_fmod.instance_cache, inst));
 	fmod_event_instance_release(inst);
 }
 function sound_pause_all(enable) {
