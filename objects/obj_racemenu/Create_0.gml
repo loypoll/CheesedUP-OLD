@@ -1,7 +1,5 @@
 if live_call() return live_result;
 
-instance_create(0, 0, obj_roomofdog);
-
 with obj_player
 	state = states.titlescreen;
 menu = 0;

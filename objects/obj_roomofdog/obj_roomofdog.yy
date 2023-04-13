@@ -29,7 +29,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_player_scaredjump3",
+    "path": "sprites/spr_player_scaredjump3/spr_player_scaredjump3.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

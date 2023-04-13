@@ -5,7 +5,10 @@ stepfunc = function()
 		with obj_player
 		{
 			if state != states.keyget
+			{
+				instance_destroy(inst_34033ADF);
 				instance_destroy(other);
+			}
 		}
 	}
 }

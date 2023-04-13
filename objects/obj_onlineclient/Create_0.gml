@@ -1,7 +1,5 @@
 if live_call() return live_result;
 
-instance_create(0, 0, obj_roomofdog);
-
 depth = -7;
 
 ip = "127.0.0.1";

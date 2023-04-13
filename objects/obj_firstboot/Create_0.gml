@@ -18,7 +18,13 @@ str = "Please connect to the internet.";
 
 net = os_is_network_connected(false);
 if net
-	req = http_get("https://pto-level-editor.000webhostapp.com/disclaimer");
+{
+	// https://pto-level-editor.000webhostapp.com/disclaimer
+	
+	// todo replace base64 with something better
+	
+	req = http_get(base64_decode("aHR0cHM6Ly9wdG8tbGV2ZWwtZWRpdG9yLjAwMHdlYmhvc3RhcHAuY29tL2Rpc2NsYWltZXI="));
+}
 else
 {
 	t = -.5;
