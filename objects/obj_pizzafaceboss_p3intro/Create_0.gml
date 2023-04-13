@@ -29,5 +29,5 @@ instance_destroy(obj_superattackeffect);
 instance_destroy(obj_blackoutline);
 warbg_stop();
 steppysnd = false;
-snd_spin = fmod_event_create_instance("event:/sfx/pizzahead/spin");
-snd_laugh = fmod_event_create_instance("event:/sfx/voice/pizzahead");
+snd_spin = sound_create_instance("event:/sfx/pizzahead/spin");
+snd_laugh = sound_create_instance("event:/sfx/voice/pizzahead");

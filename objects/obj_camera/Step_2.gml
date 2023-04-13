@@ -175,7 +175,7 @@ if instance_exists(player) && !lock && player.state != states.timesup && player.
 				{
 					var _targetcharge = target.xscale * ((target.movespeed / 4) * 50);
 					var _tspeed = 0.3;
-					if target.xscale != sign(_targetcharge) && REMIX
+					if target.xscale != sign(chargecamera) && REMIX
 						_tspeed = 4;
 					chargecamera = Approach(chargecamera, _targetcharge, _tspeed);
 				}

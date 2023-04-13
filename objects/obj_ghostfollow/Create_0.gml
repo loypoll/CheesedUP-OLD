@@ -11,4 +11,4 @@ spr_palette = palette_pepgoblin;
 state = states.normal;
 fadein = false;
 usepalette = false;
-snd = fmod_event_create_instance("event:/sfx/enemies/johnghost");
+snd = sound_create_instance("event:/sfx/enemies/johnghost");

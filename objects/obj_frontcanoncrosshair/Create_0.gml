@@ -5,4 +5,4 @@ collisioned = true;
 cooldown = 0;
 threshold_x = 250;
 threshold_y = 250;
-snd = fmod_event_create_instance("event:/sfx/misc/captaingoblincrosshair");
+snd = sound_create_instance("event:/sfx/misc/captaingoblincrosshair");

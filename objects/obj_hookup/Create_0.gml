@@ -7,4 +7,4 @@ image_speed = 0.35;
 blinking = 0;
 movespeed = 10;
 appear = -1;
-snd = fmod_event_create_instance("event:/sfx/misc/mrstickhat");
+snd = sound_create_instance("event:/sfx/misc/mrstickhat");

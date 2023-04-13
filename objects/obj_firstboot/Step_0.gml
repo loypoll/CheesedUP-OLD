@@ -1,7 +1,5 @@
 if live_call() return live_result;
 
-if keyboard_check_pressed(ord("R"))
-	room_restart();
 fade_alpha -= 0.1;
 
 // restart the disclaimer if you turn on your internet
@@ -13,6 +11,9 @@ if state == 1
 {
 	t = Approach(t, 1, 0.06);
 	size = animcurve_channel_evaluate(outback, t);
+	
+	if keyboard_check_pressed(ord("R"))
+		room_restart();
 }
 
 // go

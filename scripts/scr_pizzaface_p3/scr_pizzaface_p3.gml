@@ -18,9 +18,9 @@ function scr_pizzaface_p3_add_attack(wastedhits, attack, cooldown)
 }
 function scr_pizzaface_p3_init_sounds()
 {
-	snd_jump = fmod_event_create_instance("event:/sfx/pizzahead/jump");
-	snd_bigpunch = fmod_event_create_instance("event:/sfx/pizzahead/bigpunch");
-	snd_swinging = fmod_event_create_instance("event:/sfx/pizzahead/swinging");
+	snd_jump = sound_create_instance("event:/sfx/pizzahead/jump");
+	snd_bigpunch = sound_create_instance("event:/sfx/pizzahead/bigpunch");
+	snd_swinging = sound_create_instance("event:/sfx/pizzahead/swinging");
 }
 function scr_pizzaface_p3_destroy_sounds()
 {

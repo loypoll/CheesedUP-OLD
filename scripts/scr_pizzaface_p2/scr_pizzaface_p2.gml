@@ -10,12 +10,12 @@ enum pizzaface_p2_attacks
 // functions
 function scr_pizzaface_p2_init_sounds()
 {
-	snd_haywire = fmod_event_create_instance("event:/sfx/pizzahead/haywire");
-	snd_tvthrow = fmod_event_create_instance("event:/sfx/pizzahead/tvthrow");
-	snd_spin = fmod_event_create_instance("event:/sfx/pizzahead/spin");
-	snd_grablevel = fmod_event_create_instance("event:/sfx/pizzahead/grablevel");
-	snd_fishing = fmod_event_create_instance("event:/sfx/pizzahead/fishing");
-	snd_ratball = fmod_event_create_instance("event:/sfx/pizzahead/ratball");
+	snd_haywire = sound_create_instance("event:/sfx/pizzahead/haywire");
+	snd_tvthrow = sound_create_instance("event:/sfx/pizzahead/tvthrow");
+	snd_spin = sound_create_instance("event:/sfx/pizzahead/spin");
+	snd_grablevel = sound_create_instance("event:/sfx/pizzahead/grablevel");
+	snd_fishing = sound_create_instance("event:/sfx/pizzahead/fishing");
+	snd_ratball = sound_create_instance("event:/sfx/pizzahead/ratball");
 	steppysnd = false;
 }
 function scr_pizzaface_p2_destroy_sounds()

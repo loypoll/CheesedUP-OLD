@@ -41,4 +41,4 @@ spr_palette = palette_cheeseslime;
 grabbedby = 0;
 stuntouchbuffer = 0;
 scaredbuffer = 0;
-snd = fmod_event_create_instance("event:/sfx/enemies/cloneattack");
+snd = sound_create_instance("event:/sfx/enemies/cloneattack");

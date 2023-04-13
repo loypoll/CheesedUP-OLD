@@ -21,4 +21,4 @@ fade = 0;
 treasure_dir = -1;
 treasure_index = 0;
 whitefade = 1;
-snd = fmod_event_create_instance("event:/sfx/ending/johnending");
+snd = sound_create_instance("event:/sfx/ending/johnending");

@@ -17,6 +17,7 @@ function scr_skipgame_savefile()
 	ini_write_string("Ranks", "exit", "");
 	ini_write_real("Tutorial", "finished", true);
 	ini_write_real("Tutorial", "tutorialcutscene", true);
+	ini_write_real("Tutorial", "lapunlocked", true);
 	ini_write_real("Game", "fakepepportrait", true);
 	ini_write_real("Game", "supertaunt", true);
 	

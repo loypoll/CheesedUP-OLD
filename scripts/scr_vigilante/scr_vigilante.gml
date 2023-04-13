@@ -41,10 +41,10 @@ function vigilante_end_attack(phase, wastedhits)
 }
 function scr_vigilante_init_sounds()
 {
-	snd_flame = fmod_event_create_instance("event:/sfx/vigilante/flamethrower");
-	snd_mach1 = fmod_event_create_instance("event:/sfx/vigilante/mach1");
-	snd_slide = fmod_event_create_instance("event:/sfx/vigilante/slide");
-	snd_uziprep = fmod_event_create_instance("event:/sfx/vigilante/uziprep");
+	snd_flame = sound_create_instance("event:/sfx/vigilante/flamethrower");
+	snd_mach1 = sound_create_instance("event:/sfx/vigilante/mach1");
+	snd_slide = sound_create_instance("event:/sfx/vigilante/slide");
+	snd_uziprep = sound_create_instance("event:/sfx/vigilante/uziprep");
 	songstate = 0;
 }
 function scr_vigilante_destroy_sounds()

@@ -12,4 +12,4 @@ turnspeed = 0.5;
 shootdir = 0;
 fake = false;
 reverse = false;
-snd = fmod_event_create_instance("event:/sfx/misc/mrstickhat");
+snd = sound_create_instance("event:/sfx/misc/mrstickhat");

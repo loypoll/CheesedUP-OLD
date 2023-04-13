@@ -130,7 +130,7 @@
   ],
   "parent": {
     "name": "B Escape",
-    "path": "folders/Rooms/CheesyPizza/Tower/B-Side Tower/B Escape.yy",
+    "path": "folders/Rooms/CheesyPizza/B-Side Levels/Tower/B Escape.yy",
   },
   "parentRoom": null,
   "physicsSettings": {

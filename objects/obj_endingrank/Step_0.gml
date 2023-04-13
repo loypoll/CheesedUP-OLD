@@ -17,7 +17,7 @@ switch (state)
 			state++;
 			fade = 1;
 			introbuffer = 180;
-			snd = fmod_event_create_instance("event:/sfx/ui/percentagemove");
+			snd = sound_create_instance("event:/sfx/ui/percentagemove");
 		}
 		break;
 	case 2:
@@ -41,7 +41,7 @@ switch (state)
 				introbuffer--;
 			else
 			{
-				fmod_event_instance_release(snd);
+				sound_destroy_instance(snd);
 				fmod_event_instance_set_parameter(music, "state", 1, true);
 				sprite_index = rank_spr;
 				introbuffer = 400;

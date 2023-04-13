@@ -103,7 +103,10 @@
     {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"savedHistoryMaxSize","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"value":"100","varType":1,},
   ],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "dbg_v",
+    "path": "sprites/dbg_v/dbg_v.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

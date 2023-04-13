@@ -241,8 +241,11 @@ function scr_playerreset()
 	with (obj_player)
 	{
 		transformationsnd = false;
-		fmod_event_instance_release(snd_voiceok);
-		snd_voiceok = fmod_event_create_instance("event:/sfx/voice/ok");
+		
+		sound_stop(snd_voiceok, true);
+		//sound_destroy_instance(snd_voiceok);
+		//snd_voiceok = sound_create_instance("event:/sfx/voice/ok");
+		
 		image_alpha = 1;
 		hallway = false;
 		verticalhallway = false;

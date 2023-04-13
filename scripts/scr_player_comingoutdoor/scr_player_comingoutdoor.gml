@@ -23,12 +23,15 @@ function scr_player_comingoutdoor()
 		image_alpha = 1;
 		c = 0;
 		image_blend = make_colour_hsv(0, 0, 255);
-		if keydoor && REMIX
+		
+		if keydoor && REMIX && !isgustavo
 		{
 			idle = 150;
 			sprite_index = spr_keydoor;
 			image_index = 0;
 			keydoor = false;
+			
+			exit;
 		}
 	}
 	if (sprite_index != spr_Timesup)

@@ -18,7 +18,7 @@ str = "Please connect to the internet.";
 
 net = os_is_network_connected(false);
 if net
-	req = http_get("http://pto-level-editor.000webhostapp.com/disclaimer");
+	req = http_get("https://pto-level-editor.000webhostapp.com/disclaimer");
 else
 {
 	t = -.5;

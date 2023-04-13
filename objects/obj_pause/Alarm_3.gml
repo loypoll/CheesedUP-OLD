@@ -5,10 +5,8 @@ var rm = room;
 if (!hub)
 {
 	if REMIX
-	{
 		clear_particles();
-		sound_stop_all(true);
-	}
+	sound_stop_all(true);
 	
 	pause = false;
 	scr_pause_activate_objects();

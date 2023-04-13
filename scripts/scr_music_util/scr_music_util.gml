@@ -16,12 +16,12 @@ function add_music(_room, _event, _eventsecret, _continuous, _on_room_start = no
 		if (_event != -4)
 		{
 			event_name = _event;
-			event = fmod_event_create_instance(_event);
+			event = sound_create_instance(_event);
 		}
 		if (_eventsecret != -4)
 		{
 			event_secret_name = _eventsecret;
-			event_secret = fmod_event_create_instance(_eventsecret);
+			event_secret = sound_create_instance(_eventsecret);
 		}
 	}
 	ds_map_set(music_map, _room, b);

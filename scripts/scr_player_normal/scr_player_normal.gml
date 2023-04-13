@@ -140,7 +140,7 @@ function state_player_normal()
 				}
 				if (!global.pistol && !shotgunAnim && sprite_index != spr_idle1 && sprite_index != spr_idle2 && sprite_index != spr_idle3 && sprite_index != spr_idle4 && sprite_index != spr_idle5 && sprite_index != spr_idle6 && sprite_index != spr_keydoor)
 				{
-					if (irandom(100) <= 25)
+					if (irandom(100) <= 25 && sprite_index != spr_keydoor)
 						sound_play_3d("event:/sfx/voice/myea", x, y);
 					image_index = 0;
 					sprite_index = choose(spr_idle1, spr_idle2, spr_idle3, spr_idle4, spr_idle5, spr_idle6);

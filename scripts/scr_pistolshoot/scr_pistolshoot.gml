@@ -4,8 +4,12 @@ function scr_pistolshoot(required_state)
 	
 	if ((pistolcooldown <= 0 && state == required_state && state != states.bump && instance_number(obj_pistolbullet) < 3) or pistolchargeshooting == 1)
 	{
-		if floor(global.bullet) == 0 && !global.pistol
-			exit;
+		if !global.pistol // attack style
+		{
+			if floor(global.bullet) == 0
+			or instance_exists(obj_bosscontroller)
+				exit;
+		}
 		
 		input_buffer_shoot = 0;
 		input_buffer_pistol = 0;

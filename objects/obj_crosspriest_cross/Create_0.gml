@@ -8,5 +8,5 @@ timer = current_time;
 xoffset = 0;
 yoffset = 0;
 depth = -12;
-snd = fmod_event_create_instance("event:/sfx/pep/cross");
+snd = sound_create_instance("event:/sfx/pep/cross");
 fmod_event_instance_play(snd);

@@ -111,12 +111,12 @@ function fakepep_add_tauntclones(phase, wastedhits, _vsp1, _vsp2, _cooldown, _x1
 }
 function scr_fakepep_init_sounds()
 {
-	snd_bodyslam = fmod_event_create_instance("event:/sfx/fakepep/bodyslam");
-	snd_mach = fmod_event_create_instance("event:/sfx/fakepep/mach");
-	snd_superjump = fmod_event_create_instance("event:/sfx/fakepep/superjump");
-	snd_grab = fmod_event_create_instance("event:/sfx/fakepep/grab");
-	snd_headoff = fmod_event_create_instance("event:/sfx/fakepep/headoff");
-	snd_flailing = fmod_event_create_instance("event:/sfx/fakepep/flailing");
+	snd_bodyslam = sound_create_instance("event:/sfx/fakepep/bodyslam");
+	snd_mach = sound_create_instance("event:/sfx/fakepep/mach");
+	snd_superjump = sound_create_instance("event:/sfx/fakepep/superjump");
+	snd_grab = sound_create_instance("event:/sfx/fakepep/grab");
+	snd_headoff = sound_create_instance("event:/sfx/fakepep/headoff");
+	snd_flailing = sound_create_instance("event:/sfx/fakepep/flailing");
 }
 function scr_fakepep_destroy_sounds()
 {

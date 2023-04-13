@@ -19,4 +19,4 @@ baddie = false;
 grabbable = true;
 bomblit_spr = spr_bomblit;
 bouncesound = false;
-snd = fmod_event_create_instance("event:/sfx/pep/bombfuse");
+snd = sound_create_instance("event:/sfx/pep/bombfuse");

@@ -1,7 +1,7 @@
 instance_destroy();
 sound_play("event:/sfx/noise/giantballoon2");
 fmod_event_instance_stop(snd, false);
-fmod_event_instance_release(snd);
+sound_destroy_instance(snd);
 with (obj_camera)
 {
 	shake_mag = 3;
