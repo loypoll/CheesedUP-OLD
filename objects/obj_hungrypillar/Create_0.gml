@@ -9,3 +9,14 @@ if (room == rm_editor)
 			y += 1;
 	}
 }
+
+idlespr = spr_hungrypillar;
+angryspr = spr_hungrypillar_angry;
+deadspr = spr_hungrypillar_dead;
+
+if check_midway()
+{
+	idlespr = spr_hungrypillar_bo;
+	angryspr = spr_hungrypillar_bo;
+	deadspr = spr_hungrypillar_angry_bo;
+}

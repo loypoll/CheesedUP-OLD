@@ -38,3 +38,13 @@ grabbedby = 0;
 stuntouchbuffer = 0;
 ragedash = 0;
 ragecooldown = 0;
+
+if check_midway()
+{
+	walkspr = spr_pinhead_walk;
+	grabbedspr = spr_pinhead_stun;
+	stunfallspr = spr_pinhead_stun;
+	scaredspr = spr_pinhead_scared;
+	spr_dead = spr_pinhead_dead;
+	sprite_index = walkspr;
+}
