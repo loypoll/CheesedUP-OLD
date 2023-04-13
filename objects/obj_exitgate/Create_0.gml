@@ -21,3 +21,6 @@ uparrowID = -4;
 if (obj_player.character == "S")
 	instance_destroy();
 snd = false;
+
+if check_midway()
+	sprite_index = spr_exitgate_bo;

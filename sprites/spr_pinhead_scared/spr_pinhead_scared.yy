@@ -27,7 +27,7 @@
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"ded49d76-6f00-457c-bede-317c43da2517","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
-  "origin": 9,
+  "origin": 4,
   "parent": {
     "name": "Pinhead",
     "path": "folders/Sprites/CheesyPizza/Midway/Pinhead.yy",
@@ -68,7 +68,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 50,
-    "yorigin": 54,
+    "yorigin": 50,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

@@ -23,6 +23,7 @@ stunfallspr = spr_forknight_stun;
 walkspr = spr_forknight_walk;
 grabbedspr = spr_forknight_grabbed;
 scaredspr = spr_forknight_scared;
+turnspr = spr_forknight_turn;
 sprite_index = spr_forknight_walk;
 flash = false;
 slapped = false;
@@ -46,5 +47,6 @@ if check_midway()
 	stunfallspr = spr_pinhead_stun;
 	scaredspr = spr_pinhead_scared;
 	spr_dead = spr_pinhead_dead;
+	turnspr = spr_pinhead_turn;
 	sprite_index = walkspr;
 }

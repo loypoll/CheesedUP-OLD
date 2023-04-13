@@ -116,6 +116,7 @@ switch room
 	
 	// new levels
 	case canada_1: global.srank = 24000; break;
+	case midway_1: global.srank = 47000; break;
 }
 global.arank = floor(global.srank / 2);
 global.brank = floor(global.arank / 2);
