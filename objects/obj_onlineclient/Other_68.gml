@@ -1,5 +1,6 @@
 if live_call() return live_result;
 
+/*
 function received_packet(buffer)
 {
 	var msgid = buffer_read(buffer, buffer_u8);
@@ -208,3 +209,4 @@ switch type_event
 		}
 		break;
 }
+*/

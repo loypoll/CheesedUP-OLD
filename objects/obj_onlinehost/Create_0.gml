@@ -1,5 +1,6 @@
 if live_call() return live_result;
 
+/*
 port = "6400";
 max_clients = "5";
 
@@ -16,3 +17,4 @@ map = 0;
 started_race = false;
 
 done = false;
+*/

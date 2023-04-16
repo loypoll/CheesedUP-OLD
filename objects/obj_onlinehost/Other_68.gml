@@ -1,5 +1,6 @@
 if live_call() return live_result;
 
+/*
 var type_event = async_load[?"type"];
 var socket = async_load[?"socket"];
 
@@ -148,3 +149,4 @@ switch type_event
 			started_race = false;
 		break;
 }
+*/

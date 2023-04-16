@@ -1,5 +1,7 @@
 /// @description sync player
 if live_call() return live_result;
+
+/*
 if !connected
 	exit;
 
@@ -66,3 +68,4 @@ if room != rank_room
 		}
 	}
 }
+*/

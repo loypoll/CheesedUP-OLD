@@ -1,3 +1,4 @@
+/*
 if !instance_exists(obj_rank)
 {
 	// draws your own username
@@ -11,3 +12,4 @@ if !instance_exists(obj_rank)
 		draw_text(x, yy, other.username);
 	}
 }
+*/
