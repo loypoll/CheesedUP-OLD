@@ -21,6 +21,7 @@ global.racestarted = false;
 palettes = [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 15];
 
 // network macros
+/*
 enum network
 {
 	player_hello,
@@ -38,3 +39,4 @@ enum network
 }
 #macro psyncarray [buffer_u16, buffer_bool, buffer_s16, buffer_s16, buffer_u32, buffer_u8, buffer_string, buffer_s8, buffer_s16, buffer_string, buffer_string, buffer_u8, buffer_u8]
 #macro server_version 1
+*/
