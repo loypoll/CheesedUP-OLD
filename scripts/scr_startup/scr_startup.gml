@@ -1,5 +1,6 @@
 #macro REMIX global.gameplay
-#macro debug true//(GM_build_type == "run")
+#macro STEAM extension_exists("Steamworks") // TODO check if this works when building other platforms
+#macro debug (GM_build_type == "run")
 
 if os_type == os_gxgames
 {

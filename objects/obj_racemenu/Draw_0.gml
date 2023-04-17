@@ -165,6 +165,7 @@ if menu == 1 or menu == 2 or menu == 5
 		instance_destroy(obj_onlinehost);
 	}
 }
+/*
 if menu != 5
 {
 	draw_sprite(spr_title, 0, -9, 13);
@@ -174,4 +175,9 @@ if menu != 5
 	draw_set_align(fa_center, fa_top);
 	draw_text(180, 180, "RACE");
 }
+*/
 draw_set_align();
+
+draw_set_font(global.bigfont);
+draw_set_colour(c_white);
+draw_text(16, 16, "THIS MENU IS DEPRECATED!\nIT MAY CRASH THE GAME!");

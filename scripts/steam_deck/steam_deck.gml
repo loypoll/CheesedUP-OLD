@@ -1,5 +1,13 @@
 function steam_deck()
 {
+	if STEAM
+	{
+		return {
+			is_steamdeck: steam_utils_is_steam_running_on_steam_deck(),
+			gamepad_index: 0 // i can't bother
+		};
+	}
+	
 	// https://gist.github.com/ellraiser/308eff835695e39c10e2d13eed9b9490
 	var info = os_get_info();
 	if is_undefined(info[? "gl_vendor_string"]) or is_undefined(info[? "gl_version_string"])
