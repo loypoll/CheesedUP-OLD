@@ -133,8 +133,8 @@ function scr_collide()
 	grounded |= scr_solid(x, y + 1);
 	var plat = instance_place(x, y + 1, obj_platform);
 	if plat && plat.image_yscale < 0
-		plat = false;
-	grounded |= (!place_meeting(x, y, obj_platform) && plat);
+		plat = noone;
+	grounded |= (!place_meeting(x, y, obj_platform) && plat != noone);
 	if (platformid != -4 or (place_meeting(x, y + 1, obj_movingplatform) && !place_meeting(x, y - 2, obj_movingplatform)))
 		grounded = true;
 }

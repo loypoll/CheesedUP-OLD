@@ -10,17 +10,18 @@ function scr_solid(_x, _y)
 		y = old_y;
 		return true;
 	}
-	num = instance_place_list(x, y, obj_platform, global.instancelist, false);
+	var num = instance_place_list(x, y, obj_platform, global.instancelist, false);
 	if (num > 0)
 	{
-		_collided = false;
-		for (i = 0; i < num; i++)
+		var _collided = false;
+		for (var i = 0; i < num; i++)
 		{
-			b = ds_list_find_value(global.instancelist, i);
-			
+			var b = ds_list_find_value(global.instancelist, i);
 			if (b.image_yscale > 0 && y > old_y) or (b.image_yscale < 0 && y < old_y)
-			if (id != b.id && !place_meeting(x, old_y, b) && place_meeting(x, y, b))
-				_collided = true;
+			{
+				if (!place_meeting(x, old_y, b) && place_meeting(x, y, b))
+					_collided = true;
+			}
 		}
 		ds_list_clear(global.instancelist);
 		if (_collided)

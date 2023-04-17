@@ -71,10 +71,11 @@ function scr_solid_player(_x, _y)
 		for (i = 0; i < num; i++)
 		{
 			b = ds_list_find_value(global.instancelist, i);
-			
 			if (b.image_yscale > 0 && y > old_y) or (b.image_yscale < 0 && y < old_y)
-			if (!place_meeting(x, old_y, b) && place_meeting(x, y, b))
-				_collided = true;
+			{
+				if (!place_meeting(x, old_y, b) && place_meeting(x, y, b))
+					_collided = true;
+			}
 		}
 		ds_list_clear(global.instancelist);
 		if (_collided)
