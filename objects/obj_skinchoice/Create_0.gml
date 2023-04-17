@@ -1,6 +1,7 @@
 if live_call() return live_result;
 
 // animation / background
+sprite_index = -1;
 sound_play("event:/sfx/pto/diagopen");
 
 charshift = [0, 0, 0];

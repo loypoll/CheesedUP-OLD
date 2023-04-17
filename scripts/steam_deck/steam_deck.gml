@@ -4,7 +4,7 @@ function steam_deck()
 	{
 		return {
 			is_steamdeck: steam_utils_is_steam_running_on_steam_deck(),
-			gamepad_index: 0 // i can't bother
+			gamepad_index: -1 // i can't bother
 		};
 	}
 	

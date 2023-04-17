@@ -22,6 +22,7 @@ if key_back
 		}
 	}
 	obj_savesystem.ini_str_options = ini_close();
+	gamesave_async_save_options();
 	
 	if instance_exists(obj_option)
 		obj_option.backbuffer = 2;

@@ -6367,6 +6367,7 @@
     {"name":"spr_stick_helicopter","order":3,"path":"sprites/spr_stick_helicopter/spr_stick_helicopter.yy",},
     {"name":"spr_gate_farmBG","order":13,"path":"sprites/spr_gate_farmBG/spr_gate_farmBG.yy",},
     {"name":"spr_pizzahead_headslam2","order":15,"path":"sprites/spr_pizzahead_headslam2/spr_pizzahead_headslam2.yy",},
+    {"name":"obj_fakeplayer","order":14,"path":"objects/obj_fakeplayer/obj_fakeplayer.yy",},
     {"name":"spr_pizzasona43trans","order":127,"path":"sprites/spr_pizzasona43trans/spr_pizzasona43trans.yy",},
     {"name":"spr_pizzasona2trans","order":128,"path":"sprites/spr_pizzasona2trans/spr_pizzasona2trans.yy",},
     {"name":"spr_gnomepizza_walk","order":18,"path":"sprites/spr_gnomepizza_walk/spr_gnomepizza_walk.yy",},
