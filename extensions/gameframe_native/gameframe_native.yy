@@ -97,6 +97,8 @@
   "gradleinject": "",
   "hasConvertedCodeInjection": true,
   "helpfile": "",
+  "HTML5CodeInjection": "",
+  "html5Props": false,
   "IncludedResources": [],
   "installdir": "",
   "iosCocoaPodDependencies": "",

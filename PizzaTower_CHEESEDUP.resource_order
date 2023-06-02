@@ -201,6 +201,7 @@
     {"name":"Phase 3","order":2,"path":"folders/Sprites/Boss/Pizzaface/Phase 3.yy",},
     {"name":"Vigilante","order":2,"path":"folders/Sprites/Boss/Vigilante.yy",},
     {"name":"VS","order":6,"path":"folders/Sprites/Boss/VS.yy",},
+    {"name":"CheesyPizza","order":11,"path":"folders/Sprites/CheesyPizza.yy",},
     {"name":"Cutscene","order":10,"path":"folders/Sprites/Cutscene.yy",},
     {"name":"Ending","order":1,"path":"folders/Sprites/Cutscene/Ending.yy",},
     {"name":"Forest Gustavo","order":3,"path":"folders/Sprites/Cutscene/Forest Gustavo.yy",},
@@ -358,7 +359,6 @@
     {"name":"Unused","order":24,"path":"folders/Tile Sets/Unused.yy",},
     {"name":"War","order":22,"path":"folders/Tile Sets/War.yy",},
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
-    {"name":"CheesyPizza","order":11,"path":"folders/Sprites/CheesyPizza.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_bossdoor","order":10,"path":"objects/obj_bossdoor/obj_bossdoor.yy",},
