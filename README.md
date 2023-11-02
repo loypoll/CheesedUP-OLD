@@ -1,6 +1,6 @@
-# Pizza Tower: Cheesed Up!
-Another one of my Pizza Tower mods. This one is still currently in active development but has moved to a newer codebase. This is the old codebase.
-This also has had its source code leaked, so I'll keep the repository as a public archive now.
+# Cheesed Up (APRIL 2023)
+Pre-PTT era Cheesed Up source code.
+I only made this public to show that Vir contributed to this. Preservation is great, isn't it?
 
 # Dependencies
-* The modified `.bank` files. The game works without them, but it'll have no audio.
+* The *old* modded `.bank` files. The game works without them, but it'll have no audio.
